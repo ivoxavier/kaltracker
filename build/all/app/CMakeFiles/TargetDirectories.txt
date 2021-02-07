@@ -1,0 +1,15 @@
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/install.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/list_install_components.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/rebuild_cache.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/kaltracker.desktop.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/edit_cache.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/kaltracker_FILES.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/install/strip.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles/install/local.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/install.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/list_install_components.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/rebuild_cache.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/kaltracker.ivoxavier.pot.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/install/strip.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/install/local.dir
+/home/ivo/ubtouchApps/kaltracker/build/all/app/po/CMakeFiles/edit_cache.dir

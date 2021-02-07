@@ -1,0 +1,12 @@
+//manifest.json
+//kaltracker.apparmor
+//assets/logo.svg
+//qml/About.qml
+//qml/Settings.qml
+//qml/js/Quotes.js
+//qml/js/DataBase.js
+//qml/RemoveDataDialog.qml
+//qml/Main.qml
+//qml/Records.qml
+//qml/SaveDataDialog.qml
+//kaltracker.desktop

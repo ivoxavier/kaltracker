@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the kaltracker.ivoxavier package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kaltracker.ivoxavier\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 14:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/About.qml:7 ../qml/Main.qml:74 ../qml/Main.qml:89
+msgid "About"
+msgstr ""
+
+#: ../qml/Main.qml:46
+msgid "Ingestion Stored"
+msgstr ""
+
+#: ../qml/Main.qml:81 ../qml/Records.qml:31
+msgid "History"
+msgstr ""
+
+#: ../qml/Main.qml:96
+msgid "Delete"
+msgstr ""
+
+#: ../qml/Main.qml:111 kaltracker.desktop.in.h:1
+msgid "KalTracker"
+msgstr ""
+
+#: ../qml/Main.qml:152
+msgid "Drink"
+msgstr ""
+
+#: ../qml/Main.qml:152
+msgid "Food"
+msgstr ""
+
+#: ../qml/Main.qml:180
+msgid "What type of food or drink?"
+msgstr ""
+
+#: ../qml/Main.qml:195
+msgid "Save"
+msgstr ""
+
+#: ../qml/Records.qml:33
+msgid "Back"
+msgstr ""
+
+#: ../qml/Records.qml:38
+msgid "Logs"
+msgstr ""
+
+#: ../qml/Records.qml:38
+msgid "Stats"
+msgstr ""
+
+#: ../qml/RemoveDataDialog.qml:9
+msgid "Do you want to erase all your data ?"
+msgstr ""
+
+#: ../qml/RemoveDataDialog.qml:23
+msgid "Close"
+msgstr ""
+
+#: ../qml/RemoveDataDialog.qml:32
+msgid "Done, succesfully removed "
+msgstr ""
+
+#: ../qml/SaveDataDialog.qml:10
+msgid "Operation Result"
+msgstr ""

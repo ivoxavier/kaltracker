@@ -1,0 +1,15 @@
+{
+    "name": "kaltracker.ivoxavier",
+    "description": "Trackes your food calories ingested",
+    "architecture": "all",
+    "title": "KalTracker",
+    "hooks": {
+        "kaltracker": {
+            "apparmor": "kaltracker.apparmor",
+            "desktop": "kaltracker.desktop"
+        }
+    },
+    "version": "0.0.1",
+    "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
+    "framework": "ubuntu-sdk-16.04.4"
+}
