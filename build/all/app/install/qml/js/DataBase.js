@@ -1,11 +1,3 @@
-/*
-KalTracker DataBase tools
-SQLite needs for each transaction a connection to the file
-*/
-function dataBaseFile() {
-    return LocalStorage.openDatabaseSync("kaltracker_db", "0.1", "keepsYourData", 1000000);
-}
-
 /*date method's */
 var longFormatDate = new Date();
 function shortDateFormateOnString(date){
@@ -15,9 +7,17 @@ function shortDateFormateOnString(date){
    return (dd + "-" + MM + "-" + yyyy);
 }
 
+/*
+KalTracker DataBase tools
+SQLite needs for each transaction a connection to the file
+*/
+function dataBaseFile() {
+    return LocalStorage.openDatabaseSync("kaltracker_db", "0.1", "keepsYourData", 1000000);
+}
 
 
- /* Table(s) creation */
+
+ /* DataWarehouse */
 function createTables() {
      var db = dataBaseFile();
      try {
@@ -53,6 +53,18 @@ function insertIngestion(ingestionType,ingestionDesc){
       return validationMessage;
  }
 
+ function deleteAllIngestions(){
+  var db = dataBaseFile();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql('DELETE FROM ingestion;');
+   }
+ );
+ return rs.rowsAffected;
+}
+
+/* -------------------------------------------------------------------------------------------------------*/
+/* Queries */
 function getAllIngestions(){
      var db = dataBaseFile();
      db.transaction(function (tx) {
@@ -69,14 +81,6 @@ function getAllIngestions(){
     
 }
 
-function deleteAllIngestions(){
-      var db = dataBaseFile();
-      var rs;
-      db.transaction(function(tx) {
-        rs = tx.executeSql('DELETE FROM ingestion;');
-       }
-     );
-     return rs.rowsAffected;
-}
+
 
 

@@ -93,7 +93,7 @@ Page {
         }
         visible: false;
         Label{
-         text: "HELLO FROM STATS TABs"   
+         text: "Coming on next realease"   
         }
     }
 }
