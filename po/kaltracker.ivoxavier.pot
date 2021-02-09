@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-07 14:59+0000\n"
+"POT-Creation-Date: 2021-02-09 15:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,19 +37,19 @@ msgstr ""
 msgid "KalTracker"
 msgstr ""
 
-#: ../qml/Main.qml:152
+#: ../qml/Main.qml:189
 msgid "Drink"
 msgstr ""
 
-#: ../qml/Main.qml:152
+#: ../qml/Main.qml:189
 msgid "Food"
 msgstr ""
 
-#: ../qml/Main.qml:180
+#: ../qml/Main.qml:212
 msgid "What type of food or drink?"
 msgstr ""
 
-#: ../qml/Main.qml:195
+#: ../qml/Main.qml:227
 msgid "Save"
 msgstr ""
 

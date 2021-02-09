@@ -53,6 +53,7 @@ function insertIngestion(ingestionType,ingestionDesc){
       return validationMessage;
  }
 
+ /*delete data from table*/
  function deleteAllIngestions(){
   var db = dataBaseFile();
   var rs;
