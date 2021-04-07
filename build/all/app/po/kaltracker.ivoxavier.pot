@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-09 15:18+0000\n"
+"POT-Creation-Date: 2021-04-07 15:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,66 +17,153 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/About.qml:7 ../qml/Main.qml:74 ../qml/Main.qml:89
+#: ../qml/Components/About.qml:7 ../qml/Components/ActionBar/AboutAction.qml:9
+#: ../qml/Components/SaveIngestion.qml:45
+#: ../qml/Components/SaveIngestion.qml:57
 msgid "About"
 msgstr ""
 
-#: ../qml/Main.qml:46
-msgid "Ingestion Stored"
+#: ../qml/Components/ConfigUserProfilePage.qml:30
+msgid "User Profile"
 msgstr ""
 
-#: ../qml/Main.qml:81 ../qml/Records.qml:31
-msgid "History"
+#: ../qml/Components/ConfigUserProfilePage.qml:54
+msgid "Name (optional)"
 msgstr ""
 
-#: ../qml/Main.qml:96
-msgid "Delete"
+#: ../qml/Components/ConfigUserProfilePage.qml:67
+msgid "Age"
 msgstr ""
 
-#: ../qml/Main.qml:111 kaltracker.desktop.in.h:1
+#: ../qml/Components/ConfigUserProfilePage.qml:76
+msgid "Weight"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:85
+msgid "Height"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:95
+msgid "Sex"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:96
+msgid "Men"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:96
+msgid "Woman"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:106
+msgid "Amount of kalories to ingest per day"
+msgstr ""
+
+#: ../qml/Components/CreateTablesDialog.qml:27
+msgid "Preparing Everything For You"
+msgstr ""
+
+#: ../qml/Components/CreateTablesDialog.qml:45
+msgid "Finished"
+msgstr ""
+
+#: ../qml/Components/InitDataWarehousePage.qml:30
+#: ../qml/Components/SaveIngestion.qml:37 kaltracker.desktop.in.h:1
 msgid "KalTracker"
 msgstr ""
 
-#: ../qml/Main.qml:189
-msgid "Drink"
+#: ../qml/Components/InitDataWarehousePage.qml:42
+msgid ""
+"\n"
+"\n"
+"Thank's for installing KalTracker."
 msgstr ""
 
-#: ../qml/Main.qml:189
-msgid "Food"
+#: ../qml/Components/InitDataWarehousePage.qml:46
+msgid ""
+"\n"
+"It was devolped on my spare time."
 msgstr ""
 
-#: ../qml/Main.qml:212
-msgid "What type of food or drink?"
+#: ../qml/Components/InitDataWarehousePage.qml:50
+msgid ""
+"\n"
+"I hope it will be usefull for you."
 msgstr ""
 
-#: ../qml/Main.qml:227
-msgid "Save"
+#: ../qml/Components/InitDataWarehousePage.qml:54
+msgid ""
+"\n"
+"Click in the following button to set your goals."
 msgstr ""
 
-#: ../qml/Records.qml:33
+#: ../qml/Components/InitDataWarehousePage.qml:58
+msgid ""
+"\n"
+"All the data generated is yours to keep.\n"
+"\n"
+msgstr ""
+
+#: ../qml/Components/InitDataWarehousePage.qml:65
+msgid "Click to Config"
+msgstr ""
+
+#: ../qml/Components/Records.qml:30 ../qml/Components/SaveIngestion.qml:51
+msgid "History"
+msgstr ""
+
+#: ../qml/Components/Records.qml:32
 msgid "Back"
 msgstr ""
 
-#: ../qml/Records.qml:38
+#: ../qml/Components/Records.qml:37
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Records.qml:38
+#: ../qml/Components/Records.qml:37
 msgid "Stats"
 msgstr ""
 
-#: ../qml/RemoveDataDialog.qml:9
+#: ../qml/Components/RemoveDataDialog.qml:9
 msgid "Do you want to erase all your data ?"
 msgstr ""
 
-#: ../qml/RemoveDataDialog.qml:23
+#: ../qml/Components/RemoveDataDialog.qml:23
 msgid "Close"
 msgstr ""
 
-#: ../qml/RemoveDataDialog.qml:32
+#: ../qml/Components/RemoveDataDialog.qml:32
 msgid "Done, succesfully removed "
 msgstr ""
 
-#: ../qml/SaveDataDialog.qml:10
+#: ../qml/Components/ResumePage.qml:31
+msgid "userName"
+msgstr ""
+
+#: ../qml/Components/SaveDataDialog.qml:10
 msgid "Operation Result"
+msgstr ""
+
+#: ../qml/Components/SaveIngestion.qml:63
+msgid "Delete"
+msgstr ""
+
+#: ../qml/Components/SaveIngestion.qml:141
+msgid "Drink"
+msgstr ""
+
+#: ../qml/Components/SaveIngestion.qml:141
+msgid "Food"
+msgstr ""
+
+#: ../qml/Components/SaveIngestion.qml:164
+msgid "What type of food or drink?"
+msgstr ""
+
+#: ../qml/Components/SaveIngestion.qml:179
+msgid "Save"
+msgstr ""
+
+#: ../qml/Main.qml:45
+msgid "Ingestion Stored"
 msgstr ""

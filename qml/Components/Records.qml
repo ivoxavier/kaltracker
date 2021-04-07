@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021  Ivo Xavier
+ * 2021  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,14 +15,13 @@
  */
 
 
-import QtQuick 2.7
+import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.0
-import "./js/DataBase.js" as DataBase
-
+import "../js/DataBase.js" as DataBase
 
 
 Page {
@@ -79,6 +78,10 @@ Page {
                 font.family: "Ubuntu Mono"
                 textFormat: TextEdit.PlainText
                 color: theme.palette.normal.fieldText
+                Component.onCompleted: {
+                HelloWorld.sayHello()
+                Sucesso.sayHello()
+                }
             }        
         }
     }
@@ -93,7 +96,7 @@ Page {
         }
         visible: false;
         Label{
-         text: "Coming on next realease"   
+         text: "Coming Soon..."   
         }
     }
 }

@@ -16,9 +16,8 @@ function dataBaseFile() {
 }
 
 
-
  /* DataWarehouse */
-function createTables() {
+function createTable() {
      var db = dataBaseFile();
      try {
      db.transaction(
@@ -53,6 +52,11 @@ function insertIngestion(ingestionType,ingestionDesc){
       return validationMessage;
  }
 
+
+ function createUserProfile(){
+
+}
+
  /*delete data from table*/
  function deleteAllIngestions(){
   var db = dataBaseFile();
@@ -77,11 +81,12 @@ function getAllIngestions(){
                           historyText.text += rsToQML;
                         })()
                     }
-       
-    })
-    
+    }) 
 }
 
+function getUserProfile(){
+  
+}
 
 
 

@@ -11,5 +11,5 @@
     },
     "version": "0.0.1",
     "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
-    "framework" : "ubuntu-sdk-16.04.4"
+    "framework" : "@CLICK_FRAMEWORK@"
 }

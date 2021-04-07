@@ -16,5 +16,6 @@ var quotes = [
 function randomQuote(){
     var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     var randomQuoteString = randomQuote.toString();
+    console.log(randomQuote)
     return randomQuoteString
 } 
