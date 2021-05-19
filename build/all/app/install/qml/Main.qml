@@ -22,8 +22,8 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import QtQuick.LocalStorage 2.0
-import "./js/DataBase.js" as DataBase
+import QtQuick.LocalStorage 2.12
+import "./js/DataBaseTools.js" as DataBase
 import "./js/Quotes.js" as Quotes
 import "./Components"
 import "./Components/ActionBar"
@@ -39,15 +39,17 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    
+    signal initDB()
+
     Component {
         id: ingestionStoredDialog
         SaveDataDialog{msg:i18n.tr("Ingestion Stored"); labelColor:UbuntuColors.green}
     }
 
-    Component {
-        id: aboutDialog
-        About{}
+
+    Component{
+        id: helpUserConfigDialog
+        HelpUserConfigDialog{}
     }
 
     Component {
@@ -56,13 +58,13 @@ MainView {
     }
 
     Component {
-        id: saveIngestion
-        SaveIngestion {}
+        id: newIngestionPage
+        NewIngestion {}
     }
 
     Component {
-        id: initDW
-        InitDataWarehousePage {}
+        id: welcomePage
+        WelcomePage {}
     }
 
     Component{
@@ -85,6 +87,7 @@ MainView {
         CreateTablesDialog{}
     }
 
+
     Settings{
         id: appSettings
         property bool isCleanInstall: true
@@ -100,7 +103,7 @@ MainView {
 
     Component.onCompleted: { /* check on pageComplete */
         if (appSettings.isCleanInstall){
-            mainStack.push(initDW);
+            mainStack.push(welcomePage);
         } else {
             mainStack.push(resumePage);
             function isCleanInstallStatus(){

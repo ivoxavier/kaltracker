@@ -17,25 +17,25 @@
 
 import QtQuick 2.9
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.0
-import "../js/DataBase.js" as DataBase
+
 
 
 Page {
-    id: initDataWarehousePage
-    objectName: 'InitDataWarehousePage'    
+    id: welcomePage
+    objectName: 'WelcomePage'    
     header: PageHeader {
         title: i18n.tr("KalTracker")
     }
 
+    
     Grid {
 
         anchors.fill: parent
         columns:1
-        rows: 6
-        topPadding: initDataWarehousePage.header.height
+        rows:9
+        topPadding: welcomePage.header.height
         horizontalItemAlignment: Grid.AlignHCenter
 
         Text{
@@ -44,6 +44,18 @@ Page {
 
         Text{
             text:i18n.tr("\nIt was devolped on my spare time.")
+        }
+
+        Text{
+            text:i18n.tr("\nIt calculates your calories based on an equation.")
+        }
+
+        Text{
+            text:i18n.tr("\nYou can pick from a list your foods and drinks.")
+        }
+
+        Text{
+            text:i18n.tr("\nOr you can your own special meals.")
         }
 
         Text{
@@ -59,13 +71,11 @@ Page {
         }
 
         Button{
-            id: createTablesButton
-            width: initDataWarehousePage.width
+            id: clickToConfigButton
+            width: welcomePage.width
             color:"green"
             text: i18n.tr("Click to Config")
             onClicked:{
-                //appSettings.isCleanInstall = false
-                console.log("isCleanInstall = false")
                 mainStack.pop()
                 mainStack.push(configUserProfilePage)
             }

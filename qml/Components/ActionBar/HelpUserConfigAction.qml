@@ -20,9 +20,8 @@ import Ubuntu.Components.Popups 1.3
 
 
 Action{
-        id: infoApp
-        iconName: "info"
-        text: i18n.tr("About")
-        onTriggered: PopupUtils.open(aboutDialog)
+        iconName: "help"
+        text: i18n.tr("Help")
+        onTriggered: PopupUtils.open(helpUserConfigDialog)
 }
 

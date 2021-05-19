@@ -17,9 +17,9 @@
 import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
-import QtQuick.LocalStorage 2.0
+import QtQuick.LocalStorage 2.12
 import QtQuick.Layouts 1.3
-import "../js/DataBase.js" as DataBase
+import "../js/DataBaseTools.js" as DataBase
 
 Dialog {
     id: createTablesDialog

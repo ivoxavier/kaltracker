@@ -18,11 +18,17 @@ import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
 
+Dialog {
+       id: aboutActivityLevel
+       title: i18n.tr("Tips")
+       text: i18n.tr("Select your main goal. Then enter your data.\n
+        Very Light include: driving, typing, sewing, ironing, cooking.\n
+        Light include: walking 5 km, house cleaning, golf.\n
+        Moderate include: walking 6 km, dancing, tennis, cycling.\n
+        Heavy include: running, soccer, basketball, football")
 
-Action{
-        id: infoApp
-        iconName: "info"
-        text: i18n.tr("About")
-        onTriggered: PopupUtils.open(aboutDialog)
+       Button {
+           text: "Back"
+           onClicked: PopupUtils.close(aboutActivityLevel)
+       }
 }
-

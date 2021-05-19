@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 15:12+0000\n"
+"POT-Creation-Date: 2021-04-23 20:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,84 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Components/About.qml:7 ../qml/Components/ActionBar/AboutAction.qml:9
-#: ../qml/Components/SaveIngestion.qml:45
-#: ../qml/Components/SaveIngestion.qml:57
+#: ../qml/Components/ActionBar/AboutAction.qml:25
 msgid "About"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:30
+#: ../qml/Components/ActionBar/HelpUserConfigAction.qml:24
+msgid "Help"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:33
 msgid "User Profile"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:54
-msgid "Name (optional)"
+msgid "No Goal"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:67
-msgid "Age"
+#: ../qml/Components/ConfigUserProfilePage.qml:68
+msgid " based on Mifflin-St Jeor equation"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:76
-msgid "Weight"
+#: ../qml/Components/ConfigUserProfilePage.qml:74
+msgid "Name"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:85
+msgid "Age"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:94
+msgid "Weight"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:103
 msgid "Height"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:95
+#: ../qml/Components/ConfigUserProfilePage.qml:114
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:96
+#: ../qml/Components/ConfigUserProfilePage.qml:115
 msgid "Men"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:96
+#: ../qml/Components/ConfigUserProfilePage.qml:115
 msgid "Woman"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:106
-msgid "Amount of kalories to ingest per day"
+#: ../qml/Components/ConfigUserProfilePage.qml:140
+msgid "Very Light"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:141
+msgid "Light"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:142
+msgid "Moderate"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:143
+msgid "Heavy"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:202
+msgid "Loose Weight"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:210
+msgid "Maintain Weight"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:219
+msgid "Gain Weight"
+msgstr ""
+
+#: ../qml/Components/ConfigUserProfilePage.qml:247
+msgid "Calculate"
 msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:27
@@ -67,48 +105,31 @@ msgstr ""
 msgid "Finished"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:30
-#: ../qml/Components/SaveIngestion.qml:37 kaltracker.desktop.in.h:1
-msgid "KalTracker"
+#: ../qml/Components/FoodsTemplate.qml:33
+msgid "Desc: "
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:42
-msgid ""
-"\n"
-"\n"
-"Thank's for installing KalTracker."
+#: ../qml/Components/HelpUserConfigDialog.qml:23
+msgid "Tips"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:46
-msgid ""
-"\n"
-"It was devolped on my spare time."
+#: ../qml/Components/HelpUserConfigDialog.qml:24
+msgid "Select your main goal. Then enter your data.\n"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:50
-msgid ""
-"\n"
-"I hope it will be usefull for you."
+#: ../qml/Components/NewIngestion.qml:42
+msgid "New Ingestion"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:54
-msgid ""
-"\n"
-"Click in the following button to set your goals."
+#: ../qml/Components/NewIngestion.qml:50
+msgid "Food"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:58
-msgid ""
-"\n"
-"All the data generated is yours to keep.\n"
-"\n"
+#: ../qml/Components/NewIngestion.qml:55
+msgid "Drink"
 msgstr ""
 
-#: ../qml/Components/InitDataWarehousePage.qml:65
-msgid "Click to Config"
-msgstr ""
-
-#: ../qml/Components/Records.qml:30 ../qml/Components/SaveIngestion.qml:51
+#: ../qml/Components/Records.qml:30
 msgid "History"
 msgstr ""
 
@@ -136,34 +157,92 @@ msgstr ""
 msgid "Done, succesfully removed "
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:31
-msgid "userName"
-msgstr ""
-
 #: ../qml/Components/SaveDataDialog.qml:10
 msgid "Operation Result"
 msgstr ""
 
-#: ../qml/Components/SaveIngestion.qml:63
-msgid "Delete"
+#: ../qml/Components/WelcomePage.qml:29 kaltracker.desktop.in.h:1
+msgid "KalTracker"
 msgstr ""
 
-#: ../qml/Components/SaveIngestion.qml:141
-msgid "Drink"
+#: ../qml/Components/WelcomePage.qml:42
+msgid ""
+"\n"
+"\n"
+"Thank's for installing KalTracker."
 msgstr ""
 
-#: ../qml/Components/SaveIngestion.qml:141
-msgid "Food"
+#: ../qml/Components/WelcomePage.qml:46
+msgid ""
+"\n"
+"It was devolped on my spare time."
 msgstr ""
 
-#: ../qml/Components/SaveIngestion.qml:164
-msgid "What type of food or drink?"
+#: ../qml/Components/WelcomePage.qml:50
+msgid ""
+"\n"
+"It calculates your calories based on an equation."
 msgstr ""
 
-#: ../qml/Components/SaveIngestion.qml:179
-msgid "Save"
+#: ../qml/Components/WelcomePage.qml:54
+msgid ""
+"\n"
+"You can pick from a list your foods and drinks."
 msgstr ""
 
-#: ../qml/Main.qml:45
+#: ../qml/Components/WelcomePage.qml:58
+msgid ""
+"\n"
+"Or you can your own special meals."
+msgstr ""
+
+#: ../qml/Components/WelcomePage.qml:62
+msgid ""
+"\n"
+"I hope it will be usefull for you."
+msgstr ""
+
+#: ../qml/Components/WelcomePage.qml:66
+msgid ""
+"\n"
+"Click in the following button to set your goals."
+msgstr ""
+
+#: ../qml/Components/WelcomePage.qml:70
+msgid ""
+"\n"
+"All the data generated is yours to keep.\n"
+"\n"
+msgstr ""
+
+#: ../qml/Components/WelcomePage.qml:77
+msgid "Click to Config"
+msgstr ""
+
+#: ../qml/Main.qml:46
 msgid "Ingestion Stored"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:89 ../qml/js/DataBaseToolsBackUp.js:93
+#: ../qml/js/UpdateDB.js:93
+msgid "'s Dashboard"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:106 ../qml/js/DataBaseToolsBackUp.js:110
+#: ../qml/js/UpdateDB.js:110
+msgid "Goal"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:128 ../qml/js/DataBaseTools.js:130
+#: ../qml/js/DataBaseToolsBackUp.js:134 ../qml/js/UpdateDB.js:134
+msgid "Foods"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:156 ../qml/js/DataBaseTools.js:173
+#: ../qml/js/DataBaseToolsBackUp.js:165 ../qml/js/UpdateDB.js:163
+msgid "Remaining"
+msgstr ""
+
+#: ../qml/js/DataBaseToolsBackUp.js:183 ../qml/js/UpdateDB.js:180
+msgid "Consumed"
 msgstr ""
