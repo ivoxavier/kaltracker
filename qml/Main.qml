@@ -23,6 +23,7 @@ import Ubuntu.Components.ListItems 1.3 as ListItem
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtQuick.LocalStorage 2.12
+import io.thp.pyotherside 1.5
 import "./js/DataBaseTools.js" as DataBase
 import "./js/Quotes.js" as Quotes
 import "./Components"
@@ -46,6 +47,11 @@ MainView {
         SaveDataDialog{msg:i18n.tr("Ingestion Stored"); labelColor:UbuntuColors.green}
     }
 
+
+    Component{
+        id: exportDataPage
+        ExportDataPage{}
+    }
 
     Component{
         id: helpUserConfigDialog

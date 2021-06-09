@@ -200,6 +200,34 @@ function getUserDailyLogIngestionFoods(){
 }
 
 
+const allIngestions = 'SELECT Ingestion.dte AS dte, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
+FROM Ingestion \
+JOIN User ON Ingestion.idUser = User.idUser'
+
+function getAllIngestions(){
+  var db = createSQLContainer();
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(allIngestions)
+                   for (var i = 0; i < results.rows.length; i++) { 
+                     (function(){
+                       var j = i;
+                       var rsToQML = results.rows.item(j).dte + ','+ results.rows.item(j).type + ',' + results.rows.item(j).name + ',' + results.rows.item(j).kcal + ',';
+                       exportData.queryToPy += rsToQML
+                     })()
+                 }
+ }) 
+}
+
+
+
+
+
+
+
+
+
+
+
    /* Data Saving Start */
   //stores the data given by user for userProfile
 const saveUserProfile = 'INSERT INTO User (\

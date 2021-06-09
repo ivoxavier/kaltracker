@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-23 20:25+0000\n"
+"POT-Creation-Date: 2021-06-09 16:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,6 +103,20 @@ msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:45
 msgid "Finished"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:37
+msgid "Export Data"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:42
+msgid ""
+"A file in csv is created in /home/phablet/.local/kaltracker.ivoxavier/"
+"Databases"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:75
+msgid "Export"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:33
@@ -219,30 +233,28 @@ msgstr ""
 msgid "Click to Config"
 msgstr ""
 
-#: ../qml/Main.qml:46
+#: ../qml/Main.qml:47
 msgid "Ingestion Stored"
 msgstr ""
 
 #: ../qml/js/DataBaseTools.js:89 ../qml/js/DataBaseToolsBackUp.js:93
-#: ../qml/js/UpdateDB.js:93
 msgid "'s Dashboard"
 msgstr ""
 
 #: ../qml/js/DataBaseTools.js:106 ../qml/js/DataBaseToolsBackUp.js:110
-#: ../qml/js/UpdateDB.js:110
 msgid "Goal"
 msgstr ""
 
 #: ../qml/js/DataBaseTools.js:128 ../qml/js/DataBaseTools.js:130
-#: ../qml/js/DataBaseToolsBackUp.js:134 ../qml/js/UpdateDB.js:134
+#: ../qml/js/DataBaseToolsBackUp.js:134
 msgid "Foods"
 msgstr ""
 
 #: ../qml/js/DataBaseTools.js:156 ../qml/js/DataBaseTools.js:173
-#: ../qml/js/DataBaseToolsBackUp.js:165 ../qml/js/UpdateDB.js:163
+#: ../qml/js/DataBaseToolsBackUp.js:165
 msgid "Remaining"
 msgstr ""
 
-#: ../qml/js/DataBaseToolsBackUp.js:183 ../qml/js/UpdateDB.js:180
+#: ../qml/js/DataBaseToolsBackUp.js:183
 msgid "Consumed"
 msgstr ""

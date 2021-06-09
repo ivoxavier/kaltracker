@@ -1,4 +1,7 @@
 {
-    "policy_groups": [],
-    "policy_version": 16.04
+    "policy_groups": ["content_exchange"],
+    "read_path": ["@{HOME}/Documents/"],
+    "write_path": ["@{HOME}/Documents/"],
+    "policy_version": 16.04,
+    "template": "unconfined"
 }

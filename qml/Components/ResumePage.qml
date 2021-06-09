@@ -23,7 +23,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 
 import "../js/DataBaseTools.js" as DataBase
-import "../js/UpdateDB.js" as UpdateDB
 import "./ActionBar"
 
 Page{
@@ -40,9 +39,9 @@ Page{
         trailingActionBar.actions: [
             Action{
                 id: iconTest
-                iconName: "help"
+                iconName: "save-to"
                 onTriggered: {
-    
+                    mainStack.push(exportDataPage)
                 }
             }
         ]
