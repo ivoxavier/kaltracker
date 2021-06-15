@@ -14,17 +14,16 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  '''
 import csv
-import sqlite3
 import os
+
 
 #return a message to confirm py has been loaded
 def moduleState():
     return 'Python Module Imported'
 
-full_path = os.path.expanduser("~")
-path = '%s/Documents/kaltracker_exports' % full_path
-file_name = '%s/Documents/kaltracker_exports/kaltracker_backup.csv' % full_path
-device_type = None
+
+mobile_path = '/home/phablet/Documents/kaltracker_exports'
+file_name = '/home/phablet/Documents/kaltracker_exports/kaltracker_backup.csv'
 access_rights = 0o755
 
 
@@ -32,9 +31,9 @@ access_rights = 0o755
 #check if path exists
 path_exists = None
 def createPath():
-    os.mkdir(path, access_rights)
+    os.mkdir(mobile_path, access_rights)
 
-if (os.path.isdir(path)):
+if (os.path.isdir(mobile_path)):
     path_exists = True
 else:
     path_exists = False

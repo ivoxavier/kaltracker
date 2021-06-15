@@ -265,6 +265,8 @@ Page {
                     DataBase.dropTables()
                     DataBase.createTables()
                     DataBase.createUserProfile(userName,userAge,userSex,userWeight,userHeight,userActivityLevel,totalUserKaloriesDayTargetUserGoal)
+                    userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
+                    userSettings.userConfigsUserName = userName
                     mainStack.pop()
                     PopupUtils.open(createTablesDialog)
                     

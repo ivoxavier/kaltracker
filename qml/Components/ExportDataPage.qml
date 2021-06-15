@@ -39,7 +39,7 @@ Page{
 
     TextEdit {
         id: labelInfo
-        text: i18n.tr("A file in csv is created in /home/phablet/.local/kaltracker.ivoxavier/Databases")
+        text: i18n.tr("A file in csv is created in /home/phablet/Documents/kaltracker.ivoxavier/Databases")
         anchors.top: exportData.header.bottom
         wrapMode: TextEdit.Wrap
         width: parent.width

@@ -94,11 +94,21 @@ MainView {
     }
 
 
-    Settings{
+    Settings {
         id: appSettings
+        category: "app_configs"
+
         property bool isCleanInstall: true
     }
-    
+                                                    
+    Settings {
+        id: userSettings
+        category: "user_configs"
+
+        property int userConfigsGoal
+        property string userConfigsUserName
+    }
+        
     PageStack{
         id: mainStack
         onCurrentPageChanged: {

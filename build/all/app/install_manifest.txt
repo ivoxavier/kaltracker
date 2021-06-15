@@ -3,7 +3,6 @@
 //assets/assets.qrc
 //assets/logo.svg
 //qml/js/Quotes.js
-//qml/js/DataBaseToolsBackUp.js
 //qml/js/KaloriesCalculator.js
 //qml/js/DataBaseTools.js
 //qml/js/ValidationTools.js

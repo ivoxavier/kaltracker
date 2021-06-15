@@ -30,12 +30,11 @@ Page{
     objectName: 'ResumePage'
     
     property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
-    property string dashboardUserGoal : DataBase.getUserGoal()
     property string dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
     
 
     header: PageHeader {
-        title: DataBase.getUserName()
+        title: userSettings.userConfigsUserName + i18n.tr("'s Dashboard");
         trailingActionBar.actions: [
             Action{
                 id: iconTest
@@ -91,7 +90,7 @@ Page{
                 
                 Label{
                     id: dashboardUserGoal
-                    text: dashboardUserGoal
+                    text: userSettings.userConfigsGoal + "\n" + i18n.tr("Goal");
                 }
 
                 Label{
@@ -170,7 +169,7 @@ Page{
         }
     }
 
-Component.onDestruction:{
+ Component.onDestruction:{
     console.log("byebye")  
-}
+ }
 }

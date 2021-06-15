@@ -75,40 +75,6 @@ function createTables() {
 }
 
 //*populate Components*//
-//resumePage header title
-const populateUserName = 'SELECT name FROM User';
-
-function getUserName(){
-  var db = createSQLContainer();
-  db.transaction(function (tx) {
-                   var results = tx.executeSql(populateUserName)
-                   for (var i = 0; i < results.rows.length; i++) {
-                     (function(){
-                       var j = i;
-                       var rsToQML = results.rows.item(j).name
-                       resumePage.header.title = rsToQML + i18n.tr("'s Dashboard");
-                     })()
-                    }
- }) 
-}
-
-//resumePage Dashboard Goal Label
-const populateUserGoal = 'SELECT goal FROM User';
-
-function getUserGoal(){
-  var db = createSQLContainer();
-  db.transaction(function (tx) {
-                   var results = tx.executeSql(populateUserGoal)
-                   for (var i = 0; i < results.rows.length; i++) {
-                     (function(){
-                       var j = i;
-                       var rsToQML = results.rows.item(j).goal
-                       dashboardUserGoal.text = rsToQML  + "\n" + i18n.tr("Goal");
-                      console.log("User Goal IS OK")
-                     })()
-                    }
- }) 
-}
 
 //resumePage Dashboard Foods Daily Ingestion
 const populateUserDayKaloriesIngested = 'SELECT SUM(kcal) AS totalKcal \
@@ -144,7 +110,6 @@ WHERE Ingestion.dte == date("now")) \
 SELECT dif FROM Subtraction';
 
 function getUserKaloriesIngestionMetric(){
-  var share
   function hackToMetricLabel(){
     var db = createSQLContainer();
     db.transaction(function (tx) {
@@ -191,8 +156,8 @@ function getUserDailyLogIngestionFoods(){
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
+                       userDailyLogBook.clear()
                        var rsToQML = results.rows.item(j).dte + ' '+ results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + '\n';
-                       //userDailyLogBook.text = " "; 
                        userDailyLogBook.text += rsToQML;
                      })()
                  }
