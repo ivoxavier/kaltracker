@@ -48,11 +48,30 @@ Page{
         //AboutAction{}
     }
 
+    //trying to improve refresh on devices with less CPU Power
+    Timer{
+        id: timer
+        repeat: false
+    }        
+
     Connections{
         target: root
         onInitDB:{
-            console.log("initDB signal was catched")
+            console.log("refreshing dashboard")
             forceUpdate()
+        }
+        onRefreshListModel:{
+            console.log("cleaning dailyIngestion listModel")
+            dailyIngestions.clear()
+
+            function delayRefresh(delayMiliseconds, cb) {
+                    timer.interval = delayMiliseconds;
+                    timer.triggered.connect(cb);
+                    timer.start();
+        }
+            delayRefresh(1000, function () {})  
+
+            DataBase.getUserDailyLogIngestionFoods()
         }
     }
 
@@ -60,9 +79,7 @@ Page{
         var update_DailyIngestion = DataBase.getUserKaloriesIngestedDuringDay()
         var update_userMetric = DataBase.getUserKaloriesIngestionMetric()
         
-        var update_logBook = DataBase.getUserDailyLogIngestionFoods()
         dashboardDailyIngestion = update_DailyIngestion
-        userDailyLogBook.text = update_logBook
         dashboardUserMetric = update_userMetric
     }
 
@@ -135,25 +152,14 @@ Page{
 
             ListModel {
                 id: dailyIngestions
+                Component.onCompleted: DataBase.getUserDailyLogIngestionFoods()
             }
 
-            Component {
-                id: ingestionsDelegate
-                Row{
-                    spacing: units.gu(2)
-                    Text{text: name}
-                    Text{text: kcal}
-                }
-            }
-
-            ListView{
-                anchors.fill: parent
+            Repeater{
                 model: dailyIngestions
-                delegate: ingestionsDelegate
+                    Text{text: kcal + ' ' + name + ' ' + index}                    
             }
-
-
-            
+        
             
             /*TextEdit {
                 id: userDailyLogBook

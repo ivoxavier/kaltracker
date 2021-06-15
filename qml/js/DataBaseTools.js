@@ -142,9 +142,6 @@ function getUserDailyLogIngestionFoods(){
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       //userDailyLogBook.clear()
-                       var rsToQML = results.rows.item(j).dte + ' '+ results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + '\n';
-                       //userDailyLogBook.text += rsToQML;
                        dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name})
                      })()
                  }

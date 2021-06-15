@@ -27,7 +27,6 @@ import QtQuick.XmlListModel 2.7
 import QtQuick 2.12 as RefreshResumePage
 import "../js/DataBaseTools.js" as DataBase
 import "../js/Quotes.js" as Quotes
-//import "./Components"
 
 
     
@@ -99,8 +98,7 @@ Page {
                         console.log("newIngestion: " + name)
                         DataBase.saveNewIngestion(name,type,kcal)
                         root.initDB()
-                        //mainStack.pop()
-                        //mainStack.push(resumePage)
+                        root.refreshListModel()
                     }
                     onPressAndHold:{
                         PopupUtils.open(foodsTemplate)

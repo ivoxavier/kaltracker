@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 13:16+0000\n"
+"POT-Creation-Date: 2021-06-15 16:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,15 +131,15 @@ msgstr ""
 msgid "Select your main goal. Then enter your data.\n"
 msgstr ""
 
-#: ../qml/Components/NewIngestion.qml:42
+#: ../qml/Components/NewIngestion.qml:41
 msgid "New Ingestion"
 msgstr ""
 
-#: ../qml/Components/NewIngestion.qml:50
+#: ../qml/Components/NewIngestion.qml:49
 msgid "Food"
 msgstr ""
 
-#: ../qml/Components/NewIngestion.qml:55
+#: ../qml/Components/NewIngestion.qml:54
 msgid "Drink"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "'s Dashboard"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:95
+#: ../qml/Components/ResumePage.qml:112
 msgid "Goal"
 msgstr ""
 
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Click to Config"
 msgstr ""
 
-#: ../qml/Main.qml:47
+#: ../qml/Main.qml:51
 msgid "Ingestion Stored"
 msgstr ""
 

@@ -40,7 +40,11 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    //required to update dashboard after newIngestion
     signal initDB()
+
+    //required to refresh dailyIngestion ListModel
+    signal refreshListModel()
 
     Component {
         id: ingestionStoredDialog
@@ -108,7 +112,7 @@ MainView {
         property int userConfigsGoal
         property string userConfigsUserName
     }
-        
+
     PageStack{
         id: mainStack
         onCurrentPageChanged: {
