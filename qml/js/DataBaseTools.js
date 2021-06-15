@@ -110,20 +110,6 @@ WHERE Ingestion.dte == date("now")) \
 SELECT dif FROM Subtraction';
 
 function getUserKaloriesIngestionMetric(){
-  function hackToMetricLabel(){
-    var db = createSQLContainer();
-    db.transaction(function (tx) {
-                   var results = tx.executeSql(populateUserGoal)
-                   for (var i = 0; i < results.rows.length; i++) {
-                     (function(){
-                       var j = i;
-                       var rsToQML = results.rows.item(j).goal
-                       resumePage.dashboardUserMetric = rsToQML + "\n" + i18n.tr("Remaining");
-                       console.log("DailyIngested " + rsToQML)
-                     })()
-                    }
-     })
-}
 var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(populateUserKaloriesIngestionMetric)
@@ -132,8 +118,8 @@ var db = createSQLContainer();
                         var j = i;
                         var rsToQML = results.rows.item(j).dif
                         if(rsToQML === null){
-                          console.log("Query === "+rsToQML+" no ingestions, probably fresh install")
-                          hackToMetricLabel()                        
+                          console.log("Query === "+rsToQML+" no ingestions yet")
+                          dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
                         }else{
                           dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Remaining");
                         }
@@ -158,7 +144,8 @@ function getUserDailyLogIngestionFoods(){
                        var j = i;
                        //userDailyLogBook.clear()
                        var rsToQML = results.rows.item(j).dte + ' '+ results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + '\n';
-                       userDailyLogBook.text += rsToQML;
+                       //userDailyLogBook.text += rsToQML;
+                       dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name})
                      })()
                  }
  }) 

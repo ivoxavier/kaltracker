@@ -31,7 +31,8 @@ Page{
     
     property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
     property string dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
-    
+    property string name
+    property int kcal
 
     header: PageHeader {
         title: userSettings.userConfigsUserName + i18n.tr("'s Dashboard");
@@ -131,7 +132,30 @@ Page{
             spacing : units.gu(2)
             topPadding: units.gu(2)
 
-            TextEdit {
+
+            ListModel {
+                id: dailyIngestions
+            }
+
+            Component {
+                id: ingestionsDelegate
+                Row{
+                    spacing: units.gu(2)
+                    Text{text: name}
+                    Text{text: kcal}
+                }
+            }
+
+            ListView{
+                anchors.fill: parent
+                model: dailyIngestions
+                delegate: ingestionsDelegate
+            }
+
+
+            
+            
+            /*TextEdit {
                 id: userDailyLogBook
                 text: DataBase.getUserDailyLogIngestionFoods()
                 wrapMode: TextEdit.Wrap
@@ -140,7 +164,7 @@ Page{
                 textFormat: TextEdit.PlainText
                 color: theme.palette.normal.fieldText
                 leftPadding: units.gu(1)
-            } 
+            }*/ 
         }
     }
 

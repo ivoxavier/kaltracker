@@ -108,15 +108,7 @@ MainView {
         property int userConfigsGoal
         property string userConfigsUserName
     }
-
-    Settings {
-        id: userMetricsSettings
-        category: "user_metrics_configs"
-
-        property int kaloriesIngestedDuringDay: DataBase.getUserKaloriesIngestedDuringDay()
-        property int kaloriesMetric : DataBase.getUserKaloriesIngestionMetric()
-    }
-    
+        
     PageStack{
         id: mainStack
         onCurrentPageChanged: {
