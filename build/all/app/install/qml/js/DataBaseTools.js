@@ -1,20 +1,14 @@
-/*
-KalTracker DataBase Tools
-*/
+/* KalTracker DataBase Tools */
 
 function createSQLContainer() {
   return LocalStorage.openDatabaseSync("kaltracker_db", "0.2", "keepsYourData", 2000000);
 }
 
-/*date method's */
-var longFormatDate = new Date();
-function shortDateFormateOnString(date){
-   var dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
-   var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
-   var yyyy = date.getFullYear();
-   return (yyyy + "-" + MM + "-" + dd);
-}
-
+/*date and time*/
+var longDate = new Date();
+var localCountry = Qt.locale()
+var currentDate = longDate.toLocaleString(localCountry, 'yyyy-MM-dd')
+var currentTime = longDate.toLocaleString(localCountry, 'hh:mm')
 
  /* DataWarehouse Start*/
 
@@ -56,10 +50,10 @@ const create_ingestionTableStatement = 'CREATE TABLE Ingestion(\
     name	TEXT,\
     type	INTEGER,\
     kcal	INTEGER,\
-    dte  TEXT, \
+    ingestionDate  TEXT, \
+    ingestionTime  TEXT, \
     FOREIGN KEY(idUser) REFERENCES User(idUser), \
     PRIMARY KEY(idIngestion))';
-
 
 const createTasks = [create_userTableStatement, create_ingestionTableStatement];
 
@@ -79,7 +73,7 @@ function createTables() {
 //resumePage Dashboard Foods Daily Ingestion
 const populateUserDayKaloriesIngested = 'SELECT SUM(kcal) AS totalKcal \
 FROM Ingestion \
-WHERE dte == date("now")';
+WHERE ingestionDate == date("now")';
 
 function getUserKaloriesIngestedDuringDay(){
   var db = createSQLContainer();
@@ -106,7 +100,7 @@ const populateUserKaloriesIngestionMetric = 'WITH Subtraction AS \
 (SELECT (User.goal - SUM(Ingestion.kcal)) AS dif \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
-WHERE Ingestion.dte == date("now")) \
+WHERE Ingestion.ingestionDate == date("now")) \
 SELECT dif FROM Subtraction';
 
 function getUserKaloriesIngestionMetric(){
@@ -121,7 +115,7 @@ var db = createSQLContainer();
                           console.log("Query === "+rsToQML+" no ingestions yet")
                           dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
                         }else{
-                          dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Remaining");
+                          dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Left");
                         }
                       })()
                     }
@@ -130,10 +124,10 @@ var db = createSQLContainer();
 
 
 //resumePage log book view
-const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.dte AS dte, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
+const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
-WHERE Ingestion.dte == date("now")';
+WHERE Ingestion.ingestionDate == date("now")';
 
 function getUserDailyLogIngestionFoods(){
   var db = createSQLContainer();
@@ -142,7 +136,7 @@ function getUserDailyLogIngestionFoods(){
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name})
+                       dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name, "ingestionDate": results.rows.item(j).ingestionDate, "ingestionTime": results.rows.item(j).ingestionTime})
                      })()
                  }
  }) 
@@ -200,17 +194,17 @@ function createUserProfile(userName,userAge,userSex,userWeight,userHeight,userAc
 
 
 const saveNewIngestionStatement = 'INSERT INTO Ingestion (\
-  idUser, name, type, kcal, dte)\
-  VALUES (?,?,?,?,?)';
+  idUser, name, type, kcal, ingestionDate, ingestionTime)\
+  VALUES (?,?,?,?,?,?)';
 
 function saveNewIngestion(name,type,kcal){          
   var db = createSQLContainer();
   console.log("DataBase.saveNewIngestion : connected to SQL_CONTAINER");
   var validationMessage = "";
-  var dateFormatted = shortDateFormateOnString(longFormatDate);
+  
   
   db.transaction(function(tx) {
-      var rs = tx.executeSql(saveNewIngestionStatement, [1, name, type, kcal, dateFormatted]);
+      var rs = tx.executeSql(saveNewIngestionStatement, [1, name, type, kcal, currentDate, currentTime]);
       if (rs.rowsAffected > 0) {
         validationMessage = "DataBase.saveNewIngestion : OK";
       } else {

@@ -51,6 +51,15 @@ MainView {
         SaveDataDialog{msg:i18n.tr("Ingestion Stored"); labelColor:UbuntuColors.green}
     }
 
+    Component{
+        id: settingsPage
+        SettingsPage{}
+    }
+
+    Component{
+        id: userAccountPage
+        UserAccountPage{}
+    }
 
     Component{
         id: exportDataPage
@@ -103,6 +112,11 @@ MainView {
         category: "app_configs"
 
         property bool isCleanInstall: true
+        property string defaultHeaderColor
+
+
+        
+
     }
                                                     
     Settings {
@@ -111,6 +125,10 @@ MainView {
 
         property int userConfigsGoal
         property string userConfigsUserName
+        property int userConfigsHeight
+        property int userConfigsWeight
+        property string userConfigsSex
+        property int userConfigsAge
     }
 
     PageStack{

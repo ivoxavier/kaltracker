@@ -20,136 +20,136 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <food>
                 <name>One chicken leg</name>
                 <kcal>81</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>One cow steak</name>
                 <kcal>250</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>One turkey steak</name>
                 <kcal>152</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Meatless lasagna with vegetables</name>
                 <kcal>330</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Cheeseham</name>
                 <kcal>342</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Roman calzone</name>
                 <kcal>641</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Gamberi calzone</name>
                 <kcal>497</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Garlic bread</name>
                 <kcal>81</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Roast chicken breast</name>
                 <kcal>164</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Soy Almondegas</name>
                 <kcal>183</kcal>
-                <desc>Just a chicken leg</desc>
                 <type>Food</type>
+                <desc>Just a chicken leg</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Whooper (Burguer King)</name>
                 <kcal>667</kcal>
-                <desc>With no french fries</desc>
                 <type>Food</type>
+                <desc>With no french fries</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Whooper vegetal (Burguer King)</name>
                 <kcal>540</kcal>
-                <desc>With no french fries</desc>
                 <type>Food</type>
+                <desc>With no french fries</desc>
             </food>
         </item>
         <item>
             <food>
                 <name>Big Mac (McDonald's)</name>
                 <kcal>257</kcal>
-                <desc>With no french fries</desc>
                 <type>Food</type>
+                <desc>With no french fries</desc>
             </food>
         </item>
         <item>
             <drink>
                 <name>Coca Cola</name>
                 <kcal>100</kcal>
-                <desc>Just on bottle</desc>
                 <type>Drink</type>
+                <desc>Just on bottle</desc>
             </drink>
         </item>
         <item>
             <drink>
                 <name>Pepsi</name>
                 <kcal>100</kcal>
-                <desc>Just on bottle</desc>
                 <type>Drink</type>
+                <desc>Just on bottle</desc>
             </drink>
         </item>
         <item>
             <drink>
                 <name>Coca Cola Zero</name>
                 <kcal>90</kcal>
-                <desc>Just on bottle</desc>
                 <type>Drink</type>
+                <desc>Just on bottle</desc>
             </drink>
         </item>
         <item>
             <drink>
                 <name>Pepsi Zero</name>
                 <kcal>90</kcal>
-                <desc>Just on bottle</desc>
                 <type>Drink</type>
+                <desc>Just on bottle</desc>
             </drink>
         </item>
     </foods>

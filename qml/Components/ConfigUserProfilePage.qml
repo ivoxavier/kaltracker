@@ -267,6 +267,10 @@ Page {
                     DataBase.createUserProfile(userName,userAge,userSex,userWeight,userHeight,userActivityLevel,totalUserKaloriesDayTargetUserGoal)
                     userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
                     userSettings.userConfigsUserName = userName
+                    userSettings.userConfigsHeight = userHeight
+                    userSettings.userConfigsWeight = userWeight
+                    userSettings.userConfigsAge = userAge
+                    userSettings.userConfigsSex = userSex
                     mainStack.pop()
                     PopupUtils.open(createTablesDialog)
                     

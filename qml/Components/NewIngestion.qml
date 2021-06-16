@@ -72,7 +72,7 @@ Page {
             XmlRole { name: "name"; query: "name/string()" }
             XmlRole { name: "kcal"; query: "kcal/string()" }
             XmlRole { name: "desc"; query: "desc/string()" }
-            XmlRole { name: "type"; query: "desc/string()" }
+            XmlRole { name: "type"; query: "type/string()" }
     }
     
     ScrollView{

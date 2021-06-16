@@ -16,11 +16,13 @@
 //qml/Components/ActionBar/AboutAction.qml
 //qml/Components/ActionBar/HelpUserConfigAction.qml
 //qml/Components/RemoveDataDialog.qml
+//qml/Components/UserAccountPage.qml
 //qml/Components/ExportDataPage.qml
 //qml/Components/HelpUserConfigDialog.qml
 //qml/Components/NewIngestion.qml
 //qml/Components/FoodsTemplate.qml
 //qml/Components/Records.qml
 //qml/Components/SaveDataDialog.qml
+//qml/Components/SettingsPage.qml
 //qml/img/kaltrackerBrand.png
 //kaltracker.desktop

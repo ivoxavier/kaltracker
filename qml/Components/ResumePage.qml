@@ -32,6 +32,8 @@ Page{
     property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
     property string dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
     property string name
+    property string ingestionDate
+    property string ingestionTime
     property int kcal
 
     header: PageHeader {
@@ -77,22 +79,22 @@ Page{
 
         Label{
             id: topPanelLabel
-            text: " Daily Ingestion"
+            text: i18n.tr(" Daily Ingestion")
             font.bold: true 
-            anchors{
-                top: parent.top
-                left: parent.left
-            }
+            
+            anchors.horizontalCenter: parent.horizontalCenter
+            
         }
 
         Column{
             anchors.top: topPanelLabel.bottom
+            anchors.right: resumePage.width
+            width: resumePage.width
             topPadding: units.gu(2)
-            leftPadding: (resumePage.width / 2) / 2
 
             Row{
                 spacing: units.gu(2)
-                
+                anchors.horizontalCenter: parent.horizontalCenter
                 Label{
                     id: dashboardUserGoal
                     text: userSettings.userConfigsGoal + "\n" + i18n.tr("Goal");
@@ -114,13 +116,24 @@ Page{
                 Label{
                     id: dashboardUserKaloriesIngestionMetric
                     text: dashboardUserMetric
+                    
                 }
-
             }
+            ListItem.ThinDivider {} //only applicable on columns
         }
     }
 
+    
+    ListModel {
+        id: dailyIngestions
+        Component.onCompleted: DataBase.getUserDailyLogIngestionFoods()
+    }
 
+    Label{
+        anchors.bottom : scrollView.top
+        text: i18n.tr("Today meals")
+        textSize: Label.Large
+    }
 
     ScrollView{
         id: scrollView
@@ -130,58 +143,67 @@ Page{
             right: parent.right
             bottom: footer.top
         }
-        
+    
         Column{
+            width: resumePage.width
             spacing : units.gu(2)
             topPadding: units.gu(2)
-
-
-            ListModel {
-                id: dailyIngestions
-                Component.onCompleted: DataBase.getUserDailyLogIngestionFoods()
-            }
-
+            
             Repeater{
                 model: dailyIngestions
-                    Text{text: kcal + ' ' + name + ' ' + index}                    
+                    Label{text: name}
             }
-        
-            
-            /*TextEdit {
-                id: userDailyLogBook
-                text: DataBase.getUserDailyLogIngestionFoods()
-                wrapMode: TextEdit.Wrap
-                width: scrollView.width
-                readOnly: true
-                textFormat: TextEdit.PlainText
-                color: theme.palette.normal.fieldText
-                leftPadding: units.gu(1)
-            }*/ 
         }
     }
+
 
     Rectangle{
         id: footer
         anchors.bottom: resumePage.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: (resumePage.width / 2) / 2 - units.gu(6)
+        anchors.left: resumePage.left
+        anchors.right: resumePage.right
+        width: resumePage.width
         height: (resumePage.header.height) - units.gu(1)
-        radius: width / 2
         
+        Row{
+            spacing: units.gu(2)
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
 
-        Icon{
-            anchors.centerIn: parent
-            name: "add"
-            height: footer.height
-            color: UbuntuColors.orange
-            
-        }
-        
-        MouseArea{
-            anchors.fill: footer
-            onClicked: {
-                //mainStack.pop()
-                mainStack.push(newIngestionPage)
+            Icon{
+                name: "account"
+                height: footer.height - units.gu(1)
+                
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        mainStack.push(userAccountPage)
+                    }
+                }
+            }
+
+            Icon{
+                name: "add"
+                height: footer.height - units.gu(1)
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        mainStack.push(newIngestionPage)
+                    }
+                }
+            }
+
+            Icon{
+                name: "settings"
+                height: footer.height - units.gu(1)
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        mainStack.push(settingsPage)
+                    }
+                }
             }
         }
     }

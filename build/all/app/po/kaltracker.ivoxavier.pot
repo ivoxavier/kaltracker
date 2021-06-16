@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 16:56+0000\n"
+"POT-Creation-Date: 2021-06-16 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -171,16 +171,56 @@ msgstr ""
 msgid "Done, succesfully removed "
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:38
+#: ../qml/Components/ResumePage.qml:40
 msgid "'s Dashboard"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:112
+#: ../qml/Components/ResumePage.qml:82
+msgid " Daily Ingestion"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:100
 msgid "Goal"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:134
+msgid "Today meals"
 msgstr ""
 
 #: ../qml/Components/SaveDataDialog.qml:10
 msgid "Operation Result"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:35
+msgid "Settings"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:45
+msgid "App Colors"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:35
+msgid "Account"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:44
+msgid "User Name: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:48
+msgid "User Sex: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:52
+msgid "User Weight: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:56
+msgid "User Height: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:60
+msgid "User Goal: "
 msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:29 kaltracker.desktop.in.h:1
@@ -245,14 +285,14 @@ msgstr ""
 msgid "Ingestion Stored"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:94 ../qml/js/DataBaseTools.js:96
+#: ../qml/js/DataBaseTools.js:88 ../qml/js/DataBaseTools.js:90
 msgid "Foods"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:122
+#: ../qml/js/DataBaseTools.js:116
 msgid "To Be Ingested"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:124
-msgid "Remaining"
+#: ../qml/js/DataBaseTools.js:118
+msgid "Left"
 msgstr ""
