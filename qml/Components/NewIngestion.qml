@@ -43,8 +43,15 @@ Page {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             
-            numberOfSlots: 0
+            numberOfSlots: 2
             actions: [
+                Action{
+                    iconName: "add"
+                    text: i18n.tr("Manual Entry")
+                    onTriggered: {
+                        PopupUtils.open(manualIngestionEntryDialog)
+                  }
+                },
                 Action{
                   text: i18n.tr("Food")
                   onTriggered: queryCategory = 0
@@ -63,7 +70,20 @@ Page {
         FoodsTemplate{}
     }
 
+    Component{
+        id: manualIngestionEntryDialog
+        ManualIngestionEntry{}
+    }
    
+    Component {
+        id: ingestionStoredDialog
+        SaveDataDialog{
+
+            msg:i18n.tr("Ingestion Stored")
+            
+            labelColor:UbuntuColors.green
+            }
+    }
 
     XmlListModel {
             id: xmlScheme
@@ -97,6 +117,7 @@ Page {
                     onClicked:{
                         console.log("newIngestion: " + name)
                         DataBase.saveNewIngestion(name,type,kcal)
+                        PopupUtils.open(ingestionStoredDialog)
                         root.initDB()
                         root.refreshListModel()
                     }

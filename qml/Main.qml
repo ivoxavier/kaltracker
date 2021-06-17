@@ -34,7 +34,7 @@ MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string appVersion : "0.1"
+    property string appVersion : "0.2"
     automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
@@ -46,11 +46,14 @@ MainView {
     //required to refresh dailyIngestion ListModel
     signal refreshListModel()
 
-    Component {
-        id: ingestionStoredDialog
-        SaveDataDialog{msg:i18n.tr("Ingestion Stored"); labelColor:UbuntuColors.green}
-    }
+    
 
+    Component{
+        id: statsPage
+        StatsPage{}
+    }
+    
+    
     Component{
         id: settingsPage
         SettingsPage{}
@@ -94,11 +97,6 @@ MainView {
     Component{
         id: resumePage
         ResumePage{}
-    }
-
-   Component {
-      id: dataBaseEraser
-        RemoveDataDialog{}
     }
 
     Component {

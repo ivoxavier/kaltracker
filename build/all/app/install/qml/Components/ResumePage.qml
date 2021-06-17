@@ -38,18 +38,15 @@ Page{
 
     header: PageHeader {
         title: userSettings.userConfigsUserName + i18n.tr("'s Dashboard");
-        trailingActionBar.actions: [
-            Action{
-                id: iconTest
-                iconName: "save-to"
-                onTriggered: {
-                    mainStack.push(exportDataPage)
-                }
-            }
-        ]
-        //AboutAction{}
+        trailingActionBar.actions: AboutAction{}
     }
     
+    Component{
+        id: aboutAppDiaLog
+        AboutDialog{}
+    }
+
+
     Connections{
         target: root
         onInitDB:{
@@ -183,6 +180,18 @@ Page{
             }
 
             Icon{
+                name: "settings"
+                height: footer.height - units.gu(1)
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        mainStack.push(settingsPage)
+                    }
+                }
+            }
+
+            Icon{
                 name: "add"
                 height: footer.height - units.gu(1)
 
@@ -194,17 +203,31 @@ Page{
                 }
             }
 
-            Icon{
-                name: "settings"
+             Icon{
+                name: "view-list-symbolic"
                 height: footer.height - units.gu(1)
 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        mainStack.push(settingsPage)
+                        mainStack.push(statsPage)
                     }
                 }
             }
+
+
+            Icon{
+                name: "save-to"
+                height: footer.height - units.gu(1)
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        mainStack.push(exportDataPage)
+                    }
+                }
+            }
+           
         }
     }
 

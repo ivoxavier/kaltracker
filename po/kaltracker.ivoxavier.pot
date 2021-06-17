@@ -1,14 +1,19 @@
+#: ../qml/Components/AboutDialog.qml:25
+msgid "Kaltracker version "
+msgstr ""
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the kaltracker.ivoxavier package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ../qml/Components/AboutDialog.qml:28
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-16 21:04+0000\n"
+"POT-Creation-Date: 2021-06-17 21:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,63 +136,75 @@ msgstr ""
 msgid "Select your main goal. Then enter your data.\n"
 msgstr ""
 
+#: ../qml/Components/ManualIngestionEntry.qml:27
+#: ../qml/Components/NewIngestion.qml:50
+msgid "Manual Entry"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:42
+#: ../qml/Components/NewIngestion.qml:56
+msgid "Food"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:43
+#: ../qml/Components/NewIngestion.qml:61
+msgid "Drink"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:60
+msgid "Ingestion"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:65
+msgid "kcal"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:78
+#: ../qml/Components/Records.qml:32
+msgid "Back"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:85
+msgid "Save"
+msgstr ""
+
 #: ../qml/Components/NewIngestion.qml:41
 msgid "New Ingestion"
 msgstr ""
 
-#: ../qml/Components/NewIngestion.qml:49
-msgid "Food"
-msgstr ""
-
-#: ../qml/Components/NewIngestion.qml:54
-msgid "Drink"
+#: ../qml/Components/NewIngestion.qml:82
+msgid "Ingestion Stored"
 msgstr ""
 
 #: ../qml/Components/Records.qml:30
 msgid "History"
 msgstr ""
 
-#: ../qml/Components/Records.qml:32
-msgid "Back"
-msgstr ""
-
 #: ../qml/Components/Records.qml:37
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Components/Records.qml:37
+#: ../qml/Components/Records.qml:37 ../qml/Components/StatsPage.qml:38
 msgid "Stats"
-msgstr ""
-
-#: ../qml/Components/RemoveDataDialog.qml:9
-msgid "Do you want to erase all your data ?"
-msgstr ""
-
-#: ../qml/Components/RemoveDataDialog.qml:23
-msgid "Close"
-msgstr ""
-
-#: ../qml/Components/RemoveDataDialog.qml:32
-msgid "Done, succesfully removed "
 msgstr ""
 
 #: ../qml/Components/ResumePage.qml:40
 msgid "'s Dashboard"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:82
+#: ../qml/Components/ResumePage.qml:79
 msgid " Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:100
+#: ../qml/Components/ResumePage.qml:97
 msgid "Goal"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:134
+#: ../qml/Components/ResumePage.qml:131
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/SaveDataDialog.qml:10
+#: ../qml/Components/SaveDataDialog.qml:28
 msgid "Operation Result"
 msgstr ""
 
@@ -197,6 +214,10 @@ msgstr ""
 
 #: ../qml/Components/SettingsPage.qml:45
 msgid "App Colors"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:48
+msgid " Total foods ingested by type"
 msgstr ""
 
 #: ../qml/Components/UserAccountPage.qml:35
@@ -279,10 +300,6 @@ msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:77
 msgid "Click to Config"
-msgstr ""
-
-#: ../qml/Main.qml:51
-msgid "Ingestion Stored"
 msgstr ""
 
 #: ../qml/js/DataBaseTools.js:88 ../qml/js/DataBaseTools.js:90

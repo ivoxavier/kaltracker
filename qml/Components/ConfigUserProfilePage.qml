@@ -94,7 +94,7 @@ Page {
                 placeholderText: i18n.tr("Weight")
                 horizontalAlignment: TextInput.AlignHCenter
                 inputMethodHints: Qt.ImhDigitsOnly
-                validator: DoubleValidator {}
+                validator: IntValidator {}
             }
 
             TextField {
@@ -103,7 +103,7 @@ Page {
                 placeholderText: i18n.tr("Height")
                 horizontalAlignment: TextInput.AlignHCenter
                 inputMethodHints: Qt.ImhDigitsOnly
-                validator: DoubleValidator {}
+                validator: IntValidator {}
             }
         }   
 

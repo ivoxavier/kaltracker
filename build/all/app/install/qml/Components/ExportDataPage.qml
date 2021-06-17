@@ -83,11 +83,4 @@ Page{
             })
         }
     }
-
-
-    Label{
-        id: debugLabel
-        anchors.top: exportButton.bottom
-        text: StandardPaths.writableLocation(StandardPaths.AppDataLocation)
-    }
 }

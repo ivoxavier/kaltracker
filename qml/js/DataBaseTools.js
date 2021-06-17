@@ -163,6 +163,24 @@ function getAllIngestions(){
 
 
 
+//statsPage
+const populateStatsPageByFoodsType = 'SELECT COUNT(*) AS total, Ingestion.type AS type \
+FROM Ingestion \
+JOIN User ON Ingestion.idUser = User.idUser \
+GROUP BY Ingestion.type'
+
+function getFoodsType(){
+  var db = createSQLContainer();
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(populateStatsPageByFoodsType)
+                   for (var i = 0; i < results.rows.length; i++) { 
+                     (function(){
+                       var j = i;
+                       foodsCategory.append({"total": results.rows.item(j).total, "type": results.rows.item(j).type })
+                     })()
+                 }
+ }) 
+}
 
 
 

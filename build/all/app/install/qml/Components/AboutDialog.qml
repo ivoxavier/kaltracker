@@ -15,24 +15,26 @@
  */
 
 
-
 import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
-
+import "../js/DataBaseTools.js" as DataBase
 
 Dialog {
-    id: saveOperationDialog
-    property string msg;
-    property color  labelColor;
-    title: i18n.tr("Operation Result")
-    Label{
-        text: i18n.tr(msg)
-        color: labelColor
-    }
-    Button {
-        text: "Close"
-        onClicked:
-           PopupUtils.close(saveOperationDialog)
-    }
+       id: aboutApp
+       title: i18n.tr("Kaltracker version " + root.appVersion)
+
+        Label{
+            text: i18n.tr("")
+        }
+        
+        Button {
+            text: "Back"
+            onClicked:{
+                PopupUtils.close(aboutApp)
+            } 
+        }
+    
+
+        
 }
