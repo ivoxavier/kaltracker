@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 21:46+0000\n"
+"POT-Creation-Date: 2021-06-18 12:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,6 +188,31 @@ msgstr ""
 msgid "Stats"
 msgstr ""
 
+#: ../qml/Components/RemoveRecordsDialog.qml:30
+#: ../qml/Components/RemoveRecordsDialog.qml:57
+msgid "Delete"
+msgstr ""
+
+#: ../qml/Components/RemoveRecordsDialog.qml:32
+msgid "Deletes your *"
+msgstr ""
+
+#: ../qml/Components/RemoveRecordsDialog.qml:40
+msgid "Type 'Yes' to confirm"
+msgstr ""
+
+#: ../qml/Components/RemoveRecordsDialog.qml:48
+msgid "Cancel"
+msgstr ""
+
+#: ../qml/Components/RemoveRecordsDialog.qml:77
+msgid "Something went wrong"
+msgstr ""
+
+#: ../qml/Components/RemoveRecordsDialog.qml:82
+msgid "Wrong code, try again"
+msgstr ""
+
 #: ../qml/Components/ResumePage.qml:40
 msgid "'s Dashboard"
 msgstr ""
@@ -212,8 +237,16 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:45
-msgid "App Colors"
+#: ../qml/Components/SettingsPage.qml:52
+msgid "Dark Theme"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:62
+msgid "Delete today's records"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:79
+msgid "Delete all records"
 msgstr ""
 
 #: ../qml/Components/StatsPage.qml:48

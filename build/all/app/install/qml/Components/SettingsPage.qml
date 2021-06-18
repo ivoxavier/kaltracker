@@ -30,24 +30,65 @@ import "../js/DataBaseTools.js" as DataBase
 Page{
     id: settingsPage
     objectName: 'Settings Page'
-
+    property int deleteType
     header: PageHeader {
         title: i18n.tr("Settings")
+    }
+
+    Component{
+        id: deleteDialog
+        RemoveRecordsDialog{
+            msg: deleteType === 0 ? "today" : "all"
+        }
     }
 
     Column{
         anchors.top: settingsPage.header.bottom
         width: settingsPage.width
+
         ListItem {
-            id: appTheme
-            Label{
-                anchors.verticalCenter: parent.verticalCenter
-                text: i18n.tr("App Colors")
-                textSize: Label.Medium
+            id: darkTheme
+            ListItemLayout{
+                title.text: i18n.tr("Dark Theme")
+                
+                Switch{}
             }
-            onClicked: {}
+
+        }
+
+        ListItem {
+            id: deleteTodayRecords
+            ListItemLayout{
+                title.text: i18n.tr("Delete today's records")
+                
+                Button{
+                    text:"Delete"
+                    color:"red"
+                    onClicked:{
+                        deleteType = 0
+                        PopupUtils.open(deleteDialog)
+                    }
+                }
+            }
+
+        }
+
+        ListItem {
+            id: deleteAllRecords
+            ListItemLayout{
+                title.text: i18n.tr("Delete all records")
+                
+                Button{
+                    text:"Delete"
+                    color:"red"
+                    onClicked:{
+                        deleteType = 1
+                        PopupUtils.open(deleteDialog)
+                    }
+            }
+
         }
     }
 }
-
+}
         

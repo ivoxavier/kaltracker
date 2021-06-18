@@ -26,5 +26,6 @@
 //qml/Components/Records.qml
 //qml/Components/SaveDataDialog.qml
 //qml/Components/SettingsPage.qml
+//qml/Components/RemoveRecordsDialog.qml
 //qml/img/kaltrackerBrand.png
 //kaltracker.desktop

@@ -235,15 +235,33 @@ function saveNewIngestion(name,type,kcal){
 }
 
   /* Data Loading End */
+
+
 /* DataWarehouse End*/
 
- /*delete data from table*/
+ /*delete all data from table*/
+const removeAllIngestions = 'DELETE FROM Ingestion'
+
  function deleteAllIngestions(){
   var db = createSQLContainer();
   var rs;
   db.transaction(function(tx) {
-    rs = tx.executeSql('DELETE FROM Ingestion;');
+    rs = tx.executeSql(removeAllIngestions);
    }
  );
- return rs.rowsAffected;
+ return console.log(rs.rowsAffected)
+}
+
+ /*delete current day data from table*/
+ const removeTodayIngestions = 'DELETE FROM Ingestion \
+ WHERE Ingestion.ingestionDate == date("now")'
+
+ function deleteTodayIngestions(){
+  var db = createSQLContainer();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql(removeTodayIngestions);
+   }
+ );
+ return console.log(rs.rowsAffected)
 }
