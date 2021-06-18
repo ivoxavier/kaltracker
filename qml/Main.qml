@@ -22,6 +22,7 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
+import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import "./js/DataBaseTools.js" as DataBase
@@ -89,10 +90,6 @@ MainView {
         WelcomePage {}
     }
 
-    Component{
-        id: recordsView
-        Records{}
-    }
 
     Component{
         id: resumePage

@@ -143,25 +143,38 @@ function getUserDailyLogIngestionFoods(){
 }
 
 
-const allIngestions = 'SELECT Ingestion.dte AS dte, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
+const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser'
 
-function getAllIngestions(){
+function getAllIngestions(contextRequest){
+
+  var outputType = contextRequest
   var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(allIngestions)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       var rsToQML = results.rows.item(j).dte + ','+ results.rows.item(j).type + ',' + results.rows.item(j).name + ',' + results.rows.item(j).kcal + ',';
-                       exportData.queryToPy += rsToQML
+                       switch(outputType){
+
+                         case "recordsLog":
+                            var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + '\n'
+                            recordsHistory.text += rsToQML
+                          break
+                          case "exportData":
+                            var rsToQML = results.rows.item(j).ingestionDate + ','+ results.rows.item(j).ingestionTime + ',' + results.rows.item(j).type + ',' + results.rows.item(j).name + ',' + results.rows.item(j).kcal + ',';
+                            exportData.queryToPy += rsToQML
+                          break
+                          
+                          default:
+                            break
+                       }
+                       
                      })()
                  }
  }) 
 }
-
-
 
 //statsPage
 const populateStatsPageByFoodsType = 'SELECT COUNT(*) AS total, Ingestion.type AS type \

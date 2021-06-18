@@ -89,10 +89,6 @@ MainView {
         WelcomePage {}
     }
 
-    Component{
-        id: recordsView
-        Records{}
-    }
 
     Component{
         id: resumePage

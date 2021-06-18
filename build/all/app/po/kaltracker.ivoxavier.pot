@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-18 12:02+0000\n"
+"POT-Creation-Date: 2021-06-18 15:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,6 @@ msgid "kcal"
 msgstr ""
 
 #: ../qml/Components/ManualIngestionEntry.qml:78
-#: ../qml/Components/Records.qml:32
 msgid "Back"
 msgstr ""
 
@@ -174,18 +173,6 @@ msgstr ""
 
 #: ../qml/Components/NewIngestion.qml:82
 msgid "Ingestion Stored"
-msgstr ""
-
-#: ../qml/Components/Records.qml:30
-msgid "History"
-msgstr ""
-
-#: ../qml/Components/Records.qml:37
-msgid "Logs"
-msgstr ""
-
-#: ../qml/Components/Records.qml:37 ../qml/Components/StatsPage.qml:38
-msgid "Stats"
 msgstr ""
 
 #: ../qml/Components/RemoveRecordsDialog.qml:30
@@ -249,7 +236,19 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:48
+#: ../qml/Components/StatsPage.qml:43
+msgid "Stats"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:45
+msgid "Frequencies"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:45
+msgid "History"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:69
 msgid " Total foods ingested by type"
 msgstr ""
 

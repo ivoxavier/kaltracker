@@ -23,7 +23,6 @@
 //qml/Components/NewIngestion.qml
 //qml/Components/FoodsTemplate.qml
 //qml/Components/ManualIngestionEntry.qml
-//qml/Components/Records.qml
 //qml/Components/SaveDataDialog.qml
 //qml/Components/SettingsPage.qml
 //qml/Components/RemoveRecordsDialog.qml

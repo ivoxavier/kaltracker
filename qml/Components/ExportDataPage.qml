@@ -74,7 +74,7 @@ Page{
         id: exportButton
         text: i18n.tr("Export")
         anchors.centerIn: parent
-        Component.onCompleted: DataBase.getAllIngestions()
+        Component.onCompleted: DataBase.getAllIngestions("exportData")
         onClicked:{
             console.log("Export process started")
             py.call('export_data.saveCSV', [queryToPy] ,function(returnValue){

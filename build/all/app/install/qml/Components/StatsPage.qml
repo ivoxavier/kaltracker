@@ -35,7 +35,28 @@ Page{
     property int total
 
     header: PageHeader {
+        Component.onCompleted:{
+            recordsPageColumn.visible = false;
+            topPanelLabel.visible = true;
+            statsView.visible = true
+        }
         title: i18n.tr("Stats")
+        sections {
+            model: {[i18n.tr("Frequencies"), i18n.tr("History")]} //logs - index 0 // Stats - index 1
+            selectedIndex: 0
+            onSelectedIndexChanged: {
+                if (sections.selectedIndex === 1){
+                    recordsPageColumn.visible = true;
+                    topPanelLabel.visible = false;
+                    statsView.visible = false
+                 
+                } else {
+                    recordsPageColumn.visible = false;
+                    topPanelLabel.visible = true;
+                    statsView.visible = true
+                }
+            }
+        }  
     }
 
     ListModel {
@@ -53,23 +74,64 @@ Page{
     }
 
         GridView {
+            id: statsView
             width: statsPage.width
             anchors.horizontalCenter: statsPage.horizontalCenter 
             anchors.top: topPanelLabel.bottom
-            cellWidth: units.gu(10)
+            
+        
             model: foodsCategory
     
             delegate: Column{ 
-                anchors.right: statsPage.width
+                id: statsColumn
+                width: statsPage.width
                 topPadding: units.gu(2)
                 spacing: units.gu(2)
 
                 Row{
-                     anchors.horizontalCenter: parent.horizontalCenter
                     Label { text: type + '\n' + total}
                 }
-            }      
-        }    
+
+                ListItem.ThinDivider{}    
+
+            }  
+
+        }  
+
+    Column{
+        id: recordsPageColumn
+        width: statsPage.width  
+
+        anchors {
+            top: statsPage.header.bottom
+            left: statsPage.left
+            right: statsPage.right
+            bottom: statsPage.bottom
+        }
+            ScrollView {
+                id: scrollView
+
+                anchors {
+                    top: recordsPageColumn.top
+                    topMargin: units.gu(1)
+                    left: recordsPageColumn.left
+                    right: recordsPageColumn.right
+                    bottom: recordsPageColumn.bottom
+                }
+
+
+            TextEdit {
+                id: recordsHistory
+                text: DataBase.getAllIngestions("recordsLog")
+                wrapMode: TextEdit.Wrap
+                width: scrollView.width
+                readOnly: true
+                font.family: "Ubuntu Mono"
+                textFormat: TextEdit.PlainText
+                color: theme.palette.normal.fieldText
+            }        
+        }
+    }      
 }
 
 
