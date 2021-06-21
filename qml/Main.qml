@@ -41,6 +41,12 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    property color defaultForegroundColor: UbuntuColors.porcelain
+    property string defaultBackgroundColor: "#594092"
+    property color followSystemTheme : {}
+    property int activeTheme: Suru.theme === 0 ? followSystemTheme = UbuntuColors.porcelain : followSystemTheme = UbuntuColors.dark
+    backgroundColor: followSystemTheme
+
     //required to update dashboard after newIngestion
     signal initDB()
 
@@ -107,9 +113,6 @@ MainView {
         category: "app_configs"
 
         property bool isCleanInstall: true
-        property string defaultHeaderColor
-
-
         
 
     }

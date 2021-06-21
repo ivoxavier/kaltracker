@@ -22,6 +22,7 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
+import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import "./js/DataBaseTools.js" as DataBase
@@ -39,6 +40,12 @@ MainView {
     anchorToKeyboard: true
     width: units.gu(45)
     height: units.gu(75)
+
+    property color defaultForegroundColor: UbuntuColors.porcelain
+    property string defaultBackgroundColor: "#594092"
+    property color followSystemTheme : {}
+    property int activeTheme: Suru.theme === 0 ? followSystemTheme = UbuntuColors.porcelain : followSystemTheme = UbuntuColors.dark
+    backgroundColor: followSystemTheme
 
     //required to update dashboard after newIngestion
     signal initDB()
@@ -106,9 +113,6 @@ MainView {
         category: "app_configs"
 
         property bool isCleanInstall: true
-        property string defaultHeaderColor
-
-
         
 
     }

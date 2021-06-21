@@ -39,6 +39,12 @@ Page{
     header: PageHeader {
         title: userSettings.userConfigsUserName + i18n.tr("'s Dashboard");
         trailingActionBar.actions: AboutAction{}
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
+
     }
     
     Component{
@@ -113,10 +119,11 @@ Page{
                 Label{
                     id: dashboardUserKaloriesIngestionMetric
                     text: dashboardUserMetric
+                    font.bold: true
                     
                 }
             }
-            ListItem.ThinDivider {} //only applicable on columns
+            ListItem.ThinDivider {}
         }
     }
 

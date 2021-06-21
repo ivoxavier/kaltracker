@@ -33,6 +33,11 @@ Page{
 
     header: PageHeader {
         title: i18n.tr("Account")
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
     }
 
     Column{

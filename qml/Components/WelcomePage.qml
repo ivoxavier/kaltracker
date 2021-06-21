@@ -27,6 +27,11 @@ Page {
     objectName: 'WelcomePage'    
     header: PageHeader {
         title: i18n.tr("KalTracker")
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
     }
 
     

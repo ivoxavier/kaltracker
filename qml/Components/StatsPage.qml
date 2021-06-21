@@ -40,10 +40,18 @@ Page{
             topPanelLabel.visible = true;
             statsView.visible = true
         }
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
+
         title: i18n.tr("Stats")
         sections {
+
             model: {[i18n.tr("Frequencies"), i18n.tr("History")]} //logs - index 0 // Stats - index 1
             selectedIndex: 0
+            
             onSelectedIndexChanged: {
                 if (sections.selectedIndex === 1){
                     recordsPageColumn.visible = true;

@@ -31,6 +31,12 @@ Page {
     objectName: 'ConfigUserProfilePage'
     header: PageHeader{
         title: i18n.tr("User Profile")
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
+
         ActionBar {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter

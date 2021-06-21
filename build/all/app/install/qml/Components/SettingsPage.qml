@@ -33,6 +33,11 @@ Page{
     property int deleteType
     header: PageHeader {
         title: i18n.tr("Settings")
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
     }
 
     Component{

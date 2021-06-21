@@ -39,7 +39,19 @@ Page {
     header: PageHeader {
         id: header
         title: i18n.tr('New Ingestion')
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
+
         ActionBar {
+
+            StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+            }
+            
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             

@@ -35,11 +35,17 @@ Page{
 
     header: PageHeader {
         title: i18n.tr("Export Data")
+
+        StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+        }
+
     }
 
     TextEdit {
         id: labelInfo
-        text: i18n.tr("A file in csv is created in /home/phablet/Documents/kaltracker.ivoxavier/Databases")
+        text: i18n.tr("A csv file will be created in /home/phablet/Documents/kaltracker.ivoxavier/")
         anchors.top: exportData.header.bottom
         wrapMode: TextEdit.Wrap
         width: parent.width
@@ -74,7 +80,10 @@ Page{
         id: exportButton
         text: i18n.tr("Export")
         anchors.centerIn: parent
+        
+        //fetch data from DB before click to extract
         Component.onCompleted: DataBase.getAllIngestions("exportData")
+        
         onClicked:{
             console.log("Export process started")
             py.call('export_data.saveCSV', [queryToPy] ,function(returnValue){

@@ -111,12 +111,22 @@ var db = createSQLContainer();
                      (function(){
                         var j = i;
                         var rsToQML = results.rows.item(j).dif
+
                         if(rsToQML === null){
+
                           console.log("Query === "+rsToQML+" no ingestions yet")
                           dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
-                        }else{
+                          dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
+                        }else if (rsToQML > 0){
+
                           dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Left");
+                          dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
+                        } else {
+
+                          dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Exceeded");
+                          dashboardUserKaloriesIngestionMetric.color = UbuntuColors.red
                         }
+
                       })()
                     }
                 }) 
