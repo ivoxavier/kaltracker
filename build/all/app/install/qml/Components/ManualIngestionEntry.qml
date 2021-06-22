@@ -27,14 +27,23 @@ Dialog {
        title: i18n.tr("Manual Entry")                                                                                               
 
         property string foodsType: foodPicker.selectedIndex === 0 ? "Food" : "Drink"
+    
         Row{
-            spacing: units.gu(2)
-            
-            
+
+            spacing:units.gu(2)
+
+            Label{
+                
+                anchors.verticalCenter: parent.verticalCenter
+                
+                text:i18n.tr("Type")
+            }    
+
+
             Picker {
                 id: foodPicker
                 height: units.gu(4)
-                width: units.gu(7)
+                width: units.gu(8)
                 circular: false
 
                 model:
@@ -53,26 +62,48 @@ Dialog {
                                 
                             }
             }
+        }
+
+        Row{ 
+
+            spacing:units.gu(2)
+
+            Label{
+                
+                anchors.verticalCenter: parent.verticalCenter
+                
+                text:i18n.tr("Name")
+            }  
 
             TextField {
                 id: ingestionEntry
-                width: units.gu(12)
-                placeholderText: i18n.tr("Ingestion")
+                width: units.gu(16)
+                placeholderText: i18n.tr("Steak...")
             }
+        }
 
+        Row{  
+
+            spacing:units.gu(2)
+
+            Label{
+                
+                anchors.verticalCenter: parent.verticalCenter
+                
+                text:i18n.tr("Kcal")
+            }  
             TextField {
                 id: kcalEntry
-                placeholderText: i18n.tr("kcal")
-                width: units.gu(8)
+                placeholderText: i18n.tr("12")
+                width: units.gu(10)
                 inputMethodHints: Qt.ImhDigitsOnly
                 validator: IntValidator {}
             }
         }
 
-
         Row{
             spacing : units.gu(10)                          
-            //anchors.horizontalCenter: parent.horizontalCenter
+
             width: manualIngestionEntryDialog.title.width
             Button {
                 text: i18n.tr("Back")

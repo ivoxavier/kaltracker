@@ -84,11 +84,16 @@ function getUserKaloriesIngestedDuringDay(){
                      (function(){
                        var j = i;
                        var rsToQML = results.rows.item(j).totalKcal
+                       
                        if(rsToQML === null){
+                        
                         dashboardUserKaloriesIngestedDuringDay.text = 0  + "\n" + i18n.tr("Foods");
-                       } else{
+                       
+                      } else{
+
                         dashboardUserKaloriesIngestedDuringDay.text = rsToQML + "\n" + i18n.tr("Foods")
-                       }
+                       
+                      }
                      })()
                     }
  })
@@ -112,18 +117,20 @@ var db = createSQLContainer();
                         var j = i;
                         var rsToQML = results.rows.item(j).dif
 
-                        if(rsToQML === null){
+                        if (rsToQML === null){
 
                           console.log("Query === "+rsToQML+" no ingestions yet")
                           dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
-                        }else if (rsToQML > 0){
+
+                        } else if (rsToQML > 0){
 
                           dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Left");
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
+
                         } else {
 
-                          dashboardUserKaloriesIngestionMetric.text =  rsToQML  + "\n" + i18n.tr("Exceeded");
+                          dashboardUserKaloriesIngestionMetric.text =  Math.abs(rsToQML)  + "\n" + i18n.tr("Exceeded");
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.red
                         }
 
@@ -145,7 +152,9 @@ function getUserDailyLogIngestionFoods(){
                    var results = tx.executeSql(populateUserDailyLogIngestionFoods)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
+
                        var j = i;
+
                        dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name, "ingestionDate": results.rows.item(j).ingestionDate, "ingestionTime": results.rows.item(j).ingestionTime})
                      })()
                  }
@@ -169,7 +178,7 @@ function getAllIngestions(contextRequest){
                        switch(outputType){
 
                          case "recordsLog":
-                            var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + '\n'
+                            var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + 'kcal' + '\n'
                             recordsHistory.text += rsToQML
                           break
                           case "exportData":
@@ -204,13 +213,6 @@ function getFoodsType(){
                  }
  }) 
 }
-
-
-
-
-
-
-
 
    /* Data Saving Start */
   //stores the data given by user for userProfile

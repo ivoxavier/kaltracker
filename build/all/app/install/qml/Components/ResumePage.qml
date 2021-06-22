@@ -123,6 +123,7 @@ Page{
                     
                 }
             }
+
             ListItem.ThinDivider {}
         }
     }
@@ -138,7 +139,7 @@ Page{
         text: i18n.tr("Today meals")
         textSize: Label.Large
     }
-
+    
     ScrollView{
         id: scrollView
         anchors{
@@ -155,7 +156,7 @@ Page{
             
             Repeater{
                 model: dailyIngestions
-                    Label{text: name}
+                    Label{text:name}
             }
         }
     }
