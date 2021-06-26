@@ -100,15 +100,22 @@ Page {
     XmlListModel {
             id: xmlScheme
             source: "../xml/foods.xml"
-            query: queryCategory === 0 ? "/foods/item/food" : "/foods/item/drink"
-            XmlRole { name: "name"; query: "name/string()" }
-            XmlRole { name: "kcal"; query: "kcal/string()" }
-            XmlRole { name: "desc"; query: "desc/string()" }
+            query: queryCategory === 0 ? "/foods/item/Food" : "/foods/item/Drink"
+
+            XmlRole { name: "product_name"; query: "product_name/string()" }
             XmlRole { name: "type"; query: "type/string()" }
+            XmlRole { name: "energy_kcal_100g"; query: "energy_kcal_100g/string()" }
+            XmlRole { name: "fat_100g"; query: "fat_100g/string()" }
+            XmlRole { name: "saturated_fat_100g"; query: "saturated_fat_100g/string()" }
+            XmlRole { name: "carbohydrates_100g"; query: "carbohydrates_100g/string()" }
+            XmlRole { name: "sugars_100g"; query: "sugars_100g/string()" }
+            XmlRole { name: "fiber_100g"; query: "fiber_100g/string()" }
+            XmlRole { name: "proteins_100g"; query: "proteins_100g/string()" }
+            XmlRole { name: "salt_100g"; query: "salt_100g/string()" }
     }
     
     ScrollView{
-
+        
         anchors{
             top: newIngestionPage.header.bottom
             right: newIngestionPage.right
@@ -118,24 +125,22 @@ Page {
 
         ListView {
             id: foodsList
-            width: parent
-            height: parent
             model: xmlScheme
 
-            signal foodsDetailsSender (string nameToTemplate, string descToTemplate, int kcalToTemplate)
-
+            signal foodsDetailsSender (string nameToTemplate, int kcalToTemplate, double fatToTemplate, double saturatedToTemplate, double carboToTemplate, double sugarsToTemplate, double fiberToTemplate, double proteinsToTemplate, double saltToTemplate)
+     
             delegate: ListItem.Standard{
-                    text: name
+                    text: product_name
                     onClicked:{
-                        console.log("newIngestion: " + name)
-                        DataBase.saveNewIngestion(name,type,kcal)
+                        console.log("newIngestion: " + product_name)
+                        DataBase.saveNewIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
                         PopupUtils.open(ingestionStoredDialog)
                         root.initDB()
                         root.refreshListModel()
                     }
                     onPressAndHold:{
                         PopupUtils.open(foodsTemplate)
-                        foodsList.foodsDetailsSender(name,desc,kcal)
+                        foodsList.foodsDetailsSender(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
                     }
                 }
         } 

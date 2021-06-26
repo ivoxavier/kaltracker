@@ -24,6 +24,7 @@ import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
+import QtCharts 2.3
 import "../js/DataBaseTools.js" as DataBase
 
 
@@ -31,15 +32,10 @@ Page{
     id: statsPage
     objectName: 'Stats Page'
 
-    property string type
-    property int total
 
+    property int num1: 2
+    property int num2: 2
     header: PageHeader {
-        Component.onCompleted:{
-            recordsPageColumn.visible = false;
-            topPanelLabel.visible = true;
-            statsView.visible = true
-        }
 
         StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -47,99 +43,72 @@ Page{
         }
 
         title: i18n.tr("Stats")
-        sections {
+    }
 
-            model: {[i18n.tr("Frequencies"), i18n.tr("History")]} //logs - index 0 // Stats - index 1
-            selectedIndex: 0
+    Rectangle{
+        id: panel
+        width: statsPage.width
+        height: (((statsPage.header.height + statsPage.height) / 2) / 2) - statsPage.header.height
+        anchors.top: statsPage.header.bottom
+
+        Label{
+            id: topPanelLabel
+            text: i18n.tr("Dietary")
+            font.bold: true 
             
-            onSelectedIndexChanged: {
-                if (sections.selectedIndex === 1){
-                    recordsPageColumn.visible = true;
-                    topPanelLabel.visible = false;
-                    statsView.visible = false
-                 
-                } else {
-                    recordsPageColumn.visible = false;
-                    topPanelLabel.visible = true;
-                    statsView.visible = true
+            anchors.horizontalCenter: parent.horizontalCenter
+            
+        }
+
+        Column{
+            anchors.top: topPanelLabel.bottom
+            anchors.right: statsPage.width
+            width: statsPage.width
+            topPadding: units.gu(2)
+            spacing: units.gu(1)
+
+            Row{
+                spacing: units.gu(1.5)
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                Label{
+                    id: fatStat
+                }
+
+                Label{
+                    id: saltStat
+                }
+
+                Label{
+                    id:sugarsStat
                 }
             }
-        }  
-    }
 
-    ListModel {
-        id: foodsCategory
-        Component.onCompleted: DataBase.getFoodsType()
-    }
-
-    Label{
-        id: topPanelLabel
-        text: i18n.tr(" Total foods ingested by type")
-        font.bold: true 
-
-        anchors.top: statsPage.header.bottom
-        anchors.horizontalCenter: statsPage.horizontalCenter   
-    }
-
-        GridView {
-            id: statsView
-            width: statsPage.width
-            anchors.horizontalCenter: statsPage.horizontalCenter 
-            anchors.top: topPanelLabel.bottom
-            
-        
-            model: foodsCategory
-    
-            delegate: Column{ 
-                id: statsColumn
-                width: statsPage.width
-                topPadding: units.gu(2)
-                spacing: units.gu(2)
-
-                Row{
-                    Label { text: type + '\n' + total}
+            Row{
+                spacing: units.gu(1.5)
+                anchors.horizontalCenter: parent.horizontalCenter
+                    
+                Label{
+                    id: proteinStat
                 }
 
-                ListItem.ThinDivider{}    
-
-            }  
-
-        }  
-
-    Column{
-        id: recordsPageColumn
-        width: statsPage.width  
-
-        anchors {
-            top: statsPage.header.bottom
-            left: statsPage.left
-            right: statsPage.right
-            bottom: statsPage.bottom
-        }
-            ScrollView {
-                id: scrollView
-
-                anchors {
-                    top: recordsPageColumn.top
-                    topMargin: units.gu(1)
-                    left: recordsPageColumn.left
-                    right: recordsPageColumn.right
-                    bottom: recordsPageColumn.bottom
+                Label{
+                    id: carbornhydrates
                 }
 
+                Label{
+                    id: saturatedStat
+                }
 
-            TextEdit {
-                id: recordsHistory
-                text: DataBase.getAllIngestions("recordsLog")
-                wrapMode: TextEdit.Wrap
-                width: scrollView.width
-                readOnly: true
-                font.family: "Ubuntu Mono"
-                textFormat: TextEdit.PlainText
-                color: theme.palette.normal.fieldText
-            }        
+                Label{
+                    id: fiberStat
+                }
+            }
+
+            ListItem.ThinDivider {}
         }
-    }      
+    }
+Component.onCompleted: DataBase.getFoodsType()        
 }
 
 

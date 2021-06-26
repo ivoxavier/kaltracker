@@ -28,24 +28,50 @@ Dialog {
             ignoreUnknownSignals: true
             target: foodsList
             onFoodsDetailsSender:{
+
                 aboutFoods.title = nameToTemplate
-                kcalDetail.text = kcalToTemplate + " kcal"
-                foodsDetails.text = i18n.tr("Desc: ") + descToTemplate
+                energy_kcal.text = i18n.tr("Calories:") +kcalToTemplate + "kcal"
+                fat.text = i18n.tr("Fat:") + fatToTemplate + "g"
+                saturated_fat.text = i18n.tr("Saturated Fat:") +saturatedToTemplate + "g"
+                carbohydrates.text = i18n.tr("Carbonhydrates:") +carboToTemplate + "g"
+                sugars.text = i18n.tr("Sugar:") +sugarsToTemplate + "g"
+                fiber.text = i18n.tr("Fiber:") +fiberToTemplate + "g"
+                proteins.text = i18n.tr("Protein:") +proteinsToTemplate + "g"
+                salt.text = i18n.tr("Salt:") + saltToTemplate + "g"
             }
         }
 
         Label{
-            id: kcalDetail
+            id: energy_kcal
         }
 
-        TextEdit {
-            id: foodsDetails
-            wrapMode: TextEdit.Wrap
-            readOnly: true
-            textFormat: TextEdit.PlainText
-            color: theme.palette.normal.fieldText
-            leftPadding: units.gu(1)
-        } 
+        Label{
+            id: fat
+        }
+
+        Label{
+            id: saturated_fat
+        }
+
+        Label{
+            id: carbohydrates
+        }
+
+        Label{
+            id: sugars
+        }
+
+        Label{
+            id: fiber
+        }
+
+        Label{
+            id: proteins
+        }
+
+        Label{
+            id: salt
+        }
 
         Row{
             spacing : units.gu(10)

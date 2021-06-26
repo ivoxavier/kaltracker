@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-22 09:41+0000\n"
+"POT-Creation-Date: 2021-06-26 15:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,7 +125,35 @@ msgid "Export"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:33
-msgid "Desc: "
+msgid "Calories:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:34
+msgid "Fat:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:35
+msgid "Saturated Fat:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:36
+msgid "Carbonhydrates:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:37
+msgid "Sugar:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:38
+msgid "Fiber:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:39
+msgid "Protein:"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:40
+msgid "Salt:"
 msgstr ""
 
 #: ../qml/Components/HelpUserConfigDialog.qml:23
@@ -244,19 +272,23 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:49
+#: ../qml/Components/StatsPage.qml:45 ../qml/Components/StatsPageBackup.qml:49
 msgid "Stats"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:52
+#: ../qml/Components/StatsPage.qml:56
+msgid "Dietary"
+msgstr ""
+
+#: ../qml/Components/StatsPageBackup.qml:52
 msgid "Frequencies"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:52
+#: ../qml/Components/StatsPageBackup.qml:52
 msgid "History"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:77
+#: ../qml/Components/StatsPageBackup.qml:77
 msgid " Total foods ingested by type"
 msgstr ""
 
@@ -342,18 +374,46 @@ msgstr ""
 msgid "Click to Config"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:90 ../qml/js/DataBaseTools.js:94
+#: ../qml/js/DataBaseTools.js:97 ../qml/js/DataBaseTools.js:101
 msgid "Foods"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:123
+#: ../qml/js/DataBaseTools.js:130
 msgid "To Be Ingested"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:128
+#: ../qml/js/DataBaseTools.js:135
 msgid "Left"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:133
+#: ../qml/js/DataBaseTools.js:140
 msgid "Exceeded"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:218
+msgid "Fat\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:219
+msgid "Saturated\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:220
+msgid "Carbornhydrates\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:221
+msgid "Sugars\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:222
+msgid "Protein\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:223
+msgid "Fiber\n"
+msgstr ""
+
+#: ../qml/js/DataBaseTools.js:224
+msgid "Salt\n"
 msgstr ""

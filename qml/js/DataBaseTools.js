@@ -47,9 +47,16 @@ const create_userTableStatement = 'CREATE TABLE User(\
 const create_ingestionTableStatement = 'CREATE TABLE Ingestion(\
     idIngestion	INTEGER,\
     idUser	INTEGER,\
-    name	TEXT,\
+    product_name	TEXT,\
     type	INTEGER,\
-    kcal	INTEGER,\
+    energy_kcal_100g	INTEGER,\
+    fat_100g	DOUBLE,\
+    saturated_fat_100g	DOUBLE,\
+    carbohydrates_100g	DOUBLE,\
+    sugars_100g	DOUBLE,\
+    fiber_100g	DOUBLE,\
+    proteins_100g	DOUBLE,\
+    salt_100g	DOUBLE,\
     ingestionDate  TEXT, \
     ingestionTime  TEXT, \
     FOREIGN KEY(idUser) REFERENCES User(idUser), \
@@ -71,7 +78,7 @@ function createTables() {
 //*populate Components*//
 
 //resumePage Dashboard Foods Daily Ingestion
-const populateUserDayKaloriesIngested = 'SELECT SUM(kcal) AS totalKcal \
+const populateUserDayKaloriesIngested = 'SELECT SUM(energy_kcal_100g) AS totalKcal \
 FROM Ingestion \
 WHERE ingestionDate == date("now")';
 
@@ -102,7 +109,7 @@ function getUserKaloriesIngestedDuringDay(){
 
 //resumePage Dashboard Foods Metric
 const populateUserKaloriesIngestionMetric = 'WITH Subtraction AS \
-(SELECT (User.goal - SUM(Ingestion.kcal)) AS dif \
+(SELECT (User.goal - SUM(Ingestion.energy_kcal_100g)) AS dif \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
 WHERE Ingestion.ingestionDate == date("now")) \
@@ -141,7 +148,7 @@ var db = createSQLContainer();
 
 
 //resumePage log book view
-const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
+const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
 WHERE Ingestion.ingestionDate == date("now")';
@@ -162,7 +169,7 @@ function getUserDailyLogIngestionFoods(){
 }
 
 
-const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.name AS name, Ingestion.kcal AS kcal \
+const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser'
 
@@ -178,7 +185,7 @@ function getAllIngestions(contextRequest){
                        switch(outputType){
 
                          case "recordsLog":
-                            var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).type + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + 'kcal' + '\n'
+                            var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + 'kcal' + '\n'
                             recordsHistory.text += rsToQML
                           break
                           case "exportData":
@@ -196,19 +203,25 @@ function getAllIngestions(contextRequest){
 }
 
 //statsPage
-const populateStatsPageByFoodsType = 'SELECT COUNT(*) AS total, Ingestion.type AS type \
+const populateStatsPage = 'SELECT ROUND(SUM(fat_100g),1) AS fat, ROUND(SUM(saturated_fat_100g),1) AS saturated, ROUND(SUM(carbohydrates_100g),1) AS carbornhydrates, ROUND(SUM(sugars_100g),1) AS sugars, ROUND(SUM(proteins_100g),1) AS protein, ROUND(SUM(fiber_100g),1) AS fiber, ROUND(SUM(salt_100g),1) AS salt \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
-GROUP BY Ingestion.type'
+WHERE Ingestion.ingestionDate == date("now")'
 
-function getFoodsType(){
+function getDietary(){
   var db = createSQLContainer();
   db.transaction(function (tx) {
-                   var results = tx.executeSql(populateStatsPageByFoodsType)
+                   var results = tx.executeSql(populateStatsPage)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       foodsCategory.append({"total": results.rows.item(j).total, "type": results.rows.item(j).type })
+                       fatStat.text = i18n.tr("Fat\n") + results.rows.item(j).fat + "g"
+                       saturatedStat.text = i18n.tr("Saturated\n") + results.rows.item(j).saturated + "g"
+                       carbornhydrates.text = i18n.tr("Carbornhydrates\n") + results.rows.item(j).carbornhydrates + "g"
+                       sugarsStat.text = i18n.tr("Sugars\n") + results.rows.item(j).sugars + "g"
+                       proteinStat.text = i18n.tr("Protein\n") + results.rows.item(j).protein + "g"
+                       fiberStat.text = i18n.tr("Fiber\n") + results.rows.item(j).fiber + "g"
+                       saltStat.text = i18n.tr("Salt\n") + results.rows.item(j).salt + "g"
                      })()
                  }
  }) 
@@ -237,17 +250,29 @@ function createUserProfile(userName,userAge,userSex,userWeight,userHeight,userAc
 
 
 const saveNewIngestionStatement = 'INSERT INTO Ingestion (\
-  idUser, name, type, kcal, ingestionDate, ingestionTime)\
-  VALUES (?,?,?,?,?,?)';
+  idUser,\
+  product_name,\
+  type,\
+  energy_kcal_100g,\
+  fat_100g,\
+  saturated_fat_100g,\
+  carbohydrates_100g,\
+  sugars_100g,\
+  fiber_100g,\
+  proteins_100g,\
+  salt_100g,\
+  ingestionDate,\
+  ingestionTime)\
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
-function saveNewIngestion(name,type,kcal){          
+function saveNewIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g){          
   var db = createSQLContainer();
   console.log("DataBase.saveNewIngestion : connected to SQL_CONTAINER");
   var validationMessage = "";
   
   
   db.transaction(function(tx) {
-      var rs = tx.executeSql(saveNewIngestionStatement, [1, name, type, kcal, currentDate, currentTime]);
+      var rs = tx.executeSql(saveNewIngestionStatement, [1, product_name, type, energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g, currentDate, currentTime]);
       if (rs.rowsAffected > 0) {
         validationMessage = "DataBase.saveNewIngestion : OK";
       } else {

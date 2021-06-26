@@ -127,6 +127,7 @@ MainView {
         property int userConfigsWeight
         property string userConfigsSex
         property int userConfigsAge
+
     }
 
     PageStack{

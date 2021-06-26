@@ -18,6 +18,7 @@
 //qml/Components/ActionBar/AboutAction.qml
 //qml/Components/ActionBar/HelpUserConfigAction.qml
 //qml/Components/UserAccountPage.qml
+//qml/Components/StatsPageBackup.qml
 //qml/Components/ExportDataPage.qml
 //qml/Components/HelpUserConfigDialog.qml
 //qml/Components/NewIngestion.qml
