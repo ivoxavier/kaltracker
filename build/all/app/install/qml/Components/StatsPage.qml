@@ -108,7 +108,29 @@ Page{
             ListItem.ThinDivider {}
         }
     }
-Component.onCompleted: DataBase.getFoodsType()        
+   
+ChartView {
+    id: chart
+    title: "Top-5 car brand shares in Finland"
+     anchors.top: panel.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    legend.alignment: Qt.AlignBottom
+    antialiasing: true
+
+    PieSeries {
+        id: pieSeries
+        PieSlice { label: "Volkswagen"; value: 13.5 }
+        PieSlice { label: "Toyota"; value: 10.9 }
+        PieSlice { label: "Ford"; value: 8.6 }
+        PieSlice { label: "Skoda"; value: 8.2 }
+        PieSlice { label: "Volvo"; value: 6.8 }
+    }
+}
+
+
+Component.onCompleted: DataBase.getDietary()        
 }
 
 

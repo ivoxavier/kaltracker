@@ -148,7 +148,7 @@ var db = createSQLContainer();
 
 
 //resumePage log book view
-const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
+const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.idIngestion AS idIngestion, Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
 WHERE Ingestion.ingestionDate == date("now")';
@@ -162,7 +162,7 @@ function getUserDailyLogIngestionFoods(){
 
                        var j = i;
 
-                       dailyIngestions.append({"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name, "ingestionDate": results.rows.item(j).ingestionDate, "ingestionTime": results.rows.item(j).ingestionTime})
+                       dailyIngestions.append({"idIngestion": results.rows.item(j).idIngestion,"kcal": results.rows.item(j).kcal, "name": results.rows.item(j).name, "ingestionDate": results.rows.item(j).ingestionDate, "ingestionTime": results.rows.item(j).ingestionTime})
                      })()
                  }
  }) 
@@ -311,6 +311,20 @@ const removeAllIngestions = 'DELETE FROM Ingestion'
   var rs;
   db.transaction(function(tx) {
     rs = tx.executeSql(removeTodayIngestions);
+   }
+ );
+ return console.log(rs.rowsAffected)
+}
+
+
+
+ function deleteIngestion(id){
+  var removeStatement = 'DELETE FROM Ingestion \
+  WHERE Ingestion.idIngestion = which_id'.replace("which_id",id)
+   var db = createSQLContainer();
+   var rs;
+   db.transaction(function(tx) {
+    rs = tx.executeSql(removeStatement);
    }
  );
  return console.log(rs.rowsAffected)

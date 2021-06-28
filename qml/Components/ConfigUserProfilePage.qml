@@ -23,7 +23,6 @@ import QtQuick.LocalStorage 2.12
 import "./ActionBar"
 import "../js/DataBaseTools.js" as DataBase
 import "../js/KaloriesCalculator.js" as KalCalculator
-import "../js/ValidationTools.js" as ValidateInput
 
 
 Page {

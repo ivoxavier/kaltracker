@@ -49,7 +49,7 @@
     <item>
         <Drink>
             <code>5604055111237</code>
-            <product_name>Agua</product_name>
+            <product_name>Água</product_name>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -62,84 +62,9 @@
         </Drink>
     </item>
     <item>
-        <Drink>
-            <code>5601405001309</code>
-            <product_name>Agua Carvalhelhos Natural</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601009941643</code>
-            <product_name>Agua de nascente</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601839000046</code>
-            <product_name>Agua de nascente</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601151978856</code>
-            <product_name>Agua de nascente 6L</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Food>
-            <code>5601227013801</code>
-            <product_name>Agua e sal(Amanhecer)</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>412</energy_kcal_100g>
-            <fat_100g>8.4</fat_100g>
-            <saturated_fat_100g>1.0</saturated_fat_100g>
-            <carbohydrates_100g>72.4</carbohydrates_100g>
-            <sugars_100g>4.5</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>10.1</proteins_100g>
-            <salt_100g>1.7</salt_100g>
-        </Food>
-    </item>
-    <item>
         <Food>
             <code>5601008101055</code>
-            <product_name>Agua e sal(Vieira)</product_name>
+            <product_name>Água e sal(Vieira)</product_name>
             <type>Food</type>
             <energy_kcal_100g>413</energy_kcal_100g>
             <fat_100g>8.3</fat_100g>
@@ -154,7 +79,7 @@
     <item>
         <Drink>
             <code>5604055111244</code>
-            <product_name>Agua Fastio 1.5 Litros</product_name>
+            <product_name>Água do Fastio 1.5L </product_name>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -168,38 +93,8 @@
     </item>
     <item>
         <Drink>
-            <code>5604055111060</code>
-            <product_name>Agua Fastio 6 Litros CX</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g></fat_100g>
-            <saturated_fat_100g></saturated_fat_100g>
-            <carbohydrates_100g></carbohydrates_100g>
-            <sugars_100g></sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g></proteins_100g>
-            <salt_100g></salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5604055111008</code>
-            <product_name>Agua Fastio mineral natural</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
             <code>5601163007315</code>
-            <product_name>Agua Luso Fruta Goiaba Toranja</product_name>
+            <product_name>Água Luso Fruta Goiaba Toranja</product_name>
             <type>Drink</type>
             <energy_kcal_100g>22</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -214,7 +109,7 @@
     <item>
         <Drink>
             <code>5601163001214</code>
-            <product_name>Agua luso fruta limao</product_name>
+            <product_name>Água Luso fruta limao</product_name>
             <type>Drink</type>
             <energy_kcal_100g>25</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -224,51 +119,6 @@
             <fiber_100g></fiber_100g>
             <proteins_100g>0.0</proteins_100g>
             <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601163060518</code>
-            <product_name>Agua mineral natural</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601241301007</code>
-            <product_name>Agua Vimeiro 1</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g></energy_kcal_100g>
-            <fat_100g></fat_100g>
-            <saturated_fat_100g></saturated_fat_100g>
-            <carbohydrates_100g></carbohydrates_100g>
-            <sugars_100g></sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g></proteins_100g>
-            <salt_100g></salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601241404005</code>
-            <product_name>Agua Vimeiro Sem Gas</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g></salt_100g>
         </Drink>
     </item>
     <item>
@@ -313,21 +163,6 @@
         <fiber_100g>0.3</fiber_100g>
         <proteins_100g>0.2</proteins_100g>
         <salt_100g>0.1</salt_100g>
-    </item>
-    <item>
-        <Drink>
-            <code>5601314223205</code>
-            <product_name>Aqua mineral natural</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
     </item>
     <item>
         <Food>
@@ -436,21 +271,6 @@
     </item>
     <item>
         <Food>
-            <code>5601312063421</code>
-            <product_name>Arroz vaporizado</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>355</energy_kcal_100g>
-            <fat_100g>1.0</fat_100g>
-            <saturated_fat_100g>0.4</saturated_fat_100g>
-            <carbohydrates_100g>78.0</carbohydrates_100g>
-            <sugars_100g>0.4</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>7.5</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
             <code>5606456007225</code>
             <product_name>Arroz vaporizado longo extra branqueado</product_name>
             <type>Food</type>
@@ -466,23 +286,8 @@
     </item>
     <item>
         <Food>
-            <code>5604260294398</code>
-            <product_name>Arroz Vaporizado Portugal</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>355</energy_kcal_100g>
-            <fat_100g>1.8</fat_100g>
-            <saturated_fat_100g>0.4</saturated_fat_100g>
-            <carbohydrates_100g>77.0</carbohydrates_100g>
-            <sugars_100g>1.0</sugars_100g>
-            <fiber_100g>1.2</fiber_100g>
-            <proteins_100g>7.2</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
             <code>5601010131279</code>
-            <product_name>atum ao natural</product_name>
+            <product_name>Atúm ao natural</product_name>
             <type>Food</type>
             <energy_kcal_100g>94</energy_kcal_100g>
             <fat_100g>0.5</fat_100g>
@@ -496,38 +301,8 @@
     </item>
     <item>
         <Food>
-            <code>5604450260226</code>
-            <product_name>Atum con Oregano</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>177</energy_kcal_100g>
-            <fat_100g>13.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>31.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5604450210078</code>
-            <product_name>Atum posta ao natural</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>102</energy_kcal_100g>
-            <fat_100g>1.5</fat_100g>
-            <saturated_fat_100g>0.5</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>22.0</proteins_100g>
-            <salt_100g>1.5</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
             <code>5601227405026</code>
-            <product_name>Atum posta em oleo vegetal</product_name>
+            <product_name>Atúm posta em óleo vegetal</product_name>
             <type>Food</type>
             <energy_kcal_100g>211</energy_kcal_100g>
             <fat_100g>12.7</fat_100g>
@@ -537,36 +312,6 @@
             <fiber_100g>0.0</fiber_100g>
             <proteins_100g>24.2</proteins_100g>
             <salt_100g>1.2</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5604321002085</code>
-            <product_name>Aveia flocos grossos integral</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>370</energy_kcal_100g>
-            <fat_100g>6.4</fat_100g>
-            <saturated_fat_100g>1.3</saturated_fat_100g>
-            <carbohydrates_100g>60.0</carbohydrates_100g>
-            <sugars_100g>1.1</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>12.1</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5604321032655</code>
-            <product_name>Aveia proteica(Cem Porcento)</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>393</energy_kcal_100g>
-            <fat_100g>9.2</fat_100g>
-            <saturated_fat_100g>1.3</saturated_fat_100g>
-            <carbohydrates_100g>58.7</carbohydrates_100g>
-            <sugars_100g>2.2</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>12.9</proteins_100g>
-            <salt_100g>0.0</salt_100g>
         </Food>
     </item>
     <item>
@@ -586,36 +331,6 @@
     </item>
     <item>
         <Food>
-            <code>5604260227181</code>
-            <product_name>Azucar branco</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>400</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>100.0</carbohydrates_100g>
-            <sugars_100g>100.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Drink>
-            <code>5600377971719</code>
-            <product_name>Azul agua mineral sin gas</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Food>
             <code>5600319280107</code>
             <product_name>Bacalhau com Natas - ultracongelado</product_name>
             <type>Food</type>
@@ -632,7 +347,7 @@
     <item>
         <Food>
             <code>5601260591601</code>
-            <product_name>Banzai noodle</product_name>
+            <product_name>Banzai noodles</product_name>
             <type>Food</type>
             <energy_kcal_100g>448</energy_kcal_100g>
             <fat_100g>20.3</fat_100g>
@@ -676,21 +391,6 @@
         </item>
         <item>
             <Food>
-                <code>5601950000024</code>
-                <product_name>batata frita rodelas</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>544</energy_kcal_100g>
-                <fat_100g>34.0</fat_100g>
-                <saturated_fat_100g>12.0</saturated_fat_100g>
-                <carbohydrates_100g>50.0</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g>4.1</fiber_100g>
-                <proteins_100g>7.0</proteins_100g>
-                <salt_100g>0.5</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
                 <code>5601002057631</code>
                 <product_name>Batatas Fritas Presunto</product_name>
                 <type>Food</type>
@@ -718,21 +418,6 @@
                 <proteins_100g>6.3</proteins_100g>
                 <salt_100g>1.0</salt_100g>
             </Food>
-        </item>
-        <item>
-            <Drink>
-                <code>5601050033175</code>
-                <product_name>Batido Danone</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>90</energy_kcal_100g>
-                <fat_100g>3.1</fat_100g>
-                <saturated_fat_100g>2.2</saturated_fat_100g>
-                <carbohydrates_100g>13.1</carbohydrates_100g>
-                <sugars_100g>10.9</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>1.8</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Drink>
         </item>
         <item>
             <Drink>
@@ -841,17 +526,17 @@
         </item>
         <item>
             <Food>
-                <code>7891000913000</code>
-                <product_name>Biscoito Aveia E Mel(Nestle)</product_name>
+                <code>2000000002603</code>
+                <product_name>Big Mac (McDonalds)</product_name>
                 <type>Food</type>
-                <energy_kcal_100g>416</energy_kcal_100g>
-                <fat_100g>11.6</fat_100g>
-                <saturated_fat_100g>2.6</saturated_fat_100g>
-                <carbohydrates_100g>70.0</carbohydrates_100g>
-                <sugars_100g>26.0</sugars_100g>
-                <fiber_100g>7.0</fiber_100g>
-                <proteins_100g>9.3</proteins_100g>
-                <salt_100g>2.0</salt_100g>
+                <energy_kcal_100g>509</energy_kcal_100g>
+                <fat_100g>11.5</fat_100g>
+                <saturated_fat_100g>4.5</saturated_fat_100g>
+                <carbohydrates_100g>42.0</carbohydrates_100g>
+                <sugars_100g>8.5</sugars_100g>
+                <fiber_100g>3.0</fiber_100g>
+                <proteins_100g>26.0</proteins_100g>
+                <salt_100g>2.2</salt_100g>
             </Food>
         </item>
         <item>
@@ -1322,7 +1007,7 @@
         <item>
             <Food>
                 <code>5601050023213</code>
-                <product_name>Danone Cremoso Natural Acucarado</product_name>
+                <product_name>Danone Cremoso Natural Açucarado</product_name>
                 <type>Food</type>
                 <energy_kcal_100g>105</energy_kcal_100g>
                 <fat_100g>3.4</fat_100g>
@@ -2596,21 +2281,6 @@
         </item>
         <item>
             <Food>
-                <code>5601244202318</code>
-                <product_name>Queijo Flamengo Fatiado</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>332</energy_kcal_100g>
-                <fat_100g>26.0</fat_100g>
-                <saturated_fat_100g>17.0</saturated_fat_100g>
-                <carbohydrates_100g>0.5</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>24.0</proteins_100g>
-                <salt_100g>1.4</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
                 <code>5601883000771</code>
                 <product_name>Queijo Flamengo Light</product_name>
                 <type>Food</type>
@@ -2652,21 +2322,6 @@
                 <fiber_100g></fiber_100g>
                 <proteins_100g>12.0</proteins_100g>
                 <salt_100g>0.5</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>56006322</code>
-                <product_name>queijo fresco magro</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>90</energy_kcal_100g>
-                <fat_100g>5.4</fat_100g>
-                <saturated_fat_100g>0.0</saturated_fat_100g>
-                <carbohydrates_100g>3.7</carbohydrates_100g>
-                <sugars_100g>1.2</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>15.2</proteins_100g>
-                <salt_100g>1.0</salt_100g>
             </Food>
         </item>
         <item>

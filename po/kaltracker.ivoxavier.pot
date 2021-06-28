@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-26 15:09+0000\n"
+"POT-Creation-Date: 2021-06-28 19:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,76 +30,84 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:33
+#: ../qml/Components/ConfigUserProfilePage.qml:32
 msgid "User Profile"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:60
+#: ../qml/Components/ConfigUserProfilePage.qml:59
 msgid "No Goal"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:74
+#: ../qml/Components/ConfigUserProfilePage.qml:73
 msgid " based on Mifflin-St Jeor equation"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:80
+#: ../qml/Components/ConfigUserProfilePage.qml:79
 #: ../qml/Components/ManualIngestionEntry.qml:75
+#: ../qml/Components/UserAccountPage.qml:79
 msgid "Name"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:91
+#: ../qml/Components/ConfigUserProfilePage.qml:90
+#: ../qml/Components/EditUserProfileDialog.qml:79
+#: ../qml/Components/UserAccountPage.qml:86
 msgid "Age"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:100
+#: ../qml/Components/ConfigUserProfilePage.qml:99
+#: ../qml/Components/EditUserProfileDialog.qml:34
+#: ../qml/Components/UserAccountPage.qml:100
 msgid "Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:109
+#: ../qml/Components/ConfigUserProfilePage.qml:108
+#: ../qml/Components/EditUserProfileDialog.qml:57
+#: ../qml/Components/UserAccountPage.qml:107
 msgid "Height"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:120
+#: ../qml/Components/ConfigUserProfilePage.qml:119
+#: ../qml/Components/UserAccountPage.qml:93
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:121
+#: ../qml/Components/ConfigUserProfilePage.qml:120
 msgid "Men"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:121
+#: ../qml/Components/ConfigUserProfilePage.qml:120
 msgid "Woman"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:146
+#: ../qml/Components/ConfigUserProfilePage.qml:145
 msgid "Very Light"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:147
+#: ../qml/Components/ConfigUserProfilePage.qml:146
 msgid "Light"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:148
+#: ../qml/Components/ConfigUserProfilePage.qml:147
 msgid "Moderate"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:149
+#: ../qml/Components/ConfigUserProfilePage.qml:148
 msgid "Heavy"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:208
+#: ../qml/Components/ConfigUserProfilePage.qml:207
 msgid "Loose Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:216
+#: ../qml/Components/ConfigUserProfilePage.qml:215
 msgid "Maintain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:225
+#: ../qml/Components/ConfigUserProfilePage.qml:224
 msgid "Gain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:253
+#: ../qml/Components/ConfigUserProfilePage.qml:252
 msgid "Calculate"
 msgstr ""
 
@@ -109,6 +117,20 @@ msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:45
 msgid "Finished"
+msgstr ""
+
+#: ../qml/Components/EditUserProfileDialog.qml:29
+msgid "Change Profile"
+msgstr ""
+
+#: ../qml/Components/EditUserProfileDialog.qml:103
+#: ../qml/Components/RemoveRecordsDialog.qml:48
+msgid "Cancel"
+msgstr ""
+
+#: ../qml/Components/EditUserProfileDialog.qml:112
+#: ../qml/Components/ManualIngestionEntry.qml:116
+msgid "Save"
 msgstr ""
 
 #: ../qml/Components/ExportDataPage.qml:37
@@ -166,6 +188,7 @@ msgstr ""
 
 #: ../qml/Components/ManualIngestionEntry.qml:27
 #: ../qml/Components/NewIngestion.qml:62
+#: ../qml/Components/UserAccountPage.qml:64
 msgid "Manual Entry"
 msgstr ""
 
@@ -199,10 +222,6 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:116
-msgid "Save"
-msgstr ""
-
 #: ../qml/Components/NewIngestion.qml:41
 msgid "New Ingestion"
 msgstr ""
@@ -224,10 +243,6 @@ msgstr ""
 msgid "Type 'Yes' to confirm"
 msgstr ""
 
-#: ../qml/Components/RemoveRecordsDialog.qml:48
-msgid "Cancel"
-msgstr ""
-
 #: ../qml/Components/RemoveRecordsDialog.qml:77
 msgid "Something went wrong"
 msgstr ""
@@ -241,10 +256,11 @@ msgid "'s Dashboard"
 msgstr ""
 
 #: ../qml/Components/ResumePage.qml:85
-msgid " Daily Ingestion"
+msgid "Daily Ingestion"
 msgstr ""
 
 #: ../qml/Components/ResumePage.qml:103
+#: ../qml/Components/UserAccountPage.qml:114
 msgid "Goal"
 msgstr ""
 
@@ -272,7 +288,7 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:45 ../qml/Components/StatsPageBackup.qml:49
+#: ../qml/Components/StatsPage.qml:45
 msgid "Stats"
 msgstr ""
 
@@ -280,40 +296,8 @@ msgstr ""
 msgid "Dietary"
 msgstr ""
 
-#: ../qml/Components/StatsPageBackup.qml:52
-msgid "Frequencies"
-msgstr ""
-
-#: ../qml/Components/StatsPageBackup.qml:52
-msgid "History"
-msgstr ""
-
-#: ../qml/Components/StatsPageBackup.qml:77
-msgid " Total foods ingested by type"
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:35
+#: ../qml/Components/UserAccountPage.qml:42
 msgid "Account"
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:49
-msgid "User Name: "
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:53
-msgid "User Sex: "
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:57
-msgid "User Weight: "
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:61
-msgid "User Height: "
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:65
-msgid "User Goal: "
 msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:29 kaltracker.desktop.in.h:1

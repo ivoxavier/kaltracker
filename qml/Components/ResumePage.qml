@@ -29,8 +29,8 @@ Page{
     id: resumePage
     objectName: 'ResumePage'
     
-    property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
-    property string dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
+    property int dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
+    property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
     property string name
     property string ingestionDate
     property string ingestionTime
@@ -82,7 +82,7 @@ Page{
 
         Label{
             id: topPanelLabel
-            text: i18n.tr(" Daily Ingestion")
+            text: i18n.tr("Daily Ingestion")
             font.bold: true 
             
             anchors.horizontalCenter: parent.horizontalCenter
@@ -140,6 +140,7 @@ Page{
         textSize: Label.Large
     }
     
+
     ScrollView{
         id: scrollView
         anchors{
@@ -148,17 +149,36 @@ Page{
             right: parent.right
             bottom: footer.top
         }
-    
-        Column{
-            width: resumePage.width
-            spacing : units.gu(2)
-            topPadding: units.gu(2)
-            
-            Repeater{
-                model: dailyIngestions
-                    Label{text:name}
-            }
-        }
+
+        
+        ListView {
+            id: foodsList
+            model: dailyIngestions
+     
+            delegate: ListItem.Subtitled{
+                    text: name
+                    subText: ingestionTime
+                    removable: true
+                    confirmRemoval: true
+                    backgroundIndicator: Rectangle {
+                                            anchors.fill: parent
+                                            color: UbuntuColors.red
+                                            Icon{
+                                                name:"delete"
+                                                anchors.fill: parent
+                                                MouseArea{
+                                                        anchors.fill: parent
+                                                        onClicked:{
+                                                            DataBase.deleteIngestion(idIngestion)
+                                                            root.initDB()
+                                                            root.refreshListModel()
+                                                        }
+                            
+                                                }
+                                            }
+                    }
+                }
+        } 
     }
 
 
@@ -171,7 +191,7 @@ Page{
         height: (resumePage.header.height) - units.gu(1)
         
         Row{
-            spacing: units.gu(2)
+            spacing: units.gu(2.5)
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -242,4 +262,6 @@ Page{
  Component.onDestruction:{
     console.log("byebye")  
  }
+
+ Component.onCompleted: DataBase.getDietary()  
 }

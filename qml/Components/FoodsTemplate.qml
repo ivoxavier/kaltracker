@@ -30,7 +30,7 @@ Dialog {
             onFoodsDetailsSender:{
 
                 aboutFoods.title = nameToTemplate
-                energy_kcal.text = i18n.tr("Calories:") +kcalToTemplate + "kcal"
+                energy_kcal.text = i18n.tr("Calories:") + kcalToTemplate + "kcal"
                 fat.text = i18n.tr("Fat:") + fatToTemplate + "g"
                 saturated_fat.text = i18n.tr("Saturated Fat:") +saturatedToTemplate + "g"
                 carbohydrates.text = i18n.tr("Carbonhydrates:") +carboToTemplate + "g"

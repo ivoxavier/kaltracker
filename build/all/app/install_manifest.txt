@@ -5,7 +5,6 @@
 //qml/js/Quotes.js
 //qml/js/KaloriesCalculator.js
 //qml/js/DataBaseTools.js
-//qml/js/ValidationTools.js
 //qml/xml/foods.xml
 //qml/py/export_data.py
 //qml/Main.qml
@@ -18,9 +17,9 @@
 //qml/Components/ActionBar/AboutAction.qml
 //qml/Components/ActionBar/HelpUserConfigAction.qml
 //qml/Components/UserAccountPage.qml
-//qml/Components/StatsPageBackup.qml
 //qml/Components/ExportDataPage.qml
 //qml/Components/HelpUserConfigDialog.qml
+//qml/Components/EditUserProfileDialog.qml
 //qml/Components/NewIngestion.qml
 //qml/Components/FoodsTemplate.qml
 //qml/Components/ManualIngestionEntry.qml
