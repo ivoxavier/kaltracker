@@ -124,7 +124,7 @@ Page{
                 }
             }
 
-            ListItem.ThinDivider {}
+            //ListItem.ThinDivider {}
         }
     }
 
@@ -154,32 +154,40 @@ Page{
         ListView {
             id: foodsList
             model: dailyIngestions
-     
+            removeDisplaced: Transition {
+                                NumberAnimation { 
+                                    properties: "x,y"
+                                    duration: 1000 
+                                    }
+                            }
+
             delegate: ListItem.Subtitled{
                     text: name
-                    subText: ingestionTime
+                    subText: (ingestionTime >= "00:00" && ingestionTime <= "10:59") ? i18n.tr("Breakfast") : (ingestionTime >= "11:00" && ingestionTime <= "15:59") ? i18n.tr("Lunch") : (ingestionTime >= "16:00" && ingestionTime <= "19:59") ? i18n.tr("Snack") : i18n.tr("Dinner")
+                    showDivider: false
                     removable: true
                     confirmRemoval: true
-                    backgroundIndicator: Rectangle {
-                                            anchors.fill: parent
-                                            color: UbuntuColors.red
-                                            Icon{
-                                                name:"delete"
-                                                anchors.fill: parent
-                                                MouseArea{
-                                                        anchors.fill: parent
-                                                        onClicked:{
-                                                            DataBase.deleteIngestion(idIngestion)
-                                                            root.initDB()
-                                                            root.refreshListModel()
-                                                        }
-                            
-                                                }
-                                            }
+                    backgroundIndicator: Rectangle{
+                        anchors.fill: parent
+                        color: "transparent"
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked:{
+                                 DataBase.deleteIngestion(idIngestion)
+                                 root.initDB()
+                                 root.refreshListModel()
+                            }
+                        }  
                     }
+                    /*onTriggered:{
+                        console.log("clicked")
+                    }*/
+                    
                 }
         } 
     }
+
+
 
 
     Rectangle{

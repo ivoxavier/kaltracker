@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 19:34+0000\n"
+"POT-Creation-Date: 2021-06-29 19:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,6 @@ msgid " based on Mifflin-St Jeor equation"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:79
-#: ../qml/Components/ManualIngestionEntry.qml:75
 #: ../qml/Components/UserAccountPage.qml:79
 msgid "Name"
 msgstr ""
@@ -129,7 +128,7 @@ msgid "Cancel"
 msgstr ""
 
 #: ../qml/Components/EditUserProfileDialog.qml:112
-#: ../qml/Components/ManualIngestionEntry.qml:116
+#: ../qml/Components/ManualIngestionEntry.qml:128
 msgid "Save"
 msgstr ""
 
@@ -206,19 +205,27 @@ msgstr ""
 msgid "Drink"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:81
-msgid "Steak..."
+#: ../qml/Components/ManualIngestionEntry.qml:74
+msgid "Product Name"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:79
+msgid "Kcal 100g"
 msgstr ""
 
 #: ../qml/Components/ManualIngestionEntry.qml:93
-msgid "Kcal"
+msgid "Fat 100g"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:97
-msgid "12"
+#: ../qml/Components/ManualIngestionEntry.qml:101
+msgid "Saturated 100g"
 msgstr ""
 
 #: ../qml/Components/ManualIngestionEntry.qml:109
+msgid "carb 100g"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionEntry.qml:121
 msgid "Back"
 msgstr ""
 
@@ -268,16 +275,28 @@ msgstr ""
 msgid "Today meals"
 msgstr ""
 
+#: ../qml/Components/ResumePage.qml:166
+msgid "Breakfast"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:166
+msgid "Dinner"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:166
+msgid "Lunch"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:166
+msgid "Snack"
+msgstr ""
+
 #: ../qml/Components/SaveDataDialog.qml:28
 msgid "Operation Result"
 msgstr ""
 
 #: ../qml/Components/SettingsPage.qml:35
 msgid "Settings"
-msgstr ""
-
-#: ../qml/Components/SettingsPage.qml:57
-msgid "Dark Theme"
 msgstr ""
 
 #: ../qml/Components/SettingsPage.qml:67
@@ -288,12 +307,64 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:45
+#: ../qml/Components/StatsPage.qml:50
 msgid "Stats"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:56
-msgid "Dietary"
+#: ../qml/Components/StatsPage.qml:80
+msgid "Average calories per month"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "April"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "August"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "December"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "February"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "January"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "July"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "June"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "March"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "May"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "November"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "October"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:84
+msgid "September"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:95
+msgid "Nutrients ingested during day"
 msgstr ""
 
 #: ../qml/Components/UserAccountPage.qml:42
@@ -372,32 +443,4 @@ msgstr ""
 
 #: ../qml/js/DataBaseTools.js:140
 msgid "Exceeded"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:218
-msgid "Fat\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:219
-msgid "Saturated\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:220
-msgid "Carbornhydrates\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:221
-msgid "Sugars\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:222
-msgid "Protein\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:223
-msgid "Fiber\n"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:224
-msgid "Salt\n"
 msgstr ""

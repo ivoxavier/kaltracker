@@ -73,10 +73,6 @@ Dialog {
             id: salt
         }
 
-        Row{
-            spacing : units.gu(10)
-            //anchors.horizontalCenter: parent.horizontalCenter
-            width: aboutFoods.title.width
             Button {
                 text: "Back"
                 onClicked:{
@@ -84,14 +80,6 @@ Dialog {
                 } 
             }
 
-            Button {
-                text: "Confirm"
-                color: "green"
-                onClicked: {
-                    PopupUtils.close(aboutFoods)
-                }
-            }
-        }
 
         
 }

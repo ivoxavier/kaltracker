@@ -51,7 +51,7 @@ Page{
         anchors.top: settingsPage.header.bottom
         width: settingsPage.width
 
-        ListItem {
+      /*  ListItem {
             id: darkTheme
             ListItemLayout{
                 title.text: i18n.tr("Dark Theme")
@@ -59,7 +59,7 @@ Page{
                 Switch{}
             }
 
-        }
+        }*/
 
         ListItem {
             id: deleteTodayRecords

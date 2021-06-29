@@ -203,25 +203,44 @@ function getAllIngestions(contextRequest){
 }
 
 //statsPage
-const populateStatsPage = 'SELECT ROUND(SUM(fat_100g),1) AS fat, ROUND(SUM(saturated_fat_100g),1) AS saturated, ROUND(SUM(carbohydrates_100g),1) AS carbornhydrates, ROUND(SUM(sugars_100g),1) AS sugars, ROUND(SUM(proteins_100g),1) AS protein, ROUND(SUM(fiber_100g),1) AS fiber, ROUND(SUM(salt_100g),1) AS salt \
+const populateChart = 'SELECT ROUND(SUM(fat_100g),1) AS fat, ROUND(SUM(saturated_fat_100g),1) AS saturated, ROUND(SUM(carbohydrates_100g),1) AS carbornhydrates, ROUND(SUM(sugars_100g),1) AS sugars, ROUND(SUM(proteins_100g),1) AS protein, ROUND(SUM(fiber_100g),1) AS fiber, ROUND(SUM(salt_100g),1) AS salt \
 FROM Ingestion \
-JOIN User ON Ingestion.idUser = User.idUser \
-WHERE Ingestion.ingestionDate == date("now")'
+WHERE strftime("%m", Ingestion.ingestionDate) == strftime("%m", date()) '
 
-function getDietary(){
+function getNutrientsChartPie(){
   var db = createSQLContainer();
   db.transaction(function (tx) {
-                   var results = tx.executeSql(populateStatsPage)
+                   var results = tx.executeSql(populateChart)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       fatStat.text = i18n.tr("Fat\n") + results.rows.item(j).fat + "g"
-                       saturatedStat.text = i18n.tr("Saturated\n") + results.rows.item(j).saturated + "g"
-                       carbornhydrates.text = i18n.tr("Carbornhydrates\n") + results.rows.item(j).carbornhydrates + "g"
-                       sugarsStat.text = i18n.tr("Sugars\n") + results.rows.item(j).sugars + "g"
-                       proteinStat.text = i18n.tr("Protein\n") + results.rows.item(j).protein + "g"
-                       fiberStat.text = i18n.tr("Fiber\n") + results.rows.item(j).fiber + "g"
-                       saltStat.text = i18n.tr("Salt\n") + results.rows.item(j).salt + "g"
+                       fatStat = results.rows.item(j).fat
+                       saturatedStat = results.rows.item(j).saturated
+                       carbornhydrates = results.rows.item(j).carbornhydrates
+                       sugarsStat = results.rows.item(j).sugars
+                       proteinStat = results.rows.item(j).protein
+                       fiberStat = results.rows.item(j).fiber 
+                       saltStat = results.rows.item(j).salt
+                     })()
+                 }
+ }) 
+}
+
+const average_calories_month = 'SELECT strftime("%m", Ingestion.ingestionDate) AS month, AVG(Ingestion.energy_kcal_100g) AS average \
+FROM Ingestion \
+WHERE strftime("%Y", Ingestion.ingestionDate) == strftime("%Y", date()) \
+GROUP BY month \
+ORDER BY month DESC'
+
+
+function getAvareCaloriesMonth(){
+  var db = createSQLContainer();
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(average_calories_month)
+                   for (var i = 0; i < results.rows.length; i++) { 
+                     (function(){
+                       var j = i;
+                       avgCaloriesMonth.append({"month": results.rows.item(j).month, "average": results.rows.item(j).average})
                      })()
                  }
  }) 

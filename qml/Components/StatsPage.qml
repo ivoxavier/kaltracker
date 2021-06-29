@@ -32,9 +32,14 @@ Page{
     id: statsPage
     objectName: 'Stats Page'
 
+    property double fatStat
+    property double saturatedStat
+    property double carbornhydrates
+    property double sugarsStat
+    property double proteinStat
+    property double fiberStat
+    property double saltStat
 
-    property int num1: 2
-    property int num2: 2
     header: PageHeader {
 
         StyleHints {
@@ -45,93 +50,66 @@ Page{
         title: i18n.tr("Stats")
     }
 
-    Rectangle{
-        id: panel
-        width: statsPage.width
-        height: (((statsPage.header.height + statsPage.height) / 2) / 2) - statsPage.header.height
-        anchors.top: statsPage.header.bottom
+    Connections{
+        target: root
+        onInitDB:{
+            console.log("refreshing dashboard")
+            DataBase.getAvareCaloriesMonth()
+        }
+    }
 
-        Label{
-            id: topPanelLabel
-            text: i18n.tr("Dietary")
-            font.bold: true 
-            
-            anchors.horizontalCenter: parent.horizontalCenter
-            
+
+    ListModel {
+        id: avgCaloriesMonth
+        Component.onCompleted: DataBase.getAvareCaloriesMonth()
+    }
+
+
+    ScrollView{
+        id: scrollView
+        anchors{
+            top: statsPage.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: chartPie.top
         }
 
-        Column{
-            anchors.top: topPanelLabel.bottom
-            anchors.right: statsPage.width
-            width: statsPage.width
-            topPadding: units.gu(2)
-            spacing: units.gu(1)
-
-            Row{
-                spacing: units.gu(1.5)
-                anchors.horizontalCenter: parent.horizontalCenter
+            ListView {
+                model: avgCaloriesMonth
+                header: Label{
+                    text: i18n.tr("Average calories per month")
+                    font.bold: true
+                }
+                delegate: ListItem.Subtitled{
+                    text: month === '01' ? i18n.tr("January") : month === '02' ? i18n.tr("February") : month === '03' ? i18n.tr("March") : month === '04' ? i18n.tr("April") : month === '05' ? i18n.tr("May") : month === '06' ? i18n.tr("June") : month === '07' ? i18n.tr("July") : month === '08' ? i18n.tr("August") : month === '09' ? i18n.tr("September") : month === '10' ? i18n.tr("October") : month === '11' ? i18n.tr("November") : i18n.tr("December")
+                    subText: average + " kcal"
+                    showDivider: false
                 
-                Label{
-                    id: fatStat
-                }
-
-                Label{
-                    id: saltStat
-                }
-
-                Label{
-                    id:sugarsStat
-                }
             }
-
-            Row{
-                spacing: units.gu(1.5)
-                anchors.horizontalCenter: parent.horizontalCenter
-                    
-                Label{
-                    id: proteinStat
-                }
-
-                Label{
-                    id: carbornhydrates
-                }
-
-                Label{
-                    id: saturatedStat
-                }
-
-                Label{
-                    id: fiberStat
-                }
-            }
-
-            ListItem.ThinDivider {}
         }
-    }
-   
-ChartView {
-    id: chart
-    title: "Top-5 car brand shares in Finland"
-     anchors.top: panel.bottom
-    anchors.left: parent.left
-    anchors.right: parent.right
-    anchors.bottom: parent.bottom
-    legend.alignment: Qt.AlignBottom
-    antialiasing: true
-
-    PieSeries {
-        id: pieSeries
-        PieSlice { label: "Volkswagen"; value: 13.5 }
-        PieSlice { label: "Toyota"; value: 10.9 }
-        PieSlice { label: "Ford"; value: 8.6 }
-        PieSlice { label: "Skoda"; value: 8.2 }
-        PieSlice { label: "Volvo"; value: 6.8 }
-    }
 }
+            ChartView {
 
 
-Component.onCompleted: DataBase.getDietary()        
+                id: chartPie
+                title: i18n.tr("Nutrients ingested during day")
+                anchors.top: statsPage.verticalCenter
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                legend.alignment: Qt.AlignRight
+                antialiasing: true
+
+                PieSeries {
+                    id: pieSeries
+                    PieSlice { label: "Fat"; value: fatStat }
+                    PieSlice { label: "Saturated"; value: saturatedStat }
+                    PieSlice { label: "C.hydrates"; value: carbornhydrates }
+                    PieSlice { label: "Sugar"; value: sugarsStat }
+                    PieSlice { label: "Protein"; value: proteinStat }
+                    PieSlice { label: "Fiber"; value: fiberStat }
+                    PieSlice { label: "Salt"; value: saltStat }
+                }
 }
-
-
-        
+  Component.onCompleted: DataBase.getNutrientsChartPie()  
+}

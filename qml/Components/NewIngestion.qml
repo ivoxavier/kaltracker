@@ -140,7 +140,7 @@ Page {
                     }
                     onPressAndHold:{
                         PopupUtils.open(foodsTemplate)
-                        foodsList.foodsDetailsSender(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
+                        foodsList.foodsDetailsSender(product_name,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
                     }
                 }
         } 

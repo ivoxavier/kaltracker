@@ -66,38 +66,50 @@ Dialog {
 
         Row{ 
 
-            spacing:units.gu(2)
-
-            Label{
-                
-                anchors.verticalCenter: parent.verticalCenter
-                
-                text:i18n.tr("Name")
-            }  
+            spacing:units.gu(1.5)
 
             TextField {
                 id: ingestionEntry
                 width: units.gu(16)
-                placeholderText: i18n.tr("Steak...")
+                placeholderText: i18n.tr("Product Name")
+            }
+
+            TextField {
+                id: kcalEntry
+                placeholderText: i18n.tr("Kcal 100g")
+                width: units.gu(9)
+                inputMethodHints: Qt.ImhDigitsOnly
+                validator: IntValidator {}
             }
         }
 
         Row{  
 
-            spacing:units.gu(2)
+            spacing:units.gu(1.5)
+            
 
-            Label{
-                
-                anchors.verticalCenter: parent.verticalCenter
-                
-                text:i18n.tr("Kcal")
-            }  
             TextField {
-                id: kcalEntry
-                placeholderText: i18n.tr("12")
-                width: units.gu(10)
+                id: fatEntry
+                placeholderText: i18n.tr("Fat 100g")
+                width: units.gu(9)
                 inputMethodHints: Qt.ImhDigitsOnly
-                validator: IntValidator {}
+                validator: DoubleValidator {}
+            }
+
+            TextField {
+                id: saturatedEntry
+                placeholderText: i18n.tr("Saturated 100g")
+                width: units.gu(9)
+                inputMethodHints: Qt.ImhDigitsOnly
+                validator: DoubleValidator {}
+            }
+
+            TextField {
+                id: carbEntry
+                placeholderText: i18n.tr("carb 100g")
+                width: units.gu(9)
+                inputMethodHints: Qt.ImhDigitsOnly
+                validator: DoubleValidator {}
             }
         }
 
