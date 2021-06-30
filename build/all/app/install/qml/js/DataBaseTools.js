@@ -95,11 +95,11 @@ function getUserKaloriesIngestedDuringDay(){
                        if(rsToQML === null){
                         
                         dashboardUserKaloriesIngestedDuringDay.text = 0  + "\n" + i18n.tr("Foods");
-                       
+                      
                       } else{
 
                         dashboardUserKaloriesIngestedDuringDay.text = rsToQML + "\n" + i18n.tr("Foods")
-                       
+                        
                       }
                      })()
                     }
@@ -170,19 +170,17 @@ function getUserDailyLogIngestionFoods(){
 
 
 const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
-FROM Ingestion \
-JOIN User ON Ingestion.idUser = User.idUser'
+FROM Ingestion'
 
 function getAllIngestions(contextRequest){
 
-  var outputType = contextRequest
   var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(allIngestions)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       switch(outputType){
+                       switch(contextRequest){
 
                          case "recordsLog":
                             var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + 'kcal' + '\n'
@@ -233,7 +231,7 @@ GROUP BY month \
 ORDER BY month DESC'
 
 
-function getAvareCaloriesMonth(){
+function getAverageCaloriesMonth(){
   var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(average_calories_month)
@@ -245,6 +243,34 @@ function getAvareCaloriesMonth(){
                  }
  }) 
 }
+
+
+function getAllIngestionsMonth(month_requested){
+  
+const month_ingestions = 'SELECT i.ingestionDate AS ingestionDate, i.ingestionTime AS ingestionTime, i.product_name AS name, i.energy_kcal_100g AS kcal \
+FROM Ingestion i \
+WHERE strftime("%m", ingestionDate) == "which_month"'.replace("which_month", month_requested)
+  
+  var db = createSQLContainer();
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(month_ingestions)
+                   for (var i = 0; i < results.rows.length; i++) { 
+                     (function(){
+                       var j = i;
+                       var rsToQML = results.rows.item(j).ingestionDate + ' '+ results.rows.item(j).ingestionTime + ' ' + results.rows.item(j).name + ' ' + results.rows.item(j).kcal + 'kcal' + '\n'
+                       recordsHistory.text += rsToQML
+                     })()
+                 }
+ }) 
+}
+
+
+
+
+
+
+
+
 
    /* Data Saving Start */
   //stores the data given by user for userProfile

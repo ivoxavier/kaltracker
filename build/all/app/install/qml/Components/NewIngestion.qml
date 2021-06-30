@@ -77,10 +77,7 @@ Page {
         }
             }
       
-    Component{
-        id: foodsTemplate
-        FoodsTemplate{}
-    }
+    
 
     Component{
         id: manualIngestionEntryDialog
@@ -127,7 +124,7 @@ Page {
             id: foodsList
             model: xmlScheme
 
-            signal foodsDetailsSender (string nameToTemplate, int kcalToTemplate, double fatToTemplate, double saturatedToTemplate, double carboToTemplate, double sugarsToTemplate, double fiberToTemplate, double proteinsToTemplate, double saltToTemplate)
+          
      
             delegate: ListItem.Standard{
                     text: product_name
@@ -139,8 +136,16 @@ Page {
                         root.refreshListModel()
                     }
                     onPressAndHold:{
-                        PopupUtils.open(foodsTemplate)
-                        foodsList.foodsDetailsSender(product_name,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
+                        mainStack.push(foodsTemplate)
+                        stackValues.stackProductName = product_name
+                        stackValues.stackEnergyKcal = energy_kcal_100g
+                        stackValues.stackFat = fat_100g
+                        stackValues.stackSaturated = saturated_fat_100g
+                        stackValues.stackCarborn = carbohydrates_100g
+                        stackValues.stackSugars = sugars_100g
+                        stackValues.stackFiber = fiber_100g
+                        stackValues.stackProtein = proteins_100g
+                        stackValues.stackSalt = salt_100g
                     }
                 }
         } 

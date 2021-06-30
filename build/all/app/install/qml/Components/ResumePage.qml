@@ -37,7 +37,7 @@ Page{
     property int kcal
 
     header: PageHeader {
-        title: userSettings.userConfigsUserName + i18n.tr("'s Dashboard");
+        title: userSettings.userConfigsUserName + i18n.tr("'s Panel");
         trailingActionBar.actions: AboutAction{}
 
         StyleHints {
@@ -79,6 +79,7 @@ Page{
         width: resumePage.width
         height: (((resumePage.header.height + resumePage.height) / 2) / 2) - resumePage.header.height
         anchors.top: resumePage.header.bottom
+        color: root.defaultForegroundColor
 
         Label{
             id: topPanelLabel
@@ -133,12 +134,6 @@ Page{
         id: dailyIngestions
         Component.onCompleted: DataBase.getUserDailyLogIngestionFoods()
     }
-
-    Label{
-        anchors.bottom : scrollView.top
-        text: i18n.tr("Today meals")
-        textSize: Label.Large
-    }
     
 
     ScrollView{
@@ -154,6 +149,13 @@ Page{
         ListView {
             id: foodsList
             model: dailyIngestions
+            header: Label{
+                
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                text: i18n.tr("Today meals")
+                font.bold: true
+            }
             removeDisplaced: Transition {
                                 NumberAnimation { 
                                     properties: "x,y"
@@ -197,6 +199,7 @@ Page{
         anchors.right: resumePage.right
         width: resumePage.width
         height: (resumePage.header.height) - units.gu(1)
+        color: root.defaultForegroundColor
         
         Row{
             spacing: units.gu(2.5)
@@ -269,7 +272,6 @@ Page{
 
  Component.onDestruction:{
     console.log("byebye")  
- }
+ } 
 
- Component.onCompleted: DataBase.getDietary()  
 }

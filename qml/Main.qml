@@ -53,7 +53,16 @@ MainView {
     //required to refresh dailyIngestion ListModel
     signal refreshListModel()
 
+
+    Component{
+        id: monthIngestionsPage
+        MonthIngestionsPage{}
+    }
     
+    Component{
+        id: averageCaloriesMonth
+        AverageCaloriesMonthPage{}
+    }
 
     Component{
         id: statsPage
@@ -74,6 +83,11 @@ MainView {
     Component{
         id: exportDataPage
         ExportDataPage{}
+    }
+
+    Component{
+        id: foodsTemplate
+        FoodsTemplate{}
     }
 
     Component{
@@ -128,6 +142,22 @@ MainView {
         property string userConfigsSex
         property int userConfigsAge
 
+    }
+
+    Settings{
+        id: stackValues
+        category: "stack_variable"
+
+        property string stackProductName
+        property double stackEnergyKcal
+        property double stackFat
+        property double stackSaturated
+        property double stackCarborn
+        property double stackSugars
+        property double stackFiber
+        property double stackProtein
+        property double stackSalt
+        property string stackMonthIngestions
     }
 
     PageStack{
