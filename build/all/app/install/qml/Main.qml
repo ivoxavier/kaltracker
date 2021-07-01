@@ -53,6 +53,17 @@ MainView {
     //required to refresh dailyIngestion ListModel
     signal refreshListModel()
 
+    //passing values to foodsTemplate
+    property string stackProductName
+    property double stackEnergyKcal
+    property double stackFat
+    property double stackSaturated
+    property double stackCarborn
+    property double stackSugars
+    property double stackFiber
+    property double stackProtein
+    property double stackSalt
+    property string stackMonthIngestions
 
     Component{
         id: monthIngestionsPage
@@ -101,8 +112,13 @@ MainView {
     }
 
     Component {
+        id: scheduleIngestionPage
+        ScheduleIngestionPage {}
+    }
+
+    Component {
         id: newIngestionPage
-        NewIngestion {}
+        NewIngestionPage {}
     }
 
     Component {
@@ -142,22 +158,6 @@ MainView {
         property string userConfigsSex
         property int userConfigsAge
 
-    }
-
-    Settings{
-        id: stackValues
-        category: "stack_variable"
-
-        property string stackProductName
-        property double stackEnergyKcal
-        property double stackFat
-        property double stackSaturated
-        property double stackCarborn
-        property double stackSugars
-        property double stackFiber
-        property double stackProtein
-        property double stackSalt
-        property string stackMonthIngestions
     }
 
     PageStack{

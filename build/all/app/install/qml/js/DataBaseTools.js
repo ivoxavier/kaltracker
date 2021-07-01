@@ -329,6 +329,30 @@ function saveNewIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_
   return validationMessage;
 }
 
+function saveScheduleIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g,schedule_date,schedule_time){          
+  var db = createSQLContainer();
+  console.log("DataBase.saveNewIngestion : connected to SQL_CONTAINER");
+  var validationMessage = "";
+  
+  
+  db.transaction(function(tx) {
+      var rs = tx.executeSql(saveNewIngestionStatement, [1, product_name, type, energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g, schedule_date, schedule_time]);
+      if (rs.rowsAffected > 0) {
+        validationMessage = "DataBase.saveNewIngestion : OK";
+      } else {
+        validationMessage = "DataBase.saveNewIngestion : Failed ";
+      }
+  }
+  );
+  console.log(validationMessage)
+  return validationMessage;
+}
+
+
+
+
+
+
   /* Data Loading End */
 
 

@@ -44,7 +44,7 @@ Page {
         ListItem {
             id: productName
             ListItemLayout{
-                title.text: stackValues.stackProductName
+                title.text: root.stackProductName
                 subtitle.text: "By OpenFoodsFacts"
             }
         }
@@ -65,7 +65,7 @@ Page {
                     id: kcalNumber
                     anchors.centerIn: parent
                     
-                    text: stackValues.stackEnergyKcal
+                    text: root.stackEnergyKcal
                     textSize: Label.Large
                     font.bold: true
                 }
@@ -86,7 +86,6 @@ Page {
                 anchors.right: parent.right
                 anchors.left: kcalRectangle.right
                 height: parent.height
-                //width: (parent.width / 2)
                 color: "transparent"
                     
                     ChartView {
@@ -98,7 +97,7 @@ Page {
                         backgroundColor: root.defaultForegroundColor
                         PieSeries {
                             id: pieSeries
-                            PieSlice { label: i18n.tr("Kcal"); value: stackValues.stackEnergyKcal }
+                            PieSlice { label: i18n.tr("Kcal"); value: root.stackEnergyKcal }
                             PieSlice { label: i18n.tr("Goal") ; value: userSettings.userConfigsGoal }
                     
                         }
@@ -110,7 +109,7 @@ Page {
             id: fatItem
             ListItemLayout{
                 title.text: "Fat/100g"
-                subtitle.text: stackValues.stackFat + "g"
+                subtitle.text: root.stackFat + "g"
             }
         }
 
@@ -118,7 +117,7 @@ Page {
             id: saturatedItem
             ListItemLayout{
                 title.text: "Saturated/100g"
-                subtitle.text: stackValues.stackSaturated + "g"
+                subtitle.text: root.stackSaturated + "g"
                 
             }
         }
@@ -126,7 +125,7 @@ Page {
             id: carbohydratesItem
             ListItemLayout{
                 title.text: "CarbornHydrates/100g"
-                subtitle.text: stackValues.stackCarborn + "g"
+                subtitle.text: root.stackCarborn + "g"
             }
         }
 
@@ -134,23 +133,23 @@ Page {
             id: sugarsItem
             ListItemLayout{
                 title.text: "Sugars/100g"
-                subtitle.text: stackValues.stackSugars + "g"
+                subtitle.text: root.stackSugars + "g"
             } 
         }
 
-        /*ListItem {
+        ListItem {
             id: fiberItem
             ListItemLayout{
-                title.text: "Fibers"
-                subtitle.text: stackValues.stackFiber + "g"
+                title.text: "Fibers/100g"
+                subtitle.text: root.stackFiber + "g"
             }
-        }*/
+        }
 
         ListItem {
             id: proteinsItem
             ListItemLayout{
                 title.text: "Protein/100g"
-                subtitle.text: stackValues.stackProtein + "g"
+                subtitle.text: root.stackProtein + "g"
             }
         }
 
@@ -158,7 +157,7 @@ Page {
             id: saltItem
             ListItemLayout{
                 title.text: "Salt/100g"
-                subtitle.text: stackValues.stackSalt + "g"
+                subtitle.text: root.stackSalt + "g"
             }
         }
     }   

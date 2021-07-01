@@ -24,9 +24,8 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtQuick.LocalStorage 2.0
 import QtQuick.XmlListModel 2.7
-import QtQuick 2.12 as RefreshResumePage
 import "../js/DataBaseTools.js" as DataBase
-import "../js/Quotes.js" as Quotes
+import "./ListModel"
 
 
     
@@ -35,7 +34,7 @@ Page {
     objectName: "NewIngestionPage"
 
     property int queryCategory
-
+    
     header: PageHeader {
         id: header
         title: i18n.tr('New Ingestion')
@@ -94,37 +93,27 @@ Page {
             }
     }
 
-    XmlListModel {
-            id: xmlScheme
-            source: "../xml/foods.xml"
-            query: queryCategory === 0 ? "/foods/item/Food" : "/foods/item/Drink"
-
-            XmlRole { name: "product_name"; query: "product_name/string()" }
-            XmlRole { name: "type"; query: "type/string()" }
-            XmlRole { name: "energy_kcal_100g"; query: "energy_kcal_100g/string()" }
-            XmlRole { name: "fat_100g"; query: "fat_100g/string()" }
-            XmlRole { name: "saturated_fat_100g"; query: "saturated_fat_100g/string()" }
-            XmlRole { name: "carbohydrates_100g"; query: "carbohydrates_100g/string()" }
-            XmlRole { name: "sugars_100g"; query: "sugars_100g/string()" }
-            XmlRole { name: "fiber_100g"; query: "fiber_100g/string()" }
-            XmlRole { name: "proteins_100g"; query: "proteins_100g/string()" }
-            XmlRole { name: "salt_100g"; query: "salt_100g/string()" }
+    Label{
+        id: categoryLabel
+        anchors.top: newIngestionPage.header.bottom
+        font.bold: true
+        text: queryCategory !=0 ? i18n.tr("Drink") : i18n.tr("Food")
     }
-    
     ScrollView{
         
         anchors{
-            top: newIngestionPage.header.bottom
+            top: categoryLabel.bottom
             right: newIngestionPage.right
             left: newIngestionPage.left
             bottom: newIngestionPage.bottom 
         }
+        
+           
 
         ListView {
             id: foodsList
-            model: xmlScheme
-
-          
+            model: FoodsDrinks{}
+            
      
             delegate: ListItem.Standard{
                     text: product_name
@@ -137,19 +126,22 @@ Page {
                     }
                     onPressAndHold:{
                         mainStack.push(foodsTemplate)
-                        stackValues.stackProductName = product_name
-                        stackValues.stackEnergyKcal = energy_kcal_100g
-                        stackValues.stackFat = fat_100g
-                        stackValues.stackSaturated = saturated_fat_100g
-                        stackValues.stackCarborn = carbohydrates_100g
-                        stackValues.stackSugars = sugars_100g
-                        stackValues.stackFiber = fiber_100g
-                        stackValues.stackProtein = proteins_100g
-                        stackValues.stackSalt = salt_100g
+                        root.stackProductName = product_name
+                        root.stackEnergyKcal = energy_kcal_100g
+                        root.stackFat = fat_100g
+                        root.stackSaturated = saturated_fat_100g
+                        root.stackCarborn = carbohydrates_100g
+                        root.stackSugars = sugars_100g
+                        root.stackFiber = fiber_100g
+                        root.stackProtein = proteins_100g
+                        root.stackSalt = salt_100g
                     }
                 }
         } 
     }
 
-    Component.onCompleted: queryCategory = 0
+    Component.onCompleted: {
+    queryCategory = 0
+    
+    }
 }

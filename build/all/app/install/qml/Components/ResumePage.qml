@@ -47,6 +47,7 @@ Page{
 
     }
     
+    
     Component{
         id: aboutAppDiaLog
         AboutDialog{}
@@ -135,6 +136,12 @@ Page{
         Component.onCompleted: DataBase.getUserDailyLogIngestionFoods()
     }
     
+    Label{
+        anchors.bottom: scrollView.top
+        anchors.horizontalCenter: parent.horizontalCenter        
+        text: i18n.tr("Today meals")
+        font.bold: true
+    }
 
     ScrollView{
         id: scrollView
@@ -149,13 +156,6 @@ Page{
         ListView {
             id: foodsList
             model: dailyIngestions
-            header: Label{
-                
-                anchors.horizontalCenter: parent.horizontalCenter
-                
-                text: i18n.tr("Today meals")
-                font.bold: true
-            }
             removeDisplaced: Transition {
                                 NumberAnimation { 
                                     properties: "x,y"
@@ -165,7 +165,12 @@ Page{
 
             delegate: ListItem.Subtitled{
                     text: name
-                    subText: (ingestionTime >= "00:00" && ingestionTime <= "10:59") ? i18n.tr("Breakfast") : (ingestionTime >= "11:00" && ingestionTime <= "15:59") ? i18n.tr("Lunch") : (ingestionTime >= "16:00" && ingestionTime <= "19:59") ? i18n.tr("Snack") : i18n.tr("Dinner")
+
+                    subText: (ingestionTime >= "00:00" && ingestionTime <= "10:59") ? 
+                    i18n.tr("Breakfast") : (ingestionTime >= "11:00" && ingestionTime <= "15:59") ?
+                    i18n.tr("Lunch") : (ingestionTime >= "16:00" && ingestionTime <= "19:59") ?
+                    i18n.tr("Snack") : i18n.tr("Dinner")
+
                     showDivider: false
                     removable: true
                     confirmRemoval: true
@@ -189,6 +194,47 @@ Page{
         } 
     }
 
+    Item {
+    
+        Component{
+            id: popTest
+            
+            ActionSelectionPopover {
+                
+               /* style: StyledItem {
+                             StyleHints {
+                                foregroundColor: root.defaultForegroundColor
+                                backgroundColor: root.defaultBackgroundColor
+                            }
+                    }*/
+                    actions: ActionList {
+
+                      /*  Action {
+                            text: i18n.tr("Add Breakfast")
+                            onTriggered: console.log("ahsdkjashd")
+                        }
+                        Action {
+                            text: i18n.tr("Add Lunch")
+                            onTriggered: console.log("ahsdkjashd")
+                        }
+                        Action {
+                            text: i18n.tr("Add Snack")
+                            onTriggered: console.log("ahsdkjashd")
+                        }*/
+                        Action {
+                            text: i18n.tr("Schedule an ingestion")
+                            onTriggered: mainStack.push(scheduleIngestionPage)
+                        }
+                        Action {
+                            text: i18n.tr("New ingestion")
+                            onTriggered: {
+                                mainStack.push(newIngestionPage)
+                            }
+                        }
+                    }
+                }
+        }
+    }
 
 
 
@@ -231,13 +277,15 @@ Page{
             }
 
             Icon{
+                id: addButton
                 name: "add"
                 height: footer.height - units.gu(1)
 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        mainStack.push(newIngestionPage)
+                        PopupUtils.open(popTest,addButton)
+                        
                     }
                 }
             }

@@ -70,7 +70,20 @@ Page{
                 model: avgCaloriesMonth
                 
                 delegate: ListItem.Subtitled{
-                    text: month === '01' ? i18n.tr("January") : month === '02' ? i18n.tr("February") : month === '03' ? i18n.tr("March") : month === '04' ? i18n.tr("April") : month === '05' ? i18n.tr("May") : month === '06' ? i18n.tr("June") : month === '07' ? i18n.tr("July") : month === '08' ? i18n.tr("August") : month === '09' ? i18n.tr("September") : month === '10' ? i18n.tr("October") : month === '11' ? i18n.tr("November") : i18n.tr("December")
+                    
+                    text: month === '01' ?
+                    i18n.tr("January") : month === '02' ?
+                    i18n.tr("February") : month === '03' ?
+                    i18n.tr("March") : month === '04' ?
+                    i18n.tr("April") : month === '05' ?
+                    i18n.tr("May") : month === '06' ?
+                    i18n.tr("June") : month === '07' ?
+                    i18n.tr("July") : month === '08' ?
+                    i18n.tr("August") : month === '09' ?
+                    i18n.tr("September") : month === '10' ?
+                    i18n.tr("October") : month === '11' ?
+                    i18n.tr("November") : i18n.tr("December")
+                    
                     subText: average + " kcal"
                     showDivider: false
                     progression: true
