@@ -89,7 +89,7 @@ Page{
                     progression: true
                     
                     onTriggered: {
-                        stackValues.stackMonthIngestions = month
+                        root.stackMonthIngestions = month
                         mainStack.push(monthIngestionsPage)
                         }
             }

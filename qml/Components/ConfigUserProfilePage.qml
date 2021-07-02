@@ -39,8 +39,14 @@ Page {
         ActionBar {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
+            
+            StyleHints {
+                foregroundColor: root.defaultForegroundColor
+                backgroundColor: root.defaultBackgroundColor
+            }
             numberOfSlots: 1
             actions:HelpUserConfigAction{}
+
         }
     }
 
@@ -59,29 +65,33 @@ Page {
     property string goalHeader : i18n.tr("No Goal")
     
            
-    Grid {
-        anchors.fill: parent
-        columns: 1
-        rows: 7
+    Column {
+        anchors.top:configUserProfilePage.header.bottom
+        width: parent.width
         spacing: units.gu(4)
 
         /* Grid anchors in the mainView.top, topPadding adjust with header height */
-        topPadding: configUserProfilePage.header.height
-        horizontalItemAlignment: Grid.AlignHCenter
+        //topPadding: configUserProfilePage.header.height
+
             
         Label {
+            
+            anchors.horizontalCenter: parent.horizontalCenter
+            
             text: i18n.tr(" based on Mifflin-St Jeor equation")
         }
         
-        TextField {
-            id: userNameEntry
-            width: units.gu(18)
-            placeholderText: i18n.tr("Name")
-            horizontalAlignment: TextInput.AlignHCenter
+        Row{ 
+            anchors.horizontalCenter: parent.horizontalCenter
+            TextField {   
+                id: userNameEntry
+                width: units.gu(18)
+                placeholderText: i18n.tr("Name")
+                horizontalAlignment: TextInput.AlignHCenter
+            }
         }
-
         Row {
-
+            anchors.horizontalCenter: parent.horizontalCenter
             spacing: units.gu(2)
 
             TextField {
@@ -115,6 +125,7 @@ Page {
 
         OptionSelector {
             id: userSexEntry
+            anchors.horizontalCenter: parent.horizontalCenter
             objectName: "optionselector_collapsed"
             text: i18n.tr("Sex")
             model: [i18n.tr("Men"),i18n.tr("Woman")]
@@ -126,6 +137,7 @@ Page {
         }
 
         Row{
+            anchors.horizontalCenter: parent.horizontalCenter
             spacing: units.gu(2)
 
             Label {
@@ -183,20 +195,19 @@ Page {
                 }
             } 
 
-            Button{
-                anchors.verticalCenter: parent.verticalCenter
+        }
+        Button{
+            id: goalButton
+                anchors.horizontalCenter: parent.horizontalCenter
                 iconName: "unpinned"
                 iconPosition: "right"
-                text: "Goal"
+                text: i18n.tr("Goal")
                 width: units.gu(10)
+                color: root.defaultForegroundColor
                 onClicked:{
-                    PopupUtils.open(goalSelection)
+                    PopupUtils.open(goalSelection,goalButton)
                 }
             }
-
-
-        }
-
         Component {
        id: goalSelection
 
@@ -234,6 +245,7 @@ Page {
 
 
         Row {
+            anchors.horizontalCenter: parent.horizontalCenter
             spacing: units.gu(2)
 
             Label{
@@ -251,6 +263,7 @@ Page {
                 id: testButton
                 text: i18n.tr("Calculate")
                 enabled: true
+                color: UbuntuColors.blue
                 onClicked: {
                     userKaloriesDayTarget = KalCalculator.mifflinStJeorEquation(userAge,userWeight,userHeight,userSex,activityLevelToEquation)
                     nextButton.enabled = true
@@ -260,16 +273,22 @@ Page {
             
         Button {
             id: nextButton
+            anchors.horizontalCenter: parent.horizontalCenter
             text: "Next"
             color: "green"
-            width: configUserProfilePage.width
             enabled: false
             onClicked: {
                     appSettings.isCleanInstall = false
                     DataBase.createSQLContainer()
                     DataBase.dropTables()
                     DataBase.createTables()
-                    DataBase.createUserProfile(userName,userAge,userSex,userWeight,userHeight,userActivityLevel,totalUserKaloriesDayTargetUserGoal)
+                    DataBase.createUserProfile(userName,
+                    userAge,
+                    userSex,
+                    userWeight,
+                    userHeight,
+                    userActivityLevel,
+                    totalUserKaloriesDayTargetUserGoal)
                     userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
                     userSettings.userConfigsUserName = userName
                     userSettings.userConfigsHeight = userHeight

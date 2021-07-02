@@ -13,38 +13,48 @@ var currentTime = longDate.toLocaleString(localCountry, 'hh:mm')
  /* DataWarehouse Start*/
 
  //dropTablesStatements
-const drop_userTableStatement = ' DROP TABLE IF EXISTS User ';
-const drop_ingestionTableStatement = ' DROP TABLE IF EXISTS Ingestion ';
+const drop_userTable_statement = ' DROP TABLE IF EXISTS User ';
+const drop_ingestionTable_statement = ' DROP TABLE IF EXISTS Ingestion ';
+const drop_weightTracker_statement = 'DROP TABLE IF EXISTS WeightTracker ';
 
-
-const dropTasks = [drop_userTableStatement,drop_ingestionTableStatement];
+const dropTasks = [
+  drop_userTable_statement,
+  drop_ingestionTable_statement,
+  drop_weightTracker_statement
+];
 
 
 function dropTables() {
   var db = createSQLContainer();
   console.log("DataBase.dropTables : connected to SQL_CONTAINER");
+
   try {
+
     db.transaction(function(tx) {
+
     for(var i = 0; i < dropTasks.length; i++){
+
       tx.executeSql(dropTasks[i]);
+
     } console.log("DataBase.dropTables : OK")});
+
   } catch (err) {console.log('Error on drop_tables: '+ err)}
 }
 
 
 
 //createTablesStatements
-const create_userTableStatement = 'CREATE TABLE User(\
+const create_userTable_statement = 'CREATE TABLE User(\
   idUser	INTEGER PRIMARY KEY,\
   name	TEXT,\
   age INTEGER,\
 	sex	TEXT,\
-	weight	REAL,\
-	height	REAL,\
+	weight	DOUBLE,\
+	height	DOUBLE,\
 	activityLevel	TEXT,\
 	goal	INTEGER)';
 
-const create_ingestionTableStatement = 'CREATE TABLE Ingestion(\
+const create_ingestionTable_statement = 'CREATE TABLE Ingestion(\
     idIngestion	INTEGER,\
     idUser	INTEGER,\
     product_name	TEXT,\
@@ -62,15 +72,30 @@ const create_ingestionTableStatement = 'CREATE TABLE Ingestion(\
     FOREIGN KEY(idUser) REFERENCES User(idUser), \
     PRIMARY KEY(idIngestion))';
 
-const createTasks = [create_userTableStatement, create_ingestionTableStatement];
+const create_weightTracker_statement = 'CREATE TABLE WeightTracker(\
+  idWeightTracker INTEGER,\
+  idUser INTEGER,\
+  new_weight DOUBLE,\
+  new_weight_date TEXT,\
+  FOREIGN KEY(idUser) REFERENCES User(idUser),\
+  PRIMARY KEY (idWeightTracker))'
+
+const createTasks = [
+  create_userTable_statement, 
+  create_ingestionTable_statement, 
+  create_weightTracker_statement
+];
 
 function createTables() {
   var db = createSQLContainer();
   console.log("DataBase.createTables : connected to SQL_CONTAINER");
   try {
     db.transaction(function(tx) {
-      for(var i = 0; i < createTasks.length; i++){
+
+      for (var i = 0; i < createTasks.length; i++){
+
         tx.executeSql(createTasks[i]);
+
       } console.log("DataBase.createTables : OK")});
    } catch (err) {console.log('Error on table_creation: '+ err)}
 }
@@ -150,7 +175,6 @@ var db = createSQLContainer();
 //resumePage log book view
 const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.idIngestion AS idIngestion, Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
 FROM Ingestion \
-JOIN User ON Ingestion.idUser = User.idUser \
 WHERE Ingestion.ingestionDate == date("now")';
 
 function getUserDailyLogIngestionFoods(){
@@ -265,25 +289,30 @@ WHERE strftime("%m", ingestionDate) == "which_month"'.replace("which_month", mon
 }
 
 
-
-
-
-
-
-
-
    /* Data Saving Start */
   //stores the data given by user for userProfile
 const saveUserProfile = 'INSERT INTO User (\
   name, age, sex, weight, height, activityLevel, goal)\
   VALUES (?,?,?,?,?,?,?)';
 
-function createUserProfile(userName,userAge,userSex,userWeight,userHeight,userActivityLevel,userGoal){          
+function createUserProfile(userName,
+  userAge,
+  userSex,
+  userWeight,
+  userHeight,
+  userActivityLevel,
+  userGoal){          
   var db = createSQLContainer();
   console.log("DataBase.createUserProfile : connected to SQL_CONTAINER");
   
   db.transaction(function(tx) {
-      var results = tx.executeSql(saveUserProfile, [userName,userAge,userSex,userWeight,userHeight,userActivityLevel,userGoal]);
+      var results = tx.executeSql(saveUserProfile, [userName,
+        userAge,
+        userSex,
+        userWeight,
+        userHeight,
+        userActivityLevel,
+        userGoal]);
       if (results.rowsAffected > 0) {
         console.log("DataBase.createUserProfile : OK")
       } else {
@@ -350,7 +379,44 @@ function saveScheduleIngestion(product_name,type,energy_kcal_100g,fat_100g,satur
 
 
 
+const save_weight_update = 'INSERT INTO WeightTracker (\
+  idUser, new_weight,new_weight_date)\
+  VALUES (?,?,?)';
 
+function saveNewWeight(new_weight){          
+  var db = createSQLContainer();
+  console.log("DataBase.createUserProfile : connected to SQL_CONTAINER");
+  
+  db.transaction(function(tx) {
+      var results = tx.executeSql(save_weight_update, [1,new_weight, currentDate]);
+      
+      if (results.rowsAffected > 0) {
+       
+        console.log("DataBase.createUserProfile : OK")
+      
+      } else {
+       
+        console.log("DataBase.createUserProfile : Failed");
+      
+      }
+  }
+  )
+}
+
+ function updateWeight(newWeight){
+
+  const updateWeight_statement = 'UPDATE User \
+  SET weight = new_weight \
+  WHERE User.idUser == 1'.replace("new_weight",newWeight)
+
+  var db = createSQLContainer();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql(updateWeight_statement);
+   }
+ );
+ return console.log("rows affected " + rs.rowsAffected)
+}
 
 
   /* Data Loading End */

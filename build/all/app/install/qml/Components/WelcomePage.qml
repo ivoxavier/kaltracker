@@ -33,57 +33,41 @@ Page {
             backgroundColor: root.defaultBackgroundColor
         }
     }
+        
+        
+            TextEdit {
+                id: msg
+                
+                anchors.centerIn: parent
+                
+                wrapMode: TextEdit.Wrap
+                text: i18n.tr("Thank's for installing KalTracker. \
+                It was devolped on my spare time. \
+                It calculates your calories based on an equation. \
+                You can pick from a list your foods and drinks. \
+                I hope it will be usefull for you.\n")
+                leftPadding: units.gu(2)
+                width: parent.width
+                readOnly: true
+                font.family: "Ubuntu Mono"
+                textFormat: TextEdit.PlainText
+                color: theme.palette.normal.fieldText
+            }   
+        
 
-    
-    Grid {
-
-        anchors.fill: parent
-        columns:1
-        rows:9
-        topPadding: welcomePage.header.height
-        horizontalItemAlignment: Grid.AlignHCenter
-
-        Text{
-            text:i18n.tr("\n\nThank's for installing KalTracker.")
-        }
-
-        Text{
-            text:i18n.tr("\nIt was devolped on my spare time.")
-        }
-
-        Text{
-            text:i18n.tr("\nIt calculates your calories based on an equation.")
-        }
-
-        Text{
-            text:i18n.tr("\nYou can pick from a list your foods and drinks.")
-        }
-
-        Text{
-            text:i18n.tr("\nOr you can your own special meals.")
-        }
-
-        Text{
-            text:i18n.tr("\nI hope it will be usefull for you.")
-        }
-
-        Text{
-            text:i18n.tr("\nClick in the following button to set your goals.")
-        }
-
-        Text{
-            text:i18n.tr("\nAll the data generated is yours to keep.\n\n")
-        }
-
+        
         Button{
             id: clickToConfigButton
-            width: welcomePage.width
+            anchors.top: msg.bottom
+            
+            anchors.horizontalCenter: parent.horizontalCenter
+            
             color:"green"
-            text: i18n.tr("Click to Config")
+            text: i18n.tr("Click to start")
             onClicked:{
                 mainStack.pop()
                 mainStack.push(configUserProfilePage)
             }
         }
-    }
+      
 }

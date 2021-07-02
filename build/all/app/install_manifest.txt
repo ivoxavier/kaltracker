@@ -11,6 +11,7 @@
 //qml/Components/CreateTablesDialog.qml
 //qml/Components/WelcomePage.qml
 //qml/Components/ScheduleIngestionPage.qml
+//qml/Components/UserAccountPageBackup.qml
 //qml/Components/ConfigUserProfilePage.qml
 //qml/Components/ResumePage.qml
 //qml/Components/AboutDialog.qml

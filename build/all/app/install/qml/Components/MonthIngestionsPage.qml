@@ -42,7 +42,18 @@ Page{
             backgroundColor: root.defaultBackgroundColor
         }
 
-        title: stackValues.stackMonthIngestions === '01' ? i18n.tr("January") : stackValues.stackMonthIngestions === '02' ? i18n.tr("February") :stackValues.stackMonthIngestions === '03' ? i18n.tr("March") : stackValues.stackMonthIngestions === '04' ? i18n.tr("April") : stackValues.stackMonthIngestions === '05' ? i18n.tr("May") : stackValues.stackMonthIngestions === '06' ? i18n.tr("June") : stackValues.stackMonthIngestions === '07' ? i18n.tr("July") : stackValues.stackMonthIngestions === '08' ? i18n.tr("August") : stackValues.stackMonthIngestions === '09' ? i18n.tr("September") : stackValues.stackMonthIngestions === '10' ? i18n.tr("October") : stackValues.stackMonthIngestions === '11' ? i18n.tr("November") : i18n.tr("December")
+        title: root.stackMonthIngestions === '01' ?
+        i18n.tr("January") : root.stackMonthIngestions === '02' ?
+        i18n.tr("February") : root.stackMonthIngestions === '03' ? 
+        i18n.tr("March") : root.stackMonthIngestions === '04' ?
+        i18n.tr("April") : root.stackMonthIngestions === '05' ?
+        i18n.tr("May") : root.stackMonthIngestions === '06' ?
+        i18n.tr("June") : root.stackMonthIngestions === '07' ?
+        i18n.tr("July") : root.stackMonthIngestions === '08' ?
+        i18n.tr("August") : root.stackMonthIngestions === '09' ?
+        i18n.tr("September") : root.stackMonthIngestions === '10' ?
+        i18n.tr("October") : root.stackMonthIngestions === '11' ?
+        i18n.tr("November") : i18n.tr("December")
 
     }
 
@@ -58,7 +69,7 @@ Page{
         TextEdit {
             id: recordsHistory
             wrapMode: TextEdit.Wrap
-            text: DataBase.getAllIngestionsMonth(stackValues.stackMonthIngestions)
+            text: DataBase.getAllIngestionsMonth(root.stackMonthIngestions)
             width: scrollView.width
             readOnly: true
             font.family: "Ubuntu Mono"
