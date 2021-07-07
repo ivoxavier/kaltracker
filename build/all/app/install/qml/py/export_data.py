@@ -26,36 +26,41 @@ mobile_path = '/home/phablet/Documents/kaltracker_exports'
 file_name = '/home/phablet/Documents/kaltracker_exports/kaltracker_backup.csv'
 access_rights = 0o755
 
-
-
-#check if path exists
-path_exists = None
 def createPath():
-    os.mkdir(mobile_path, access_rights)
+    try:
+        os.mkdir(mobile_path, access_rights)
+        return 'path_created'
+    except:
+        return 'create_path_failed'
 
-if (os.path.isdir(mobile_path)):
-    path_exists = True
-else:
-    path_exists = False
-    createPath()
 
-#checks if file exists
-file_exists = None
 def createFile():
-    with open('/home/phablet/Documents/kaltracker_exports/kaltracker_backup.csv', 'wb') as create_file:
-        file_writer = csv.writer(create_file, delimiter = ',', quoting=csv.QUOTE_MINIMAL)
-        file_writer.writerow(['date','type','name','kcal'])
-        create_file.close()
+    try:
+        with open(file_name, 'w') as create_file:
+            file_writer = csv.writer(create_file)
+            create_file.close()
+            return 'file_created'
+    except:
+        return 'file_not_created'
 
-if (os.path.isfile(file_name)):
-    file_exists = True
-else:
-    file_exists = False
-    createFile()
+
+def deleteCSV():
+    try:
+        os.remove(file_name)
+        return 'file_deleted'
+    except:
+        return 'file_not_deleted'
+
+
 
 def saveCSV(query):
-    with open('/home/phablet/Documents/kaltracker_exports/kaltracker_backup.csv', 'w') as csv_file:
-        save_on_csv = csv.writer(csv_file)
-        save_on_csv.writerow(query)
-        csv_file.close()
-    return 'Backup created'
+    try:
+        with open(file_name, 'w') as csv_file:
+            save_on_csv = csv.writer(csv_file)
+            save_on_csv.writerow(["date","time","type","product_name","kcal","fat","saturated","carbo","sugars","fiber","proteins","salt"])
+            save_on_csv.writerow([query])
+            csv_file.close()
+            return 'file_saved'
+    except:
+        return 'file_not_saved'
+

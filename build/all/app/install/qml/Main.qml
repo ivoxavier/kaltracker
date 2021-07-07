@@ -53,8 +53,12 @@ MainView {
     //required to refresh dailyIngestion ListModel
     signal refreshListModel()
 
+    signal profileModified()
+
     //passing values to foodsTemplate
+    property string now_after_ingestion
     property string stackProductName
+    property string stackType
     property double stackEnergyKcal
     property double stackFat
     property double stackSaturated
@@ -64,7 +68,25 @@ MainView {
     property double stackProtein
     property double stackSalt
     property string stackMonthIngestions
+    property string user_schedule_time
+    property string user_schedule_date
 
+     Component{
+        id: alertDialog
+        AlertDialog{}
+    }
+     
+     Component{
+        id: alertsPage
+        AlertsPage{}
+    }
+     
+     Component{
+        id: maintenancePage
+        MaintenancePage{}
+    }
+
+    
     Component{
         id: monthIngestionsPage
         MonthIngestionsPage{}
@@ -143,6 +165,9 @@ MainView {
         category: "app_configs"
 
         property bool isCleanInstall: true
+        property bool isAutoCleanChecked: true
+        property bool isExceedCaloriesChecked : true
+        property bool displayAlert: false
         
 
     }
@@ -157,6 +182,7 @@ MainView {
         property int userConfigsWeight
         property string userConfigsSex
         property int userConfigsAge
+    
 
     }
 
@@ -170,11 +196,32 @@ MainView {
 
     Component.onCompleted: { /* check on pageComplete */
         if (appSettings.isCleanInstall){
+
             mainStack.push(welcomePage);
+
         } else {
+
             mainStack.push(resumePage);
+
+            if (appSettings.isAutoCleanChecked){
+
+                DataBase.autoClean()
+
+            } else {
+                //pass
+            }
+
+                if ( appSettings.isExceedCaloriesChecked){
+                    
+                     if ( appSettings.displayAlert){
+                         PopupUtils.open(alertDialog)
+                     }
+                } else {
+                    //pass
+                }
+
             function isCleanInstallStatus(){
-                console.log('mainView: Not clean install') 
+                console.log('Not clean install') 
             }
                 isCleanInstallStatus();  
         }

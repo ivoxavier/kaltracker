@@ -28,11 +28,11 @@ import "../js/DataBaseTools.js" as DataBase
 
 
 Page{
-    id: settingsPage
-    objectName: 'Settings Page'
+    id: maintenancePage
+    objectName: 'Maintenance Page'
     property int deleteType
     header: PageHeader {
-        title: i18n.tr("Settings")
+        title: i18n.tr("Maintenance Page")
 
         StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -48,32 +48,60 @@ Page{
     }
 
     Column{
-        anchors.top: settingsPage.header.bottom
-        width: settingsPage.width
+        anchors.top: maintenancePage.header.bottom
+        width: maintenancePage.width
 
-       ListItem {
-            id: alertExceed
+     ListItem {
+            id: autoCleaner
             ListItemLayout{
-                title.text: i18n.tr("DataBase Maintenance")
+                title.text: i18n.tr("Auto delete records")
+                subtitle.text: i18n.tr("Previous year")
                 
-               ProgressionSlot{}
-               
+                Switch{
+                    id  : auto_clean_switch
+                    checked: appSettings.isAutoCleanChecked
+                    onClicked:  appSettings.isAutoCleanChecked = !appSettings.isAutoCleanChecked
+                    
+                }
             }
-            onClicked:{
-                mainStack.push(maintenancePage)
-            }
+            
         }
+
+
 
         ListItem {
             id: deleteTodayRecords
             ListItemLayout{
-                title.text: i18n.tr("Application alerts")
-
-                ProgressionSlot{}
-
-             }
-            onClicked: mainStack.push(alertsPage)
+                title.text: i18n.tr("Delete today's records")
+                
+                Button{
+                    text:"Delete"
+                    color:"red"
+                    onClicked:{
+                        deleteType = 0
+                        PopupUtils.open(deleteDialog)
+                    }
+                }
+            }
         }
+
+        ListItem {
+            id: deleteAllRecords
+            ListItemLayout{
+                title.text: i18n.tr("Delete all records")
+                
+                Button{
+                    text:"Delete"
+                    color:"red"
+                    onClicked:{
+                        deleteType = 1
+                        PopupUtils.open(deleteDialog)
+                    }
+            }
+
+        }
+    }
 }
+
 }
         

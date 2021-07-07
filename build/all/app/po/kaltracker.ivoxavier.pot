@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 18:47+0000\n"
+"POT-Creation-Date: 2021-07-07 17:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,67 +30,83 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
+#: ../qml/Components/AlertDialog.qml:25
+msgid "You've exceed you're calories"
+msgstr ""
+
+#: ../qml/Components/AlertDialog.qml:28
+msgid "Take that in considerarion"
+msgstr ""
+
+#: ../qml/Components/AlertsPage.qml:35
+msgid "Alerts Page"
+msgstr ""
+
+#: ../qml/Components/AlertsPage.qml:57
+msgid "Calories Exceed previous day"
+msgstr ""
+
 #: ../qml/Components/AverageCaloriesMonthPage.qml:44
 #: ../qml/Components/StatsPage.qml:54
 msgid "Average Calories per Month"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:75
+#: ../qml/Components/AverageCaloriesMonthPage.qml:87
 #: ../qml/Components/MonthIngestionsPage.qml:46
 msgid "January"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:76
+#: ../qml/Components/AverageCaloriesMonthPage.qml:88
 #: ../qml/Components/MonthIngestionsPage.qml:47
 msgid "February"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:77
+#: ../qml/Components/AverageCaloriesMonthPage.qml:89
 #: ../qml/Components/MonthIngestionsPage.qml:48
 msgid "March"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:78
+#: ../qml/Components/AverageCaloriesMonthPage.qml:90
 #: ../qml/Components/MonthIngestionsPage.qml:49
 msgid "April"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:79
+#: ../qml/Components/AverageCaloriesMonthPage.qml:91
 #: ../qml/Components/MonthIngestionsPage.qml:50
 msgid "May"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:80
+#: ../qml/Components/AverageCaloriesMonthPage.qml:92
 #: ../qml/Components/MonthIngestionsPage.qml:51
 msgid "June"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:81
+#: ../qml/Components/AverageCaloriesMonthPage.qml:93
 #: ../qml/Components/MonthIngestionsPage.qml:52
 msgid "July"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:82
+#: ../qml/Components/AverageCaloriesMonthPage.qml:94
 #: ../qml/Components/MonthIngestionsPage.qml:53
 msgid "August"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:83
+#: ../qml/Components/AverageCaloriesMonthPage.qml:95
 #: ../qml/Components/MonthIngestionsPage.qml:54
 msgid "September"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:84
+#: ../qml/Components/AverageCaloriesMonthPage.qml:96
 #: ../qml/Components/MonthIngestionsPage.qml:55
 msgid "October"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:85
+#: ../qml/Components/AverageCaloriesMonthPage.qml:97
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "December"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:85
+#: ../qml/Components/AverageCaloriesMonthPage.qml:97
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "November"
 msgstr ""
@@ -109,36 +125,31 @@ msgid " based on Mifflin-St Jeor equation"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:89
-#: ../qml/Components/UserAccountPage.qml:94
-#: ../qml/Components/UserAccountPageBackup.qml:79
+#: ../qml/Components/UserAccountPage.qml:99
 msgid "Name"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:100
 #: ../qml/Components/EditUserProfileDialog.qml:79
-#: ../qml/Components/UserAccountPage.qml:112
-#: ../qml/Components/UserAccountPage.qml:147
-#: ../qml/Components/UserAccountPageBackup.qml:86
+#: ../qml/Components/UserAccountPage.qml:117
+#: ../qml/Components/UserAccountPage.qml:152
 msgid "Age"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:109
 #: ../qml/Components/EditUserProfileDialog.qml:34
-#: ../qml/Components/UserAccountPage.qml:157
-#: ../qml/Components/UserAccountPageBackup.qml:100
+#: ../qml/Components/UserAccountPage.qml:162
 msgid "Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:118
 #: ../qml/Components/EditUserProfileDialog.qml:57
-#: ../qml/Components/UserAccountPage.qml:167
-#: ../qml/Components/UserAccountPageBackup.qml:107
+#: ../qml/Components/UserAccountPage.qml:172
 msgid "Height"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:130
-#: ../qml/Components/UserAccountPage.qml:103
-#: ../qml/Components/UserAccountPageBackup.qml:93
+#: ../qml/Components/UserAccountPage.qml:108
 msgid "Sex"
 msgstr ""
 
@@ -151,49 +162,48 @@ msgid "Woman"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:157
-#: ../qml/Components/UserAccountPage.qml:195
+#: ../qml/Components/UserAccountPage.qml:200
 msgid "Very Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:158
-#: ../qml/Components/UserAccountPage.qml:196
+#: ../qml/Components/UserAccountPage.qml:201
 msgid "Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:159
-#: ../qml/Components/UserAccountPage.qml:197
+#: ../qml/Components/UserAccountPage.qml:202
 msgid "Moderate"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:160
-#: ../qml/Components/UserAccountPage.qml:198
+#: ../qml/Components/UserAccountPage.qml:203
 msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:204
-#: ../qml/Components/FoodsTemplate.qml:101 ../qml/Components/ResumePage.qml:105
-#: ../qml/Components/UserAccountPage.qml:242
-#: ../qml/Components/UserAccountPageBackup.qml:114
+#: ../qml/Components/FoodsTemplate.qml:174 ../qml/Components/ResumePage.qml:116
+#: ../qml/Components/UserAccountPage.qml:247
 msgid "Goal"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:218
-#: ../qml/Components/UserAccountPage.qml:257
+#: ../qml/Components/UserAccountPage.qml:262
 msgid "Loose Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:226
-#: ../qml/Components/UserAccountPage.qml:265
+#: ../qml/Components/UserAccountPage.qml:270
 msgid "Maintain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:235
-#: ../qml/Components/UserAccountPage.qml:274
+#: ../qml/Components/UserAccountPage.qml:279
 msgid "Gain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:264
-#: ../qml/Components/UserAccountPage.qml:303
+#: ../qml/Components/UserAccountPage.qml:308
 msgid "Calculate"
 msgstr ""
 
@@ -210,12 +220,11 @@ msgid "Change Profile"
 msgstr ""
 
 #: ../qml/Components/EditUserProfileDialog.qml:103
-#: ../qml/Components/RemoveRecordsDialog.qml:48
+#: ../qml/Components/RemoveRecordsDialog.qml:51
 msgid "Cancel"
 msgstr ""
 
 #: ../qml/Components/EditUserProfileDialog.qml:112
-#: ../qml/Components/ManualIngestionEntry.qml:128
 msgid "Save"
 msgstr ""
 
@@ -223,21 +232,41 @@ msgstr ""
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:48
-msgid ""
-"A csv file will be created in /home/phablet/Documents/kaltracker.ivoxavier/"
+#: ../qml/Components/ExportDataPage.qml:56
+msgid "A file will be created in Documents/kaltracker.ivoxavier/"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:81
+#: ../qml/Components/ExportDataPage.qml:75
 msgid "Export"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:79
+#: ../qml/Components/ExportDataPage.qml:94
+msgid "Backup created"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:96
+msgid "Oops. Check the logs"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:109
+#: ../qml/Components/ScheduleIngestionPage.qml:91
+msgid "Ingestion Stored"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:153
 msgid "Calories"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:100
+#: ../qml/Components/FoodsTemplate.qml:173
 msgid "Kcal"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:184
+msgid "Quantity portions"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:200
+msgid "Size of portions"
 msgstr ""
 
 #: ../qml/Components/HelpUserConfigDialog.qml:23
@@ -248,69 +277,46 @@ msgstr ""
 msgid "Select your main goal. Then enter your data.\n"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:27
-#: ../qml/Components/NewIngestionPage.qml:61
-#: ../qml/Components/ScheduleIngestionPage.qml:73
-#: ../qml/Components/UserAccountPage.qml:80
-#: ../qml/Components/UserAccountPageBackup.qml:64
-msgid "Manual Entry"
+#: ../qml/Components/MaintenancePage.qml:35
+msgid "Maintenance Page"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:39
-msgid "Type"
+#: ../qml/Components/MaintenancePage.qml:57
+msgid "Auto delete records"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:51
-#: ../qml/Components/NewIngestionPage.qml:67
-#: ../qml/Components/NewIngestionPage.qml:100
-#: ../qml/Components/ScheduleIngestionPage.qml:93
-#: ../qml/Components/ScheduleIngestionPage.qml:121
-msgid "Food"
+#: ../qml/Components/MaintenancePage.qml:58
+msgid "Previous year"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:52
-#: ../qml/Components/NewIngestionPage.qml:72
-#: ../qml/Components/NewIngestionPage.qml:100
-#: ../qml/Components/ScheduleIngestionPage.qml:98
-#: ../qml/Components/ScheduleIngestionPage.qml:121
-msgid "Drink"
+#: ../qml/Components/MaintenancePage.qml:75
+msgid "Delete today's records"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionEntry.qml:74
-msgid "Product Name"
-msgstr ""
-
-#: ../qml/Components/ManualIngestionEntry.qml:79
-msgid "Kcal 100g"
-msgstr ""
-
-#: ../qml/Components/ManualIngestionEntry.qml:93
-msgid "Fat 100g"
-msgstr ""
-
-#: ../qml/Components/ManualIngestionEntry.qml:101
-msgid "Saturated 100g"
-msgstr ""
-
-#: ../qml/Components/ManualIngestionEntry.qml:109
-msgid "carb 100g"
-msgstr ""
-
-#: ../qml/Components/ManualIngestionEntry.qml:121
-msgid "Back"
+#: ../qml/Components/MaintenancePage.qml:91
+msgid "Delete all records"
 msgstr ""
 
 #: ../qml/Components/NewIngestionPage.qml:40
 msgid "New Ingestion"
 msgstr ""
 
-#: ../qml/Components/NewIngestionPage.qml:90
-#: ../qml/Components/ScheduleIngestionPage.qml:111
-msgid "Ingestion Stored"
+#: ../qml/Components/NewIngestionPage.qml:64
+#: ../qml/Components/NewIngestionPage.qml:82
+#: ../qml/Components/ScheduleIngestionPage.qml:73
+#: ../qml/Components/ScheduleIngestionPage.qml:101
+msgid "Food"
+msgstr ""
+
+#: ../qml/Components/NewIngestionPage.qml:69
+#: ../qml/Components/NewIngestionPage.qml:82
+#: ../qml/Components/ScheduleIngestionPage.qml:78
+#: ../qml/Components/ScheduleIngestionPage.qml:101
+msgid "Drink"
 msgstr ""
 
 #: ../qml/Components/RemoveRecordsDialog.qml:30
-#: ../qml/Components/RemoveRecordsDialog.qml:57
+#: ../qml/Components/RemoveRecordsDialog.qml:60
 msgid "Delete"
 msgstr ""
 
@@ -319,14 +325,14 @@ msgid "Deletes your *"
 msgstr ""
 
 #: ../qml/Components/RemoveRecordsDialog.qml:40
-msgid "Type 'Yes' to confirm"
+msgid "Type '123' to confirm"
 msgstr ""
 
-#: ../qml/Components/RemoveRecordsDialog.qml:77
+#: ../qml/Components/RemoveRecordsDialog.qml:80
 msgid "Something went wrong"
 msgstr ""
 
-#: ../qml/Components/RemoveRecordsDialog.qml:82
+#: ../qml/Components/RemoveRecordsDialog.qml:85
 msgid "Wrong code, try again"
 msgstr ""
 
@@ -334,35 +340,35 @@ msgstr ""
 msgid "'s Panel"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:87
+#: ../qml/Components/ResumePage.qml:98
 msgid "Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:142
+#: ../qml/Components/ResumePage.qml:152
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:170
+#: ../qml/Components/ResumePage.qml:183
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:171
+#: ../qml/Components/ResumePage.qml:184
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:172
+#: ../qml/Components/ResumePage.qml:185
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:172
+#: ../qml/Components/ResumePage.qml:185
 msgid "Snack"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:225
+#: ../qml/Components/ResumePage.qml:216
 msgid "Schedule an ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:229
+#: ../qml/Components/ResumePage.qml:220
 msgid "New ingestion"
 msgstr ""
 
@@ -374,32 +380,39 @@ msgstr ""
 msgid "Schedule"
 msgstr ""
 
+#: ../qml/Components/ScheduleIngestionPage.qml:201
+msgid "Ok"
+msgstr ""
+
 #: ../qml/Components/SettingsPage.qml:35
 msgid "Settings"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:67
-msgid "Delete today's records"
+#: ../qml/Components/SettingsPage.qml:57
+msgid "DataBase Maintenance"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:84
-msgid "Delete all records"
+#: ../qml/Components/SettingsPage.qml:70
+msgid "Application alerts"
 msgstr ""
 
 #: ../qml/Components/StatsPage.qml:44
 msgid "Stats"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:58
-#: ../qml/Components/UserAccountPageBackup.qml:42
+#: ../qml/Components/UserAccountPage.qml:60
 msgid "Account"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:121
+#: ../qml/Components/UserAccountPage.qml:84
+msgid "Manual Entry"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:126
 msgid "Weight & Height"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:316
+#: ../qml/Components/UserAccountPage.qml:321
 msgid "Save modifications"
 msgstr ""
 
@@ -419,18 +432,18 @@ msgstr ""
 msgid "Click to start"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:122 ../qml/js/DataBaseTools.js:126
+#: ../qml/js/DataBaseTools.js:123 ../qml/js/DataBaseTools.js:127
 msgid "Foods"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:155
+#: ../qml/js/DataBaseTools.js:157
 msgid "To Be Ingested"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:160
+#: ../qml/js/DataBaseTools.js:162
 msgid "Left"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:165
+#: ../qml/js/DataBaseTools.js:167
 msgid "Exceeded"
 msgstr ""

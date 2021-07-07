@@ -37,8 +37,11 @@ Dialog {
     TextField {
                 id: confirmDeleteCode
                 width: units.gu(12)
-                placeholderText: i18n.tr("Type 'Yes' to confirm")
-            }
+                placeholderText: i18n.tr("Type '123' to confirm")
+                 horizontalAlignment: TextInput.AlignHCenter
+                inputMethodHints: Qt.ImhDigitsOnly
+                validator: IntValidator {}
+    }
 
     Label{id: operationResultLabel; color: UbuntuColors.red}
 
@@ -57,7 +60,7 @@ Dialog {
             text: i18n.tr("Delete")
             color: UbuntuColors.red
             onClicked:{
-                if (confirmDeleteCode.text === "Yes"){
+                if (confirmDeleteCode.text === "123"){
 
                     switch(msg){
                         case "today":

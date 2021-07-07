@@ -39,6 +39,8 @@ Page {
         id: header
         title: i18n.tr('New Ingestion')
 
+        //contents:   /* in case I find how to filter XML Model. Can delegate here a TextField */
+
         StyleHints {
             foregroundColor: root.defaultForegroundColor
             backgroundColor: root.defaultBackgroundColor
@@ -54,15 +56,10 @@ Page {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             
-            numberOfSlots: 2
+            numberOfSlots: 0
+            
             actions: [
-                Action{
-                    iconName: "add"
-                    text: i18n.tr("Manual Entry")
-                    onTriggered: {
-                        PopupUtils.open(manualIngestionEntryDialog)
-                  }
-                },
+                
                 Action{
                   text: i18n.tr("Food")
                   onTriggered: queryCategory = 0
@@ -76,22 +73,7 @@ Page {
         }
             }
       
-    
 
-    Component{
-        id: manualIngestionEntryDialog
-        ManualIngestionEntry{}
-    }
-   
-    Component {
-        id: ingestionStoredDialog
-        SaveDataDialog{
-
-            msg:i18n.tr("Ingestion Stored")
-            
-            labelColor:UbuntuColors.green
-            }
-    }
 
     Label{
         id: categoryLabel
@@ -118,15 +100,9 @@ Page {
             delegate: ListItem.Standard{
                     text: product_name
                     onClicked:{
-                        console.log("newIngestion: " + product_name)
-                        DataBase.saveNewIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g)
-                        PopupUtils.open(ingestionStoredDialog)
-                        root.initDB()
-                        root.refreshListModel()
-                    }
-                    onPressAndHold:{
                         mainStack.push(foodsTemplate)
                         root.stackProductName = product_name
+                        root.stackType = type
                         root.stackEnergyKcal = energy_kcal_100g
                         root.stackFat = fat_100g
                         root.stackSaturated = saturated_fat_100g
@@ -135,6 +111,7 @@ Page {
                         root.stackFiber = fiber_100g
                         root.stackProtein = proteins_100g
                         root.stackSalt = salt_100g
+                        root.now_after_ingestion = "now"
                     }
                 }
         } 

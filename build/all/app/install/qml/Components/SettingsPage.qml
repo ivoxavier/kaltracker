@@ -51,49 +51,29 @@ Page{
         anchors.top: settingsPage.header.bottom
         width: settingsPage.width
 
-      /*  ListItem {
-            id: darkTheme
+       ListItem {
+            id: alertExceed
             ListItemLayout{
-                title.text: i18n.tr("Dark Theme")
+                title.text: i18n.tr("DataBase Maintenance")
                 
-                Switch{}
+               ProgressionSlot{}
+               
             }
-
-        }*/
+            onClicked:{
+                mainStack.push(maintenancePage)
+            }
+        }
 
         ListItem {
             id: deleteTodayRecords
             ListItemLayout{
-                title.text: i18n.tr("Delete today's records")
-                
-                Button{
-                    text:"Delete"
-                    color:"red"
-                    onClicked:{
-                        deleteType = 0
-                        PopupUtils.open(deleteDialog)
-                    }
-                }
-            }
+                title.text: i18n.tr("Application alerts")
 
+                ProgressionSlot{}
+
+             }
+            onClicked: mainStack.push(alertsPage)
         }
-
-        ListItem {
-            id: deleteAllRecords
-            ListItemLayout{
-                title.text: i18n.tr("Delete all records")
-                
-                Button{
-                    text:"Delete"
-                    color:"red"
-                    onClicked:{
-                        deleteType = 1
-                        PopupUtils.open(deleteDialog)
-                    }
-            }
-
-        }
-    }
 }
 }
         

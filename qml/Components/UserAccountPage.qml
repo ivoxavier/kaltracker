@@ -48,6 +48,8 @@ Page{
     property int totalUserKaloriesDayTargetUserGoal: userKaloriesDayTarget + userGoal
     property string goalHeader : i18n.tr("No Goal")
 
+    property double currentWeight: userSettings.userConfigsWeight
+
     Component{
         id: editDialog
         EditUserProfileDialog{}
@@ -57,6 +59,8 @@ Page{
     header: PageHeader {
         title: i18n.tr("Account")
     
+
+
 
         StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -86,6 +90,7 @@ Page{
             ]
         }
     }
+
 
      ListItem {
         id: userName_item
@@ -318,15 +323,15 @@ Page{
             enabled: false
             onClicked: {
                     DataBase.updateWeight(userWeight)
-                    DataBase.saveNewWeight(userWeight)
+                    DataBase.updateGoal( totalUserKaloriesDayTargetUserGoal)
+                    DataBase.saveNewWeight(currentWeight,userWeight)
                     userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
                     userSettings.userConfigsHeight = userHeight
                     userSettings.userConfigsWeight = userWeight
-                    userSettings.userConfigsAge = userAge 
+                    userSettings.userConfigsAge = userAge
                     editMode =!editMode
             }
         }
     } 
-
 
 }

@@ -44,6 +44,15 @@ Page{
         title: i18n.tr("Average Calories per Month")
     }
 
+    Image{ 
+            anchors.centerIn: parent           
+            z: 100
+            width: averageCaloriesPage.width - units.gu(23)
+            height:  averageCaloriesPage.height - units.gu(66)
+            source : '../img/emptyList.svg'
+            visible: monthsList.visible === true ? false : true
+        }
+
     Connections{
         target: root
         onInitDB:{
@@ -67,8 +76,11 @@ Page{
         anchors.left: averageCaloriesPage.left
 
             ListView {
+                id: monthsList
                 model: avgCaloriesMonth
-                
+
+                visible: model.count === 0 ? false : true
+
                 delegate: ListItem.Subtitled{
                     
                     text: month === '01' ?

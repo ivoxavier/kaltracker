@@ -66,29 +66,9 @@ Page {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             
-            numberOfSlots: 2
+            numberOfSlots: 0
             actions: [
-                Action{
-                    iconName: "ok"
-                    text: i18n.tr("Manual Entry")
-                    onTriggered: {
-                        DataBase.saveScheduleIngestion(to_eat,
-                        to_type,
-                        to_energy,
-                        to_fat,
-                        to_saturated,
-                        to_carborn,
-                        to_sugars,
-                        to_fiber,
-                        to_proteins,
-                        to_salt,
-                        schedule_date,
-                        schedule_time)
-                        root.initDB()
-                        root.refreshListModel()
-                        PopupUtils.open(ingestionStoredDialog)
-                  }
-                },
+    
                 Action{
                   text: i18n.tr("Food")
                   onTriggered: queryCategory = 0
@@ -129,32 +109,32 @@ Page {
             bottom: scheduleIngestionPage.verticalCenter
         }
         
-           
+           Item {
+    
+        Component{
+            id: pops
+            Popover {
+
+                    Label{
+                        
+                        text: "Set date&time then long press on foods"
+                    }
+                    
+                }
+        }
+    }
 
         ListView {
             id: foodsList
             model: FoodsDrinks{}
-            
      
-            delegate: ListItem.Standard{
+            delegate: ListItem.Standard{            
                     text: product_name
+                   
                     onClicked:{
-                        console.log("newIngestion: " + product_name)
-                        to_eat = product_name
-                        to_type = type
-                        to_energy = energy_kcal_100g
-                        to_fat = fat_100g
-                        to_saturated = saturated_fat_100g
-                        to_carborn = carbohydrates_100g
-                        to_sugars = sugars_100g
-                        to_fiber = fiber_100g
-                        to_proteins = proteins_100g
-                        to_salt = salt_100g
-                        
-                    }
-                    onPressAndHold:{
-                        mainStack.push(foodsTemplate)
+                         console.log("newIngestion: " + product_name)
                         root.stackProductName = product_name
+                        root.stackType = type
                         root.stackEnergyKcal = energy_kcal_100g
                         root.stackFat = fat_100g
                         root.stackSaturated = saturated_fat_100g
@@ -163,6 +143,9 @@ Page {
                         root.stackFiber = fiber_100g
                         root.stackProtein = proteins_100g
                         root.stackSalt = salt_100g
+                        root.user_schedule_time
+                        root.user_schedule_date
+                        root.now_after_ingestion = "schedule"
                     }
                 }
         } 
@@ -170,8 +153,9 @@ Page {
     Column{
         anchors.top: scrollView.bottom
         topPadding: units.gu(1)
+  
         
-        spacing: units.gu(2)
+        spacing: units.gu(3)
         width: scheduleIngestionPage.width
         Row{
             spacing:units.gu(2)
@@ -186,7 +170,7 @@ Page {
                 height: units.gu(14)
                 onDateChanged: {
                     console.log(Qt.formatDate(date, "yyyy-MM-dd"))
-                    schedule_date = Qt.formatDate(date, "yyyy-MM-dd")
+                   root.user_schedule_date = Qt.formatDate(date, "yyyy-MM-dd")
                 }
             }
 
@@ -195,23 +179,29 @@ Page {
                 mode: "Hours|Minutes"
                 date: new Date()
                 // make sure we have the whole component in screen
+                
                 width: Math.min(root.width - units.gu(7), units.gu(16))
                 height: units.gu(14)
                 onDateChanged: {
                     console.log(Qt.formatTime(date, "hh:mm"))
-                    schedule_time = Qt.formatTime(date, "hh:mm")
+                    root.user_schedule_time = Qt.formatTime(date, "hh:mm")
+                    
                 }
             }
         }
 
-        
-            TextEdit{
-                id: shceduleIngestionLabel
-                wrapMode: TextEdit.Wrap
-                font.bold: true
-                readOnly: true
-                font.family: "Ubuntu Mono"
-                text: to_eat + ' ' + schedule_date + ' ' + schedule_time
+           Label{
+                anchors.horizontalCenter: parent.horizontalCenter
+               text: root.stackProductName
+           }
+           Button{
+               
+               anchors.horizontalCenter: parent.horizontalCenter
+               
+                text: i18n.tr("Ok")
+                onClicked:{
+                    mainStack.push(foodsTemplate)
+                }
             }
         
 

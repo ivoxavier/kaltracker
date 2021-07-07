@@ -16,8 +16,10 @@
 
 
 import QtQuick 2.9
+import QtQuick.Controls 2.2 as QQC2
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
+import Ubuntu.Components.Pickers 1.3
 import QtCharts 2.3
 import "../js/DataBaseTools.js" as DataBase
 
@@ -26,70 +28,141 @@ Page {
     id: foodsTemplatePage
     objectName: 'Foods Template Page'
     
+    property string type_ingestion
+
     header: PageHeader {
-        title: "Add Ingestion"
+        title: root.stackProductName
         StyleHints {
             foregroundColor: root.defaultForegroundColor
             backgroundColor: root.defaultBackgroundColor
         }
 
+    ActionBar {
 
+            StyleHints {
+            foregroundColor: root.defaultForegroundColor
+            backgroundColor: root.defaultBackgroundColor
+            }
+            
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            
+            numberOfSlots: 1
+
+            actions: [
+
+                Action{
+
+                    iconName: "ok"
+
+                     onTriggered: {
+
+                         if (root.now_after_ingestion ===  "now"){
+                             console.log("saving now ingestion")
+                             DataBase.saveNewIngestion(root.stackProductName,
+                          root.stackType,
+                          (root.stackEnergyKcal * quantity_portions) * size_portions,
+                          (root.stackFat * quantity_portions) * size_portions, 
+                          (root.stackSaturated * quantity_portions) * size_portions,
+                          (root.stackCarborn * quantity_portions) * size_portions,
+                          (root.stackSugars * quantity_portions) * size_portions,
+                          (root.stackFiber * quantity_portions) * size_portions,
+                          (root.stackProtein * quantity_portions) * size_portions,
+                          (root.stackSalt * quantity_portions) * size_portions)
+                          root.initDB()
+                          root.refreshListModel()
+                          PopupUtils.open(ingestionStoredDialog)
+                          
+                         } else{
+                             console.log("saving schedule ingestion")
+                               DataBase.saveScheduleIngestion(root.stackProductName,
+                                root.stackType,
+                                (root.stackEnergyKcal * quantity_portions) * size_portions,
+                                (root.stackFat * quantity_portions) * size_portions, 
+                                (root.stackSaturated * quantity_portions) * size_portions,
+                                (root.stackCarborn * quantity_portions) * size_portions,
+                                (root.stackSugars * quantity_portions) * size_portions,
+                                (root.stackFiber * quantity_portions) * size_portions,
+                                (root.stackProtein * quantity_portions) * size_portions,
+                                (root.stackSalt * quantity_portions) * size_portions,
+                        root.user_schedule_date,
+                        root.user_schedule_time)
+                        root.initDB()
+                        root.refreshListModel()
+                        PopupUtils.open(ingestionStoredDialog)
+                        
+                         }
+                        
+                     }
+                }
+            ]
+        }
     }
 
+    property int quantity_portions : 1 
+    property double size_portions : 1
 
-    Column{
-        anchors.top: foodsTemplatePage.header.bottom
+     Component {
+        id: ingestionStoredDialog
+        SaveDataDialog{
+
+            msg:i18n.tr("Ingestion Stored")
+            
+            labelColor:UbuntuColors.green
+            }
+    }
+
+    ScrollView{ 
+        id: scrollView
         width: parent.width
+        height : parent.height
+        clip : true                 
 
-        ListItem {
-            id: productName
-            ListItemLayout{
-                title.text: root.stackProductName
-                subtitle.text: "By OpenFoodsFacts"
-            }
-        }
-
-        Rectangle{
-            width: parent.width
-            height: (foodsTemplatePage.header.height + productName.height) + units.gu(2.5)
-            color: "transparent"
-           
+        Column{
+            id: column
+            topPadding:  foodsTemplatePage.header.height
+            width: foodsTemplatePage.width
+            
             Rectangle{
-
-                id: kcalRectangle
-                anchors.left: parent.left
-                height: parent.height
-                width: (parent.width / 2) - units.gu(5.5)
+                width: parent.width
+                height: (foodsTemplatePage.header.height + foodsTemplatePage.header.height) + units.gu(2.5)
                 color: "transparent"
-                Label{
-                    id: kcalNumber
-                    anchors.centerIn: parent
-                    
-                    text: root.stackEnergyKcal
-                    textSize: Label.Large
-                    font.bold: true
-                }
-
-                Label{
-                    
-                    anchors.top: kcalNumber.bottom
-                    
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    text: i18n.tr("Calories")
-                    
-                }
                 
-            }
-
-            Rectangle{
-                anchors.right: parent.right
-                anchors.left: kcalRectangle.right
-                height: parent.height
-                color: "transparent"
+                Rectangle{
                     
-                    ChartView {
+                    id: kcalRectangle
+                    anchors.left: parent.left
+                    height: parent.height
+                    width: (parent.width / 2) - units.gu(5.5)
+                    color: "transparent"
+                    
+                    Label{
+                        id: kcalNumber
+                        anchors.centerIn: parent
+                            
+                        text: (root.stackEnergyKcal * quantity_portions) * size_portions
+                        textSize: Label.Large
+                        font.bold: true
+                     }
 
+                    Label{ 
+                         anchors.top: kcalNumber.bottom
+                            
+                        anchors.horizontalCenter: parent.horizontalCenter
+                            
+                        text: i18n.tr("Calories")
+                            
+                    }
+                        
+                }
+
+                Rectangle{
+                    anchors.right: parent.right
+                    anchors.left: kcalRectangle.right
+                    height: parent.height
+                    color: "transparent"
+                            
+                    ChartView {
                         id: chartPie
                         anchors.fill: parent
                         legend.alignment: Qt.AlignRight
@@ -97,69 +170,133 @@ Page {
                         backgroundColor: root.defaultForegroundColor
                         PieSeries {
                             id: pieSeries
-                            PieSlice { label: i18n.tr("Kcal"); value: root.stackEnergyKcal }
+                            PieSlice { label: i18n.tr("Kcal"); value: (root.stackEnergyKcal * quantity_portions) * size_portions}
                             PieSlice { label: i18n.tr("Goal") ; value: userSettings.userConfigsGoal }
-                    
+                            
                         }
                     }
-            } 
-        }
-        
-         ListItem {
-            id: fatItem
-            ListItemLayout{
-                title.text: "Fat/100g"
-                subtitle.text: root.stackFat + "g"
+                } 
             }
-        }
 
-        ListItem {
-            id: saturatedItem
-            ListItemLayout{
-                title.text: "Saturated/100g"
-                subtitle.text: root.stackSaturated + "g"
+            ListItem {
+
+                ListItemLayout{
+                    title.text: i18n.tr("Quantity portions")
+
+                    QQC2.SpinBox{
+
+                        height:  (foodsTemplatePage.header.height / 1.8)
+                        width:  (foodsTemplatePage.width / 2) - units.gu(10)
+
+                        value: 1
+                        onValueChanged: quantity_portions = value         
+                        
+                     }
+                }
+            }
                 
-            }
-        }
-        ListItem {
-            id: carbohydratesItem
-            ListItemLayout{
-                title.text: "CarbornHydrates/100g"
-                subtitle.text: root.stackCarborn + "g"
-            }
-        }
-
-        ListItem {
-            id: sugarsItem
-            ListItemLayout{
-                title.text: "Sugars/100g"
-                subtitle.text: root.stackSugars + "g"
+            ListItem {
+                ListItemLayout{
+                    title.text: i18n.tr("Size of portions")
+                    Picker {
+                        id: userActivityLevelEntry
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: units.gu(10)
+                        height: units.gu(5)
+                        circular: false
+                        selectedIndex: 0
+                        model: [ "1/1", "1/2", "1/3", "1/4"] 
+                        delegate: PickerDelegate { 
+                            Label {
+                                text: modelData
+                                
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                
+                                anchors.verticalCenter: parent.verticalCenter
+                        }
+                        }
+                        onSelectedIndexChanged: {
+                        switch (selectedIndex) {
+                        case 0:
+                            console.log("1/1")
+                            size_portions  = 1
+                            break;
+                        case 1:
+                            console.log("1/2")
+                            size_portions  = 0.50
+                            break;
+                        case 2:
+                            console.log("1/3")
+                            size_portions  = 0.33
+                            break;
+                        case 3:
+                            console.log("1/4")
+                            size_portions  = 0.25
+                            break;
+                            default:
+                            break;
+                    }
+                }
             } 
-        }
+                    }
+                }
+                
+                ListItem {
+                    id: fatItem
+                    ListItemLayout{
+                        title.text: "Fat/100g"
+                        subtitle.text:  Math.round((root.stackFat * quantity_portions) * size_portions) + "g"
+                    }
+                }
 
-        ListItem {
-            id: fiberItem
-            ListItemLayout{
-                title.text: "Fibers/100g"
-                subtitle.text: root.stackFiber + "g"
-            }
-        }
+                ListItem {
+                    id: saturatedItem
+                    ListItemLayout{
+                        title.text: "Saturated/100g"
+                        subtitle.text: Math.round((root.stackSaturated * quantity_portions)  * size_portions) + "g"
+                        
+                    }
+                }
+                ListItem {
+                    id: carbohydratesItem
+                    ListItemLayout{
+                        title.text: "CarbornHydrates/100g"
+                        subtitle.text: Math.round((root.stackCarborn * quantity_portions) * size_portions) + "g"
+                    }
+                }
 
-        ListItem {
-            id: proteinsItem
-            ListItemLayout{
-                title.text: "Protein/100g"
-                subtitle.text: root.stackProtein + "g"
-            }
-        }
+                ListItem {
+                    id: sugarsItem
+                    ListItemLayout{
+                        title.text: "Sugars/100g"
+                        subtitle.text: Math.round((root.stackSugars * quantity_portions) * size_portions) + "g"
+                    } 
+                }
 
-        ListItem {
-            id: saltItem
-            ListItemLayout{
-                title.text: "Salt/100g"
-                subtitle.text: root.stackSalt + "g"
-            }
-        }
-    }   
+                ListItem {
+                    id: fiberItem
+                    ListItemLayout{
+                        title.text: "Fibers/100g"
+                        subtitle.text: Math.round((root.stackFiber * quantity_portions) * size_portions) + "g"
+                    }
+                }
+
+                ListItem {
+                    id: proteinsItem
+                    ListItemLayout{
+                        title.text: "Protein/100g"
+                        subtitle.text: Math.round((root.stackProtein * quantity_portions) * size_portions) + "g"
+                    }
+                }
+
+                ListItem {
+                    id: saltItem
+                    ListItemLayout{
+                        title.text: "Salt/100g"
+                        subtitle.text: Math.round((root.stackSalt * quantity_portions) * size_portions) + "g"
+                    }
+                }
+            }   
+      }
 }
 

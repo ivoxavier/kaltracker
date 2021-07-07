@@ -53,6 +53,17 @@ Page{
         AboutDialog{}
     }
 
+        
+        Image{ 
+            anchors.centerIn: parent           
+            z: 100
+            width: resumePage.width - units.gu(23)
+            height:  resumePage.height - units.gu(66)
+            source : '../img/emptyList.svg'
+            visible: foodsList.visible === true ? false : true
+        }
+    
+
 
     Connections{
         target: root
@@ -60,7 +71,7 @@ Page{
             console.log("refreshing dashboard")
             forceUpdate()
         }
-        onRefreshListModel:{
+        onRefreshListModel: {
             console.log("cleaning dailyIngestion listModel")
             dailyIngestions.clear()
             DataBase.getUserDailyLogIngestionFoods()
@@ -126,7 +137,6 @@ Page{
                 }
             }
 
-            //ListItem.ThinDivider {}
         }
     }
 
@@ -139,7 +149,7 @@ Page{
     Label{
         anchors.bottom: scrollView.top
         anchors.horizontalCenter: parent.horizontalCenter        
-        text: i18n.tr("Today meals")
+        text: foodsList.model.count === 0 ? ' ' : i18n.tr("Today meals")
         font.bold: true
     }
 
@@ -156,6 +166,7 @@ Page{
         ListView {
             id: foodsList
             model: dailyIngestions
+            clip: true
             removeDisplaced: Transition {
                                 NumberAnimation { 
                                     properties: "x,y"
@@ -163,6 +174,8 @@ Page{
                                     }
                             }
 
+            visible: model.count === 0 ? false : true
+            
             delegate: ListItem.Subtitled{
                     text: name
 
@@ -174,6 +187,7 @@ Page{
                     showDivider: false
                     removable: true
                     confirmRemoval: true
+                  
                     backgroundIndicator: Rectangle{
                         anchors.fill: parent
                         color: "transparent"
@@ -185,11 +199,7 @@ Page{
                                  root.refreshListModel()
                             }
                         }  
-                    }
-                    /*onTriggered:{
-                        console.log("clicked")
-                    }*/
-                    
+                    }      
                 }
         } 
     }
@@ -197,30 +207,11 @@ Page{
     Item {
     
         Component{
-            id: popTest
-            
+            id: popOverList
             ActionSelectionPopover {
                 
-               /* style: StyledItem {
-                             StyleHints {
-                                foregroundColor: root.defaultForegroundColor
-                                backgroundColor: root.defaultBackgroundColor
-                            }
-                    }*/
                     actions: ActionList {
 
-                      /*  Action {
-                            text: i18n.tr("Add Breakfast")
-                            onTriggered: console.log("ahsdkjashd")
-                        }
-                        Action {
-                            text: i18n.tr("Add Lunch")
-                            onTriggered: console.log("ahsdkjashd")
-                        }
-                        Action {
-                            text: i18n.tr("Add Snack")
-                            onTriggered: console.log("ahsdkjashd")
-                        }*/
                         Action {
                             text: i18n.tr("Schedule an ingestion")
                             onTriggered: mainStack.push(scheduleIngestionPage)
@@ -236,7 +227,33 @@ Page{
         }
     }
 
+    SequentialAnimation {
+                    id: animation
 
+                    RotationAnimation {
+                        target: addButton
+                        properties: "rotation"
+                        duration: 2000
+                        to: 40
+                        easing.type: Easing.OutQuad
+                    }
+
+                    RotationAnimation {
+                        target: addButton
+                        properties: "rotation"
+                        duration: 2100
+                        to: -40
+                        easing.type: Easing.OutQuad
+                    }
+
+                    RotationAnimation {
+                        target :addButton
+                        properties: "rotation"
+                        duration: 2000
+                        to: 0
+                        easing.type: Easing.OutQuad
+                    }
+    }
 
     Rectangle{
         id: footer
@@ -284,7 +301,7 @@ Page{
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        PopupUtils.open(popTest,addButton)
+                        PopupUtils.open(popOverList,addButton)
                         
                     }
                 }
@@ -318,8 +335,18 @@ Page{
         }
     }
 
+
  Component.onDestruction:{
     console.log("byebye")  
  } 
 
+function isAnimating(){
+    if (foodsList.model.count === 0){
+        animation.start()
+    } else {
+        //pass
+    }
+}
+
+Component.onCompleted : isAnimating()
 }

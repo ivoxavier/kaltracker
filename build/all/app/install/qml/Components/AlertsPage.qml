@@ -28,11 +28,11 @@ import "../js/DataBaseTools.js" as DataBase
 
 
 Page{
-    id: settingsPage
-    objectName: 'Settings Page'
-    property int deleteType
+    id: alertsPage
+    objectName: 'Alerts Page'
+    
     header: PageHeader {
-        title: i18n.tr("Settings")
+        title: i18n.tr("Alerts Page")
 
         StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -48,32 +48,20 @@ Page{
     }
 
     Column{
-        anchors.top: settingsPage.header.bottom
-        width: settingsPage.width
+        anchors.top: alertsPage.header.bottom
+        width: alertsPage.width
 
-       ListItem {
-            id: alertExceed
+     ListItem {
+            id: autoCleaner
             ListItemLayout{
-                title.text: i18n.tr("DataBase Maintenance")
+                title.text: i18n.tr("Calories Exceed previous day")
                 
-               ProgressionSlot{}
-               
-            }
-            onClicked:{
-                mainStack.push(maintenancePage)
+                Switch{
+                    checked: appSettings.isExceedCaloriesChecked
+                    onClicked:  appSettings.isExceedCaloriesChecked = !appSettings.isExceedCaloriesChecked
+                }
             }
         }
-
-        ListItem {
-            id: deleteTodayRecords
-            ListItemLayout{
-                title.text: i18n.tr("Application alerts")
-
-                ProgressionSlot{}
-
-             }
-            onClicked: mainStack.push(alertsPage)
-        }
-}
+    }
 }
         

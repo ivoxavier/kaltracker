@@ -43,17 +43,63 @@ Page{
 
     }
 
-    TextEdit {
-        id: labelInfo
-        text: i18n.tr("A csv file will be created in /home/phablet/Documents/kaltracker.ivoxavier/")
+    Column{
         anchors.top: exportData.header.bottom
-        wrapMode: TextEdit.Wrap
-        width: parent.width
-        readOnly: true
-        textFormat: TextEdit.PlainText
-        color: theme.palette.normal.fieldText
-        leftPadding: units.gu(1)
-    } 
+        anchors.bottom: exportData.bottom
+        anchors.left: exportData.left
+        anchors.right: exportData.right
+        width: exportData.width
+        spacing: units.gu(10)
+
+        TextEdit {
+            id: labelInfo
+            text: i18n.tr("A file will be created in Documents/kaltracker.ivoxavier/")
+            wrapMode: TextEdit.Wrap
+            width: parent.width
+            readOnly: true
+            textFormat: TextEdit.PlainText
+            color: theme.palette.normal.fieldText
+            leftPadding: units.gu(1)
+        } 
+
+        Row{
+            spacing: units.gu(1)
+            Label{
+                id: backupStatus
+                text: " "
+            }
+        }
+        Button{
+            id: exportButton
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: i18n.tr("Export")
+        
+        //fetch data from DB before click to extract
+        Component.onCompleted: DataBase.getAllIngestions("exportData")
+        
+        onClicked:{
+            console.log("Export process started")
+
+            py.call('export_data.createPath', [] ,function(returnValue){console.log(returnValue)})
+
+            py.call('export_data.createFile', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+            py.call('export_data.deleteCSV', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+
+            py.call('export_data.saveCSV', [queryToPy] ,function(returnValue){
+                if (returnValue === 'file_saved'){
+                    backupStatus.text = i18n.tr("Backup created")
+                } else {
+                    backupStatus.text = i18n.tr("Oops. Check the logs")
+                }
+            })
+        }
+    }
+    
+    }
     
 
     Python{
@@ -76,20 +122,6 @@ Page{
     }
 
 
-    Button{
-        id: exportButton
-        text: i18n.tr("Export")
-        anchors.centerIn: parent
-        
-        //fetch data from DB before click to extract
-        Component.onCompleted: DataBase.getAllIngestions("exportData")
-        
-        onClicked:{
-            console.log("Export process started")
-            py.call('export_data.saveCSV', [queryToPy] ,function(returnValue){
-                debugLabel.text = returnValue
-                console.log(returnValue)
-            })
-        }
-    }
+    
+    
 }
