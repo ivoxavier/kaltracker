@@ -37,7 +37,7 @@ Dialog {
 
         ActivityIndicator {
             id: loadingCircle
-            objectName: "activityindicator_standard"
+        
             anchors.horizontalCenter: parent.horizontalCenter
             running: false
             onRunningChanged: {

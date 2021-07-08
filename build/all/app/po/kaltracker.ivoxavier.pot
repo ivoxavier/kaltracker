@@ -1,26 +1,29 @@
-#: ../qml/Components/AboutDialog.qml:25
-msgid "Kaltracker version "
-msgstr ""
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the kaltracker.ivoxavier package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../qml/Components/AboutDialog.qml:28
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-07 17:44+0000\n"
+"POT-Creation-Date: 2021-07-08 18:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/Components/AboutDialog.qml:34
+msgid "© KalTracker 2020-2021"
+msgstr ""
+
+#: ../qml/Components/AboutDialog.qml:41
+msgid "Version: "
+msgstr ""
 
 #: ../qml/Components/ActionBar/AboutAction.qml:25
 msgid "About"
@@ -182,7 +185,7 @@ msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:204
-#: ../qml/Components/FoodsTemplate.qml:174 ../qml/Components/ResumePage.qml:116
+#: ../qml/Components/FoodsTemplate.qml:177 ../qml/Components/ResumePage.qml:116
 #: ../qml/Components/UserAccountPage.qml:247
 msgid "Goal"
 msgstr ""
@@ -228,44 +231,56 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:37
+#: ../qml/Components/ExportDataPage.qml:39
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:56
-msgid "A file will be created in Documents/kaltracker.ivoxavier/"
+#: ../qml/Components/ExportDataPage.qml:58
+msgid "Files are placed under Documents/kaltracker_exports/"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:75
+#: ../qml/Components/ExportDataPage.qml:90
+msgid "You may now start the export. It may take a while."
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:100
+msgid "Preparing data for processing. Please, wait a few seconds"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:113
 msgid "Export"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:94
-msgid "Backup created"
+#: ../qml/Components/ExportDataPage.qml:142
+#: ../qml/Components/ExportDataPage.qml:150
+#: ../qml/Components/ExportDataPage.qml:159
+msgid "...Done :)"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:96
+#: ../qml/Components/ExportDataPage.qml:144
+#: ../qml/Components/ExportDataPage.qml:152
+#: ../qml/Components/ExportDataPage.qml:161
 msgid "Oops. Check the logs"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:109
+#: ../qml/Components/FoodsTemplate.qml:112
 #: ../qml/Components/ScheduleIngestionPage.qml:91
 msgid "Ingestion Stored"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:153
+#: ../qml/Components/FoodsTemplate.qml:156
 msgid "Calories"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:173
+#: ../qml/Components/FoodsTemplate.qml:176
 msgid "Kcal"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:184
+#: ../qml/Components/FoodsTemplate.qml:187
 msgid "Quantity portions"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:200
+#: ../qml/Components/FoodsTemplate.qml:203
 msgid "Size of portions"
 msgstr ""
 
@@ -440,10 +455,10 @@ msgstr ""
 msgid "To Be Ingested"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:162
+#: ../qml/js/DataBaseTools.js:163
 msgid "Left"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:167
+#: ../qml/js/DataBaseTools.js:169
 msgid "Exceeded"
 msgstr ""

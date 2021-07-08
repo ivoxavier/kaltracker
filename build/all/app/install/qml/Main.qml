@@ -56,7 +56,7 @@ MainView {
     signal profileModified()
 
     //passing values to foodsTemplate
-    property string now_after_ingestion
+    
     property string stackProductName
     property string stackType
     property double stackEnergyKcal
@@ -182,9 +182,16 @@ MainView {
         property int userConfigsWeight
         property string userConfigsSex
         property int userConfigsAge
-    
 
     }
+
+    Settings {
+        id: shareValues
+        category: "pass_values"
+
+        property string now_or_after_ingestion
+    }
+
 
     PageStack{
         id: mainStack

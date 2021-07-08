@@ -17,50 +17,86 @@ import csv
 import os
 
 
-#return a message to confirm py has been loaded
+
 def moduleState():
     return 'Python Module Imported'
 
 
 mobile_path = '/home/phablet/Documents/kaltracker_exports'
-file_name = '/home/phablet/Documents/kaltracker_exports/kaltracker_backup.csv'
+
+file_ingestions = '/home/phablet/Documents/kaltracker_exports/kaltracker_ingestions.csv'
+
+file_user = '/home/phablet/Documents/kaltracker_exports/kaltracker_user.csv'
+
+file_weight_tracker = '/home/phablet/Documents/kaltracker_exports/kaltracker_weight_tracker.csv'
+
 access_rights = 0o755
+
+all_dir = [file_ingestions,file_user,file_weight_tracker]
+
 
 def createPath():
     try:
         os.mkdir(mobile_path, access_rights)
-        return 'path_created'
     except:
         return 'create_path_failed'
+    return 'path_created'
+
+
+def deleteFile():
+    for i in all_dir:
+        try:
+            os.remove(i)
+        except:
+            return 'file_not_deleted_or_not_existant'
+
+    return 'file_deleted'
 
 
 def createFile():
+    for i in all_dir:
+
+        try:
+            each_file = open(i, 'w')
+            each_file.close()
+        except:
+            return 'files_not_created'
+
+    return 'files_created_and_cleaned'
+    
+
+
+def saveIngestions(query_ingestions):
     try:
-        with open(file_name, 'w') as create_file:
-            file_writer = csv.writer(create_file)
-            create_file.close()
-            return 'file_created'
-    except:
-        return 'file_not_created'
-
-
-def deleteCSV():
-    try:
-        os.remove(file_name)
-        return 'file_deleted'
-    except:
-        return 'file_not_deleted'
-
-
-
-def saveCSV(query):
-    try:
-        with open(file_name, 'w') as csv_file:
+        with open(file_ingestions, 'w') as csv_file:
             save_on_csv = csv.writer(csv_file)
             save_on_csv.writerow(["date","time","type","product_name","kcal","fat","saturated","carbo","sugars","fiber","proteins","salt"])
-            save_on_csv.writerow([query])
+            save_on_csv.writerow([query_ingestions])
             csv_file.close()
             return 'file_saved'
     except:
         return 'file_not_saved'
 
+
+def saveUser(query_user):
+    try:
+        with open(file_user, 'w') as csv_file:
+            save_on_csv = csv.writer(csv_file)
+            save_on_csv.writerow(["username","age","sex","weight","height","activity","goal"])
+            save_on_csv.writerow([query_user])
+            csv_file.close()
+            return 'file_saved'
+    except:
+        return 'file_not_saved'
+
+
+def saveWeight(query_weight_tracker):
+    try:
+        with open(file_weight_tracker, 'w') as csv_file:
+            save_on_csv = csv.writer(csv_file)
+            save_on_csv.writerow(["previous_weight","new_weight","new_weight_date"])
+            save_on_csv.writerow([query_weight_tracker])
+            csv_file.close()
+            return 'file_saved'
+    except:
+        return 'file_not_saved'

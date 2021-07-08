@@ -30,6 +30,9 @@ Page {
     
     property string type_ingestion
 
+    
+
+
     header: PageHeader {
         title: root.stackProductName
         StyleHints {
@@ -54,11 +57,11 @@ Page {
                 Action{
 
                     iconName: "ok"
-
+                    
                      onTriggered: {
 
-                         if (root.now_after_ingestion ===  "now"){
-                             console.log("saving now ingestion")
+                         if (shareValues.now_or_after_ingestion === "now" ){
+                             console.log("Saving [now ingestion], foods: " + root.stackProductName)
                              DataBase.saveNewIngestion(root.stackProductName,
                           root.stackType,
                           (root.stackEnergyKcal * quantity_portions) * size_portions,
@@ -99,7 +102,7 @@ Page {
         }
     }
 
-    property int quantity_portions : 1 
+    property int quantity_portions : 1
     property double size_portions : 1
 
      Component {
@@ -146,7 +149,7 @@ Page {
                      }
 
                     Label{ 
-                         anchors.top: kcalNumber.bottom
+                        anchors.top: kcalNumber.bottom
                             
                         anchors.horizontalCenter: parent.horizontalCenter
                             
@@ -257,6 +260,7 @@ Page {
                         
                     }
                 }
+
                 ListItem {
                     id: carbohydratesItem
                     ListItemLayout{
@@ -298,5 +302,6 @@ Page {
                 }
             }   
       }
+    Component.onCompleted: console.log(shareValues.now_or_after_ingestion)
 }
 

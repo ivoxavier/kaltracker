@@ -22,10 +22,23 @@ import "../js/DataBaseTools.js" as DataBase
 
 Dialog {
        id: aboutApp
-       title: i18n.tr("Kaltracker version " + root.appVersion)
+
+        Image{
+            source:'../../assets/logo.svg'
+            fillMode: Image.PreserveAspectFit
+        }
+        Label{
+            
+            anchors.horizontalCenter: aboutApp.horizontalCenter
+            
+            text: i18n.tr("© KalTracker 2020-2021")
+        }
 
         Label{
-            text: i18n.tr("")
+            
+            anchors.horizontalCenter: aboutApp.horizontalCenter
+            
+            text: i18n.tr("Version: " + root.appVersion)
         }
         
         Button {

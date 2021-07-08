@@ -28,10 +28,12 @@ import "../js/DataBaseTools.js" as DataBase
 
 
 Page{
-    id: exportData
+    id: exportDataPage
     objectName: 'ExportDataPage'
 
-    property string queryToPy
+    property string ingestions_query
+    property string user_query
+    property string weight_query
 
     header: PageHeader {
         title: i18n.tr("Export Data")
@@ -44,16 +46,17 @@ Page{
     }
 
     Column{
-        anchors.top: exportData.header.bottom
-        anchors.bottom: exportData.bottom
-        anchors.left: exportData.left
-        anchors.right: exportData.right
-        width: exportData.width
+        anchors.top: exportDataPage.header.bottom
+        anchors.bottom: exportDataPage.bottom
+        anchors.left: exportDataPage.left
+        anchors.right: exportDataPage.right
+        width: exportDataPage.width
         spacing: units.gu(10)
 
         TextEdit {
             id: labelInfo
-            text: i18n.tr("A file will be created in Documents/kaltracker.ivoxavier/")
+            text: i18n.tr("Files are placed under Documents/kaltracker_exports/")
+            font.bold: true
             wrapMode: TextEdit.Wrap
             width: parent.width
             readOnly: true
@@ -61,44 +64,111 @@ Page{
             color: theme.palette.normal.fieldText
             leftPadding: units.gu(1)
         } 
+            
 
-        Row{
-            spacing: units.gu(1)
-            Label{
-                id: backupStatus
-                text: " "
+            Timer{
+                id: timer
+                repeat: false
+            }
+
+            ActivityIndicator {
+                id: loadingCircle
+                anchors.horizontalCenter: parent.horizontalCenter
+                running: false
+                onRunningChanged: {
+                
+                    
+
+                    function animationState(delayMiliseconds, cb) {
+                        timer.interval = delayMiliseconds;
+                        timer.triggered.connect(cb);
+                        timer.start();
+                    }  
+                
+                animationState(9000, function () {
+                    exportButton.enabled = true
+                    stateMsg.text = i18n.tr("You may now start the export. It may take a while.")
+                    loadingCircle.running = false
+                    exportButton.color = UbuntuColors.blue
+                })
+    
             }
         }
+
+        TextEdit {
+            id: stateMsg
+            text: i18n.tr("Preparing data for processing. Please, wait a few seconds")
+            wrapMode: TextEdit.Wrap
+            width: parent.width
+            readOnly: true
+            textFormat: TextEdit.PlainText
+            color: theme.palette.normal.fieldText
+            leftPadding: units.gu(1)
+        }
+
+        
         Button{
             id: exportButton
             anchors.horizontalCenter: parent.horizontalCenter
             text: i18n.tr("Export")
-        
+            enabled: false
+         
         //fetch data from DB before click to extract
-        Component.onCompleted: DataBase.getAllIngestions("exportData")
+        Component.onCompleted: {
+            DataBase.getUserProfile()
+            DataBase.getWeightTracker()
+            DataBase.getAllIngestions("exportData")
+        }
         
         onClicked:{
             console.log("Export process started")
 
-            py.call('export_data.createPath', [] ,function(returnValue){console.log(returnValue)})
+            py.call('export_data.createPath', [] ,function(returnValue){
+                console.log(returnValue)
+                })
+
+
+            py.call('export_data.deleteFile', [] ,function(returnValue){
+                console.log(returnValue)
+            })
 
             py.call('export_data.createFile', [] ,function(returnValue){
                 console.log(returnValue)
             })
-            py.call('export_data.deleteCSV', [] ,function(returnValue){
-                console.log(returnValue)
-            })
+            
 
-            py.call('export_data.saveCSV', [queryToPy] ,function(returnValue){
+            py.call('export_data.saveIngestions', [ingestions_query] ,function(returnValue){
                 if (returnValue === 'file_saved'){
-                    backupStatus.text = i18n.tr("Backup created")
+                    backupStatus.text = i18n.tr("...Done :)")
                 } else {
                     backupStatus.text = i18n.tr("Oops. Check the logs")
                 }
             })
+
+            py.call('export_data.saveUser', [user_query] ,function(returnValue){
+                if (returnValue === 'file_saved'){
+                    backupStatus.text = i18n.tr("...Done :)")
+                } else {
+                    backupStatus.text = i18n.tr("Oops. Check the logs")
+                }
+            })
+
+
+            py.call('export_data.saveWeight', [weight_query] ,function(returnValue){
+                if (returnValue === 'file_saved'){
+                    backupStatus.text = i18n.tr("...Done :)")
+                } else {
+                    backupStatus.text = i18n.tr("Oops. Check the logs")
+                }
+            })
+
         }
     }
-    
+            Label{
+                anchors.right: parent.right
+                id:backupStatus
+                font.bold: true
+            }
     }
     
 
@@ -122,6 +192,8 @@ Page{
     }
 
 
-    
+     Component.onCompleted: {
+       loadingCircle.running = true
+    }
     
 }

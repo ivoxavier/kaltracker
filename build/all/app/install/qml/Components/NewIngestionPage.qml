@@ -100,7 +100,11 @@ Page {
             delegate: ListItem.Standard{
                     text: product_name
                     onClicked:{
+                        function forceMode(){
+                            shareValues.now_or_after_ingestion = "now"
+                        }
                         mainStack.push(foodsTemplate)
+                        shareValues.now_or_after_ingestion = "now"
                         root.stackProductName = product_name
                         root.stackType = type
                         root.stackEnergyKcal = energy_kcal_100g
@@ -111,7 +115,7 @@ Page {
                         root.stackFiber = fiber_100g
                         root.stackProtein = proteins_100g
                         root.stackSalt = salt_100g
-                        root.now_after_ingestion = "now"
+                        forceMode()
                     }
                 }
         } 

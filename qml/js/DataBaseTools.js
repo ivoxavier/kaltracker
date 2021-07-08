@@ -7,8 +7,8 @@ function createSQLContainer() {
 /*date and time*/
 var longDate = new Date();
 var localCountry = Qt.locale()
-var currentDate = longDate.toLocaleString(localCountry, 'yyyy-MM-dd')
-var currentTime = longDate.toLocaleString(localCountry, 'hh:mm')
+var current_date = longDate.toLocaleString(localCountry, 'yyyy-MM-dd')
+var current_time = longDate.toLocaleString(localCountry, 'hh:mm')
 
  /* DataWarehouse Start*/
 
@@ -139,10 +139,10 @@ const populateUserKaloriesIngestionMetric = 'WITH Subtraction AS \
 FROM Ingestion \
 JOIN User ON Ingestion.idUser = User.idUser \
 WHERE Ingestion.ingestionDate == date("now")) \
-SELECT dif FROM Subtraction'//.replace("user_goal", userSettings.userConfigsGoal )
+SELECT dif FROM Subtraction'
 
 function getUserKaloriesIngestionMetric(){
-  console.log("its me " + userSettings.userConfigsGoal)
+  
 var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(populateUserKaloriesIngestionMetric)
@@ -157,11 +157,13 @@ var db = createSQLContainer();
                           dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
                           appSettings.displayAlert = false
+
                         } else if (rsToQML > 0){
 
                           dashboardUserKaloriesIngestionMetric.text =  Math.round(rsToQML) + "\n" + i18n.tr("Left");
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
                           appSettings.displayAlert = false
+
                         } else {
 
                           dashboardUserKaloriesIngestionMetric.text =  Math.round(Math.abs(rsToQML))  + "\n" + i18n.tr("Exceeded");
@@ -176,7 +178,12 @@ var db = createSQLContainer();
 
 
 //resumePage log book view
-const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.idIngestion AS idIngestion, Ingestion.ingestionDate AS ingestionDate, Ingestion.ingestionTime AS ingestionTime, Ingestion.type AS type,Ingestion.product_name AS name, Ingestion.energy_kcal_100g AS kcal \
+const populateUserDailyLogIngestionFoods = 'SELECT Ingestion.idIngestion AS idIngestion,\
+Ingestion.ingestionDate AS ingestionDate,\
+Ingestion.ingestionTime AS ingestionTime,\
+Ingestion.type AS type,\
+Ingestion.product_name AS name,\
+Ingestion.energy_kcal_100g AS kcal \
 FROM Ingestion \
 WHERE Ingestion.ingestionDate == date("now")';
 
@@ -195,7 +202,7 @@ function getUserDailyLogIngestionFoods(){
  }) 
 }
 
-
+/* get data for stats and export */
 const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,\
 Ingestion.ingestionTime AS ingestionTime,\
 Ingestion.type AS type,\
@@ -227,7 +234,7 @@ function getAllIngestions(contextRequest){
                           break
                           case "exportData":
                             var rsToQML = results.rows.item(j).ingestionDate + ',' + results.rows.item(j).ingestionTime + ',' + results.rows.item(j).type + ',' + results.rows.item(j).product_name + ',' + results.rows.item(j).kcal + ',' + results.rows.item(j).fat + ',' + results.rows.item(j).saturated + ',' + results.rows.item(j).carbo + ',' + results.rows.item(j).sugars + ',' + results.rows.item(j).fiber + ',' + results.rows.item(j).proteins + ',' + results.rows.item(j).salt + '\n';
-                            exportData.queryToPy += rsToQML
+                            exportDataPage.ingestions_query += rsToQML
                             
                           break
                           
@@ -240,31 +247,61 @@ function getAllIngestions(contextRequest){
  }) 
 }
 
-//statsPage
-const populateChart = 'SELECT ROUND(SUM(fat_100g),1) AS fat, ROUND(SUM(saturated_fat_100g),1) AS saturated, ROUND(SUM(carbohydrates_100g),1) AS carbornhydrates, ROUND(SUM(sugars_100g),1) AS sugars, ROUND(SUM(proteins_100g),1) AS protein, ROUND(SUM(fiber_100g),1) AS fiber, ROUND(SUM(salt_100g),1) AS salt \
-FROM Ingestion \
-WHERE strftime("%m", Ingestion.ingestionDate) == strftime("%m", date()) '
 
-function getNutrientsChartPie(){
+
+const userProfile = 'SELECT User.name AS username,\
+User.age AS age, \
+User.sex AS sex, \
+User.weight AS weight, \
+User.height AS height, \
+User.activityLevel AS activity, \
+User.goal AS goal \
+FROM User';
+
+function getUserProfile(){
+
   var db = createSQLContainer();
   db.transaction(function (tx) {
-                   var results = tx.executeSql(populateChart)
+                   var results = tx.executeSql(userProfile)
                    for (var i = 0; i < results.rows.length; i++) { 
                      (function(){
                        var j = i;
-                       fatStat = results.rows.item(j).fat
-                       saturatedStat = results.rows.item(j).saturated
-                       carbornhydrates = results.rows.item(j).carbornhydrates
-                       sugarsStat = results.rows.item(j).sugars
-                       proteinStat = results.rows.item(j).protein
-                       fiberStat = results.rows.item(j).fiber 
-                       saltStat = results.rows.item(j).salt
+                          var rsToQML = results.rows.item(j).username + ',' + results.rows.item(j).age + ',' + results.rows.item(j).sex + ',' + results.rows.item(j).weight + ',' + results.rows.item(j).height + ',' + results.rows.item(j).activity + ',' + results.rows.item(j).goal + '\n';
+                          exportDataPage.user_query += rsToQML
                      })()
                  }
  }) 
 }
 
-const average_calories_month = 'SELECT strftime("%m", Ingestion.ingestionDate) AS month, AVG(Ingestion.energy_kcal_100g) AS average \
+
+
+const weight_tracker = 'SELECT WT.previous_weight AS previous_weight,\
+WT.new_weight AS new_weight, \
+WT.new_weight_date AS new_weight_date \
+FROM WeightTracker WT';
+
+function getWeightTracker(){
+
+  var db = createSQLContainer();
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(weight_tracker)
+                   for (var i = 0; i < results.rows.length; i++) { 
+                     (function(){
+                       var j = i;
+                          var rsToQML = results.rows.item(j).previous_weight + ',' + results.rows.item(j).new_weight + ',' + results.rows.item(j).new_weight_date + '\n';
+                          exportDataPage.weight_query += rsToQML
+                     })()
+                 }
+ }) 
+}
+
+
+
+
+//statsPage
+
+const average_calories_month = 'SELECT strftime("%m", Ingestion.ingestionDate) AS month,\
+AVG(Ingestion.energy_kcal_100g) AS average \
 FROM Ingestion \
 WHERE strftime("%Y", Ingestion.ingestionDate) == strftime("%Y", date()) \
 GROUP BY month \
@@ -287,7 +324,10 @@ function getAverageCaloriesMonth(){
 
 function getAllIngestionsMonth(month_requested){
   
-const month_ingestions = 'SELECT i.ingestionDate AS ingestionDate, i.ingestionTime AS ingestionTime, i.product_name AS name, i.energy_kcal_100g AS kcal \
+const month_ingestions = 'SELECT i.ingestionDate AS ingestionDate,\
+i.ingestionTime AS ingestionTime,\
+i.product_name AS name,\
+i.energy_kcal_100g AS kcal \
 FROM Ingestion i \
 WHERE strftime("%m", ingestionDate) == "which_month"'.replace("which_month", month_requested)
   
@@ -355,14 +395,36 @@ const saveNewIngestionStatement = 'INSERT INTO Ingestion (\
   ingestionTime)\
   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
-function saveNewIngestion(product_name,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g){          
+function saveNewIngestion(product_name,
+  type,
+  energy_kcal_100g,
+  fat_100g,
+  saturated_fat_100g,
+  carbohydrates_100g,
+  sugars_100g,
+  fiber_100g,
+  proteins_100g,
+  salt_100g,
+  currentDate,
+  currentTime){          
   var db = createSQLContainer();
   console.log("DataBase.saveNewIngestion : connected to SQL_CONTAINER");
   var validationMessage = "";
-  
+  console.log(current_time + ' ' + current_date)
   
   db.transaction(function(tx) {
-      var rs = tx.executeSql(saveNewIngestionStatement, [1, product_name, type, energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g, currentDate, currentTime]);
+      var rs = tx.executeSql(saveNewIngestionStatement, [1,
+        product_name,
+        type,
+        energy_kcal_100g,
+        fat_100g,
+        saturated_fat_100g,
+        carbohydrates_100g,
+        sugars_100g,fiber_100g,
+        proteins_100g,
+        salt_100g,
+        current_date,
+        current_time]);
       if (rs.rowsAffected > 0) {
         validationMessage = "DataBase.saveNewIngestion : OK";
       } else {
@@ -392,7 +454,19 @@ function saveScheduleIngestion(product_name,
   
   
   db.transaction(function(tx) {
-      var rs = tx.executeSql(saveNewIngestionStatement, [1, product_name, type, energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,fiber_100g,proteins_100g,salt_100g, schedule_date, schedule_time]);
+      var rs = tx.executeSql(saveNewIngestionStatement, [1,
+        product_name,
+        type,
+        energy_kcal_100g,
+        fat_100g,
+        saturated_fat_100g,
+        carbohydrates_100g,
+        sugars_100g,
+        fiber_100g,
+        proteins_100g,
+        salt_100g,
+        schedule_date,
+        schedule_time]);
       if (rs.rowsAffected > 0) {
         validationMessage = "DataBase.saveNewIngestion : OK";
       } else {
@@ -415,7 +489,7 @@ function saveNewWeight(previous_weight, new_weight){
   console.log("DataBase.createUserProfile : connected to SQL_CONTAINER");
   
   db.transaction(function(tx) {
-      var results = tx.executeSql(save_weight_update, [1, previous_weight, new_weight, currentDate]);
+      var results = tx.executeSql(save_weight_update, [1, previous_weight, new_weight, current_date]);
       
       if (results.rowsAffected > 0) {
        
