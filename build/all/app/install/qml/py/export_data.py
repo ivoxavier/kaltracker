@@ -70,7 +70,7 @@ def saveIngestions(query_ingestions):
     try:
         with open(file_ingestions, 'w') as csv_file:
             save_on_csv = csv.writer(csv_file)
-            save_on_csv.writerow(["date","time","type","product_name","kcal","fat","saturated","carbo","sugars","fiber","proteins","salt"])
+            save_on_csv.writerow(["date","time","type","product_name","nutriscore_grade","kcal","fat","saturated","carbo","sugars","proteins"])
             save_on_csv.writerow([query_ingestions])
             csv_file.close()
             return 'file_saved'

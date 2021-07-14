@@ -5,6 +5,7 @@
         <Drink>
             <code>5601045108239</code>
             <product_name>7up sugar free</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -125,6 +126,7 @@
         <Food>
             <code>5411188100324</code>
             <product_name>Alpro 4xMirtilo</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>70</energy_kcal_100g>
             <fat_100g>2.2</fat_100g>

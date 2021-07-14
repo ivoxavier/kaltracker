@@ -58,15 +58,14 @@ const create_ingestionTable_statement = 'CREATE TABLE Ingestion(\
     idIngestion	INTEGER,\
     idUser	INTEGER,\
     product_name	TEXT,\
-    type	INTEGER,\
+    nutriscore_grade	TEXT,\
+    type	TEXT,\
     energy_kcal_100g	INTEGER,\
     fat_100g	DOUBLE,\
     saturated_fat_100g	DOUBLE,\
     carbohydrates_100g	DOUBLE,\
     sugars_100g	DOUBLE,\
-    fiber_100g	DOUBLE,\
     proteins_100g	DOUBLE,\
-    salt_100g	DOUBLE,\
     ingestionDate  TEXT, \
     ingestionTime  TEXT, \
     FOREIGN KEY(idUser) REFERENCES User(idUser), \
@@ -205,6 +204,7 @@ function getUserDailyLogIngestionFoods(){
 /* get data for stats and export */
 const allIngestions = 'SELECT Ingestion.ingestionDate AS ingestionDate,\
 Ingestion.ingestionTime AS ingestionTime,\
+Ingestion.nutriscore_grade AS score_grade,\
 Ingestion.type AS type,\
 Ingestion.product_name AS product_name,\
 Ingestion.energy_kcal_100g AS kcal, \
@@ -212,9 +212,7 @@ Ingestion.fat_100g AS fat,\
 Ingestion.saturated_fat_100g AS saturated,\
 Ingestion.carbohydrates_100g AS carbo,\
 Ingestion.sugars_100g AS sugars,\
-Ingestion.fiber_100g AS fiber,\
-Ingestion.proteins_100g AS proteins,\
-Ingestion.salt_100g AS salt \
+Ingestion.proteins_100g AS proteins \
 FROM Ingestion';
 
 function getAllIngestions(contextRequest){
@@ -233,7 +231,7 @@ function getAllIngestions(contextRequest){
                            
                           break
                           case "exportData":
-                            var rsToQML = results.rows.item(j).ingestionDate + ',' + results.rows.item(j).ingestionTime + ',' + results.rows.item(j).type + ',' + results.rows.item(j).product_name + ',' + results.rows.item(j).kcal + ',' + results.rows.item(j).fat + ',' + results.rows.item(j).saturated + ',' + results.rows.item(j).carbo + ',' + results.rows.item(j).sugars + ',' + results.rows.item(j).fiber + ',' + results.rows.item(j).proteins + ',' + results.rows.item(j).salt + '\n';
+                            var rsToQML = results.rows.item(j).ingestionDate + ',' + results.rows.item(j).ingestionTime + ',' + results.rows.item(j).type + ',' + results.rows.item(j).product_name + ',' + results.rows.item(j).score_grade + ',' + results.rows.item(j).kcal + ',' + results.rows.item(j).fat + ',' + results.rows.item(j).saturated + ',' + results.rows.item(j).carbo + ',' + results.rows.item(j).sugars + ',' + results.rows.item(j).proteins + '\n';
                             exportDataPage.ingestions_query += rsToQML
                             
                           break
@@ -382,29 +380,27 @@ function createUserProfile(userName,
 const saveNewIngestionStatement = 'INSERT INTO Ingestion (\
   idUser,\
   product_name,\
+  nutriscore_grade,\
   type,\
   energy_kcal_100g,\
   fat_100g,\
   saturated_fat_100g,\
   carbohydrates_100g,\
   sugars_100g,\
-  fiber_100g,\
   proteins_100g,\
-  salt_100g,\
   ingestionDate,\
   ingestionTime)\
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
 
 function saveNewIngestion(product_name,
+  nutriscore_grade,
   type,
   energy_kcal_100g,
   fat_100g,
   saturated_fat_100g,
   carbohydrates_100g,
   sugars_100g,
-  fiber_100g,
   proteins_100g,
-  salt_100g,
   currentDate,
   currentTime){          
   var db = createSQLContainer();
@@ -415,14 +411,14 @@ function saveNewIngestion(product_name,
   db.transaction(function(tx) {
       var rs = tx.executeSql(saveNewIngestionStatement, [1,
         product_name,
+        nutriscore_grade,
         type,
         energy_kcal_100g,
         fat_100g,
         saturated_fat_100g,
         carbohydrates_100g,
-        sugars_100g,fiber_100g,
+        sugars_100g,
         proteins_100g,
-        salt_100g,
         current_date,
         current_time]);
       if (rs.rowsAffected > 0) {
@@ -437,15 +433,14 @@ function saveNewIngestion(product_name,
 }
 
 function saveScheduleIngestion(product_name,
+  nutriscore_grade,
   type,
   energy_kcal_100g,
   fat_100g,
   saturated_fat_100g,
   carbohydrates_100g,
   sugars_100g,
-  fiber_100g,
   proteins_100g,
-  salt_100g,
   schedule_date,
   schedule_time){          
   var db = createSQLContainer();
@@ -456,15 +451,14 @@ function saveScheduleIngestion(product_name,
   db.transaction(function(tx) {
       var rs = tx.executeSql(saveNewIngestionStatement, [1,
         product_name,
+        nutriscore_grade,
         type,
         energy_kcal_100g,
         fat_100g,
         saturated_fat_100g,
         carbohydrates_100g,
         sugars_100g,
-        fiber_100g,
         proteins_100g,
-        salt_100g,
         schedule_date,
         schedule_time]);
       if (rs.rowsAffected > 0) {

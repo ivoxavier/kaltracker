@@ -53,16 +53,21 @@ Page{
         AboutDialog{}
     }
 
-        
-        Image{ 
-            anchors.centerIn: parent           
-            z: 100
-            width: resumePage.width - units.gu(23)
-            height:  resumePage.height - units.gu(66)
-            source : '../img/emptyList.svg'
+        UbuntuShape{
+            anchors.centerIn: parent 
+            radius: "large"
+            aspect: UbuntuShape.Inset
+            width: resumePage.width - units.gu(20)
+            height:  resumePage.height - units.gu(60)
             visible: foodsList.visible === true ? false : true
+            z:100
+            Image{ 
+                id: pacMan         
+                anchors.fill: parent
+                source : '../img/emptyList.svg'
+                visible: foodsList.visible === true ? false : true
+            }
         }
-    
 
 
     Connections{
@@ -114,6 +119,7 @@ Page{
                 Label{
                     id: dashboardUserGoal
                     text: userSettings.userConfigsGoal + "\n" + i18n.tr("Goal");
+                    
                 }
 
                 Label{
@@ -133,7 +139,6 @@ Page{
                     id: dashboardUserKaloriesIngestionMetric
                     text: dashboardUserMetric
                     font.bold: true
-                    
                 }
             }
 
@@ -162,7 +167,7 @@ Page{
             bottom: footer.top
         }
 
-        
+         
         ListView {
             id: foodsList
             model: dailyIngestions
@@ -202,8 +207,9 @@ Page{
                     }      
                 }
         } 
+        
     }
-
+    
     Item {
     
         Component{
@@ -263,12 +269,14 @@ Page{
         width: resumePage.width
         height: (resumePage.header.height) - units.gu(1)
         color: root.defaultForegroundColor
+
         
         Row{
             spacing: units.gu(2.5)
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
 
+            
             Icon{
                 name: "account"
                 height: footer.height - units.gu(1)

@@ -106,15 +106,14 @@ Page {
                         mainStack.push(foodsTemplate)
                         shareValues.now_or_after_ingestion = "now"
                         root.stackProductName = product_name
+                        root.nutriscore_grade = nutriscore_grade
                         root.stackType = type
                         root.stackEnergyKcal = energy_kcal_100g
                         root.stackFat = fat_100g
                         root.stackSaturated = saturated_fat_100g
                         root.stackCarborn = carbohydrates_100g
                         root.stackSugars = sugars_100g
-                        root.stackFiber = fiber_100g
                         root.stackProtein = proteins_100g
-                        root.stackSalt = salt_100g
                         forceMode()
                     }
                 }

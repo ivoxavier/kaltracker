@@ -29,21 +29,20 @@ import QtQuick.XmlListModel 2.7
 
 XmlListModel {
         id: xmlScheme
-        
+        //Qt.locale().name ===
         source: "../../xml/foods.xml"
         query: queryCategory === 0 ? "/foods/item/Food" : "/foods/item/Drink"
 
-        XmlRole { name: "product_name"; query: "product_name/string()" }
+        XmlRole { name: "product_name"; query: "product_name/string()"}
+        XmlRole { name: "nutriscore_grade"; query: "nutriscore_grade/string()" }
         XmlRole { name: "type"; query: "type/string()" }
         XmlRole { name: "energy_kcal_100g"; query: "energy_kcal_100g/string()" }
         XmlRole { name: "fat_100g"; query: "fat_100g/string()" }
         XmlRole { name: "saturated_fat_100g"; query: "saturated_fat_100g/string()" }
         XmlRole { name: "carbohydrates_100g"; query: "carbohydrates_100g/string()" }
         XmlRole { name: "sugars_100g"; query: "sugars_100g/string()" }
-        XmlRole { name: "fiber_100g"; query: "fiber_100g/string()" }
         XmlRole { name: "proteins_100g"; query: "proteins_100g/string()" }
-        XmlRole { name: "salt_100g"; query: "salt_100g/string()" }
-        Component.onCompleted: console.log("XML MODEL LOADED")
+        Component.onCompleted: console.log("xml loaded")
 }
     
     

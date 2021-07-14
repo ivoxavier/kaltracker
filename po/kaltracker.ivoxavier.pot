@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 18:01+0000\n"
+"POT-Creation-Date: 2021-07-14 20:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,7 +185,7 @@ msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:204
-#: ../qml/Components/FoodsTemplate.qml:177 ../qml/Components/ResumePage.qml:116
+#: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:121
 #: ../qml/Components/UserAccountPage.qml:247
 msgid "Goal"
 msgstr ""
@@ -263,24 +263,24 @@ msgstr ""
 msgid "Oops. Check the logs"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:112
-#: ../qml/Components/ScheduleIngestionPage.qml:91
+#: ../qml/Components/FoodsTemplate.qml:113
+#: ../qml/Components/ScheduleIngestionPage.qml:81
 msgid "Ingestion Stored"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:156
+#: ../qml/Components/FoodsTemplate.qml:157
 msgid "Calories"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:176
+#: ../qml/Components/FoodsTemplate.qml:177
 msgid "Kcal"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:187
+#: ../qml/Components/FoodsTemplate.qml:188
 msgid "Quantity portions"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:203
+#: ../qml/Components/FoodsTemplate.qml:204
 msgid "Size of portions"
 msgstr ""
 
@@ -318,15 +318,15 @@ msgstr ""
 
 #: ../qml/Components/NewIngestionPage.qml:64
 #: ../qml/Components/NewIngestionPage.qml:82
-#: ../qml/Components/ScheduleIngestionPage.qml:73
-#: ../qml/Components/ScheduleIngestionPage.qml:101
+#: ../qml/Components/ScheduleIngestionPage.qml:63
+#: ../qml/Components/ScheduleIngestionPage.qml:91
 msgid "Food"
 msgstr ""
 
 #: ../qml/Components/NewIngestionPage.qml:69
 #: ../qml/Components/NewIngestionPage.qml:82
-#: ../qml/Components/ScheduleIngestionPage.qml:78
-#: ../qml/Components/ScheduleIngestionPage.qml:101
+#: ../qml/Components/ScheduleIngestionPage.qml:68
+#: ../qml/Components/ScheduleIngestionPage.qml:91
 msgid "Drink"
 msgstr ""
 
@@ -355,35 +355,35 @@ msgstr ""
 msgid "'s Panel"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:98
+#: ../qml/Components/ResumePage.qml:103
 msgid "Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:152
+#: ../qml/Components/ResumePage.qml:157
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:183
+#: ../qml/Components/ResumePage.qml:188
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:184
+#: ../qml/Components/ResumePage.qml:189
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:185
+#: ../qml/Components/ResumePage.qml:190
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:185
+#: ../qml/Components/ResumePage.qml:190
 msgid "Snack"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:216
+#: ../qml/Components/ResumePage.qml:222
 msgid "Schedule an ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:220
+#: ../qml/Components/ResumePage.qml:226
 msgid "New ingestion"
 msgstr ""
 
@@ -391,11 +391,11 @@ msgstr ""
 msgid "Operation Result"
 msgstr ""
 
-#: ../qml/Components/ScheduleIngestionPage.qml:52
+#: ../qml/Components/ScheduleIngestionPage.qml:42
 msgid "Schedule"
 msgstr ""
 
-#: ../qml/Components/ScheduleIngestionPage.qml:201
+#: ../qml/Components/ScheduleIngestionPage.qml:192
 msgid "Ok"
 msgstr ""
 
@@ -447,18 +447,18 @@ msgstr ""
 msgid "Click to start"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:123 ../qml/js/DataBaseTools.js:127
+#: ../qml/js/DataBaseTools.js:122 ../qml/js/DataBaseTools.js:126
 msgid "Foods"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:157
+#: ../qml/js/DataBaseTools.js:156
 msgid "To Be Ingested"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:163
+#: ../qml/js/DataBaseTools.js:162
 msgid "Left"
 msgstr ""
 
-#: ../qml/js/DataBaseTools.js:169
+#: ../qml/js/DataBaseTools.js:168
 msgid "Exceeded"
 msgstr ""

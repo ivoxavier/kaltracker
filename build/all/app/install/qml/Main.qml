@@ -53,7 +53,6 @@ MainView {
     //required to refresh dailyIngestion ListModel
     signal refreshListModel()
 
-    signal profileModified()
 
     //passing values to foodsTemplate
     
@@ -64,12 +63,11 @@ MainView {
     property double stackSaturated
     property double stackCarborn
     property double stackSugars
-    property double stackFiber
     property double stackProtein
-    property double stackSalt
+    property string nutriscore_grade
     property string stackMonthIngestions
-    property string user_schedule_time
-    property string user_schedule_date
+    property string userSchedule_time
+    property string userSchedule_date
 
      Component{
         id: alertDialog

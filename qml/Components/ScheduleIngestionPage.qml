@@ -34,16 +34,6 @@ Page {
     objectName: "ScheduleIngestionPage"
 
     property int queryCategory
-    property string to_eat
-    property string to_type
-    property int to_energy
-    property double to_fat
-    property double to_saturated
-    property double to_carborn
-    property double to_sugars
-    property double to_fiber
-    property double to_proteins
-    property double to_salt
     property string schedule_date
     property string schedule_time
 
@@ -132,20 +122,21 @@ Page {
                     text: product_name
                    
                     onClicked:{
+                        
                          console.log("newIngestion: " + product_name)
                         root.stackProductName = product_name
+                        root.nutriscore_grade = nutriscore_grade
                         root.stackType = type
                         root.stackEnergyKcal = energy_kcal_100g
                         root.stackFat = fat_100g
                         root.stackSaturated = saturated_fat_100g
                         root.stackCarborn = carbohydrates_100g
                         root.stackSugars = sugars_100g
-                        root.stackFiber = fiber_100g
                         root.stackProtein = proteins_100g
-                        root.stackSalt = salt_100g
-                        root.user_schedule_time
-                        root.user_schedule_date
-                        root.now_after_ingestion = "schedule"
+                        root.userSchedule_time
+                        root.userSchedule_date
+                        shareValues.now_or_after_ingestion = "schedule"
+
                     }
                 }
         } 
@@ -170,7 +161,7 @@ Page {
                 height: units.gu(14)
                 onDateChanged: {
                     console.log(Qt.formatDate(date, "yyyy-MM-dd"))
-                   root.user_schedule_date = Qt.formatDate(date, "yyyy-MM-dd")
+                   root.userSchedule_date = Qt.formatDate(date, "yyyy-MM-dd")
                 }
             }
 
@@ -184,7 +175,7 @@ Page {
                 height: units.gu(14)
                 onDateChanged: {
                     console.log(Qt.formatTime(date, "hh:mm"))
-                    root.user_schedule_time = Qt.formatTime(date, "hh:mm")
+                    root.userSchedule_time = Qt.formatTime(date, "hh:mm")
                     
                 }
             }
@@ -200,6 +191,7 @@ Page {
                
                 text: i18n.tr("Ok")
                 onClicked:{
+                    //shareValues.now_or_after_ingestion = "schedule"
                     mainStack.push(foodsTemplate)
                 }
             }

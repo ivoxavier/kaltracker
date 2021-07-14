@@ -30,6 +30,9 @@ Page {
     
     property string type_ingestion
 
+    property color score_grade_foreground
+    property string score_grade_label
+
     
 
 
@@ -63,15 +66,14 @@ Page {
                          if (shareValues.now_or_after_ingestion === "now" ){
                              console.log("Saving [now ingestion], foods: " + root.stackProductName)
                              DataBase.saveNewIngestion(root.stackProductName,
+                          root.nutriscore_grade,
                           root.stackType,
                           (root.stackEnergyKcal * quantity_portions) * size_portions,
                           (root.stackFat * quantity_portions) * size_portions, 
                           (root.stackSaturated * quantity_portions) * size_portions,
                           (root.stackCarborn * quantity_portions) * size_portions,
                           (root.stackSugars * quantity_portions) * size_portions,
-                          (root.stackFiber * quantity_portions) * size_portions,
-                          (root.stackProtein * quantity_portions) * size_portions,
-                          (root.stackSalt * quantity_portions) * size_portions)
+                          (root.stackProtein * quantity_portions) * size_portions)
                           root.initDB()
                           root.refreshListModel()
                           PopupUtils.open(ingestionStoredDialog)
@@ -79,17 +81,16 @@ Page {
                          } else{
                              console.log("saving schedule ingestion")
                                DataBase.saveScheduleIngestion(root.stackProductName,
+                                root.nutriscore_grade,
                                 root.stackType,
                                 (root.stackEnergyKcal * quantity_portions) * size_portions,
                                 (root.stackFat * quantity_portions) * size_portions, 
                                 (root.stackSaturated * quantity_portions) * size_portions,
                                 (root.stackCarborn * quantity_portions) * size_portions,
                                 (root.stackSugars * quantity_portions) * size_portions,
-                                (root.stackFiber * quantity_portions) * size_portions,
                                 (root.stackProtein * quantity_portions) * size_portions,
-                                (root.stackSalt * quantity_portions) * size_portions,
-                        root.user_schedule_date,
-                        root.user_schedule_time)
+                        root.userSchedule_date,
+                        root.userSchedule_time)
                         root.initDB()
                         root.refreshListModel()
                         PopupUtils.open(ingestionStoredDialog)
@@ -244,6 +245,42 @@ Page {
                     }
                 }
                 
+                
+                ListItem {
+                    id: nutritionScore
+                    ListItemLayout{
+                        title.text: "Nutrition score"
+                        subtitle.text:  score_label.text
+
+                        
+                        
+                        UbuntuShape {
+                            id: imageShape
+
+                            height: units.gu(5)
+                            width: height
+                            color: score_label.text === 'a' ?
+                            "green" : score_label.text === 'b' ?
+                            "#09b227" : score_label.text === 'c' ?
+                            "#cba000" : score_label.text === 'd' ?
+                            "orange" : score_label.text === 'e' ?
+                            UbuntuColors.red : "black"
+                            radius: "large"
+                            aspect: UbuntuShape.Inset
+                            Label{
+                                id: score_label
+                                anchors.centerIn: parent
+                                text: root.nutriscore_grade
+                                textSize: Label.Large
+                                font.capitalization: Font.AllUppercase
+                                color: "white"
+                            }
+                        }
+                    }
+                }
+                
+                
+                
                 ListItem {
                     id: fatItem
                     ListItemLayout{
@@ -277,13 +314,6 @@ Page {
                     } 
                 }
 
-                ListItem {
-                    id: fiberItem
-                    ListItemLayout{
-                        title.text: "Fibers/100g"
-                        subtitle.text: Math.round((root.stackFiber * quantity_portions) * size_portions) + "g"
-                    }
-                }
 
                 ListItem {
                     id: proteinsItem
@@ -293,13 +323,6 @@ Page {
                     }
                 }
 
-                ListItem {
-                    id: saltItem
-                    ListItemLayout{
-                        title.text: "Salt/100g"
-                        subtitle.text: Math.round((root.stackSalt * quantity_portions) * size_portions) + "g"
-                    }
-                }
             }   
       }
     Component.onCompleted: console.log(shareValues.now_or_after_ingestion)

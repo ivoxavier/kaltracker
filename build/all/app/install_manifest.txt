@@ -33,5 +33,6 @@
 //qml/Components/SettingsPage.qml
 //qml/Components/RemoveRecordsDialog.qml
 //qml/img/emptyList.svg
-//qml/img/kaltrackerBrand.png
+//qml/img/score_E.svg
 //kaltracker.desktop
+/share/locale/es/LC_MESSAGES/kaltracker.ivoxavier.mo
