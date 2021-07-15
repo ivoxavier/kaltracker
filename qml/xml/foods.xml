@@ -21,6 +21,7 @@
         <Food>
             <code>5601050022469</code>
             <product_name>Activia natural</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>66</energy_kcal_100g>
             <fat_100g>3.8</fat_100g>
@@ -36,6 +37,7 @@
         <Food>
             <code>5600382221328</code>
             <product_name>Açucar de coco</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>380</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -51,6 +53,7 @@
         <Drink>
             <code>5604055111237</code>
             <product_name>Água</product_name>
+            <nutriscore_grade>a</nutriscore_grade>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -66,6 +69,7 @@
         <Food>
             <code>5601008101055</code>
             <product_name>Água e sal(Vieira)</product_name>
+            <nutriscore_grade>a</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>413</energy_kcal_100g>
             <fat_100g>8.3</fat_100g>
@@ -81,6 +85,7 @@
         <Drink>
             <code>5604055111244</code>
             <product_name>Água do Fastio 1.5L </product_name>
+            <nutriscore_grade>a</nutriscore_grade>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
@@ -142,6 +147,7 @@
         <Food>
             <code>5604321038015</code>
             <product_name>Amendoim cremoso</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>609</energy_kcal_100g>
             <fat_100g>47.6</fat_100g>
@@ -156,6 +162,7 @@
     <item>
         <code>5601009960798</code>
         <product_name>AntiOx Frutos vermelhos</product_name>
+        <nutriscore_grade>c</nutriscore_grade>
         <type>Food</type>
         <energy_kcal_100g>40</energy_kcal_100g>
         <fat_100g>0.1</fat_100g>
@@ -170,6 +177,7 @@
         <Food>
             <code>5601312215974</code>
             <product_name>Arandos desidratados</product_name>
+            <nutriscore_grade>b</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>89</energy_kcal_100g>
             <fat_100g>3.0</fat_100g>
@@ -185,6 +193,7 @@
         <Food>
             <code>5604260294404</code>
             <product_name>Arroz Basmati Asia(Por si)</product_name>
+            <nutriscore_grade>d</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>357</energy_kcal_100g>
             <fat_100g>1.1</fat_100g>
@@ -200,6 +209,7 @@
         <Food>
             <code>5601255312112</code>
             <product_name>Arroz carolino extra longo branqueado</product_name>
+            <nutriscore_grade>e</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>348</energy_kcal_100g>
             <fat_100g>1.0</fat_100g>
@@ -215,6 +225,7 @@
         <Food>
             <code>5601312066026</code>
             <product_name>Arroz de cenoura</product_name>
+            <nutriscore_grade>d</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>184</energy_kcal_100g>
             <fat_100g>3.3</fat_100g>
@@ -245,6 +256,7 @@
         <Food>
             <code>5603725012607</code>
             <product_name>Arroz longo extra vaporizado</product_name>
+            <nutriscore_grade>e</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>147</energy_kcal_100g>
             <fat_100g>0.9</fat_100g>

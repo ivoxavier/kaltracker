@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 20:09+0000\n"
+"POT-Creation-Date: 2021-07-15 19:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -233,7 +233,7 @@ msgstr ""
 
 #: ../qml/Components/ExportDataPage.qml:39
 msgid "Export Data"
-msgstr ""
+msgstr "Exportar dados"
 
 #: ../qml/Components/ExportDataPage.qml:58
 msgid "Files are placed under Documents/kaltracker_exports/"
@@ -249,7 +249,7 @@ msgstr ""
 
 #: ../qml/Components/ExportDataPage.qml:113
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: ../qml/Components/ExportDataPage.qml:142
 #: ../qml/Components/ExportDataPage.qml:150
@@ -268,11 +268,11 @@ msgstr ""
 #: ../qml/Components/ManualIngestionPage.qml:239
 #: ../qml/Components/ScheduleIngestionPage.qml:81
 msgid "Ingestion Stored"
-msgstr ""
+msgstr "Ingestão guardada"
 
 #: ../qml/Components/FoodsTemplate.qml:157
 msgid "Calories"
-msgstr ""
+msgstr "Calorias"
 
 #: ../qml/Components/FoodsTemplate.qml:177
 msgid "Kcal"
@@ -288,7 +288,7 @@ msgstr ""
 #: ../qml/Components/ManualIngestioPage.qml:155
 #: ../qml/Components/ManualIngestionPage.qml:351
 msgid "Size of portions"
-msgstr ""
+msgstr "Tamanho da porção"
 
 #: ../qml/Components/HelpUserConfigDialog.qml:23
 msgid "Tips"
@@ -316,7 +316,7 @@ msgstr ""
 
 #: ../qml/Components/MaintenancePage.qml:91
 msgid "Delete all records"
-msgstr ""
+msgstr "Eliminar todos os registos"
 
 #: ../qml/Components/ManualIngestionPage.qml:278
 #: ../qml/Components/NewIngestionPage.qml:69
@@ -324,7 +324,7 @@ msgstr ""
 #: ../qml/Components/ScheduleIngestionPage.qml:68
 #: ../qml/Components/ScheduleIngestionPage.qml:91
 msgid "Drink"
-msgstr ""
+msgstr "Bebida"
 
 #: ../qml/Components/ManualIngestionPage.qml:278
 #: ../qml/Components/NewIngestionPage.qml:64
@@ -373,7 +373,7 @@ msgstr ""
 
 #: ../qml/Components/ResumePage.qml:103
 msgid "Daily Ingestion"
-msgstr ""
+msgstr "Ingestões diárias"
 
 #: ../qml/Components/ResumePage.qml:157
 msgid "Today meals"
@@ -381,31 +381,31 @@ msgstr ""
 
 #: ../qml/Components/ResumePage.qml:188
 msgid "Breakfast"
-msgstr ""
+msgstr "Pequeno-almoço"
 
 #: ../qml/Components/ResumePage.qml:189
 msgid "Lunch"
-msgstr ""
+msgstr "Almoço"
 
 #: ../qml/Components/ResumePage.qml:190
 msgid "Dinner"
-msgstr ""
+msgstr "Jantar"
 
 #: ../qml/Components/ResumePage.qml:190
 msgid "Snack"
-msgstr ""
+msgstr "Lanche"
 
 #: ../qml/Components/ResumePage.qml:222
 msgid "Unlisted foods"
-msgstr ""
+msgstr "Alimentos não listados"
 
 #: ../qml/Components/ResumePage.qml:227
 msgid "Schedule an ingestion"
-msgstr ""
+msgstr "Agendar uma ingestão"
 
 #: ../qml/Components/ResumePage.qml:231
 msgid "New ingestion"
-msgstr ""
+msgstr "Nova ingestão"
 
 #: ../qml/Components/SaveDataDialog.qml:28
 msgid "Operation Result"

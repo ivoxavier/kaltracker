@@ -25,19 +25,13 @@ import "../js/DataBaseTools.js" as DataBase
 
 Page {
     
-    id: foodsTemplatePage
-    objectName: 'Foods Template Page'
-    
-    property string type_ingestion
-
-    property color score_grade_foreground
-    property string score_grade_label
-
+    id: manualIngestionPage
+    objectName: 'Manual Ingestion Page'
     
 
 
     header: PageHeader {
-        title: root.stackProductName
+        title: "Manual Ingestion"
         StyleHints {
             foregroundColor: root.defaultForegroundColor
             backgroundColor: root.defaultBackgroundColor
@@ -124,63 +118,20 @@ Page {
 
         Column{
             id: column
-            topPadding:  foodsTemplatePage.header.height
-            width: foodsTemplatePage.width
+            topPadding:  manualIngestionPage.header.height
+            width: manualIngestionPage.width
             
-            Rectangle{
-                width: parent.width
-                height: (foodsTemplatePage.header.height + foodsTemplatePage.header.height) + units.gu(2.5)
-                color: "transparent"
-                
-                Rectangle{
-                    
-                    id: kcalRectangle
-                    anchors.left: parent.left
-                    height: parent.height
-                    width: (parent.width / 2) - units.gu(5.5)
-                    color: "transparent"
-                    
-                    Label{
-                        id: kcalNumber
-                        anchors.centerIn: parent
-                            
-                        text: Math.round((root.stackEnergyKcal * quantity_portions) * size_portions)
-                        textSize: Label.Large
-                        font.bold: true
-                     }
 
-                    Label{ 
-                        anchors.top: kcalNumber.bottom
-                            
-                        anchors.horizontalCenter: parent.horizontalCenter
-                            
-                        text: i18n.tr("Calories")
-                            
+
+            ListItem {
+                    id: fatItem
+                    ListItemLayout{
+                        title.text: "Fat/100g"
+                        subtitle.text:  Math.round((root.stackFat * quantity_portions) * size_portions) + "g"
                     }
-                        
                 }
 
-                Rectangle{
-                    anchors.right: parent.right
-                    anchors.left: kcalRectangle.right
-                    height: parent.height
-                    color: "transparent"
-                            
-                    ChartView {
-                        id: chartPie
-                        anchors.fill: parent
-                        legend.alignment: Qt.AlignRight
-                        antialiasing: true
-                        backgroundColor: root.defaultForegroundColor
-                        PieSeries {
-                            id: pieSeries
-                            PieSlice { label: i18n.tr("Kcal"); value: (root.stackEnergyKcal * quantity_portions) * size_portions}
-                            PieSlice { label: i18n.tr("Goal") ; value: userSettings.userConfigsGoal }
-                            
-                        }
-                    }
-                } 
-            }
+
 
             ListItem {
 
@@ -189,8 +140,8 @@ Page {
 
                     QQC2.SpinBox{
 
-                        height:  (foodsTemplatePage.header.height / 1.8)
-                        width:  (foodsTemplatePage.width / 2) - units.gu(10)
+                        height:  (manualIngestionPage.header.height / 1.8)
+                        width:  (manualIngestionPage.width / 2) - units.gu(10)
 
                         value: 1
                         onValueChanged: quantity_portions = value         
@@ -253,87 +204,9 @@ Page {
                     }
                 }
                 
-                
-                ListItem {
-                    id: nutritionScore
-                    
-                    ListItemLayout{
-                        title.text: "Nutrition score"
-                        subtitle.text:  score_label.text
-                        
-                        
-                        
-                        UbuntuShape {
-                            id: imageShape
-
-                            height: units.gu(5)
-                            width: height
-                            color: score_label.text === 'a' ?
-                            "green" : score_label.text === 'b' ?
-                            "#09b227" : score_label.text === 'c' ?
-                            "#cba000" : score_label.text === 'd' ?
-                            "#e57a01" : score_label.text === 'e' ?
-                            UbuntuColors.red : "black"
-                            radius: "large"
-                            aspect: UbuntuShape.Inset
-                            Label{
-                                id: score_label
-                                anchors.centerIn: parent
-                                text: root.nutriscore_grade
-                                textSize: Label.Large
-                                font.capitalization: Font.AllUppercase
-                                color: "white"
-                            }
-                        }
-                    }
-                }
-                
-                
-                
-                ListItem {
-                    id: fatItem
-                    ListItemLayout{
-                        title.text: "Fat/100g"
-                        subtitle.text:  Math.round((root.stackFat * quantity_portions) * size_portions) + "g"
-                    }
-                }
-
-                ListItem {
-                    id: saturatedItem
-                    ListItemLayout{
-                        title.text: "Saturated/100g"
-                        subtitle.text: Math.round((root.stackSaturated * quantity_portions)  * size_portions) + "g"
-                        
-                    }
-                }
-
-                ListItem {
-                    id: carbohydratesItem
-                    ListItemLayout{
-                        title.text: "CarbornHydrates/100g"
-                        subtitle.text: Math.round((root.stackCarborn * quantity_portions) * size_portions) + "g"
-                    }
-                }
-
-                ListItem {
-                    id: sugarsItem
-                    ListItemLayout{
-                        title.text: "Sugars/100g"
-                        subtitle.text: Math.round((root.stackSugars * quantity_portions) * size_portions) + "g"
-                    } 
-                }
-
-
-                ListItem {
-                    id: proteinsItem
-                    ListItemLayout{
-                        title.text: "Protein/100g"
-                        subtitle.text: Math.round((root.stackProtein * quantity_portions) * size_portions) + "g"
-                    }
-                }
 
             }   
       }
-    Component.onCompleted: console.log(shareValues.now_or_after_ingestion)
+  
 }
 

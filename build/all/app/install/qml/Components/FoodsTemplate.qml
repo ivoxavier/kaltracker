@@ -144,7 +144,7 @@ Page {
                         id: kcalNumber
                         anchors.centerIn: parent
                             
-                        text: (root.stackEnergyKcal * quantity_portions) * size_portions
+                        text: Math.round((root.stackEnergyKcal * quantity_portions) * size_portions)
                         textSize: Label.Large
                         font.bold: true
                      }
@@ -209,7 +209,7 @@ Page {
                         height: units.gu(5)
                         circular: false
                         selectedIndex: 0
-                        model: [ "1/1", "1/2", "1/3", "1/4"] 
+                        model: [ "1/1", "1/2", "1/3", "1/4", "1/5", "1/6"] 
                         delegate: PickerDelegate { 
                             Label {
                                 text: modelData
@@ -237,6 +237,14 @@ Page {
                             console.log("1/4")
                             size_portions  = 0.25
                             break;
+                        case 4:
+                            console.log("1/5")
+                            size_portions  = 0.20
+                            break;
+                        case 5:
+                            console.log("1/6")
+                            size_portions  = 0.17
+                            break;
                             default:
                             break;
                     }
@@ -248,10 +256,11 @@ Page {
                 
                 ListItem {
                     id: nutritionScore
+                    
                     ListItemLayout{
                         title.text: "Nutrition score"
                         subtitle.text:  score_label.text
-
+                        
                         
                         
                         UbuntuShape {
@@ -263,7 +272,7 @@ Page {
                             "green" : score_label.text === 'b' ?
                             "#09b227" : score_label.text === 'c' ?
                             "#cba000" : score_label.text === 'd' ?
-                            "orange" : score_label.text === 'e' ?
+                            "#e57a01" : score_label.text === 'e' ?
                             UbuntuColors.red : "black"
                             radius: "large"
                             aspect: UbuntuShape.Inset

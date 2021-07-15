@@ -21,9 +21,9 @@ import Ubuntu.Components.ListItems 1.3 as ListItem
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
-
 import "../js/DataBaseTools.js" as DataBase
 import "./ActionBar"
+
 
 Page{
     id: resumePage
@@ -47,7 +47,7 @@ Page{
 
     }
     
-    
+
     Component{
         id: aboutAppDiaLog
         AboutDialog{}
@@ -218,6 +218,11 @@ Page{
                 
                     actions: ActionList {
 
+                        Action {
+                            text: i18n.tr("Unlisted foods")
+                            onTriggered: mainStack.push(manualIngestionPage)
+                        }
+                        
                         Action {
                             text: i18n.tr("Schedule an ingestion")
                             onTriggered: mainStack.push(scheduleIngestionPage)

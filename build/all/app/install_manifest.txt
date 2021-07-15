@@ -12,6 +12,7 @@
 //qml/Components/CreateTablesDialog.qml
 //qml/Components/WelcomePage.qml
 //qml/Components/ScheduleIngestionPage.qml
+//qml/Components/ManualIngestioPage.qml
 //qml/Components/ConfigUserProfilePage.qml
 //qml/Components/ResumePage.qml
 //qml/Components/AboutDialog.qml
@@ -26,6 +27,7 @@
 //qml/Components/AlertDialog.qml
 //qml/Components/HelpUserConfigDialog.qml
 //qml/Components/EditUserProfileDialog.qml
+//qml/Components/ManualIngestionPage.qml
 //qml/Components/FoodsTemplate.qml
 //qml/Components/MonthIngestionsPage.qml
 //qml/Components/AlertsPage.qml
@@ -33,6 +35,5 @@
 //qml/Components/SettingsPage.qml
 //qml/Components/RemoveRecordsDialog.qml
 //qml/img/emptyList.svg
-//qml/img/score_E.svg
 //kaltracker.desktop
-/share/locale/es/LC_MESSAGES/kaltracker.ivoxavier.mo
+/share/locale/pt_PT/LC_MESSAGES/kaltracker.ivoxavier.mo

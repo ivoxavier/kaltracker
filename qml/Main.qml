@@ -70,6 +70,11 @@ MainView {
     property string userSchedule_date
 
      Component{
+        id: manualIngestionPage
+        ManualIngestionPage{}
+    }
+     
+     Component{
         id: alertDialog
         AlertDialog{}
     }
