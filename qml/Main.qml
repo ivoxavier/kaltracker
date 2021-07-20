@@ -31,6 +31,7 @@ import "./Components"
 import "./Components/ActionBar"
 
 
+
 MainView {
     id: root
     objectName: 'mainView'
@@ -41,6 +42,7 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    property int metric
     property color defaultForegroundColor: UbuntuColors.porcelain
     property string defaultBackgroundColor: UbuntuColors.blue
     property color followSystemTheme : {}
@@ -203,6 +205,7 @@ MainView {
         }
 
     }
+
 
     Component.onCompleted: { /* check on pageComplete */
         if (appSettings.isCleanInstall){

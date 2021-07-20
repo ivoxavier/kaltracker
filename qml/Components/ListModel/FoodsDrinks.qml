@@ -29,8 +29,11 @@ import QtQuick.XmlListModel 2.7
 
 XmlListModel {
         id: xmlScheme
-        //Qt.locale().name ===
-        source: "../../xml/foods.xml"
+
+        source: Qt.locale().name === "pt_PT" ? 
+        "../../xml/foods_pt.xml" : Qt.locale().name === "fr_FR" ?
+        "../../xml/foods_fr.xml" : Qt.locale().name === "es_ES" ?
+        "../../xml/foods_es.xml" : "../../xml/foods_uk.xml"
         query: queryCategory === 0 ? "/foods/item/Food" : "/foods/item/Drink"
 
         XmlRole { name: "product_name"; query: "product_name/string()"}
@@ -42,7 +45,9 @@ XmlListModel {
         XmlRole { name: "carbohydrates_100g"; query: "carbohydrates_100g/string()" }
         XmlRole { name: "sugars_100g"; query: "sugars_100g/string()" }
         XmlRole { name: "proteins_100g"; query: "proteins_100g/string()" }
-        Component.onCompleted: console.log("xml loaded")
+        Component.onCompleted: {
+        console.log(Qt.locale().name)
+        console.log("xml loaded")}
 }
     
     

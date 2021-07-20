@@ -138,14 +138,11 @@ clean: CMakeFiles/kaltracker_FILES.dir/clean
 
 # Convenience name for "all" pass in the directory.
 po/all: po/CMakeFiles/kaltracker.ivoxavier.pot.dir/all
-po/all: po/CMakeFiles/pofiles_1.dir/all
 
 .PHONY : po/all
 
 # Convenience name for "clean" pass in the directory.
 po/clean: po/CMakeFiles/kaltracker.ivoxavier.pot.dir/clean
-po/clean: po/CMakeFiles/pofiles.dir/clean
-po/clean: po/CMakeFiles/pofiles_1.dir/clean
 
 .PHONY : po/clean
 
@@ -188,75 +185,6 @@ po/CMakeFiles/kaltracker.ivoxavier.pot.dir/clean:
 
 # clean rule for target.
 clean: po/CMakeFiles/kaltracker.ivoxavier.pot.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target po/CMakeFiles/pofiles.dir
-
-# All Build rule for target.
-po/CMakeFiles/pofiles.dir/all: po/CMakeFiles/pofiles_1.dir/all
-	$(MAKE) -f po/CMakeFiles/pofiles.dir/build.make po/CMakeFiles/pofiles.dir/depend
-	$(MAKE) -f po/CMakeFiles/pofiles.dir/build.make po/CMakeFiles/pofiles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles --progress-num= "Built target pofiles"
-.PHONY : po/CMakeFiles/pofiles.dir/all
-
-# Build rule for subdir invocation for target.
-po/CMakeFiles/pofiles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 po/CMakeFiles/pofiles.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles 0
-.PHONY : po/CMakeFiles/pofiles.dir/rule
-
-# Convenience name for target.
-pofiles: po/CMakeFiles/pofiles.dir/rule
-
-.PHONY : pofiles
-
-# clean rule for target.
-po/CMakeFiles/pofiles.dir/clean:
-	$(MAKE) -f po/CMakeFiles/pofiles.dir/build.make po/CMakeFiles/pofiles.dir/clean
-.PHONY : po/CMakeFiles/pofiles.dir/clean
-
-# clean rule for target.
-clean: po/CMakeFiles/pofiles.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target po/CMakeFiles/pofiles_1.dir
-
-# All Build rule for target.
-po/CMakeFiles/pofiles_1.dir/all:
-	$(MAKE) -f po/CMakeFiles/pofiles_1.dir/build.make po/CMakeFiles/pofiles_1.dir/depend
-	$(MAKE) -f po/CMakeFiles/pofiles_1.dir/build.make po/CMakeFiles/pofiles_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles --progress-num=3 "Built target pofiles_1"
-.PHONY : po/CMakeFiles/pofiles_1.dir/all
-
-# Include target in all.
-all: po/CMakeFiles/pofiles_1.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-po/CMakeFiles/pofiles_1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 po/CMakeFiles/pofiles_1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivo/ubtouchApps/kaltracker/build/all/app/CMakeFiles 0
-.PHONY : po/CMakeFiles/pofiles_1.dir/rule
-
-# Convenience name for target.
-pofiles_1: po/CMakeFiles/pofiles_1.dir/rule
-
-.PHONY : pofiles_1
-
-# clean rule for target.
-po/CMakeFiles/pofiles_1.dir/clean:
-	$(MAKE) -f po/CMakeFiles/pofiles_1.dir/build.make po/CMakeFiles/pofiles_1.dir/clean
-.PHONY : po/CMakeFiles/pofiles_1.dir/clean
-
-# clean rule for target.
-clean: po/CMakeFiles/pofiles_1.dir/clean
 
 .PHONY : clean
 

@@ -17,7 +17,7 @@
 
 import QtQuick 2.9
 import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.3 as ListItem
+import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
@@ -25,19 +25,21 @@ import "../js/DataBaseTools.js" as DataBase
 import "./ActionBar"
 
 
+
 Page{
     id: resumePage
     objectName: 'ResumePage'
     
-    property int dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
+    property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
     property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
     property string name
     property string ingestionDate
     property string ingestionTime
     property int kcal
+    
 
     header: PageHeader {
-        title: userSettings.userConfigsUserName + i18n.tr("'s Panel");
+        title: i18n.tr("${0}'s Panel").replace("${0}",userSettings.userConfigsUserName);
         trailingActionBar.actions: AboutAction{}
 
         StyleHints {
@@ -47,6 +49,10 @@ Page{
 
     }
     
+    Component{
+        id: updateTimePop
+        UpdateIngestionTimePop{}
+    }
 
     Component{
         id: aboutAppDiaLog
@@ -102,14 +108,14 @@ Page{
             id: topPanelLabel
             text: i18n.tr("Daily Ingestion")
             font.bold: true 
-            
+            fontSizeMode:Text.Fit 
+            font.pixelSize: units.gu(2)
             anchors.horizontalCenter: parent.horizontalCenter
             
         }
 
         Column{
             anchors.top: topPanelLabel.bottom
-            anchors.right: resumePage.width
             width: resumePage.width
             topPadding: units.gu(2)
 
@@ -118,29 +124,68 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label{
                     id: dashboardUserGoal
-                    text: userSettings.userConfigsGoal + "\n" + i18n.tr("Goal");
-                    
+                    text: userSettings.userConfigsGoal
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     text: "-"
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     id: dashboardUserKaloriesIngestedDuringDay
                     text: dashboardDailyIngestion
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     text: "="
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     id: dashboardUserKaloriesIngestionMetric
                     text: dashboardUserMetric
+                    color: root.metric > 0 ?
+                    UbuntuColors.green : root.metric < 0 ?
+                    UbuntuColors.red : UbuntuColors.green
                     font.bold: true
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("large")
                 }
             }
+            
+            Row{
+                spacing: units.gu(4.5)
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Label{
+                    text: i18n.tr("Goal")
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("medium")
+                }
+
+                Label{
+                    text: i18n.tr("Foods")
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("medium")
+                }
+
+                Label{
+                    text: root.metric > 0 ?
+                    i18n.tr("Remaining") : root.metric < 0 ?
+                    i18n.tr("Exceed") : i18n.tr("To ingest")
+                    fontSizeMode:Text.Fit 
+                    font.pixelSize: FontUtils.sizeToPixels("medium")
+                }
+
+            }
+
 
         }
     }
@@ -167,7 +212,8 @@ Page{
             bottom: footer.top
         }
 
-         
+
+
         ListView {
             id: foodsList
             model: dailyIngestions
@@ -176,35 +222,53 @@ Page{
                                 NumberAnimation { 
                                     properties: "x,y"
                                     duration: 1000 
-                                    }
+                                }
                             }
 
             visible: model.count === 0 ? false : true
             
-            delegate: ListItem.Subtitled{
-                    text: name
+            
+            
+            delegate: ListItem{
+                       
+                        ListItemLayout{
 
-                    subText: (ingestionTime >= "00:00" && ingestionTime <= "10:59") ? 
-                    i18n.tr("Breakfast") : (ingestionTime >= "11:00" && ingestionTime <= "15:59") ?
-                    i18n.tr("Lunch") : (ingestionTime >= "16:00" && ingestionTime <= "19:59") ?
-                    i18n.tr("Snack") : i18n.tr("Dinner")
+                            title.text: name
+                            subtitle.text: (ingestionTime >= "00:00" && ingestionTime <= "10:59") ? 
+                            i18n.tr("Breakfast") : (ingestionTime >= "11:00" && ingestionTime <= "15:59") ?
+                            i18n.tr("Lunch") : (ingestionTime >= "16:00" && ingestionTime <= "19:59") ?
+                            i18n.tr("Snack") : i18n.tr("Dinner")
+            
+                            
+                        }
+                     
+                        leadingActions: ListItemActions {
+                         
+                            actions: [
+                                Action {
+                                    iconName: "delete"
+                                    onTriggered:{
+                                        DataBase.deleteIngestion(idIngestion)
+                                        root.initDB()
+                                        root.refreshListModel()
+                                    }
+                                }]
+                        }
 
-                    showDivider: false
-                    removable: true
-                    confirmRemoval: true
-                  
-                    backgroundIndicator: Rectangle{
-                        anchors.fill: parent
-                        color: "transparent"
-                        MouseArea{
-                            anchors.fill: parent
-                            onClicked:{
-                                 DataBase.deleteIngestion(idIngestion)
-                                 root.initDB()
-                                 root.refreshListModel()
-                            }
+                        trailingActions: ListItemActions{
+                            actions: [
+                                Action{
+                                    iconName: "edit"
+                                    onTriggered:{
+                                        PopupUtils.open(updateTimePop)
+                                        id(idIngestion)
+                                        //DataBase.updateIngestionTime(idIngestion, "08:00")
+                                        //root.initDB()
+                                        //root.refreshListModel()
+                                    }
+                                }
+                            ]
                         }  
-                    }      
                 }
         } 
         

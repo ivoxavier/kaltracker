@@ -52,6 +52,7 @@ Page{
         
             ListItemLayout{
                 title.text: i18n.tr("Average Calories per Month")
+                
                 ProgressionSlot{}
             }
 

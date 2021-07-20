@@ -4,258 +4,147 @@
     <item>
         <Drink>
             <code>5601045108239</code>
-            <product_name>7up sugar free</product_name>
-            <nutriscore_grade>c</nutriscore_grade>
+            <product_name>7up Sin azúcar </product_name>
+            <nutriscore_grade>d</nutriscore_grade>
             <type>Drink</type>
             <energy_kcal_100g>0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
             <saturated_fat_100g>0.0</saturated_fat_100g>
             <carbohydrates_100g>0.0</carbohydrates_100g>
             <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
             <proteins_100g>0.1</proteins_100g>
-            <salt_100g>0.1</salt_100g>
         </Drink>
     </item>
     <item>
         <Food>
-            <code>5601050022469</code>
-            <product_name>Activia natural</product_name>
-            <nutriscore_grade>c</nutriscore_grade>
+            <code>31200471109</code>
+            <product_name>Albóndigas Veganas Bonarea</product_name>
+            <nutriscore_grade>d</nutriscore_grade>
             <type>Food</type>
-            <energy_kcal_100g>66</energy_kcal_100g>
-            <fat_100g>3.8</fat_100g>
-            <saturated_fat_100g>2.3</saturated_fat_100g>
-            <carbohydrates_100g>3.9</carbohydrates_100g>
-            <sugars_100g>3.9</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>3.3</proteins_100g>
-            <salt_100g>0.1</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5600382221328</code>
-            <product_name>Açucar de coco</product_name>
-            <nutriscore_grade>c</nutriscore_grade>
-            <type>Food</type>
-            <energy_kcal_100g>380</energy_kcal_100g>
+            <energy_kcal_100g>52</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
             <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>93.0</carbohydrates_100g>
-            <sugars_100g>93.0</sugars_100g>
-            <fiber_100g>0.0</fiber_100g>
-            <proteins_100g>2.0</proteins_100g>
-            <salt_100g>0.1</salt_100g>
+            <carbohydrates_100g>13.1</carbohydrates_100g>
+            <sugars_100g>12.4</sugars_100g>
+            <proteins_100g>0.0</proteins_100g>
         </Food>
     </item>
     <item>
         <Drink>
             <code>5604055111237</code>
-            <product_name>Água</product_name>
+            <product_name>Agua</product_name>
             <nutriscore_grade>a</nutriscore_grade>
             <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
+            <energy_kcal_100g>0.0</energy_kcal_100g>
             <fat_100g>0.0</fat_100g>
             <saturated_fat_100g>0.0</saturated_fat_100g>
             <carbohydrates_100g>0.0</carbohydrates_100g>
             <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
             <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.4</salt_100g>
         </Drink>
     </item>
     <item>
         <Food>
-            <code>5601008101055</code>
-            <product_name>Água e sal(Vieira)</product_name>
-            <nutriscore_grade>a</nutriscore_grade>
-            <type>Food</type>
-            <energy_kcal_100g>413</energy_kcal_100g>
-            <fat_100g>8.3</fat_100g>
-            <saturated_fat_100g>3.9</saturated_fat_100g>
-            <carbohydrates_100g>73.8</carbohydrates_100g>
-            <sugars_100g>6.4</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>9.3</proteins_100g>
-            <salt_100g>1.9</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Drink>
-            <code>5604055111244</code>
-            <product_name>Água do Fastio 1.5L </product_name>
-            <nutriscore_grade>a</nutriscore_grade>
-            <type>Drink</type>
-            <energy_kcal_100g>0</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.4</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601163007315</code>
-            <product_name>Água Luso Fruta Goiaba Toranja</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>22</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Drink>
-            <code>5601163001214</code>
-            <product_name>Água Luso fruta limao</product_name>
-            <type>Drink</type>
-            <energy_kcal_100g>25</energy_kcal_100g>
-            <fat_100g>0.0</fat_100g>
-            <saturated_fat_100g>0.0</saturated_fat_100g>
-            <carbohydrates_100g>6.0</carbohydrates_100g>
-            <sugars_100g>5.6</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Drink>
-    </item>
-    <item>
-        <Food>
-            <code>5411188100324</code>
-            <product_name>Alpro 4xMirtilo</product_name>
-            <nutriscore_grade>c</nutriscore_grade>
-            <type>Food</type>
-            <energy_kcal_100g>70</energy_kcal_100g>
-            <fat_100g>2.2</fat_100g>
-            <saturated_fat_100g>0.4</saturated_fat_100g>
-            <carbohydrates_100g>8.2</carbohydrates_100g>
-            <sugars_100g>7.9</sugars_100g>
-            <fiber_100g>1.0</fiber_100g>
-            <proteins_100g>3.7</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5604321038015</code>
-            <product_name>Amendoim cremoso</product_name>
-            <nutriscore_grade>c</nutriscore_grade>
-            <type>Food</type>
-            <energy_kcal_100g>609</energy_kcal_100g>
-            <fat_100g>47.6</fat_100g>
-            <saturated_fat_100g>9.7</saturated_fat_100g>
-            <carbohydrates_100g>12.9</carbohydrates_100g>
-            <sugars_100g>6.3</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>29.5</proteins_100g>
-            <salt_100g></salt_100g>
-        </Food>
-    </item>
-    <item>
-        <code>5601009960798</code>
-        <product_name>AntiOx Frutos vermelhos</product_name>
-        <nutriscore_grade>c</nutriscore_grade>
-        <type>Food</type>
-        <energy_kcal_100g>40</energy_kcal_100g>
-        <fat_100g>0.1</fat_100g>
-        <saturated_fat_100g>0.1</saturated_fat_100g>
-        <carbohydrates_100g>9.9</carbohydrates_100g>
-        <sugars_100g>8.4</sugars_100g>
-        <fiber_100g>0.3</fiber_100g>
-        <proteins_100g>0.2</proteins_100g>
-        <salt_100g>0.1</salt_100g>
-    </item>
-    <item>
-        <Food>
-            <code>5601312215974</code>
-            <product_name>Arandos desidratados</product_name>
+            <code>5601029004014</code>
+            <product_name>Atún en aceite vegetal - Bom Petisco </product_name>
             <nutriscore_grade>b</nutriscore_grade>
             <type>Food</type>
-            <energy_kcal_100g>89</energy_kcal_100g>
-            <fat_100g>3.0</fat_100g>
-            <saturated_fat_100g>2.5</saturated_fat_100g>
-            <carbohydrates_100g>10.0</carbohydrates_100g>
-            <sugars_100g>8.0</sugars_100g>
-            <fiber_100g>2.0</fiber_100g>
-            <proteins_100g>0.0</proteins_100g>
-            <salt_100g>0.0</salt_100g>
+            <energy_kcal_100g>197</energy_kcal_100g>
+            <fat_100g>11.3</fat_100g>
+            <saturated_fat_100g>1.3</saturated_fat_100g>
+            <carbohydrates_100g>12.9</carbohydrates_100g>
+            <sugars_100g>0.0</sugars_100g>
+            <proteins_100g>24.4</proteins_100g>
         </Food>
+    </item>
+    <item>
+        <Drink>
+            <code>5601009960798</code>
+            <product_name>AntiOx Frutos vermelhos - Pingo Doce</product_name>
+            <nutriscore_grade>e</nutriscore_grade>
+            <type>Drink</type>
+            <energy_kcal_100g>40</energy_kcal_100g>
+            <fat_100g>0.1</fat_100g>
+            <saturated_fat_100g>0.1</saturated_fat_100g>
+            <carbohydrates_100g>9.9</carbohydrates_100g>
+            <sugars_100g>8.4</sugars_100g>
+            <proteins_100g>0.2</proteins_100g>
+        </Drink>
+    </item>
+    <item>
+        <Drink>
+            <code>5603533100039</code>
+            <product_name>Água Frize com Gás</product_name>
+            <nutriscore_grade>a</nutriscore_grade>
+            <type>Drink</type>
+            <energy_kcal_100g>0</energy_kcal_100g>
+            <fat_100g>0.0</fat_100g>
+            <saturated_fat_100g>0.0</saturated_fat_100g>
+            <carbohydrates_100g>0.0</carbohydrates_100g>
+            <sugars_100g>8.0</sugars_100g>
+            <proteins_100g>0.0</proteins_100g>
+        </Drink>
     </item>
     <item>
         <Food>
             <code>5604260294404</code>
             <product_name>Arroz Basmati Asia(Por si)</product_name>
-            <nutriscore_grade>d</nutriscore_grade>
+            <nutriscore_grade>a</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>357</energy_kcal_100g>
             <fat_100g>1.1</fat_100g>
             <saturated_fat_100g>0.3</saturated_fat_100g>
             <carbohydrates_100g>78.0</carbohydrates_100g>
             <sugars_100g>0.5</sugars_100g>
-            <fiber_100g>0.7</fiber_100g>
             <proteins_100g>8.5</proteins_100g>
-            <salt_100g>0.0</salt_100g>
         </Food>
     </item>
     <item>
         <Food>
             <code>5601255312112</code>
-            <product_name>Arroz carolino extra longo branqueado</product_name>
-            <nutriscore_grade>e</nutriscore_grade>
+            <product_name>Arroz carolino extra longo branqueado - Caçarola</product_name>
+            <nutriscore_grade>b</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>348</energy_kcal_100g>
             <fat_100g>1.0</fat_100g>
             <saturated_fat_100g>0.2</saturated_fat_100g>
             <carbohydrates_100g>77.8</carbohydrates_100g>
             <sugars_100g>1.0</sugars_100g>
-            <fiber_100g>0.5</fiber_100g>
             <proteins_100g>6.9</proteins_100g>
-            <salt_100g>0.0</salt_100g>
         </Food>
     </item>
     <item>
         <Food>
-            <code>5601312066026</code>
-            <product_name>Arroz de cenoura</product_name>
-            <nutriscore_grade>d</nutriscore_grade>
+            <code>5601312301783</code>
+            <product_name>Atúm Fumado - Continente</product_name>
+            <nutriscore_grade>b</nutriscore_grade>
             <type>Food</type>
-            <energy_kcal_100g>184</energy_kcal_100g>
-            <fat_100g>3.3</fat_100g>
-            <saturated_fat_100g>0.6</saturated_fat_100g>
-            <carbohydrates_100g>35.0</carbohydrates_100g>
+            <energy_kcal_100g>145</energy_kcal_100g>
+            <fat_100g>1.6</fat_100g>
+            <saturated_fat_100g>0.5</saturated_fat_100g>
+            <carbohydrates_100g>0.7</carbohydrates_100g>
             <sugars_100g>0.5</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>3.2</proteins_100g>
-            <salt_100g>0.9</salt_100g>
+            <proteins_100g>32.0</proteins_100g>
         </Food>
     </item>
     <item>
         <Food>
-            <code>5601255323125</code>
-            <product_name>Arroz extra longo estufado</product_name>
+            <code>5601312067191</code>
+            <product_name>Argolinhas de chocolate - Continente</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
-            <energy_kcal_100g>355</energy_kcal_100g>
-            <fat_100g>1.8</fat_100g>
-            <saturated_fat_100g>0.4</saturated_fat_100g>
-            <carbohydrates_100g>76.9</carbohydrates_100g>
-            <sugars_100g>1.0</sugars_100g>
-            <fiber_100g>1.2</fiber_100g>
-            <proteins_100g>7.2</proteins_100g>
-            <salt_100g>0.0</salt_100g>
+            <energy_kcal_100g>374</energy_kcal_100g>
+            <fat_100g>2.0</fat_100g>
+            <saturated_fat_100g>1.0</saturated_fat_100g>
+            <carbohydrates_100g>77.0</carbohydrates_100g>
+            <sugars_100g>24.0</sugars_100g>
+            <proteins_100g>9.0</proteins_100g>
         </Food>
     </item>
     <item>
         <Food>
             <code>5603725012607</code>
-            <product_name>Arroz longo extra vaporizado</product_name>
+            <product_name>Arroz longo extra vaporizado - Caçarola</product_name>
             <nutriscore_grade>e</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>147</energy_kcal_100g>
@@ -263,885 +152,714 @@
             <saturated_fat_100g>0.3</saturated_fat_100g>
             <carbohydrates_100g>77.0</carbohydrates_100g>
             <sugars_100g>0.1</sugars_100g>
-            <fiber_100g>1.2</fiber_100g>
             <proteins_100g>7.1</proteins_100g>
-            <salt_100g>0.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5601009961795</code>
-            <product_name>Arroz Vaporizado</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>373</energy_kcal_100g>
-            <fat_100g>0.9</fat_100g>
-            <saturated_fat_100g>0.4</saturated_fat_100g>
-            <carbohydrates_100g>83.7</carbohydrates_100g>
-            <sugars_100g>0.1</sugars_100g>
-            <fiber_100g>2.1</fiber_100g>
-            <proteins_100g>6.6</proteins_100g>
-            <salt_100g>0.1</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5606456007225</code>
-            <product_name>Arroz vaporizado longo extra branqueado</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>341</energy_kcal_100g>
-            <fat_100g>0.3</fat_100g>
-            <saturated_fat_100g>0.1</saturated_fat_100g>
-            <carbohydrates_100g>76.0</carbohydrates_100g>
-            <sugars_100g>0.5</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>7.1</proteins_100g>
-            <salt_100g>0.0</salt_100g>
         </Food>
     </item>
     <item>
         <Food>
             <code>5601010131279</code>
-            <product_name>Atúm ao natural</product_name>
+            <product_name>Atúm ao natural - Ramirez</product_name>
+            <nutriscore_grade>b</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>94</energy_kcal_100g>
             <fat_100g>0.5</fat_100g>
             <saturated_fat_100g>0.1</saturated_fat_100g>
             <carbohydrates_100g>0.0</carbohydrates_100g>
             <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
             <proteins_100g>22.0</proteins_100g>
-            <salt_100g>1.0</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>5601227405026</code>
-            <product_name>Atúm posta em óleo vegetal</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>211</energy_kcal_100g>
-            <fat_100g>12.7</fat_100g>
-            <saturated_fat_100g>2.8</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g>0.0</fiber_100g>
-            <proteins_100g>24.2</proteins_100g>
-            <salt_100g>1.2</salt_100g>
-        </Food>
-    </item>
-    <item>
-        <Food>
-            <code>20076313</code>
-            <product_name>Azeitonas verdes recheadas com pimento</product_name>
-            <type>Food</type>
-            <energy_kcal_100g>154</energy_kcal_100g>
-            <fat_100g>16.0</fat_100g>
-            <saturated_fat_100g>3.0</saturated_fat_100g>
-            <carbohydrates_100g>0.0</carbohydrates_100g>
-            <sugars_100g>0.0</sugars_100g>
-            <fiber_100g></fiber_100g>
-            <proteins_100g>1.0</proteins_100g>
-            <salt_100g>3.0</salt_100g>
         </Food>
     </item>
     <item>
         <Food>
             <code>5600319280107</code>
-            <product_name>Bacalhau com Natas - ultracongelado</product_name>
+            <product_name>Bacalhau com Natas - ultracongelado - Coviran</product_name>
+            <nutriscore_grade>c</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>142</energy_kcal_100g>
             <fat_100g>8.4</fat_100g>
             <saturated_fat_100g>3.3</saturated_fat_100g>
             <carbohydrates_100g>10.0</carbohydrates_100g>
             <sugars_100g>1.4</sugars_100g>
-            <fiber_100g>1.4</fiber_100g>
             <proteins_100g>5.8</proteins_100g>
-            <salt_100g>0.7</salt_100g>
         </Food>
     </item>
     <item>
         <Food>
             <code>5601260591601</code>
-            <product_name>Banzai noodles</product_name>
+            <product_name>Banzai noodles - Cigala</product_name>
+            <nutriscore_grade>d</nutriscore_grade>
             <type>Food</type>
             <energy_kcal_100g>448</energy_kcal_100g>
             <fat_100g>20.3</fat_100g>
             <saturated_fat_100g>10.8</saturated_fat_100g>
             <carbohydrates_100g>54.1</carbohydrates_100g>
             <sugars_100g>3.6</sugars_100g>
-            <fiber_100g></fiber_100g>
             <proteins_100g>9.4</proteins_100g>
-            <salt_100g>7.8</salt_100g>
         </Food>
         </item>
         <item>
             <Food>
                 <code>5601312072829</code>
-                <product_name>Basmati Integral</product_name>
+                <product_name>Barra Whey Protein e Oats - Prozis</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>354</energy_kcal_100g>
+                <energy_kcal_100g>372</energy_kcal_100g>
                 <fat_100g>1.1</fat_100g>
-                <saturated_fat_100g>0.2</saturated_fat_100g>
-                <carbohydrates_100g>77.0</carbohydrates_100g>
-                <sugars_100g>0.2</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>7.1</proteins_100g>
-                <salt_100g></salt_100g>
+                <saturated_fat_100g>5.8</saturated_fat_100g>
+                <carbohydrates_100g>42.0</carbohydrates_100g>
+                <sugars_100g>31.0</sugars_100g>
+                <proteins_100g>24.1</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601950001151</code>
-                <product_name>Batata frita palha</product_name>
+                <product_name>Batata frita palha - A Saloinha</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>532</energy_kcal_100g>
                 <fat_100g>36.0</fat_100g>
                 <saturated_fat_100g>15.0</saturated_fat_100g>
                 <carbohydrates_100g>46.0</carbohydrates_100g>
                 <sugars_100g>0.6</sugars_100g>
-                <fiber_100g>5.0</fiber_100g>
                 <proteins_100g>6.0</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601002057631</code>
-                <product_name>Batatas Fritas Presunto</product_name>
+                <product_name>Batatas Fritas Lays Camponesas</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>536</energy_kcal_100g>
-                <fat_100g>33.0</fat_100g>
-                <saturated_fat_100g>3.3</saturated_fat_100g>
-                <carbohydrates_100g>50.0</carbohydrates_100g>
-                <sugars_100g>0.4</sugars_100g>
-                <fiber_100g>5.1</fiber_100g>
-                <proteins_100g>7.1</proteins_100g>
-                <salt_100g>1.3</salt_100g>
+                <energy_kcal_100g>501</energy_kcal_100g>
+                <fat_100g>30.0</fat_100g>
+                <saturated_fat_100g>3.5</saturated_fat_100g>
+                <carbohydrates_100g>53.4</carbohydrates_100g>
+                <sugars_100g>3.8</sugars_100g>
+                <proteins_100g>0.0</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601363000888</code>
                 <product_name>Batatas Lays light</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>510</energy_kcal_100g>
                 <fat_100g>29.3</fat_100g>
                 <saturated_fat_100g>3.7</saturated_fat_100g>
                 <carbohydrates_100g>52.8</carbohydrates_100g>
                 <sugars_100g>0.7</sugars_100g>
-                <fiber_100g>4.8</fiber_100g>
                 <proteins_100g>6.3</proteins_100g>
-                <salt_100g>1.0</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601009985234</code>
-                <product_name>Bebida a Base de Arroz(Pingo-Doce)</product_name>
+                <product_name>Bebida à Base de Arroz - Pingo-Doce</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>42</energy_kcal_100g>
                 <fat_100g>1.0</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>7.5</carbohydrates_100g>
                 <sugars_100g>4.4</sugars_100g>
-                <fiber_100g>0.3</fiber_100g>
                 <proteins_100g>0.6</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601312504436</code>
-                <product_name>Bebida base de soja(Continente)</product_name>
+                <product_name>Bebida à base de soja - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>46</energy_kcal_100g>
                 <fat_100g>1.7</fat_100g>
                 <saturated_fat_100g>0.3</saturated_fat_100g>
                 <carbohydrates_100g>4.6</carbohydrates_100g>
                 <sugars_100g>2.7</sugars_100g>
-                <fiber_100g>0.5</fiber_100g>
                 <proteins_100g>3.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5600954500417</code>
-                <product_name>Bebida biologica arroz</product_name>
+                <product_name>Bebida biologica arroz - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>57</energy_kcal_100g>
                 <fat_100g>0.8</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>11.0</carbohydrates_100g>
                 <sugars_100g>6.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>1.1</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>22030177</code>
-                <product_name>Bebida de soja</product_name>
+                <product_name>Bebida de soja - Soy Pro</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>0</energy_kcal_100g>
                 <fat_100g>1.7</fat_100g>
                 <saturated_fat_100g>0.3</saturated_fat_100g>
                 <carbohydrates_100g>2.6</carbohydrates_100g>
                 <sugars_100g>2.6</sugars_100g>
-                <fiber_100g>0.7</fiber_100g>
                 <proteins_100g>3.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601049131998</code>
-                <product_name>Bem Essencial Leite Gordo</product_name>
+                <product_name>Bem Essencial Leite Gordo - Mimosa</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>65</energy_kcal_100g>
                 <fat_100g>3.6</fat_100g>
                 <saturated_fat_100g>2.3</saturated_fat_100g>
                 <carbohydrates_100g>4.9</carbohydrates_100g>
                 <sugars_100g>4.9</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.3</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
-        </item>
-        <item>
-            <Food>
-                <code>5601319000269</code>
-                <product_name>Beterraba</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>42</energy_kcal_100g>
-                <fat_100g>0.5</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>8.1</carbohydrates_100g>
-                <sugars_100g>5.3</sugars_100g>
-                <fiber_100g>1.9</fiber_100g>
-                <proteins_100g>1.3</proteins_100g>
-                <salt_100g>1.1</salt_100g>
-            </Food>
         </item>
         <item>
             <Drink>
                 <code>5601312506119</code>
-                <product_name>Bifidus</product_name>
+                <product_name>Bifidus - Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>107</energy_kcal_100g>
                 <fat_100g>2.8</fat_100g>
                 <saturated_fat_100g>1.8</saturated_fat_100g>
                 <carbohydrates_100g>16.0</carbohydrates_100g>
                 <sugars_100g>16.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.7</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>2000000002603</code>
                 <product_name>Big Mac (McDonalds)</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>509</energy_kcal_100g>
                 <fat_100g>11.5</fat_100g>
                 <saturated_fat_100g>4.5</saturated_fat_100g>
                 <carbohydrates_100g>42.0</carbohydrates_100g>
                 <sugars_100g>8.5</sugars_100g>
-                <fiber_100g>3.0</fiber_100g>
                 <proteins_100g>26.0</proteins_100g>
-                <salt_100g>2.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604321026487</code>
-                <product_name>Biscoitos Integrais de Alfarroba</product_name>
+                <product_name>Biscoitos Integrais de Alfarroba - Cem Porcento</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>450</energy_kcal_100g>
                 <fat_100g>21.3</fat_100g>
                 <saturated_fat_100g>10.3</saturated_fat_100g>
                 <carbohydrates_100g>52.8</carbohydrates_100g>
                 <sugars_100g>10.0</sugars_100g>
-                <fiber_100g>7.8</fiber_100g>
                 <proteins_100g>7.9</proteins_100g>
-                <salt_100g>1.1</salt_100g>
+            </Food>
+        </item>
+        <item>
+            <Food>
+                <code>5604321026487</code>
+                <product_name>Burguer King Menu Whopper</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
+                <type>Food</type>
+                <energy_kcal_100g>680</energy_kcal_100g>
+                <fat_100g>35.0</fat_100g>
+                <saturated_fat_100g>19.0</saturated_fat_100g>
+                <carbohydrates_100g>52.8</carbohydrates_100g>
+                <sugars_100g>10.0</sugars_100g>
+                <proteins_100g>37.0</proteins_100g>
+            </Food>
+        </item>
+        <item>
+            <Food>
+                <code>5604321026487</code>
+                <product_name>Burguer King Menu Whopper Vegetal</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
+                <type>Food</type>
+                <energy_kcal_100g>605</energy_kcal_100g>
+                <fat_100g>32.0</fat_100g>
+                <saturated_fat_100g>8.1</saturated_fat_100g>
+                <carbohydrates_100g>51.4</carbohydrates_100g>
+                <sugars_100g>12.8</sugars_100g>
+                <proteins_100g>22.2</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312067894</code>
-                <product_name>Bolacha de arroz com sal</product_name>
+                <product_name>Bolacha de arroz com sal - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>388</energy_kcal_100g>
                 <fat_100g>3.0</fat_100g>
                 <saturated_fat_100g>0.6</saturated_fat_100g>
                 <carbohydrates_100g>79.0</carbohydrates_100g>
                 <sugars_100g>0.8</sugars_100g>
-                <fiber_100g>3.1</fiber_100g>
                 <proteins_100g>9.4</proteins_100g>
-                <salt_100g>0.7</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009979301</code>
-                <product_name>Bolacha digestiva com chocolate</product_name>
+                <product_name>Bolacha digestiva com chocolate - Pingo Doce</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>493</energy_kcal_100g>
                 <fat_100g>22.5</fat_100g>
                 <saturated_fat_100g>12.1</saturated_fat_100g>
                 <carbohydrates_100g>65.1</carbohydrates_100g>
                 <sugars_100g>28.0</sugars_100g>
-                <fiber_100g>3.8</fiber_100g>
                 <proteins_100g>5.5</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312507482</code>
-                <product_name>Bolacha Maria(Continente)</product_name>
+                <product_name>Bolacha Maria - Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>165</energy_kcal_100g>
                 <fat_100g>4.1</fat_100g>
                 <saturated_fat_100g>2.8</saturated_fat_100g>
                 <carbohydrates_100g>29.0</carbohydrates_100g>
                 <sugars_100g>23.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.1</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>8434165479852</code>
-                <product_name>Bolacha Maria(Cuetara)</product_name>
+                <product_name>Bolacha Maria - Cuétara</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>22</energy_kcal_100g>
                 <fat_100g>8.0</fat_100g>
                 <saturated_fat_100g>1.8</saturated_fat_100g>
                 <carbohydrates_100g>80.0</carbohydrates_100g>
                 <sugars_100g>24.0</sugars_100g>
-                <fiber_100g>2.0</fiber_100g>
                 <proteins_100g>7.0</proteins_100g>
-                <salt_100g>0.9</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009980147</code>
-                <product_name>Bolacha Maria(Pingo-Doce)</product_name>
+                <product_name>Bolacha Maria - Pingo-Doce</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>433</energy_kcal_100g>
                 <fat_100g>9.1</fat_100g>
                 <saturated_fat_100g>4.3</saturated_fat_100g>
                 <carbohydrates_100g>79.4</carbohydrates_100g>
                 <sugars_100g>25.6</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>7.0</proteins_100g>
-                <salt_100g>0.6</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601008444442</code>
-                <product_name>Bolacha Maria(Vieira)</product_name>
+                <product_name>Bolacha Maria - Vieira</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>425</energy_kcal_100g>
                 <fat_100g>9.0</fat_100g>
                 <saturated_fat_100g>4.3</saturated_fat_100g>
                 <carbohydrates_100g>76.3</carbohydrates_100g>
                 <sugars_100g>19.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.3</proteins_100g>
-                <salt_100g>1.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009940462</code>
-                <product_name>Bolacha Recheada com creme sabor a chocolate</product_name>
+                <product_name>Bolacha recheada de alegria - Pingo Doce</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>477</energy_kcal_100g>
                 <fat_100g>18.8</fat_100g>
                 <saturated_fat_100g>10.4</saturated_fat_100g>
                 <carbohydrates_100g>68.9</carbohydrates_100g>
                 <sugars_100g>36.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>6.2</proteins_100g>
-                <salt_100g>0.4</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>7622210475411</code>
-                <product_name>Bolacha triunfo digestive go canela</product_name>
+                <product_name>Bolacha digestive go canela - Triunfo</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>493</energy_kcal_100g>
                 <fat_100g>21.0</fat_100g>
                 <saturated_fat_100g>5.9</saturated_fat_100g>
                 <carbohydrates_100g>67.0</carbohydrates_100g>
                 <sugars_100g>28.0</sugars_100g>
-                <fiber_100g>3.1</fiber_100g>
                 <proteins_100g>6.9</proteins_100g>
-                <salt_100g>0.9</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312042204</code>
-                <product_name>Bolachas com pepitas de chocolate(Contienente)</product_name>
+                <product_name>Bolachas com pepitas de chocolate - Contienente</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>480</energy_kcal_100g>
                 <fat_100g>22.0</fat_100g>
                 <saturated_fat_100g>11.0</saturated_fat_100g>
                 <carbohydrates_100g>63.0</carbohydrates_100g>
                 <sugars_100g>30.0</sugars_100g>
-                <fiber_100g>1.2</fiber_100g>
                 <proteins_100g>6.0</proteins_100g>
-                <salt_100g>0.7</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
-                <code>5601312175469</code>
-                <product_name>Bolachas de amendoim(Continente)</product_name>
+                <code>5604321026814</code>
+                <product_name>Bifes de Soja - Cem Porcento</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>514</energy_kcal_100g>
-                <fat_100g>29.0</fat_100g>
+                <energy_kcal_100g>414</energy_kcal_100g>
+                <fat_100g>3.0</fat_100g>
                 <saturated_fat_100g>5.4</saturated_fat_100g>
-                <carbohydrates_100g>46.0</carbohydrates_100g>
-                <sugars_100g>30.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>16.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
+                <carbohydrates_100g>6.0</carbohydrates_100g>
+                <sugars_100g>15.0</sugars_100g>
+                <proteins_100g>29.0</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312064190</code>
-                <product_name>Bolachas de aveia(Continente)</product_name>
+                <product_name>Bolachas de aveia - Continente</product_name>
+                <nutriscore_grade>C</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>474</energy_kcal_100g>
                 <fat_100g>19.0</fat_100g>
                 <saturated_fat_100g>2.2</saturated_fat_100g>
                 <carbohydrates_100g>66.0</carbohydrates_100g>
                 <sugars_100g>18.0</sugars_100g>
-                <fiber_100g>4.3</fiber_100g>
                 <proteins_100g>7.6</proteins_100g>
-                <salt_100g>0.8</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
-                <code>5601312047308</code>
-                <product_name>Bolachas Mini Cookies(Continente)</product_name>
+                <code>5604993547402</code>
+                <product_name>Broa de Mel - Cavacas das Caldas</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>502</energy_kcal_100g>
-                <fat_100g>25.0</fat_100g>
+                <energy_kcal_100g>302</energy_kcal_100g>
+                <fat_100g>3.9</fat_100g>
                 <saturated_fat_100g>14.0</saturated_fat_100g>
-                <carbohydrates_100g>61.0</carbohydrates_100g>
-                <sugars_100g>36.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>6.7</proteins_100g>
-                <salt_100g>0.7</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312000396</code>
-                <product_name>Bolachas recheadas com cacau(Continente)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>456</energy_kcal_100g>
-                <fat_100g>14.0</fat_100g>
-                <saturated_fat_100g>7.6</saturated_fat_100g>
-                <carbohydrates_100g>75.0</carbohydrates_100g>
-                <sugars_100g>37.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>6.0</proteins_100g>
-                <salt_100g>0.8</salt_100g>
+                <carbohydrates_100g>66.3</carbohydrates_100g>
+                <sugars_100g>48.0</sugars_100g>
+                <proteins_100g>5.6</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5000116125890</code>
-                <product_name>Burger de Proteina Vegetal</product_name>
+                <product_name>Burger de Proteína Vegetal - Iglo</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>237</energy_kcal_100g>
                 <fat_100g>17.0</fat_100g>
                 <saturated_fat_100g>1.3</saturated_fat_100g>
                 <carbohydrates_100g>3.9</carbohydrates_100g>
                 <sugars_100g>1.1</sugars_100g>
-                <fiber_100g>6.5</fiber_100g>
                 <proteins_100g>14.0</proteins_100g>
-                <salt_100g>1.5</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601038002209</code>
-                <product_name>Caldo de peixe(Amanhecer)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>270</energy_kcal_100g>
-                <fat_100g>22.0</fat_100g>
-                <saturated_fat_100g>14.0</saturated_fat_100g>
-                <carbohydrates_100g>3.5</carbohydrates_100g>
-                <sugars_100g>2.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>13.0</proteins_100g>
-                <salt_100g>52.0</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601314235208</code>
-                <product_name>Caramulo Agua de Nascente</product_name>
+                <product_name>Caramulo água de Nascente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>0</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.0</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
+            </Drink>
+        </item>
+        <item>
+            <Drink>
+                <code>5601146011001</code>
+                <product_name>Cerveja Sagres Radler Limão</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
+                <type>Drink</type>
+                <energy_kcal_100g>4</energy_kcal_100g>
+                <fat_100g>0.1</fat_100g>
+                <saturated_fat_100g>0.1</saturated_fat_100g>
+                <carbohydrates_100g>0.1</carbohydrates_100g>
+                <sugars_100g>0.1</sugars_100g>
+                <proteins_100g>0.2</proteins_100g>
             </Drink>
         </item>
         <item>
             <Food>
-                <code>5609060007070</code>
-                <product_name>Cevada soluvel(Nestle)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>355</energy_kcal_100g>
-                <fat_100g>0.1</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>78.0</carbohydrates_100g>
-                <sugars_100g>22.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>4.4</proteins_100g>
-                <salt_100g>0.2</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
                 <code>5601009962228</code>
-                <product_name>Chamucas de Soja(Pingo-Doce)</product_name>
+                <product_name>Chamuças de Soja - Pingo-Doce</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>162</energy_kcal_100g>
                 <fat_100g>1.3</fat_100g>
                 <saturated_fat_100g>0.4</saturated_fat_100g>
                 <carbohydrates_100g>25.6</carbohydrates_100g>
                 <sugars_100g>4.7</sugars_100g>
-                <fiber_100g>2.9</fiber_100g>
                 <proteins_100g>10.6</proteins_100g>
-                <salt_100g>1.9</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312504795</code>
-                <product_name>Cheesecake morango</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>76</energy_kcal_100g>
-                <fat_100g>1.6</fat_100g>
-                <saturated_fat_100g>1.1</saturated_fat_100g>
-                <carbohydrates_100g>13.0</carbohydrates_100g>
-                <sugars_100g>13.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>2.4</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312000013</code>
-                <product_name>Chips onduladas</product_name>
+                <product_name>Chips onduladas - Continente</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>547</energy_kcal_100g>
                 <fat_100g>34.0</fat_100g>
                 <saturated_fat_100g>3.4</saturated_fat_100g>
                 <carbohydrates_100g>52.0</carbohydrates_100g>
                 <sugars_100g>0.6</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>6.1</proteins_100g>
-                <salt_100g>0.9</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5600854623384</code>
-                <product_name>Choco Butter + Whey Protein</product_name>
+                <product_name>Choco Butter + Whey Protein - Prozis</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>553</energy_kcal_100g>
                 <fat_100g>37.0</fat_100g>
                 <saturated_fat_100g>7.8</saturated_fat_100g>
                 <carbohydrates_100g>33.0</carbohydrates_100g>
                 <sugars_100g>7.3</sugars_100g>
-                <fiber_100g>2.7</fiber_100g>
                 <proteins_100g>22.0</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009973422</code>
-                <product_name>Choco Cookies</product_name>
+                <product_name>Choco Cookies - Pingo Doce</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>494</energy_kcal_100g>
                 <fat_100g>23.9</fat_100g>
                 <saturated_fat_100g>13.0</saturated_fat_100g>
                 <carbohydrates_100g>60.8</carbohydrates_100g>
                 <sugars_100g>32.7</sugars_100g>
-                <fiber_100g>4.1</fiber_100g>
                 <proteins_100g>6.9</proteins_100g>
-                <salt_100g>0.6</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009960637</code>
-                <product_name>Chocolate preto 70%(Pingo-Doce)</product_name>
+                <product_name>Chocolate preto 70% - Pingo-Doce</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>516</energy_kcal_100g>
                 <fat_100g>41.3</fat_100g>
                 <saturated_fat_100g>28.4</saturated_fat_100g>
                 <carbohydrates_100g>22.9</carbohydrates_100g>
                 <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>9.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312073147</code>
-                <product_name>Cicero atum ao natural</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>109</energy_kcal_100g>
-                <fat_100g>1.2</fat_100g>
-                <saturated_fat_100g>0.4</saturated_fat_100g>
-                <carbohydrates_100g>0.0</carbohydrates_100g>
-                <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>24.4</proteins_100g>
-                <salt_100g>1.2</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5000112519945</code>
-                <product_name>Coca-Cola Zero</product_name>
+                <product_name>Coca-Cola Zero lata</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>1</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.0</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151973189</code>
                 <product_name>Compal - Laranja</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>46</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>10.8</carbohydrates_100g>
                 <sugars_100g>10.3</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.6</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151543450</code>
                 <product_name>Compal Fresh Juice Passion Fruit</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>55</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>14.0</carbohydrates_100g>
                 <sugars_100g>13.0</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151981283</code>
-                <product_name>Compal Light Manga Maracuja</product_name>
+                <product_name>Compal Light Manga Maracujá</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>10</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>2.5</carbohydrates_100g>
                 <sugars_100g>1.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601255700018</code>
-                <product_name>Crackies de arroz</product_name>
+                <product_name>Crackies de arroz - Caçarola</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>382</energy_kcal_100g>
                 <fat_100g>1.9</fat_100g>
                 <saturated_fat_100g>0.4</saturated_fat_100g>
                 <carbohydrates_100g>81.9</carbohydrates_100g>
                 <sugars_100g>3.9</sugars_100g>
-                <fiber_100g>1.6</fiber_100g>
                 <proteins_100g>8.8</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>4131176211283</code>
-                <product_name>Crunchy Muesli(Pingo-Doce)</product_name>
+                <product_name>Crunchy Muesli - Pingo-Doce</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>480</energy_kcal_100g>
                 <fat_100g>21.1</fat_100g>
                 <saturated_fat_100g>4.6</saturated_fat_100g>
                 <carbohydrates_100g>58.8</carbohydrates_100g>
                 <sugars_100g>15.5</sugars_100g>
-                <fiber_100g>7.0</fiber_100g>
                 <proteins_100g>10.3</proteins_100g>
-                <salt_100g>0.5</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601050023213</code>
                 <product_name>Danone Cremoso Natural Açucarado</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>105</energy_kcal_100g>
                 <fat_100g>3.4</fat_100g>
                 <saturated_fat_100g>2.4</saturated_fat_100g>
                 <carbohydrates_100g>13.1</carbohydrates_100g>
                 <sugars_100g>13.1</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
                 <proteins_100g>4.9</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601050023107</code>
                 <product_name>Danone Iogurte Natural</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>69</energy_kcal_100g>
                 <fat_100g>3.5</fat_100g>
                 <saturated_fat_100g>2.1</saturated_fat_100g>
                 <carbohydrates_100g>4.8</carbohydrates_100g>
                 <sugars_100g>4.8</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
                 <proteins_100g>3.8</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
-                <code>5601312065012</code>
-                <product_name>Doce extra pessego(Continente)</product_name>
+                <code>2643551001294</code>
+                <product_name>Dots - Continente</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>244</energy_kcal_100g>
-                <fat_100g>0.0</fat_100g>
-                <saturated_fat_100g>0.0</saturated_fat_100g>
+                <energy_kcal_100g>385</energy_kcal_100g>
+                <fat_100g>22.0</fat_100g>
+                <saturated_fat_100g>9.0</saturated_fat_100g>
                 <carbohydrates_100g>60.0</carbohydrates_100g>
-                <sugars_100g>55.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312068303</code>
-                <product_name>Ervilhas Cozidas</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>74</energy_kcal_100g>
-                <fat_100g>0.8</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>8.3</carbohydrates_100g>
-                <sugars_100g>1.8</sugars_100g>
-                <fiber_100g>5.3</fiber_100g>
-                <proteins_100g>6.0</proteins_100g>
-                <salt_100g>0.7</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601479120012</code>
-                <product_name>Esparguete Integral</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>338</energy_kcal_100g>
-                <fat_100g>1.4</fat_100g>
-                <saturated_fat_100g>0.2</saturated_fat_100g>
-                <carbohydrates_100g>65.0</carbohydrates_100g>
-                <sugars_100g>4.8</sugars_100g>
-                <fiber_100g>7.5</fiber_100g>
-                <proteins_100g>12.7</proteins_100g>
-                <salt_100g>0.0</salt_100g>
+                <sugars_100g>16.0</sugars_100g>
+                <proteins_100g>7.0</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>7613039868300</code>
-                <product_name>Estrelitas(Nestle)</product_name>
+                <product_name>Estrelitas - Nestlé</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
+                <type>Food</type>
+                <energy_kcal_100g>399</energy_kcal_100g>
+                <fat_100g>0.8</fat_100g>
+                <saturated_fat_100g>0.1</saturated_fat_100g>
+                <carbohydrates_100g>8.3</carbohydrates_100g>
+                <sugars_100g>1.8</sugars_100g>
+                <proteins_100g>6.0</proteins_100g>
+            </Food>
+        </item>
+        <item>
+            <Food>
+                <code>7613039868300</code>
+                <product_name>Estrelitas - Nestlé</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>399</energy_kcal_100g>
                 <fat_100g>5.4</fat_100g>
                 <saturated_fat_100g>0.6</saturated_fat_100g>
                 <carbohydrates_100g>78.1</carbohydrates_100g>
                 <sugars_100g>24.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>7.4</proteins_100g>
-                <salt_100g>0.4</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5449000022646</code>
-                <product_name>Fanta Grape Drink Pet 1.5 Litre</product_name>
+                <product_name>Fanta Grape Drink garrafa</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>7</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>1.5</carbohydrates_100g>
                 <sugars_100g>1.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601312008958</code>
-                <product_name>Feijao branco</product_name>
+                <product_name>Feijão branco - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>86</energy_kcal_100g>
                 <fat_100g>0.4</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>11.0</carbohydrates_100g>
                 <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>5.0</proteins_100g>
-                <salt_100g>6.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312009030</code>
-                <product_name>Feijao preto</product_name>
+                <product_name>Feijão preto - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>70</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
@@ -1156,1426 +874,967 @@
         <item>
             <Food>
                 <code>20128623</code>
-                <product_name>Feijao-frade</product_name>
+                <product_name>Feijão frade - Campo Largo</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>99</energy_kcal_100g>
                 <fat_100g>0.9</fat_100g>
                 <saturated_fat_100g>0.4</saturated_fat_100g>
                 <carbohydrates_100g>14.2</carbohydrates_100g>
                 <sugars_100g>0.2</sugars_100g>
-                <fiber_100g>3.3</fiber_100g>
                 <proteins_100g>6.8</proteins_100g>
-                <salt_100g>0.6</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601119956490</code>
-                <product_name>Fiambre da perna extra</product_name>
+                <product_name>Fiambre da perna extra - Nobre</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>91</energy_kcal_100g>
                 <fat_100g>2.1</fat_100g>
                 <saturated_fat_100g>0.7</saturated_fat_100g>
                 <carbohydrates_100g>1.0</carbohydrates_100g>
                 <sugars_100g>1.0</sugars_100g>
-                <fiber_100g>0.5</fiber_100g>
                 <proteins_100g>17.0</proteins_100g>
-                <salt_100g>2.5</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
-                <code>5604925010561</code>
-                <product_name>Fiambre de Perna</product_name>
+                <code>8410000000184</code>
+                <product_name>Filipinos chocolate negro - Artiach</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
-                <energy_kcal_100g>101</energy_kcal_100g>
-                <fat_100g>3.0</fat_100g>
-                <saturated_fat_100g>1.1</saturated_fat_100g>
-                <carbohydrates_100g>5.4</carbohydrates_100g>
-                <sugars_100g>1.1</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
-                <proteins_100g>13.0</proteins_100g>
-                <salt_100g>2.6</salt_100g>
+                <energy_kcal_100g>509</energy_kcal_100g>
+                <fat_100g>26.0</fat_100g>
+                <saturated_fat_100g>15.0</saturated_fat_100g>
+                <carbohydrates_100g>60.0</carbohydrates_100g>
+                <sugars_100g>29.0</sugars_100g>
+                <proteins_100g>6.8</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604524004848</code>
-                <product_name>Filetes de peixe gato riscado</product_name>
+                <product_name>Filetes de peixe gato riscado - Guimarpeixe</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>226</energy_kcal_100g>
                 <fat_100g>2.4</fat_100g>
                 <saturated_fat_100g>0.8</saturated_fat_100g>
                 <carbohydrates_100g>0.5</carbohydrates_100g>
                 <sugars_100g>0.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>12.3</proteins_100g>
-                <salt_100g>0.9</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5602384001908</code>
-                <product_name>Flamengo Light</product_name>
+                <product_name>Flamengo Light - Campainha</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>256</energy_kcal_100g>
                 <fat_100g>16.0</fat_100g>
                 <saturated_fat_100g>11.0</saturated_fat_100g>
                 <carbohydrates_100g>0.1</carbohydrates_100g>
                 <sugars_100g>0.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>28.0</proteins_100g>
-                <salt_100g>1.8</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312504955</code>
-                <product_name>Framboesas Congeladas</product_name>
+                <product_name>Framboesas Congeladas - Contienente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>43</energy_kcal_100g>
                 <fat_100g>0.6</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>5.1</carbohydrates_100g>
                 <sugars_100g>5.1</sugars_100g>
-                <fiber_100g>6.7</fiber_100g>
                 <proteins_100g>0.9</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312507383</code>
-                <product_name>Frutos Silvestres (congelados)</product_name>
+                <product_name>Frutos Silvestres congelados - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>36</energy_kcal_100g>
                 <fat_100g>0.3</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>4.7</carbohydrates_100g>
                 <sugars_100g>4.7</sugars_100g>
-                <fiber_100g>4.5</fiber_100g>
                 <proteins_100g>1.3</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009962303</code>
-                <product_name>Gelatina ananas(Pingo-Doce)</product_name>
+                <product_name>Gelatina ananas - Pingo-Doce</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>62</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>13.5</carbohydrates_100g>
                 <sugars_100g>13.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>1.5</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009981564</code>
-                <product_name>Gelatina light morango</product_name>
+                <product_name>Gelatina light morango - Pingo Doce</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>10</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.8</carbohydrates_100g>
                 <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>1.7</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312000907</code>
-                <product_name>Gelatina sabor a ananas(Continente)</product_name>
+                <product_name>Gelatina sabor a ananas - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>68</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>15.0</carbohydrates_100g>
                 <sugars_100g>15.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>1.9</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312006251</code>
-                <product_name>Grao de Bico</product_name>
+                <product_name>Grão de Bico - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>97</energy_kcal_100g>
                 <fat_100g>2.2</fat_100g>
                 <saturated_fat_100g>0.3</saturated_fat_100g>
                 <carbohydrates_100g>6.0</carbohydrates_100g>
                 <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>6.3</proteins_100g>
-                <salt_100g>0.8</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312009061</code>
-                <product_name>Grao de bico cozido</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>13</energy_kcal_100g>
-                <fat_100g>2.3</fat_100g>
-                <saturated_fat_100g>0.3</saturated_fat_100g>
-                <carbohydrates_100g>14.0</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>5.8</proteins_100g>
-                <salt_100g>0.7</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312171447</code>
-                <product_name>Hamburguer de Aves com Queijo</product_name>
+                <product_name>Hambúrguer de Aves com Queijo - Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>1228</energy_kcal_100g>
                 <fat_100g>15.0</fat_100g>
                 <saturated_fat_100g>6.0</saturated_fat_100g>
                 <carbohydrates_100g>26.0</carbohydrates_100g>
                 <sugars_100g>1.6</sugars_100g>
-                <fiber_100g>1.5</fiber_100g>
                 <proteins_100g>12.0</proteins_100g>
-                <salt_100g>1.6</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312171423</code>
-                <product_name>hamburguer de vaca</product_name>
+                <product_name>Hambúrguer de vaca - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>310</energy_kcal_100g>
-                <fat_100g></fat_100g>
+                <fat_100g>10.0</fat_100g>
                 <saturated_fat_100g>5.5</saturated_fat_100g>
-                <carbohydrates_100g></carbohydrates_100g>
-                <sugars_100g></sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>13.0</proteins_100g>
-                <salt_100g>1.9</salt_100g>
+                <carbohydrates_100g>28.0</carbohydrates_100g>
+                <sugars_100g>2.5</sugars_100g>
+                <proteins_100g>12.0</proteins_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604321031085</code>
-                <product_name>Hamburguer Proteico Tofu e Chia(Cem Porcento)</product_name>
+                <product_name>Hambúrguer Proteico Tofu e Chia -Cem Porcento</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>270</energy_kcal_100g>
                 <fat_100g>20.6</fat_100g>
                 <saturated_fat_100g>2.6</saturated_fat_100g>
                 <carbohydrates_100g>5.5</carbohydrates_100g>
                 <sugars_100g>0.1</sugars_100g>
-                <fiber_100g>4.7</fiber_100g>
                 <proteins_100g>13.4</proteins_100g>
-                <salt_100g>0.6</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>4002971303506</code>
-                <product_name>High Protein Caramel Pudding</product_name>
+                <product_name>High Protein Caramel Pudding - Ehrmann</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>76</energy_kcal_100g>
                 <fat_100g>1.5</fat_100g>
                 <saturated_fat_100g>1.5</saturated_fat_100g>
                 <carbohydrates_100g>1.0</carbohydrates_100g>
                 <sugars_100g>1.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>10.0</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>4002971112504</code>
-                <product_name>High protein skyr</product_name>
+                <product_name>High protein skyr - Ehrmann</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>74</energy_kcal_100g>
                 <fat_100g>0.2</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>10.0</carbohydrates_100g>
                 <sugars_100g>9.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601312025016</code>
-                <product_name>Iced tea limao(Continente)</product_name>
+                <product_name>Iced tea limao - Continente</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>21</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>5.0</carbohydrates_100g>
                 <sugars_100g>5.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601050031775</code>
-                <product_name>Iogurt greco natural</product_name>
+                <product_name>Iogurt greco natural - Danone</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>122</energy_kcal_100g>
                 <fat_100g>10.0</fat_100g>
                 <saturated_fat_100g>6.3</saturated_fat_100g>
                 <carbohydrates_100g>4.1</carbohydrates_100g>
                 <sugars_100g>4.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601009987962</code>
-                <product_name>Iogurt grego straciatella</product_name>
+                <product_name>Iogurt grego straciatella - Pingo Doce</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>154</energy_kcal_100g>
                 <fat_100g>8.5</fat_100g>
                 <saturated_fat_100g>5.8</saturated_fat_100g>
                 <carbohydrates_100g>16.3</carbohydrates_100g>
                 <sugars_100g>16.3</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>2.8</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601312503767</code>
-                <product_name>Iogurte Bifidus</product_name>
+                <product_name>Iogurte Bifidu - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>42</energy_kcal_100g>
                 <fat_100g>0.2</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>6.8</carbohydrates_100g>
                 <sugars_100g>6.4</sugars_100g>
-                <fiber_100g>0.6</fiber_100g>
                 <proteins_100g>5.6</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
-                <code>5601312502821</code>
-                <product_name>Iogurte liquido (Continente)</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>309</energy_kcal_100g>
-                <fat_100g>1.4</fat_100g>
-                <saturated_fat_100g>11.0</saturated_fat_100g>
-                <carbohydrates_100g></carbohydrates_100g>
-                <sugars_100g>11.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>3.8</proteins_100g>
-                <salt_100g></salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Food>
                 <code>5601050023114</code>
-                <product_name>Iogurte Puro Danone Natural</product_name>
-                <type>Food</type>
+                <product_name>Iogurte Puro Natural - Danone</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
+                <type>Drink</type>
                 <energy_kcal_100g>58</energy_kcal_100g>
                 <fat_100g>2.9</fat_100g>
                 <saturated_fat_100g>1.8</saturated_fat_100g>
                 <carbohydrates_100g>4.0</carbohydrates_100g>
                 <sugars_100g>4.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
+            </Drink>
         </item>
         <item>
             <Food>
                 <code>5601383014506</code>
                 <product_name>Izidoro Salsichas Frankfurt</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>141</energy_kcal_100g>
                 <fat_100g>10.3</fat_100g>
                 <saturated_fat_100g>3.8</saturated_fat_100g>
                 <carbohydrates_100g>3.5</carbohydrates_100g>
                 <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.7</proteins_100g>
-                <salt_100g>1.7</salt_100g>
+            </Food>
+        </item>
+        <item>
+            <Food>
+                <code>5601383014506</code>
+                <product_name>Izidoro Salsichas Vegetal</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
+                <type>Food</type>
+                <energy_kcal_100g>226</energy_kcal_100g>
+                <fat_100g>18.0</fat_100g>
+                <saturated_fat_100g>2.3</saturated_fat_100g>
+                <carbohydrates_100g>3.5</carbohydrates_100g>
+                <sugars_100g>0.7</sugars_100g>
+                <proteins_100g>12.0</proteins_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601146230518</code>
-                <product_name>Joi Laranga</product_name>
+                <product_name>Joi Laranga TROCAR</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>12</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>2.6</carbohydrates_100g>
                 <sugars_100g>2.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.1</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>80177609</code>
-                <product_name>Kinder Chocolat</product_name>
+                <product_name>Kinder Chocolat barrinhas</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>566</energy_kcal_100g>
                 <fat_100g>35.0</fat_100g>
                 <saturated_fat_100g>22.6</saturated_fat_100g>
                 <carbohydrates_100g>53.5</carbohydrates_100g>
                 <sugars_100g>53.3</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.7</proteins_100g>
-                <salt_100g>0.3</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>7891000248768</code>
-                <product_name>Kit Kat</product_name>
+                <product_name>Kit Kat - Nestlé</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>222</energy_kcal_100g>
                 <fat_100g>24.0</fat_100g>
                 <saturated_fat_100g>7.1</saturated_fat_100g>
                 <carbohydrates_100g>20.0</carbohydrates_100g>
                 <sugars_100g>20.0</sugars_100g>
-                <fiber_100g>0.8</fiber_100g>
                 <proteins_100g>2.8</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>3023290027257</code>
-                <product_name>KVARG Coconut</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>60</energy_kcal_100g>
-                <fat_100g>0.2</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>3.4</carbohydrates_100g>
-                <sugars_100g>3.1</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
-                <proteins_100g>11.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312182696</code>
-                <product_name>Lasanha Bolonhesa(Continente)</product_name>
+                <product_name>Lasanha Bolonhesa - Continente</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>136</energy_kcal_100g>
                 <fat_100g>6.1</fat_100g>
                 <saturated_fat_100g>2.2</saturated_fat_100g>
                 <carbohydrates_100g>13.0</carbohydrates_100g>
                 <sugars_100g>2.0</sugars_100g>
-                <fiber_100g>1.8</fiber_100g>
                 <proteins_100g>6.3</proteins_100g>
-                <salt_100g>0.7</salt_100g>
             </Food>
-        </item>
-        <item>
-            <Drink>
-                <code>5601883000078</code>
-                <product_name>leite dos acores</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>46</energy_kcal_100g>
-                <fat_100g>1.6</fat_100g>
-                <saturated_fat_100g>0.9</saturated_fat_100g>
-                <carbohydrates_100g>4.8</carbohydrates_100g>
-                <sugars_100g>4.8</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Drink>
-                <code>5601180001020</code>
-                <product_name>Leite Fresco Meio Gordo</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>48</energy_kcal_100g>
-                <fat_100g>1.6</fat_100g>
-                <saturated_fat_100g>1.1</saturated_fat_100g>
-                <carbohydrates_100g>4.9</carbohydrates_100g>
-                <sugars_100g>4.9</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>3.4</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Drink>
-                <code>5601883002034</code>
-                <product_name>Leite Meio Gordo 0% lactose</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>47</energy_kcal_100g>
-                <fat_100g>1.6</fat_100g>
-                <saturated_fat_100g>0.9</saturated_fat_100g>
-                <carbohydrates_100g>4.8</carbohydrates_100g>
-                <sugars_100g>4.8</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
-                <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601049132995</code>
                 <product_name>Leite Mimosa</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>48</energy_kcal_100g>
                 <fat_100g>1.6</fat_100g>
                 <saturated_fat_100g>1.0</saturated_fat_100g>
                 <carbohydrates_100g>4.9</carbohydrates_100g>
                 <sugars_100g>4.9</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.4</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5604260285310</code>
-                <product_name>Leite UHT Meio-Gordo</product_name>
+                <product_name>Leite UHT Meio Gordo - Intermarché</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>46</energy_kcal_100g>
                 <fat_100g>1.6</fat_100g>
                 <saturated_fat_100g>1.1</saturated_fat_100g>
                 <carbohydrates_100g>4.7</carbohydrates_100g>
                 <sugars_100g>4.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.1</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
-                <code>5600954501940</code>
-                <product_name>Lentilhas Vermelhas</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>337</energy_kcal_100g>
-                <fat_100g>1.7</fat_100g>
-                <saturated_fat_100g>0.3</saturated_fat_100g>
-                <carbohydrates_100g>50.4</carbohydrates_100g>
-                <sugars_100g>3.6</sugars_100g>
-                <fiber_100g>8.3</fiber_100g>
-                <proteins_100g>26.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
                 <code>8435257050201</code>
-                <product_name>Lindahls Kvarg Stracciatella</product_name>
+                <product_name>Lindahls Kvarg Stracciatella - Nestlé</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>59</energy_kcal_100g>
                 <fat_100g>0.6</fat_100g>
                 <saturated_fat_100g>0.2</saturated_fat_100g>
                 <carbohydrates_100g>3.4</carbohydrates_100g>
                 <sugars_100g>3.2</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>10.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>8435257057750</code>
-                <product_name>Lindahls pro+</product_name>
+                <product_name>Lindahls pro+ - Nestlé</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>61</energy_kcal_100g>
                 <fat_100g>0.2</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>3.0</carbohydrates_100g>
                 <sugars_100g>2.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>12.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601165005142</code>
                 <product_name>Lipton Ice Tea limao</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>19</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>4.5</carbohydrates_100g>
                 <sugars_100g>4.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601165005524</code>
                 <product_name>Lipton Ice Tea Manga</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>19</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>4.6</carbohydrates_100g>
                 <sugars_100g>4.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601165005180</code>
                 <product_name>Lipton Ice tea pessego</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>19</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.5</saturated_fat_100g>
                 <carbohydrates_100g>4.7</carbohydrates_100g>
                 <sugars_100g>4.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601312073833</code>
-                <product_name>Marinheiras Chia</product_name>
+                <product_name>Marinheiras Chia -  Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>430</energy_kcal_100g>
                 <fat_100g>13.0</fat_100g>
                 <saturated_fat_100g>2.2</saturated_fat_100g>
                 <carbohydrates_100g>65.0</carbohydrates_100g>
                 <sugars_100g>1.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>11.0</proteins_100g>
-                <salt_100g>1.4</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604321027040</code>
-                <product_name>Marinheiras natural</product_name>
+                <product_name>Marinheiras natural - Ignoramus</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>116</energy_kcal_100g>
                 <fat_100g>12.0</fat_100g>
                 <saturated_fat_100g>1.8</saturated_fat_100g>
                 <carbohydrates_100g>65.0</carbohydrates_100g>
                 <sugars_100g>1.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>11.0</proteins_100g>
-                <salt_100g>1.4</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>8480017542175</code>
-                <product_name>Massa Fina 4 Estacoes(Dia)</product_name>
+                <product_name>Massa Fina 4 Estacoes - Dia</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>218</energy_kcal_100g>
                 <fat_100g>8.8</fat_100g>
                 <saturated_fat_100g>3.0</saturated_fat_100g>
                 <carbohydrates_100g>25.9</carbohydrates_100g>
                 <sugars_100g>2.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.2</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601255210531</code>
-                <product_name>Massa(Cacarola)</product_name>
+                <product_name>Massa Macarronete Riscado - Cacarola</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>366</energy_kcal_100g>
                 <fat_100g>1.5</fat_100g>
                 <saturated_fat_100g>0.3</saturated_fat_100g>
                 <carbohydrates_100g>74.0</carbohydrates_100g>
                 <sugars_100g>3.5</sugars_100g>
-                <fiber_100g>4.0</fiber_100g>
                 <proteins_100g>12.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312181453</code>
-                <product_name>Mini Queques de Laranja</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>439</energy_kcal_100g>
-                <fat_100g>22.0</fat_100g>
-                <saturated_fat_100g>4.1</saturated_fat_100g>
-                <carbohydrates_100g>55.0</carbohydrates_100g>
-                <sugars_100g>26.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>5.3</proteins_100g>
-                <salt_100g>0.8</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5604260270019</code>
-                <product_name>mini tostas integrais</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>395</energy_kcal_100g>
-                <fat_100g>7.5</fat_100g>
-                <saturated_fat_100g>2.0</saturated_fat_100g>
-                <carbohydrates_100g>62.5</carbohydrates_100g>
-                <sugars_100g>2.5</sugars_100g>
-                <fiber_100g>8.5</fiber_100g>
-                <proteins_100g>15.0</proteins_100g>
-                <salt_100g>2.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312074823</code>
-                <product_name>Mix de legumes(Continente)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>183</energy_kcal_100g>
-                <fat_100g>11.0</fat_100g>
-                <saturated_fat_100g>1.6</saturated_fat_100g>
-                <carbohydrates_100g>49.0</carbohydrates_100g>
-                <sugars_100g>21.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>4.0</proteins_100g>
-                <salt_100g>0.8</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312066644</code>
-                <product_name>Nachos sal</product_name>
+                <product_name>Nachos sal - Continente</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>519</energy_kcal_100g>
                 <fat_100g>25.0</fat_100g>
                 <saturated_fat_100g>9.2</saturated_fat_100g>
                 <carbohydrates_100g>65.0</carbohydrates_100g>
                 <sugars_100g>2.2</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>5.6</proteins_100g>
-                <salt_100g>1.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601066600057</code>
                 <product_name>Nacional Corn Flakes</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>380</energy_kcal_100g>
                 <fat_100g>1.0</fat_100g>
                 <saturated_fat_100g>0.6</saturated_fat_100g>
                 <carbohydrates_100g>84.0</carbohydrates_100g>
                 <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>7.3</proteins_100g>
-                <salt_100g>1.8</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601151333457</code>
-                <product_name>Nectar Classico</product_name>
+                <product_name>Néctar Clássico - Compal</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>41</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>10.0</carbohydrates_100g>
                 <sugars_100g>9.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151972984</code>
-                <product_name>Nectar de Frutos Vermelhos</product_name>
+                <product_name>Néctar de Frutos Vermelhos - Compal</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>36</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>8.7</carbohydrates_100g>
                 <sugars_100g>8.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151981245</code>
-                <product_name>Nectar de laranja do Algarve</product_name>
+                <product_name>Néctar de laranja do Algarve - Compal</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>44</energy_kcal_100g>
                 <fat_100g>0.5</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>11.0</carbohydrates_100g>
                 <sugars_100g>10.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Drink>
                 <code>5601151982310</code>
-                <product_name>Nectar frutas do pomar portugues</product_name>
+                <product_name>Néctar frutas do pomar português Família - Compal</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>35</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>8.5</carbohydrates_100g>
                 <sugars_100g>6.2</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
-        </item>
-        <item>
-            <Drink>
-                <code>7613035078369</code>
-                <product_name>Nescafe Capuccino Intenso</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>399</energy_kcal_100g>
-                <fat_100g>13.4</fat_100g>
-                <saturated_fat_100g>12.1</saturated_fat_100g>
-                <carbohydrates_100g>53.4</carbohydrates_100g>
-                <sugars_100g>28.9</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>13.0</proteins_100g>
-                <salt_100g>1.3</salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Food>
-                <code>7613035766488</code>
-                <product_name>Nestum Bolacha Maria</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>382</energy_kcal_100g>
-                <fat_100g>2.8</fat_100g>
-                <saturated_fat_100g>0.5</saturated_fat_100g>
-                <carbohydrates_100g>77.0</carbohydrates_100g>
-                <sugars_100g>29.0</sugars_100g>
-                <fiber_100g>5.0</fiber_100g>
-                <proteins_100g>9.6</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>7613036144834</code>
-                <product_name>Nestum com Aveia e Maca</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>341</energy_kcal_100g>
-                <fat_100g>1.5</fat_100g>
-                <saturated_fat_100g>0.3</saturated_fat_100g>
-                <carbohydrates_100g>70.0</carbohydrates_100g>
-                <sugars_100g>26.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>9.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5600499551493</code>
-                <product_name>Oats instant yogurt flavor(Prozis)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>382</energy_kcal_100g>
-                <fat_100g>7.6</fat_100g>
-                <saturated_fat_100g>1.4</saturated_fat_100g>
-                <carbohydrates_100g>63.0</carbohydrates_100g>
-                <sugars_100g>0.0</sugars_100g>
-                <fiber_100g>11.0</fiber_100g>
-                <proteins_100g>10.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Food>
         </item>
         <item>
             <Food>
                 <code>5601050032406</code>
-                <product_name>Oikos caramelo</product_name>
+                <product_name>Oikos caramelo - Danone</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>154</energy_kcal_100g>
                 <fat_100g>16.1</fat_100g>
                 <saturated_fat_100g>15.3</saturated_fat_100g>
                 <carbohydrates_100g>8.6</carbohydrates_100g>
                 <sugars_100g>5.4</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.0</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601050034264</code>
-                <product_name>Oikos cheesecake de mirtillo</product_name>
+                <product_name>Oikos cheesecake de mirtillo - Danone</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>156</energy_kcal_100g>
                 <fat_100g>8.4</fat_100g>
                 <saturated_fat_100g>5.2</saturated_fat_100g>
                 <carbohydrates_100g>16.8</carbohydrates_100g>
                 <sugars_100g>16.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601050031812</code>
-                <product_name>Oikos Stracciatella</product_name>
+                <product_name>Oikos Stracciatella - Danone</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>165</energy_kcal_100g>
                 <fat_100g>10.0</fat_100g>
                 <saturated_fat_100g>6.3</saturated_fat_100g>
                 <carbohydrates_100g>15.6</carbohydrates_100g>
                 <sugars_100g>15.4</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.2</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5600854625487</code>
-                <product_name>Organic curcuma(Prozis)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>424</energy_kcal_100g>
-                <fat_100g>10.0</fat_100g>
-                <saturated_fat_100g>3.1</saturated_fat_100g>
-                <carbohydrates_100g>65.0</carbohydrates_100g>
-                <sugars_100g>3.2</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>8.0</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312886044</code>
-                <product_name>Panados nuggets de frango</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>215</energy_kcal_100g>
-                <fat_100g>11.0</fat_100g>
-                <saturated_fat_100g>1.4</saturated_fat_100g>
-                <carbohydrates_100g>15.0</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>14.0</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312503361</code>
-                <product_name>Pao de alho(Continente)</product_name>
+                <product_name>Pão de alho - Continente</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>331</energy_kcal_100g>
                 <fat_100g>14.0</fat_100g>
                 <saturated_fat_100g>9.0</saturated_fat_100g>
                 <carbohydrates_100g>43.0</carbohydrates_100g>
                 <sugars_100g>3.3</sugars_100g>
-                <fiber_100g>2.6</fiber_100g>
                 <proteins_100g>6.9</proteins_100g>
-                <salt_100g>1.3</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5604260056552</code>
-                <product_name>Pao Especial para Cachorro</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>282</energy_kcal_100g>
-                <fat_100g>4.2</fat_100g>
-                <saturated_fat_100g>1.3</saturated_fat_100g>
-                <carbohydrates_100g>50.0</carbohydrates_100g>
-                <sugars_100g>4.9</sugars_100g>
-                <fiber_100g>2.6</fiber_100g>
-                <proteins_100g>9.8</proteins_100g>
-                <salt_100g>1.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312181910</code>
-                <product_name>Pao Tostado de Trigo Integral</product_name>
+                <product_name>Pão Tostado de Trigo Integral - Continente</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>376</energy_kcal_100g>
                 <fat_100g>4.7</fat_100g>
                 <saturated_fat_100g>0.6</saturated_fat_100g>
                 <carbohydrates_100g>66.0</carbohydrates_100g>
                 <sugars_100g>4.6</sugars_100g>
-                <fiber_100g>9.0</fiber_100g>
                 <proteins_100g>13.0</proteins_100g>
-                <salt_100g>1.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601721733243</code>
-                <product_name>Pate de sardinha</product_name>
+                <product_name>Pate de sardinha - Manna</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>300</energy_kcal_100g>
                 <fat_100g>25.0</fat_100g>
                 <saturated_fat_100g>4.9</saturated_fat_100g>
                 <carbohydrates_100g>1.9</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>16.0</proteins_100g>
-                <salt_100g>0.8</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601151973240</code>
                 <product_name>Pepsi max lima</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>1</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.1</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.1</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601151976807</code>
                 <product_name>Pepsi-cola (diet) max Zero</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>0</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.1</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.1</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>7622210843821</code>
                 <product_name>Philadelphia light</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>200</energy_kcal_100g>
                 <fat_100g>14.0</fat_100g>
                 <saturated_fat_100g>9.3</saturated_fat_100g>
                 <carbohydrates_100g>4.0</carbohydrates_100g>
                 <sugars_100g>4.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>6.8</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>3596710433513</code>
-                <product_name>Pizza divina 4 stagioni</product_name>
+                <product_name>Pizza divina 4 stagioni - Auchan</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>254</energy_kcal_100g>
                 <fat_100g>13.0</fat_100g>
                 <saturated_fat_100g>4.3</saturated_fat_100g>
                 <carbohydrates_100g>23.0</carbohydrates_100g>
                 <sugars_100g>3.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>10.0</proteins_100g>
-                <salt_100g>1.2</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>2670938003992</code>
-                <product_name>Pizza queijo</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>207</energy_kcal_100g>
-                <fat_100g>7.8</fat_100g>
-                <saturated_fat_100g>3.2</saturated_fat_100g>
-                <carbohydrates_100g>23.0</carbohydrates_100g>
-                <sugars_100g>1.7</sugars_100g>
-                <fiber_100g>1.3</fiber_100g>
-                <proteins_100g>11.0</proteins_100g>
-                <salt_100g>1.5</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>8712566120468</code>
-                <product_name>Planta</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>630</energy_kcal_100g>
-                <fat_100g>70.0</fat_100g>
-                <saturated_fat_100g>20.0</saturated_fat_100g>
-                <carbohydrates_100g>0.8</carbohydrates_100g>
-                <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>0.5</proteins_100g>
-                <salt_100g>1.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5603953000414</code>
-                <product_name>Preparado Hamburguer Bovino</product_name>
+                <product_name>Preparado Hambúrguer Bovino - BIOLOGIC</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>125</energy_kcal_100g>
                 <fat_100g>4.5</fat_100g>
                 <saturated_fat_100g>2.3</saturated_fat_100g>
                 <carbohydrates_100g>2.8</carbohydrates_100g>
                 <sugars_100g>0.7</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>18.2</proteins_100g>
-                <salt_100g>0.3</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Drink>
-                <code>5601165003179</code>
-                <product_name>Pro-Activ</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>316</energy_kcal_100g>
-                <fat_100g>35.0</fat_100g>
-                <saturated_fat_100g>7.9</saturated_fat_100g>
-                <carbohydrates_100g>1.4</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>0.5</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Food>
-                <code>8712566359691</code>
-                <product_name>Pure de batata(Knorr)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>60</energy_kcal_100g>
-                <fat_100g>1.0</fat_100g>
-                <saturated_fat_100g>0.7</saturated_fat_100g>
-                <carbohydrates_100g>10.0</carbohydrates_100g>
-                <sugars_100g>0.9</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>1.5</proteins_100g>
-                <salt_100g>0.5</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601244201922</code>
-                <product_name>Queijo Fatias -50% Gordura</product_name>
+                <product_name>Queijo Fatias menos 50% Gordura - Terra Nostra</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>222</energy_kcal_100g>
                 <fat_100g>12.0</fat_100g>
                 <saturated_fat_100g>8.0</saturated_fat_100g>
                 <carbohydrates_100g>0.5</carbohydrates_100g>
                 <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>28.0</proteins_100g>
-                <salt_100g>1.3</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601883000771</code>
-                <product_name>Queijo Flamengo Light</product_name>
+                <product_name>Queijo Flamengo Light - Nova Açores</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>275</energy_kcal_100g>
                 <fat_100g>18.0</fat_100g>
                 <saturated_fat_100g>11.0</saturated_fat_100g>
                 <carbohydrates_100g>0.2</carbohydrates_100g>
                 <sugars_100g>0.2</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
                 <proteins_100g>28.0</proteins_100g>
-                <salt_100g>1.5</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601511000791</code>
-                <product_name>Queijo Flamengo(Limiano)</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>365</energy_kcal_100g>
-                <fat_100g>31.0</fat_100g>
-                <saturated_fat_100g>21.0</saturated_fat_100g>
-                <carbohydrates_100g>0.5</carbohydrates_100g>
-                <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>21.0</proteins_100g>
-                <salt_100g>1.3</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>56002195</code>
-                <product_name>Queijo Fresco Magro</product_name>
+                <product_name>Queijo Fresco Magro - Montiqueijo</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>79</energy_kcal_100g>
                 <fat_100g>1.4</fat_100g>
                 <saturated_fat_100g>0.9</saturated_fat_100g>
                 <carbohydrates_100g>4.5</carbohydrates_100g>
                 <sugars_100g>3.4</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>12.0</proteins_100g>
-                <salt_100g>0.5</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>3564705050618</code>
-                <product_name>Ravioli a bolonhesa</product_name>
+                <product_name>Ravioli a bolonhesa - Marca Guia</product_name>
+                <nutriscore_grade>b</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>100</energy_kcal_100g>
                 <fat_100g>3.2</fat_100g>
                 <saturated_fat_100g>1.2</saturated_fat_100g>
                 <carbohydrates_100g>12.0</carbohydrates_100g>
                 <sugars_100g>0.3</sugars_100g>
-                <fiber_100g>1.5</fiber_100g>
                 <proteins_100g>5.0</proteins_100g>
-                <salt_100g>0.7</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5057373869425</code>
-                <product_name>Roasted Pistachios</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>586</energy_kcal_100g>
-                <fat_100g>47.0</fat_100g>
-                <saturated_fat_100g>5.6</saturated_fat_100g>
-                <carbohydrates_100g>8.4</carbohydrates_100g>
-                <sugars_100g>8.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>27.0</proteins_100g>
-                <salt_100g>1.2</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604260306466</code>
-                <product_name>Salmao Fumado - Escocia</product_name>
+                <product_name>Salmão Fumado Escócia - Por Si</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>265</energy_kcal_100g>
                 <fat_100g>19.0</fat_100g>
                 <saturated_fat_100g>2.8</saturated_fat_100g>
                 <carbohydrates_100g>0.5</carbohydrates_100g>
                 <sugars_100g>0.5</sugars_100g>
-                <fiber_100g>0.5</fiber_100g>
                 <proteins_100g>22.0</proteins_100g>
-                <salt_100g>1.7</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312000259</code>
-                <product_name>Salsichas tipo frankfurt</product_name>
+                <product_name>Salsichas tipo frankfurt - Continente</product_name>
+                <nutriscore_grade>d</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>160</energy_kcal_100g>
                 <fat_100g>12.0</fat_100g>
                 <saturated_fat_100g>3.7</saturated_fat_100g>
                 <carbohydrates_100g>3.0</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g>0.0</fiber_100g>
                 <proteins_100g>10.0</proteins_100g>
-                <salt_100g>1.7</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601045105900</code>
                 <product_name>Serra Da Estrela</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>0</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>0.0</carbohydrates_100g>
                 <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601050035445</code>
-                <product_name>Skyr natural</product_name>
+                <product_name>Skyr natural - Danone</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>56</energy_kcal_100g>
                 <fat_100g>0.1</fat_100g>
                 <saturated_fat_100g>0.1</saturated_fat_100g>
                 <carbohydrates_100g>3.4</carbohydrates_100g>
                 <sugars_100g>3.4</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>10.3</proteins_100g>
-                <salt_100g>0.1</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312046998</code>
-                <product_name>Sopa da Pedra</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>103</energy_kcal_100g>
-                <fat_100g>4.6</fat_100g>
-                <saturated_fat_100g>2.7</saturated_fat_100g>
-                <carbohydrates_100g>4.4</carbohydrates_100g>
-                <sugars_100g>0.8</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>9.1</proteins_100g>
-                <salt_100g>1.0</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312179979</code>
-                <product_name>Sopa de legumes</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>27</energy_kcal_100g>
-                <fat_100g>0.7</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>3.9</carbohydrates_100g>
-                <sugars_100g>1.6</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>0.8</proteins_100g>
-                <salt_100g>0.6</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
                 <code>5601045000427</code>
                 <product_name>Sumol Laranja</product_name>
+                <nutriscore_grade>e</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>30</energy_kcal_100g>
                 <fat_100g>0.0</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>7.5</carbohydrates_100g>
                 <sugars_100g>6.8</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Drink>
         </item>
         <item>
             <Food>
                 <code>5601312882503</code>
-                <product_name>Tamara Continente(sem caroco)</product_name>
+                <product_name>Tamara sem caraço - Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>321</energy_kcal_100g>
                 <fat_100g>0.1</fat_100g>
                 <saturated_fat_100g>0.0</saturated_fat_100g>
                 <carbohydrates_100g>74.0</carbohydrates_100g>
                 <sugars_100g>67.0</sugars_100g>
-                <fiber_100g>7.8</fiber_100g>
                 <proteins_100g>2.3</proteins_100g>
-                <salt_100g>0.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5600341930124</code>
-                <product_name>Tofu bio</product_name>
+                <product_name>Tofu bio - Seara</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>146</energy_kcal_100g>
                 <fat_100g>9.2</fat_100g>
                 <saturated_fat_100g>2.3</saturated_fat_100g>
                 <carbohydrates_100g>0.1</carbohydrates_100g>
                 <sugars_100g>0.1</sugars_100g>
-                <fiber_100g>3.4</fiber_100g>
                 <proteins_100g>14.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5604321022489</code>
-                <product_name>Tofu bio ao natural</product_name>
+                <product_name>Tofu bio ao natural - Cem por cento</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>235</energy_kcal_100g>
                 <fat_100g>18.6</fat_100g>
                 <saturated_fat_100g>2.0</saturated_fat_100g>
                 <carbohydrates_100g>2.0</carbohydrates_100g>
                 <sugars_100g>0.5</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>14.8</proteins_100g>
-                <salt_100g>1.9</salt_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>5601312181187</code>
-                <product_name>Tortelloni com ricotta e espinafres</product_name>
-                <type>Food</type>
-                <energy_kcal_100g>274</energy_kcal_100g>
-                <fat_100g>5.3</fat_100g>
-                <saturated_fat_100g>1.2</saturated_fat_100g>
-                <carbohydrates_100g>46.0</carbohydrates_100g>
-                <sugars_100g>6.2</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>9.0</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Food>
                 <code>5601312181439</code>
-                <product_name>Tortilha de batata</product_name>
+                <product_name>Tortilha de batata - Continente</product_name>
+                <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>140</energy_kcal_100g>
                 <fat_100g>9.0</fat_100g>
                 <saturated_fat_100g>1.3</saturated_fat_100g>
                 <carbohydrates_100g>10.0</carbohydrates_100g>
                 <sugars_100g>1.0</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>3.2</proteins_100g>
-                <salt_100g>1.1</salt_100g>
             </Food>
         </item>
         <item>
             <Drink>
-                <code>5601314225209</code>
-                <product_name>Vitalis Agua Mineral</product_name>
-                <type>Drink</type>
-                <energy_kcal_100g>0</energy_kcal_100g>
-                <fat_100g>0.0</fat_100g>
-                <saturated_fat_100g>0.0</saturated_fat_100g>
-                <carbohydrates_100g>0.0</carbohydrates_100g>
-                <sugars_100g>0.0</sugars_100g>
-                <fiber_100g></fiber_100g>
-                <proteins_100g>0.0</proteins_100g>
-                <salt_100g>0.0</salt_100g>
-            </Drink>
-        </item>
-        <item>
-            <Drink>
                 <code>5601050036114</code>
-                <product_name>Yo pro</product_name>
+                <product_name>Yo pro - Danone</product_name>
+                <nutriscore_grade>a</nutriscore_grade>
                 <type>Drink</type>
                 <energy_kcal_100g>59</energy_kcal_100g>
                 <fat_100g>0.4</fat_100g>
                 <saturated_fat_100g>0.3</saturated_fat_100g>
                 <carbohydrates_100g>5.3</carbohydrates_100g>
                 <sugars_100g>5.1</sugars_100g>
-                <fiber_100g></fiber_100g>
                 <proteins_100g>8.3</proteins_100g>
-                <salt_100g>0.2</salt_100g>
             </Drink>
         </item>
     </foods>

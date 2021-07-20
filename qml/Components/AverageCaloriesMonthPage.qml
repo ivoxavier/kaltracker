@@ -17,7 +17,7 @@
 
 import QtQuick 2.9
 import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.3 as ListItem
+import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
@@ -81,9 +81,10 @@ Page{
 
                 visible: model.count === 0 ? false : true
 
-                delegate: ListItem.Subtitled{
+                delegate: ListItem{
+                    ListItemLayout{ 
                     
-                    text: month === '01' ?
+                    title.text: month === '01' ?
                     i18n.tr("January") : month === '02' ?
                     i18n.tr("February") : month === '03' ?
                     i18n.tr("March") : month === '04' ?
@@ -96,14 +97,14 @@ Page{
                     i18n.tr("October") : month === '11' ?
                     i18n.tr("November") : i18n.tr("December")
                     
-                    subText: average + " kcal"
-                    showDivider: false
-                    progression: true
+                    subtitle.text: Math.round(average) + " kcal"
                     
-                    onTriggered: {
+                    ProgressionSlot {}
+                    }
+                onClicked: {
                         root.stackMonthIngestions = month
                         mainStack.push(monthIngestionsPage)
-                        }
+                }
             }
         }
     

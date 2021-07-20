@@ -174,6 +174,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/kaltracker.desktop.dir/DependInfo.cmake"
   "CMakeFiles/kaltracker_FILES.dir/DependInfo.cmake"
   "po/CMakeFiles/kaltracker.ivoxavier.pot.dir/DependInfo.cmake"
-  "po/CMakeFiles/pofiles.dir/DependInfo.cmake"
-  "po/CMakeFiles/pofiles_1.dir/DependInfo.cmake"
   )

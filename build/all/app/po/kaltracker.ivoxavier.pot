@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 20:09+0000\n"
+"POT-Creation-Date: 2021-07-20 20:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Components/AboutDialog.qml:34
+#: ../qml/Components/AboutDialog.qml:35
 msgid "© KalTracker 2020-2021"
 msgstr ""
 
-#: ../qml/Components/AboutDialog.qml:41
+#: ../qml/Components/AboutDialog.qml:42
 msgid "Version: "
+msgstr ""
+
+#: ../qml/Components/AboutDialog.qml:49
+msgid "Listed foods from: openfoodsfacts.org"
+msgstr ""
+
+#: ../qml/Components/AboutDialog.qml:56
+msgid "Maintainer: Ivo Xavier"
 msgstr ""
 
 #: ../qml/Components/ActionBar/AboutAction.qml:25
@@ -54,62 +62,62 @@ msgstr ""
 msgid "Average Calories per Month"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:87
+#: ../qml/Components/AverageCaloriesMonthPage.qml:88
 #: ../qml/Components/MonthIngestionsPage.qml:46
 msgid "January"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:88
+#: ../qml/Components/AverageCaloriesMonthPage.qml:89
 #: ../qml/Components/MonthIngestionsPage.qml:47
 msgid "February"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:89
+#: ../qml/Components/AverageCaloriesMonthPage.qml:90
 #: ../qml/Components/MonthIngestionsPage.qml:48
 msgid "March"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:90
+#: ../qml/Components/AverageCaloriesMonthPage.qml:91
 #: ../qml/Components/MonthIngestionsPage.qml:49
 msgid "April"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:91
+#: ../qml/Components/AverageCaloriesMonthPage.qml:92
 #: ../qml/Components/MonthIngestionsPage.qml:50
 msgid "May"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:92
+#: ../qml/Components/AverageCaloriesMonthPage.qml:93
 #: ../qml/Components/MonthIngestionsPage.qml:51
 msgid "June"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:93
+#: ../qml/Components/AverageCaloriesMonthPage.qml:94
 #: ../qml/Components/MonthIngestionsPage.qml:52
 msgid "July"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:94
+#: ../qml/Components/AverageCaloriesMonthPage.qml:95
 #: ../qml/Components/MonthIngestionsPage.qml:53
 msgid "August"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:95
+#: ../qml/Components/AverageCaloriesMonthPage.qml:96
 #: ../qml/Components/MonthIngestionsPage.qml:54
 msgid "September"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:96
+#: ../qml/Components/AverageCaloriesMonthPage.qml:97
 #: ../qml/Components/MonthIngestionsPage.qml:55
 msgid "October"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:97
+#: ../qml/Components/AverageCaloriesMonthPage.qml:98
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "December"
 msgstr ""
 
-#: ../qml/Components/AverageCaloriesMonthPage.qml:97
+#: ../qml/Components/AverageCaloriesMonthPage.qml:98
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "November"
 msgstr ""
@@ -185,7 +193,7 @@ msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:202
-#: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:121
+#: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:168
 #: ../qml/Components/UserAccountPage.qml:247
 msgid "Goal"
 msgstr ""
@@ -290,6 +298,46 @@ msgstr ""
 msgid "Size of portions"
 msgstr ""
 
+#: ../qml/Components/FoodsTemplate.qml:264
+msgid "Very good nutritional quality"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:265
+msgid "Good nutritional quality"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:266
+msgid "Average nutritional quality"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:267
+msgid "Bad nutritional quality"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:267
+msgid "Poor nutritional quality"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:300
+msgid "Fat/100g"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:308
+msgid "Saturated/100g"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:317
+msgid "CarbornHydrates/100g"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:325
+msgid "Sugars/100g"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:334
+msgid "Protein/100g"
+msgstr ""
+
 #: ../qml/Components/HelpUserConfigDialog.qml:23
 msgid "Tips"
 msgstr ""
@@ -367,43 +415,59 @@ msgstr ""
 msgid "Wrong code, try again"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:40
-msgid "'s Panel"
+#: ../qml/Components/ResumePage.qml:42
+msgid "${0}'s Panel"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:103
+#: ../qml/Components/ResumePage.qml:109
 msgid "Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:157
+#: ../qml/Components/ResumePage.qml:174
+msgid "Foods"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:181
+msgid "Remaining"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:182
+msgid "Exceed"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:182
+msgid "To ingest"
+msgstr ""
+
+#: ../qml/Components/ResumePage.qml:202
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:188
+#: ../qml/Components/ResumePage.qml:239
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:189
+#: ../qml/Components/ResumePage.qml:240
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:190
+#: ../qml/Components/ResumePage.qml:241
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:190
+#: ../qml/Components/ResumePage.qml:241
 msgid "Snack"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:222
+#: ../qml/Components/ResumePage.qml:287
 msgid "Unlisted foods"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:227
+#: ../qml/Components/ResumePage.qml:292
 msgid "Schedule an ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:231
+#: ../qml/Components/ResumePage.qml:296
 msgid "New ingestion"
 msgstr ""
 
@@ -465,20 +529,4 @@ msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:66
 msgid "Click to start"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:122 ../qml/js/DataBaseTools.js:126
-msgid "Foods"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:156
-msgid "To Be Ingested"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:162
-msgid "Left"
-msgstr ""
-
-#: ../qml/js/DataBaseTools.js:168
-msgid "Exceeded"
 msgstr ""

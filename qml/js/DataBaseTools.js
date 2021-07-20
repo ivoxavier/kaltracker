@@ -119,11 +119,11 @@ function getUserKaloriesIngestedDuringDay(){
                        
                        if(rsToQML === null){
                         
-                        dashboardUserKaloriesIngestedDuringDay.text = 0  + "\n" + i18n.tr("Foods");
+                        dashboardUserKaloriesIngestedDuringDay.text = 0
                       
                       } else{
 
-                        dashboardUserKaloriesIngestedDuringDay.text =  Math.round(rsToQML) + "\n" + i18n.tr("Foods")
+                        dashboardUserKaloriesIngestedDuringDay.text =  Math.round(rsToQML)
                         
                       }
                      })()
@@ -152,22 +152,23 @@ var db = createSQLContainer();
 
                         if (rsToQML === null){
 
-                          console.log("Query === "+rsToQML+" no ingestions yet")
-                          dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal + "\n" + i18n.tr("To Be Ingested");                      
+                          
+                          dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal                      
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
                           appSettings.displayAlert = false
+                          root.metric = 0
 
                         } else if (rsToQML > 0){
 
-                          dashboardUserKaloriesIngestionMetric.text =  Math.round(rsToQML) + "\n" + i18n.tr("Left");
-                          dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
+                          dashboardUserKaloriesIngestionMetric.text =  Math.round(rsToQML)
                           appSettings.displayAlert = false
+                          root.metric = Math.round(rsToQML)
 
                         } else {
 
-                          dashboardUserKaloriesIngestionMetric.text =  Math.round(Math.abs(rsToQML))  + "\n" + i18n.tr("Exceeded");
-                          dashboardUserKaloriesIngestionMetric.color = UbuntuColors.red
+                          dashboardUserKaloriesIngestionMetric.text =  Math.round(Math.abs(rsToQML))
                           appSettings.displayAlert = true
+                          root.metric = Math.round(rsToQML)
                         }
 
                       })()
@@ -563,7 +564,7 @@ const removeAllIngestions = 'DELETE FROM Ingestion'
 }
 
 
-
+//delete ingestion from ResumePage
  function deleteIngestion(id){
   var removeStatement = 'DELETE FROM Ingestion \
   WHERE Ingestion.idIngestion = which_id'.replace("which_id",id)
@@ -575,6 +576,21 @@ const removeAllIngestions = 'DELETE FROM Ingestion'
  );
  return console.log(rs.rowsAffected)
 }
+
+//delete ingestion from ResumePage
+function updateIngestionTime(id, new_time){
+  var update_Statement = 'UPDATE Ingestion \
+  SET ingestionTime = "old_time" \
+  WHERE Ingestion.idIngestion = which_id'.replace("which_id",id).replace("old_time", new_time)
+   var db = createSQLContainer();
+   var rs;
+   db.transaction(function(tx) {
+    rs = tx.executeSql(update_Statement);
+   }
+ );
+ return console.log(rs.rowsAffected)
+}
+
 
 // removes ingestions from previous year
 const auto_clean = 'DELETE FROM Ingestion \

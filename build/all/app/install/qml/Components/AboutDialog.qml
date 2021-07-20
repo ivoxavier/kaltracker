@@ -23,6 +23,7 @@ import "../js/DataBaseTools.js" as DataBase
 Dialog {
        id: aboutApp
 
+        
         Image{
             source:'../../assets/logo.svg'
             fillMode: Image.PreserveAspectFit
@@ -39,6 +40,20 @@ Dialog {
             anchors.horizontalCenter: aboutApp.horizontalCenter
             
             text: i18n.tr("Version: " + root.appVersion)
+        }
+
+        Label{
+            
+            anchors.horizontalCenter: aboutApp.horizontalCenter
+            
+            text: i18n.tr("Listed foods from: openfoodsfacts.org")
+        }
+
+        Label{
+            
+            anchors.horizontalCenter: aboutApp.horizontalCenter
+            
+            text: i18n.tr("Maintainer: Ivo Xavier")
         }
         
         Button {

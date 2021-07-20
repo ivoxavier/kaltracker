@@ -258,9 +258,13 @@ Page {
                     id: nutritionScore
                     
                     ListItemLayout{
-                        title.text: "Nutrition score"
-                        subtitle.text:  score_label.text
                         
+                        title.text: "Nutrition score"
+                        subtitle.text:  score_label.text === "a" ?
+                        i18n.tr("Very good nutritional quality") : score_label.text === "b" ?
+                        i18n.tr("Good nutritional quality") : score_label.text === "c" ?
+                        i18n.tr("Average nutritional quality") : score_label.text === "d" ?
+                        i18n.tr("Poor nutritional quality") : i18n.tr("Bad nutritional quality")
                         
                         
                         UbuntuShape {
@@ -293,7 +297,7 @@ Page {
                 ListItem {
                     id: fatItem
                     ListItemLayout{
-                        title.text: "Fat/100g"
+                        title.text: i18n.tr("Fat/100g")
                         subtitle.text:  Math.round((root.stackFat * quantity_portions) * size_portions) + "g"
                     }
                 }
@@ -301,7 +305,7 @@ Page {
                 ListItem {
                     id: saturatedItem
                     ListItemLayout{
-                        title.text: "Saturated/100g"
+                        title.text: i18n.tr("Saturated/100g")
                         subtitle.text: Math.round((root.stackSaturated * quantity_portions)  * size_portions) + "g"
                         
                     }
@@ -310,7 +314,7 @@ Page {
                 ListItem {
                     id: carbohydratesItem
                     ListItemLayout{
-                        title.text: "CarbornHydrates/100g"
+                        title.text: i18n.tr("CarbornHydrates/100g")
                         subtitle.text: Math.round((root.stackCarborn * quantity_portions) * size_portions) + "g"
                     }
                 }
@@ -318,7 +322,7 @@ Page {
                 ListItem {
                     id: sugarsItem
                     ListItemLayout{
-                        title.text: "Sugars/100g"
+                        title.text: i18n.tr("Sugars/100g")
                         subtitle.text: Math.round((root.stackSugars * quantity_portions) * size_portions) + "g"
                     } 
                 }
@@ -327,7 +331,7 @@ Page {
                 ListItem {
                     id: proteinsItem
                     ListItemLayout{
-                        title.text: "Protein/100g"
+                        title.text: i18n.tr("Protein/100g")
                         subtitle.text: Math.round((root.stackProtein * quantity_portions) * size_portions) + "g"
                     }
                 }
