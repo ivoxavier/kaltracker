@@ -26,7 +26,6 @@ import io.thp.pyotherside 1.5
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import "../js/DataBaseTools.js" as DataBase
-import "../js/Imc.js" as CalcIMC
 import "../js/KaloriesCalculator.js" as KalCalculator
 
 
@@ -37,7 +36,7 @@ Page{
     property bool isActivated: false
     property bool editMode: false
    
-    property string userSex: "Men"
+   property string userSex: "Men"
     // TextField Component should assign it onEditingFinsihed, not working.
     property int userAge: userAgeEntry.text
     property double userWeight: userWeightEntry.text
@@ -84,7 +83,7 @@ Page{
                     iconName: "edit"
                     onTriggered: {
                         isActivated = !isActivated
-                        editMode = !editMode
+                        editMode =!editMode
                   }
                 }
             ]
@@ -102,76 +101,48 @@ Page{
             id: userDetailsColumn
             topPadding:  userAccountPage.header.height
             width: userAccountPage.width
-
-            Row{
-                Rectangle{
-                    id: leftFrame
-                    height: userAccountPage.header.height * 2
-                    width: userAccountPage.width / 2
-                    color: "transparent"
-
-                    Column{
-                        width: leftFrame.width
-
-                        ListItem {
-                            id: userSex_items
-                            ListItemLayout{
-                                title.text: userSettings.userConfigsUserName
-                                subtitle.text: i18n.tr("IMC: ") + CalcIMC.getImc()
-
-                                Label{
-                                    text: i18n.tr("Sex: ") + (userSettings.userConfigsSex === "Men" ? i18n.tr("M") : i18n.tr("W"))
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Rectangle{
-                    id: rightFrame
-                    height: userAccountPage.header.height * 2
-                    width: userAccountPage.width / 2
-                    color: "transparent"
-
-                    Label{
-                        id: userWeight_label
-                        text: userSettings.userConfigsWeight + " KG"
-                        
-                        anchors.centerIn: parent
-                        font.bold: true    
-                        fontSizeMode: Text.Fit 
-                        font.pixelSize: FontUtils.sizeToPixels("large")
-                    }
-                    Label{
-                        id: userHeight_label
-                        text: userSettings.userConfigsHeight + 'cm'
-                        
-                        anchors.top: userWeight_label.bottom
-                        
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        
-  
-                        fontSizeMode: Text.Fit 
-                        font.pixelSize: FontUtils.sizeToPixels("medium")
-                    }
-
-                    Label{
-                        text: i18n.tr("Age: ") + userSettings.userConfigsAge
-                        
-                        anchors.top: userHeight_label.bottom
-                        
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        
-  
-                        fontSizeMode: Text.Fit 
-                        font.pixelSize: FontUtils.sizeToPixels("medium")
-                    }
-                    
+            ListItem {
+                id: userName_item
+                ListItemLayout{
+                    title.text: i18n.tr("Name")
+                    subtitle.text: userSettings.userConfigsUserName
                 }
             }
 
+            ListItem {
+                id: userSex_item
 
-            
+                ListItemLayout{
+                    title.text: i18n.tr("Sex")
+                    subtitle.text: userSettings.userConfigsSex
+                }
+            }
+
+            ListItem {
+                id: userAge_item
+                
+                ListItemLayout{
+                    title.text: i18n.tr("Age")
+                    subtitle.text: userSettings.userConfigsAge
+                }
+            }
+
+            ListItem {
+                id: userWeight_item
+
+                ListItemLayout{
+                    title.text: i18n.tr("Weight")
+                    subtitle.text: userSettings.userConfigsWeight + " KG"
+                }
+            }
+            ListItem {
+                id: userHeight_item
+
+                ListItemLayout{
+                    title.text: i18n.tr("Height")
+                    subtitle.text: userSettings.userConfigsHeight + 'cm'
+                }
+            }
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Activity Level")
@@ -188,7 +159,7 @@ Page{
 
             Label{
                 id: editLabelNotification
-                text: i18n.tr("Edit Mode Enable")
+                text: "Edit Mode Enable"
                 color: UbuntuColors.green
                 visible: editMode
                 textSize: Label.XSmall
@@ -207,7 +178,7 @@ Page{
                 inputMethodHints: Qt.ImhDigitsOnly
                 enabled: isActivated
                 validator: IntValidator{}
-            }
+             }
                     
             TextField {
                 id: userWeightEntry
@@ -239,7 +210,7 @@ Page{
 
                 Label {
                     anchors.verticalCenter: parent.verticalCenter
-                    text: i18n.tr("Activity Level")
+                    text: "Activity Level"
                 }
 
                 Picker {

@@ -167,27 +167,22 @@ Page {
                 onSelectedIndexChanged: {
                     switch (selectedIndex) {
                         case 0:
-                            console.log("Very Light")
                             activityLevelToEquation = userActivityLevelEntry.selectedIndex
                             userActivityLevel = "Very Light"
                             break;
                         case 1:
-                            console.log("Light")
                             activityLevelToEquation = userActivityLevelEntry.selectedIndex
                             userActivityLevel = "Light"
                             break;
                         case 2:
-                            console.log("Moderate")
                             activityLevelToEquation = userActivityLevelEntry.selectedIndex
                             userActivityLevel = "Moderate"
                             break;
                         case 3:
-                            console.log("Heavy")
                             activityLevelToEquation = userActivityLevelEntry.selectedIndex
                             userActivityLevel = "Heavy"
                             break;
                             default:
-                            console.log("Activity Level OptionSelector: out of index")
                             break;
                     }
                 }
@@ -215,7 +210,6 @@ Page {
                Action{
                    text: i18n.tr("Loose Weight")
                    onTriggered: {
-                    console.log("Loose Weight")
                     userGoal = (-450)
                     goalHeader = "Loose Weight"
                    }
@@ -223,7 +217,6 @@ Page {
                Action{
                    text: i18n.tr("Maintain Weight")
                    onTriggered: {
-                    console.log("Maintain Weight")
                     userGoal = 0
                     goalHeader = "Normal Weight"
                    }
@@ -232,7 +225,6 @@ Page {
                Action{
                    text: i18n.tr("Gain Weight")
                    onTriggered: {
-                    console.log("Gain Weight")
                     userGoal = 450
                     goalHeader = "Gain Weight"
                    }
@@ -293,6 +285,8 @@ Page {
                     userSettings.userConfigsWeight = userWeight
                     userSettings.userConfigsAge = userAge
                     userSettings.userConfigsSex = userSex
+                    userSettings.userConfigGoal_text = goalHeader
+                    userSettings.userActivityLevel_text = userActivityLevel
                     mainStack.pop()
                     PopupUtils.open(createTablesDialog)
                     

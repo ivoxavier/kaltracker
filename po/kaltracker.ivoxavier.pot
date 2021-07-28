@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-20 20:05+0000\n"
+"POT-Creation-Date: 2021-07-28 19:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,7 +127,8 @@ msgid "User Profile"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:65
-#: ../qml/Components/UserAccountPage.qml:49
+#: ../qml/Components/UserAccountPage.qml:50
+#: ../qml/Components/UserAccountPageBACK.qml:49
 msgid "No Goal"
 msgstr ""
 
@@ -136,31 +137,36 @@ msgid " based on Mifflin-St Jeor equation"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:89
-#: ../qml/Components/UserAccountPage.qml:99
+#: ../qml/Components/UserAccountPageBACK.qml:107
 msgid "Name"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:100
 #: ../qml/Components/EditUserProfileDialog.qml:79
-#: ../qml/Components/UserAccountPage.qml:117
-#: ../qml/Components/UserAccountPage.qml:152
+#: ../qml/Components/UserAccountPage.qml:205
+#: ../qml/Components/UserAccountPageBACK.qml:125
+#: ../qml/Components/UserAccountPageBACK.qml:176
 msgid "Age"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:109
 #: ../qml/Components/EditUserProfileDialog.qml:34
-#: ../qml/Components/UserAccountPage.qml:162
+#: ../qml/Components/UserAccountPage.qml:215
+#: ../qml/Components/UserAccountPageBACK.qml:134
+#: ../qml/Components/UserAccountPageBACK.qml:186
 msgid "Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:117
 #: ../qml/Components/EditUserProfileDialog.qml:57
-#: ../qml/Components/UserAccountPage.qml:172
+#: ../qml/Components/UserAccountPage.qml:225
+#: ../qml/Components/UserAccountPageBACK.qml:142
+#: ../qml/Components/UserAccountPageBACK.qml:196
 msgid "Height"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:128
-#: ../qml/Components/UserAccountPage.qml:108
+#: ../qml/Components/UserAccountPageBACK.qml:116
 msgid "Sex"
 msgstr ""
 
@@ -173,48 +179,57 @@ msgid "Woman"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:155
-#: ../qml/Components/UserAccountPage.qml:200
+#: ../qml/Components/UserAccountPage.qml:255
+#: ../qml/Components/UserAccountPageBACK.qml:226
 msgid "Very Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:156
-#: ../qml/Components/UserAccountPage.qml:201
+#: ../qml/Components/UserAccountPage.qml:256
+#: ../qml/Components/UserAccountPageBACK.qml:227
 msgid "Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:157
-#: ../qml/Components/UserAccountPage.qml:202
+#: ../qml/Components/UserAccountPage.qml:257
+#: ../qml/Components/UserAccountPageBACK.qml:228
 msgid "Moderate"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:158
-#: ../qml/Components/UserAccountPage.qml:203
+#: ../qml/Components/UserAccountPage.qml:258
+#: ../qml/Components/UserAccountPageBACK.qml:229
 msgid "Heavy"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:202
-#: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:168
-#: ../qml/Components/UserAccountPage.qml:247
+#: ../qml/Components/ConfigUserProfilePage.qml:197
+#: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:174
+#: ../qml/Components/UserAccountPage.qml:302
+#: ../qml/Components/UserAccountPageBACK.qml:273
 msgid "Goal"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:216
-#: ../qml/Components/UserAccountPage.qml:262
+#: ../qml/Components/ConfigUserProfilePage.qml:211
+#: ../qml/Components/UserAccountPage.qml:318
+#: ../qml/Components/UserAccountPageBACK.qml:289
 msgid "Loose Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:224
-#: ../qml/Components/UserAccountPage.qml:270
+#: ../qml/Components/ConfigUserProfilePage.qml:218
+#: ../qml/Components/UserAccountPage.qml:325
+#: ../qml/Components/UserAccountPageBACK.qml:296
 msgid "Maintain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:233
-#: ../qml/Components/UserAccountPage.qml:279
+#: ../qml/Components/ConfigUserProfilePage.qml:226
+#: ../qml/Components/UserAccountPage.qml:333
+#: ../qml/Components/UserAccountPageBACK.qml:304
 msgid "Gain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:262
-#: ../qml/Components/UserAccountPage.qml:308
+#: ../qml/Components/ConfigUserProfilePage.qml:254
+#: ../qml/Components/UserAccountPage.qml:361
+#: ../qml/Components/UserAccountPageBACK.qml:332
 msgid "Calculate"
 msgstr ""
 
@@ -286,55 +301,55 @@ msgstr ""
 msgid "Kcal"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:188
+#: ../qml/Components/FoodsTemplate.qml:187
 #: ../qml/Components/ManualIngestioPage.qml:139
 #: ../qml/Components/ManualIngestionPage.qml:335
 msgid "Quantity portions"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:204
+#: ../qml/Components/FoodsTemplate.qml:203
 #: ../qml/Components/ManualIngestioPage.qml:155
 #: ../qml/Components/ManualIngestionPage.qml:351
 msgid "Size of portions"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:264
+#: ../qml/Components/FoodsTemplate.qml:263
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:265
+#: ../qml/Components/FoodsTemplate.qml:264
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:266
+#: ../qml/Components/FoodsTemplate.qml:265
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:267
+#: ../qml/Components/FoodsTemplate.qml:266
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:267
+#: ../qml/Components/FoodsTemplate.qml:266
 msgid "Poor nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:300
+#: ../qml/Components/FoodsTemplate.qml:299
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:308
+#: ../qml/Components/FoodsTemplate.qml:307
 msgid "Saturated/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:317
+#: ../qml/Components/FoodsTemplate.qml:316
 msgid "CarbornHydrates/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:325
+#: ../qml/Components/FoodsTemplate.qml:324
 msgid "Sugars/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:334
+#: ../qml/Components/FoodsTemplate.qml:333
 msgid "Protein/100g"
 msgstr ""
 
@@ -415,59 +430,59 @@ msgstr ""
 msgid "Wrong code, try again"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:42
+#: ../qml/Components/ResumePage.qml:45
 msgid "${0}'s Panel"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:109
+#: ../qml/Components/ResumePage.qml:115
 msgid "Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:174
+#: ../qml/Components/ResumePage.qml:180
 msgid "Foods"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:181
+#: ../qml/Components/ResumePage.qml:187
 msgid "Remaining"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:182
+#: ../qml/Components/ResumePage.qml:188
 msgid "Exceed"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:182
+#: ../qml/Components/ResumePage.qml:188
 msgid "To ingest"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:202
+#: ../qml/Components/ResumePage.qml:208
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:239
+#: ../qml/Components/ResumePage.qml:246
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:240
+#: ../qml/Components/ResumePage.qml:247
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:241
+#: ../qml/Components/ResumePage.qml:248
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:241
+#: ../qml/Components/ResumePage.qml:248
 msgid "Snack"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:287
+#: ../qml/Components/ResumePage.qml:291
 msgid "Unlisted foods"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:292
+#: ../qml/Components/ResumePage.qml:296
 msgid "Schedule an ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:296
+#: ../qml/Components/ResumePage.qml:300
 msgid "New ingestion"
 msgstr ""
 
@@ -487,11 +502,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:57
+#: ../qml/Components/SettingsPage.qml:79
 msgid "DataBase Maintenance"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:70
+#: ../qml/Components/SettingsPage.qml:92
 msgid "Application alerts"
 msgstr ""
 
@@ -499,19 +514,56 @@ msgstr ""
 msgid "Stats"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:60
+#: ../qml/Components/UpdateIngestionTimePop.qml:42
+msgid "Set new time"
+msgstr ""
+
+#: ../qml/Components/UpdateIngestionTimePop.qml:63
+msgid "Update"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:61
+#: ../qml/Components/UserAccountPageBACK.qml:60
 msgid "Account"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:84
-msgid "Manual Entry"
+#: ../qml/Components/UserAccountPage.qml:120
+msgid "IMC: "
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:126
-msgid "Weight & Height"
+#: ../qml/Components/UserAccountPage.qml:123
+msgid "M"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:321
+#: ../qml/Components/UserAccountPage.qml:123
+msgid "Sex: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:123
+msgid "W"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:159
+msgid "Age: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:177
+#: ../qml/Components/UserAccountPage.qml:242
+#: ../qml/Components/UserAccountPageBACK.qml:148
+msgid "Activity Level"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:184
+#: ../qml/Components/UserAccountPageBACK.qml:155
+msgid "Plan"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:191
+msgid "Edit Mode Enable"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:374
+#: ../qml/Components/UserAccountPageBACK.qml:345
 msgid "Save modifications"
 msgstr ""
 
@@ -529,4 +581,24 @@ msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:66
 msgid "Click to start"
+msgstr ""
+
+#: ../qml/js/Imc.js:34
+msgid "Low weigth"
+msgstr ""
+
+#: ../qml/js/Imc.js:35
+msgid "Normal weigth"
+msgstr ""
+
+#: ../qml/js/Imc.js:36
+msgid "Weigth exceed"
+msgstr ""
+
+#: ../qml/js/Imc.js:37
+msgid "Obesity"
+msgstr ""
+
+#: ../qml/js/Imc.js:37
+msgid "Pre-obesity"
 msgstr ""

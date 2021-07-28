@@ -25,20 +25,26 @@ import "../js/DataBaseTools.js" as DataBase
 
 Popover { 
 
-    Connections{
-        //target: abc
-        //onId: console.log(idIngestion)
-    }
+    property string new_time
+    
     contentWidth: hourPicker.width
         Column{ 
                 
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
-            spacing: units.gu(2)
-            //topPadding: units.gu(1)
+            spacing: units.gu(1)
                     
-                    
+            Label{
+                
+                anchors.horizontalCenter: parent.horizontalCenter
+                
+                text: i18n.tr("Set new time")
+
+                fontSizeMode:Text.Fit 
+                font.pixelSize: FontUtils.sizeToPixels("medium")
+            }
+
             DatePicker {
                 id: hourPicker
                 mode: "Hours|Minutes"
@@ -48,13 +54,22 @@ Popover {
                 width: Math.min(root.width - units.gu(7), units.gu(16))
                 height: units.gu(14)
                 onDateChanged: {
-                    console.log(Qt.formatTime(date, "hh:mm"))                    
+                    new_time = Qt.formatTime(date, "hh:mm")
+                 
                 }
             }
-                
+
+            Button{
+                text: i18n.tr("Update")
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: UbuntuColors.green
+                onClicked:{
+                    DataBase.updateIngestionTime(root.id_ingestion_update_time, new_time)
+                    root.refreshListModel()
+                }
+            }    
                     
-        }
-    Component.onDestruction: console.log("jkashdkjaslkdjh")            
+        }        
 }
         
 

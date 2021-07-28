@@ -40,6 +40,28 @@ Page{
         }
     }
 
+     Python{
+        id: py
+        Component.onCompleted:{
+            console.log('Python: ' + pythonVersion())
+            console.log('PyOtherSide: ' + pluginVersion())
+            addImportPath(Qt.resolvedUrl('../py/'))
+            importModule('remove_configs', function() {
+                py.call('remove_configs.moduleState', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+            })
+
+        }
+        onError: {
+            console.log('Python error: ' + traceback);
+        }
+
+    }
+
+
+
+
     Component{
         id: deleteDialog
         RemoveRecordsDialog{

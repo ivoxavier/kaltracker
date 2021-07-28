@@ -37,9 +37,13 @@ Page{
     property string ingestionTime
     property int kcal
     
+    property int id_ingestion_update_time
+
 
     header: PageHeader {
+
         title: i18n.tr("${0}'s Panel").replace("${0}",userSettings.userConfigsUserName);
+
         trailingActionBar.actions: AboutAction{}
 
         StyleHints {
@@ -63,16 +67,18 @@ Page{
             anchors.centerIn: parent 
             radius: "large"
             aspect: UbuntuShape.Inset
-            width: resumePage.width - units.gu(20)
-            height:  resumePage.height - units.gu(60)
+            width: (resumePage.width / 3.33) //- units.gu(20)
+            height:  (resumePage.header.height * 2) //- units.gu(60)
             visible: foodsList.visible === true ? false : true
             z:100
-            Image{ 
-                id: pacMan         
+            Icon{ 
+                id: pacMan                         
                 anchors.fill: parent
-                source : '../img/emptyList.svg'
+
+                name: "non-starred"
                 visible: foodsList.visible === true ? false : true
             }
+
         }
 
 
@@ -125,26 +131,26 @@ Page{
                 Label{
                     id: dashboardUserGoal
                     text: userSettings.userConfigsGoal
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     text: "-"
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     id: dashboardUserKaloriesIngestedDuringDay
                     text: dashboardDailyIngestion
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
                 Label{
                     text: "="
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
 
@@ -155,7 +161,7 @@ Page{
                     UbuntuColors.green : root.metric < 0 ?
                     UbuntuColors.red : UbuntuColors.green
                     font.bold: true
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
             }
@@ -166,13 +172,13 @@ Page{
 
                 Label{
                     text: i18n.tr("Goal")
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("medium")
                 }
 
                 Label{
                     text: i18n.tr("Foods")
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("medium")
                 }
 
@@ -180,7 +186,7 @@ Page{
                     text: root.metric > 0 ?
                     i18n.tr("Remaining") : root.metric < 0 ?
                     i18n.tr("Exceed") : i18n.tr("To ingest")
-                    fontSizeMode:Text.Fit 
+                    fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("medium")
                 }
 
@@ -216,6 +222,8 @@ Page{
 
         ListView {
             id: foodsList
+
+            
             model: dailyIngestions
             clip: true
             removeDisplaced: Transition {
@@ -227,11 +235,10 @@ Page{
 
             visible: model.count === 0 ? false : true
             
-            
+
             
             delegate: ListItem{
-                id: abc
-                 //signal id(int idIngestion)       
+                      
                         ListItemLayout{
 
                             title.text: name
@@ -261,11 +268,8 @@ Page{
                                 Action{
                                     iconName: "edit"
                                     onTriggered:{
+                                        root.id_ingestion_update_time = idIngestion
                                         PopupUtils.open(updateTimePop)
-                                        id(idIngestion)
-                                        //DataBase.updateIngestionTime(idIngestion, "08:00")
-                                        //root.initDB()
-                                        //root.refreshListModel()
                                     }
                                 }
                             ]

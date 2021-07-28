@@ -57,7 +57,7 @@ MainView {
 
 
     //passing values to foodsTemplate
-    
+    property int foods_ingested
     property string stackProductName
     property string stackType
     property double stackEnergyKcal
@@ -70,6 +70,10 @@ MainView {
     property string stackMonthIngestions
     property string userSchedule_time
     property string userSchedule_date
+
+    //pass id to hourPicker on resumePage
+    property int id_ingestion_update_time
+
 
      Component{
         id: manualIngestionPage
@@ -187,6 +191,8 @@ MainView {
         property int userConfigsWeight
         property string userConfigsSex
         property int userConfigsAge
+        property string userConfigGoal_text
+        property string userActivityLevel_text
 
     }
 

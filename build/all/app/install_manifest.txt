@@ -4,15 +4,14 @@
 //assets/logo.svg
 //qml/js/Quotes.js
 //qml/js/KaloriesCalculator.js
+//qml/js/Imc.js
 //qml/js/DataBaseTools.js
 //qml/xml/foods_uk.xml
 //qml/xml/foods_pt.xml
 //qml/xml/foods_es.xml
 //qml/xml/foods_fr.xml
 //qml/py/export_data.py
-//qml/py/remove_configs.py
 //qml/Main.qml
-//qml/sh/remove_configs.sh
 //qml/Components/MaintenancePage.qml
 //qml/Components/CreateTablesDialog.qml
 //qml/Components/WelcomePage.qml
@@ -27,6 +26,7 @@
 //qml/Components/ActionBar/AboutAction.qml
 //qml/Components/ActionBar/HelpUserConfigAction.qml
 //qml/Components/NewIngestionPage.qml
+//qml/Components/UserAccountPageBACK.qml
 //qml/Components/UserAccountPage.qml
 //qml/Components/ExportDataPage.qml
 //qml/Components/AlertDialog.qml
