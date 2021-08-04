@@ -527,7 +527,7 @@ function saveNewWeight(previous_weight, new_weight){
     rs = tx.executeSql(updateWeight_statement);
    }
  );
- return console.log("rows affected " + rs.rowsAffected)
+ return console.log("New height defined")
 }
 
 
@@ -543,7 +543,7 @@ function updateGoal(newGoal){
     rs = tx.executeSql(updateGoal_statement);
    }
  );
- return console.log("rows affected " + rs.rowsAffected)
+ return console.log("New goal defined")
 }
 
 
@@ -562,7 +562,7 @@ const removeAllIngestions = 'DELETE FROM Ingestion'
     rs = tx.executeSql(removeAllIngestions);
    }
  );
- return console.log(rs.rowsAffected)
+ return console.log("Ingestions removed from option remove_all_ingestions")
 }
 
  /*delete current day data from table*/
@@ -576,8 +576,22 @@ const removeAllIngestions = 'DELETE FROM Ingestion'
     rs = tx.executeSql(removeTodayIngestions);
    }
  );
- return console.log(rs.rowsAffected)
+ return console.log("Ingestions removed from option today_ingestions")
 }
+
+
+function deleteMonthYearIngestion(month, year){
+  var statement = 'DELETE FROM Ingestion \
+  WHERE strftime("%m", ingestionDate) == "which_month" AND strftime("%Y", ingestionDate) == "which_year"'.replace("which_month", month).replace("which_year", year)
+  var db = createSQLContainer();
+  var rs;
+   db.transaction(function(tx) {
+    rs = tx.executeSql(statement);
+   }
+ );
+ return console.log("Ingestions removed from option month_year")
+}
+
 
 
 //delete ingestion from ResumePage

@@ -47,6 +47,11 @@ Page{
         }
     }
 
+    Component{
+        id: entry_month_pop
+        DeleteMonthDBPop{}
+    }
+
     Column{
         anchors.top: maintenancePage.header.bottom
         width: maintenancePage.width
@@ -67,6 +72,19 @@ Page{
             
         }
 
+        ListItem {
+            id: month_option
+            ListItemLayout{
+                title.text: i18n.tr("Delete from specific Month & Year")
+                
+                ProgressionSlot{}
+            }
+            onClicked: {
+                PopupUtils.open(entry_month_pop,month_option)
+            }
+        }
+
+
 
 
         ListItem {
@@ -75,8 +93,8 @@ Page{
                 title.text: i18n.tr("Delete today's records")
                 
                 Button{
-                    text:"Delete"
-                    color:"red"
+                    text: i18n.tr("Delete")
+                    color: UbuntuColors.red
                     onClicked:{
                         deleteType = 0
                         PopupUtils.open(deleteDialog)
@@ -91,8 +109,8 @@ Page{
                 title.text: i18n.tr("Delete all records")
                 
                 Button{
-                    text:"Delete"
-                    color:"red"
+                    text:i18n.tr("Delete")
+                    color:UbuntuColors.red
                     onClicked:{
                         deleteType = 1
                         PopupUtils.open(deleteDialog)

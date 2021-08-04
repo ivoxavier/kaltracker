@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-28 19:29+0000\n"
+"POT-Creation-Date: 2021-08-04 11:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,7 +143,7 @@ msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:100
 #: ../qml/Components/EditUserProfileDialog.qml:79
-#: ../qml/Components/UserAccountPage.qml:205
+#: ../qml/Components/UserAccountPage.qml:214
 #: ../qml/Components/UserAccountPageBACK.qml:125
 #: ../qml/Components/UserAccountPageBACK.qml:176
 msgid "Age"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:109
 #: ../qml/Components/EditUserProfileDialog.qml:34
-#: ../qml/Components/UserAccountPage.qml:215
+#: ../qml/Components/UserAccountPage.qml:224
 #: ../qml/Components/UserAccountPageBACK.qml:134
 #: ../qml/Components/UserAccountPageBACK.qml:186
 msgid "Weight"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:117
 #: ../qml/Components/EditUserProfileDialog.qml:57
-#: ../qml/Components/UserAccountPage.qml:225
+#: ../qml/Components/UserAccountPage.qml:234
 #: ../qml/Components/UserAccountPageBACK.qml:142
 #: ../qml/Components/UserAccountPageBACK.qml:196
 msgid "Height"
@@ -179,56 +179,56 @@ msgid "Woman"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:155
-#: ../qml/Components/UserAccountPage.qml:255
+#: ../qml/Components/UserAccountPage.qml:264
 #: ../qml/Components/UserAccountPageBACK.qml:226
 msgid "Very Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:156
-#: ../qml/Components/UserAccountPage.qml:256
+#: ../qml/Components/UserAccountPage.qml:265
 #: ../qml/Components/UserAccountPageBACK.qml:227
 msgid "Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:157
-#: ../qml/Components/UserAccountPage.qml:257
+#: ../qml/Components/UserAccountPage.qml:266
 #: ../qml/Components/UserAccountPageBACK.qml:228
 msgid "Moderate"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:158
-#: ../qml/Components/UserAccountPage.qml:258
+#: ../qml/Components/UserAccountPage.qml:267
 #: ../qml/Components/UserAccountPageBACK.qml:229
 msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:197
 #: ../qml/Components/FoodsTemplate.qml:178 ../qml/Components/ResumePage.qml:174
-#: ../qml/Components/UserAccountPage.qml:302
+#: ../qml/Components/UserAccountPage.qml:311
 #: ../qml/Components/UserAccountPageBACK.qml:273
 msgid "Goal"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:211
-#: ../qml/Components/UserAccountPage.qml:318
+#: ../qml/Components/UserAccountPage.qml:327
 #: ../qml/Components/UserAccountPageBACK.qml:289
 msgid "Loose Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:218
-#: ../qml/Components/UserAccountPage.qml:325
+#: ../qml/Components/UserAccountPage.qml:334
 #: ../qml/Components/UserAccountPageBACK.qml:296
 msgid "Maintain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:226
-#: ../qml/Components/UserAccountPage.qml:333
+#: ../qml/Components/UserAccountPage.qml:342
 #: ../qml/Components/UserAccountPageBACK.qml:304
 msgid "Gain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:254
-#: ../qml/Components/UserAccountPage.qml:361
+#: ../qml/Components/UserAccountPage.qml:370
 #: ../qml/Components/UserAccountPageBACK.qml:332
 msgid "Calculate"
 msgstr ""
@@ -239,6 +239,22 @@ msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:45
 msgid "Finished"
+msgstr ""
+
+#: ../qml/Components/DeleteMonthDBPop.qml:37
+msgid "Month"
+msgstr ""
+
+#: ../qml/Components/DeleteMonthDBPop.qml:58
+msgid "Year"
+msgstr ""
+
+#: ../qml/Components/DeleteMonthDBPop.qml:69
+#: ../qml/Components/MaintenancePage.qml:96
+#: ../qml/Components/MaintenancePage.qml:112
+#: ../qml/Components/RemoveRecordsDialog.qml:30
+#: ../qml/Components/RemoveRecordsDialog.qml:60
+msgid "Delete"
 msgstr ""
 
 #: ../qml/Components/EditUserProfileDialog.qml:29
@@ -365,19 +381,23 @@ msgstr ""
 msgid "Maintenance Page"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:57
+#: ../qml/Components/MaintenancePage.qml:62
 msgid "Auto delete records"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:58
+#: ../qml/Components/MaintenancePage.qml:63
 msgid "Previous year"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:75
+#: ../qml/Components/MaintenancePage.qml:78
+msgid "Delete from specific Month & Year"
+msgstr ""
+
+#: ../qml/Components/MaintenancePage.qml:93
 msgid "Delete today's records"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:91
+#: ../qml/Components/MaintenancePage.qml:109
 msgid "Delete all records"
 msgstr ""
 
@@ -407,11 +427,6 @@ msgstr ""
 
 #: ../qml/Components/NewIngestionPage.qml:40
 msgid "New Ingestion"
-msgstr ""
-
-#: ../qml/Components/RemoveRecordsDialog.qml:30
-#: ../qml/Components/RemoveRecordsDialog.qml:60
-msgid "Delete"
 msgstr ""
 
 #: ../qml/Components/RemoveRecordsDialog.qml:32
@@ -502,11 +517,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:79
+#: ../qml/Components/SettingsPage.qml:59
 msgid "DataBase Maintenance"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:92
+#: ../qml/Components/SettingsPage.qml:72
 msgid "Application alerts"
 msgstr ""
 
@@ -531,38 +546,38 @@ msgstr ""
 msgid "IMC: "
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:123
-msgid "M"
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:123
-msgid "Sex: "
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:123
-msgid "W"
-msgstr ""
-
-#: ../qml/Components/UserAccountPage.qml:159
+#: ../qml/Components/UserAccountPage.qml:157
 msgid "Age: "
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:177
-#: ../qml/Components/UserAccountPage.qml:242
+#: ../qml/Components/UserAccountPage.qml:168
+msgid "M"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:168
+msgid "Sex: "
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:168
+msgid "W"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:186
+#: ../qml/Components/UserAccountPage.qml:251
 #: ../qml/Components/UserAccountPageBACK.qml:148
 msgid "Activity Level"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:184
+#: ../qml/Components/UserAccountPage.qml:193
 #: ../qml/Components/UserAccountPageBACK.qml:155
 msgid "Plan"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:191
+#: ../qml/Components/UserAccountPage.qml:200
 msgid "Edit Mode Enable"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:374
+#: ../qml/Components/UserAccountPage.qml:383
 #: ../qml/Components/UserAccountPageBACK.qml:345
 msgid "Save modifications"
 msgstr ""
@@ -573,13 +588,12 @@ msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:44
 msgid ""
-"Thank's for installing KalTracker.                 It was devolped on my "
-"spare time.                 It calculates your calories based on an "
-"equation.                 You can pick from a list your foods and "
-"drinks.                 I hope it will be usefull for you.\n"
+"Thank's for installing KalTracker. It was devolped on my spare time. It "
+"calculates your calories based on an equation. You can pick from a list your "
+"foods and drinks. I hope it will be usefull for you.\n"
 msgstr ""
 
-#: ../qml/Components/WelcomePage.qml:66
+#: ../qml/Components/WelcomePage.qml:62
 msgid "Click to start"
 msgstr ""
 

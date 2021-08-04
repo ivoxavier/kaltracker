@@ -12,6 +12,7 @@
 //qml/xml/foods_fr.xml
 //qml/py/export_data.py
 //qml/Main.qml
+//qml/Components/DeleteMonthDBPop.qml
 //qml/Components/MaintenancePage.qml
 //qml/Components/CreateTablesDialog.qml
 //qml/Components/WelcomePage.qml

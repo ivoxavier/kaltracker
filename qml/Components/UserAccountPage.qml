@@ -119,9 +119,6 @@ Page{
                                 title.text: userSettings.userConfigsUserName
                                 subtitle.text: i18n.tr("IMC: ") + CalcIMC.getImc()
 
-                                Label{
-                                    text: i18n.tr("Sex: ") + (userSettings.userConfigsSex === "Men" ? i18n.tr("M") : i18n.tr("W"))
-                                }
                             }
                         }
                     }
@@ -156,9 +153,21 @@ Page{
                     }
 
                     Label{
+                        id: userAge_label
                         text: i18n.tr("Age: ") + userSettings.userConfigsAge
                         
                         anchors.top: userHeight_label.bottom
+                        
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        
+  
+                        fontSizeMode: Text.Fit 
+                        font.pixelSize: FontUtils.sizeToPixels("medium")
+                    }
+                    Label{
+                        text: i18n.tr("Sex: ") + (userSettings.userConfigsSex === "Men" ? i18n.tr("M") : i18n.tr("W"))
+                        
+                        anchors.top: userAge_label.bottom
                         
                         anchors.horizontalCenter: parent.horizontalCenter
                         

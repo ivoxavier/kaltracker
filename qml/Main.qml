@@ -75,22 +75,24 @@ MainView {
     property int id_ingestion_update_time
 
 
-     Component{
+    
+
+    Component{
         id: manualIngestionPage
         ManualIngestionPage{}
     }
      
-     Component{
+    Component{
         id: alertDialog
         AlertDialog{}
     }
      
-     Component{
+    Component{
         id: alertsPage
         AlertsPage{}
     }
      
-     Component{
+    Component{
         id: maintenancePage
         MaintenancePage{}
     }

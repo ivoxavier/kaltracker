@@ -41,11 +41,7 @@ Page {
                 anchors.centerIn: parent
                 
                 wrapMode: TextEdit.Wrap
-                text: i18n.tr("Thank's for installing KalTracker. \
-                It was devolped on my spare time. \
-                It calculates your calories based on an equation. \
-                You can pick from a list your foods and drinks. \
-                I hope it will be usefull for you.\n")
+                text: i18n.tr("Thank's for installing KalTracker. It was devolped on my spare time. It calculates your calories based on an equation. You can pick from a list your foods and drinks. I hope it will be usefull for you.\n")
                 leftPadding: units.gu(2)
                 width: parent.width
                 readOnly: true
