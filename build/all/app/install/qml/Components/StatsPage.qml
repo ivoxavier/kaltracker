@@ -59,6 +59,17 @@ Page{
         onClicked: mainStack.push(averageCaloriesMonth)
         }
 
+        ListItem {
+        
+            ListItemLayout{
+                title.text: i18n.tr("Indexes")
+                
+                ProgressionSlot{}
+            }
+
+        onClicked: mainStack.push(indexesCalcPage)
+        }
+
 
     }
     

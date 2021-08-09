@@ -42,9 +42,11 @@ Popover {
                 onTextChanged:{
                     if (month_to_delete_entry.text <= 9){
 
+                        //necessary as date formart in database is 'yyyy-mm-dd'
                        month_to_delete = `${0}${month_to_delete_entry.text}`
                       
                     }
+                    
                     else{
                         month_to_delete = month_to_delete_entry.text
                        

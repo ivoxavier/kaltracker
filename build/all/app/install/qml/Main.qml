@@ -26,7 +26,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import "./js/DataBaseTools.js" as DataBase
-import "./js/Quotes.js" as Quotes
 import "./Components"
 import "./Components/ActionBar"
 
@@ -74,7 +73,10 @@ MainView {
     //pass id to hourPicker on resumePage
     property int id_ingestion_update_time
 
-
+    Component{
+        id: indexesCalcPage
+        IndexesCalcPage{}
+    }
     
 
     Component{

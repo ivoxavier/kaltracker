@@ -26,7 +26,6 @@ import io.thp.pyotherside 1.5
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import "../js/DataBaseTools.js" as DataBase
-import "../js/Imc.js" as CalcIMC
 import "../js/KaloriesCalculator.js" as KalCalculator
 
 
@@ -51,14 +50,10 @@ Page{
 
     property double currentWeight: userSettings.userConfigsWeight
 
-    Component{
-        id: editDialog
-        EditUserProfileDialog{}
-    }
 
 
     header: PageHeader {
-        title: i18n.tr("Account")
+        title: i18n.tr("User Account")
     
 
 
@@ -117,8 +112,6 @@ Page{
                             id: userSex_items
                             ListItemLayout{
                                 title.text: userSettings.userConfigsUserName
-                                subtitle.text: i18n.tr("IMC: ") + CalcIMC.getImc()
-
                             }
                         }
                     }

@@ -14,27 +14,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-function getImc(){
-
-    /* 
-    WEIGHT in Kg
-    HEIGHT in meter
-
-    IMC = WEIGHT / (HEIGHT)^2 
-    
-    */
-
-    //convert cm into m
-    var heigth_on_meters = (userSettings.userConfigsHeight / 100)
+var heigth_on_meters = (userSettings.userConfigsHeight / 100)
 
 
-    var imc = (userSettings.userConfigsWeight / Math.pow(heigth_on_meters, 2))
-    
-    var imc_index = imc <= 18.5 ?
-    i18n.tr('Low weigth') : imc >= 18.5 && imc <= 24.9 ?
-    i18n.tr('Normal weigth') : imc === 25 ?
-    i18n.tr('Weigth exceed') : imc > 25 && imc <= 29.9 ?
+var bmi = Math.round((userSettings.userConfigsWeight / Math.pow(heigth_on_meters, 2)) * 10) / 10
+
+function getBmiIndex(){
+   
+    var bmi_index = bmi < 18.5 ?
+    i18n.tr('Low weigth') : bmi >= 18.5 && bmi <= 24.9 ?
+    i18n.tr('Normal weigth') : bmi === 25 ?
+    i18n.tr('Weigth exceed') : bmi > 25 && bmi <= 29.9 ?
     i18n.tr('Pre-obesity') : i18n.tr('Obesity')
     
-    return imc_index
+    return bmi_index
+}
+
+function getBmi(){
+    return bmi
 }
