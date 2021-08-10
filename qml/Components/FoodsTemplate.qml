@@ -27,7 +27,21 @@ Page {
     
     id: foodsTemplatePage
     objectName: 'Foods Template Page'
+
+
     
+
+    Connections{
+        enabled: false
+        target: newIngestionPage
+        onNew_ingestion_details: {
+            
+        
+        //console.log(product_name,nutriscore_grade,type,energy_kcal_100g,fat_100g,saturated_fat_100g,carbohydrates_100g,sugars_100g,proteins_100g)
+      
+        }
+    }
+
     property string type_ingestion
 
     property color score_grade_foreground
@@ -38,12 +52,15 @@ Page {
 
     header: PageHeader {
         title: root.stackProductName
+       
         StyleHints {
             foregroundColor: root.defaultForegroundColor
             backgroundColor: root.defaultBackgroundColor
         }
 
     ActionBar {
+
+        
 
             StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -58,27 +75,12 @@ Page {
             actions: [
 
                 Action{
-
+                    
                     iconName: "ok"
                     
                      onTriggered: {
 
-                         if (shareValues.now_or_after_ingestion === "now" ){
-                             console.log("Saving [now ingestion], foods: " + root.stackProductName)
-                             DataBase.saveNewIngestion(root.stackProductName,
-                          root.nutriscore_grade,
-                          root.stackType,
-                          (root.stackEnergyKcal * quantity_portions) * size_portions,
-                          (root.stackFat * quantity_portions) * size_portions, 
-                          (root.stackSaturated * quantity_portions) * size_portions,
-                          (root.stackCarborn * quantity_portions) * size_portions,
-                          (root.stackSugars * quantity_portions) * size_portions,
-                          (root.stackProtein * quantity_portions) * size_portions)
-                          root.initDB()
-                          root.refreshListModel()
-                          PopupUtils.open(ingestionStoredDialog)
-                          
-                         } else{
+                         if (root.now_or_after_ingestion === 1 ){
                              console.log("saving schedule ingestion")
                                DataBase.saveScheduleIngestion(root.stackProductName,
                                 root.nutriscore_grade,
@@ -94,7 +96,22 @@ Page {
                         root.initDB()
                         root.refreshListModel()
                         PopupUtils.open(ingestionStoredDialog)
-                        
+                          
+                         } else{
+
+                        console.log("Saving [now ingestion], foods: " + root.stackProductName)
+                             DataBase.saveNewIngestion(root.stackProductName,
+                          root.nutriscore_grade,
+                          root.stackType,
+                          (root.stackEnergyKcal * quantity_portions) * size_portions,
+                          (root.stackFat * quantity_portions) * size_portions, 
+                          (root.stackSaturated * quantity_portions) * size_portions,
+                          (root.stackCarborn * quantity_portions) * size_portions,
+                          (root.stackSugars * quantity_portions) * size_portions,
+                          (root.stackProtein * quantity_portions) * size_portions)
+                          root.initDB()
+                          root.refreshListModel()
+                          PopupUtils.open(ingestionStoredDialog)                        
                          }
                         
                      }
@@ -337,6 +354,6 @@ Page {
 
             }   
       }
-    Component.onCompleted: console.log(shareValues.now_or_after_ingestion)
+    Component.onCompleted: console.log("Valor do root.now_or_after",root.now_or_after_ingestion)
 }
 

@@ -57,6 +57,7 @@ MainView {
 
     //passing values to foodsTemplate
     property int foods_ingested
+    property int now_or_after_ingestion
     property string stackProductName
     property string stackType
     property double stackEnergyKcal
@@ -200,12 +201,6 @@ MainView {
 
     }
 
-    Settings {
-        id: shareValues
-        category: "pass_values"
-
-        property string now_or_after_ingestion
-    }
 
 
     PageStack{

@@ -37,6 +37,7 @@ Page {
     property string schedule_date
     property string schedule_time
 
+
     header: PageHeader {
         id: header
         title: i18n.tr('Schedule')
@@ -135,7 +136,8 @@ Page {
                         root.stackProtein = proteins_100g
                         root.userSchedule_time
                         root.userSchedule_date
-                        shareValues.now_or_after_ingestion = "schedule"
+                        root.now_or_after_ingestion = 1
+                        
 
                     }
                 }
@@ -156,11 +158,9 @@ Page {
             DatePicker {
                 id: monthPicker
                 mode: "Days|Months|Years"
-                // make sure we have the whole component in screen
                 width: Math.min(root.width - units.gu(9), units.gu(23))
                 height: units.gu(14)
                 onDateChanged: {
-                    console.log(Qt.formatDate(date, "yyyy-MM-dd"))
                    root.userSchedule_date = Qt.formatDate(date, "yyyy-MM-dd")
                 }
             }
@@ -169,12 +169,11 @@ Page {
                 id: hourPicker
                 mode: "Hours|Minutes"
                 date: new Date()
-                // make sure we have the whole component in screen
                 
                 width: Math.min(root.width - units.gu(7), units.gu(16))
                 height: units.gu(14)
                 onDateChanged: {
-                    console.log(Qt.formatTime(date, "hh:mm"))
+
                     root.userSchedule_time = Qt.formatTime(date, "hh:mm")
                     
                 }

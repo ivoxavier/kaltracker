@@ -34,7 +34,19 @@ Page {
     objectName: "NewIngestionPage"
 
     property int queryCategory
-    
+
+
+
+    signal new_ingestion_details(string product_name,
+    string nutriscore_grade,
+    string type,
+    double energy_kcal_100g,
+    double fat_100g,
+    double saturated_fat_100g,
+    double carbohydrates_100g,
+    double sugars_100g,
+    double proteins_100g)
+
     header: PageHeader {
         id: header
         title: i18n.tr('New Ingestion')
@@ -100,11 +112,7 @@ Page {
             delegate: ListItem.Standard{
                     text: product_name
                     onClicked:{
-                        function forceMode(){
-                            shareValues.now_or_after_ingestion = "now"
-                        }
                         mainStack.push(foodsTemplate)
-                        shareValues.now_or_after_ingestion = "now"
                         root.stackProductName = product_name
                         root.nutriscore_grade = nutriscore_grade
                         root.stackType = type
@@ -114,7 +122,6 @@ Page {
                         root.stackCarborn = carbohydrates_100g
                         root.stackSugars = sugars_100g
                         root.stackProtein = proteins_100g
-                        forceMode()
                     }
                 }
         } 
