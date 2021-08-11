@@ -80,7 +80,7 @@ MainView {
     property int userAge : DataBase.getUserAge()
     property string userSex : DataBase.getUserSex()
     property string userGoalCategory : DataBase.getUserGoalCategory()
-    
+
     //pass id to hourPicker on resumePage
     property int id_ingestion_update_time
 

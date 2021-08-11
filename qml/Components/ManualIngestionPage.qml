@@ -28,6 +28,7 @@ Page {
     id: manualIngestionPage
     objectName: 'Manual Ingestion Page'
     
+    property bool isActivated: false
 
 
     header: PageHeader {
@@ -57,22 +58,7 @@ Page {
                     
                      onTriggered: {
 
-                         if (shareValues.now_or_after_ingestion === "now" ){
-                             console.log("Saving [now ingestion], foods: " + root.stackProductName)
-                             DataBase.saveNewIngestion(root.stackProductName,
-                          root.nutriscore_grade,
-                          root.stackType,
-                          (root.stackEnergyKcal * quantity_portions) * size_portions,
-                          (root.stackFat * quantity_portions) * size_portions, 
-                          (root.stackSaturated * quantity_portions) * size_portions,
-                          (root.stackCarborn * quantity_portions) * size_portions,
-                          (root.stackSugars * quantity_portions) * size_portions,
-                          (root.stackProtein * quantity_portions) * size_portions)
-                          root.initDB()
-                          root.refreshListModel()
-                          PopupUtils.open(ingestionStoredDialog)
-                          
-                         } else{
+                         if (root.now_or_after_ingestion === 1 ){
                              console.log("saving schedule ingestion")
                                DataBase.saveScheduleIngestion(root.stackProductName,
                                 root.nutriscore_grade,
@@ -88,7 +74,22 @@ Page {
                         root.initDB()
                         root.refreshListModel()
                         PopupUtils.open(ingestionStoredDialog)
-                        
+                          
+                         } else{
+
+                        console.log("Saving [now ingestion], foods: " + root.stackProductName)
+                             DataBase.saveNewIngestion(root.stackProductName,
+                          root.nutriscore_grade,
+                          root.stackType,
+                          (root.stackEnergyKcal * quantity_portions) * size_portions,
+                          (root.stackFat * quantity_portions) * size_portions, 
+                          (root.stackSaturated * quantity_portions) * size_portions,
+                          (root.stackCarborn * quantity_portions) * size_portions,
+                          (root.stackSugars * quantity_portions) * size_portions,
+                          (root.stackProtein * quantity_portions) * size_portions)
+                          root.initDB()
+                          root.refreshListModel()
+                          PopupUtils.open(ingestionStoredDialog)                        
                          }
                         
                      }
@@ -400,6 +401,51 @@ Page {
                     }
                 } 
             }
+
+            ListItem{
+                 ListItemLayout{
+                    title.text: i18n.tr("Schedulde")
+
+                    CheckBox {
+                        checked: false
+                        onCheckedChanged: {
+                            
+                            isActivated = !isActivated
+                            root.now_or_after_ingestion = 1
+                        }
+                    }
+                }
+            }
+
+            ListItem{
+                height: monthPicker.height + units.gu(2)
+                 ListItemLayout{
+
+                    DatePicker {
+                        id: monthPicker
+                        enabled: isActivated
+                        mode: "Days|Months|Years"
+                        width: Math.min(root.width - units.gu(9), units.gu(23))
+                        height: units.gu(14)
+                        onDateChanged: {
+                            root.userSchedule_date = Qt.formatDate(date, "yyyy-MM-dd")
+                        }
+                    }
+
+                    DatePicker {
+                        id: hourPicker
+                        enabled: isActivated
+                        mode: "Hours|Minutes"
+                        date: new Date()
+                        width: Math.min(root.width - units.gu(7), units.gu(16))
+                        height: units.gu(14)
+                        onDateChanged: {
+                            root.userSchedule_time = Qt.formatTime(date, "hh:mm")
+                    
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -412,7 +458,7 @@ Page {
             root.stackCarborn = 0
             root.stackSugars = 0
             root.stackProtein = 0
-            shareValues.now_or_after_ingestion = "now"
+            
 
     }   
 }

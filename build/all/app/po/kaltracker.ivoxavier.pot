@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 11:41+0000\n"
+"POT-Creation-Date: 2021-08-11 13:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -279,7 +279,7 @@ msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:130
 #: ../qml/Components/ManualIngestioPage.qml:107
-#: ../qml/Components/ManualIngestionPage.qml:239
+#: ../qml/Components/ManualIngestionPage.qml:240
 #: ../qml/Components/ScheduleIngestionPage.qml:82
 msgid "Ingestion Stored"
 msgstr ""
@@ -294,13 +294,13 @@ msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:204
 #: ../qml/Components/ManualIngestioPage.qml:139
-#: ../qml/Components/ManualIngestionPage.qml:335
+#: ../qml/Components/ManualIngestionPage.qml:336
 msgid "Quantity portions"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:220
 #: ../qml/Components/ManualIngestioPage.qml:155
-#: ../qml/Components/ManualIngestionPage.qml:351
+#: ../qml/Components/ManualIngestionPage.qml:352
 msgid "Size of portions"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionPage.qml:278
+#: ../qml/Components/ManualIngestionPage.qml:279
 #: ../qml/Components/NewIngestionPage.qml:81
 #: ../qml/Components/NewIngestionPage.qml:94
 #: ../qml/Components/ScheduleIngestionPage.qml:69
@@ -404,7 +404,7 @@ msgstr ""
 msgid "Drink"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionPage.qml:278
+#: ../qml/Components/ManualIngestionPage.qml:279
 #: ../qml/Components/NewIngestionPage.qml:76
 #: ../qml/Components/NewIngestionPage.qml:94
 #: ../qml/Components/ScheduleIngestionPage.qml:64
@@ -412,12 +412,16 @@ msgstr ""
 msgid "Food"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionPage.qml:302
+#: ../qml/Components/ManualIngestionPage.qml:303
 msgid "kcal/100g"
 msgstr ""
 
-#: ../qml/Components/ManualIngestionPage.qml:318
+#: ../qml/Components/ManualIngestionPage.qml:319
 msgid "Nutrients"
+msgstr ""
+
+#: ../qml/Components/ManualIngestionPage.qml:407
+msgid "Schedulde"
 msgstr ""
 
 #: ../qml/Components/NewIngestionPage.qml:52
