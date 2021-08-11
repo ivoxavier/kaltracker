@@ -278,15 +278,8 @@ Page {
                     userWeight,
                     userHeight,
                     userActivityLevel,
-                    totalUserKaloriesDayTargetUserGoal)
-                    userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
-                    userSettings.userConfigsUserName = userName
-                    userSettings.userConfigsHeight = userHeight
-                    userSettings.userConfigsWeight = userWeight
-                    userSettings.userConfigsAge = userAge
-                    userSettings.userConfigsSex = userSex
-                    userSettings.userConfigGoal_text = goalHeader
-                    userSettings.userActivityLevel_text = userActivityLevel
+                    totalUserKaloriesDayTargetUserGoal,
+                    goalHeader)
                     mainStack.pop()
                     PopupUtils.open(createTablesDialog)
                     

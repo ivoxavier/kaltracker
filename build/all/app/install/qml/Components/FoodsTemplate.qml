@@ -192,7 +192,7 @@ Page {
                         PieSeries {
                             id: pieSeries
                             PieSlice { label: i18n.tr("Kcal"); value: (root.stackEnergyKcal * quantity_portions) * size_portions}
-                            PieSlice { label: i18n.tr("Goal") ; value: userSettings.userConfigsGoal}  
+                            PieSlice { label: i18n.tr("Goal") ; value: root.userGoal}  
                         }
                     }
                 } 

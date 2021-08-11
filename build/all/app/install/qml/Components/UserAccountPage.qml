@@ -50,7 +50,10 @@ Page{
 
     property double currentWeight: userSettings.userConfigsWeight
 
-
+    Component{
+        id:updatingDialog
+        UpdateUserDetailsDialog{}
+    }
 
     header: PageHeader {
         title: i18n.tr("User Account")
@@ -111,7 +114,7 @@ Page{
                         ListItem {
                             id: userSex_items
                             ListItemLayout{
-                                title.text: userSettings.userConfigsUserName
+                                title.text: root.userName
                             }
                         }
                     }
@@ -125,7 +128,7 @@ Page{
 
                     Label{
                         id: userWeight_label
-                        text: userSettings.userConfigsWeight + " KG"
+                        text: root.userWeight + " KG"
                         
                         anchors.centerIn: parent
                         font.bold: true    
@@ -134,7 +137,7 @@ Page{
                     }
                     Label{
                         id: userHeight_label
-                        text: userSettings.userConfigsHeight + 'cm'
+                        text:  root.userHeight + 'cm'
                         
                         anchors.top: userWeight_label.bottom
                         
@@ -147,7 +150,8 @@ Page{
 
                     Label{
                         id: userAge_label
-                        text: i18n.tr("Age: ") + userSettings.userConfigsAge
+                        text: i18n.tr("Age: ") + root.userAge
+
                         
                         anchors.top: userHeight_label.bottom
                         
@@ -158,7 +162,7 @@ Page{
                         font.pixelSize: FontUtils.sizeToPixels("medium")
                     }
                     Label{
-                        text: i18n.tr("Sex: ") + (userSettings.userConfigsSex === "Men" ? i18n.tr("M") : i18n.tr("W"))
+                        text: i18n.tr("Sex: ") + (root.userSex === "Men" ? i18n.tr("M") : i18n.tr("W"))
                         
                         anchors.top: userAge_label.bottom
                         
@@ -177,14 +181,15 @@ Page{
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Activity Level")
-                    subtitle.text: userSettings.userActivityLevel_text
+                    subtitle.text: root.userActivityLevel
+
                 }
             }
 
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Plan")
-                    subtitle.text: userSettings.userConfigGoal_text
+                    subtitle.text: root.userGoalCategory
                 }
             }
 
@@ -378,15 +383,13 @@ Page{
                 enabled: false
                 onClicked: {
                         DataBase.updateWeight(userWeight)
-                        DataBase.updateGoal( totalUserKaloriesDayTargetUserGoal)
+                        DataBase.updateGoal(totalUserKaloriesDayTargetUserGoal)
+                        DataBase.updateGoalCategory(goalHeader)
+                        DataBase.updateHeight(userHeight)
                         DataBase.saveNewWeight(currentWeight,userWeight)
-                        userSettings.userConfigsGoal = totalUserKaloriesDayTargetUserGoal
-                        userSettings.userConfigsHeight = userHeight
-                        userSettings.userConfigsWeight = userWeight
-                        userSettings.userConfigsAge = userAge
-                        userSettings.userConfigGoal_text = goalHeader
-                        userSettings.userActivityLevel_text = userActivityLevel
                         editMode =!editMode
+                        isActivated = !isActivated
+                        PopupUtils.open(updatingDialog)
                 }
             }
         }

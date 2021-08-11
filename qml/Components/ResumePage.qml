@@ -42,7 +42,7 @@ Page{
 
     header: PageHeader {
 
-        title: i18n.tr("${0}'s Panel").replace("${0}",userSettings.userConfigsUserName);
+        title: i18n.tr("${0}'s Panel").replace("${0}", root.userName);
 
         trailingActionBar.actions: AboutAction{}
 
@@ -130,7 +130,7 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label{
                     id: dashboardUserGoal
-                    text: userSettings.userConfigsGoal
+                    text: root.userGoal
                     fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }

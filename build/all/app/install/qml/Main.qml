@@ -18,7 +18,7 @@
 import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.0
+import Ubuntu.Components.Pickers 1.3
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
@@ -71,6 +71,16 @@ MainView {
     property string userSchedule_time
     property string userSchedule_date
 
+    //user configs variables
+    property string userName : DataBase.getUserName()
+    property int userGoal : DataBase.getUserGoal()
+    property string userActivityLevel : DataBase.getUserActivityLevel()
+    property int userWeight : DataBase.getUserWeight()
+    property int userHeight : DataBase.getUserHeight()
+    property int userAge : DataBase.getUserAge()
+    property string userSex : DataBase.getUserSex()
+    property string userGoalCategory : DataBase.getUserGoalCategory()
+    
     //pass id to hourPicker on resumePage
     property int id_ingestion_update_time
 
@@ -186,22 +196,6 @@ MainView {
 
     }
                                                     
-    Settings {
-        id: userSettings
-        category: "user_configs"
-
-        property int userConfigsGoal
-        property string userConfigsUserName
-        property int userConfigsHeight
-        property int userConfigsWeight
-        property string userConfigsSex
-        property int userConfigsAge
-        property string userConfigGoal_text
-        property string userActivityLevel_text
-
-    }
-
-
 
     PageStack{
         id: mainStack

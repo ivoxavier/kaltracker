@@ -52,6 +52,14 @@ Dialog {
                 
                 animationState(4000, function () {
                     createTablesDialog.text = msg
+                    root.userWeight = DataBase.getUserWeight() 
+                    root.userHeight = DataBase.getUserHeight() 
+                    root.userGoal = DataBase.getUserGoal()
+                    root.userActivityLevel = DataBase.getUserActivityLevel()
+                    root.userAge = DataBase.getUserAge()
+                    root.userSex = DataBase.getUserSex()
+                    root.userGoalCategory = DataBase.getUserGoalCategory()
+                    root.userName = DataBase.getUserName()
                     PopupUtils.close(createTablesDialog)
                     mainStack.push(resumePage)
                 })

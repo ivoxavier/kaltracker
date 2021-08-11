@@ -22,9 +22,9 @@ import QtQuick.Layouts 1.3
 import "../js/DataBaseTools.js" as DataBase
 
 Dialog {
-    id: createTablesDialog
-    objectName: 'CreateTablesDialog'
-    text: i18n.tr("Preparing Everything For You")
+    id: updatingDialog
+    objectName: 'UpdatingUserDetails'
+    text: i18n.tr("Updating DataBase")
 
    
     Column{ 
@@ -50,8 +50,8 @@ Dialog {
                     timer.start();
                 }  
                 
-                animationState(4000, function () {
-                    createTablesDialog.text = msg
+                animationState(3000, function () {
+                    updatingDialog.text = msg
                     root.userWeight = DataBase.getUserWeight() 
                     root.userHeight = DataBase.getUserHeight() 
                     root.userGoal = DataBase.getUserGoal()
@@ -59,9 +59,7 @@ Dialog {
                     root.userAge = DataBase.getUserAge()
                     root.userSex = DataBase.getUserSex()
                     root.userGoalCategory = DataBase.getUserGoalCategory()
-                    root.userName = DataBase.getUserName()
-                    PopupUtils.close(createTablesDialog)
-                    mainStack.push(resumePage)
+                    PopupUtils.close(updatingDialog)
                 })
     
             }

@@ -38,6 +38,7 @@
 //qml/Components/UpdateIngestionTimePop.qml
 //qml/Components/ManualIngestionPage.qml
 //qml/Components/FoodsTemplate.qml
+//qml/Components/UpdateUserDetailsDialog.qml
 //qml/Components/MonthIngestionsPage.qml
 //qml/Components/AlertsPage.qml
 //qml/Components/SaveDataDialog.qml

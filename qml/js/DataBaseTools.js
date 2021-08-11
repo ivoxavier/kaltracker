@@ -68,7 +68,8 @@ const create_userTable_statement = 'CREATE TABLE User(\
 	weight	DOUBLE,\
 	height	DOUBLE,\
 	activityLevel	TEXT,\
-	goal	INTEGER)';
+	goal	INTEGER,\
+  goal_category TEXT)';
 
 const create_ingestionTable_statement = 'CREATE TABLE Ingestion(\
     idIngestion	INTEGER,\
@@ -117,6 +118,126 @@ function createTables() {
 }
 
 //*populate Components*//
+const user_goal = 'SELECT User.goal AS goal \
+FROM User';
+
+function getUserGoal(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_goal)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).goal
+                    }
+ })
+ return rsToQML
+}
+
+const user_activity_level = 'SELECT User.activityLevel AS activityLevel \
+FROM User';
+
+function getUserActivityLevel(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_activity_level)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).activityLevel
+                    }
+ })
+ return rsToQML
+}
+
+const user_weight = 'SELECT User.weight AS weight \
+FROM User';
+
+function getUserWeight(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_weight)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).weight
+                    }
+ })
+ return rsToQML
+}
+
+const user_height = 'SELECT User.height AS height \
+FROM User';
+
+function getUserHeight(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_height)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).height
+                    }
+ })
+ return rsToQML
+}
+
+const user_age = 'SELECT User.age AS age \
+FROM User';
+
+function getUserAge(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_age)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).age
+                    }
+ })
+ return rsToQML
+}
+
+const user_sex = 'SELECT User.sex AS sex \
+FROM User';
+
+function getUserSex(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_sex)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).sex
+                    }
+ })
+ return rsToQML
+}
+
+const user_goal_category = 'SELECT User.goal_category AS goal_category \
+FROM User';
+
+function getUserGoalCategory(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_goal_category)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).goal_category
+                    }
+ })
+ return rsToQML
+}
+
+//resumePage Username
+const user_name = 'SELECT User.name AS name \
+FROM User';
+
+function getUserName(){
+  var db = createSQLContainer();
+  var rsToQML
+  db.transaction(function (tx) {
+                   var results = tx.executeSql(user_name)
+                   for (var i = 0; i < results.rows.length; i++) {
+                    rsToQML = results.rows.item(i).name
+                    }
+ })
+ return rsToQML
+}
 
 //resumePage Dashboard Foods Daily Ingestion
 const populateUserDayKaloriesIngested = 'SELECT SUM(energy_kcal_100g) AS totalKcal \
@@ -169,7 +290,7 @@ var db = createSQLContainer();
                         if (rsToQML === null){
 
                           
-                          dashboardUserKaloriesIngestionMetric.text = userSettings.userConfigsGoal                      
+                          dashboardUserKaloriesIngestionMetric.text = root.userGoal                     
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
                           appSettings.displayAlert = false
                           root.metric = 0
@@ -363,8 +484,8 @@ WHERE strftime("%m", ingestionDate) == "which_month"'.replace("which_month", mon
    /* Data Saving Start */
   //stores the data given by user for userProfile
 const saveUserProfile = 'INSERT INTO User (\
-  name, age, sex, weight, height, activityLevel, goal)\
-  VALUES (?,?,?,?,?,?,?)';
+  name, age, sex, weight, height, activityLevel, goal, goal_category)\
+  VALUES (?,?,?,?,?,?,?,?)';
 
 function createUserProfile(userName,
   userAge,
@@ -372,7 +493,8 @@ function createUserProfile(userName,
   userWeight,
   userHeight,
   userActivityLevel,
-  userGoal){          
+  userGoal,
+  goalHeader){          
   var db = createSQLContainer();
   console.log("DataBase.createUserProfile : connected to SQL_CONTAINER");
   
@@ -383,7 +505,8 @@ function createUserProfile(userName,
         userWeight,
         userHeight,
         userActivityLevel,
-        userGoal]);
+        userGoal,
+        goalHeader]);
       if (results.rowsAffected > 0) {
         console.log("DataBase.createUserProfile : OK")
       } else {
@@ -527,9 +650,23 @@ function saveNewWeight(previous_weight, new_weight){
     rs = tx.executeSql(updateWeight_statement);
    }
  );
- return console.log("New height defined")
+ return console.log("New weight defined")
 }
 
+function updateHeight(newHeight){
+
+  const updateHeight_statement = 'UPDATE User \
+  SET height = new_height \
+  WHERE User.idUser == 1'.replace("new_height",newHeight)
+
+  var db = createSQLContainer();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql(updateHeight_statement);
+   }
+ );
+ return console.log("New height defined")
+}
 
 function updateGoal(newGoal){
 
@@ -546,6 +683,20 @@ function updateGoal(newGoal){
  return console.log("New goal defined")
 }
 
+function updateGoalCategory(newGoalCategory){
+
+  const updateGoalCategory_statement = 'UPDATE User \
+  SET goal_category = "new_goal_category" \
+  WHERE User.idUser == 1'.replace("new_goal_category",newGoalCategory)
+
+  var db = createSQLContainer();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql(updateGoalCategory_statement);
+   }
+ );
+ return console.log("New goal_category defined")
+}
 
   /* Data Loading End */
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 10:40+0000\n"
+"POT-Creation-Date: 2021-08-11 11:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,17 +148,17 @@ msgid "Name"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:100
-#: ../qml/Components/UserAccountPage.qml:207
+#: ../qml/Components/UserAccountPage.qml:212
 msgid "Age"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:109
-#: ../qml/Components/UserAccountPage.qml:217
+#: ../qml/Components/UserAccountPage.qml:222
 msgid "Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:117
-#: ../qml/Components/UserAccountPage.qml:227
+#: ../qml/Components/UserAccountPage.qml:232
 msgid "Height"
 msgstr ""
 
@@ -175,48 +175,48 @@ msgid "Woman"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:155
-#: ../qml/Components/UserAccountPage.qml:257
+#: ../qml/Components/UserAccountPage.qml:262
 msgid "Very Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:156
-#: ../qml/Components/UserAccountPage.qml:258
+#: ../qml/Components/UserAccountPage.qml:263
 msgid "Light"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:157
-#: ../qml/Components/UserAccountPage.qml:259
+#: ../qml/Components/UserAccountPage.qml:264
 msgid "Moderate"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:158
-#: ../qml/Components/UserAccountPage.qml:260
+#: ../qml/Components/UserAccountPage.qml:265
 msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:197
 #: ../qml/Components/FoodsTemplate.qml:195 ../qml/Components/ResumePage.qml:174
-#: ../qml/Components/UserAccountPage.qml:304
+#: ../qml/Components/UserAccountPage.qml:309
 msgid "Goal"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:211
-#: ../qml/Components/UserAccountPage.qml:320
+#: ../qml/Components/UserAccountPage.qml:325
 msgid "Loose Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:218
-#: ../qml/Components/UserAccountPage.qml:327
+#: ../qml/Components/UserAccountPage.qml:332
 msgid "Maintain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:226
-#: ../qml/Components/UserAccountPage.qml:335
+#: ../qml/Components/UserAccountPage.qml:340
 msgid "Gain Weight"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:254
-#: ../qml/Components/UserAccountPage.qml:363
+#: ../qml/Components/UserAccountPage.qml:368
 msgid "Calculate"
 msgstr ""
 
@@ -225,6 +225,7 @@ msgid "Preparing Everything For You"
 msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:45
+#: ../qml/Components/UpdateUserDetailsDialog.qml:45
 msgid "Finished"
 msgstr ""
 
@@ -535,40 +536,44 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:56
+#: ../qml/Components/UpdateUserDetailsDialog.qml:27
+msgid "Updating DataBase"
+msgstr ""
+
+#: ../qml/Components/UserAccountPage.qml:59
 msgid "User Account"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:150
+#: ../qml/Components/UserAccountPage.qml:153
 msgid "Age: "
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:161
+#: ../qml/Components/UserAccountPage.qml:165
 msgid "M"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:161
+#: ../qml/Components/UserAccountPage.qml:165
 msgid "Sex: "
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:161
+#: ../qml/Components/UserAccountPage.qml:165
 msgid "W"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:179
-#: ../qml/Components/UserAccountPage.qml:244
+#: ../qml/Components/UserAccountPage.qml:183
+#: ../qml/Components/UserAccountPage.qml:249
 msgid "Activity Level"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:186
+#: ../qml/Components/UserAccountPage.qml:191
 msgid "Plan"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:193
+#: ../qml/Components/UserAccountPage.qml:198
 msgid "Edit Mode Enable"
 msgstr ""
 
-#: ../qml/Components/UserAccountPage.qml:376
+#: ../qml/Components/UserAccountPage.qml:381
 msgid "Save modifications"
 msgstr ""
 
