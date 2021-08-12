@@ -246,27 +246,23 @@ WHERE ingestionDate == date("now")';
 
 function getUserKaloriesIngestedDuringDay(){
   var db = createSQLContainer();
-  
+  var rsToQML
   db.transaction(function (tx) {
                    var results = tx.executeSql(populateUserDayKaloriesIngested)
                    for (var i = 0; i < results.rows.length; i++) {
-                     (function(){
-                       var j = i;
-                       var rsToQML = results.rows.item(j).totalKcal
+                       rsToQML = results.rows.item(i).totalKcal
                        
-                       if(rsToQML === null){
+                       if(rsToQML === 0){
                         
-                        dashboardUserKaloriesIngestedDuringDay.text = 0
                         root.foods_ingested = 0
                       } else{
 
-                        dashboardUserKaloriesIngestedDuringDay.text =  Math.round(rsToQML)
                         root.foods_ingested = Math.round(rsToQML)
                       }
-                     })()
+
                     }
  })
- 
+ return rsToQML
 }
 
 //resumePage Dashboard Foods Metric
@@ -288,7 +284,7 @@ var db = createSQLContainer();
                         var rsToQML = results.rows.item(j).dif
 
                         if (rsToQML === null){
-
+                            console.log(rsToQML, "aquiiiii")
                           
                           dashboardUserKaloriesIngestionMetric.text = root.userGoal                     
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green

@@ -71,6 +71,11 @@ MainView {
     property string userSchedule_time
     property string userSchedule_date
 
+
+    //resumePage
+    property int dashboardDailyIngestion : Math.round(DataBase.getUserKaloriesIngestedDuringDay())
+    //property int dashboardUserMetric : Math.round(DataBase.getUserKaloriesIngestionMetric())
+
     //user configs variables
     property string userName : DataBase.getUserName()
     property int userGoal : DataBase.getUserGoal()

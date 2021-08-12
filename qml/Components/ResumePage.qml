@@ -30,14 +30,15 @@ Page{
     id: resumePage
     objectName: 'ResumePage'
     
-    property string dashboardDailyIngestion : DataBase.getUserKaloriesIngestedDuringDay()
-    property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
+    
+    
     property string name
     property string ingestionDate
     property string ingestionTime
     property int kcal
     
     property int id_ingestion_update_time
+    property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
 
 
     header: PageHeader {
@@ -86,7 +87,7 @@ Page{
         target: root
         onInitDB:{
             console.log("refreshing dashboard")
-            forceUpdate()
+            updateDash()
         }
         onRefreshListModel: {
             console.log("cleaning dailyIngestion listModel")
@@ -95,12 +96,11 @@ Page{
         }
     }
 
-    function forceUpdate(){
-        var update_DailyIngestion = DataBase.getUserKaloriesIngestedDuringDay()
+    function updateDash(){
         var update_userMetric = DataBase.getUserKaloriesIngestionMetric()
-        
-        dashboardDailyIngestion = update_DailyIngestion
+        root.dashboardDailyIngestion = Math.round(DataBase.getUserKaloriesIngestedDuringDay())
         dashboardUserMetric = update_userMetric
+        root.dashboardUserMetric = Math.round(DataBase.getUserKaloriesIngestionMetric())
     }
 
     Rectangle{
@@ -143,7 +143,7 @@ Page{
 
                 Label{
                     id: dashboardUserKaloriesIngestedDuringDay
-                    text: dashboardDailyIngestion
+                    text: root.dashboardDailyIngestion
                     fontSizeMode: Text.Fit 
                     font.pixelSize: FontUtils.sizeToPixels("large")
                 }
