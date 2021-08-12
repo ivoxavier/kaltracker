@@ -14,10 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var heigth_on_meters = (userSettings.userConfigsHeight / 100)
+var heigth_on_meters = (root.userHeight / 100)
 
 
-var bmi = Math.round((userSettings.userConfigsWeight / Math.pow(heigth_on_meters, 2)) * 10) / 10
+var bmi = Math.round((root.userWeight / Math.pow(heigth_on_meters, 2)) * 10) / 10
 
 function getBmiIndex(){
    

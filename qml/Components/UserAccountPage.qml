@@ -48,7 +48,7 @@ Page{
     property int totalUserKaloriesDayTargetUserGoal: userKaloriesDayTarget + userGoal
     property string goalHeader : i18n.tr("No Goal")
 
-    property double currentWeight: userSettings.userConfigsWeight
+    property double currentWeight: root.userWeight
 
     Component{
         id:updatingDialog
@@ -94,7 +94,7 @@ Page{
         width: parent.width
         height : parent.height
         clip : true                 
- 
+       
 
         Column{  
             id: userDetailsColumn

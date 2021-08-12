@@ -20,7 +20,6 @@
 //qml/Components/WelcomePage.qml
 //qml/Components/AdviceIndexexDialog.qml
 //qml/Components/ScheduleIngestionPage.qml
-//qml/Components/ManualIngestioPage.qml
 //qml/Components/ConfigUserProfilePage.qml
 //qml/Components/ResumePage.qml
 //qml/Components/IndexesCalcPage.qml

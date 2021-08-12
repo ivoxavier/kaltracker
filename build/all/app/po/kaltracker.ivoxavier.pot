@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 13:03+0000\n"
+"POT-Creation-Date: 2021-08-12 09:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,7 +278,6 @@ msgid "Oops. Check the logs"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:130
-#: ../qml/Components/ManualIngestioPage.qml:107
 #: ../qml/Components/ManualIngestionPage.qml:240
 #: ../qml/Components/ScheduleIngestionPage.qml:82
 msgid "Ingestion Stored"
@@ -293,13 +292,11 @@ msgid "Kcal"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:204
-#: ../qml/Components/ManualIngestioPage.qml:139
 #: ../qml/Components/ManualIngestionPage.qml:336
 msgid "Quantity portions"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:220
-#: ../qml/Components/ManualIngestioPage.qml:155
 #: ../qml/Components/ManualIngestionPage.qml:352
 msgid "Size of portions"
 msgstr ""

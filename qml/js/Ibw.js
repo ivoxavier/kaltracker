@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var wt = userSettings.userConfigsWeight
-var ht = userSettings.userConfigsHeight
-var sex = userSettings.userConfigsSex
+var wt = root.userWeight
+var ht = root.userHeight
+var sex = root.userSex
 var ideal_wt
 
 function idealWT(){
