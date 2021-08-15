@@ -200,7 +200,7 @@ Page{
                 }
                onClicked: {
                 
-                py.call('awareness_level.getAdvice', [CalcBMI.getBmi(),CalcIBW.idealWT(), userSettings.userConfigsWeight] ,function(returnValue){
+                py.call('awareness_level.getAdvice', [CalcBMI.getBmi(),CalcIBW.idealWT(), root.userWeight] ,function(returnValue){
                     awareness_level(returnValue)
                 
                 })

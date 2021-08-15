@@ -284,7 +284,7 @@ var db = createSQLContainer();
                         var rsToQML = results.rows.item(j).dif
 
                         if (rsToQML === null){
-                            console.log(rsToQML, "aquiiiii")
+
                           
                           dashboardUserKaloriesIngestionMetric.text = root.userGoal                     
                           dashboardUserKaloriesIngestionMetric.color = UbuntuColors.green
