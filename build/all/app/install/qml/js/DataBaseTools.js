@@ -477,6 +477,49 @@ WHERE strftime("%m", ingestionDate) == "which_month"'.replace("which_month", mon
 }
 
 
+const favorite_food = 'WITH favfood AS ( \
+  SELECT product_name, count(*) AS  occurences \
+  FROM Ingestion \
+  GROUP BY product_name) \
+  SELECT product_name AS name, max(occurences) \
+  FROM favfood'
+
+
+  function getFavFood(){
+    var db = createSQLContainer();
+    var rsToQML
+    db.transaction(function (tx) {
+                     var results = tx.executeSql(favorite_food)
+                     for (var i = 0; i < results.rows.length; i++) {
+                      rsToQML = results.rows.item(i).name
+                      }
+   })
+   return rsToQML
+  }
+
+
+  const favorite_grade = 'WITH fav_nutrigrade AS ( \
+    SELECT nutriscore_grade, count(*) AS  occurences \
+    FROM Ingestion \
+    GROUP BY nutriscore_grade) \
+    SELECT nutriscore_grade AS grade, max(occurences) \
+    FROM fav_nutrigrade'
+  
+  
+    function getFavGrade(){
+      var db = createSQLContainer();
+      var rsToQML
+      db.transaction(function (tx) {
+                       var results = tx.executeSql(favorite_grade)
+                       for (var i = 0; i < results.rows.length; i++) {
+                        rsToQML = results.rows.item(i).grade
+                        }
+     })
+     return rsToQML
+    }
+
+
+
    /* Data Saving Start */
   //stores the data given by user for userProfile
 const saveUserProfile = 'INSERT INTO User (\

@@ -70,6 +70,16 @@ Page{
         onClicked: mainStack.push(indexesCalcPage)
         }
 
+        ListItem {
+        
+            ListItemLayout{
+                title.text: i18n.tr("Consume Habits")
+                
+                ProgressionSlot{}
+            }
+
+        onClicked: mainStack.push(consumeHabitsPage)
+        }
 
     }
     

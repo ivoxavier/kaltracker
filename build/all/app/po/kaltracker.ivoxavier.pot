@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 16:36+0000\n"
+"POT-Creation-Date: 2021-08-19 22:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,6 +218,18 @@ msgstr ""
 #: ../qml/Components/ConfigUserProfilePage.qml:254
 #: ../qml/Components/UserAccountPage.qml:368
 msgid "Calculate"
+msgstr ""
+
+#: ../qml/Components/ConsumeHabitsPage.qml:40
+msgid "Your Habits"
+msgstr ""
+
+#: ../qml/Components/ConsumeHabitsPage.qml:93
+msgid "Most consumed"
+msgstr ""
+
+#: ../qml/Components/ConsumeHabitsPage.qml:126
+msgid "Nutriscore grade class most eaten"
 msgstr ""
 
 #: ../qml/Components/CreateTablesDialog.qml:27
@@ -527,6 +539,10 @@ msgstr ""
 
 #: ../qml/Components/StatsPage.qml:44
 msgid "Stats"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:76
+msgid "Consume Habits"
 msgstr ""
 
 #: ../qml/Components/UpdateIngestionTimePop.qml:42

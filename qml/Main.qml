@@ -90,6 +90,12 @@ MainView {
     property int id_ingestion_update_time
 
     Component{
+        id: consumeHabitsPage
+        ConsumeHabitsPage{}
+    }
+
+
+    Component{
         id: indexesCalcPage
         IndexesCalcPage{}
     }

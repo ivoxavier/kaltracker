@@ -34,6 +34,7 @@
 //qml/Components/ExportDataPage.qml
 //qml/Components/AlertDialog.qml
 //qml/Components/HelpUserConfigDialog.qml
+//qml/Components/ConsumeHabitsPage.qml
 //qml/Components/UpdateIngestionTimePop.qml
 //qml/Components/ManualIngestionPage.qml
 //qml/Components/FoodsTemplate.qml

@@ -156,7 +156,7 @@ Page{
 
                 Label{
                     id: dashboardUserKaloriesIngestionMetric
-                    text: dashboardUserMetric
+                    text: root.dashboardUserMetric//dashboardUserMetric
                     color: root.metric > 0 ?
                     UbuntuColors.green : root.metric < 0 ?
                     UbuntuColors.red : UbuntuColors.green
