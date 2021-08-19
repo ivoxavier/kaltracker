@@ -97,9 +97,7 @@ Page{
     }
 
     function updateDash(){
-        var update_userMetric = DataBase.getUserKaloriesIngestionMetric()
         root.dashboardDailyIngestion = Math.round(DataBase.getUserKaloriesIngestedDuringDay())
-        dashboardUserMetric = update_userMetric
         root.dashboardUserMetric = Math.round(DataBase.getUserKaloriesIngestionMetric())
     }
 
@@ -156,7 +154,7 @@ Page{
 
                 Label{
                     id: dashboardUserKaloriesIngestionMetric
-                    text: root.dashboardUserMetric//dashboardUserMetric
+                    text: root.dashboardUserMetric
                     color: root.metric > 0 ?
                     UbuntuColors.green : root.metric < 0 ?
                     UbuntuColors.red : UbuntuColors.green

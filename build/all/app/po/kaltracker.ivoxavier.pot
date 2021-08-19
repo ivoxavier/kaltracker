@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-19 22:37+0000\n"
+"POT-Creation-Date: 2021-08-19 22:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,7 +195,7 @@ msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:197
-#: ../qml/Components/FoodsTemplate.qml:195 ../qml/Components/ResumePage.qml:174
+#: ../qml/Components/FoodsTemplate.qml:195 ../qml/Components/ResumePage.qml:172
 #: ../qml/Components/UserAccountPage.qml:309
 msgid "Goal"
 msgstr ""
@@ -461,55 +461,55 @@ msgstr ""
 msgid "${0}'s Panel"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:115
+#: ../qml/Components/ResumePage.qml:113
 msgid "Daily Ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:180
+#: ../qml/Components/ResumePage.qml:178
 msgid "Foods"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:187
+#: ../qml/Components/ResumePage.qml:185
 msgid "Remaining"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:188
+#: ../qml/Components/ResumePage.qml:186
 msgid "Exceed"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:188
+#: ../qml/Components/ResumePage.qml:186
 msgid "To ingest"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:208
+#: ../qml/Components/ResumePage.qml:206
 msgid "Today meals"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:246
+#: ../qml/Components/ResumePage.qml:244
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:247
+#: ../qml/Components/ResumePage.qml:245
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:248
+#: ../qml/Components/ResumePage.qml:246
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:248
+#: ../qml/Components/ResumePage.qml:246
 msgid "Snack"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:291
+#: ../qml/Components/ResumePage.qml:289
 msgid "Unlisted foods"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:296
+#: ../qml/Components/ResumePage.qml:294
 msgid "Schedule an ingestion"
 msgstr ""
 
-#: ../qml/Components/ResumePage.qml:300
+#: ../qml/Components/ResumePage.qml:298
 msgid "New ingestion"
 msgstr ""
 
