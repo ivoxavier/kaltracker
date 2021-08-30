@@ -22,6 +22,7 @@ import Ubuntu.Components.Popups 1.3
 import Ubuntu.Components.Pickers 1.3
 import QtCharts 2.3
 import "../js/DataBaseTools.js" as DataBase
+import "UiAddOns"
 
 Page {
     
@@ -200,10 +201,14 @@ Page {
                 } 
             }
 
-            ListItem {
+            ListItemHeader{
+                    title.text: i18n.tr("Quantity of ingestion")
+                }
 
+            ListItem {
+                divider.visible: false
                 ListItemLayout{
-                    title.text: i18n.tr("Quantity portions")
+                    title.text: i18n.tr("Quantity of portions")
 
                     QQC2.SpinBox{
 
@@ -218,6 +223,7 @@ Page {
             }
                 
             ListItem {
+               
                 ListItemLayout{
                     title.text: i18n.tr("Size of portions")
                     Picker {
@@ -270,10 +276,15 @@ Page {
             } 
                     }
                 }
-                
+
+
+            ListItemHeader{
+                    title.text: i18n.tr("Scheduling")
+                }
+
             ListItem{
                  ListItemLayout{
-                    title.text: i18n.tr("Schedulde date & hour")
+                    title.text: i18n.tr("Time & date")
 
                     CheckBox {
                         id: checkBoxSchedule
@@ -320,6 +331,10 @@ Page {
                 }
             }
                 
+                ListItemHeader{
+                    title.text: i18n.tr("Details")
+                }
+
                 ListItem {
                     id: nutritionScore
                     
@@ -359,9 +374,13 @@ Page {
                 }
                 
                 
-                
+                ListItemHeader{
+                    title.text: i18n.tr("Nutrients")
+                }
+
                 ListItem {
                     id: fatItem
+                    divider.visible: false
                     ListItemLayout{
                         title.text: i18n.tr("Fat/100g")
                         subtitle.text:  Math.round((root.stackFat * quantity_portions) * size_portions) + "g"
@@ -370,6 +389,7 @@ Page {
 
                 ListItem {
                     id: saturatedItem
+                    divider.visible: false
                     ListItemLayout{
                         title.text: i18n.tr("Saturated/100g")
                         subtitle.text: Math.round((root.stackSaturated * quantity_portions)  * size_portions) + "g"
@@ -379,6 +399,7 @@ Page {
 
                 ListItem {
                     id: carbohydratesItem
+                    divider.visible: false
                     ListItemLayout{
                         title.text: i18n.tr("CarbornHydrates/100g")
                         subtitle.text: Math.round((root.stackCarborn * quantity_portions) * size_portions) + "g"
@@ -387,6 +408,7 @@ Page {
 
                 ListItem {
                     id: sugarsItem
+                    divider.visible: false
                     ListItemLayout{
                         title.text: i18n.tr("Sugars/100g")
                         subtitle.text: Math.round((root.stackSugars * quantity_portions) * size_portions) + "g"
@@ -396,6 +418,7 @@ Page {
 
                 ListItem {
                     id: proteinsItem
+                    divider.visible: false
                     ListItemLayout{
                         title.text: i18n.tr("Protein/100g")
                         subtitle.text: Math.round((root.stackProtein * quantity_portions) * size_portions) + "g"
@@ -404,6 +427,6 @@ Page {
 
             }   
       }
-    Component.onCompleted: console.log("Valor do root.now_or_after",root.now_or_after_ingestion)
+   
 }
 

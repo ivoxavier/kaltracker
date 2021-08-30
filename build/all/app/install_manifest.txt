@@ -4,10 +4,10 @@
 //assets/logo.svg
 //qml/js/Bmi.js
 //qml/js/KaloriesCalculator.js
+//qml/js/AwarenessAnalysis.js
 //qml/js/UserFoodsListDB.js
 //qml/js/DataBaseTools.js
 //qml/js/Ibw.js
-//qml/js/AwarenessaAnalysis.js
 //qml/xml/foods_uk.xml
 //qml/xml/foods_pt.xml
 //qml/xml/foods_es.xml

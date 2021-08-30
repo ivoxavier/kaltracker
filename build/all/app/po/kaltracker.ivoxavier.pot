@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 22:40+0000\n"
+"POT-Creation-Date: 2021-08-30 23:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,7 +195,7 @@ msgid "Heavy"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:197
-#: ../qml/Components/FoodsTemplate.qml:197 ../qml/Components/ResumePage.qml:172
+#: ../qml/Components/FoodsTemplate.qml:198 ../qml/Components/ResumePage.qml:172
 #: ../qml/Components/UserAccountPage.qml:309
 msgid "Goal"
 msgstr ""
@@ -254,6 +254,7 @@ msgid "Saved!"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:129
+#: ../qml/Components/FoodsTemplate.qml:335
 msgid "Details"
 msgstr ""
 
@@ -310,11 +311,12 @@ msgid "E"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:234
+#: ../qml/Components/FoodsTemplate.qml:378
 msgid "Nutrients"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:243
-#: ../qml/Components/FoodsTemplate.qml:366
+#: ../qml/Components/FoodsTemplate.qml:385
 msgid "Fat/100g"
 msgstr ""
 
@@ -327,7 +329,7 @@ msgid "Carbohydrates/100g"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:314
-#: ../qml/Components/FoodsTemplate.qml:391
+#: ../qml/Components/FoodsTemplate.qml:413
 msgid "Sugars/100g"
 msgstr ""
 
@@ -383,60 +385,68 @@ msgstr ""
 msgid "Oops. Check the logs"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:132
+#: ../qml/Components/FoodsTemplate.qml:133
 #: ../qml/Components/ScheduleIngestionPage.qml:82
 msgid "Ingestion Stored"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:176
+#: ../qml/Components/FoodsTemplate.qml:177
 msgid "Calories"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:196
+#: ../qml/Components/FoodsTemplate.qml:197
 msgid "Kcal"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:206
-msgid "Quantity portions"
+#: ../qml/Components/FoodsTemplate.qml:205
+msgid "Quantity of ingestion"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:222
+#: ../qml/Components/FoodsTemplate.qml:211
+msgid "Quantity of portions"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:228
 msgid "Size of portions"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:276
-msgid "Schedulde date & hour"
+#: ../qml/Components/FoodsTemplate.qml:282
+msgid "Scheduling"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:330
+#: ../qml/Components/FoodsTemplate.qml:287
+msgid "Time & date"
+msgstr ""
+
+#: ../qml/Components/FoodsTemplate.qml:345
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:331
+#: ../qml/Components/FoodsTemplate.qml:346
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:332
+#: ../qml/Components/FoodsTemplate.qml:347
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:333
+#: ../qml/Components/FoodsTemplate.qml:348
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:333
+#: ../qml/Components/FoodsTemplate.qml:348
 msgid "Poor nutritional quality"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:374
+#: ../qml/Components/FoodsTemplate.qml:394
 msgid "Saturated/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:383
+#: ../qml/Components/FoodsTemplate.qml:404
 msgid "CarbornHydrates/100g"
 msgstr ""
 
-#: ../qml/Components/FoodsTemplate.qml:400
+#: ../qml/Components/FoodsTemplate.qml:423
 msgid "Protein/100g"
 msgstr ""
 
@@ -678,31 +688,31 @@ msgstr ""
 msgid "Click to start"
 msgstr ""
 
-#: ../qml/js/AwarenessaAnalysis.js:20
+#: ../qml/js/AwarenessAnalysis.js:20
 msgid ""
 "Your awareness level is 0. This means your current weight is under 10kg "
 "difference from your ideal weight. And your BMI is in between 18.5 and 24.9."
 msgstr ""
 
-#: ../qml/js/AwarenessaAnalysis.js:23
+#: ../qml/js/AwarenessAnalysis.js:23
 msgid ""
 "Your awareness level is 1. This means your current weight is low and has a "
 "difference until 10kg from your ideal weight."
 msgstr ""
 
-#: ../qml/js/AwarenessaAnalysis.js:26
+#: ../qml/js/AwarenessAnalysis.js:26
 msgid ""
 "Your awareness level is 2. This means you have excess of weight and a "
 "differenc in between 10 to 19kg from your ideal weight."
 msgstr ""
 
-#: ../qml/js/AwarenessaAnalysis.js:29
+#: ../qml/js/AwarenessAnalysis.js:29
 msgid ""
 "Your awareness level is 3. This means you are in a situation of pre-obesity "
 "and you should consider professional help."
 msgstr ""
 
-#: ../qml/js/AwarenessaAnalysis.js:32
+#: ../qml/js/AwarenessAnalysis.js:32
 msgid "Your awareness level is 4. Our highst value, please visit a medic."
 msgstr ""
 
