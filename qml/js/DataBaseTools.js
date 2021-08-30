@@ -279,9 +279,8 @@ var db = createSQLContainer();
   db.transaction(function (tx) {
                    var results = tx.executeSql(populateUserKaloriesIngestionMetric)
                    for (var i = 0; i < results.rows.length; i++) {
-                     (function(){
-                        var j = i;
-                        var rsToQML = results.rows.item(j).dif
+                  
+                        var rsToQML = results.rows.item(i).dif
 
                         if (rsToQML === null){
 
@@ -304,7 +303,7 @@ var db = createSQLContainer();
                           root.metric = Math.round(rsToQML)
                         }
 
-                      })()
+                     
                     }
                 }) 
 }

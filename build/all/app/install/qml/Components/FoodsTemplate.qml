@@ -47,6 +47,8 @@ Page {
     property color score_grade_foreground
     property string score_grade_label
 
+    property bool isEnabled: false
+
     
 
 
@@ -269,6 +271,54 @@ Page {
                     }
                 }
                 
+            ListItem{
+                 ListItemLayout{
+                    title.text: i18n.tr("Schedulde date & hour")
+
+                    CheckBox {
+                        id: checkBoxSchedule
+                        checked: false
+                        onCheckedChanged: {
+                            
+                            isEnabled = !isEnabled
+                            root.now_or_after_ingestion = checkBoxSchedule.checked === false ? 0 : 1                   
+                        }
+                    }
+                }
+            }
+
+
+            ListItem{
+                height: monthPicker.height + units.gu(2)
+                visible: isEnabled
+                 ListItemLayout{
+
+                    DatePicker {
+                        id: monthPicker
+                
+                        mode: "Days|Months|Years"
+                        date: new Date()
+                        width: Math.min(root.width - units.gu(9), units.gu(23))
+                        height: units.gu(14)
+                        onDateChanged: {
+                            root.userSchedule_date = Qt.formatDate(date, "yyyy-MM-dd")
+                        }
+                    }
+
+                    DatePicker {
+                        id: hourPicker
+
+                        mode: "Hours|Minutes"
+                        date: new Date()
+                        width: Math.min(root.width - units.gu(7), units.gu(16))
+                        height: units.gu(14)
+                        onDateChanged: {
+                            root.userSchedule_time = Qt.formatTime(date, "hh:mm")
+                    
+                        }
+                    }
+                }
+            }
                 
                 ListItem {
                     id: nutritionScore

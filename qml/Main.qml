@@ -74,7 +74,7 @@ MainView {
 
     //resumePage
     property int dashboardDailyIngestion : Math.round(DataBase.getUserKaloriesIngestedDuringDay())
-    //property int dashboardUserMetric : Math.round(DataBase.getUserKaloriesIngestionMetric())
+    //property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
 
     //user configs variables
     property string userName : DataBase.getUserName()
@@ -89,6 +89,23 @@ MainView {
     //pass id to hourPicker on resumePage
     property int id_ingestion_update_time
 
+
+    Component{
+        id: userFoodsListEditPage
+        UserFoodsListEditPage{}
+    }
+
+    Component{
+        id: userListIngestionPage
+        UserListIngestionPage{}
+    }
+    
+
+    Component{
+        id: createUserListPage
+        CreateUserListPage{}
+    }
+    
     Component{
         id: consumeHabitsPage
         ConsumeHabitsPage{}
@@ -100,11 +117,6 @@ MainView {
         IndexesCalcPage{}
     }
     
-
-    Component{
-        id: manualIngestionPage
-        ManualIngestionPage{}
-    }
      
     Component{
         id: alertDialog
@@ -203,6 +215,7 @@ MainView {
         property bool isAutoCleanChecked: true
         property bool isExceedCaloriesChecked : true
         property bool displayAlert: false
+        property bool isUserListCreated : false
         
 
     }

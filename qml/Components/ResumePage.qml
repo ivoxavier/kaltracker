@@ -98,7 +98,7 @@ Page{
 
     function updateDash(){
         root.dashboardDailyIngestion = Math.round(DataBase.getUserKaloriesIngestedDuringDay())
-        root.dashboardUserMetric = Math.round(DataBase.getUserKaloriesIngestionMetric())
+        root.dashboardUserMetric = DataBase.getUserKaloriesIngestionMetric()
     }
 
     Rectangle{
@@ -284,18 +284,15 @@ Page{
             ActionSelectionPopover {
                 
                     actions: ActionList {
-
+                        
                         Action {
-                            text: i18n.tr("Unlisted foods")
-                            onTriggered: mainStack.push(manualIngestionPage)
+                            text: i18n.tr("Your foods list")
+                            enabled: appSettings.isUserListCreated
+                            onTriggered: mainStack.push(userListIngestionPage)
                         }
                         
                         Action {
-                            text: i18n.tr("Schedule an ingestion")
-                            onTriggered: mainStack.push(scheduleIngestionPage)
-                        }
-                        Action {
-                            text: i18n.tr("New ingestion")
+                            text: i18n.tr("OpenFoodsFacts List")
                             onTriggered: {
                                 mainStack.push(newIngestionPage)
                             }

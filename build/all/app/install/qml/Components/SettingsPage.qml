@@ -76,6 +76,16 @@ Page{
              }
             onClicked: mainStack.push(alertsPage)
         }
+
+        ListItem {
+            ListItemLayout{
+                title.text: i18n.tr("Manage user list foods & drinks")
+
+                ProgressionSlot{}
+
+             }
+            onClicked: mainStack.push(createUserListPage)
+        }
 }
 }
         

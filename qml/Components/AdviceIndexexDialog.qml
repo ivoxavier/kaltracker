@@ -25,7 +25,6 @@ import "../js/Ibw.js" as CalcIBW
 import "../js/AwarenessAnalysis.js" as AwarenessAnalysis
 
 
-
 Dialog {
     id: adviceDialogPopUP
     title: i18n.tr("Advice") 
