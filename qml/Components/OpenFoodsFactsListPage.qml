@@ -49,7 +49,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: i18n.tr('New Ingestion')
+        title: i18n.tr('OpenFoodsFacts list')
 
         //contents:   /* in case I find how to filter XML Model. Can delegate here a TextField */
 

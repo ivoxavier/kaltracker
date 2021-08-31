@@ -294,7 +294,7 @@ Page{
                         Action {
                             text: i18n.tr("OpenFoodsFacts List")
                             onTriggered: {
-                                mainStack.push(newIngestionPage)
+                                mainStack.push(openFoodsFactsListPage)
                             }
                         }
                     }
@@ -351,7 +351,15 @@ Page{
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        PopupUtils.open(popOverList,addButton)
+
+                        if(appSettings.isOpenFactsFoodsListChecked){
+                            mainStack.push(openFoodsFactsListPage)
+                        } else if (appSettings.isUserListFoodsChecked){
+                            mainStack.push(userListIngestionPage)
+                        } else{
+                            PopupUtils.open(popOverList,addButton)
+                        }
+                       
                         
                     }
                 }

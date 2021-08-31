@@ -68,8 +68,8 @@ Page{
             anchors.centerIn: parent 
             radius: "large"
             aspect: UbuntuShape.Inset
-            width: (resumePage.width / 3.33) //- units.gu(20)
-            height:  (resumePage.header.height * 2) //- units.gu(60)
+            width: (resumePage.width / 3.33)
+            height:  (resumePage.header.height * 2)
             visible: foodsList.visible === true ? false : true
             z:100
             Icon{ 
@@ -110,7 +110,7 @@ Page{
 
         Label{
             id: topPanelLabel
-            text: i18n.tr("Daily Ingestion")
+            text: i18n.tr("Daily Calories")
             font.bold: true 
             fontSizeMode:Text.Fit 
             font.pixelSize: units.gu(2)
@@ -294,7 +294,7 @@ Page{
                         Action {
                             text: i18n.tr("OpenFoodsFacts List")
                             onTriggered: {
-                                mainStack.push(newIngestionPage)
+                                mainStack.push(openFoodsFactsListPage)
                             }
                         }
                     }
@@ -302,33 +302,6 @@ Page{
         }
     }
 
-    SequentialAnimation {
-                    id: animation
-
-                    RotationAnimation {
-                        target: addButton
-                        properties: "rotation"
-                        duration: 2000
-                        to: 40
-                        easing.type: Easing.OutQuad
-                    }
-
-                    RotationAnimation {
-                        target: addButton
-                        properties: "rotation"
-                        duration: 2100
-                        to: -40
-                        easing.type: Easing.OutQuad
-                    }
-
-                    RotationAnimation {
-                        target :addButton
-                        properties: "rotation"
-                        duration: 2000
-                        to: 0
-                        easing.type: Easing.OutQuad
-                    }
-    }
 
     Rectangle{
         id: footer
@@ -378,7 +351,15 @@ Page{
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        PopupUtils.open(popOverList,addButton)
+
+                        if(appSettings.isOpenFactsFoodsListChecked){
+                            mainStack.push(openFoodsFactsListPage)
+                        } else if (appSettings.isUserListFoodsChecked){
+                            mainStack.push(userListIngestionPage)
+                        } else{
+                            PopupUtils.open(popOverList,addButton)
+                        }
+                       
                         
                     }
                 }
@@ -414,16 +395,8 @@ Page{
 
 
  Component.onDestruction:{
-    console.log("byebye")  
+    console.log("App Closed")  
  } 
 
-function isAnimating(){
-    if (foodsList.model.count === 0){
-        animation.start()
-    } else {
-        //pass
-    }
-}
 
-Component.onCompleted : isAnimating()
 }

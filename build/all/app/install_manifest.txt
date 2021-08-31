@@ -26,6 +26,7 @@
 //qml/Components/ConfigUserProfilePage.qml
 //qml/Components/ResumePage.qml
 //qml/Components/CreateUserListPage.qml
+//qml/Components/ChooseListPopoverDialog.qml
 //qml/Components/IndexesCalcPage.qml
 //qml/Components/AboutDialog.qml
 //qml/Components/StatsPage.qml
@@ -34,7 +35,7 @@
 //qml/Components/AverageCaloriesMonthPage.qml
 //qml/Components/ActionBar/AboutAction.qml
 //qml/Components/ActionBar/HelpUserConfigAction.qml
-//qml/Components/NewIngestionPage.qml
+//qml/Components/OpenFoodsFactsListPage.qml
 //qml/Components/UserAccountPage.qml
 //qml/Components/ExportDataPage.qml
 //qml/Components/AlertDialog.qml

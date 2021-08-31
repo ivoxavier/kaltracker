@@ -25,6 +25,7 @@ import io.thp.pyotherside 1.5
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import "../js/DataBaseTools.js" as DataBase
+import "UiAddOns"
 
 
 Page{
@@ -40,7 +41,11 @@ Page{
         }
     }
 
-
+    Component{
+        id: optionListFoodsDialog
+        ChooseListPopoverDialog{}
+        
+    }
 
     Component{
         id: deleteDialog
@@ -53,10 +58,16 @@ Page{
         anchors.top: settingsPage.header.bottom
         width: settingsPage.width
 
+       ListItemHeader{
+           title.text: i18n.tr("Storage")
+       }
+
        ListItem {
-            id: alertExceed
+
+            divider.visible: false
+
             ListItemLayout{
-                title.text: i18n.tr("DataBase Maintenance")
+                title.text: i18n.tr("Ingestions")
                 
                ProgressionSlot{}
                
@@ -67,9 +78,28 @@ Page{
         }
 
         ListItem {
-            id: deleteTodayRecords
+
+            divider.visible: false
+
             ListItemLayout{
-                title.text: i18n.tr("Application alerts")
+                title.text: i18n.tr("User list foods & drinks")
+
+                ProgressionSlot{}
+
+             }
+            onClicked: mainStack.push(createUserListPage)
+        }
+
+        ListItemHeader{
+           title.text: i18n.tr("App settings")
+       }
+
+        ListItem {
+
+            divider.visible: false
+
+            ListItemLayout{
+                title.text: i18n.tr("Alerts")
 
                 ProgressionSlot{}
 
@@ -78,14 +108,21 @@ Page{
         }
 
         ListItem {
+            
+            divider.visible: false
+
             ListItemLayout{
-                title.text: i18n.tr("Manage user list foods & drinks")
+                title.text: i18n.tr("Set default behavior for list pick")
 
                 ProgressionSlot{}
 
              }
-            onClicked: mainStack.push(createUserListPage)
+            onClicked: {
+                PopupUtils.open(optionListFoodsDialog)
+            }
         }
+
+        
 }
 }
         

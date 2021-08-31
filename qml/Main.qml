@@ -186,8 +186,8 @@ MainView {
     }
 
     Component {
-        id: newIngestionPage
-        NewIngestionPage {}
+        id: openFoodsFactsListPage
+        OpenFoodsFactsListPage {}
     }
 
     Component {
@@ -209,6 +209,7 @@ MainView {
 
     Settings {
         id: appSettings
+
         category: "app_configs"
 
         property bool isCleanInstall: true
@@ -216,7 +217,9 @@ MainView {
         property bool isExceedCaloriesChecked : true
         property bool displayAlert: false
         property bool isUserListCreated : false
-        
+        property bool isBothFoodsListChecked : false
+        property bool isOpenFactsFoodsListChecked : true
+        property bool isUserListFoodsChecked : false
 
     }
                                                     

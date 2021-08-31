@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 08:32+0000\n"
+"POT-Creation-Date: 2021-08-31 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,6 +128,23 @@ msgstr ""
 #: ../qml/Components/AverageCaloriesMonthPage.qml:98
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "November"
+msgstr ""
+
+#: ../qml/Components/ChooseListPopoverDialog.qml:25
+msgid "Choose options of list foods to show"
+msgstr ""
+
+#: ../qml/Components/ChooseListPopoverDialog.qml:29
+#: ../qml/Components/OpenFoodsFactsListPage.qml:52
+msgid "OpenFoodsFacts list"
+msgstr ""
+
+#: ../qml/Components/ChooseListPopoverDialog.qml:42
+msgid "User foods list"
+msgstr ""
+
+#: ../qml/Components/ChooseListPopoverDialog.qml:56
+msgid "Select which one"
 msgstr ""
 
 #: ../qml/Components/ConfigUserProfilePage.qml:32
@@ -263,8 +280,8 @@ msgid "Product name"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:153
-#: ../qml/Components/NewIngestionPage.qml:81
-#: ../qml/Components/NewIngestionPage.qml:94
+#: ../qml/Components/OpenFoodsFactsListPage.qml:81
+#: ../qml/Components/OpenFoodsFactsListPage.qml:94
 #: ../qml/Components/ScheduleIngestionPage.qml:69
 #: ../qml/Components/ScheduleIngestionPage.qml:92
 #: ../qml/Components/UserListIngestionPage.qml:84
@@ -273,8 +290,8 @@ msgid "Drink"
 msgstr ""
 
 #: ../qml/Components/CreateUserListPage.qml:153
-#: ../qml/Components/NewIngestionPage.qml:76
-#: ../qml/Components/NewIngestionPage.qml:94
+#: ../qml/Components/OpenFoodsFactsListPage.qml:76
+#: ../qml/Components/OpenFoodsFactsListPage.qml:94
 #: ../qml/Components/ScheduleIngestionPage.qml:64
 #: ../qml/Components/ScheduleIngestionPage.qml:92
 #: ../qml/Components/UserListIngestionPage.qml:79
@@ -502,11 +519,6 @@ msgstr ""
 msgid "Delete all records"
 msgstr ""
 
-#: ../qml/Components/NewIngestionPage.qml:52
-#: ../qml/Components/UserListIngestionPage.qml:52
-msgid "New Ingestion"
-msgstr ""
-
 #: ../qml/Components/RemoveRecordsDialog.qml:32
 msgid "Deletes your *"
 msgstr ""
@@ -532,7 +544,7 @@ msgid "%1's Panel"
 msgstr ""
 
 #: ../qml/Components/ResumePage.qml:113
-msgid "Daily Ingestion"
+msgid "Daily Calories"
 msgstr ""
 
 #: ../qml/Components/ResumePage.qml:178
@@ -591,20 +603,32 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:35
+#: ../qml/Components/SettingsPage.qml:36
 msgid "Settings"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:59
-msgid "DataBase Maintenance"
+#: ../qml/Components/SettingsPage.qml:62
+msgid "Storage"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:72
-msgid "Application alerts"
+#: ../qml/Components/SettingsPage.qml:70
+msgid "Ingestions"
 msgstr ""
 
-#: ../qml/Components/SettingsPage.qml:82
-msgid "Manage user list foods & drinks"
+#: ../qml/Components/SettingsPage.qml:85
+msgid "User list foods & drinks"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:94
+msgid "App settings"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:102
+msgid "Alerts"
+msgstr ""
+
+#: ../qml/Components/SettingsPage.qml:115
+msgid "Set default behavior for list pick"
 msgstr ""
 
 #: ../qml/Components/StatsPage.qml:44
@@ -671,6 +695,10 @@ msgstr ""
 #: ../qml/Components/UserFoodsListEditPage.qml:70
 #: ../qml/Components/UserListIngestionPage.qml:96
 msgid "Create your list under app settings"
+msgstr ""
+
+#: ../qml/Components/UserListIngestionPage.qml:52
+msgid "%1's list"
 msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:29 kaltracker.desktop.in.h:1
