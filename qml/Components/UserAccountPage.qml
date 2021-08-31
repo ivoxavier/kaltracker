@@ -27,7 +27,7 @@ import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import "../js/DataBaseTools.js" as DataBase
 import "../js/KaloriesCalculator.js" as KalCalculator
-
+import "UiAddOns"
 
 Page{
     id: userAccountPage
@@ -38,9 +38,9 @@ Page{
    
     property string userSex: "Men"
     // TextField Component should assign it onEditingFinsihed, not working.
-    property int userAge: userAgeEntry.text
-    property double userWeight: userWeightEntry.text
-    property double userHeight: userHeightEntry.text
+    property int newUserAge
+    property double newUserWeight
+    property double newUserHeight
     property int userKaloriesDayTarget
     property string userActivityLevel: "Very Light"
     property int activityLevelToEquation: 0
@@ -111,8 +111,12 @@ Page{
                     Column{
                         width: leftFrame.width
 
+                        ListItemHeader{
+                             title.text: i18n.tr("Profile details")
+                        }
                         ListItem {
                             id: userSex_items
+                            divider.visible: false
                             ListItemLayout{
                                 title.text: root.userName
                             }
@@ -179,6 +183,9 @@ Page{
 
             
             ListItem{
+
+                divider.visible: false
+
                 ListItemLayout{
                     title.text: i18n.tr("Activity Level")
                     subtitle.text: root.userActivityLevel
@@ -187,84 +194,121 @@ Page{
             }
 
             ListItem{
+
+                divider.visible: false
+
                 ListItemLayout{
                     title.text: i18n.tr("Plan")
                     subtitle.text: root.userGoalCategory
                 }
             }
 
-            Label{
+            ListItemHeader{
                 id: editLabelNotification
-                text: i18n.tr("Edit Mode Enable")
-                color: UbuntuColors.green
+                title.text: i18n.tr("Enter new values")
                 visible: editMode
-                textSize: Label.XSmall
             }
 
-            Row {
-            anchors.horizontalCenter: parent.horizontalCenter
-            spacing: units.gu(2)
-            topPadding: units.gu(2)
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Age")
+                     height: childrenRect.height
+                    Slider{
+                            id: ageSlide
+                            objectName: "slider_live"
+                            width: parent.width / 2
+                            height: units.gu(12)
+                            value: 0
+                            minimumValue: 0
+                            maximumValue: 100
+                            live: true
+                            onValueChanged: {
+                            newUserAge = (Math.round(ageSlide.value))
+                            ageSlideValue.text = newUserAge }
+                        }
 
-            TextField {
-                id: userAgeEntry
-                width: units.gu(10)
-                placeholderText: i18n.tr("Age")
-                horizontalAlignment: TextInput.AlignHCenter
-                inputMethodHints: Qt.ImhDigitsOnly
-                enabled: isActivated
-                validator: IntValidator{}
-            }
-                    
-            TextField {
-                id: userWeightEntry
-                width: units.gu(10)
-                placeholderText: i18n.tr("Weight")
-                horizontalAlignment: TextInput.AlignHCenter
-                inputMethodHints: Qt.ImhDigitsOnly
-                enabled: isActivated
-                validator: IntValidator {}
-            }
-
-            TextField {
-                id: userHeightEntry
-                width: units.gu(10)
-                placeholderText: i18n.tr("Height")
-                horizontalAlignment: TextInput.AlignHCenter
-                inputMethodHints: Qt.ImhDigitsOnly
-                enabled: isActivated
-                validator: IntValidator {}
-            }
-        }   
-
-
-
-            Row{
-                topPadding: units.gu(3)
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: units.gu(2)
-
-                Label {
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: i18n.tr("Activity Level")
+                    Label{id: ageSlideValue; text: "0"} 
                 }
+            }
 
-                Picker {
-                    id: userActivityLevelEntry
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: units.gu(10)
-                    height: units.gu(5)
-                    circular: false
-                    enabled: isActivated
-                    selectedIndex:0
-                    model:
-                        [
-                        i18n.tr("Very Light"),
-                        i18n.tr("Light"),
-                        i18n.tr("Moderate"),
-                        i18n.tr("Heavy")
-                        ] 
-                    delegate: PickerDelegate { 
+            
+
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Weight")
+                     height: childrenRect.height
+                    Slider{
+                            id: weightSlide
+                            objectName: "slider_live"
+                            width: parent.width / 2
+                            height: units.gu(12)
+                            value: 0
+                            minimumValue: 0
+                            maximumValue: 200
+                            live: true
+                            onValueChanged: {
+                            newUserWeight = (Math.round(weightSlide.value))
+                            weightSlideValue.text = newUserWeight + " KG" }
+                        }
+                    Label{id: weightSlideValue; text: "0" + " KG"} 
+                }
+            }
+
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Height")
+                     height: childrenRect.height
+                    Slider{
+                            id: heightSlide
+                            objectName: "slider_live"
+                            width: parent.width / 2
+                            height: units.gu(12)
+                            value: 100
+                            minimumValue: 100
+                            maximumValue: 200
+                            live: true
+                            onValueChanged: {
+                            newUserHeight = (Math.round(heightSlide.value))
+                            heightSlideValue.text = newUserHeight + " cm"}
+                        } 
+
+                    Label{id: heightSlideValue; text: "0" + " cm"} 
+                }
+            }
+
+            ListItemHeader{
+                title.text: i18n.tr("Target")
+                visible: editMode
+            }
+
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Activity Level")
+                     height: childrenRect.height 
+                     Picker {
+                        id: userActivityLevelEntry
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: units.gu(10)
+                        height: units.gu(6)
+                        circular: false
+                        enabled: isActivated
+                        selectedIndex:0
+                        model:
+                            [
+                                i18n.tr("Very Light"),
+                                i18n.tr("Light"),
+                                i18n.tr("Moderate"),
+                                i18n.tr("Heavy")
+                            ] 
+                        delegate: PickerDelegate { 
                                 Label {
                                     text: modelData
                                     y:units.gu(1)
@@ -299,19 +343,53 @@ Page{
                         }
                     }
                 } 
+                }
             }
 
-            Button{
-                id: goalButton
-                anchors.horizontalCenter: parent.horizontalCenter
-                iconName: "unpinned"
-                iconPosition: "right"
-                text: i18n.tr("Goal")
-                width: units.gu(10)
-                enabled: isActivated
-                color: root.defaultForegroundColor
-                onClicked:{
-                    PopupUtils.open(goalSelection,goalButton)
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Plan")
+                     height: childrenRect.height + units.gu(3)
+                     Button{
+                        id: goalButton
+                        
+                        iconName: "unpinned"
+                        iconPosition: "right"
+                        text: i18n.tr("Goal")
+                        width: units.gu(10)
+                        enabled: isActivated
+                        color: root.defaultForegroundColor
+                        onClicked:{
+                            PopupUtils.open(goalSelection,goalButton)
+                        }
+            }
+                    
+                }
+            }
+            
+            ListItemHeader{
+                title.text: i18n.tr("Total amount of calories")
+                visible: editMode
+            }
+
+
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: i18n.tr("Normal")
+                    subtitle.text: userKaloriesDayTarget + " kcal"
+                }
+            }
+
+            ListItem{
+               divider.visible: false
+               visible: editMode
+                ListItemLayout{
+                    title.text: goalHeader
+                    subtitle.text: (userKaloriesDayTarget + userGoal) + " kcal"
                 }
             }
 
@@ -352,24 +430,18 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: units.gu(2)
 
-                Label{
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: "Normal:\n\n" +  userKaloriesDayTarget + " kcal"
-                }
-                Label{
-                    id: calculationResult
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: goalHeader + "\n\n" + (userKaloriesDayTarget + userGoal) + " kcal"
-
-                }
-
                 Button{
                     id: testButton
                     text: i18n.tr("Calculate")
                     enabled: isActivated
+                    visible: editMode
                     color: UbuntuColors.blue
                     onClicked: {
-                        userKaloriesDayTarget = KalCalculator.mifflinStJeorEquation(userAge,userWeight,userHeight,userSex,activityLevelToEquation)
+                        userKaloriesDayTarget = KalCalculator.mifflinStJeorEquation(newUserAge,
+                        newUserWeight,
+                        newUserHeight,
+                        userSex,
+                        activityLevelToEquation)
                         nextButton.enabled = true
                     }
                 }
@@ -381,12 +453,14 @@ Page{
                 text: i18n.tr("Save modifications")
                 color: "green"
                 enabled: false
+                visible: editMode
                 onClicked: {
-                        DataBase.updateWeight(userWeight)
+                        DataBase.updateWeight(newUserWeight)
+                        DataBase.updateAge(newUserAge)
                         DataBase.updateGoal(totalUserKaloriesDayTargetUserGoal)
                         DataBase.updateGoalCategory(goalHeader)
-                        DataBase.updateHeight(userHeight)
-                        DataBase.saveNewWeight(currentWeight,userWeight)
+                        DataBase.updateHeight(newUserHeight)
+                        DataBase.saveNewWeight(currentWeight,newUserWeight)
                         editMode =!editMode
                         isActivated = !isActivated
                         PopupUtils.open(updatingDialog)

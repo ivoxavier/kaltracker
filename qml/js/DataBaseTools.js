@@ -691,6 +691,23 @@ function saveNewWeight(previous_weight, new_weight){
  return console.log("New weight defined")
 }
 
+function updateAge(newAge){
+
+  const updateAge_statement = 'UPDATE User \
+  SET age = newAge \
+  WHERE User.idUser == 1'.replace("newAge",newAge)
+
+  var db = createSQLContainer();
+  var rs;
+  db.transaction(function(tx) {
+    rs = tx.executeSql(updateAge_statement);
+   }
+ );
+ return console.log("New age defined")
+}
+
+
+
 function updateHeight(newHeight){
 
   const updateHeight_statement = 'UPDATE User \
