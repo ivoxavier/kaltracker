@@ -23,11 +23,12 @@ import "../js/DataBaseTools.js" as DataBase
 
 
 
-Popover { 
-
+Dialog { 
+        id: deleteMonthDB
         property string month_to_delete
         property string year_to_delete
-        
+
+        title: i18n.tr("Enter a month & year")
         Row{ 
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: units.gu(2)      
@@ -40,6 +41,9 @@ Popover {
                 validator: IntValidator{}
             
                 onTextChanged:{
+                    if(resultOperation.visible){
+                        resultOperation.visible = !resultOperation.visible
+                    }
                     if (month_to_delete_entry.text <= 9){
 
                         //necessary as date formart in database is 'yyyy-mm-dd'
@@ -62,6 +66,10 @@ Popover {
                 inputMethodHints: Qt.ImhDigitsOnly
                 validator: IntValidator{}
                 onTextChanged:{
+                    if(resultOperation.visible){
+                        resultOperation.visible = !resultOperation.visible
+                    }
+                    
                     year_to_delete = year_to_delete_entry.text
                 }
             }
@@ -71,12 +79,26 @@ Popover {
                 text: i18n.tr("Delete")
                 color: UbuntuColors.red
                 onClicked:{
-                    console.log(month_to_delete, year_to_delete)
                     DataBase.deleteMonthYearIngestion(month_to_delete, year_to_delete)
+                    resultOperation.visible = !resultOperation.visible
                 }
-            }    
-                    
-        }        
+            }  
+
+                 
+        } 
+
+        Label{
+            id: resultOperation
+            text: i18n.tr("Delete sucsseful")
+            visible: false
+            color: theme.palette.normal.positive
+        }
+        Button{
+                text: i18n.tr("Back")
+                onClicked:{
+                    PopupUtils.close(deleteMonthDB)
+                }
+            }        
 }
         
 

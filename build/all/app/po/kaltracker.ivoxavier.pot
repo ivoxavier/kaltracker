@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 13:56+0000\n"
+"POT-Creation-Date: 2021-08-31 15:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,7 @@ msgid "Advice"
 msgstr ""
 
 #: ../qml/Components/AdviceIndexexDialog.qml:54
+#: ../qml/Components/DeleteMonthDBPop.qml:97
 msgid "Back"
 msgstr ""
 
@@ -354,20 +355,28 @@ msgstr ""
 msgid "Proteins/100g"
 msgstr ""
 
-#: ../qml/Components/DeleteMonthDBPop.qml:37
+#: ../qml/Components/DeleteMonthDBPop.qml:31
+msgid "Enter a month & year"
+msgstr ""
+
+#: ../qml/Components/DeleteMonthDBPop.qml:38
 msgid "Month"
 msgstr ""
 
-#: ../qml/Components/DeleteMonthDBPop.qml:60
+#: ../qml/Components/DeleteMonthDBPop.qml:64
 msgid "Year"
 msgstr ""
 
-#: ../qml/Components/DeleteMonthDBPop.qml:71
-#: ../qml/Components/MaintenancePage.qml:96
-#: ../qml/Components/MaintenancePage.qml:112
+#: ../qml/Components/DeleteMonthDBPop.qml:79
+#: ../qml/Components/MaintenancePage.qml:107
+#: ../qml/Components/MaintenancePage.qml:124
 #: ../qml/Components/RemoveRecordsDialog.qml:30
 #: ../qml/Components/RemoveRecordsDialog.qml:60
 msgid "Delete"
+msgstr ""
+
+#: ../qml/Components/DeleteMonthDBPop.qml:92
+msgid "Delete sucsseful"
 msgstr ""
 
 #: ../qml/Components/ExportDataPage.qml:39
@@ -496,26 +505,34 @@ msgid "Advices"
 msgstr ""
 
 #: ../qml/Components/MaintenancePage.qml:35
-msgid "Maintenance Page"
+msgid "Ingestions Storage"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:62
+#: ../qml/Components/MaintenancePage.qml:60
+msgid "Automatic delete options"
+msgstr ""
+
+#: ../qml/Components/MaintenancePage.qml:67
 msgid "Auto delete records"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:63
+#: ../qml/Components/MaintenancePage.qml:68
 msgid "Previous year"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:78
+#: ../qml/Components/MaintenancePage.qml:81
+msgid "Manual delete options"
+msgstr ""
+
+#: ../qml/Components/MaintenancePage.qml:88
 msgid "Delete from specific Month & Year"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:93
+#: ../qml/Components/MaintenancePage.qml:104
 msgid "Delete today's records"
 msgstr ""
 
-#: ../qml/Components/MaintenancePage.qml:109
+#: ../qml/Components/MaintenancePage.qml:121
 msgid "Delete all records"
 msgstr ""
 

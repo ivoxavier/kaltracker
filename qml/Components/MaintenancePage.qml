@@ -25,14 +25,14 @@ import io.thp.pyotherside 1.5
 import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import "../js/DataBaseTools.js" as DataBase
-
+import "UiAddOns"
 
 Page{
     id: maintenancePage
     objectName: 'Maintenance Page'
     property int deleteType
     header: PageHeader {
-        title: i18n.tr("Maintenance Page")
+        title: i18n.tr("Ingestions Storage")
 
         StyleHints {
             foregroundColor: root.defaultForegroundColor
@@ -56,8 +56,13 @@ Page{
         anchors.top: maintenancePage.header.bottom
         width: maintenancePage.width
 
+     ListItemHeader{
+           title.text: i18n.tr("Automatic delete options")
+       }
+
      ListItem {
             id: autoCleaner
+            divider.visible: false
             ListItemLayout{
                 title.text: i18n.tr("Auto delete records")
                 subtitle.text: i18n.tr("Previous year")
@@ -72,7 +77,12 @@ Page{
             
         }
 
+        ListItemHeader{
+           title.text: i18n.tr("Manual delete options")
+       }
+
         ListItem {
+            divider.visible : false
             id: month_option
             ListItemLayout{
                 title.text: i18n.tr("Delete from specific Month & Year")
@@ -80,7 +90,7 @@ Page{
                 ProgressionSlot{}
             }
             onClicked: {
-                PopupUtils.open(entry_month_pop,month_option)
+                PopupUtils.open(entry_month_pop)
             }
         }
 
@@ -88,6 +98,7 @@ Page{
 
 
         ListItem {
+            divider.visible : false
             id: deleteTodayRecords
             ListItemLayout{
                 title.text: i18n.tr("Delete today's records")
@@ -104,6 +115,7 @@ Page{
         }
 
         ListItem {
+            divider.visible : false
             id: deleteAllRecords
             ListItemLayout{
                 title.text: i18n.tr("Delete all records")
