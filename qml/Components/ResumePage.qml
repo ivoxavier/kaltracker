@@ -43,7 +43,7 @@ Page{
 
     header: PageHeader {
 
-        title: i18n.tr("${0}'s Panel").replace("${0}", root.userName);
+        title: i18n.tr("%1's Panel").arg(root.userName);
 
         trailingActionBar.actions: AboutAction{}
 
@@ -68,8 +68,8 @@ Page{
             anchors.centerIn: parent 
             radius: "large"
             aspect: UbuntuShape.Inset
-            width: (resumePage.width / 3.33) //- units.gu(20)
-            height:  (resumePage.header.height * 2) //- units.gu(60)
+            width: (resumePage.width / 3.33)
+            height:  (resumePage.header.height * 2)
             visible: foodsList.visible === true ? false : true
             z:100
             Icon{ 
@@ -110,7 +110,7 @@ Page{
 
         Label{
             id: topPanelLabel
-            text: i18n.tr("Daily Ingestion")
+            text: i18n.tr("Daily Calories")
             font.bold: true 
             fontSizeMode:Text.Fit 
             font.pixelSize: units.gu(2)

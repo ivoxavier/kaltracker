@@ -43,7 +43,7 @@ Page{
 
     header: PageHeader {
 
-        title: i18n.tr("${0}'s Panel").replace("${0}", root.userName);
+        title: i18n.tr("%1's Panel").arg(root.userName);
 
         trailingActionBar.actions: AboutAction{}
 
