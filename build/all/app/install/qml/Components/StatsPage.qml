@@ -26,7 +26,7 @@ import Qt.labs.platform 1.0
 import Ubuntu.Content 1.3
 import QtCharts 2.3
 import "../js/DataBaseTools.js" as DataBase
-
+import "UiAddOns"
 
 Page{
     id: statsPage
@@ -48,8 +48,14 @@ Page{
         anchors.top: statsPage.header.bottom
         width: statsPage.width
 
+        ListItemHeader{
+           title.text: i18n.tr("Ingestions analysis")
+       }
+
         ListItem {
-        
+
+            divider.visible: false
+
             ListItemLayout{
                 title.text: i18n.tr("Average Calories per Month")
                 
@@ -59,18 +65,13 @@ Page{
         onClicked: mainStack.push(averageCaloriesMonth)
         }
 
-        ListItem {
-        
-            ListItemLayout{
-                title.text: i18n.tr("Indexes")
-                
-                ProgressionSlot{}
-            }
-
-        onClicked: mainStack.push(indexesCalcPage)
-        }
+        ListItemHeader{
+           title.text: i18n.tr("User profile analysis")
+       }
 
         ListItem {
+
+            divider.visible: false
         
             ListItemLayout{
                 title.text: i18n.tr("Consume Habits")
@@ -80,6 +81,20 @@ Page{
 
         onClicked: mainStack.push(consumeHabitsPage)
         }
+
+
+        ListItem {
+            divider.visible: false
+            ListItemLayout{
+                title.text: i18n.tr("Indexes")
+                
+                ProgressionSlot{}
+            }
+
+        onClicked: mainStack.push(indexesCalcPage)
+        }
+
+        
 
     }
     

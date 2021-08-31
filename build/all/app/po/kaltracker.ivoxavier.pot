@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 15:25+0000\n"
+"POT-Creation-Date: 2021-08-31 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgid "Calories Exceed previous day"
 msgstr ""
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:44
-#: ../qml/Components/StatsPage.qml:54
+#: ../qml/Components/StatsPage.qml:60
 msgid "Average Calories per Month"
 msgstr ""
 
@@ -484,7 +484,7 @@ msgstr ""
 msgid "Select your main goal. Then enter your data.\n"
 msgstr ""
 
-#: ../qml/Components/IndexesCalcPage.qml:61 ../qml/Components/StatsPage.qml:65
+#: ../qml/Components/IndexesCalcPage.qml:61 ../qml/Components/StatsPage.qml:89
 msgid "Indexes"
 msgstr ""
 
@@ -652,7 +652,15 @@ msgstr ""
 msgid "Stats"
 msgstr ""
 
-#: ../qml/Components/StatsPage.qml:76
+#: ../qml/Components/StatsPage.qml:52
+msgid "Ingestions analysis"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:69
+msgid "User profile analysis"
+msgstr ""
+
+#: ../qml/Components/StatsPage.qml:77
 msgid "Consume Habits"
 msgstr ""
 
