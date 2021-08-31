@@ -17,7 +17,7 @@
 
 import QtQuick 2.9
 import Ubuntu.Components 1.3
-import Ubuntu.Components.ListItems 1.3 as ListItem
+import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
@@ -51,24 +51,27 @@ Page{
         anchors.left: exportDataPage.left
         anchors.right: exportDataPage.right
         width: exportDataPage.width
-        spacing: units.gu(10)
+        spacing: units.gu(6)
 
-        TextEdit {
-            id: labelInfo
-            text: i18n.tr("Files are placed under Documents/kaltracker_exports/")
-            font.bold: true
-            wrapMode: TextEdit.Wrap
-            width: parent.width
-            readOnly: true
-            textFormat: TextEdit.PlainText
-            color: theme.palette.normal.fieldText
-            leftPadding: units.gu(1)
-        } 
+        ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    title.text: i18n.tr("Files are stored in csv formart")
+                    subtitle.text: i18n.tr("Path: Documents/kaltracker_exports/")
+                    title.font.bold: true
+                }
+            }
             
-
             Timer{
                 id: timer
                 repeat: false
+            }
+
+            Icon{
+                anchors.horizontalCenter: parent.horizontalCenter
+                name: loadingCircle.running ? "mail-mark-important" : "thumb-up"
+                width: (exportDataPage.width / 3.33)
+                height:  (exportDataPage.header.height * 2)
             }
 
             ActivityIndicator {
@@ -77,7 +80,6 @@ Page{
                 running: false
                 onRunningChanged: {
                 
-                    
 
                     function animationState(delayMiliseconds, cb) {
                         timer.interval = delayMiliseconds;

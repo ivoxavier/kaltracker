@@ -50,13 +50,13 @@ Page {
         }
     }
 
-    property string userName: userNameEntry.text
+    property string userName
     property string userSex: "Men"
 
     // TextField Component should assign it onEditingFinsihed, not working.
-    property int userAge: userAgeEntry.text
-    property double userWeight: userWeightEntry.text
-    property double userHeight: userHeightEntry.text
+    property int userAge
+    property double userWeight
+    property double userHeight
     property int userKaloriesDayTarget
     property string userActivityLevel: "Very Light"
     property int activityLevelToEquation: 0
@@ -88,6 +88,7 @@ Page {
                 width: units.gu(18)
                 placeholderText: i18n.tr("Name")
                 horizontalAlignment: TextInput.AlignHCenter
+                onTextChanged: userName = userNameEntry.text
             }
         }
         Row {
@@ -101,6 +102,7 @@ Page {
                 horizontalAlignment: TextInput.AlignHCenter
                 inputMethodHints: Qt.ImhDigitsOnly
                 validator: IntValidator{}
+                onTextChanged: userAge = userAgeEntry.text
              }
                     
             TextField {
@@ -109,6 +111,7 @@ Page {
                 placeholderText: i18n.tr("Weight")
                 horizontalAlignment: TextInput.AlignHCenter
                 inputMethodHints: Qt.ImhDigitsOnly
+                onTextChanged: userWeight = userWeightEntry.text
             }
 
             TextField {
@@ -117,6 +120,7 @@ Page {
                 placeholderText: i18n.tr("Height")
                 horizontalAlignment: TextInput.AlignHCenter
                 inputMethodHints: Qt.ImhDigitsOnly
+                onTextChanged: userHeight = userHeightEntry.text
             }
         }   
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 17:58+0000\n"
+"POT-Creation-Date: 2021-08-31 18:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,75 +165,75 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:100
+#: ../qml/Components/ConfigUserProfilePage.qml:101
 #: ../qml/Components/UserAccountPage.qml:216
 msgid "Age"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:109
+#: ../qml/Components/ConfigUserProfilePage.qml:111
 #: ../qml/Components/UserAccountPage.qml:242
 msgid "Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:117
+#: ../qml/Components/ConfigUserProfilePage.qml:120
 #: ../qml/Components/UserAccountPage.qml:265
 msgid "Height"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:128
+#: ../qml/Components/ConfigUserProfilePage.qml:132
 msgid "Sex"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:129
+#: ../qml/Components/ConfigUserProfilePage.qml:133
 msgid "Men"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:129
+#: ../qml/Components/ConfigUserProfilePage.qml:133
 msgid "Woman"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:155
+#: ../qml/Components/ConfigUserProfilePage.qml:159
 #: ../qml/Components/UserAccountPage.qml:306
 msgid "Very Light"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:156
+#: ../qml/Components/ConfigUserProfilePage.qml:160
 #: ../qml/Components/UserAccountPage.qml:307
 msgid "Light"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:157
+#: ../qml/Components/ConfigUserProfilePage.qml:161
 #: ../qml/Components/UserAccountPage.qml:308
 msgid "Moderate"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:158
+#: ../qml/Components/ConfigUserProfilePage.qml:162
 #: ../qml/Components/UserAccountPage.qml:309
 msgid "Heavy"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:197
+#: ../qml/Components/ConfigUserProfilePage.qml:201
 #: ../qml/Components/FoodsTemplate.qml:198 ../qml/Components/ResumePage.qml:172
 #: ../qml/Components/UserAccountPage.qml:360
 msgid "Goal"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:211
+#: ../qml/Components/ConfigUserProfilePage.qml:215
 #: ../qml/Components/UserAccountPage.qml:403
 msgid "Loose Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:218
+#: ../qml/Components/ConfigUserProfilePage.qml:222
 #: ../qml/Components/UserAccountPage.qml:410
 msgid "Maintain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:226
+#: ../qml/Components/ConfigUserProfilePage.qml:230
 #: ../qml/Components/UserAccountPage.qml:418
 msgid "Gain Weight"
 msgstr ""
 
-#: ../qml/Components/ConfigUserProfilePage.qml:254
+#: ../qml/Components/ConfigUserProfilePage.qml:258
 #: ../qml/Components/UserAccountPage.qml:435
 msgid "Calculate"
 msgstr ""
@@ -383,31 +383,35 @@ msgstr ""
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:58
-msgid "Files are placed under Documents/kaltracker_exports/"
+#: ../qml/Components/ExportDataPage.qml:59
+msgid "Files are stored in csv formart"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:90
+#: ../qml/Components/ExportDataPage.qml:60
+msgid "Path: Documents/kaltracker_exports/"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:92
 msgid "You may now start the export. It may take a while."
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:100
+#: ../qml/Components/ExportDataPage.qml:102
 msgid "Preparing data for processing. Please, wait a few seconds"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:113
+#: ../qml/Components/ExportDataPage.qml:115
 msgid "Export"
-msgstr ""
-
-#: ../qml/Components/ExportDataPage.qml:142
-#: ../qml/Components/ExportDataPage.qml:150
-#: ../qml/Components/ExportDataPage.qml:159
-msgid "...Done :)"
 msgstr ""
 
 #: ../qml/Components/ExportDataPage.qml:144
 #: ../qml/Components/ExportDataPage.qml:152
 #: ../qml/Components/ExportDataPage.qml:161
+msgid "...Done :)"
+msgstr ""
+
+#: ../qml/Components/ExportDataPage.qml:146
+#: ../qml/Components/ExportDataPage.qml:154
+#: ../qml/Components/ExportDataPage.qml:163
 msgid "Oops. Check the logs"
 msgstr ""
 
