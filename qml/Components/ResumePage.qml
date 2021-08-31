@@ -302,33 +302,6 @@ Page{
         }
     }
 
-    SequentialAnimation {
-                    id: animation
-
-                    RotationAnimation {
-                        target: addButton
-                        properties: "rotation"
-                        duration: 2000
-                        to: 40
-                        easing.type: Easing.OutQuad
-                    }
-
-                    RotationAnimation {
-                        target: addButton
-                        properties: "rotation"
-                        duration: 2100
-                        to: -40
-                        easing.type: Easing.OutQuad
-                    }
-
-                    RotationAnimation {
-                        target :addButton
-                        properties: "rotation"
-                        duration: 2000
-                        to: 0
-                        easing.type: Easing.OutQuad
-                    }
-    }
 
     Rectangle{
         id: footer
@@ -414,16 +387,8 @@ Page{
 
 
  Component.onDestruction:{
-    console.log("byebye")  
+    console.log("App Closed")  
  } 
 
-function isAnimating(){
-    if (foodsList.model.count === 0){
-        animation.start()
-    } else {
-        //pass
-    }
-}
 
-Component.onCompleted : isAnimating()
 }
