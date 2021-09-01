@@ -220,8 +220,8 @@ MainView {
         category: "app_configs"
 
         property bool isCleanInstall: true
-        property bool isAutoCleanChecked: true
-        property bool isExceedCaloriesChecked : true
+        property bool isAutoCleanChecked: false
+        property bool isExceedCaloriesChecked : false
         property bool displayAlert: false
         property bool isUserListCreated : false
         property bool isBothFoodsListChecked : false
