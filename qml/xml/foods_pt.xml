@@ -887,20 +887,6 @@
             <Food>
                 <code>7613039868300</code>
                 <product_name>Estrelitas - Nestlé</product_name>
-                <nutriscore_grade>d</nutriscore_grade>
-                <type>Food</type>
-                <energy_kcal_100g>399</energy_kcal_100g>
-                <fat_100g>0.8</fat_100g>
-                <saturated_fat_100g>0.1</saturated_fat_100g>
-                <carbohydrates_100g>8.3</carbohydrates_100g>
-                <sugars_100g>1.8</sugars_100g>
-                <proteins_100g>6.0</proteins_100g>
-            </Food>
-        </item>
-        <item>
-            <Food>
-                <code>7613039868300</code>
-                <product_name>Estrelitas - Nestlé</product_name>
                 <nutriscore_grade>c</nutriscore_grade>
                 <type>Food</type>
                 <energy_kcal_100g>399</energy_kcal_100g>
