@@ -26,6 +26,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import "./js/DataBaseTools.js" as DataBase
+import "./js/SpentTimeOnApp.js" as Telemetry
 import "./Components"
 import "./Components/ActionBar"
 
@@ -41,12 +42,18 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    
+    //app general
     property int metric
     property color defaultForegroundColor: UbuntuColors.porcelain
     property string defaultBackgroundColor: UbuntuColors.blue
     property color followSystemTheme : {}
     property int activeTheme: Suru.theme === 0 ? followSystemTheme = UbuntuColors.porcelain : followSystemTheme = UbuntuColors.dark
     backgroundColor: followSystemTheme
+    property date boot : new Date()
+    property int boot_hours : boot.getHours()
+    property int boot_minutes : boot.getMinutes()
+    property int boot_seconds : boot.getSeconds()
 
     //required to update dashboard after newIngestion
     signal initDB()
@@ -220,9 +227,29 @@ MainView {
         property bool isBothFoodsListChecked : false
         property bool isOpenFactsFoodsListChecked : true
         property bool isUserListFoodsChecked : false
-
+        property bool isTelemetryChecked : true
+        property bool isTelemetryDBCreated : false
     }
-                                                    
+
+
+    Python{
+        id: py
+        Component.onCompleted:{
+            console.log('Python: ' + pythonVersion())
+            console.log('PyOtherSide: ' + pluginVersion())
+            addImportPath(Qt.resolvedUrl('./py/'))
+            importModule('store_telemetry', function() {
+                py.call('store_telemetry.moduleState', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+            })
+
+        }
+        onError: {
+            console.log('Python error: ' + traceback);
+        }
+
+    }                                 
 
     PageStack{
         id: mainStack
@@ -233,7 +260,8 @@ MainView {
     }
 
 
-    Component.onCompleted: { /* check on pageComplete */
+    Component.onCompleted: {
+        console.log("boot at",boot)
         if (appSettings.isCleanInstall){
 
             mainStack.push(welcomePage);
@@ -241,29 +269,55 @@ MainView {
         } else {
 
             mainStack.push(resumePage);
-
-            if (appSettings.isAutoCleanChecked){
-
-                DataBase.autoClean()
-
-            } else {
-                //pass
-            }
-
-                if ( appSettings.isExceedCaloriesChecked){
-                    
-                     if ( appSettings.displayAlert){
-                         PopupUtils.open(alertDialog)
-                     }
-                } else {
-                    //pass
-                }
-
-            function isCleanInstallStatus(){
-                console.log('Not clean install') 
-            }
-                isCleanInstallStatus();  
         }
-    } 
+
+        if (appSettings.isAutoCleanChecked){
+
+            DataBase.autoClean()
+
+        } else {
+                //pass
+        }
+
+        if (appSettings.isExceedCaloriesChecked){
+            if (appSettings.displayAlert){
+                PopupUtils.open(alertDialog)
+            }
+            } else {
+                    //pass
+            }
+        
+        if(appSettings.isTelemetryChecked){
+            if(appSettings.isTelemetryDBCreated){
+                //pass
+            } else{
+                py.call('store_telemetry.ManageDW.dropTable', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+
+            py.call('store_telemetry.ManageDW.createTable', [] ,function(returnValue){
+                console.log(returnValue)
+            })
+
+            appSettings.isTelemetryDBCreated = !appSettings.isTelemetryDBCreated
+            }
+            
+            
+        } else {
+            //pass
+        }
+    }
+
+    Component.onDestruction:{
+        if(appSettings.isTelemetryChecked){
+            var rs = Telemetry.getTimeUsage()
+            py.call('store_telemetry.ManageDW.saveTime', [rs] ,function(returnValue){
+            console.log(returnValue)
+            })
+            console.log("aslkdjlaskjdl")
+        } else {
+            //pass
+        }
+ }  
 }
 

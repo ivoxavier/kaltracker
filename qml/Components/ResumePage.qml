@@ -394,9 +394,7 @@ Page{
     }
 
 
- Component.onDestruction:{
-    console.log("App Closed")  
- } 
+ 
 
 
 }

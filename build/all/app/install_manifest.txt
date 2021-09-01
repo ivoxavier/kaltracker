@@ -7,12 +7,14 @@
 //qml/js/AwarenessAnalysis.js
 //qml/js/UserFoodsListDB.js
 //qml/js/DataBaseTools.js
+//qml/js/SpentTimeOnApp.js
 //qml/js/Ibw.js
 //qml/xml/foods_uk.xml
 //qml/xml/foods_pt.xml
 //qml/xml/foods_es.xml
 //qml/xml/foods_fr.xml
 //qml/py/export_data.py
+//qml/py/store_telemetry.py
 //qml/py/awareness_level.py
 //qml/Main.qml
 //qml/Components/DeleteMonthDBPop.qml

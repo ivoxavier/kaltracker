@@ -122,6 +122,24 @@ Page{
             }
         }
 
+        ListItem {
+            
+            divider.visible: false
+
+            ListItemLayout{
+                title.text: i18n.tr("Telemetry: (time spent on app)")
+
+                Switch{
+                    checked: appSettings.isTelemetryChecked
+                    onClicked: appSettings.isTelemetryChecked = !appSettings.isTelemetryChecked
+                }
+
+             }
+            onClicked: {
+                //PopupUtils.open(optionListFoodsDialog)
+            }
+        }
+
         
 }
 }
