@@ -310,11 +310,9 @@ MainView {
 
     Component.onDestruction:{
         if(appSettings.isTelemetryChecked){
-            var rs = Telemetry.getTimeUsage()
-            py.call('store_telemetry.ManageDW.saveTime', [rs] ,function(returnValue){
-            console.log(returnValue)
+            py.call('store_telemetry.ManageDW.saveTime', [Telemetry.getTimeUsage()] ,function(returnValue){
             })
-            console.log("aslkdjlaskjdl")
+        
         } else {
             //pass
         }
