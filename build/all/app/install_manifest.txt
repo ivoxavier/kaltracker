@@ -1,5 +1,6 @@
 //manifest.json
 //kaltracker.apparmor
+//assets/logoBakcup.svg
 //assets/assets.qrc
 //assets/logo.svg
 //qml/js/Bmi.js
@@ -23,7 +24,6 @@
 //qml/Components/WelcomePage.qml
 //qml/Components/UserFoodsListEditPage.qml
 //qml/Components/AdviceIndexexDialog.qml
-//qml/Components/ScheduleIngestionPage.qml
 //qml/Components/UserListIngestionPage.qml
 //qml/Components/ConfigUserProfilePage.qml
 //qml/Components/ResumePage.qml
@@ -54,3 +54,4 @@
 //qml/Components/RemoveRecordsDialog.qml
 //qml/img/emptyList.svg
 //kaltracker.desktop
+/share/locale/pt/LC_MESSAGES/kaltracker.ivoxavier.mo

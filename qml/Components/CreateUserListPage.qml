@@ -251,8 +251,14 @@ Page {
                             minimumValue: 0
                             maximumValue: 100
                             live: false
-                            onValueChanged: root.stackFat = (Math.round(fatSlider.value * 10) / 10)
+                            onValueChanged: {
+
+                            root.stackFat = (Math.round(fatSlider.value * 10) / 10)
+                            fatSliderValue.text = root.stackFat
+                            }
                         }
+
+                        Label{id: fatSliderValue; text: "0"}
                     }
                     
                 } 
@@ -274,8 +280,13 @@ Page {
                             minimumValue: 0
                             maximumValue: 100
                             live: false
-                            onValueChanged: root.stackSaturated = (Math.round(saturatedSlider.value * 10) / 10)
+                            onValueChanged: {
+                            root.stackSaturated = (Math.round(saturatedSlider.value * 10) / 10)
+                            saturatedSliderValue.text = root.stackSaturated
+                            }
                         }
+
+                        Label{id: saturatedSliderValue; text: "0"}
                         
  
                     }
@@ -299,8 +310,13 @@ Page {
                             minimumValue: 0
                             maximumValue: 100
                             live: false
-                            onValueChanged: root.stackCarborn = (Math.round(carboSlider.value * 10) / 10)
+                            onValueChanged: {
+                            root.stackCarborn = (Math.round(carboSlider.value * 10) / 10)
+                            carboSliderValue.text = root.stackCarborn
+                            }
                         }
+
+                        Label{id: carboSliderValue; text: "0"}
  
                     }
                     
@@ -322,9 +338,13 @@ Page {
                             minimumValue: 0
                             maximumValue: 100
                             live: false
-                            onValueChanged: root.stackSugars = (Math.round(sugarSlider.value * 10) / 10)
+                            onValueChanged: {
+                            root.stackSugars = (Math.round(sugarSlider.value * 10) / 10)
+                            sugarSliderValue.text = root.stackSugars
+                            }
                         }
- 
+
+                        Label{id: sugarSliderValue; text: "0"}
                     }
                     
                 } 
@@ -346,8 +366,13 @@ Page {
                             minimumValue: 0
                             maximumValue: 100
                             live: false
-                            onValueChanged: root.stackProtein = (Math.round(proteinSlide.value * 10) / 10)
+                            onValueChanged: {
+                            root.stackProtein = (Math.round(proteinSlide.value * 10) / 10)
+                            proteinSlideValue.text = root.stackProtein
+                            }
                         } 
+
+                        Label{id: proteinSlideValue; text: "0"}
                     }
                     
                 } 

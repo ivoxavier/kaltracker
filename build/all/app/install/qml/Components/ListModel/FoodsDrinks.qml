@@ -45,9 +45,7 @@ XmlListModel {
         XmlRole { name: "carbohydrates_100g"; query: "carbohydrates_100g/string()" }
         XmlRole { name: "sugars_100g"; query: "sugars_100g/string()" }
         XmlRole { name: "proteins_100g"; query: "proteins_100g/string()" }
-        Component.onCompleted: {
-        console.log(Qt.locale().name)
-        console.log("xml loaded")}
+        
 }
     
     

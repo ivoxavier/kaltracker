@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 16:42+0000\n"
+"POT-Creation-Date: 2021-09-01 18:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,8 +283,6 @@ msgstr ""
 #: ../qml/Components/CreateUserListPage.qml:153
 #: ../qml/Components/OpenFoodsFactsListPage.qml:81
 #: ../qml/Components/OpenFoodsFactsListPage.qml:94
-#: ../qml/Components/ScheduleIngestionPage.qml:69
-#: ../qml/Components/ScheduleIngestionPage.qml:92
 #: ../qml/Components/UserListIngestionPage.qml:84
 #: ../qml/Components/UserListIngestionPage.qml:111
 msgid "Drink"
@@ -293,8 +291,6 @@ msgstr ""
 #: ../qml/Components/CreateUserListPage.qml:153
 #: ../qml/Components/OpenFoodsFactsListPage.qml:76
 #: ../qml/Components/OpenFoodsFactsListPage.qml:94
-#: ../qml/Components/ScheduleIngestionPage.qml:64
-#: ../qml/Components/ScheduleIngestionPage.qml:92
 #: ../qml/Components/UserListIngestionPage.qml:79
 #: ../qml/Components/UserListIngestionPage.qml:111
 msgid "Food"
@@ -403,20 +399,19 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:144
-#: ../qml/Components/ExportDataPage.qml:152
-#: ../qml/Components/ExportDataPage.qml:161
+#: ../qml/Components/ExportDataPage.qml:143
+#: ../qml/Components/ExportDataPage.qml:151
+#: ../qml/Components/ExportDataPage.qml:160
 msgid "...Done :)"
 msgstr ""
 
-#: ../qml/Components/ExportDataPage.qml:146
-#: ../qml/Components/ExportDataPage.qml:154
-#: ../qml/Components/ExportDataPage.qml:163
+#: ../qml/Components/ExportDataPage.qml:145
+#: ../qml/Components/ExportDataPage.qml:153
+#: ../qml/Components/ExportDataPage.qml:162
 msgid "Oops. Check the logs"
 msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:133
-#: ../qml/Components/ScheduleIngestionPage.qml:82
 msgid "Ingestion Stored"
 msgstr ""
 
@@ -614,14 +609,6 @@ msgstr ""
 
 #: ../qml/Components/SaveDataDialog.qml:28
 msgid "Operation Result"
-msgstr ""
-
-#: ../qml/Components/ScheduleIngestionPage.qml:43
-msgid "Schedule"
-msgstr ""
-
-#: ../qml/Components/ScheduleIngestionPage.qml:191
-msgid "Ok"
 msgstr ""
 
 #: ../qml/Components/SettingsPage.qml:36

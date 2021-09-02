@@ -187,10 +187,6 @@ MainView {
         ConfigUserProfilePage{}
     }
 
-    Component {
-        id: scheduleIngestionPage
-        ScheduleIngestionPage {}
-    }
 
     Component {
         id: openFoodsFactsListPage

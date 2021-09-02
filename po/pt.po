@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 18:47+0000\n"
+"POT-Creation-Date: 2021-09-01 18:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,262 +23,262 @@ msgstr ""
 
 #: ../qml/Components/AboutDialog.qml:42
 msgid "Version: "
-msgstr ""
+msgstr "Versão:"
 
 #: ../qml/Components/AboutDialog.qml:49
 msgid "Listed foods from: openfoodsfacts.org"
-msgstr ""
+msgstr "Alimentos listados de: openfoodsfacts.org"
 
 #: ../qml/Components/AboutDialog.qml:56
 msgid "Maintainer: Ivo Xavier"
-msgstr ""
+msgstr "Programador: Ivo Xavier"
 
 #: ../qml/Components/ActionBar/AboutAction.qml:25
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #: ../qml/Components/ActionBar/HelpUserConfigAction.qml:24
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: ../qml/Components/AdviceIndexexDialog.qml:30
 msgid "Advice"
-msgstr ""
+msgstr "Conselho"
 
 #: ../qml/Components/AdviceIndexexDialog.qml:54
 #: ../qml/Components/DeleteMonthDBPop.qml:97
 msgid "Back"
-msgstr ""
+msgstr "Ok"
 
 #: ../qml/Components/AlertDialog.qml:25
 msgid "You've exceed you're calories"
-msgstr ""
+msgstr "Excedeu as calorias"
 
 #: ../qml/Components/AlertDialog.qml:28
 msgid "Take that in considerarion"
-msgstr ""
+msgstr "Leve isso em consideração"
 
 #: ../qml/Components/AlertsPage.qml:35
 msgid "Alerts Page"
-msgstr ""
+msgstr "Página de avisos"
 
 #: ../qml/Components/AlertsPage.qml:57
 msgid "Calories Exceed previous day"
-msgstr ""
+msgstr "Calorias excedidas ontem"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:44
 #: ../qml/Components/StatsPage.qml:60
 msgid "Average Calories per Month"
-msgstr ""
+msgstr "Médias de calorias por mês"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:88
 #: ../qml/Components/MonthIngestionsPage.qml:46
 msgid "January"
-msgstr ""
+msgstr "Janeiro"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:89
 #: ../qml/Components/MonthIngestionsPage.qml:47
 msgid "February"
-msgstr ""
+msgstr "Fevereiro"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:90
 #: ../qml/Components/MonthIngestionsPage.qml:48
 msgid "March"
-msgstr ""
+msgstr "Março"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:91
 #: ../qml/Components/MonthIngestionsPage.qml:49
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:92
 #: ../qml/Components/MonthIngestionsPage.qml:50
 msgid "May"
-msgstr ""
+msgstr "Maio"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:93
 #: ../qml/Components/MonthIngestionsPage.qml:51
 msgid "June"
-msgstr ""
+msgstr "Junho"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:94
 #: ../qml/Components/MonthIngestionsPage.qml:52
 msgid "July"
-msgstr ""
+msgstr "Julho"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:95
 #: ../qml/Components/MonthIngestionsPage.qml:53
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:96
 #: ../qml/Components/MonthIngestionsPage.qml:54
 msgid "September"
-msgstr ""
+msgstr "Setembro"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:97
 #: ../qml/Components/MonthIngestionsPage.qml:55
 msgid "October"
-msgstr ""
+msgstr "Outubro"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:98
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "December"
-msgstr ""
+msgstr "Dezembro"
 
 #: ../qml/Components/AverageCaloriesMonthPage.qml:98
 #: ../qml/Components/MonthIngestionsPage.qml:56
 msgid "November"
-msgstr ""
+msgstr "Novembro"
 
 #: ../qml/Components/ChooseListPopoverDialog.qml:25
 msgid "Choose options of list foods to show"
-msgstr ""
+msgstr "Escolha a lista de alimentos a mostrar"
 
 #: ../qml/Components/ChooseListPopoverDialog.qml:29
 #: ../qml/Components/OpenFoodsFactsListPage.qml:52
 msgid "OpenFoodsFacts list"
-msgstr ""
+msgstr "Lista da openfoodsfacts"
 
 #: ../qml/Components/ChooseListPopoverDialog.qml:42
 msgid "User foods list"
-msgstr ""
+msgstr "Lista criada por si"
 
 #: ../qml/Components/ChooseListPopoverDialog.qml:56
 msgid "Select which one"
-msgstr ""
+msgstr "Escolher qual"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:32
 msgid "User Profile"
-msgstr ""
+msgstr "Perfil do utilizador"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:65
 #: ../qml/Components/UserAccountPage.qml:49
 msgid "No Goal"
-msgstr ""
+msgstr "Sem objetivo"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:81
 msgid " based on Mifflin-St Jeor equation"
-msgstr ""
+msgstr "baseado na equação do Mifflin-St Jeor"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:89
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:101
 #: ../qml/Components/UserAccountPage.qml:216
 msgid "Age"
-msgstr ""
+msgstr "Idade"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:111
 #: ../qml/Components/UserAccountPage.qml:242
 msgid "Weight"
-msgstr ""
+msgstr "Peso"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:120
 #: ../qml/Components/UserAccountPage.qml:265
 msgid "Height"
-msgstr ""
+msgstr "Altura"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:132
 msgid "Sex"
-msgstr ""
+msgstr "Sexo"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:133
 msgid "Men"
-msgstr ""
+msgstr "Homem"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:133
 msgid "Woman"
-msgstr ""
+msgstr "Mulher"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:159
 #: ../qml/Components/UserAccountPage.qml:306
 msgid "Very Light"
-msgstr ""
+msgstr "Muito pouco"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:160
 #: ../qml/Components/UserAccountPage.qml:307
 msgid "Light"
-msgstr ""
+msgstr "Leve"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:161
 #: ../qml/Components/UserAccountPage.qml:308
 msgid "Moderate"
-msgstr ""
+msgstr "Moderado"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:162
 #: ../qml/Components/UserAccountPage.qml:309
 msgid "Heavy"
-msgstr ""
+msgstr "Pesado"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:201
 #: ../qml/Components/FoodsTemplate.qml:198 ../qml/Components/ResumePage.qml:172
 #: ../qml/Components/UserAccountPage.qml:360
 msgid "Goal"
-msgstr ""
+msgstr "Objetivo"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:215
 #: ../qml/Components/UserAccountPage.qml:403
 msgid "Loose Weight"
-msgstr ""
+msgstr "Perder peso"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:222
 #: ../qml/Components/UserAccountPage.qml:410
 msgid "Maintain Weight"
-msgstr ""
+msgstr "Manter"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:230
 #: ../qml/Components/UserAccountPage.qml:418
 msgid "Gain Weight"
-msgstr ""
+msgstr "Ganhar peso"
 
 #: ../qml/Components/ConfigUserProfilePage.qml:258
 #: ../qml/Components/UserAccountPage.qml:435
 msgid "Calculate"
-msgstr ""
+msgstr "Calcular"
 
 #: ../qml/Components/ConsumeHabitsPage.qml:40
 msgid "Your Habits"
-msgstr ""
+msgstr "Os seus hábitos"
 
 #: ../qml/Components/ConsumeHabitsPage.qml:93
 msgid "Most consumed"
-msgstr ""
+msgstr "Mais ingerido"
 
 #: ../qml/Components/ConsumeHabitsPage.qml:126
 msgid "Nutriscore grade class most eaten"
-msgstr ""
+msgstr "Tipo de nutriscore mais consumido"
 
 #: ../qml/Components/CreateTablesDialog.qml:27
 msgid "Preparing Everything For You"
-msgstr ""
+msgstr "A preparar tudo para si"
 
 #: ../qml/Components/CreateTablesDialog.qml:45
 #: ../qml/Components/UpdateUserDetailsDialog.qml:45
 msgid "Finished"
-msgstr ""
+msgstr "Terminado"
 
 #: ../qml/Components/CreateUserListPage.qml:42
 msgid "Create your list"
-msgstr ""
+msgstr "Criar a sua lista"
 
 #: ../qml/Components/CreateUserListPage.qml:90
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: ../qml/Components/CreateUserListPage.qml:108
 msgid "Saved!"
-msgstr ""
+msgstr "Gravado!"
 
 #: ../qml/Components/CreateUserListPage.qml:129
 #: ../qml/Components/FoodsTemplate.qml:335
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: ../qml/Components/CreateUserListPage.qml:142
 msgid "Product name"
-msgstr ""
+msgstr "Nome do produto"
 
 #: ../qml/Components/CreateUserListPage.qml:153
 #: ../qml/Components/OpenFoodsFactsListPage.qml:81
@@ -286,7 +286,7 @@ msgstr ""
 #: ../qml/Components/UserListIngestionPage.qml:84
 #: ../qml/Components/UserListIngestionPage.qml:111
 msgid "Drink"
-msgstr ""
+msgstr "Bebida"
 
 #: ../qml/Components/CreateUserListPage.qml:153
 #: ../qml/Components/OpenFoodsFactsListPage.qml:76
@@ -294,11 +294,11 @@ msgstr ""
 #: ../qml/Components/UserListIngestionPage.qml:79
 #: ../qml/Components/UserListIngestionPage.qml:111
 msgid "Food"
-msgstr ""
+msgstr "Comida"
 
 #: ../qml/Components/CreateUserListPage.qml:177
 msgid "Kcal/100g"
-msgstr ""
+msgstr "Kcal/100g"
 
 #: ../qml/Components/CreateUserListPage.qml:201
 msgid "Nutriscore grade"
@@ -327,41 +327,41 @@ msgstr ""
 #: ../qml/Components/CreateUserListPage.qml:234
 #: ../qml/Components/FoodsTemplate.qml:378
 msgid "Nutrients"
-msgstr ""
+msgstr "Nutrientes"
 
 #: ../qml/Components/CreateUserListPage.qml:243
 #: ../qml/Components/FoodsTemplate.qml:385
 msgid "Fat/100g"
-msgstr ""
+msgstr "Gordura/100g"
 
 #: ../qml/Components/CreateUserListPage.qml:265
 msgid "Saturated fat/100g"
-msgstr ""
+msgstr "Gordura saturada/100g"
 
 #: ../qml/Components/CreateUserListPage.qml:290
 msgid "Carbohydrates/100g"
-msgstr ""
+msgstr "Carbohidratos/100g"
 
 #: ../qml/Components/CreateUserListPage.qml:314
 #: ../qml/Components/FoodsTemplate.qml:413
 msgid "Sugars/100g"
-msgstr ""
+msgstr "Açucares/100g"
 
 #: ../qml/Components/CreateUserListPage.qml:337
 msgid "Proteins/100g"
-msgstr ""
+msgstr "Proteína/100g"
 
 #: ../qml/Components/DeleteMonthDBPop.qml:31
 msgid "Enter a month & year"
-msgstr ""
+msgstr "Introduza um mês e ano"
 
 #: ../qml/Components/DeleteMonthDBPop.qml:38
 msgid "Month"
-msgstr ""
+msgstr "Mês"
 
 #: ../qml/Components/DeleteMonthDBPop.qml:64
 msgid "Year"
-msgstr ""
+msgstr "Ano"
 
 #: ../qml/Components/DeleteMonthDBPop.qml:79
 #: ../qml/Components/MaintenancePage.qml:107
@@ -369,41 +369,41 @@ msgstr ""
 #: ../qml/Components/RemoveRecordsDialog.qml:30
 #: ../qml/Components/RemoveRecordsDialog.qml:60
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: ../qml/Components/DeleteMonthDBPop.qml:92
 msgid "Delete sucsseful"
-msgstr ""
+msgstr "Eliminado!"
 
 #: ../qml/Components/ExportDataPage.qml:39
 msgid "Export Data"
-msgstr ""
+msgstr "Exportar dados"
 
 #: ../qml/Components/ExportDataPage.qml:59
 msgid "Files are stored in csv formart"
-msgstr ""
+msgstr "Os ficheiros são gravados em csv"
 
 #: ../qml/Components/ExportDataPage.qml:60
 msgid "Path: Documents/kaltracker_exports/"
-msgstr ""
+msgstr "Localização: Documents/kaltracker_exports/"
 
 #: ../qml/Components/ExportDataPage.qml:92
 msgid "You may now start the export. It may take a while."
-msgstr ""
+msgstr "Já pode exportar. Pode demorar um pouco"
 
 #: ../qml/Components/ExportDataPage.qml:102
 msgid "Preparing data for processing. Please, wait a few seconds"
-msgstr ""
+msgstr "A preparar os dados. Por favor, espere um momento."
 
 #: ../qml/Components/ExportDataPage.qml:115
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: ../qml/Components/ExportDataPage.qml:143
 #: ../qml/Components/ExportDataPage.qml:151
 #: ../qml/Components/ExportDataPage.qml:160
 msgid "...Done :)"
-msgstr ""
+msgstr "...feito :)"
 
 #: ../qml/Components/ExportDataPage.qml:145
 #: ../qml/Components/ExportDataPage.qml:153
@@ -413,11 +413,11 @@ msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:133
 msgid "Ingestion Stored"
-msgstr ""
+msgstr "Ingestão guardada!"
 
 #: ../qml/Components/FoodsTemplate.qml:177
 msgid "Calories"
-msgstr ""
+msgstr "Calorias"
 
 #: ../qml/Components/FoodsTemplate.qml:197
 msgid "Kcal"
@@ -425,318 +425,318 @@ msgstr ""
 
 #: ../qml/Components/FoodsTemplate.qml:205
 msgid "Quantity of ingestion"
-msgstr ""
+msgstr "Dimensões"
 
 #: ../qml/Components/FoodsTemplate.qml:211
 msgid "Quantity of portions"
-msgstr ""
+msgstr "Quantidade"
 
 #: ../qml/Components/FoodsTemplate.qml:228
 msgid "Size of portions"
-msgstr ""
+msgstr "Tamanho"
 
 #: ../qml/Components/FoodsTemplate.qml:282
 msgid "Scheduling"
-msgstr ""
+msgstr "Agendamento"
 
 #: ../qml/Components/FoodsTemplate.qml:287
 msgid "Time & date"
-msgstr ""
+msgstr "Hora e data"
 
 #: ../qml/Components/FoodsTemplate.qml:345
 msgid "Very good nutritional quality"
-msgstr ""
+msgstr "Qualidade nutricional muito boa"
 
 #: ../qml/Components/FoodsTemplate.qml:346
 msgid "Good nutritional quality"
-msgstr ""
+msgstr "Qualidade nutricional boa"
 
 #: ../qml/Components/FoodsTemplate.qml:347
 msgid "Average nutritional quality"
-msgstr ""
+msgstr "Qualidade nutricional média"
 
 #: ../qml/Components/FoodsTemplate.qml:348
 msgid "Bad nutritional quality"
-msgstr ""
+msgstr "Qualidade nutricional má"
 
 #: ../qml/Components/FoodsTemplate.qml:348
 msgid "Poor nutritional quality"
-msgstr ""
+msgstr "Pobre qualidade nutricional"
 
 #: ../qml/Components/FoodsTemplate.qml:394
 msgid "Saturated/100g"
-msgstr ""
+msgstr "Gordura saturada / 100g"
 
 #: ../qml/Components/FoodsTemplate.qml:404
 msgid "CarbornHydrates/100g"
-msgstr ""
+msgstr "Carbohidratos/100g"
 
 #: ../qml/Components/FoodsTemplate.qml:423
 msgid "Protein/100g"
-msgstr ""
+msgstr "Proteína/100g"
 
 #: ../qml/Components/HelpUserConfigDialog.qml:23
 msgid "Tips"
-msgstr ""
+msgstr "Conselhos"
 
 #: ../qml/Components/HelpUserConfigDialog.qml:24
 msgid "Select your main goal. Then enter your data.\n"
-msgstr ""
+msgstr "Escolha o seu objetivo. Depois preencha os dados.\n"
 
 #: ../qml/Components/IndexesCalcPage.qml:61 ../qml/Components/StatsPage.qml:89
 msgid "Indexes"
-msgstr ""
+msgstr "Índices"
 
 #: ../qml/Components/IndexesCalcPage.qml:114
 msgid "Body mass index: "
-msgstr ""
+msgstr "Índice de massa corpural:"
 
 #: ../qml/Components/IndexesCalcPage.qml:147
 msgid "Your ideal weight (Kg)"
-msgstr ""
+msgstr "O seu peso ideal(Kg)"
 
 #: ../qml/Components/IndexesCalcPage.qml:180
 msgid "Current weight difference"
-msgstr ""
+msgstr "Diferença de peso atual"
 
 #: ../qml/Components/IndexesCalcPage.qml:197
 msgid "Advices"
-msgstr ""
+msgstr "Conselhos"
 
 #: ../qml/Components/MaintenancePage.qml:35
 msgid "Ingestions Storage"
-msgstr ""
+msgstr "Armazenamento das ingestões"
 
 #: ../qml/Components/MaintenancePage.qml:60
 msgid "Automatic delete options"
-msgstr ""
+msgstr "Opções de remoção automática"
 
 #: ../qml/Components/MaintenancePage.qml:67
 msgid "Auto delete records"
-msgstr ""
+msgstr "Eliminar registos automaticamente"
 
 #: ../qml/Components/MaintenancePage.qml:68
 msgid "Previous year"
-msgstr ""
+msgstr "Ano passado"
 
 #: ../qml/Components/MaintenancePage.qml:81
 msgid "Manual delete options"
-msgstr ""
+msgstr "Opções de remoção manual"
 
 #: ../qml/Components/MaintenancePage.qml:88
 msgid "Delete from specific Month & Year"
-msgstr ""
+msgstr "Eliminar de um mês e ano específico"
 
 #: ../qml/Components/MaintenancePage.qml:104
 msgid "Delete today's records"
-msgstr ""
+msgstr "Eliminar os registos de hoje"
 
 #: ../qml/Components/MaintenancePage.qml:121
 msgid "Delete all records"
-msgstr ""
+msgstr "Eliminar todos os registos"
 
 #: ../qml/Components/RemoveRecordsDialog.qml:32
 msgid "Deletes your *"
-msgstr ""
+msgstr "Elimina o seu"
 
 #: ../qml/Components/RemoveRecordsDialog.qml:40
 msgid "Type '123' to confirm"
-msgstr ""
+msgstr "Escreva '123' para confirmar"
 
 #: ../qml/Components/RemoveRecordsDialog.qml:51
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../qml/Components/RemoveRecordsDialog.qml:80
 msgid "Something went wrong"
-msgstr ""
+msgstr "Algo correu mal"
 
 #: ../qml/Components/RemoveRecordsDialog.qml:85
 msgid "Wrong code, try again"
-msgstr ""
+msgstr "Código errado, tente novamente"
 
 #: ../qml/Components/ResumePage.qml:46
 msgid "%1's Panel"
-msgstr ""
+msgstr "%1"
 
 #: ../qml/Components/ResumePage.qml:113
 msgid "Daily Calories"
-msgstr ""
+msgstr "Calorias diárias"
 
 #: ../qml/Components/ResumePage.qml:178
 msgid "Foods"
-msgstr ""
+msgstr "Alimentos"
 
 #: ../qml/Components/ResumePage.qml:185
 msgid "Remaining"
-msgstr ""
+msgstr "Em falta"
 
 #: ../qml/Components/ResumePage.qml:186
 msgid "Exceed"
-msgstr ""
+msgstr "Excedido"
 
 #: ../qml/Components/ResumePage.qml:186
 msgid "To ingest"
-msgstr ""
+msgstr "Para ingerir"
 
 #: ../qml/Components/ResumePage.qml:206
 msgid "Today meals"
-msgstr ""
+msgstr "Refeições de hoje"
 
 #: ../qml/Components/ResumePage.qml:244
 msgid "Breakfast"
-msgstr ""
+msgstr "Pequeno-almoço"
 
 #: ../qml/Components/ResumePage.qml:245
 msgid "Lunch"
-msgstr ""
+msgstr "Almoço"
 
 #: ../qml/Components/ResumePage.qml:246
 msgid "Dinner"
-msgstr ""
+msgstr "Jantar"
 
 #: ../qml/Components/ResumePage.qml:246
 msgid "Snack"
-msgstr ""
+msgstr "Lanche"
 
 #: ../qml/Components/ResumePage.qml:289
 msgid "Your foods list"
-msgstr ""
+msgstr "A sua lista de alimentos"
 
 #: ../qml/Components/ResumePage.qml:295
 msgid "OpenFoodsFacts List"
-msgstr ""
+msgstr "Lista da openfoodsfacts"
 
 #: ../qml/Components/SaveDataDialog.qml:28
 msgid "Operation Result"
-msgstr ""
+msgstr "Resultado da operação"
 
 #: ../qml/Components/SettingsPage.qml:36
 msgid "Settings"
-msgstr ""
+msgstr "Definições"
 
 #: ../qml/Components/SettingsPage.qml:62
 msgid "Storage"
-msgstr ""
+msgstr "Armazenamento"
 
 #: ../qml/Components/SettingsPage.qml:70
 msgid "Ingestions"
-msgstr ""
+msgstr "Ingestões"
 
 #: ../qml/Components/SettingsPage.qml:85
 msgid "User list foods & drinks"
-msgstr ""
+msgstr "Lista de comidas e bebidas do utilizador"
 
 #: ../qml/Components/SettingsPage.qml:94
 msgid "App settings"
-msgstr ""
+msgstr "Configurações da aplicação"
 
 #: ../qml/Components/SettingsPage.qml:102
 msgid "Alerts"
-msgstr ""
+msgstr "Alertas"
 
 #: ../qml/Components/SettingsPage.qml:115
 msgid "Set default behavior for list pick"
-msgstr ""
+msgstr "Definir o comportamento padrão para a escolha da lista "
 
 #: ../qml/Components/SettingsPage.qml:130
 msgid "Telemetry: (time spent on app)"
-msgstr ""
+msgstr "Telemetria: (tempo de utilização da aplicação)"
 
 #: ../qml/Components/StatsPage.qml:44
 msgid "Stats"
-msgstr ""
+msgstr "Estatísticas"
 
 #: ../qml/Components/StatsPage.qml:52
 msgid "Ingestions analysis"
-msgstr ""
+msgstr "Análise das ingestões"
 
 #: ../qml/Components/StatsPage.qml:69
 msgid "User profile analysis"
-msgstr ""
+msgstr "Análise do perfil do utilizador"
 
 #: ../qml/Components/StatsPage.qml:77
 msgid "Consume Habits"
-msgstr ""
+msgstr "Hábitos de consumo"
 
 #: ../qml/Components/UpdateIngestionTimePop.qml:42
 msgid "Set new time"
-msgstr ""
+msgstr "Definir um novo horário"
 
 #: ../qml/Components/UpdateIngestionTimePop.qml:63
 msgid "Update"
-msgstr ""
+msgstr "Atualizar"
 
 #: ../qml/Components/UpdateUserDetailsDialog.qml:27
 msgid "Updating DataBase"
-msgstr ""
+msgstr "A atualizar a base dados"
 
 #: ../qml/Components/UserAccountPage.qml:59
 msgid "User Account"
-msgstr ""
+msgstr "Conta do utilizador"
 
 #: ../qml/Components/UserAccountPage.qml:115
 msgid "Profile details"
-msgstr ""
+msgstr "Detalhes do perfil"
 
 #: ../qml/Components/UserAccountPage.qml:157
 msgid "Age: "
-msgstr ""
+msgstr "Idade:"
 
 #: ../qml/Components/UserAccountPage.qml:169
 msgid "M"
-msgstr ""
+msgstr "Homem"
 
 #: ../qml/Components/UserAccountPage.qml:169
 msgid "Sex: "
-msgstr ""
+msgstr "Sexo:"
 
 #: ../qml/Components/UserAccountPage.qml:169
 msgid "W"
-msgstr ""
+msgstr "M"
 
 #: ../qml/Components/UserAccountPage.qml:190
 #: ../qml/Components/UserAccountPage.qml:294
 msgid "Activity Level"
-msgstr ""
+msgstr "Nível de atividade"
 
 #: ../qml/Components/UserAccountPage.qml:201
 #: ../qml/Components/UserAccountPage.qml:353
 msgid "Plan"
-msgstr ""
+msgstr "Plano"
 
 #: ../qml/Components/UserAccountPage.qml:208
 msgid "Enter new values"
-msgstr ""
+msgstr "Introduza novos valores"
 
 #: ../qml/Components/UserAccountPage.qml:286
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #: ../qml/Components/UserAccountPage.qml:373
 msgid "Total amount of calories"
-msgstr ""
+msgstr "Total de calorias"
 
 #: ../qml/Components/UserAccountPage.qml:382
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: ../qml/Components/UserAccountPage.qml:453
 msgid "Save modifications"
-msgstr ""
+msgstr "Guardar modificações"
 
 #: ../qml/Components/UserFoodsListEditPage.qml:39
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 #: ../qml/Components/UserFoodsListEditPage.qml:70
 #: ../qml/Components/UserListIngestionPage.qml:96
 msgid "Create your list under app settings"
-msgstr ""
+msgstr "Crie a sua lista nas definições"
 
 #: ../qml/Components/UserListIngestionPage.qml:52
 msgid "%1's list"
-msgstr ""
+msgstr "Lista de %1"
 
 #: ../qml/Components/WelcomePage.qml:29 kaltracker.desktop.in.h:1
 msgid "KalTracker"
@@ -751,7 +751,7 @@ msgstr ""
 
 #: ../qml/Components/WelcomePage.qml:62
 msgid "Click to start"
-msgstr ""
+msgstr "Clique para começar"
 
 #: ../qml/js/AwarenessAnalysis.js:20
 msgid ""
@@ -783,20 +783,20 @@ msgstr ""
 
 #: ../qml/js/Bmi.js:25
 msgid "Low weigth"
-msgstr ""
+msgstr "Baixo peso"
 
 #: ../qml/js/Bmi.js:26
 msgid "Normal weigth"
-msgstr ""
+msgstr "Peso normal"
 
 #: ../qml/js/Bmi.js:27
 msgid "Weigth exceed"
-msgstr ""
+msgstr "Excesso de peso"
 
 #: ../qml/js/Bmi.js:28
 msgid "Obesity"
-msgstr ""
+msgstr "Obesidade"
 
 #: ../qml/js/Bmi.js:28
 msgid "Pre-obesity"
-msgstr ""
+msgstr "Pré-obesidade"

@@ -123,7 +123,6 @@ Page{
         }
         
         onClicked:{
-            console.log("Export process started")
 
             py.call('export_data.createPath', [] ,function(returnValue){
                 console.log(returnValue)
@@ -177,8 +176,6 @@ Page{
     Python{
         id: py
         Component.onCompleted:{
-            console.log('Python: ' + pythonVersion())
-            console.log('PyOtherSide: ' + pluginVersion())
             addImportPath(Qt.resolvedUrl('../py/'))
             importModule('export_data', function() {
                 py.call('export_data.moduleState', [] ,function(returnValue){
