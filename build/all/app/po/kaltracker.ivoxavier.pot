@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 18:47+0000\n"
+"POT-Creation-Date: 2021-09-02 16:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -334,20 +334,20 @@ msgstr ""
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/Components/CreateUserListPage.qml:265
+#: ../qml/Components/CreateUserListPage.qml:271
 msgid "Saturated fat/100g"
 msgstr ""
 
-#: ../qml/Components/CreateUserListPage.qml:290
+#: ../qml/Components/CreateUserListPage.qml:301
 msgid "Carbohydrates/100g"
 msgstr ""
 
-#: ../qml/Components/CreateUserListPage.qml:314
+#: ../qml/Components/CreateUserListPage.qml:330
 #: ../qml/Components/FoodsTemplate.qml:413
 msgid "Sugars/100g"
 msgstr ""
 
-#: ../qml/Components/CreateUserListPage.qml:337
+#: ../qml/Components/CreateUserListPage.qml:357
 msgid "Proteins/100g"
 msgstr ""
 

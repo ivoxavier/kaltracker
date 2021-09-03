@@ -250,7 +250,7 @@ Page {
                             value: 0
                             minimumValue: 0
                             maximumValue: 100
-                            live: false
+                            live: true
                             onValueChanged: {
 
                             root.stackFat = (Math.round(fatSlider.value * 10) / 10)
@@ -279,7 +279,7 @@ Page {
                             value: 0
                             minimumValue: 0
                             maximumValue: 100
-                            live: false
+                            live: true
                             onValueChanged: {
                             root.stackSaturated = (Math.round(saturatedSlider.value * 10) / 10)
                             saturatedSliderValue.text = root.stackSaturated
@@ -309,7 +309,7 @@ Page {
                             value: 0
                             minimumValue: 0
                             maximumValue: 100
-                            live: false
+                            live: true
                             onValueChanged: {
                             root.stackCarborn = (Math.round(carboSlider.value * 10) / 10)
                             carboSliderValue.text = root.stackCarborn
@@ -337,7 +337,7 @@ Page {
                             value: 0
                             minimumValue: 0
                             maximumValue: 100
-                            live: false
+                            live: true
                             onValueChanged: {
                             root.stackSugars = (Math.round(sugarSlider.value * 10) / 10)
                             sugarSliderValue.text = root.stackSugars
@@ -365,7 +365,7 @@ Page {
                             value: 0
                             minimumValue: 0
                             maximumValue: 100
-                            live: false
+                            live: true
                             onValueChanged: {
                             root.stackProtein = (Math.round(proteinSlide.value * 10) / 10)
                             proteinSlideValue.text = root.stackProtein
