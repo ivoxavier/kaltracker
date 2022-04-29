@@ -1,5 +1,0 @@
-# Hashes of file build rules.
-b1c8979712ffcb80fd346dda5c535003 CMakeFiles/kaltracker.desktop
-89c7d735ed469393866b51423183d181 po/CMakeFiles/kaltracker.ivoxavier.pot
-989555b205f16f6c29930e5abf969dcf po/CMakeFiles/pofiles_1
-2125e302432a57f40f4d4d99fc626fc4 po/pt.gmo
