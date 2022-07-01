@@ -1,5 +1,5 @@
 /*
- * 2021  Ivo Xavier
+ * 2022  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,301 +17,253 @@
 
 import QtQuick 2.9
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.3
-import Ubuntu.Components.ListItems 1.3 as ListItem
-import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import QtQuick.Controls.Suru 2.2
-import QtQuick.LocalStorage 2.12
-import io.thp.pyotherside 1.5
-import "./js/DataBaseTools.js" as DataBase
-import "./js/SpentTimeOnApp.js" as Telemetry
-import "./Components"
-import "./Components/ActionBar"
-
-
+import "../js/AppVersion.js" as AppVersion
 
 MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string appVersion : "0.1.0"
-    automaticOrientation: false
+    property string app_version : AppVersion.app_version
+    automaticOrientation: true
     anchorToKeyboard: true
     width: units.gu(45)
     height: units.gu(75)
 
-    
-    //app general
-    property int metric
-    property color defaultForegroundColor: UbuntuColors.porcelain
-    property string defaultBackgroundColor: UbuntuColors.blue
-    property color followSystemTheme : {}
-    property int activeTheme: Suru.theme === 0 ? followSystemTheme = UbuntuColors.porcelain : followSystemTheme = UbuntuColors.dark
-    backgroundColor: followSystemTheme
-    property date boot : new Date()
-    property int boot_hours : boot.getHours()
-    property int boot_minutes : boot.getMinutes()
-    property int boot_seconds : boot.getSeconds()
+    //provides locale specific properties
+    property var locale: Qt.locale()
 
-    //required to update dashboard after newIngestion
+    //provides current datetime
+    property date currentDate: new Date()
+
+    //provides date in string format masked for sqlite db
+    property var stringDate: currentDate.toLocaleDateString(locale, 'yyyy-MM-dd')
+    
+    /*properties for calculating calories target --start--*/
+
+    //setPlanPage
+    property int user_goal
+    property string type_goal
+
+    //setActivityPage
+    property int user_activity_level
+
+    //setUserSexAtBirthPage
+    property int user_sex_at_birth //0 for Male. 1 for Female
+
+    //setUserAgePage
+    property int user_age
+
+    //setWeightPage
+    property double user_weight
+
+    //setHeightPage
+    property int user_height
+
+    //recommended calories for user
+    property int equation_recommended_calories
+
+    /*properties for calculating calories target --end--*/
+    
+
+    /* custom signals --start--*/
     signal initDB()
+    /* custom signals --end--*/
 
-    //required to refresh dailyIngestion ListModel
-    signal refreshListModel()
+    //creates a config file under /home/phablet/.config/utfoods.ivofernandes
+    AppSettings{id: app_settings}
 
+    //handles the push and pop of stacks in MainView. Plus, logs the currentPage
+    PageStack{
+        id: page_stack
+        onCurrentPageChanged: {
+            console.log("Current Stack: " + currentPage.objectName)
+        }   
+    }
 
-    //passing values to foodsTemplate
-    property int foods_ingested
-    property int now_or_after_ingestion
-    property string stackProductName
-    property string stackType
-    property double stackEnergyKcal
-    property double stackFat
-    property double stackSaturated
-    property double stackCarborn
-    property double stackSugars
-    property double stackProtein
-    property string nutriscore_grade
-    property string stackMonthIngestions
-    property string userSchedule_time
-    property string userSchedule_date
-
-
-    //resumePage
-    property int dashboardDailyIngestion : Math.round(DataBase.getUserKaloriesIngestedDuringDay())
-    //property int dashboardUserMetric : DataBase.getUserKaloriesIngestionMetric()
-
-    //user configs variables
-    property string userName : DataBase.getUserName()
-    property int userGoal : DataBase.getUserGoal()
-    property string userActivityLevel : DataBase.getUserActivityLevel()
-    property int userWeight : DataBase.getUserWeight()
-    property int userHeight : DataBase.getUserHeight()
-    property int userAge : DataBase.getUserAge()
-    property string userSex : DataBase.getUserSex()
-    property string userGoalCategory : DataBase.getUserGoalCategory()
-
-    //pass id to hourPicker on resumePage
-    property int id_ingestion_update_time
-
-
+    //LogInPage, where users enter their id and credential
     Component{
-        id: userFoodsListEditPage
-        UserFoodsListEditPage{}
+        id: login_page
+        LogInPage{}
+    }
+
+    //SetPlanPage, where users can set their objective
+    Component{
+        id: set_plan_page
+        SetPlanPage{}
+    }
+
+    //SetActivityPage, where users can set their activity level
+    Component{
+        id: set_activity_page
+        SetActivityPage{}
+    }
+
+    //SetSexAtBirth, where volunteers set their sex at birth
+    Component{
+        id: set_sex_at_birth_page
+        SetSexAtBirthPage{}
+    }
+
+    //SetAgePage, where volunteers set their age
+    Component{
+        id: set_age_page
+        SetAgePage{}
+    }
+
+    //SetWeightPage, where volunteers set their weight
+    Component{
+        id: set_weight_page
+        SetWeightPage{}
+    }
+
+    //SetAgePage, where volunteers set their age
+    Component{
+        id: set_height_page
+        SetHeightPage{}
+    }
+
+    //CreatePage, process for creating the db
+    Component{
+        id: create_storage_page
+        CreateStoragePage{}
+    }
+
+    //HomePage, its home
+    Component{
+        id: home_page
+        HomePage{}
+    }
+
+    //QuickListFoodsPage gives users a list of foods
+    Component{
+        id: quick_list_foods_page
+        QuickListFoodsPage{}
+    }
+
+    //QuickListFoodsPage gives users a list of foods
+    Component{
+        id: quick_addition_page
+        QuickAdditionPage{}
+    }
+
+
+    //SetFoodPage, let uses set the ingestions
+    Component{
+        id: set_food_page
+        SetFoodPage{}
+    }
+
+    //MenuPage, menu 
+    Component{
+        id: menu_page
+        MenuPage{}
+    }
+
+    //UpdateUserValuesPage, let users import a profile pic 
+    Component{
+        id: update_user_values_page
+        UpdateUserValuesPage{}
+    }
+
+    //AppLayoutPage, let users define appearance settings
+    Component{
+        id: app_layout_page
+        AppLayoutPage{}
+    }
+
+    //OnlineSourcesPage, let enable online sources
+    Component{
+        id: online_sources_page
+        OnlineSourcesPage{}
+    }
+
+    //ManageDataPage, let enable online sources
+    Component{
+        id: manage_data_page
+        ManageDataPage{}
+    }
+
+
+    //ManageUserFoodsListPage, let enable online sources
+    Component{
+        id: manager_user_foods_list_page
+        ManageUserFoodsListPage{}
+    }
+
+    //DeleteTodayIngestionPage, let user delete each ingestion of dat by swipping from a list
+    Component{
+        id: delete_today_ingestion_page
+        DeleteTodayIngestionPage{}
     }
 
     Component{
-        id: userListIngestionPage
-        UserListIngestionPage{}
-    }
-    
-
-    Component{
-        id: createUserListPage
-        CreateUserListPage{}
-    }
-    
-    Component{
-        id: consumeHabitsPage
-        ConsumeHabitsPage{}
+        id:trackers_settings_page
+        TrackersSettingsPage{}
     }
 
-
+    //ExportDataPage, where users can export the data produced
     Component{
-        id: indexesCalcPage
-        IndexesCalcPage{}
-    }
-    
-     
-    Component{
-        id: alertDialog
-        AlertDialog{}
-    }
-     
-    Component{
-        id: alertsPage
-        AlertsPage{}
-    }
-     
-    Component{
-        id: maintenancePage
-        MaintenancePage{}
-    }
-
-    
-    Component{
-        id: monthIngestionsPage
-        MonthIngestionsPage{}
-    }
-    
-    Component{
-        id: averageCaloriesMonth
-        AverageCaloriesMonthPage{}
-    }
-
-    Component{
-        id: statsPage
-        StatsPage{}
-    }
-    
-    
-    Component{
-        id: settingsPage
-        SettingsPage{}
-    }
-
-    Component{
-        id: userAccountPage
-        UserAccountPage{}
-    }
-
-    Component{
-        id: exportDataPage
+        id: export_data_page
         ExportDataPage{}
     }
 
+    //DataAnalysisPage, where users can check theirs consunption habits
     Component{
-        id: foodsTemplate
-        FoodsTemplate{}
+        id: data_analysis_page
+        DataAnalysisPage{}
     }
 
+    //AverageCaloriesPage, average calories page
     Component{
-        id: helpUserConfigDialog
-        HelpUserConfigDialog{}
+        id: average_calories_page
+        AverageCaloriesPage{}
     }
 
-    Component {
-        id: configUserProfilePage
-        ConfigUserProfilePage{}
-    }
-
-
-    Component {
-        id: openFoodsFactsListPage
-        OpenFoodsFactsListPage {}
-    }
-
-    Component {
-        id: welcomePage
-        WelcomePage {}
-    }
-
-
+    //ListFoodsIngestedMonthPage, list with the respective foods ingested by month
     Component{
-        id: resumePage
-        ResumePage{}
+        id: list_foods_ingested_month_page
+        ListFoodsIngestedMonthPage{}
     }
 
-    Component {
-      id: createTablesDialog
-        CreateTablesDialog{}
+    //GraphsPage, page containig data visualization
+    Component{
+        id: graphs_page
+        GraphsPage{}
     }
 
-
-    Settings {
-        id: appSettings
-
-        category: "app_configs"
-
-        property bool isCleanInstall: true
-        property bool isAutoCleanChecked: false
-        property bool isExceedCaloriesChecked : false
-        property bool displayAlert: false
-        property bool isUserListCreated : false
-        property bool isBothFoodsListChecked : false
-        property bool isOpenFactsFoodsListChecked : true
-        property bool isUserListFoodsChecked : false
-        property bool isTelemetryChecked : true
-        property bool isTelemetryDBCreated : false
+    //BodyMeasuresPage, page containig body measurements
+    Component{
+        id: body_measures_page
+        BodyMeasuresPage{}
     }
 
-
-    Python{
-        id: py
-        Component.onCompleted:{
-            console.log('Python: ' + pythonVersion())
-            console.log('PyOtherSide: ' + pluginVersion())
-            addImportPath(Qt.resolvedUrl('./py/'))
-            importModule('store_telemetry', function() {
-                py.call('store_telemetry.moduleState', [] ,function(returnValue){
-                console.log(returnValue)
-            })
-            })
-
-        }
-        onError: {
-            console.log('Python error: ' + traceback);
-        }
-
-    }                                 
-
-    PageStack{
-        id: mainStack
-        onCurrentPageChanged: {
-            console.log("Current Stack: " + currentPage.objectName)
-        }
-
+    //NotesPage, page for view registed notes
+    Component{
+        id: notes_page
+        NotesPage{}
     }
 
-
-    Component.onCompleted: {
-        console.log("boot at",boot)
-        if (appSettings.isCleanInstall){
-
-            mainStack.push(welcomePage);
-
-        } else {
-
-            mainStack.push(resumePage);
-        }
-
-        if (appSettings.isAutoCleanChecked){
-
-            DataBase.autoClean()
-
-        } else {
-                //pass
-        }
-
-        if (appSettings.isExceedCaloriesChecked){
-            if (appSettings.displayAlert){
-                PopupUtils.open(alertDialog)
-            }
-            } else {
-                    //pass
-            }
-        
-        if(appSettings.isTelemetryChecked){
-            if(appSettings.isTelemetryDBCreated){
-                //pass
-            } else{
-                py.call('store_telemetry.ManageDW.dropTable', [] ,function(returnValue){
-                console.log(returnValue)
-            })
-
-            py.call('store_telemetry.ManageDW.createTable', [] ,function(returnValue){
-                console.log(returnValue)
-            })
-
-            appSettings.isTelemetryDBCreated = !appSettings.isTelemetryDBCreated
-            }
-            
-            
-        } else {
-            //pass
-        }
+    //ThirdPartySoftwarePage, page with used software from third parties
+    Component{
+        id: third_party_software_page
+        ThirdPartySoftwarePage{}
     }
 
-    Component.onDestruction:{
-        if(appSettings.isTelemetryChecked){
-            py.call('store_telemetry.ManageDW.saveTime', [Telemetry.getTimeUsage()] ,function(returnValue){
-            })
-        
-        } else {
-            //pass
+    //ScanPage, opens a video capture page where the images captured are analyzed to see exists a barcode
+    Component{
+        id: scan_page
+        ScanPage{}
+    }
+
+    Component.onCompleted:{
+        if(app_settings.is_clean_install){
+            //new install || not configured
+            page_stack.push(login_page)
         }
- }  
+        else{
+        //during experiment time and app configured
+            page_stack.push(home_page)
+        }
+    }
 }
-
