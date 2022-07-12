@@ -48,8 +48,8 @@ Page{
                 i18n.tr("November") : i18n.tr("December")
 
                 StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                   /* foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
 
         }
@@ -75,7 +75,7 @@ Page{
         id: all_month_ingestions_list
         anchors{
             top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom:  parent.bottom 
             left: parent.left
             right: parent.right
         }
@@ -89,5 +89,5 @@ Page{
                 }
         }
     }
-    NavigationBar{id:navigation_shape}   
+  
 }
