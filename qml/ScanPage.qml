@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -20,12 +20,13 @@ import QtQuick.Window 2.0
 import Ubuntu.Components 1.3
 import QtMultimedia 5.12
 import QtGraphicalEffects 1.0
-//import QZXing 3.3
 import Ubuntu.Content 1.3
 import Ubuntu.Components.Pickers 1.3
 import Ubuntu.Components.Popups 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
+import QZXing 3.3
+
 import "components"
 import "../js/ThemeColors.js" as ThemeColors
 
@@ -37,8 +38,8 @@ Page {
        title: i18n.tr("Scanning")
 
        StyleHints {
-            foregroundColor: "white"
-            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+           /* foregroundColor: "white"
+            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
         }
     }
 
@@ -103,7 +104,7 @@ Page {
             top:  app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
             left: parent.left
             right: parent.right
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom:  parent.bottom 
         }
 
         fillMode: VideoOutput.PreserveAspectCrop
@@ -145,7 +146,7 @@ Page {
     }
 
 
-  /* QZXing {
+    QZXing {
         id: code_reader
 
         enabledDecoders: QZXing.DecoderFormat_UPC_A
@@ -159,8 +160,4 @@ Page {
 
         tryHarder: true
     }
-
-    Component.onCompleted: console.log("AQUIUIASUDIOASUIDUAS", meal_scan_page)*/
-
-    NavigationBar{id: navigation_shape} 
 }
