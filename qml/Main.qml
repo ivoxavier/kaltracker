@@ -25,7 +25,7 @@ MainView {
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
     property string app_version : AppVersion.app_version
-    automaticOrientation: true
+    automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
     height: units.gu(75)
