@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -40,14 +40,6 @@ Page{
 }
 
 
-    /*Messages --start--*/
-    Component{
-        id: info_text_dialog
-        MessageDialog{msg:i18n.tr("Hi, Thanks For Installing Kaltracker")}
-    }
-
-    /*Messages --end--*/
-
     
     Flickable {
         anchors{
@@ -59,7 +51,7 @@ Page{
         contentWidth: parent.width
         contentHeight: main_column.height  
 
-        //interactive : root.height > root.width ? false : true
+        interactive : root.height > root.width ? false : true
 
         ColumnLayout{
             id: main_column
@@ -70,8 +62,7 @@ Page{
             Text{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Welcome")
-                font.pixelSize: units.gu(4)
-                color : "white"   
+                font.pixelSize: units.gu(4) 
             }
 
             BlankSpace{height: units.gu(3)}
@@ -87,7 +78,14 @@ Page{
                 }
             }
 
-            BlankSpace{height:units.gu(4)}
+            Text{
+                Layout.alignment: Qt.AlignCenter 
+                text: "KalTracker"
+                font.pixelSize: units.gu(3) 
+            }
+
+
+            BlankSpace{height:units.gu(7)}
 
             Button{
                 id: next_button
@@ -99,8 +97,5 @@ Page{
                 }
             } 
         }  
-    }
-    Component.onCompleted:{
-        PopupUtils.open(info_text_dialog)
-    }            
+    }          
 }

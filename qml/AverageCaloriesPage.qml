@@ -37,8 +37,8 @@ Page{
                 title : i18n.tr("Average Calories Consumption")
 
                 StyleHints {
-                    foregroundColor: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                    /*foregroundColor: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
 
@@ -68,7 +68,7 @@ Page{
         id: average_calories_list
         anchors{
             top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom: parent.bottom
             left: parent.left
             right: parent.right
         }
@@ -104,5 +104,5 @@ Page{
             }
         }
     }
-    NavigationBar{id:navigation_shape}   
+    
 }

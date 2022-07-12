@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -39,8 +39,8 @@ Page{
                 title : i18n.tr("Manage Your Foods")
 
                 StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                   /* foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
     
@@ -112,5 +112,4 @@ Page{
             }
         }
     }
-    NavigationBar{id:navigation_shape}   
 }

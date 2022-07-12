@@ -26,12 +26,11 @@ import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 import "../../js/ThemeColors.js" as ThemeColors
 
 ListView{
-    id: here
     highlightRangeMode: ListView.ApplyRange
     highlightMoveDuration: UbuntuAnimation.SnapDuration
 
     model: sorted_model
-    Component.onCompleted : console.log("sadsdasdOINXOINX",here.model.index)          
+           
     delegate: ListItem{  
         divider.visible: false
         height: units.gu(8)

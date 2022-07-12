@@ -43,8 +43,8 @@ Page {
         visible: app_settings.is_page_headers_enabled ? true : false
 
         StyleHints {
-            foregroundColor: "white"
-            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+           /*foregroundColor: "white"
+            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
         }
      }
     
@@ -70,7 +70,7 @@ Page {
             top:  app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
             left: parent.left
             right: parent.right
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom:  parent.bottom
         }
 
         contentWidth: parent.width
@@ -143,5 +143,5 @@ Page {
         }
 
     }
-    NavigationBar{id: navigation_shape} 
+   
 }

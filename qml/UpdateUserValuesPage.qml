@@ -46,8 +46,8 @@ Page{
             (is_values_view = false,is_blood_pressure_view = false,is_goal_view = true) : (is_values_view = false,is_blood_pressure_view = true,is_goal_view = false)
         }
         StyleHints {
-            foregroundColor: "white"
-            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+            /*foregroundColor: "white"
+            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
         }
     }
 

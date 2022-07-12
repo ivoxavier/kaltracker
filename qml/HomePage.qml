@@ -374,8 +374,8 @@ Page{
                 title : i18n.tr("Your Previous Ingestions")
 
                 StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                   /* foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
                 }
 
                 ActionBar{
@@ -384,8 +384,8 @@ Page{
                     numberOfSlots : 1
 
                     StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                    /*foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
                 }
 
                     actions : [

@@ -45,7 +45,7 @@ AbstractButton {
         anchors.centerIn: parent
         height: units.gu(7.5)
         width:  height
-		color: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : "#f1f1f1"
+		color: Suru.theme === 0 ? "#90ee90" : "#f1f1f1"
 		radius: height*0.5
 	}
 

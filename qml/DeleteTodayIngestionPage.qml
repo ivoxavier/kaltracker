@@ -70,7 +70,7 @@ Page{
         id: all_today_ingestions_list
         anchors{
             top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom: parent.bottom
             left: parent.left
             right: parent.right
         }
@@ -93,5 +93,5 @@ Page{
             }    
         }
     }
-    NavigationBar{id:navigation_shape}   
+   
 }

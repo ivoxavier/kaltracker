@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -39,8 +39,8 @@ Page{
                 title: i18n.tr("Export Data")
 
                 StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                   /* foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
                 }
             }
     
@@ -62,11 +62,7 @@ Page{
                 py.call('export_data.ExportData.moduleState', [] ,function(returnValue){
                     console.log(returnValue)
             })
-
-                py.call('export_data.ExportData.createPath', [] ,function(returnValue){
-                    console.log(returnValue)
-            })
-            
+         
             })
 
             /* handlers sent from pyotherside */
@@ -103,14 +99,6 @@ Page{
                 loading_circle.running = false
         });
 
-            setHandler('user_sport_exporting', function() {
-                loading_circle.running = true
-        });
-
-            setHandler('user_sports_exported', function() {
-                user_sport_exported_icon.exported = true 
-                loading_circle.running = false
-        });
 
         }
         onError: {
@@ -125,7 +113,7 @@ Page{
             top:  app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
             left: parent.left
             right: parent.right
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            bottom: parent.bottom
         }
 
         contentWidth: parent.width
@@ -142,7 +130,7 @@ Page{
             ListItem {
                 divider.visible: false
                 ListItemLayout{
-                    subtitle.text: i18n.tr("Store Path: ~/Documents/utFoods_exports/")
+                    subtitle.text: i18n.tr("Store Path: .local/share/kaltracker.ivoxavier/")
                     subtitle.font.bold : true
                 }
             }
@@ -199,18 +187,6 @@ Page{
                 }
             }
 
-            RowLayout{
-                spacing: units.gu(1)
-                Layout.alignment: Qt.AlignCenter
-                Label{text: i18n.tr("Sports Table"); font.bold: true}
-                Icon{
-                    id: user_sport_exported_icon
-                    property bool exported : false
-                    height : units.gu(3)
-                    name :  user_sport_exported_icon.exported ? "select" : "select-none"
-                }
-            }
-
              BlankSpace{}
                 
             ActivityIndicator {
@@ -258,13 +234,9 @@ Page{
                     console.log(returnValue)
                     })
 
-                    py.call('export_data.ExportData.sportsTable', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
                 }
             }
         }  
     }
-  
-    NavigationBar{id: navigation_shape}   
+
 }

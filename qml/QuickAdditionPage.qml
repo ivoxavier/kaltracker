@@ -41,8 +41,8 @@ Page{
                 }
 
                 StyleHints {
-                    foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                    /*foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
 
@@ -172,24 +172,23 @@ Page{
                 color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
             }
 
-            UbuntuShape{  
+            OptionSelector {
                 Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(2)
-                Layout.preferredHeight: units.gu(4)
-                radius: "large"
-                aspect: UbuntuShape.Inset
+                Layout.preferredWidth: root.width - units.gu(14)
+                expanded: true
+                model: [i18n.tr("A: Very Good Nutritional Quality"),
+                i18n.tr("B: Good Nutritional Quality"),
+                i18n.tr("C: Average Nutritional Quality"),
+                i18n.tr("D: Poor Nutritional Quality"),
+                i18n.tr("E: Bad Nutritional Quality")]
+                selectedIndex: -1
                 visible: is_details_view ? true: false
-                
-                TextInput{
-                    anchors.fill: parent
-                    overwriteMode: true
-                    horizontalAlignment: TextInput.AlignHCenter
-                    verticalAlignment: TextInput.AlignVCenter
-                    inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text
-                    onEditingFinished:{ 
-                        nutriscore_quick_addition_page = text
-                    }
+                onSelectedIndexChanged: {
+                    nutriscore_quick_addition_page = selectedIndex == 0 ?
+                    "a" : selectedIndex == 1 ?
+                    "b" : selectedIndex == 2 ?
+                    "c" : selectedIndex == 3 ?
+                    "d" : "e"
                 }
             }
      

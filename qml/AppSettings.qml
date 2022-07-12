@@ -22,9 +22,9 @@ Settings {
 
     //stores the app configuration
     property bool is_clean_install : true
-    property bool is_page_headers_enabled : true
     property bool is_user_created_foods_list_enabled : false
     property bool is_weight_tracker_chart_enabled: false
+    property bool is_api_openfoodsfacts_enabled : false
     property bool is_auto_cleaning : false
     property bool is_graphs_animation_enabled : true
     property bool is_blood_pressure_defined : false
