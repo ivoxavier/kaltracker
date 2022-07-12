@@ -5,3 +5,6 @@ Icon=assets/logo.svg
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
+X-Ubuntu-Supported-Orientations=portrait
+X-Ubuntu-Splash-Color=#FF8080
+X-Ubuntu-Splash-Image=assets/logo.svg
