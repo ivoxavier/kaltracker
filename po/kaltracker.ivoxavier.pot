@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-25 17:09+0000\n"
+"POT-Creation-Date: 2022-07-13 14:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,8 +91,8 @@ msgstr ""
 
 #: ../qml/BodyMeasuresPage.qml:58
 msgid ""
-"utFoods is not taking in consideration your muscule weight. This is ONLY e a "
-"reference"
+"KalTracker is not taking in consideration your muscule weight. This is ONLY "
+"e a reference"
 msgstr ""
 
 #: ../qml/BodyMeasuresPage.qml:93
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Data Analysis"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:123
+#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:122
 msgid "Ingestions"
 msgstr ""
 
@@ -187,39 +187,35 @@ msgstr ""
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:207
+#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:208
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:145
-msgid "Store Path: ~/Documents/utFoods_exports/"
+#: ../qml/ExportDataPage.qml:133
+msgid "Store Path: .local/share/kaltracker.ivoxavier/"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:157
+#: ../qml/ExportDataPage.qml:145
 msgid "User Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:169
+#: ../qml/ExportDataPage.qml:157
 msgid "Ingestions Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:181
+#: ../qml/ExportDataPage.qml:169
 msgid "Water Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:193
+#: ../qml/ExportDataPage.qml:181
 msgid "Weight Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:205
-msgid "Sports Table"
-msgstr ""
-
-#: ../qml/ExportDataPage.qml:230
+#: ../qml/ExportDataPage.qml:206
 msgid "Please Wait A Few Seconds..."
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:237
+#: ../qml/ExportDataPage.qml:213
 msgid "Start Export Process"
 msgstr ""
 
@@ -306,15 +302,11 @@ msgstr ""
 msgid "Your Previous Ingestions"
 msgstr ""
 
-#: ../qml/LogInPage.qml:46
-msgid "Hi, Thanks For Installing Kaltracker"
-msgstr ""
-
-#: ../qml/LogInPage.qml:72
+#: ../qml/LogInPage.qml:64
 msgid "Welcome"
 msgstr ""
 
-#: ../qml/LogInPage.qml:95
+#: ../qml/LogInPage.qml:93
 msgid "Start"
 msgstr ""
 
@@ -322,30 +314,29 @@ msgstr ""
 msgid "Manage Data"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:132
+#: ../qml/ManageDataPage.qml:131
 msgid "Auto Delete Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:134
+#: ../qml/ManageDataPage.qml:133
 msgid "Deletes All Previous Year Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:152
+#: ../qml/ManageDataPage.qml:151
 msgid "From a Month & To Year"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:169
+#: ../qml/ManageDataPage.qml:168
 msgid "Specific Today's Ingestion"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:189
+#: ../qml/ManageDataPage.qml:188
 msgid "Only Today's Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:193 ../qml/ManageDataPage.qml:210
-#: ../qml/ManageDataPage.qml:260 ../qml/ManageDataPage.qml:285
-#: ../qml/ManageDataPage.qml:310 ../qml/ManageDataPage.qml:341
-#: ../qml/components/DeleteAllNotesDialog.qml:47
+#: ../qml/ManageDataPage.qml:192 ../qml/ManageDataPage.qml:209
+#: ../qml/ManageDataPage.qml:259 ../qml/ManageDataPage.qml:284
+#: ../qml/ManageDataPage.qml:309 ../qml/components/DeleteAllNotesDialog.qml:47
 #: ../qml/components/DeleteAllWaterDialog.qml:47
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:46
 #: ../qml/components/DeleteByMonthPop.qml:77
@@ -355,53 +346,40 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:206
+#: ../qml/ManageDataPage.qml:205
 msgid "All Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:223
+#: ../qml/ManageDataPage.qml:222
 msgid "User Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:231
+#: ../qml/ManageDataPage.qml:230
 msgid "User Created Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:247
+#: ../qml/ManageDataPage.qml:246
 msgid "Water"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:256
+#: ../qml/ManageDataPage.qml:255
 msgid "All Water Records"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:273
+#: ../qml/ManageDataPage.qml:272
 msgid "Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:281
+#: ../qml/ManageDataPage.qml:280
 msgid "Delete All Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:298
+#: ../qml/ManageDataPage.qml:297
 msgid "Weight Tracker"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:306
+#: ../qml/ManageDataPage.qml:305
 msgid "All Records"
-msgstr ""
-
-#: ../qml/ManageDataPage.qml:323
-msgid "System"
-msgstr ""
-
-#: ../qml/ManageDataPage.qml:331 ../qml/components/DeleteCacheDialog.qml:30
-msgid "Delete App Cache"
-msgstr ""
-
-#. TRANSLATORS Please Keep This letters all Capital
-#: ../qml/ManageDataPage.qml:334
-msgid "BE CAREFULL WITH THIS!"
 msgstr ""
 
 #: ../qml/ManageUserFoodsListPage.qml:39
@@ -436,11 +414,15 @@ msgstr ""
 msgid "Storage"
 msgstr ""
 
-#: ../qml/MenuPage.qml:226
+#: ../qml/MenuPage.qml:209
+msgid "Coming Soon"
+msgstr ""
+
+#: ../qml/MenuPage.qml:228
 msgid "About"
 msgstr ""
 
-#: ../qml/MenuPage.qml:235 ../qml/ThirdPartySoftwarePage.qml:36
+#: ../qml/MenuPage.qml:237 ../qml/ThirdPartySoftwarePage.qml:36
 msgid "Third Party Software"
 msgstr ""
 
@@ -500,15 +482,35 @@ msgstr ""
 msgid "Nutriscore Grade"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:200 ../qml/SetFoodPage.qml:73
+#: ../qml/QuickAdditionPage.qml:179
+msgid "A: Very Good Nutritional Quality"
+msgstr ""
+
+#: ../qml/QuickAdditionPage.qml:180
+msgid "B: Good Nutritional Quality"
+msgstr ""
+
+#: ../qml/QuickAdditionPage.qml:181
+msgid "C: Average Nutritional Quality"
+msgstr ""
+
+#: ../qml/QuickAdditionPage.qml:182
+msgid "D: Poor Nutritional Quality"
+msgstr ""
+
+#: ../qml/QuickAdditionPage.qml:183
+msgid "E: Bad Nutritional Quality"
+msgstr ""
+
+#: ../qml/QuickAdditionPage.qml:199 ../qml/SetFoodPage.qml:73
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:232 ../qml/SetFoodPage.qml:79
+#: ../qml/QuickAdditionPage.qml:231 ../qml/SetFoodPage.qml:79
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:265 ../qml/SetFoodPage.qml:85
+#: ../qml/QuickAdditionPage.qml:264 ../qml/SetFoodPage.qml:85
 msgid "Carbo/100g"
 msgstr ""
 
@@ -695,18 +697,6 @@ msgstr ""
 msgid "Icons"
 msgstr ""
 
-#: ../qml/TrackersSettingsPage.qml:34
-msgid "Trackers Settings"
-msgstr ""
-
-#: ../qml/TrackersSettingsPage.qml:72
-msgid "Sports Tracker"
-msgstr ""
-
-#: ../qml/TrackersSettingsPage.qml:79
-msgid "%1 min"
-msgstr ""
-
 #: ../qml/UpdateUserValuesPage.qml:41
 msgid "Enter New Nalues"
 msgstr ""
@@ -881,6 +871,10 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
+#: ../qml/components/DeleteCacheDialog.qml:30
+msgid "Delete App Cache"
+msgstr ""
+
 #: ../qml/components/DeleteCacheDialog.qml:43
 msgid "I KNOW WHAT I'M DOING"
 msgstr ""
@@ -960,23 +954,23 @@ msgstr ""
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:45
+#: ../qml/components/ListViewFoods.qml:44
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:46
+#: ../qml/components/ListViewFoods.qml:45
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:47
+#: ../qml/components/ListViewFoods.qml:46
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:48
+#: ../qml/components/ListViewFoods.qml:47
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:48
+#: ../qml/components/ListViewFoods.qml:47
 msgid "Poor nutritional quality"
 msgstr ""
 
