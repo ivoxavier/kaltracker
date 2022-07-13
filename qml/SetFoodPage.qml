@@ -37,7 +37,7 @@ Page{
     id: set_food_page
     objectName: 'SetFoodPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+
                 title: i18n.tr("Set Your Ingestion")
                 StyleHints {
                     /*foregroundColor: "white"

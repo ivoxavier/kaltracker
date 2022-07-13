@@ -35,7 +35,7 @@ Page{
     id: body_measures_page
     objectName: 'BodyMeasuresPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+                //visible: app_settings.is_page_headers_enabled ? true : false
                 title: i18n.tr("Body Measures")
 
                 StyleHints {
@@ -55,12 +55,12 @@ Page{
 
     Component{
         id: info_bmi
-        MessageDialog{msg: i18n.tr("utFoods is not taking in consideration your muscule weight. This is ONLY e a reference")}
+        MessageDialog{msg: i18n.tr("KalTracker is not taking in consideration your muscule weight. This is ONLY e a reference")}
     }
 
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -72,7 +72,7 @@ Page{
     Flickable {
 
         anchors{
-            top:  app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top:   parent.header.bottom 
             left: parent.left
             right: parent.right
             bottom: parent.bottom 

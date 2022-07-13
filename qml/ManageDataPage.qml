@@ -32,7 +32,7 @@ Page{
     id: manage_data_page
     objectName: 'ManageDataPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+              //  visible: app_settings.is_page_headers_enabled ? true : false
                 title: i18n.tr("Manage Data")
                 StyleHints {
                     /*foregroundColor: "white"
@@ -91,7 +91,7 @@ Page{
 
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -102,7 +102,7 @@ Page{
     Flickable {
 
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left: parent.left
             right: parent.right
             bottom: parent.bottom
@@ -314,7 +314,6 @@ Page{
                     }
                 }
             }
-    
         }  
     }  
 }

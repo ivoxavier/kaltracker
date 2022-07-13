@@ -35,7 +35,7 @@ Page{
     id: manage_user_foods_list_page
     objectName: 'ManageUserFoodsListPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+                //visible: app_settings.is_page_headers_enabled ? true : false
                 title : i18n.tr("Manage Your Foods")
 
                 StyleHints {
@@ -46,7 +46,7 @@ Page{
     
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -78,8 +78,8 @@ Page{
     ListView{
         id: user_foods_list
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-            bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+            top: parent.header.bottom 
+            bottom: parent.bottom 
             left: parent.left
             right: parent.right
         }

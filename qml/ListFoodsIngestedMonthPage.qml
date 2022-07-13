@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -33,7 +33,7 @@ Page{
     id: list_foods_ingested_month_page
     objectName: 'ListFoodsIngestedMonthPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+               // visible: app_settings.is_page_headers_enabled ? true : false
                 title : requested_month === '01' ?
                 i18n.tr("January") : requested_month === '02' ?
                 i18n.tr("February") : requested_month === '03' ?
@@ -58,7 +58,7 @@ Page{
 
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom 
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -74,7 +74,7 @@ Page{
     ListView{
         id: all_month_ingestions_list
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             bottom:  parent.bottom 
             left: parent.left
             right: parent.right

@@ -44,7 +44,7 @@ Page{
 
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.top
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -67,7 +67,7 @@ Page{
     ListView{
         id: average_calories_list
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             bottom: parent.bottom
             left: parent.left
             right: parent.right

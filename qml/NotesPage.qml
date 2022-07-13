@@ -31,7 +31,7 @@ Page{
     id: notes_page
     objectName: 'NotesPage'
     header: PageHeader {
-                visible: app_settings.is_page_headers_enabled ? true : false
+                
                 title : i18n.tr("Your Notes")
 
                 StyleHints {
@@ -42,7 +42,7 @@ Page{
     
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -74,7 +74,7 @@ Page{
     ListView{
         id: notes_page_list
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             bottom: parent.bottom 
             left: parent.left
             right: parent.right
