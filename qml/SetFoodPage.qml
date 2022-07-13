@@ -101,7 +101,7 @@ Page{
 
     Rectangle{
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom : parent.top
             left : parent.left
             right : parent.right
             bottom : parent.bottom
@@ -112,7 +112,7 @@ Page{
     Flickable {
 
         anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+            top: parent.header.bottom
             left: parent.left
             right: parent.right
             bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
