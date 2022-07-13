@@ -1,6 +1,6 @@
 # KalTracker
 
- <div align="center"><img img height="150px;" width="150px" src="https://github.com/ivoxavier/thesis/blob/main/utFoods/assets/logo.svg" /></div>
+ <div align="center"><img img height="150px;" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/assets/logo.svg" /></div>
 
 <br>
 <br>
