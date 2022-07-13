@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=KalTracker
-Exec=qmlscene %U qml/Main.qml
+Exec=kaltracker %U
 Icon=assets/logo.svg
 Terminal=false
 Type=Application
