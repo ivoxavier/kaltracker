@@ -216,7 +216,7 @@ Page{
                         height : units.gu(3.5)
                     }
 
-                    ProgressionSlot{}
+                   /* ProgressionSlot{} */
                 }
                 onClicked: page_stack.push(export_data_page)
             }
