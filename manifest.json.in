@@ -2,14 +2,14 @@
     "name": "kaltracker.ivoxavier",
     "description": "Trackes your food calories ingested",
     "architecture": "@CLICK_ARCH@",
-    "title": "KalTracker",
+    "title": "kaltracker",
     "hooks": {
         "kaltracker": {
             "apparmor": "kaltracker.apparmor",
             "desktop":  "kaltracker.desktop"
         }
     },
-    "version": "0.1.0",
+    "version": "1.0.0",
     "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
