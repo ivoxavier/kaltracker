@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 14:23+0000\n"
+"POT-Creation-Date: 2022-07-13 14:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Data Analysis"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:122
+#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:118
 msgid "Ingestions"
 msgstr ""
 
@@ -314,71 +314,70 @@ msgstr ""
 msgid "Manage Data"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:131
+#: ../qml/ManageDataPage.qml:127
 msgid "Auto Delete Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:133
+#: ../qml/ManageDataPage.qml:129
 msgid "Deletes All Previous Year Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:151
+#: ../qml/ManageDataPage.qml:147
 msgid "From a Month & To Year"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:168
+#: ../qml/ManageDataPage.qml:164
 msgid "Specific Today's Ingestion"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:188
+#: ../qml/ManageDataPage.qml:184
 msgid "Only Today's Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:192 ../qml/ManageDataPage.qml:209
-#: ../qml/ManageDataPage.qml:259 ../qml/ManageDataPage.qml:284
-#: ../qml/ManageDataPage.qml:309 ../qml/components/DeleteAllNotesDialog.qml:47
+#: ../qml/ManageDataPage.qml:188 ../qml/ManageDataPage.qml:205
+#: ../qml/ManageDataPage.qml:255 ../qml/ManageDataPage.qml:280
+#: ../qml/ManageDataPage.qml:305 ../qml/components/DeleteAllNotesDialog.qml:47
 #: ../qml/components/DeleteAllWaterDialog.qml:47
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:46
 #: ../qml/components/DeleteByMonthPop.qml:77
-#: ../qml/components/DeleteCacheDialog.qml:58
 #: ../qml/components/RemoveRecordsDialog.qml:34
 #: ../qml/components/RemoveRecordsDialog.qml:54
 msgid "Delete"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:205
+#: ../qml/ManageDataPage.qml:201
 msgid "All Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:222
+#: ../qml/ManageDataPage.qml:218
 msgid "User Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:230
+#: ../qml/ManageDataPage.qml:226
 msgid "User Created Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:246
+#: ../qml/ManageDataPage.qml:242
 msgid "Water"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:255
+#: ../qml/ManageDataPage.qml:251
 msgid "All Water Records"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:272
+#: ../qml/ManageDataPage.qml:268
 msgid "Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:280
+#: ../qml/ManageDataPage.qml:276
 msgid "Delete All Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:297
+#: ../qml/ManageDataPage.qml:293
 msgid "Weight Tracker"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:305
+#: ../qml/ManageDataPage.qml:301
 msgid "All Records"
 msgstr ""
 
@@ -809,17 +808,14 @@ msgid "REMAINING"
 msgstr ""
 
 #: ../qml/components/ConfirmPicker.qml:31
-#: ../qml/components/DeleteCacheDialog.qml:43
 msgid "NO"
 msgstr ""
 
 #: ../qml/components/ConfirmPicker.qml:31
-#: ../qml/components/DeleteCacheDialog.qml:43
 msgid "STILL NO"
 msgstr ""
 
 #: ../qml/components/ConfirmPicker.qml:31
-#: ../qml/components/DeleteCacheDialog.qml:43
 msgid "YES"
 msgstr ""
 
@@ -831,7 +827,6 @@ msgstr ""
 #: ../qml/components/DeleteAllWaterDialog.qml:37
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:36
 #: ../qml/components/DeleteByMonthPop.qml:38
-#: ../qml/components/DeleteCacheDialog.qml:35
 #: ../qml/components/RemoveRecordsDialog.qml:44
 msgid "Confirm Operation With: YES"
 msgstr ""
@@ -840,7 +835,6 @@ msgstr ""
 #: ../qml/components/DeleteAllWaterDialog.qml:57
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:57
 #: ../qml/components/DeleteByMonthPop.qml:88
-#: ../qml/components/DeleteCacheDialog.qml:67
 #: ../qml/components/RemoveRecordsDialog.qml:77
 msgid "Wrong Answer, Try Again"
 msgstr ""
@@ -849,7 +843,6 @@ msgstr ""
 #: ../qml/components/DeleteAllWaterDialog.qml:63
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:63
 #: ../qml/components/DeleteByMonthPop.qml:94
-#: ../qml/components/DeleteCacheDialog.qml:73
 #: ../qml/components/RemoveRecordsDialog.qml:83
 msgid "Cancel"
 msgstr ""
@@ -869,18 +862,6 @@ msgstr ""
 
 #: ../qml/components/DeleteByMonthPop.qml:62
 msgid "Year"
-msgstr ""
-
-#: ../qml/components/DeleteCacheDialog.qml:30
-msgid "Delete App Cache"
-msgstr ""
-
-#: ../qml/components/DeleteCacheDialog.qml:43
-msgid "I KNOW WHAT I'M DOING"
-msgstr ""
-
-#: ../qml/components/DeleteCacheDialog.qml:43
-msgid "NO, TAKE ME TO MUMMY"
 msgstr ""
 
 #: ../qml/components/GoalDefinitionDialog.qml:29
@@ -1034,10 +1015,6 @@ msgstr ""
 #: ../qml/components/SlotDashboardCalories.qml:91
 #: ../qml/components/SlotDashboardCalories.qml:98
 msgid "Maintain weight"
-msgstr ""
-
-#: ../qml/components/SlotRecipe.qml:59
-msgid "Loading recipe image..."
 msgstr ""
 
 #: ../qml/components/StoreIngestionDialog.qml:40
