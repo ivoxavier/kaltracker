@@ -63,10 +63,6 @@ Page{
         DeleteAllWeightTrackerDialog{}
     }
 
-    Component{
-        id: delete_cache
-        DeleteCacheDialog{}
-    }
 
     Component{
         id: delete_all_notes_dialog
