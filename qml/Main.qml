@@ -197,11 +197,6 @@ MainView {
         DeleteTodayIngestionPage{}
     }
 
-    Component{
-        id:trackers_settings_page
-        TrackersSettingsPage{}
-    }
-
     //ExportDataPage, where users can export the data produced
     Component{
         id: export_data_page
