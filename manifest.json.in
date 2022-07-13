@@ -2,7 +2,7 @@
     "name": "kaltracker.ivoxavier",
     "description": "Trackes your food calories ingested",
     "architecture": "@CLICK_ARCH@",
-    "title": "KalTracker",
+    "title": "kaltracker",
     "hooks": {
         "kaltracker": {
             "apparmor": "kaltracker.apparmor",
