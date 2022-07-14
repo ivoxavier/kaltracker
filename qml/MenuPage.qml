@@ -206,7 +206,6 @@ Page{
                 enabled : false
                 ListItemLayout{
                     title.text : i18n.tr("Export Data")
-                    subtitle.text: i18n.tr("Coming Soon")
                     title.font.bold : true
                     title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
                     
@@ -216,7 +215,7 @@ Page{
                         height : units.gu(3.5)
                     }
 
-                   /* ProgressionSlot{} */
+                   ProgressionSlot{}
                 }
                 onClicked: page_stack.push(export_data_page)
             }
