@@ -9,7 +9,7 @@
             "desktop":  "kaltracker.desktop"
         }
     },
-    "version": "1.1.0",
+    "version": "1.1.1",
     "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }

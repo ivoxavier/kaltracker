@@ -203,7 +203,6 @@ Page{
 
             ListItem{
                 width: root.width
-                enabled : false
                 ListItemLayout{
                     title.text : i18n.tr("Export Data")
                     title.font.bold : true
