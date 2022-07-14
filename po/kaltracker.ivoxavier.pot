@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 14:56+0000\n"
+"POT-Creation-Date: 2022-07-14 08:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,15 +413,11 @@ msgstr ""
 msgid "Storage"
 msgstr ""
 
-#: ../qml/MenuPage.qml:209
-msgid "Coming Soon"
-msgstr ""
-
-#: ../qml/MenuPage.qml:228
+#: ../qml/MenuPage.qml:227
 msgid "About"
 msgstr ""
 
-#: ../qml/MenuPage.qml:237 ../qml/ThirdPartySoftwarePage.qml:36
+#: ../qml/MenuPage.qml:236 ../qml/ThirdPartySoftwarePage.qml:36
 msgid "Third Party Software"
 msgstr ""
 
