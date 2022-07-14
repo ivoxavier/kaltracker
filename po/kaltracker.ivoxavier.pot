@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 08:34+0000\n"
+"POT-Creation-Date: 2022-07-14 08:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:208
+#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:207
 msgid "Export Data"
 msgstr ""
 
@@ -413,11 +413,11 @@ msgstr ""
 msgid "Storage"
 msgstr ""
 
-#: ../qml/MenuPage.qml:227
+#: ../qml/MenuPage.qml:226
 msgid "About"
 msgstr ""
 
-#: ../qml/MenuPage.qml:236 ../qml/ThirdPartySoftwarePage.qml:36
+#: ../qml/MenuPage.qml:235 ../qml/ThirdPartySoftwarePage.qml:36
 msgid "Third Party Software"
 msgstr ""
 
