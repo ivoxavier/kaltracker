@@ -28,3 +28,15 @@ Run debug build in Desktop Mode in Dark Mode:
 Run debug build in Desktop Mode in specific language:
 
     clickable desktop --lang pt_PT
+
+# License
+ 
+ 2022 Ivo Xavier
+ 
+ This program is licensed with GNU GPL v3.
+
+ kaltracker/qzxing is Licensed under the Apache License 2.0
+ 
+ kaltracker/js/jsonpath.js is Licensed under the MIT license
+ 
+ kaltracker/qml/components/JSONListModel.qml is Licensed under the MIT license
