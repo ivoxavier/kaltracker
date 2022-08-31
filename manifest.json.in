@@ -9,7 +9,11 @@
             "desktop":  "kaltracker.desktop"
         }
     },
+<<<<<<< Updated upstream
     "version": "0.0.2",
+=======
+    "version": "1.1.2",
+>>>>>>> Stashed changes
     "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
