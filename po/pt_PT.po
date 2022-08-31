@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../qml/ExportDataPage.qml:100
+msgid "Data exported successfully"
+msgstr "Dados exportados com sucesso"
+
 #: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:146
 msgid "App Settings"
 msgstr "Definições"

@@ -17,6 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
+#: ../qml/ExportDataPage.qml:100
+msgid "Data exported successfully"
+msgstr ""
+
 #: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:146
 msgid "App Settings"
 msgstr "Appinstellingen"

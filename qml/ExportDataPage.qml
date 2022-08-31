@@ -97,6 +97,7 @@ Page{
             setHandler('user_weight_exported', function() {
                 user_weight_exported_icon.exported = true 
                 loading_circle.running = false
+                state_msg.text = i18n.tr("Data exported successfully")
         });
 
 

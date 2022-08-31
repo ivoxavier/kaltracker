@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 08:53+0000\n"
+"POT-Creation-Date: 2022-08-31 14:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,31 +191,35 @@ msgstr ""
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:133
+#: ../qml/ExportDataPage.qml:100
+msgid "Data exported successfully"
+msgstr ""
+
+#: ../qml/ExportDataPage.qml:134
 msgid "Store Path: .local/share/kaltracker.ivoxavier/"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:145
+#: ../qml/ExportDataPage.qml:146
 msgid "User Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:157
+#: ../qml/ExportDataPage.qml:158
 msgid "Ingestions Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:169
+#: ../qml/ExportDataPage.qml:170
 msgid "Water Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:181
+#: ../qml/ExportDataPage.qml:182
 msgid "Weight Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:206
+#: ../qml/ExportDataPage.qml:207
 msgid "Please Wait A Few Seconds..."
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:213
+#: ../qml/ExportDataPage.qml:214
 msgid "Start Export Process"
 msgstr ""
 
