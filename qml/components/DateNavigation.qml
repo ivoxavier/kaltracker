@@ -32,6 +32,13 @@ Popover{
         date: root.currentDate
         width: Math.min(root.width - units.gu(8), units.gu(36))
         height: units.gu(10)
+        
+        StyleHints {
+            highlightBackgroundColor: theme.palette.normal.raised
+            highlightColor: UbuntuColors.jet
+            backgroundColor: theme.palette.normal.base
+        }
+
         Component.onDestruction: ControlDateNavigationPopup.newDate()
     }
 }  
