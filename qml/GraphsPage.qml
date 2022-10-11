@@ -28,7 +28,7 @@ import "components"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/GetData.js" as GetData
-import "../js/ThemeColors.js" as ThemeColors
+
 
 
 Page {
@@ -59,7 +59,7 @@ Page {
        // ctx.save();
         ctx.globalCompositeOperation = 'destination-over'
         // Now draw!
-        ctx.fillStyle = Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background;
+        ctx.fillStyle = Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
     }

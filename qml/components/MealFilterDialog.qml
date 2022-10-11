@@ -20,7 +20,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "../../js/ThemeColors.js" as ThemeColors
 
 Dialog {
     id: meal_filter_dialog
@@ -35,6 +34,7 @@ Dialog {
             anchors.verticalCenter: parent.verticalCenter
             text: i18n.tr("How Many Days Ago:")
             font.bold: true
+            color: Suru === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
         }
 
         UbuntuShape{

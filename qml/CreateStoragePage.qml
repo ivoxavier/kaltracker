@@ -28,7 +28,7 @@ import "../js/Storage.js" as Storage
 import "../js/UserTable.js" as UserTable
 import "../js/WeightTrackerTable.js" as WeightTrackerTable
 import "../js/ControlCreateStorage.js" as ControlCreateStorage
-import "../js/ThemeColors.js" as ThemeColors
+
 
 Page{
     id: create_storage_page
@@ -52,7 +52,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     Timer{id: timer; repeat: false}
@@ -83,7 +83,7 @@ Page{
          Text{
             anchors.horizontalCenter: parent.horizontalCenter
             text: i18n.tr("Creating Database...")
-            color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             font.bold : true
         }
 

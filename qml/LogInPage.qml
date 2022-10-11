@@ -23,7 +23,6 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ThemeColors.js" as ThemeColors
 
 
 Page{
@@ -35,7 +34,7 @@ Page{
     Rectangle{
     anchors.fill: parent
     gradient: Gradient {
-        GradientStop { position: 0.0; color: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background }
+        GradientStop { position: 0.0; color: Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background  }
     }
 }
 
@@ -63,6 +62,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Welcome")
                 font.pixelSize: units.gu(4) 
+                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             BlankSpace{height: units.gu(3)}
@@ -82,6 +82,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: "KalTracker"
                 font.pixelSize: units.gu(3) 
+                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
 

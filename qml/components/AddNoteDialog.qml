@@ -20,7 +20,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "../../js/ThemeColors.js" as ThemeColors
 import "../../js/NotesTable.js" as NotesTable
 
 Dialog {
@@ -42,7 +41,7 @@ Dialog {
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             onTextChanged: note = text
         }
     }

@@ -27,7 +27,7 @@ import Ubuntu.Components.Popups 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ThemeColors.js" as ThemeColors
+
 
 Page {   
     id: scan_page

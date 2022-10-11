@@ -30,7 +30,6 @@ import "../js/ControlSlotDashboardPlan.js" as ControlSlotDashboardPlan
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 import "../js/IngestionsTable.js" as IngestionsTable
-import "../js/ThemeColors.js" as ThemeColors
 
 Page{
     id: home_page
@@ -108,7 +107,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
     }
 
     Flickable {
@@ -260,7 +259,7 @@ Page{
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_breakfast)
                 img_path:"../assets/breakfast-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
             }  
 
             SlotAddMeal{
@@ -272,7 +271,7 @@ Page{
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_lunch)
                 img_path:"../assets/fried-chicken-meal-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
             } 
 
             SlotAddMeal{
@@ -284,7 +283,7 @@ Page{
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_dinner)
                 img_path:"../assets/dinner-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
             }
 
             SlotAddMeal{
@@ -296,7 +295,7 @@ Page{
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_snacks)
                 img_path:"../assets/snack-snacks-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
             }
 
             BlankSpace{}
@@ -308,7 +307,7 @@ Page{
                 Layout.preferredHeight: units.gu(7)
                 img_path:"../assets/glass-of-water-svgrepo-com.svg"
                 water_cups_drinked : (home_page.query_total_water_cups * 0.1)
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
             }
         }  
     }
@@ -361,14 +360,14 @@ Page{
             }
 
              Rectangle{
-             anchors{
-                top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-                left : parent.left
-                right : parent.right
-                bottom : parent.bottom
+                anchors{
+                    top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
+                    left : parent.left
+                    right : parent.right
+                    bottom : parent.bottom
+                }
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
             }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
-    }
 
             header: PageHeader{
                 title : i18n.tr("Your Previous Ingestions")
