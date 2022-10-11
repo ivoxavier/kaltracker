@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-31 14:56+0000\n"
+"POT-Creation-Date: 2022-10-11 09:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:146
+#: ../qml/AppLayoutPage.qml:34 ../qml/MenuPage.qml:145
 msgid "App Settings"
 msgstr ""
 
-#: ../qml/AppLayoutPage.qml:72
+#: ../qml/AppLayoutPage.qml:71
 msgid "Charts Settings"
 msgstr ""
 
-#: ../qml/AppLayoutPage.qml:80
+#: ../qml/AppLayoutPage.qml:79
 msgid "Chart Animation"
 msgstr ""
 
-#: ../qml/AverageCaloriesPage.qml:37 ../qml/DataAnalysisPage.qml:85
+#: ../qml/AverageCaloriesPage.qml:37 ../qml/DataAnalysisPage.qml:84
 msgid "Average Calories Consumption"
 msgstr ""
 
@@ -155,27 +155,27 @@ msgstr ""
 msgid "Creating Database..."
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:39 ../qml/MenuPage.qml:119
+#: ../qml/DataAnalysisPage.qml:38 ../qml/MenuPage.qml:118
 msgid "Data Analysis"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:118
+#: ../qml/DataAnalysisPage.qml:76 ../qml/ManageDataPage.qml:117
 msgid "Ingestions"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:87
+#: ../qml/DataAnalysisPage.qml:86
 msgid "By Month"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:100
+#: ../qml/DataAnalysisPage.qml:99
 msgid "Charts"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:115
+#: ../qml/DataAnalysisPage.qml:114
 msgid "Body Measurements"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:122
+#: ../qml/DataAnalysisPage.qml:121
 msgid "Indexes"
 msgstr ""
 
@@ -183,39 +183,39 @@ msgstr ""
 msgid "Select Ingestion To Delete"
 msgstr ""
 
-#: ../qml/DeleteTodayIngestionPage.qml:59 ../qml/ManageUserFoodsListPage.qml:73
+#: ../qml/DeleteTodayIngestionPage.qml:59 ../qml/ManageUserFoodsListPage.qml:72
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:207
+#: ../qml/ExportDataPage.qml:38 ../qml/MenuPage.qml:206
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:100
+#: ../qml/ExportDataPage.qml:99
 msgid "Data exported successfully"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:134
+#: ../qml/ExportDataPage.qml:133
 msgid "Store Path: .local/share/kaltracker.ivoxavier/"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:146
+#: ../qml/ExportDataPage.qml:145
 msgid "User Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:158
+#: ../qml/ExportDataPage.qml:157
 msgid "Ingestions Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:170
+#: ../qml/ExportDataPage.qml:169
 msgid "Water Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:182
+#: ../qml/ExportDataPage.qml:181
 msgid "Weight Table"
 msgstr ""
 
-#: ../qml/ExportDataPage.qml:207
+#: ../qml/ExportDataPage.qml:206
 msgid "Please Wait A Few Seconds..."
 msgstr ""
 
@@ -235,112 +235,112 @@ msgstr ""
 msgid "Foods Distribution By Nutriscore"
 msgstr ""
 
-#: ../qml/HomePage.qml:94
+#: ../qml/HomePage.qml:93
 msgid "Ingestion Saved!"
 msgstr ""
 
-#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:229
+#: ../qml/HomePage.qml:138 ../qml/UpdateUserValuesPage.qml:228
 msgid "Loose Weight"
 msgstr ""
 
-#: ../qml/HomePage.qml:140 ../qml/UpdateUserValuesPage.qml:229
+#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:228
 msgid "Gain Weight"
 msgstr ""
 
-#: ../qml/HomePage.qml:140 ../qml/UpdateUserValuesPage.qml:229
+#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:228
 msgid "Maintain Weight"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:162
+#: ../qml/HomePage.qml:161
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:181
+#: ../qml/HomePage.qml:180
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:196
+#: ../qml/HomePage.qml:195
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:205
+#: ../qml/HomePage.qml:204
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:215
+#: ../qml/HomePage.qml:214
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:258 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:66
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:261 ../qml/HomePage.qml:273 ../qml/HomePage.qml:285
-#: ../qml/HomePage.qml:297 ../qml/ListFoodsIngestedMonthPage.qml:88
+#: ../qml/HomePage.qml:260 ../qml/HomePage.qml:272 ../qml/HomePage.qml:284
+#: ../qml/HomePage.qml:296 ../qml/ListFoodsIngestedMonthPage.qml:88
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:270 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:269 ../qml/components/MealFilterDialog.qml:66
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:282 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:281 ../qml/components/MealFilterDialog.qml:66
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:294 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:293 ../qml/components/MealFilterDialog.qml:66
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:358
+#: ../qml/HomePage.qml:357
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:374
+#: ../qml/HomePage.qml:373
 msgid "Your Previous Ingestions"
 msgstr ""
 
-#: ../qml/LogInPage.qml:64
+#: ../qml/LogInPage.qml:63
 msgid "Welcome"
 msgstr ""
 
-#: ../qml/LogInPage.qml:93
+#: ../qml/LogInPage.qml:94
 msgid "Start"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:36 ../qml/MenuPage.qml:189
+#: ../qml/ManageDataPage.qml:35 ../qml/MenuPage.qml:188
 msgid "Manage Data"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:127
+#: ../qml/ManageDataPage.qml:126
 msgid "Auto Delete Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:129
+#: ../qml/ManageDataPage.qml:128
 msgid "Deletes All Previous Year Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:147
+#: ../qml/ManageDataPage.qml:146
 msgid "From a Month & To Year"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:164
+#: ../qml/ManageDataPage.qml:163
 msgid "Specific Today's Ingestion"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:184
+#: ../qml/ManageDataPage.qml:183
 msgid "Only Today's Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:188 ../qml/ManageDataPage.qml:205
-#: ../qml/ManageDataPage.qml:255 ../qml/ManageDataPage.qml:280
-#: ../qml/ManageDataPage.qml:305 ../qml/components/DeleteAllNotesDialog.qml:47
+#: ../qml/ManageDataPage.qml:187 ../qml/ManageDataPage.qml:204
+#: ../qml/ManageDataPage.qml:254 ../qml/ManageDataPage.qml:279
+#: ../qml/ManageDataPage.qml:304 ../qml/components/DeleteAllNotesDialog.qml:47
 #: ../qml/components/DeleteAllWaterDialog.qml:47
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:46
 #: ../qml/components/DeleteByMonthPop.qml:77
@@ -349,79 +349,79 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:201
+#: ../qml/ManageDataPage.qml:200
 msgid "All Ingestions"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:218
+#: ../qml/ManageDataPage.qml:217
 msgid "User Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:226
+#: ../qml/ManageDataPage.qml:225
 msgid "User Created Foods List"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:242
+#: ../qml/ManageDataPage.qml:241
 msgid "Water"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:251
+#: ../qml/ManageDataPage.qml:250
 msgid "All Water Records"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:268
+#: ../qml/ManageDataPage.qml:267
 msgid "Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:276
+#: ../qml/ManageDataPage.qml:275
 msgid "Delete All Notes"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:293
+#: ../qml/ManageDataPage.qml:292
 msgid "Weight Tracker"
 msgstr ""
 
-#: ../qml/ManageDataPage.qml:301
+#: ../qml/ManageDataPage.qml:300
 msgid "All Records"
 msgstr ""
 
-#: ../qml/ManageUserFoodsListPage.qml:39
+#: ../qml/ManageUserFoodsListPage.qml:38
 msgid "Manage Your Foods"
 msgstr ""
 
-#: ../qml/MenuPage.qml:36
+#: ../qml/MenuPage.qml:35
 msgid "Menu"
 msgstr ""
 
-#: ../qml/MenuPage.qml:85
+#: ../qml/MenuPage.qml:84
 msgid "Version: "
 msgstr ""
 
-#: ../qml/MenuPage.qml:93
+#: ../qml/MenuPage.qml:92
 msgid "User"
 msgstr ""
 
-#: ../qml/MenuPage.qml:102
+#: ../qml/MenuPage.qml:101
 msgid "Your Profile"
 msgstr ""
 
-#: ../qml/MenuPage.qml:137
+#: ../qml/MenuPage.qml:136
 msgid "Settings"
 msgstr ""
 
-#: ../qml/MenuPage.qml:162
+#: ../qml/MenuPage.qml:161
 msgid "Online Sources"
 msgstr ""
 
-#: ../qml/MenuPage.qml:181
+#: ../qml/MenuPage.qml:180
 msgid "Storage"
 msgstr ""
 
-#: ../qml/MenuPage.qml:226
+#: ../qml/MenuPage.qml:225
 msgid "About"
 msgstr ""
 
-#: ../qml/MenuPage.qml:235 ../qml/ThirdPartySoftwarePage.qml:36
+#: ../qml/MenuPage.qml:234 ../qml/ThirdPartySoftwarePage.qml:36
 msgid "Third Party Software"
 msgstr ""
 
@@ -433,19 +433,19 @@ msgstr ""
 msgid "Empty List, Please Register Notes First.."
 msgstr ""
 
-#: ../qml/OnlineSourcesPage.qml:34
+#: ../qml/OnlineSourcesPage.qml:33
 msgid "Aplication Programming Interface"
 msgstr ""
 
-#: ../qml/OnlineSourcesPage.qml:73
+#: ../qml/OnlineSourcesPage.qml:72
 msgid "Application Programming Interface"
 msgstr ""
 
-#: ../qml/OnlineSourcesPage.qml:81
+#: ../qml/OnlineSourcesPage.qml:80
 msgid "OpenFoodsFacts"
 msgstr ""
 
-#: ../qml/OnlineSourcesPage.qml:83
+#: ../qml/OnlineSourcesPage.qml:82
 msgid "Search For Barcode In %1"
 msgstr ""
 
@@ -457,15 +457,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:39 ../qml/SetFoodPage.qml:215
+#: ../qml/QuickAdditionPage.qml:39 ../qml/SetFoodPage.qml:214
 msgid "Macros"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:69 ../qml/SetFoodPage.qml:94
+#: ../qml/QuickAdditionPage.qml:69 ../qml/SetFoodPage.qml:93
 msgid "Stored!"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:74 ../qml/SetFoodPage.qml:99
+#: ../qml/QuickAdditionPage.qml:74 ../qml/SetFoodPage.qml:98
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
@@ -501,19 +501,19 @@ msgstr ""
 msgid "E: Bad Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:199 ../qml/SetFoodPage.qml:73
+#: ../qml/QuickAdditionPage.qml:199 ../qml/SetFoodPage.qml:72
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:231 ../qml/SetFoodPage.qml:79
+#: ../qml/QuickAdditionPage.qml:231 ../qml/SetFoodPage.qml:78
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:264 ../qml/SetFoodPage.qml:85
+#: ../qml/QuickAdditionPage.qml:264 ../qml/SetFoodPage.qml:84
 msgid "Carbo/100g"
 msgstr ""
 
-#: ../qml/QuickListFoodsPage.qml:40
+#: ../qml/QuickListFoodsPage.qml:39
 msgid "Search..."
 msgstr ""
 
@@ -521,17 +521,17 @@ msgstr ""
 msgid "Scanning"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:34 ../qml/SetAgePage.qml:36
-#: ../qml/SetHeightPage.qml:34 ../qml/SetPlanPage.qml:37
+#: ../qml/SetActivityPage.qml:33 ../qml/SetAgePage.qml:36
+#: ../qml/SetHeightPage.qml:33 ../qml/SetPlanPage.qml:36
 #: ../qml/SetSexAtBirthPage.qml:35 ../qml/SetWeightPage.qml:34
 msgid "About You"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:53
+#: ../qml/SetActivityPage.qml:52
 msgid "Help"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:64
+#: ../qml/SetActivityPage.qml:63
 msgid ""
 "Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
 "\n"
@@ -542,38 +542,38 @@ msgid ""
 "Heavy Include: Running, Soccer, Basketball, Football."
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:103
+#: ../qml/SetActivityPage.qml:102
 msgid "Your Level Of Activity?"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:116
+#: ../qml/SetActivityPage.qml:115
 msgid "VERY LIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:133
+#: ../qml/SetActivityPage.qml:132
 msgid "LIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:150
+#: ../qml/SetActivityPage.qml:149
 msgid "MODERATE"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:167
+#: ../qml/SetActivityPage.qml:166
 msgid "HEAVY"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:180 ../qml/SetAgePage.qml:103
-#: ../qml/SetHeightPage.qml:107 ../qml/SetPlanPage.qml:160
+#: ../qml/SetActivityPage.qml:179 ../qml/SetAgePage.qml:103
+#: ../qml/SetHeightPage.qml:106 ../qml/SetPlanPage.qml:159
 #: ../qml/SetWeightPage.qml:103
 msgid "You Can Change It Later"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:190 ../qml/SetAgePage.qml:112
-#: ../qml/SetHeightPage.qml:116 ../qml/SetPlanPage.qml:170
+#: ../qml/SetActivityPage.qml:189 ../qml/SetAgePage.qml:112
+#: ../qml/SetHeightPage.qml:115 ../qml/SetPlanPage.qml:169
 #: ../qml/SetSexAtBirthPage.qml:129 ../qml/SetWeightPage.qml:112
 #: ../qml/components/IsProductFoundDialog.qml:126
 msgid "Next"
@@ -587,66 +587,66 @@ msgstr ""
 msgid "Enter Your Age In Years"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:41
+#: ../qml/SetFoodPage.qml:40
 msgid "Set Your Ingestion"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:143
+#: ../qml/SetFoodPage.qml:142
 msgid "Calories: %1 "
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:180
+#: ../qml/SetFoodPage.qml:179
 msgid "Size Portion"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:200
+#: ../qml/SetFoodPage.qml:199
 msgid "Quantity"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:223
+#: ../qml/SetFoodPage.qml:222
 msgid "Fat: %1gr"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:231
+#: ../qml/SetFoodPage.qml:230
 msgid "Protein: %1gr"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:240
+#: ../qml/SetFoodPage.qml:239
 msgid "Carbohydrates: %1gr"
 msgstr ""
 
-#: ../qml/SetHeightPage.qml:89
+#: ../qml/SetHeightPage.qml:88
 msgid "Your Height?"
 msgstr ""
 
-#: ../qml/SetHeightPage.qml:99
+#: ../qml/SetHeightPage.qml:98
 msgid "Your Height In cm: 171"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:66
+#: ../qml/SetPlanPage.qml:65
 msgid "loose"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:71
+#: ../qml/SetPlanPage.qml:70
 msgid "gain"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:100
+#: ../qml/SetPlanPage.qml:99
 msgid "What's Your Goal?"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:113
+#: ../qml/SetPlanPage.qml:112
 msgid "LOOSE WEIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:130
+#: ../qml/SetPlanPage.qml:129
 msgid "MAINTAIN WEIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:147
+#: ../qml/SetPlanPage.qml:146
 msgid "GAIN WEIGHT"
 msgstr ""
 
@@ -696,114 +696,114 @@ msgstr ""
 msgid "Icons"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:41
+#: ../qml/UpdateUserValuesPage.qml:40
 msgid "Enter New Nalues"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:43
+#: ../qml/UpdateUserValuesPage.qml:42
 msgid "Goals"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:43
+#: ../qml/UpdateUserValuesPage.qml:42
 msgid "Tension"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:43
+#: ../qml/UpdateUserValuesPage.qml:42
 msgid "Values"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:116
+#: ../qml/UpdateUserValuesPage.qml:115
 msgid "Your New Height"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:142
+#: ../qml/UpdateUserValuesPage.qml:141
 msgid "Your New Weight"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:169
+#: ../qml/UpdateUserValuesPage.qml:168
 msgid "Your New Age"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:198
+#: ../qml/UpdateUserValuesPage.qml:197
 msgid "Activity Level"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:207
+#: ../qml/UpdateUserValuesPage.qml:206
 msgid "High"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:207
+#: ../qml/UpdateUserValuesPage.qml:206
 msgid "Light"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:207
+#: ../qml/UpdateUserValuesPage.qml:206
 msgid "Moderate"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:207
+#: ../qml/UpdateUserValuesPage.qml:206
 msgid "Very Light"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:220
+#: ../qml/UpdateUserValuesPage.qml:219
 #: ../qml/components/SlotDashboardCalories.qml:56
 msgid "Goal"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:250
+#: ../qml/UpdateUserValuesPage.qml:249
 msgid "Goal Definition"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:260
-#: ../qml/components/GoalDefinitionDialog.qml:47
+#: ../qml/UpdateUserValuesPage.qml:259
+#: ../qml/components/GoalDefinitionDialog.qml:46
 msgid "0,5kg by week"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:260
-#: ../qml/components/GoalDefinitionDialog.qml:66
+#: ../qml/UpdateUserValuesPage.qml:259
+#: ../qml/components/GoalDefinitionDialog.qml:65
 msgid "1kg by week"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:260
+#: ../qml/UpdateUserValuesPage.qml:259
 msgid "3kg by week"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:260
+#: ../qml/UpdateUserValuesPage.qml:259
 msgid "4kg by week"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:276
+#: ../qml/UpdateUserValuesPage.qml:275
 msgid "Your Systolic Presure (High Pressure)"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:303
+#: ../qml/UpdateUserValuesPage.qml:302
 msgid "Your Diastolic Presure (Low Pressure)"
 msgstr ""
 
-#: ../qml/components/AddNoteDialog.qml:31
+#: ../qml/components/AddNoteDialog.qml:30
 msgid "Add Your Notes"
 msgstr ""
 
-#: ../qml/components/AddNoteDialog.qml:51
+#: ../qml/components/AddNoteDialog.qml:50
 msgid "View Your Notes"
 msgstr ""
 
-#: ../qml/components/AddNoteDialog.qml:59
+#: ../qml/components/AddNoteDialog.qml:58
 msgid "Add"
 msgstr ""
 
-#: ../qml/components/AddNoteDialog.qml:67
-#: ../qml/components/GoalDefinitionDialog.qml:123
+#: ../qml/components/AddNoteDialog.qml:66
+#: ../qml/components/GoalDefinitionDialog.qml:122
 #: ../qml/components/MealFilterDialog.qml:72
 #: ../qml/components/MessageDialog.qml:41
-#: ../qml/components/RecommendedCaloriesDialog.qml:51
+#: ../qml/components/RecommendedCaloriesDialog.qml:50
 msgid "Back"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChart.qml:110
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "EXCEED"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChart.qml:110
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "REMAINING"
 msgstr ""
 
@@ -864,24 +864,24 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: ../qml/components/GoalDefinitionDialog.qml:29
+#: ../qml/components/GoalDefinitionDialog.qml:28
 msgid "Module your goal"
 msgstr ""
 
-#: ../qml/components/GoalDefinitionDialog.qml:36
+#: ../qml/components/GoalDefinitionDialog.qml:35
 msgid "A healthy %1 weight must be distributed among a safe period."
 msgstr ""
 
-#: ../qml/components/GoalDefinitionDialog.qml:86
+#: ../qml/components/GoalDefinitionDialog.qml:85
 msgid "3kg by month"
 msgstr ""
 
-#: ../qml/components/GoalDefinitionDialog.qml:106
+#: ../qml/components/GoalDefinitionDialog.qml:105
 msgid "4kg by month"
 msgstr ""
 
-#: ../qml/components/GoalDefinitionDialog.qml:136
-#: ../qml/components/RecommendedCaloriesDialog.qml:59
+#: ../qml/components/GoalDefinitionDialog.qml:135
+#: ../qml/components/RecommendedCaloriesDialog.qml:58
 msgid "Confirm"
 msgstr ""
 
@@ -935,31 +935,31 @@ msgstr ""
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:44
+#: ../qml/components/ListViewFoods.qml:43
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:45
+#: ../qml/components/ListViewFoods.qml:44
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:46
+#: ../qml/components/ListViewFoods.qml:45
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:47
+#: ../qml/components/ListViewFoods.qml:46
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:47
+#: ../qml/components/ListViewFoods.qml:46
 msgid "Poor nutritional quality"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:27
+#: ../qml/components/MealFilterDialog.qml:26
 msgid "Show Ingestions From"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:36
+#: ../qml/components/MealFilterDialog.qml:35
 msgid "How Many Days Ago:"
 msgstr ""
 
@@ -975,15 +975,15 @@ msgstr ""
 msgid "Operation Sucess"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:29
+#: ../qml/components/RecommendedCaloriesDialog.qml:28
 msgid "Recommended Calories"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:33
+#: ../qml/components/RecommendedCaloriesDialog.qml:32
 msgid "%1 Calories"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:41
+#: ../qml/components/RecommendedCaloriesDialog.qml:40
 msgid "Calculated Using St. Mifflin Jeor Equation"
 msgstr ""
 
