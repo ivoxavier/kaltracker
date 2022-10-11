@@ -22,7 +22,6 @@ import Qt.labs.settings 1.0
 import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import "../../js/ThemeColors.js" as ThemeColors
 
 UbuntuShape{
     id: slot_shape
@@ -44,7 +43,7 @@ UbuntuShape{
         ListItemLayout{
             id: slot_layout
             title.font.bold: true
-            title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             subtitle.font.bold: true
             Rectangle{
                 height: units.gu(3.5)

@@ -22,7 +22,6 @@ import Ubuntu.Components.ListItems 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQC2
 import '../../js/DefineGoalCalories.js' as DefinePeriod
-import "../../js/ThemeColors.js" as ThemeColors
 
 Dialog {
     id: module_goal_dialog
@@ -36,7 +35,7 @@ Dialog {
         text: i18n.tr("A healthy %1 weight must be distributed among a safe period.").arg(format_string)
         font.pixelSize: units.gu(2)
         width: parent.width
-        color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
         wrapMode: Text.Wrap;
         horizontalAlignment: Text.AlignJustify 
     }
@@ -45,7 +44,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text: i18n.tr("0,5kg by week")
-            title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             QQC2.RadioButton{
                 id: radio_button_set1
                 checked: false
@@ -64,7 +63,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text : i18n.tr("1kg by week")
-            title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             QQC2.RadioButton{
                 id: radio_button_set2
                 checked: false
@@ -84,7 +83,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text : i18n.tr("3kg by month")
-            title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
 
             QQC2.RadioButton{
                 id: radio_button_set3
@@ -104,7 +103,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text :  i18n.tr("4kg by month")
-            title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             QQC2.RadioButton{
                 id: radio_button_set4
                 checked: false

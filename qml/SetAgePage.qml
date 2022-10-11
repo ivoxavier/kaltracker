@@ -25,7 +25,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
-import "../js/ThemeColors.js" as ThemeColors
+
 
 
 Page{
@@ -51,7 +51,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
     }
 
     Flickable {
@@ -84,7 +84,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter   
                 text: i18n.tr("What's Your Age?")
                 font.pixelSize: units.gu(4)
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             BlankSpace{height:units.gu(2)}
@@ -102,7 +102,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter    
                 text: i18n.tr("You Can Change It Later") + " 😎."
                 font.pixelSize: units.gu(1.5)
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             BlankSpace{height:units.gu(20)}

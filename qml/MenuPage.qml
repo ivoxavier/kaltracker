@@ -26,7 +26,6 @@ import QtQuick.LocalStorage 2.12
 import Ubuntu.Content 1.3
 import QtQuick.Window 2.0
 import "components"
-import "../js/ThemeColors.js" as ThemeColors
 
 
 Page{
@@ -47,7 +46,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     Flickable{
@@ -83,7 +82,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 text: i18n.tr("Version: ") + root.app_version
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             ListItem{
@@ -101,7 +100,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Your Profile")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         name : "account"
@@ -118,7 +117,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Data Analysis")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         name : "x-office-presentation-symbolic"
@@ -188,7 +187,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Manage Data")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -206,7 +205,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Export Data")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -234,7 +233,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Third Party Software")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading

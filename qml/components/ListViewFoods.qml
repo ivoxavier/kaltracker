@@ -23,7 +23,6 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
-import "../../js/ThemeColors.js" as ThemeColors
 
 ListView{
     highlightRangeMode: ListView.ApplyRange

@@ -22,7 +22,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls.Suru 2.2
 import '../../js/RecommendedCalories.js' as RecommendedCalories
 import "../../js/ControlRecommendedCalories.js" as ControlRecommendedCalories
-import "../../js/ThemeColors.js" as ThemeColors
 
 Dialog {
     id: recommended_calories_dialog
@@ -33,7 +32,7 @@ Dialog {
         text: i18n.tr("%1 Calories").arg(root.equation_recommended_calories)
         font.pixelSize: units.gu(2)
         font.bold: true
-        color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
         width: parent.width
     }
 
@@ -41,7 +40,7 @@ Dialog {
         text: i18n.tr("Calculated Using St. Mifflin Jeor Equation")
         font.pixelSize: units.gu(2)
         font.bold: true
-        color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
         width: parent.width
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
     }

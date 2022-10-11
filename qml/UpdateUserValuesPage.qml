@@ -30,7 +30,6 @@ import "../js/UserTable.js" as UserTable
 import "../js/UpdateUserTable.js" as UpdateUserTable
 import "../js/RecommendedCalories.js" as RecommendedCalories
 import "../js/DefineGoalCalories.js" as DefinePeriod
-import "../js/ThemeColors.js" as ThemeColors
 
 
 Page{
@@ -85,7 +84,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
     
     Flickable {
@@ -115,7 +114,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Height")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 font.bold : true
             }
 
@@ -126,7 +125,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
@@ -141,7 +140,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Weight")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 font.bold : true
             }
 
@@ -152,14 +151,14 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     onTextChanged: update_user_values_page.update_weight = text 
                 }
             }
@@ -168,7 +167,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Age")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 font.bold : true
             }
 
@@ -179,14 +178,14 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     onTextChanged: update_user_values_page.update_age = text 
                 }
             }
@@ -197,7 +196,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Activity Level")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 font.bold : true
             }
 
@@ -219,7 +218,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Goal")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 font.bold : true
             }
 
@@ -249,7 +248,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Goal Definition")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 font.bold : true
             }
 
@@ -275,7 +274,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your Systolic Presure (High Pressure)")
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 font.bold : true
             }
 
@@ -286,14 +285,14 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     onTextChanged: update_user_values_page.update_ap_hi = text 
                 }
             }
@@ -302,7 +301,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your Diastolic Presure (Low Pressure)")
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 font.bold : true
             }
 
@@ -313,14 +312,14 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     onTextChanged: update_user_values_page.update_ap_lo = text 
                 }
             }

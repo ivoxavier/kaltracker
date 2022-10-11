@@ -24,7 +24,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/ControlSetActivitySelection.js" as ControlSetActivitySelection
-import "../js/ThemeColors.js" as ThemeColors
 
 Page{
     id: set_activity_page
@@ -44,7 +43,7 @@ Page{
 
                     StyleHints {
                         foregroundColor: "white"
-                        backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background 
+                        backgroundColor:  Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
                     }
 
                     numberOfSlots: 1
@@ -71,7 +70,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
     }
     
     Flickable {
@@ -102,7 +101,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Your Level Of Activity?")
                 font.pixelSize: units.gu(4)  
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             BlankSpace{height:units.gu(2)}
@@ -115,7 +114,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("VERY LIGHT")
                 img_path:"../assets/cooking-stew-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(0)   
@@ -132,7 +131,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("LIGHT")
                 img_path:"../assets/walking-the-dog-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(1)
@@ -149,7 +148,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("MODERATE")
                 img_path:"../assets/cycling-color-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(2)   
@@ -166,7 +165,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("HEAVY")
                 img_path:"../assets/soccer-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(3) 
@@ -179,7 +178,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter  
                 text: i18n.tr("You Can Change It Later") + " 😎."
                 font.pixelSize: units.gu(1.5)
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             BlankSpace{height:units.gu(2)}
