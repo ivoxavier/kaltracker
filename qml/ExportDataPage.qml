@@ -27,7 +27,6 @@ import Ubuntu.Content 1.3
 import io.thp.pyotherside 1.5
 import "components"
 import "../js/UserTable.js" as UserTable
-import "../js/ThemeColors.js" as ThemeColors
 
 
 
@@ -51,7 +50,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     Python{
@@ -206,6 +205,7 @@ Page{
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 text: i18n.tr("Please Wait A Few Seconds...")
                 font.bold: true
+                color: Suru === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             Button{

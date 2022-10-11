@@ -25,7 +25,7 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/ControlSetSexSelection.js" as ControlSetSexSelection
-import "../js/ThemeColors.js" as ThemeColors
+
 
 Page{
     id: set_sex_at_birth_page
@@ -50,7 +50,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
     }
     
     Flickable {
@@ -84,7 +84,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter  
                 text: i18n.tr("Sex Assigned At Birth?")
                 font.pixelSize: units.gu(4)
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             BlankSpace{height:units.gu(2)}
@@ -97,7 +97,7 @@ Page{
                 //TRANSLATORS PLease Keep This Letters All Capital
                 text: i18n.tr("MALE")
                 img_path:"../assets/male-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetSexSelection.selectSex(0)
@@ -114,7 +114,7 @@ Page{
                 //TRANSLATORS PLease Keep This Letters All Capital
                 text: i18n.tr("FEMALE")
                 img_path:"../assets/female-gender-svgrepo-com.svg"
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetSexSelection.selectSex(1)   

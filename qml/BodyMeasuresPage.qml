@@ -29,7 +29,7 @@ import "../js/UserTable.js" as UserTable
 import "../js/BodyMassIndex.js" as BMI
 import "../js/IdealWeight.js" as IBW
 import "../js/BloodPressureIndex.js" as BloodPressureIndex
-import "../js/ThemeColors.js" as ThemeColors
+
 
 Page{
     id: body_measures_page
@@ -65,7 +65,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     

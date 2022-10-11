@@ -27,7 +27,7 @@ import "components"
 import "../js/UserTable.js" as UserTable
 import "../js/IngestionsTable.js" as IngestionsTable
 import "../js/UserFoodsListTable.js" as UserFoodsListTable
-import "../js/ThemeColors.js" as ThemeColors
+
 
 Page{
     id: quick_addition_page
@@ -83,7 +83,7 @@ Page{
             right : parent.right
             bottom : parent.bottom
         }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     Flickable {
@@ -111,7 +111,7 @@ Page{
                 text: i18n.tr("Product name")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             UbuntuShape{  
@@ -126,7 +126,7 @@ Page{
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     onTextChanged: product_name_quick_addition_page = text
                 }
             }
@@ -138,7 +138,7 @@ Page{
                 text: i18n.tr("Calories")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
             
             UbuntuShape{  
@@ -155,7 +155,7 @@ Page{
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text
+                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                     onEditingFinished:{ 
                         cal_quick_addition_page = text
                     }
@@ -169,7 +169,7 @@ Page{
                 text: i18n.tr("Nutriscore Grade")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             OptionSelector {
@@ -199,7 +199,7 @@ Page{
                 text: i18n.tr("Fat/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             Text{
@@ -215,7 +215,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background
+                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{
                         id: fat_slider
                         anchors.centerIn: parent
@@ -231,7 +231,7 @@ Page{
                 text: i18n.tr("Protein/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             Text{
@@ -247,7 +247,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background
+                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{
                         anchors.centerIn: parent
                         width: parent.width
@@ -264,7 +264,7 @@ Page{
                 text: i18n.tr("Carbo/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
 
             Text{
@@ -280,7 +280,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_slot_background : ThemeColors.utFoods_dark_theme_slot_background
+                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{
                         anchors.centerIn: parent
                         width: parent.width
