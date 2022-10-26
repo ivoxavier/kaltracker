@@ -24,7 +24,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/ControlSetPlanSelection.js" as ControlSetPlanSelection
-import "../js/ControlSetPlanNextButton.js" as ControlSetPlanNextButton
 
 
 
@@ -169,7 +168,15 @@ Page{
                 text: i18n.tr("Next")
                 enabled: set_plan_page.is_plan_choosed
                 color : UbuntuColors.green
-                onClicked: ControlSetPlanNextButton.next()
+                onClicked: {
+                    if(set_plan_page.is_loose_weight){
+                        PopupUtils.open(loose_weight_definition_dialog)
+                    } else if(set_plan_page.is_gain_weight){
+                        PopupUtils.open(gain_weight_definition_dialog)
+                    } else{
+                        page_stack.push(set_activity_page)
+                    }
+                }
             }  
         }  
     }    
