@@ -114,7 +114,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("VERY LIGHT")
                 img_path:"../assets/cooking-stew-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(0)   
@@ -131,7 +131,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("LIGHT")
                 img_path:"../assets/walking-the-dog-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(1)
@@ -148,7 +148,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("MODERATE")
                 img_path:"../assets/cycling-color-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(2)   
@@ -165,7 +165,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("HEAVY")
                 img_path:"../assets/soccer-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetActivitySelection.selectActivity(3) 

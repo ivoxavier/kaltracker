@@ -97,7 +97,7 @@ Page{
                 //TRANSLATORS PLease Keep This Letters All Capital
                 text: i18n.tr("MALE")
                 img_path:"../assets/male-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetSexSelection.selectSex(0)
@@ -114,7 +114,7 @@ Page{
                 //TRANSLATORS PLease Keep This Letters All Capital
                 text: i18n.tr("FEMALE")
                 img_path:"../assets/female-gender-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetSexSelection.selectSex(1)   

@@ -110,7 +110,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("LOOSE WEIGHT")
                 img_path:"../assets/shoe-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(1)
@@ -127,7 +127,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("MAINTAIN WEIGHT")
                 img_path:"../assets/kilograms-justice-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(0) 
@@ -144,7 +144,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("GAIN WEIGHT")
                 img_path:"../assets/dumbbell-gym-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color  
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal  
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(2)   
