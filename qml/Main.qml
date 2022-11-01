@@ -18,13 +18,13 @@
 import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Qt.labs.settings 1.0
-import "../js/AppVersion.js" as AppVersion
+
 
 MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string app_version : AppVersion.app_version
+    property string app_version : "1.1.5"
     automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
