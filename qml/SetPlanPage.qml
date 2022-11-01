@@ -24,7 +24,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/ControlSetPlanSelection.js" as ControlSetPlanSelection
-import "../js/ControlSetPlanNextButton.js" as ControlSetPlanNextButton
 
 
 
@@ -111,7 +110,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("LOOSE WEIGHT")
                 img_path:"../assets/shoe-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(1)
@@ -128,7 +127,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("MAINTAIN WEIGHT")
                 img_path:"../assets/kilograms-justice-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(0) 
@@ -145,7 +144,7 @@ Page{
                 //TRANSLATORS Please Keep All Letters Capital
                 text: i18n.tr("GAIN WEIGHT")
                 img_path:"../assets/dumbbell-gym-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color  
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal  
                 MouseArea{
                     anchors.fill: parent
                     onClicked: ControlSetPlanSelection.selectPlan(2)   
@@ -169,7 +168,15 @@ Page{
                 text: i18n.tr("Next")
                 enabled: set_plan_page.is_plan_choosed
                 color : UbuntuColors.green
-                onClicked: ControlSetPlanNextButton.next()
+                onClicked: {
+                    if(set_plan_page.is_loose_weight){
+                        PopupUtils.open(loose_weight_definition_dialog)
+                    } else if(set_plan_page.is_gain_weight){
+                        PopupUtils.open(gain_weight_definition_dialog)
+                    } else{
+                        page_stack.push(set_activity_page)
+                    }
+                }
             }  
         }  
     }    
