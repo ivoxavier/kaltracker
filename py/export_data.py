@@ -25,8 +25,7 @@ class ExportData():
     def moduleState():
         return 'Python Module Imported'
     
-
-    def createCSVFile():
+    def cleanCSVFile():
         csv_list = [
         glob.CSV_USER,
         glob.CSV_INGESTIONS,
@@ -34,21 +33,11 @@ class ExportData():
         glob.CSV_WATER
         ]
         
-        for i in csv_list:
+        for path in csv_list:
             try:
-                os.remove(i)
-            except FileExistsError:
-                return 'file_not_deleted_or_not_existant'
-        
-        for i in csv_list:
-            try:
-                each_file = open(i, 'w')
-                each_file.close()
-            except FileExistsError:
-                return 'file_not_deleted_or_not_existant'
-        return 'file_deleted'
-
-    
+                os.remove(path)
+            except Exception:
+                pass
     
     def userTable():
         pyotherside.send('user_table_exporting')
