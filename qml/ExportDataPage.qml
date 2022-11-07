@@ -215,26 +215,15 @@ Page{
                 color: UbuntuColors.green
                 onClicked:{
                     state_msg.visible = true
-                    py.call('export_data.ExportData.createCSVFile', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
+                    py.call('export_data.ExportData.cleanCSVFile', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.userTable', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
+                    py.call('export_data.ExportData.userTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.ingestionsTable', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
+                    py.call('export_data.ExportData.ingestionsTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.waterTable', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
+                    py.call('export_data.ExportData.waterTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.weightTable', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
-
+                    py.call('export_data.ExportData.weightTable', [] ,function(returnValue){})
                 }
             }
         }  
