@@ -205,7 +205,7 @@ Page{
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 text: i18n.tr("Please Wait A Few Seconds...")
                 font.bold: true
-                color: Suru === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
             Button{
