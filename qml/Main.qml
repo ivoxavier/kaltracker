@@ -24,7 +24,7 @@ MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string app_version : "1.1.6"
+    property string app_version : "1.1.7"
     automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
