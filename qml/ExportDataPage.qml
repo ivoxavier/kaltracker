@@ -57,8 +57,8 @@ Page{
         id: py
         Component.onCompleted:{
             addImportPath(Qt.resolvedUrl('../py/'))
-            importModule('export_data', function() {
-                py.call('export_data.ExportData.moduleState', [] ,function(returnValue){
+            importModule('backup_restore', function() {
+                py.call('backup_restore.ExportData.moduleState', [] ,function(returnValue){
                     console.log(returnValue)
             })
          
@@ -215,15 +215,15 @@ Page{
                 color: UbuntuColors.green
                 onClicked:{
                     state_msg.visible = true
-                    py.call('export_data.ExportData.cleanCSVFile', [] ,function(returnValue){})
+                    py.call('backup_restore.ExportData.cleanCSVFile', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.userTable', [] ,function(returnValue){})
+                    py.call('backup_restore.ExportData.userTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.ingestionsTable', [] ,function(returnValue){})
+                    py.call('backup_restore.ExportData.ingestionsTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.waterTable', [] ,function(returnValue){})
+                    py.call('backup_restore.ExportData.waterTable', [] ,function(returnValue){})
 
-                    py.call('export_data.ExportData.weightTable', [] ,function(returnValue){})
+                    py.call('backup_restore.ExportData.weightTable', [] ,function(returnValue){})
                 }
             }
         }  
