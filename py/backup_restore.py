@@ -178,5 +178,63 @@ class ImportData():
             file_integrity.append(1) if header == ['id','id_user','cups','date'] else file_integrity.append(0)
         return True if sum(file_integrity) == 4 else False
 
+    def loadData():
+        user_insert_statement = "INSERT INTO user (id,age,sex_at_birth,weight,height,activity,rec_cal,ap_lo,ap_hi) \
+            VALUES(?,?,?,?,?,?,?,?,?)"
+        ingestions_insert_statement = "INSERT INTO ingestions (id,id_user,name,nutriscore,cal,fat,carbo,protein,date,meal) \
+            VALUES(?,?,?,?,?,?,?,?,?,?)"
+        weight_insert_statement = "INSERT INTO weight_tracker (id,id_user,weight,date) VALUES(?,?,?,?)"
+        water_insert_statement = "INSERT INTO water_tracker (id,id_user,cups,date) VALUES(?,?,?,?)"  
+        db = sqlite3.connect(glob.DBPATH)
+        cursor = db.cursor()    
+        with open(glob.IMPORT_CSV_USER, 'r') as csv_user:
+            reader = csv.reader(csv_user)
+            file = [row for row in reader][1:]
+            for row in file:
+                try:
+                    #csv index columns
+                    cursor.execute(user_insert_statement,[row[0],row[1],row[2],
+                    row[3],row[4],row[5],row[6],
+                    row[7],row[8]])
+                    db.commit()
+                except Exception as e:
+                    #pyotherside.send()
+                    print(e)
+        with open(glob.IMPORT_CSV_INGESTIONS, 'r') as csv_ingestions:
+            reader = csv.reader(csv_ingestions)
+            file = [row for row in reader][1:]
+            for row in file:
+                try:
+                    #csv index columns
+                    cursor.execute(ingestions_insert_statement,[row[0],row[1],row[2],
+                    row[3],row[4],row[5],row[6],
+                    row[7],row[8],row[9]])
+                    db.commit()
+                except Exception as e:
+                    #pyotherside.send()
+                    print(e)
+        with open(glob.IMPORT_CSV_WEIGHT, 'r') as csv_weight:
+            reader = csv.reader(csv_weight)
+            file = [row for row in reader][1:]
+            for row in file:
+                try:
+                    #csv index columns
+                    cursor.execute(weight_insert_statement,[row[0],row[1],row[2],row[3]])
+                    db.commit()
+                except Exception as e:
+                    #pyotherside.send()
+                    print(e)
+        with open(glob.IMPORT_CSV_WATER, 'r') as csv_water:
+            reader = csv.reader(csv_water)
+            file = [row for row in reader][1:]
+            for row in file:
+                try:
+                    #csv index columns
+                    cursor.execute(water_insert_statement,[row[0],row[1],row[2],row[3]])
+                    db.commit()
+                except Exception as e:
+                    #pyotherside.send()
+                    print(e)
+            
 
 import_data = ImportData()
