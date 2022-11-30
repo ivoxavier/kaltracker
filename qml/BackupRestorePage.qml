@@ -111,6 +111,11 @@ Page{
     }
 
     Component{
+        id: data_exported
+        MessageDialog{msg:i18n.tr("Data exported!")}
+    }
+
+    Component{
         id: data_loaded_dialog
         MessageDialog{msg:i18n.tr("Data loaded! We recomend a reboot of the app.")}
     }
@@ -162,6 +167,7 @@ Page{
                             py.call('backup_restore.ExportData.waterTable', [] ,function(returnValue){})
                             py.call('backup_restore.ExportData.weightTable', [] ,function(returnValue){})
                             backuprestore_page.operationFinished()
+                            PopupUtils.open(error_dialog)
                         }
                         catch (e){
                             backuprestore_page.operationFinished()
