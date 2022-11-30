@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 14:57+0000\n"
+"POT-Creation-Date: 2022-11-30 15:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,35 +89,39 @@ msgstr ""
 msgid "Backup & Restore Data"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:99
+#: ../qml/BackupRestorePage.qml:109
 msgid "Something went wrong, please verify Logs"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:104
+#: ../qml/BackupRestorePage.qml:114
 msgid "Verify if files exists and if headers match accordingly"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:110
+#: ../qml/BackupRestorePage.qml:120
 msgid "Data not loaded, please check logs"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:115
+#: ../qml/BackupRestorePage.qml:125
+msgid "Data exported!"
+msgstr ""
+
+#: ../qml/BackupRestorePage.qml:130
 msgid "Data loaded! We recomend a reboot of the app."
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:150
+#: ../qml/BackupRestorePage.qml:165
 msgid "Export Data"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:181
+#: ../qml/BackupRestorePage.qml:182
 msgid "Import Data"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:200
+#: ../qml/BackupRestorePage.qml:201
 msgid "Importing Requirements"
 msgstr ""
 
-#: ../qml/BackupRestorePage.qml:212
+#: ../qml/BackupRestorePage.qml:213
 msgid "Place the files from ExportData in Import path."
 msgstr ""
 
