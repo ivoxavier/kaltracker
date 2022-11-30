@@ -18,8 +18,27 @@ import os
 
 SHAREPATH = "%s/kaltracker.ivoxavier/" % os.environ["XDG_DATA_HOME"]
 DBPATH = SHAREPATH + "Databases/baabdb5fba30cf6014354be8893cdf5c.sqlite"
+EXPORTPATH = SHAREPATH + "Export/"
+IMPORTPATH = SHAREPATH + "Import/"
 
-CSV_USER = SHAREPATH + 'kaltracker_user_table.csv'
-CSV_INGESTIONS = SHAREPATH + 'kaltracker_ingestions_table.csv'
-CSV_WEIGHT = SHAREPATH + 'kaltracker_weight_tracker_table.csv'
-CSV_WATER = SHAREPATH + 'kaltracker_water_tracker_table.csv'
+
+EXPORT_CSV_USER = EXPORTPATH + 'user_table.csv'
+EXPORT_CSV_INGESTIONS = EXPORTPATH + 'ingestions_table.csv'
+EXPORT_CSV_WEIGHT = EXPORTPATH + 'weight_tracker_table.csv'
+EXPORT_CSV_WATER = EXPORTPATH + 'water_tracker_table.csv'
+IMPORT_CSV_USER = IMPORTPATH + 'user_table.csv'
+IMPORT_CSV_INGESTIONS = IMPORTPATH + 'ingestions_table.csv'
+IMPORT_CSV_WEIGHT = IMPORTPATH + 'weight_tracker_table.csv'
+IMPORT_CSV_WATER = IMPORTPATH + 'water_tracker_table.csv'
+
+if not os.path.exists(EXPORTPATH):
+    try:
+        os.makedirs(EXPORTPATH)
+    except Exception as e:
+        print("Can't create dir:\n"+EXPORTPATH)
+
+if not os.path.exists(IMPORTPATH):
+    try:
+        os.makedirs(IMPORTPATH)
+    except Exception as e:
+        print("Can't create dir:\n"+IMPORTPATH)

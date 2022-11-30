@@ -192,37 +192,45 @@ msgstr "Escolha a Ingestão a Eliminar"
 msgid "Empty List, Please Register Ingestions First.."
 msgstr "Lista Vazia, Por Favor Registe Ingestões Primeiro.."
 
-#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:208
+#: ../qml/BackupRestorePage.qml:38 ../qml/MenuPage.qml:206
+msgid "Backup & Restore Data"
+msgstr "Cópia e Restauro de Dados"
+
+#: ../qml/BackupRestorePage.qml:99
+msgid "Something went wrong, please verify Logs"
+msgstr "Algo correu mal, verifique os logs"
+
+#: ../qml/BackupRestorePage.qml:104
+msgid "Verify if files exists and if headers match accordingly"
+msgstr "Verifique se os ficheiros existem e se tem os cabelhaços corretos"
+
+#: ../qml/BackupRestorePage.qml:110
+msgid "Data not loaded, please check logs"
+msgstr "Dados não carreados, verifique os logs"
+
+#: ../qml/BackupRestorePage.qml:115
+msgid "Data loaded! We recomend a reboot of the app."
+msgstr "Dados carregados! Recomendamos que reinicie a app"
+
+#: ../qml/BackupRestorePage.qml:150
 msgid "Export Data"
-msgstr "Exportar Dados"
+msgstr "Exportar os Dados"
 
-#: ../qml/ExportDataPage.qml:133
-msgid "Store Path: .local/share/kaltracker.ivoxavier/"
-msgstr "Caminho de Saída: .local/share/kaltracker.ivoxavier/"
+#: ../qml/BackupRestorePage.qml:115
+msgid "Data exported!"
+msgstr "Dados exportados!"
 
-#: ../qml/ExportDataPage.qml:145
-msgid "User Table"
-msgstr "Tabela de Utilizador"
+#: ../qml/BackupRestorePage.qml:181
+msgid "Import Data"
+msgstr "Importar os Dados"
 
-#: ../qml/ExportDataPage.qml:157
-msgid "Ingestions Table"
-msgstr "Tabela de Ingestões"
+#: ../qml/BackupRestorePage.qml:200
+msgid "Importing Requirements"
+msgstr "Requisitos de Importação"
 
-#: ../qml/ExportDataPage.qml:169
-msgid "Water Table"
-msgstr "Tabela de Água"
-
-#: ../qml/ExportDataPage.qml:181
-msgid "Weight Table"
-msgstr "Tabela de Peso"
-
-#: ../qml/ExportDataPage.qml:206
-msgid "Please Wait A Few Seconds..."
-msgstr "Por Favor, Espere Alguns Segundos..."
-
-#: ../qml/ExportDataPage.qml:213
-msgid "Start Export Process"
-msgstr "Iniciar Processo de Exportação"
+#: ../qml/BackupRestorePage.qml:212
+msgid "Place the files from ExportData in Import path."
+msgstr "Colocar os ficheiros da Exportação na pasta de Import"
 
 #: ../qml/GraphsPage.qml:42
 msgid "Graphs"

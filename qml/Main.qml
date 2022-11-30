@@ -24,7 +24,7 @@ MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string app_version : "1.1.7"
+    property string app_version : "1.2.0"
     automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
@@ -214,10 +214,10 @@ MainView {
         DeleteTodayIngestionPage{}
     }
 
-    //ExportDataPage, where users can export the data produced
+    //BackupRestorePage, where users can export import data
     Component{
-        id: export_data_page
-        ExportDataPage{}
+        id: backup_restore_page
+        BackupRestorePage{}
     }
 
     //DataAnalysisPage, where users can check theirs consunption habits

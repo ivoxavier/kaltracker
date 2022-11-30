@@ -203,7 +203,7 @@ Page{
             ListItem{
                 width: root.width
                 ListItemLayout{
-                    title.text : i18n.tr("Export Data")
+                    title.text : i18n.tr("Backup & Restore Data")
                     title.font.bold : true
                     title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
                     
@@ -215,7 +215,7 @@ Page{
 
                    ProgressionSlot{}
                 }
-                onClicked: page_stack.push(export_data_page)
+                onClicked: page_stack.push(backup_restore_page)
             }
 
             ListItem{
