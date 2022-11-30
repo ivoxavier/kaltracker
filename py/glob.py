@@ -18,8 +18,8 @@ import os
 
 SHAREPATH = "%s/kaltracker.ivoxavier/" % os.environ["XDG_DATA_HOME"]
 DBPATH = SHAREPATH + "Databases/baabdb5fba30cf6014354be8893cdf5c.sqlite"
-EXPORTPATH = SHAREPATH + "Export"
-IMPORTPATH = SHAREPATH + "Import"
+EXPORTPATH = SHAREPATH + "Export/"
+IMPORTPATH = SHAREPATH + "Import/"
 
 
 EXPORT_CSV_USER = EXPORTPATH + 'user_table.csv'
