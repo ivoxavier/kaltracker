@@ -194,7 +194,7 @@ msgstr "Lista Vazia, Por Favor Registe Ingestões Primeiro.."
 
 #: ../qml/BackupRestorePage.qml:38 ../qml/MenuPage.qml:206
 msgid "Backup & Restore Data"
-msgstr "Cópia e restauro de dados"
+msgstr "Cópia e Restauro de Dados"
 
 #: ../qml/BackupRestorePage.qml:99
 msgid "Something went wrong, please verify Logs"
@@ -215,6 +215,10 @@ msgstr "Dados carregados! Recomendamos que reinicie a app"
 #: ../qml/BackupRestorePage.qml:150
 msgid "Export Data"
 msgstr "Exportar os Dados"
+
+#: ../qml/BackupRestorePage.qml:115
+msgid "Data exported!"
+msgstr "Dados exportados!"
 
 #: ../qml/BackupRestorePage.qml:181
 msgid "Import Data"
