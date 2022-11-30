@@ -125,7 +125,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
@@ -151,7 +151,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
@@ -178,7 +178,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
@@ -285,7 +285,7 @@ Page{
                 radius: "large"
                 aspect: UbuntuShape.Inset
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
