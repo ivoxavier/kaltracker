@@ -26,7 +26,7 @@ import QtQuick.Controls.Suru 2.2
 UbuntuShape{
     id: slot_shape
 
-    Layout.preferredWidth: root.width - units.gu(25)
+    Layout.preferredWidth: units.gu(20)//root.width - units.gu(25)
     Layout.preferredHeight: width
 
     //public API's
