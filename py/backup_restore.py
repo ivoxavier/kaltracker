@@ -27,10 +27,10 @@ class ExportData():
     
     def cleanCSVFile():
         csv_list = [
-        glob.CSV_USER,
-        glob.CSV_INGESTIONS,
-        glob.CSV_WEIGHT,
-        glob.CSV_WATER
+        glob.EXPORT_CSV_USER,
+        glob.EXPORT_CSV_INGESTIONS,
+        glob.EXPORT_CSV_WEIGHT,
+        glob.EXPORT_CSV_WATER
         ]
         
         for path in csv_list:
@@ -46,7 +46,7 @@ class ExportData():
         sql_statement = '''SELECT * FROM user'''
         cursor.execute(sql_statement)
         data = cursor.fetchall()
-        with open(glob.CSV_USER, 'w') as f:
+        with open(glob.EXPORT_CSV_USER, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'age',
@@ -60,8 +60,6 @@ class ExportData():
             ])
             writer.writerows(data)
         cursor.close()
-        time.sleep(1)
-        pyotherside.send('user_table_exported')
   
     def ingestionsTable():
         pyotherside.send('user_ingestions_exporting')
@@ -70,7 +68,7 @@ class ExportData():
         sql_statement = '''SELECT * FROM ingestions'''
         cursor.execute(sql_statement)
         data = cursor.fetchall()
-        with open(glob.CSV_INGESTIONS, 'w') as f:
+        with open(glob.EXPORT_CSV_INGESTIONS, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'id_user',
@@ -85,8 +83,6 @@ class ExportData():
             ])
             writer.writerows(data)
         cursor.close()
-        time.sleep(1)
-        pyotherside.send('user_ingestions_exported')
 
     def waterTable():
         pyotherside.send('user_water_exporting')
@@ -95,7 +91,7 @@ class ExportData():
         sql_statement = '''SELECT * FROM water_tracker'''
         cursor.execute(sql_statement)
         data = cursor.fetchall()
-        with open(glob.CSV_WATER, 'w') as f:
+        with open(glob.EXPORT_CSV_WATER, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'id_user',
@@ -103,8 +99,6 @@ class ExportData():
             'date'])
             writer.writerows(data)
         cursor.close()
-        time.sleep(1)
-        pyotherside.send('user_water_exported')
     
     def weightTable():
         pyotherside.send('user_weight_exporting')
@@ -113,7 +107,7 @@ class ExportData():
         sql_statement = '''SELECT * FROM weight_tracker'''
         cursor.execute(sql_statement)
         data = cursor.fetchall()
-        with open(glob.CSV_WEIGHT, 'w') as f:
+        with open(glob.EXPORT_CSV_WEIGHT, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'id_user',
@@ -121,29 +115,62 @@ class ExportData():
             'date'])
             writer.writerows(data)
         cursor.close()
-        time.sleep(1)
-        pyotherside.send('user_weight_exported')
     
 export_data = ExportData()
 
 class ImportData():
-    files_exists = []
-    file_integrity = []
 
     def moduleState():
         return 'Python Module Imported'
     
     def filesExists():
-        global files_exists
+        files_exists = []
+        file_integrity = []
         files_exists.append(0) if not os.path.exists(glob.IMPORT_CSV_USER) else files_exists.append(1)
         files_exists.append(0) if not os.path.exists(glob.IMPORT_CSV_INGESTIONS) else files_exists.append(1)
         files_exists.append(0) if not os.path.exists(glob.IMPORT_CSV_WEIGHT) else files_exists.append(1)
         files_exists.append(0) if not os.path.exists(glob.IMPORT_CSV_WATER) else files_exists.append(1)
-        return True if sum(files_exists) == 4 else False
+        if sum(files_exists) == 4:
+            #check if headers match
+            with open(glob.IMPORT_CSV_USER, 'r') as csv_user:
+                reader = csv.reader(csv_user)
+                header = [row for row in reader][0]
+                file_integrity.append(1) if header == ['id','age','sex_at_birth',
+                'weight','height','activity',
+                'rec_cal','ap_lo','ap_hi'] else file_integrity.append(0)
+            with open(glob.IMPORT_CSV_INGESTIONS, 'r') as csv_ingestions:
+                reader = csv.reader(csv_ingestions)
+                header = [row for row in reader][0]
+                file_integrity.append(1) if header == ['id','id_user','name',
+                'nutriscore','cal','fat',
+                'carbo','protein','date','meal'] else file_integrity.append(0)
+            with open(glob.IMPORT_CSV_WEIGHT, 'r') as csv_weight:
+                reader = csv.reader(csv_weight)
+                header = [row for row in reader][0]
+                file_integrity.append(1) if header == ['id','id_user','weight','date'] else file_integrity.append(0)
+            with open(glob.IMPORT_CSV_WATER, 'r') as csv_water:
+                reader = csv.reader(csv_water)
+                header = [row for row in reader][0]
+                file_integrity.append(1) if header == ['id','id_user','cups','date'] else file_integrity.append(0)
+                if sum(file_integrity) == 4:
+                    pyotherside.send("file_verification_success")
+                else:
+                    pyotherside.send("file_verification_fail")
+        else:
+            return 0
 
-    def emptyBD():
+    def loadData():
+        files_loaded = []
         db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
+        cursor = db.cursor() 
+        user_insert_statement = "INSERT INTO user (id,age,sex_at_birth,weight,height,activity,rec_cal,ap_lo,ap_hi) \
+            VALUES(?,?,?,?,?,?,?,?,?)"
+        ingestions_insert_statement = "INSERT INTO ingestions (id,id_user,name,nutriscore,cal,fat,carbo,protein,date,meal) \
+            VALUES(?,?,?,?,?,?,?,?,?,?)"
+        weight_insert_statement = "INSERT INTO weight_tracker (id,id_user,weight,date) VALUES(?,?,?,?)"
+        water_insert_statement = "INSERT INTO water_tracker (id,id_user,cups,date) VALUES(?,?,?,?)"  
+        
+        #empty DB
         sql_statements = ['''DELETE FROM water_tracker''',
         '''DELETE FROM user''',
         '''DELETE FROM ingestions''',
@@ -151,42 +178,9 @@ class ImportData():
         '''DELETE FROM user_foods_list''',
         '''DELETE FROM notes''']
         for statement in sql_statements:
-            cursor.execute(statement)
-        return True
+            cursor.execute(statement)  
 
-    def validHeaders():
-        global file_integrity
-        with open(glob.IMPORT_CSV_USER, 'r') as csv_user:
-            reader = csv.reader(csv_user)
-            header = [row for row in reader][0]
-            file_integrity.append(1) if header == ['id','age','sex_at_birth',
-            'weight','height','activity',
-            'rec_cal','ap_lo','ap_hi'] else file_integrity.append(0)
-        with open(glob.IMPORT_CSV_INGESTIONS, 'r') as csv_ingestions:
-            reader = csv.reader(csv_ingestions)
-            header = [row for row in reader][0]
-            file_integrity.append(1) if header == ['id','id_user','name',
-            'nutriscore','cal','fat',
-            'carbo','protein','date','meal'] else file_integrity.append(0)
-        with open(glob.IMPORT_CSV_WEIGHT, 'r') as csv_weight:
-            reader = csv.reader(csv_weight)
-            header = [row for row in reader][0]
-            file_integrity.append(1) if header == ['id','id_user','weight','date'] else file_integrity.append(0)
-        with open(glob.IMPORT_CSV_WATER, 'r') as csv_water:
-            reader = csv.reader(csv_water)
-            header = [row for row in reader][0]
-            file_integrity.append(1) if header == ['id','id_user','cups','date'] else file_integrity.append(0)
-        return True if sum(file_integrity) == 4 else False
-
-    def loadData():
-        user_insert_statement = "INSERT INTO user (id,age,sex_at_birth,weight,height,activity,rec_cal,ap_lo,ap_hi) \
-            VALUES(?,?,?,?,?,?,?,?,?)"
-        ingestions_insert_statement = "INSERT INTO ingestions (id,id_user,name,nutriscore,cal,fat,carbo,protein,date,meal) \
-            VALUES(?,?,?,?,?,?,?,?,?,?)"
-        weight_insert_statement = "INSERT INTO weight_tracker (id,id_user,weight,date) VALUES(?,?,?,?)"
-        water_insert_statement = "INSERT INTO water_tracker (id,id_user,cups,date) VALUES(?,?,?,?)"  
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()    
+        time.sleep(1)
         with open(glob.IMPORT_CSV_USER, 'r') as csv_user:
             reader = csv.reader(csv_user)
             file = [row for row in reader][1:]
@@ -198,8 +192,9 @@ class ImportData():
                     row[7],row[8]])
                     db.commit()
                 except Exception as e:
-                    #pyotherside.send()
                     print(e)
+            files_loaded.append(1)
+            time.sleep(1)
         with open(glob.IMPORT_CSV_INGESTIONS, 'r') as csv_ingestions:
             reader = csv.reader(csv_ingestions)
             file = [row for row in reader][1:]
@@ -211,8 +206,9 @@ class ImportData():
                     row[7],row[8],row[9]])
                     db.commit()
                 except Exception as e:
-                    #pyotherside.send()
                     print(e)
+            files_loaded.append(1)
+            time.sleep(1)
         with open(glob.IMPORT_CSV_WEIGHT, 'r') as csv_weight:
             reader = csv.reader(csv_weight)
             file = [row for row in reader][1:]
@@ -222,8 +218,9 @@ class ImportData():
                     cursor.execute(weight_insert_statement,[row[0],row[1],row[2],row[3]])
                     db.commit()
                 except Exception as e:
-                    #pyotherside.send()
                     print(e)
+            files_loaded.append(1)
+            time.sleep(1)
         with open(glob.IMPORT_CSV_WATER, 'r') as csv_water:
             reader = csv.reader(csv_water)
             file = [row for row in reader][1:]
@@ -233,8 +230,12 @@ class ImportData():
                     cursor.execute(water_insert_statement,[row[0],row[1],row[2],row[3]])
                     db.commit()
                 except Exception as e:
-                    #pyotherside.send()
                     print(e)
+            files_loaded.append(1)
+            db.close()
+        if sum(files_loaded) == 4:
+            pyotherside.send("load_success")
+        else:
+            pyotherside.send("load_fail")
             
-
 import_data = ImportData()
