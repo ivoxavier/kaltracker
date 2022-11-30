@@ -203,7 +203,7 @@ Page{
             }
 
             Label{
-                Layout.alignment: Qt.AlignLeft
+                Layout.alignment: Qt.AlignCenter
                 font.pixelSize: units.gu(1.5)
                // width: parent.width
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
