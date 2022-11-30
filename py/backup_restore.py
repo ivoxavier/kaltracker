@@ -25,7 +25,17 @@ class ExportData():
     def moduleState():
         return 'Python Module Imported'
     
-    def cleanCSVFile():
+    def createFiles():
+        db = sqlite3.connect(glob.DBPATH)
+        cursor = db.cursor()
+
+        files_exported = []
+
+        user_sql_statement = '''SELECT * FROM user'''
+        ingestions_sql_statement = '''SELECT * FROM ingestions'''
+        water_sql_statement = '''SELECT * FROM water_tracker'''
+        weight_sql_statement = '''SELECT * FROM weight_tracker'''
+
         csv_list = [
         glob.EXPORT_CSV_USER,
         glob.EXPORT_CSV_INGESTIONS,
@@ -38,14 +48,9 @@ class ExportData():
                 os.remove(path)
             except Exception:
                 pass
-    
-    def userTable():
-        pyotherside.send('user_table_exporting')
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        sql_statement = '''SELECT * FROM user'''
-        cursor.execute(sql_statement)
-        data = cursor.fetchall()
+        
+        cursor.execute(user_sql_statement)
+        user_data = cursor.fetchall()
         with open(glob.EXPORT_CSV_USER, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
@@ -58,16 +63,13 @@ class ExportData():
             'ap_lo',
             'ap_hi'
             ])
-            writer.writerows(data)
-        cursor.close()
+            writer.writerows(user_data)
+        files_exported.append(1)
+        time.sleep(1)
+            
   
-    def ingestionsTable():
-        pyotherside.send('user_ingestions_exporting')
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        sql_statement = '''SELECT * FROM ingestions'''
-        cursor.execute(sql_statement)
-        data = cursor.fetchall()
+        cursor.execute(ingestions_sql_statement)
+        ingestions_data = cursor.fetchall()
         with open(glob.EXPORT_CSV_INGESTIONS, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
@@ -81,40 +83,40 @@ class ExportData():
             'date',
             'meal'
             ])
-            writer.writerows(data)
-        cursor.close()
+            writer.writerows(ingestions_data)
+        files_exported.append(1)
+        time.sleep(1)
 
-    def waterTable():
-        pyotherside.send('user_water_exporting')
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        sql_statement = '''SELECT * FROM water_tracker'''
-        cursor.execute(sql_statement)
-        data = cursor.fetchall()
+
+        cursor.execute(water_sql_statement)
+        water_data = cursor.fetchall()
         with open(glob.EXPORT_CSV_WATER, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'id_user',
             'cups',
             'date'])
-            writer.writerows(data)
-        cursor.close()
+            writer.writerows(water_data)
+        files_exported.append(1)
+        time.sleep(1)
     
-    def weightTable():
-        pyotherside.send('user_weight_exporting')
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        sql_statement = '''SELECT * FROM weight_tracker'''
-        cursor.execute(sql_statement)
-        data = cursor.fetchall()
+    
+        cursor.execute(weight_sql_statement)
+        weight_data = cursor.fetchall()
         with open(glob.EXPORT_CSV_WEIGHT, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['id',
             'id_user',
             'weight',
             'date'])
-            writer.writerows(data)
-        cursor.close()
+            writer.writerows(weight_data)
+        files_exported.append(1)   
+        db.close()
+
+        if sum(files_exported) == 4:
+            pyotherside.send("files_export_success")
+        else:
+            pyotherside.send("files_export_fail")
     
 export_data = ExportData()
 
