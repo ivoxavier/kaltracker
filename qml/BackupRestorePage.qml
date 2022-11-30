@@ -86,6 +86,16 @@ Page{
                 PopupUtils.open(data_not_loaded_dialog)
             });
 
+            setHandler('files_export_success', function() {
+                backuprestore_page.operationFinished()
+                PopupUtils.open(data_exported_dialog)
+            });
+
+            setHandler('files_export_fail', function() {
+                backuprestore_page.operationFinished()
+                PopupUtils.open(error_dialog)
+            });
+
 
         }
         onError: {
@@ -111,7 +121,7 @@ Page{
     }
 
     Component{
-        id: data_exported
+        id: data_exported_dialog
         MessageDialog{msg:i18n.tr("Data exported!")}
     }
 
@@ -156,26 +166,11 @@ Page{
                 slot_path_label : "./local/share/kaltracker.ivoxavier/Export"
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
-                    
                     anchors.fill: parent
                     onClicked: {
                         PopupUtils.open(backuprestore_notify_pop)
-                        try{
-                            py.call('backup_restore.ExportData.cleanCSVFile', [] ,function(returnValue){})
-                            py.call('backup_restore.ExportData.userTable', [] ,function(returnValue){})
-                            py.call('backup_restore.ExportData.ingestionsTable', [] ,function(returnValue){})
-                            py.call('backup_restore.ExportData.waterTable', [] ,function(returnValue){})
-                            py.call('backup_restore.ExportData.weightTable', [] ,function(returnValue){})
-                            backuprestore_page.operationFinished()
-                            PopupUtils.open(error_dialog)
-                        }
-                        catch (e){
-                            backuprestore_page.operationFinished()
-                            PopupUtils.open(error_dialog)
-                        }
-                        
-                    }
-                    
+                        py.call('backup_restore.ExportData.createFiles', [] ,function(returnValue){})    
+                    }    
                 }
             }
 
