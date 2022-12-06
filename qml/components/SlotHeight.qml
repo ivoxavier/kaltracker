@@ -21,7 +21,6 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
-import "../../js/ControlSetHeight.js" as ControlSetHeight
 
 UbuntuShape{
     id: slot_shape
@@ -46,7 +45,15 @@ UbuntuShape{
                 anchors.verticalCenter: parent.verticalCenter
                 inputMethodHints: Qt.ImhDigitsOnly
                 width: parent.width - units.gu(3.7)
-                onTextChanged: ControlSetHeight.setHeight()
+                onTextChanged: {
+                    root.user_height = field_text.text
+                    if(root.user_height > 0){
+                        set_height_page.is_height_inputed = true
+                    } else{
+                        root.user_height = 0
+                        set_height_page.is_height_inputed = false
+                    }
+                }
             }  
         }
     }
