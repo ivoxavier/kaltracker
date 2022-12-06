@@ -23,7 +23,7 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ControlSetActivitySelection.js" as ControlSetActivitySelection
+
 
 Page{
     id: set_activity_page
