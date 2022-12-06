@@ -22,7 +22,6 @@ import Qt.labs.settings 1.0
 import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import "../../js/ControlSetWeight.js" as ControlSetWeight
 
 UbuntuShape{
     id: slot_shape
@@ -47,7 +46,15 @@ UbuntuShape{
                 anchors.verticalCenter: parent.verticalCenter
                 inputMethodHints: Qt.ImhDigitsOnly
                 width: parent.width - units.gu(3.7)
-                onTextChanged: ControlSetWeight.setWeight()
+                onTextChanged: {
+                    root.user_weight = field_text.text
+                    if(root.user_weight > 0){
+                        set_weight_page.is_weight_inputed = true
+                    } else{
+                        root.user_weight = 0
+                        set_weight_page.is_weight_inputed = false
+                    } 
+                }
             }  
         }
     }
