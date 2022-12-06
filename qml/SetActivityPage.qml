@@ -55,6 +55,21 @@ Page{
                     ]
                 }
             }
+
+    function selectActivity(activity){
+        //enables the next button after user clicking in one slotActity
+        set_activity_page.is_activity_choosed = true
+
+        //property to store type of plan
+        root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
+
+        //highlight Slots selection 
+        very_light_slot.text_color = activity == 0 ? UbuntuColors.green : "black"
+        light_slot.text_color = activity == 1 ? UbuntuColors.green : "black"
+        moderate_slot.text_color = activity == 2 ? UbuntuColors.green : "black"
+        heavy_slot.text_color = activity == 3 ? UbuntuColors.green : "black"
+    }
+
     //enables the next button after user clicking in one slotActivity
     property bool is_activity_choosed: false
 
@@ -105,7 +120,7 @@ Page{
             }
 
             BlankSpace{height:units.gu(2)}
-            
+
             SlotActivity{
                 id: very_light_slot
                 Layout.alignment: Qt.AlignCenter
@@ -117,7 +132,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetActivitySelection.selectActivity(0)   
+                    onClicked: selectActivity(0)   
                 }
             }
 
@@ -134,7 +149,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetActivitySelection.selectActivity(1)
+                    onClicked: selectActivity(1)
                 }
             }
 
@@ -151,7 +166,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetActivitySelection.selectActivity(2)   
+                    onClicked: selectActivity(2)   
                 }
             }
 
@@ -168,7 +183,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetActivitySelection.selectActivity(3) 
+                    onClicked: selectActivity(3) 
                 }
             }
 
