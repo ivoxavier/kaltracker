@@ -24,7 +24,6 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ControlSetSexSelection.js" as ControlSetSexSelection
 
 
 Page{
@@ -39,6 +38,19 @@ Page{
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
                 }
         }
+
+
+    function selectSex(sex){
+        //enables the next button after user clicking in one slotActity
+        set_sex_at_birth_page.is_sex_at_birth_selected = true
+
+        //property to store type of sex assigned at birth 0 Male 1 Female
+        root.user_sex_at_birth = sex == 0 ? 0 : 1
+
+        //highlight Slots selection 
+        male_slot.text_color = sex == 0 ? UbuntuColors.green : "black"
+        female_slot.text_color = sex == 1 ? UbuntuColors.green : "black"
+    }
 
     //enables the next button after user clicking in one slotActivity
     property bool is_sex_at_birth_selected : false
@@ -100,7 +112,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetSexSelection.selectSex(0)
+                    onClicked: selectSex(0)
                 }
             }
 
@@ -117,7 +129,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetSexSelection.selectSex(1)   
+                    onClicked: selectSex(1)   
                 }
             }
 
