@@ -20,7 +20,7 @@ import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import "../../js/UserFoodsListTable.js" as UserFoodsListTable
-import "../../js/ControlIngestionStoredDialog.js" as ControlIngestionStoredDialog
+
 
 Dialog {
     id: msg_dialog
@@ -39,12 +39,30 @@ Dialog {
     Button {
         text: i18n.tr("I'm not going eat more")
         color: UbuntuColors.green
-            onClicked: ControlIngestionStoredDialog.finishingIngestion()
+            onClicked: {
+                if(page_stack.currentPage.objectName == "QuickAdditionPage"){
+                    page_stack.pop(quick_addition_page)
+                    page_stack.pop(quick_list_foods_page) 
+                    PopupUtils.close(msg_dialog)
+                } else{
+                    page_stack.pop(set_food_page)
+                    page_stack.pop(quick_list_foods_page)    
+                    PopupUtils.close(msg_dialog)
+                }
+            }
         }
 
     Button {
         text: i18n.tr("Continue registering...")
         color: UbuntuColors.blue
-            onClicked: ControlIngestionStoredDialog.continueIngestion()
+            onClicked: {
+                if(page_stack.currentPage.objectName == "QuickAdditionPage"){
+                page_stack.pop(quick_addition_page)
+                PopupUtils.close(msg_dialog)
+            } else{
+                page_stack.pop(set_food_page)
+                PopupUtils.close(msg_dialog)
+            }
         }
+    }
 }
