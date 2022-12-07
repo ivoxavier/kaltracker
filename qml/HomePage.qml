@@ -24,7 +24,6 @@ import Ubuntu.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ControlIconUpAnimation.js" as ControlIconUpAnimation
 import "../js/GetData.js" as GetData
 import "../js/ControlSlotDashboardPlan.js" as ControlSlotDashboardPlan
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
@@ -243,7 +242,10 @@ Page{
                     }
                     MouseArea{
                         anchors.fill: parent
-                        onClicked: ControlIconUpAnimation.animate()
+                        onClicked: {
+                            icon_down.is_clicked = !icon_down.is_clicked
+                            PopupUtils.open(date_popUP, dateLabel)
+                        }
                     }
                 }
             }
