@@ -27,8 +27,6 @@ import "components"
 import "../js/Storage.js" as Storage
 import "../js/UserTable.js" as UserTable
 import "../js/WeightTrackerTable.js" as WeightTrackerTable
-import "../js/ControlCreateStorage.js" as ControlCreateStorage
-
 
 Page{
     id: create_storage_page
@@ -94,8 +92,14 @@ Page{
 
             anchors.horizontalCenter: parent.horizontalCenter
             running: false
+
+            function animationState(delayMiliseconds, cb){
+                timer.interval = delayMiliseconds;
+                timer.triggered.connect(cb);
+                timer.start();
+            }
             onRunningChanged: {
-                ControlCreateStorage.animationState(4000, function () {
+                animationState(4000, function () {
                     page_stack.pop(create_storage_page)
                     page_stack.push(home_page)
                 })
@@ -103,5 +107,18 @@ Page{
         }
         
     }
-    Component.onCompleted: ControlCreateStorage.dBbuild()
+    Component.onCompleted: {
+        try{
+            Storage.dropTables()
+            Storage.createTables()
+            UserTable.createUserProfile(root.user_age,root.user_sex_at_birth,
+            root.user_weight, root.user_height, root.user_activity_level, root.equation_recommended_calories)
+            WeightTrackerTable.newWeight(root.user_weight)
+            loading_circle.running = !loading_circle.running
+            app_settings.water_weight_calc = root.user_weight
+            app_settings.rec_cal = root.equation_recommended_calories
+            app_settings.using_app_date = root.stringDate
+            app_settings.is_clean_install = !app_settings.is_clean_install
+        }catch (err){console.log(err)} 
+    }
 }
