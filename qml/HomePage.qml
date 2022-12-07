@@ -25,7 +25,6 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/GetData.js" as GetData
-import "../js/ControlSlotDashboardPlan.js" as ControlSlotDashboardPlan
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 import "../js/IngestionsTable.js" as IngestionsTable
@@ -133,8 +132,15 @@ Page{
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredWidth: root.width - units.gu(9)
                     Layout.preferredHeight: units.gu(7)
-                    title.text: ControlSlotDashboardPlan.planType(app_settings.plan_type) == 0 ?
-                    i18n.tr("Loose Weight") : ControlSlotDashboardPlan.planType(app_settings.plan_type) == 1 ?
+
+                    function planType(plan){
+                        return plan == "loose" ? 
+                        0 : plan == "gain" ?
+                        1 : 2
+                    }                    
+
+                    title.text: planType(app_settings.plan_type) == 0 ?
+                    i18n.tr("Loose Weight") : planType(app_settings.plan_type) == 1 ?
                     i18n.tr("Gain Weight") : i18n.tr("Maintain Weight")
                     img_path:"../assets/goal-svgrepo-com.svg"
                     color : "transparent"
