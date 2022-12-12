@@ -81,7 +81,7 @@ Page{
             Label {
                 Layout.alignment: Qt.AlignCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: i18n.tr("Version: ") + root.app_version
+                text: i18n.tr("Version: ") + Qt.application.version
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 

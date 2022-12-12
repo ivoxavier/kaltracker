@@ -58,8 +58,20 @@ add_definitions(
 
 add_subdirectory(qzxing/src)
 include_directories(qzxing/src/zxing)
+include_directories("${PROJECT_BINARY_DIR}")
 
 set(SOURCES main.cpp)
+
+# Sets BUILD_VERSION: Either tag of the current git HEAD or devel build version with git hash
+execute_process(
+  COMMAND git describe --tags --abbrev=0
+  OUTPUT_VARIABLE BUILD_VERSION_RAW
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+  ERROR_QUIET
+  )
+string(SUBSTRING ${BUILD_VERSION_RAW} 1 -1 BUILD_VERSION)
+configure_file(git_tag.h.in ${CMAKE_CURRENT_BINARY_DIR}/git_tag.h)
+message(STATUS "Build version is: ${BUILD_VERSION}")
 
 configure_file(manifest.json.in ${CMAKE_CURRENT_BINARY_DIR}/manifest.json)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})

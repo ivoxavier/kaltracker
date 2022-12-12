@@ -4,11 +4,15 @@
 #include <QString>
 #include <QQuickView>
 #include "QZXing.h"
+#include <iostream>
+#include "git_tag.h"
 
 
 int main(int argc, char *argv[]) {
    QGuiApplication *app = new QGuiApplication(argc, (char**)argv);
    app->setApplicationName("kaltracker.ivoxavier");
+
+   QCoreApplication::setApplicationVersion(QStringLiteral(BUILD_VERSION));
 
    QZXing::registerQMLTypes();
 

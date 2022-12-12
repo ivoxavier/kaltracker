@@ -19,12 +19,10 @@ import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Qt.labs.settings 1.0
 
-
 MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'kaltracker.ivoxavier'
-    property string app_version : "1.2.0"
     automaticOrientation: false
     anchorToKeyboard: true
     width: units.gu(45)
