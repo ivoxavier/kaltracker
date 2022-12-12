@@ -23,8 +23,6 @@ import Ubuntu.Components.ListItems 1.3
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
-import "../js/ControlSetPlanSelection.js" as ControlSetPlanSelection
-
 
 
 Page{
@@ -51,6 +49,26 @@ Page{
         color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
      
+    function selectPlan(plan){
+        //enables the next button after user clicking in one slotPlans
+        set_plan_page.is_plan_choosed = true
+
+        //property to store the user goal for further calories daily objectiv calculation.
+        root.user_goal = plan == 0 ? 0 : 0
+
+        //property to store type of plan
+        root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
+
+        //highlight Slots selection 
+        maintain_weight_slot.text_color = plan == 0 ? UbuntuColors.green : "black"
+        loose_weight_slot.text_color = plan == 1 ? UbuntuColors.green : "black"
+        gain_weight_slot.text_color = plan == 2 ? UbuntuColors.green : "black"
+
+        //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
+        set_plan_page.is_loose_weight = plan == 1 ? true : false
+        set_plan_page.is_gain_weight = plan == 2 ? true : false
+    }
+
 
     //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
     property bool is_loose_weight: false
@@ -113,7 +131,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetPlanSelection.selectPlan(1)
+                    onClicked: selectPlan(1)
                 }
             }
 
@@ -130,7 +148,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetPlanSelection.selectPlan(0) 
+                    onClicked: selectPlan(0) 
                 }
             }
 
@@ -147,7 +165,7 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal  
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: ControlSetPlanSelection.selectPlan(2)   
+                    onClicked: selectPlan(2)   
                 }
             }
 

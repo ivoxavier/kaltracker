@@ -22,7 +22,6 @@ import Qt.labs.settings 1.0
 import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import "../../js/ControlSetAge.js" as ControlSetAge
 
 UbuntuShape{
     id: slot_shape
@@ -45,7 +44,15 @@ UbuntuShape{
                 anchors.verticalCenter: parent.verticalCenter
                 inputMethodHints: Qt.ImhDigitsOnly
                 width: parent.width - units.gu(3.7)
-                onTextChanged: ControlSetAge.setAge()
+                onTextChanged: {
+                    root.user_age = field_text.text
+                    if(root.user_age > 0){
+                        set_age_page.is_age_inputed = true
+                    } else{
+                        root.user_age = 0
+                        set_age_page.is_age_inputed = false
+                    }
+                }
             }  
         }
     }

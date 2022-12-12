@@ -25,7 +25,6 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "../js/Regex.js" as Regex
-import "../js/ControlFoodsSearchTimer.js" as ControlFoodsSearchTimer
 
 Page{
     id: quick_list_foods_page
@@ -38,8 +37,13 @@ Page{
             width: parent.width
             placeholderText: i18n.tr("Search...")
             validator: RegExpValidator { regExp: Regex.regex_char}
+            function searchTimer(delayMiliseconds, cb) {
+                timer.interval = delayMiliseconds;
+                timer.triggered.connect(cb);
+                timer.start()
+            }
             onTextChanged:{
-                ControlFoodsSearchTimer.searchTimer(1000, function () {
+                searchTimer(1000, function () {
                 sorted_model.filter.pattern = new RegExp(search_text.text)
                 })
             }

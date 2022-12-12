@@ -22,7 +22,6 @@ import Qt.labs.settings 1.0
 import Ubuntu.Components.ListItems 1.3 
 import Ubuntu.Components.Popups 1.3
 import Ubuntu.Components.Pickers 1.3
-import "../../js/ControlDateNavigationPopup.js" as ControlDateNavigationPopup
 
 Popover{
     contentWidth: day_month_picker.width
@@ -39,6 +38,10 @@ Popover{
             backgroundColor: theme.palette.normal.base
         }
 
-        Component.onDestruction: ControlDateNavigationPopup.newDate()
+        Component.onDestruction: {
+            root.stringDate = Qt.formatDate(day_month_picker.date,"yyyy-MM-dd")
+            icon_down.is_clicked = !icon_down.is_clicked
+            root.initDB()
+        }
     }
 }  
