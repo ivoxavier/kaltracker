@@ -62,7 +62,7 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 set(SOURCES main.cpp)
 
-# Sets BUILD_VERSION: Either tag of the current git HEAD or devel build version with git hash
+# Sets BUILD_VERSION: tag of the current git HEAD 
 execute_process(
   COMMAND git describe --tags --abbrev=0
   OUTPUT_VARIABLE BUILD_VERSION_RAW
