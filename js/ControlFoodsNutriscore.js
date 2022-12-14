@@ -20,5 +20,5 @@ function backgroundColor(grade){
    "#09b227" : grade === 'c' ?
    "#cba000" : grade === 'd' ?
    "#e57a01" : grade === 'e' ?
-   UbuntuColors.red : "black"
+   LomiriColors.red : "black"
 }
