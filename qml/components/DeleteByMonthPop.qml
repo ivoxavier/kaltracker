@@ -16,9 +16,9 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../../js/IngestionsTable.js" as  IngestionsTable
 
@@ -70,12 +70,12 @@ Dialog {
 
     ConfirmPicker{onSelectedIndexChanged: confirmed = selectedIndex}
 
-    Label{id: operation_label; color: UbuntuColors.red}
+    Label{id: operation_label; color: LomiriColors.red}
     
     Button{
         id: delete_button
         text: i18n.tr("Delete")
-        color: UbuntuColors.red
+        color: LomiriColors.red
         onClicked:{
             if(confirmed == 2){
                 IngestionsTable.deleteMonthYearIngestion(month_to_delete, year_to_delete)
@@ -92,7 +92,7 @@ Dialog {
 
     Button{
         text: i18n.tr("Cancel")
-        color: UbuntuColors.green
+        color: LomiriColors.green
         onClicked:{
             PopupUtils.close(delete_month_year_dialog)
         }

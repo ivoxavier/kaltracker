@@ -16,8 +16,8 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Suru 2.2
 import '../../js/RecommendedCalories.js' as RecommendedCalories
@@ -48,7 +48,7 @@ Dialog {
         
     Button{
         text: i18n.tr("Back")
-        color: UbuntuColors.blue
+        color: LomiriColors.blue
         onClicked:{
                 PopupUtils.close(recommended_calories_dialog)
             }
@@ -56,7 +56,7 @@ Dialog {
 
     Button{
         text: i18n.tr("Confirm")
-        color: UbuntuColors.green
+        color: LomiriColors.green
         onClicked: ControlRecommendedCalories.confrim()
     }
 

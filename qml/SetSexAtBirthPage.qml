@@ -16,12 +16,12 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 
@@ -48,8 +48,8 @@ Page{
         root.user_sex_at_birth = sex == 0 ? 0 : 1
 
         //highlight Slots selection 
-        male_slot.text_color = sex == 0 ? UbuntuColors.green : "black"
-        female_slot.text_color = sex == 1 ? UbuntuColors.green : "black"
+        male_slot.text_color = sex == 0 ? LomiriColors.green : "black"
+        female_slot.text_color = sex == 1 ? LomiriColors.green : "black"
     }
 
     //enables the next button after user clicking in one slotActivity
@@ -140,7 +140,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Next")
                 enabled: set_sex_at_birth_page.is_sex_at_birth_selected
-                color : UbuntuColors.green
+                color : LomiriColors.green
                 onClicked:{
                     page_stack.push(set_age_page)
                 }    

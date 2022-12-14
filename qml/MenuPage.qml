@@ -15,15 +15,15 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import Ubuntu.Content 1.3
+import Lomiri.Content 1.3
 import QtQuick.Window 2.0
 import "components"
 
@@ -67,12 +67,12 @@ Page{
             width: root.width
 
 
-            UbuntuShape{
+            LomiriShape{
                 Layout.alignment: Qt.AlignCenter
                 radius: "large"
                 Layout.preferredWidth: units.gu(12)
                 Layout.preferredHeight: units.gu(12)
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 source: Image{
                     source: "../assets/logo.svg"
                 }

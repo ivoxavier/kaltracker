@@ -16,8 +16,8 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
@@ -38,7 +38,7 @@ Dialog {
 
     Button {
         text: i18n.tr("I'm not going eat more")
-        color: UbuntuColors.green
+        color: LomiriColors.green
             onClicked: {
                 if(page_stack.currentPage.objectName == "QuickAdditionPage"){
                     page_stack.pop(quick_addition_page)
@@ -54,7 +54,7 @@ Dialog {
 
     Button {
         text: i18n.tr("Continue registering...")
-        color: UbuntuColors.blue
+        color: LomiriColors.blue
             onClicked: {
                 if(page_stack.currentPage.objectName == "QuickAdditionPage"){
                 page_stack.pop(quick_addition_page)

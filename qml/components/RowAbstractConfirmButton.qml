@@ -15,13 +15,13 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2 as QC
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 import "../../js/IngestionsTable.js" as IngestionsTable

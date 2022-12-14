@@ -17,11 +17,11 @@
 
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Pickers 1.3
 //import QtCharts 2.3
-import Ubuntu.Components.ListItems 1.3
+import Lomiri.Components.ListItems 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"

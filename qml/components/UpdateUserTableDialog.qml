@@ -15,8 +15,8 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Layouts 1.3
 import "../../js/UpdateUserTable.js" as UpdateUserTable

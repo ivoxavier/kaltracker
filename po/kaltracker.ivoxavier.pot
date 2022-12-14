@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 15:47+0000\n"
+"POT-Creation-Date: 2022-12-14 16:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Hypertensive Crisis"
 msgstr ""
 
-#: ../qml/CreateStoragePage.qml:85
+#: ../qml/CreateStoragePage.qml:83
 msgid "Creating Database..."
 msgstr ""
 
@@ -239,74 +239,74 @@ msgstr ""
 msgid "Foods Distribution By Nutriscore"
 msgstr ""
 
-#: ../qml/HomePage.qml:93
+#: ../qml/HomePage.qml:91
 msgid "Ingestion Saved!"
 msgstr ""
 
-#: ../qml/HomePage.qml:138 ../qml/UpdateUserValuesPage.qml:228
+#: ../qml/HomePage.qml:143 ../qml/UpdateUserValuesPage.qml:228
 msgid "Loose Weight"
 msgstr ""
 
-#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:228
+#: ../qml/HomePage.qml:144 ../qml/UpdateUserValuesPage.qml:228
 msgid "Gain Weight"
 msgstr ""
 
-#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:228
+#: ../qml/HomePage.qml:144 ../qml/UpdateUserValuesPage.qml:228
 msgid "Maintain Weight"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:161
+#: ../qml/HomePage.qml:166
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:180
+#: ../qml/HomePage.qml:185
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:195
+#: ../qml/HomePage.qml:200
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:204
+#: ../qml/HomePage.qml:209
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:214
+#: ../qml/HomePage.qml:219
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:265 ../qml/components/MealFilterDialog.qml:66
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:260 ../qml/HomePage.qml:272 ../qml/HomePage.qml:284
-#: ../qml/HomePage.qml:296 ../qml/ListFoodsIngestedMonthPage.qml:88
+#: ../qml/HomePage.qml:268 ../qml/HomePage.qml:280 ../qml/HomePage.qml:292
+#: ../qml/HomePage.qml:304 ../qml/ListFoodsIngestedMonthPage.qml:88
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:269 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:277 ../qml/components/MealFilterDialog.qml:66
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:281 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:289 ../qml/components/MealFilterDialog.qml:66
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:293 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:301 ../qml/components/MealFilterDialog.qml:66
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:357
+#: ../qml/HomePage.qml:365
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:373
+#: ../qml/HomePage.qml:381
 msgid "Your Previous Ingestions"
 msgstr ""
 
@@ -517,7 +517,7 @@ msgstr ""
 msgid "Carbo/100g"
 msgstr ""
 
-#: ../qml/QuickListFoodsPage.qml:39
+#: ../qml/QuickListFoodsPage.qml:38
 msgid "Search..."
 msgstr ""
 
@@ -526,8 +526,8 @@ msgid "Scanning"
 msgstr ""
 
 #: ../qml/SetActivityPage.qml:33 ../qml/SetAgePage.qml:36
-#: ../qml/SetHeightPage.qml:33 ../qml/SetPlanPage.qml:35
-#: ../qml/SetSexAtBirthPage.qml:35 ../qml/SetWeightPage.qml:34
+#: ../qml/SetHeightPage.qml:33 ../qml/SetPlanPage.qml:33
+#: ../qml/SetSexAtBirthPage.qml:34 ../qml/SetWeightPage.qml:34
 msgid "About You"
 msgstr ""
 
@@ -535,7 +535,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:63
+#: ../qml/SetActivityPage.qml:78
 msgid ""
 "Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
 "\n"
@@ -546,39 +546,39 @@ msgid ""
 "Heavy Include: Running, Soccer, Basketball, Football."
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:102
+#: ../qml/SetActivityPage.qml:117
 msgid "Your Level Of Activity?"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:115
+#: ../qml/SetActivityPage.qml:130
 msgid "VERY LIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:132
+#: ../qml/SetActivityPage.qml:147
 msgid "LIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:149
+#: ../qml/SetActivityPage.qml:164
 msgid "MODERATE"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:166
+#: ../qml/SetActivityPage.qml:181
 msgid "HEAVY"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:179 ../qml/SetAgePage.qml:103
-#: ../qml/SetHeightPage.qml:106 ../qml/SetPlanPage.qml:158
+#: ../qml/SetActivityPage.qml:194 ../qml/SetAgePage.qml:103
+#: ../qml/SetHeightPage.qml:106 ../qml/SetPlanPage.qml:176
 #: ../qml/SetWeightPage.qml:103
 msgid "You Can Change It Later"
 msgstr ""
 
-#: ../qml/SetActivityPage.qml:189 ../qml/SetAgePage.qml:112
-#: ../qml/SetHeightPage.qml:115 ../qml/SetPlanPage.qml:168
-#: ../qml/SetSexAtBirthPage.qml:129 ../qml/SetWeightPage.qml:112
+#: ../qml/SetActivityPage.qml:204 ../qml/SetAgePage.qml:112
+#: ../qml/SetHeightPage.qml:115 ../qml/SetPlanPage.qml:186
+#: ../qml/SetSexAtBirthPage.qml:141 ../qml/SetWeightPage.qml:112
 #: ../qml/components/IsProductFoundDialog.qml:126
 msgid "Next"
 msgstr ""
@@ -627,44 +627,44 @@ msgstr ""
 msgid "Your Height In cm: 171"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:64
+#: ../qml/SetPlanPage.qml:82
 msgid "loose"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:69
+#: ../qml/SetPlanPage.qml:87
 msgid "gain"
 msgstr ""
 
-#: ../qml/SetPlanPage.qml:98
+#: ../qml/SetPlanPage.qml:116
 msgid "What's Your Goal?"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:111
+#: ../qml/SetPlanPage.qml:129
 msgid "LOOSE WEIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:128
+#: ../qml/SetPlanPage.qml:146
 msgid "MAINTAIN WEIGHT"
 msgstr ""
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:145
+#: ../qml/SetPlanPage.qml:163
 msgid "GAIN WEIGHT"
 msgstr ""
 
-#: ../qml/SetSexAtBirthPage.qml:85
+#: ../qml/SetSexAtBirthPage.qml:97
 msgid "Sex Assigned At Birth?"
 msgstr ""
 
 #. TRANSLATORS PLease Keep This Letters All Capital
-#: ../qml/SetSexAtBirthPage.qml:98
+#: ../qml/SetSexAtBirthPage.qml:110
 msgid "MALE"
 msgstr ""
 
 #. TRANSLATORS PLease Keep This Letters All Capital
-#: ../qml/SetSexAtBirthPage.qml:115
+#: ../qml/SetSexAtBirthPage.qml:127
 msgid "FEMALE"
 msgstr ""
 
@@ -1033,7 +1033,7 @@ msgstr ""
 msgid "I'm not going eat more"
 msgstr ""
 
-#: ../qml/components/StoreIngestionDialog.qml:46
+#: ../qml/components/StoreIngestionDialog.qml:56
 msgid "Continue registering..."
 msgstr ""
 

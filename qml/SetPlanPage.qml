@@ -15,12 +15,12 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 
@@ -60,9 +60,9 @@ Page{
         root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
 
         //highlight Slots selection 
-        maintain_weight_slot.text_color = plan == 0 ? UbuntuColors.green : "black"
-        loose_weight_slot.text_color = plan == 1 ? UbuntuColors.green : "black"
-        gain_weight_slot.text_color = plan == 2 ? UbuntuColors.green : "black"
+        maintain_weight_slot.text_color = plan == 0 ? LomiriColors.green : "black"
+        loose_weight_slot.text_color = plan == 1 ? LomiriColors.green : "black"
+        gain_weight_slot.text_color = plan == 2 ? LomiriColors.green : "black"
 
         //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
         set_plan_page.is_loose_weight = plan == 1 ? true : false
@@ -185,7 +185,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Next")
                 enabled: set_plan_page.is_plan_choosed
-                color : UbuntuColors.green
+                color : LomiriColors.green
                 onClicked: {
                     if(set_plan_page.is_loose_weight){
                         PopupUtils.open(loose_weight_definition_dialog)

@@ -15,8 +15,8 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
@@ -37,11 +37,11 @@ Dialog {
             color: Suru === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
         }
 
-        UbuntuShape{
+        LomiriShape{
             width: units.gu(4)
             height : width
             radius : "large"
-            aspect : UbuntuShape.Inset
+            aspect : LomiriShape.Inset
 
             TextInput{
                 anchors.verticalCenter: parent.verticalCenter

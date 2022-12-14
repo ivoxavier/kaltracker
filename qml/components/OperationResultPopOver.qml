@@ -15,14 +15,14 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components.Pickers 1.3
 
 
 Popover{
@@ -35,10 +35,10 @@ Popover{
         id: main_column_pop
         width: parent.width
         ListItem{
-            color: UbuntuColors.porcelain
+            color: LomiriColors.porcelain
             ListItemLayout{
                 title.text: i18n.tr("Operation Sucess")
-                Icon{SlotsLayout.position: SlotsLayout.Leading; name: "ok"; color: UbuntuColors.green; height: units.gu(4)}
+                Icon{SlotsLayout.position: SlotsLayout.Leading; name: "ok"; color: LomiriColors.green; height: units.gu(4)}
             }
         }
 

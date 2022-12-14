@@ -17,13 +17,13 @@
 
 import QtQuick 2.9
 import QtQuick.Window 2.0
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtMultimedia 5.12
 import QtGraphicalEffects 1.0
 import QZXing 3.3
-import Ubuntu.Content 1.3
-import Ubuntu.Components.Pickers 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Content 1.3
+import Lomiri.Components.Pickers 1.3
+import Lomiri.Components.Popups 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import "components"

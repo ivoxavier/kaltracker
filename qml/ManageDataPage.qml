@@ -15,12 +15,12 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2 as QQC2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
@@ -185,7 +185,7 @@ Page{
                 
                     Button{
                         text: i18n.tr("Delete")
-                        color: UbuntuColors.red
+                        color: LomiriColors.red
                         onClicked:{
                             delete_type = 0
                             PopupUtils.open(delete_dialog)
@@ -202,7 +202,7 @@ Page{
 
                     Button{
                         text:i18n.tr("Delete")
-                        color:UbuntuColors.red
+                        color:LomiriColors.red
                         onClicked:{
                             delete_type = 1
                             PopupUtils.open(delete_dialog)
@@ -252,7 +252,7 @@ Page{
 
                     Button{
                         text:i18n.tr("Delete")
-                        color:UbuntuColors.red
+                        color:LomiriColors.red
                         onClicked:{
                             PopupUtils.open(delete_all_water)
                         }   
@@ -277,7 +277,7 @@ Page{
 
                     Button{
                         text:i18n.tr("Delete")
-                        color:UbuntuColors.red
+                        color:LomiriColors.red
                         onClicked:{
                             PopupUtils.open(delete_all_notes_dialog)
                         }   
@@ -302,7 +302,7 @@ Page{
 
                     Button{
                         text:i18n.tr("Delete")
-                        color:UbuntuColors.red
+                        color:LomiriColors.red
                         onClicked:{
                             PopupUtils.open(delete_all_weight_tracker)
                         }   

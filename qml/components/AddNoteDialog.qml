@@ -15,8 +15,8 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
@@ -29,11 +29,11 @@ Dialog {
     
     title: i18n.tr("Add Your Notes")
 
-    UbuntuShape{
+    LomiriShape{
         width : parent.width
         height : units.gu(10)
         radius: "large"
-        aspect: UbuntuShape.Inset
+        aspect: LomiriShape.Inset
 
         TextInput{
             anchors.fill: parent

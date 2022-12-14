@@ -15,16 +15,16 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 
 
-UbuntuShape{
+LomiriShape{
     id: slot_shape
 
     // make public API's
@@ -32,7 +32,7 @@ UbuntuShape{
 
     width: units.gu(29)
     height: units.gu(7)
-    aspect: UbuntuShape.Flat
+    aspect: LomiriShape.Flat
 
     ColumnLayout{
         id: slot_layout
