@@ -15,12 +15,12 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
@@ -114,12 +114,12 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_details_view ? true: false
                 TextInput{
                     anchors.fill: parent
@@ -141,12 +141,12 @@ Page{
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
             }
             
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_details_view ? true: false
                 
                 TextInput{
@@ -208,12 +208,12 @@ Page{
                 visible: is_details_view ? false: true
             }
 
-            UbuntuShape{
+            LomiriShape{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(30)
                 Layout.preferredHeight: units.gu(3)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
                 backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{
@@ -240,12 +240,12 @@ Page{
                 visible: is_details_view ? false: true
             }
 
-            UbuntuShape{
+            LomiriShape{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(30)
                 Layout.preferredHeight: units.gu(3)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
                 backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{
@@ -273,12 +273,12 @@ Page{
                 visible: is_details_view ? false: true
             }
 
-            UbuntuShape{
+            LomiriShape{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(30)
                 Layout.preferredHeight: units.gu(3)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
                 backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
                 NutrientSlider{

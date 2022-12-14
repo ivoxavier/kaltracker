@@ -16,9 +16,9 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../../js/ControlBarCodeInfo.js" as ControlBarCodeInfo
 
@@ -124,7 +124,7 @@ Dialog {
     Button{
         id: next_button
         text: i18n.tr("Next")
-        color: UbuntuColors.green
+        color: LomiriColors.green
         enabled: false
         onClicked:{
             page_stack.pop(scan_page)  
@@ -141,7 +141,7 @@ Dialog {
 
     Button{
         text: i18n.tr("Scan Again")
-        color: UbuntuColors.blue
+        color: LomiriColors.blue
         onClicked:{
             PopupUtils.close(is_product_found_dialog)
         }
@@ -150,7 +150,7 @@ Dialog {
     Button{
         id: enter_manually
         text: i18n.tr("Enter Product Details Manually")
-        color: UbuntuColors.blue
+        color: LomiriColors.blue
         visible: false
         onClicked:{
             page_stack.pop(scan_page)  

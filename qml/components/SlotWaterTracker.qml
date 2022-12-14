@@ -16,18 +16,18 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Controls 2.2 as QQC2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../../js/WaterTrackerTable.js" as WaterTrackerTable
 import "../../js/WaterDrinkCalc.js" as WaterDrinkCalc
 import "../../js/GetData.js" as GetData
-UbuntuShape{
+LomiriShape{
     id: slot_shape
 
     //public API's
@@ -35,7 +35,7 @@ UbuntuShape{
     property alias water_cups_drinked : bar.value 
 
     radius: "small"
-    aspect: UbuntuShape.DropShadow
+    aspect: LomiriShape.DropShadow
     
     ListItem{
         height: slot_layout.height
@@ -94,7 +94,7 @@ UbuntuShape{
                 }
             }
 
-            UbuntuShape{
+            LomiriShape{
                 id: add_meal_image_shape
                 //public API
                 property alias img_path: img.source
@@ -103,7 +103,7 @@ UbuntuShape{
                 width: units.gu(5)
                 height: units.gu(5)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 source: Image{
                     id: img
                     source: add_meal_image_shape.img_path

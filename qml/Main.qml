@@ -16,7 +16,7 @@
 
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 
 MainView {
@@ -39,7 +39,7 @@ MainView {
 
     //themes --start--*/
     property var kaltracker_light_theme:  {
-        "background" : UbuntuColors.porcelain,
+        "background" : LomiriColors.porcelain,
         "text_color" : "black",
         "slot_add_meal" : "white",
         "circle_chart" : "#90ee90"

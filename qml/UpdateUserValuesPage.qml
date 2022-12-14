@@ -15,16 +15,16 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import Ubuntu.Content 1.3
+import Lomiri.Content 1.3
 import "components"
 import "../js/UserTable.js" as UserTable
 import "../js/UpdateUserTable.js" as UpdateUserTable
@@ -118,12 +118,12 @@ Page{
                 font.bold : true
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{
@@ -144,12 +144,12 @@ Page{
                 font.bold : true
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 TextInput{
@@ -171,12 +171,12 @@ Page{
                 font.bold : true
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
                 TextInput{
@@ -278,12 +278,12 @@ Page{
                 font.bold : true
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_blood_pressure_view ? true: false
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{
@@ -305,12 +305,12 @@ Page{
                 font.bold : true
             }
 
-            UbuntuShape{  
+            LomiriShape{  
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(2)
                 Layout.preferredHeight: units.gu(4)
                 radius: "large"
-                aspect: UbuntuShape.Inset
+                aspect: LomiriShape.Inset
                 visible: is_blood_pressure_view ? true: false
                 color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
                 TextInput{

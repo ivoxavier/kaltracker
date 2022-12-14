@@ -15,16 +15,16 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 
 
 
-UbuntuShape{
+LomiriShape{
     id: slot_shape
 
     // make public API's
@@ -33,7 +33,7 @@ UbuntuShape{
     property alias title : slot_layout.title
     //property alias text_color : plan_label.color
 
-    aspect: UbuntuShape.Flat
+    aspect: LomiriShape.Flat
     
     ListItem{
         height: slot_layout.height
@@ -57,7 +57,7 @@ UbuntuShape{
                 }
             }
 
-            UbuntuShape{
+            LomiriShape{
                 id: slot_img_credentials
 
                 //public
@@ -67,7 +67,7 @@ UbuntuShape{
                 width: units.gu(5)
                 height: units.gu(5)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 source: Image{
                     id: img
                     source: slot_img_credentials.img_path

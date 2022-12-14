@@ -15,18 +15,18 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 ListView{
     highlightRangeMode: ListView.ApplyRange
-    highlightMoveDuration: UbuntuAnimation.SnapDuration
+    highlightMoveDuration: LomiriAnimation.SnapDuration
 
     model: sorted_model
            
@@ -45,14 +45,14 @@ ListView{
                 i18n.tr("Average nutritional quality") : score_label.text === "d" ?
                 i18n.tr("Poor nutritional quality") : i18n.tr("Bad nutritional quality")
                 
-                UbuntuShape{
+                LomiriShape{
                     SlotsLayout.position: SlotsLayout.Leading
                     
                     height: units.gu(6)
                     width: height
                     color: ControlFoodsNutriscore.backgroundColor(score_label.text)
                     radius: "large"
-                    aspect: UbuntuShape.Inset
+                    aspect: LomiriShape.Inset
                     Label{
                         id: score_label
                         anchors.centerIn: parent

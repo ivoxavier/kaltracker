@@ -15,12 +15,12 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
 
@@ -67,12 +67,12 @@ Page{
 
             BlankSpace{height: units.gu(3)}
 
-            UbuntuShape{
+            LomiriShape{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: units.gu(12)
                 Layout.preferredHeight: units.gu(12)
                 radius: "large"
-                aspect: UbuntuShape.DropShadow
+                aspect: LomiriShape.DropShadow
                 source : Image{
                     source : "../assets/logo.svg"
                 }
@@ -92,7 +92,7 @@ Page{
                 id: next_button
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Start")
-                color : UbuntuColors.green
+                color : LomiriColors.green
                 onClicked:{
                     page_stack.push(set_plan_page)
                 }

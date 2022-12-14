@@ -13,22 +13,22 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 
 
-UbuntuShape{
+LomiriShape{
     id: slot_shape
 
     // make public API's
     property alias img_path: img.source
     radius: "large"
-    aspect: UbuntuShape.DropShadow
+    aspect: LomiriShape.DropShadow
     source: Image{
         id: img
         source: slot_shape.img_path

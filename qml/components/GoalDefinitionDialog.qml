@@ -15,10 +15,10 @@
  */
 
 import QtQuick 2.9
-import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
-import Ubuntu.Components.ListItems 1.3 
+import Lomiri.Components.ListItems 1.3 
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQC2
 import '../../js/DefineGoalCalories.js' as DefinePeriod
@@ -120,7 +120,7 @@ Dialog {
         
     Button{
         text: i18n.tr("Back")
-        color: UbuntuColors.blue
+        color: LomiriColors.blue
         onClicked:{
                 module_goal_dialog.is_goal_defined = false
                 set_plan_page.is_loose_weight = false
@@ -134,7 +134,7 @@ Dialog {
     Button{
         text: i18n.tr("Confirm")
         enabled: module_goal_dialog.is_goal_defined
-        color: UbuntuColors.green
+        color: LomiriColors.green
         onClicked: {
             PopupUtils.close(module_goal_dialog)
             page_stack.push(set_activity_page)

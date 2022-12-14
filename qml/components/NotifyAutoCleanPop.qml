@@ -15,14 +15,14 @@
  */
  
 import QtQuick 2.9
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Ubuntu.Components.ListItems 1.3 
-import Ubuntu.Components.Popups 1.3
+import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import Ubuntu.Components.Pickers 1.3
+import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../../js/IngestionsTable.js" as IngestionsTable
 
@@ -38,7 +38,7 @@ Popover{
         width: parent.width
         spacing: units.gu(2)
         ListItem{
-            color: UbuntuColors.porcelain
+            color: LomiriColors.porcelain
             ListItemLayout{
                 title.text: i18n.tr("Deleting Old Ingestions")
                 title.font.bold : true
