@@ -57,7 +57,18 @@ Dialog {
     Button{
         text: i18n.tr("Confirm")
         color: LomiriColors.green
-        onClicked: ControlRecommendedCalories.confrim()
+        onClicked: {
+            ////stores plan type
+            app_settings.plan_type = root.type_goal
+            
+            page_stack.pop(set_height_page)
+            page_stack.pop(set_weight_page)
+            page_stack.pop(set_age_page)
+            page_stack.pop(set_sex_at_birth_page)
+            page_stack.pop(set_activity_page)
+            page_stack.pop(set_plan_page)
+            page_stack.push(create_storage_page)
+        }
     }
 
     Component.onCompleted: ControlRecommendedCalories.calcCal()
