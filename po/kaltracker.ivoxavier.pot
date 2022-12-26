@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 19:41+0000\n"
+"POT-Creation-Date: 2022-12-26 21:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -579,7 +579,7 @@ msgstr ""
 #: ../qml/SetActivityPage.qml:204 ../qml/SetAgePage.qml:112
 #: ../qml/SetHeightPage.qml:115 ../qml/SetPlanPage.qml:186
 #: ../qml/SetSexAtBirthPage.qml:141 ../qml/SetWeightPage.qml:112
-#: ../qml/components/IsProductFoundDialog.qml:126
+#: ../qml/components/IsProductFoundDialog.qml:144
 msgid "Next"
 msgstr ""
 
@@ -897,53 +897,53 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:46
+#: ../qml/components/IsProductFoundDialog.qml:64
 msgid "BarCode Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:46
+#: ../qml/components/IsProductFoundDialog.qml:64
 msgid "BarCode Not Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:55
+#: ../qml/components/IsProductFoundDialog.qml:73
 msgid ""
 "No product in DB, you may consider register the item on openfoodsfacts. Or "
 "enter the details manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:63
+#: ../qml/components/IsProductFoundDialog.qml:81
 msgid "Code:%1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:75
+#: ../qml/components/IsProductFoundDialog.qml:93
 msgid "Name: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:84
+#: ../qml/components/IsProductFoundDialog.qml:102
 msgid "Nutriscore: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:93
+#: ../qml/components/IsProductFoundDialog.qml:111
 msgid "Calories/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:102
+#: ../qml/components/IsProductFoundDialog.qml:120
 msgid "Fat/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:111
+#: ../qml/components/IsProductFoundDialog.qml:129
 msgid "Protein/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:120
+#: ../qml/components/IsProductFoundDialog.qml:138
 msgid "Carbohydrates/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:143
+#: ../qml/components/IsProductFoundDialog.qml:161
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:152
+#: ../qml/components/IsProductFoundDialog.qml:170
 msgid "Enter Product Details Manually"
 msgstr ""
 
