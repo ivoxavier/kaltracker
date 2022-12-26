@@ -20,7 +20,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
-import "../../js/ControlBarCodeInfo.js" as ControlBarCodeInfo
+
 
 Dialog { 
     id: is_product_found_dialog
@@ -40,7 +40,25 @@ Dialog {
         id: openFoodFactJSON
         source: "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
         query: "$[*]"
-        onJsonChanged: ControlBarCodeInfo.getData()
+        onJsonChanged: {
+            var _json = openFoodFactJSON.model.get(0);
+            if (typeof _json !== "undefined" && typeof _json.product_name !== "undefined" ) {
+                product_name = _json.product_name
+                nutriscore_grade = (typeof _json.nutriscore_grade == "undefined") ? "a" :  _json.nutriscore_grade
+                energy_kcal_100g = (typeof _json.nutriments.energy_value == "undefined") ? 0 : _json.nutriments.energy_value
+                fat_100g = (typeof _json.nutriments.fat_100g == "undefined") ? 0.0 : _json.nutriments.fat_100g
+                protein_100g = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
+                carbohydrates_100g = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
+                next_button.enabled = true
+                loading_circle.running = false
+                loading_circle.visible = false
+            }else{
+                loading_circle.running = false
+                loading_circle.visible = false
+                enter_manually.visible = true
+                is_code_empty = true
+            }
+        }
     }
 
     title: is_code_empty ? i18n.tr("BarCode Not Found")  : i18n.tr("BarCode Found")
