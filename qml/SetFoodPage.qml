@@ -30,6 +30,7 @@ import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/UserTable.js" as UserTable
 import "../js/IngestionsTable.js" as IngestionsTable
+import "../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 Page{
@@ -258,12 +259,32 @@ Page{
                 anchors.fill: parent
                 onClicked:{
                     try{
+                        if(UserFoodsListTable.isUnique(product_name_set_food_page) >= 1){
+                        /* REGISTER INGESTION */
+                        //item already on DB
                         IngestionsTable.saveIngestion(product_name_set_food_page,
                         nutriscore_set_food_page, cal_ingested,
                         fat_ingested, carbo_ingested,
                         protein_ingested, meal_set_food_page)
                         root.initDB()
                         PopupUtils.open(sucess_dialog)
+                    } else{
+                        /* CREATE NEW ENTRY */
+                        //new item
+                        UserFoodsListTable.saveIngestion(product_name_set_food_page,
+                        nutriscore_set_food_page, cal_set_food_page,
+                        fat_set_food_page, carbo_set_food_page,
+                        protein_set_food_page)
+                        root.initDB()
+
+                        /* REGISTER INGESTION */
+                        IngestionsTable.saveIngestion(product_name_set_food_page,
+                        nutriscore_set_food_page, cal_ingested,
+                        fat_ingested, carbo_ingested,
+                        protein_ingested, meal_set_food_page)
+                        root.initDB()
+                        PopupUtils.open(sucess_dialog)
+                    }
                     } catch (err){
                             PopupUtils.open(error_dialog)
                     } 
