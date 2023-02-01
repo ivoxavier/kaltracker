@@ -94,7 +94,8 @@ Page{
                 text: i18n.tr("Start")
                 color : LomiriColors.green
                 onClicked:{
-                    page_stack.push(set_plan_page)
+                    //page_stack.push(set_plan_page)
+                    page_stack.push(user_profile_config_page)
                 }
             } 
         }  
