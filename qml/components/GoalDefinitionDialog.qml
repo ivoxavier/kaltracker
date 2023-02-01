@@ -123,8 +123,8 @@ Dialog {
         color: LomiriColors.blue
         onClicked:{
                 module_goal_dialog.is_goal_defined = false
-                set_plan_page.is_loose_weight = false
-                set_plan_page.is_gain_weight = false
+                user_profile_config_page.is_loose_weight = false
+                user_profile_config_page.is_gain_weight = false
                 PopupUtils.close(module_goal_dialog)
             }
         }
@@ -137,7 +137,6 @@ Dialog {
         color: LomiriColors.green
         onClicked: {
             PopupUtils.close(module_goal_dialog)
-            page_stack.push(set_activity_page)
         }
     }
 }
