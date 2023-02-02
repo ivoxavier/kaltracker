@@ -135,7 +135,7 @@ ColumnLayout{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Activity")
+            subtitle.text: i18n.tr("Activity Level")
             subtitle.font.bold: true
         }
     } 
