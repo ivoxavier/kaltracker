@@ -95,6 +95,8 @@ ColumnLayout{
 
     Picker {
         Layout.alignment: Qt.AlignCenter
+        Layout.preferredWidth: root.width - units.gu(12)
+        Layout.preferredHeight: units.gu(9)
 
         StyleHints {
             highlightBackgroundColor: theme.palette.normal.raised
@@ -103,11 +105,12 @@ ColumnLayout{
         }
 
         circular: false
-        model: Array.from(Array(91).keys())
+        model: Array.from(Array(101).keys())
         selectedIndex: 1
         delegate: PickerDelegate {
             Label {
-                text: modelData
+                //TRANSLATORS Please Add A WhiteSpace Before The Word
+                text: modelData + i18n.tr(" years")
                 anchors.fill: parent
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
