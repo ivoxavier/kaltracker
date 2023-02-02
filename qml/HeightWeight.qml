@@ -16,7 +16,7 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
+import QtQuick.Controls 2.2 as QQC2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
@@ -36,45 +36,117 @@ ColumnLayout{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Height")
+            subtitle.text: i18n.tr("Weight")
             subtitle.font.bold: true
         }
     }
 
+    LomiriShape{
+        id: weight_shape
+        Layout.alignment: Qt.AlignCenter
+        Layout.preferredWidth: root.width - units.gu(9)
+        Layout.preferredHeight: units.gu(19)
+        aspect: LomiriShape.DropShadow
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+
+        //Stores the weight & height values
+        property int weight_value : 10
+        property int height_value : 140 //cm
+
+        ColumnLayout{
+            anchors.fill: parent
+
+            Label{
+                id:weight_value_label
+                Layout.alignment: Qt.AlignCenter
+                font.pixelSize: units.gu(5)
+                font.bold: true
+                text:weight_shape.weight_value
+            }
+
+            Label{Layout.alignment: Qt.AlignCenter;font.bold: true;text:i18n.tr("KG")}
+
+            RowLayout{
+                Layout.alignment: Qt.AlignCenter
+                spacing: units.gu(6)
+                    Rectangle {
+                        width: units.gu(6)
+                        height: width
+                        color : "transparent"
+                        border.color: color
+                        border.width: 1
+                        radius: width*0.5
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked:{
+                                weight_shape.weight_value-- , root.user_weight = weight_shape.weight_value
+                                user_profile_config_page.is_weight_inputed = true
+                            }
+                            
+                        }
+                        Label {
+                            anchors.centerIn: parent
+                            font.pixelSize: units.gu(4)
+                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            text: "-"
+                        }
+                    }
+
+                    Rectangle {
+                        width: units.gu(6)
+                        height: width
+                        color : "transparent"
+                        border.color: color
+                        border.width: 1
+                        radius: width*0.5
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked:{
+                                weight_shape.weight_value++ , root.user_weight = weight_shape.weight_value
+                                user_profile_config_page.is_weight_inputed = true
+                            }
+                            
+                        }
+                        Label {
+                            anchors.centerIn: parent
+                            font.pixelSize: units.gu(4)
+                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            text: "+"
+                        }
+                    }
+            }
+        }
+    }
 
     ListItem{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Age")
+            subtitle.text: i18n.tr("Height")
             subtitle.font.bold: true
         }
     } 
 
-    Picker {
+    Label {
         Layout.alignment: Qt.AlignCenter
-
-        StyleHints {
-            highlightBackgroundColor: theme.palette.normal.raised
-            highlightColor: LomiriColors.jet
-            backgroundColor: theme.palette.normal.base
-        }
-
-        circular: false
-        model: Array.from(Array(91).keys())
-        selectedIndex: 1
-        delegate: PickerDelegate {
-            Label {
-                text: modelData
-                anchors.fill: parent
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-            }
-        }
-
-        onSelectedIndexChanged: {
-            root.user_age = selectedIndex
-        }
+        font.pixelSize: units.gu(4)
+        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+        text: Math.round(height_slider.value) + i18n.tr("cm")
     }
 
+    QQC2.Slider{
+        id: height_slider
+        Layout.alignment: Qt.AlignCenter
+        Layout.preferredHeight: units.gu(19)
+        orientation: Qt.Vertical
+        live: true
+        from: 100
+        value: 140
+        to: 250
+        onValueChanged: {
+            root.user_height = value
+            user_profile_config_page.is_height_inputed = true
+            user_profile_config_page.user_profile.height = true
+        }
+    }
 }
