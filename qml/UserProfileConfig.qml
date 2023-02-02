@@ -40,6 +40,31 @@ Page{
             backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
         }
 
+        ActionBar {
+            id: head_action_bar
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            visible: false
+            StyleHints {
+                foregroundColor: "white"
+                backgroundColor:  Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
+            }
+
+            numberOfSlots: 1
+            actions:[  Action{
+                    iconName: "tick"
+                    text: i18n.tr("Calculate")
+                   // onTriggered: PopupUtils.open(help_dialog) 
+                }
+            ]
+            Component.onCompleted:{
+                var is_user_profile_set = Object.values(user_profile_config_page.user_profile).every(
+                    value => value === true
+                )
+            
+            }
+        }
+
      }
 
     Rectangle{
@@ -57,6 +82,14 @@ Page{
     property bool is_loose_weight: false
     property bool is_gain_weight: false
     
+    property var user_profile:({
+        plan: false,
+        activity: false,
+        sex: false,
+        age: false,
+        weight: false,
+        height: false
+    })
     //PlanActivity property control
     property bool is_plan_choosed: false
 
@@ -69,6 +102,11 @@ Page{
     //SexAge property control
     property bool is_age_inputed : false
 
+    //HeightWeight property control
+    property bool is_height_inputed : false
+
+    //HeightWeight property control
+    property bool is_weight_inputed : false
 
     /* PlanActivity Dialogs */
     Component{
