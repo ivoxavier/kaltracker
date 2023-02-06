@@ -31,8 +31,8 @@ ColumnLayout{
     width: root.width
 
     function selectPlan(plan){
-        //enables the next button after user clicking in one slotPlans
-        user_profile_config_page.is_plan_choosed = true
+        //Change the value of Object user_profile
+        user_profile_config_page.user_profile.plan = true
 
         //property to store the user goal for further calories daily objectiv calculation.
         root.user_goal = plan == 0 ? 0 : 0
@@ -52,8 +52,8 @@ ColumnLayout{
 
 
     function selectActivity(activity){
-        //enables the next button after user clicking in one slotActity
-        user_profile_config_page.is_activity_choosed = true
+        //Change the value of Object user_profile
+        user_profile_config_page.user_profile.activity = true
 
         //property to store type of plan
         root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
@@ -205,5 +205,4 @@ ColumnLayout{
             onClicked: selectActivity(3) 
         }
     }
-
 }
