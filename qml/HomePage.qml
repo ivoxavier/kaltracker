@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,6 +33,8 @@ Page{
     id: home_page
     objectName: 'HomePage'
     header: PageHeader {visible:false}
+
+    BackgroundStyle{}
     
     // stores the query output
     property int query_total_cal_consumed 
@@ -50,7 +52,7 @@ Page{
     //stores the amount of days user wants to getback to (re)ingest
     property int amount_of_days_back : 1
 
-     ListModel{id: filtered_meal_model}
+    ListModel{id: filtered_meal_model}
     
     //this component is need to initializate the db. It's linked to main view so it runs everytime the iniDB signal is emitted
     //without it the dashboard will not update untill a close and opening the app again
@@ -96,16 +98,6 @@ Page{
     Component{
         id: notification_pop
         NotifyAutoCleanPop{}
-    }
-
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
     }
 
     Flickable {

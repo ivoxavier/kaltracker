@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,6 +46,8 @@ Page{
             }
         }
 
+    BackgroundStyle{}
+
     //receives meal category from HomePage.slotAddMeal
     property int meal_quick_addition_page
 
@@ -75,16 +77,6 @@ Page{
     }
 
     Timer{id: timer;repeat: false}
-
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
 
     Flickable {
         id: flickable

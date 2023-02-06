@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,15 +30,7 @@ Page{
     objectName: 'LoginPage'
     header: PageHeader {visible: false}
 
-
-    Rectangle{
-    anchors.fill: parent
-    gradient: Gradient {
-        GradientStop { position: 0.0; color: Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background  }
-    }
-}
-
-
+    BackgroundStyle{}
     
     Flickable {
         anchors{
@@ -94,7 +86,6 @@ Page{
                 text: i18n.tr("Start")
                 color : LomiriColors.green
                 onClicked:{
-                    //page_stack.push(set_plan_page)
                     page_stack.push(user_profile_config_page)
                 }
             } 

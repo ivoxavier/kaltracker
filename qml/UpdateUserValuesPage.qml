@@ -1,5 +1,5 @@
 /*
- * 2022 Ivo Xavier
+ * 2022-2023 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,6 +50,8 @@ Page{
         }
     }
 
+    BackgroundStyle{}
+
     property bool is_values_view: true
     property bool is_blood_pressure_view : false
     property bool is_goal_view : false
@@ -75,16 +77,6 @@ Page{
     Component{
         id: state_updating_blood_pressure_dialog
         UpdateUserBloodPressureDialog{}
-    }
-
-    Rectangle{
-        anchors{
-            top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
     
     Flickable {

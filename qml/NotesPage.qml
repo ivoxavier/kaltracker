@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,16 +39,8 @@ Page{
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
-    
-    Rectangle{
-        anchors{
-            top: parent.header.bottom
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
-    }
+    BackgroundStyle{}
+
 
     Item{
         visible: notes_page_list.visible ? false : true

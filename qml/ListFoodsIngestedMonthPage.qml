@@ -51,20 +51,11 @@ Page{
                    /* foregroundColor: "white"
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
-
         }
+
+    BackgroundStyle{}
 
     property string requested_month
-
-    Rectangle{
-        anchors{
-            top: parent.header.bottom 
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
 
     ListModel{
         id: all_month_ingestions

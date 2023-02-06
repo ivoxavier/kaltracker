@@ -1,5 +1,5 @@
 /*
- * 2022 -2023 Ivo Xavier
+ * 2022-2023 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,9 @@ Page{
             ]
         }
 
-     }
+    }
+
+    BackgroundStyle{}
 
     function showTick(){
         //assign true if all values from Object are set to true
@@ -78,18 +80,7 @@ Page{
         interval: 500; running: true; repeat: true
         onTriggered: showTick()
     }
-
-    Rectangle{
-        anchors{
-            top: parent.header.bottom
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
-
-    
+  
     //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
     property bool is_loose_weight: false
     property bool is_gain_weight: false
