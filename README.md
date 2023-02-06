@@ -31,7 +31,7 @@ Run debug build in Desktop Mode in specific language:
 
 # License
  
- 2022 Ivo Xavier
+ 2022-2023 Ivo Xavier
  
  This program is licensed with GNU GPL v3.
 
