@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-13 13:19+0000\n"
-"PO-Revision-Date: 2022-07-13 13:19+0000\n"
+"PO-Revision-Date: 2023-02-05 13:19+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_PT\n"
@@ -535,36 +535,6 @@ msgstr "Procurar..."
 msgid "Scanning"
 msgstr "Digitalizando"
 
-#: ../qml/SetActivityPage.qml:34 ../qml/SetAgePage.qml:36
-#: ../qml/SetHeightPage.qml:34 ../qml/SetPlanPage.qml:37
-#: ../qml/SetSexAtBirthPage.qml:35 ../qml/SetWeightPage.qml:34
-msgid "About You"
-msgstr "Sobre Você"
-
-#: ../qml/SetActivityPage.qml:53
-msgid "Help"
-msgstr "Ajuda"
-
-#: ../qml/SetActivityPage.qml:64
-msgid ""
-"Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
-"\n"
-"Light Include: Walking 5 km, House Cleaning, Golf.\n"
-"\n"
-"Moderate Include: Walking 6 km, Dancing, Tennis, Cycling.\n"
-"\n"
-"Heavy Include: Running, Soccer, Basketball, Football."
-msgstr ""
-"Moderado Include: Corrida, Futebol, Bósquet, Ciclismo.\n"
-"\n"
-"Pesado Include: Corrida, Futebol, Bósquet, Ciclismo.\n"
-"\n"
-"Muito Pesado Include: Corrida, Futebol, Bósquet, Ciclismo."
-
-#: ../qml/SetActivityPage.qml:103
-msgid "Your Level Of Activity?"
-msgstr "O Seu Nível de Atividade?"
-
 #. TRANSLATORS Please Keep All Letters Capital
 #: ../qml/SetActivityPage.qml:116
 msgid "VERY LIGHT"
@@ -585,12 +555,6 @@ msgstr "MODERADO"
 msgid "HEAVY"
 msgstr "PESADO"
 
-#: ../qml/SetActivityPage.qml:180 ../qml/SetAgePage.qml:103
-#: ../qml/SetHeightPage.qml:107 ../qml/SetPlanPage.qml:160
-#: ../qml/SetWeightPage.qml:103
-msgid "You Can Change It Later"
-msgstr "Pode Alterar Isso Depois"
-
 #: ../qml/SetActivityPage.qml:190 ../qml/SetAgePage.qml:112
 #: ../qml/SetHeightPage.qml:116 ../qml/SetPlanPage.qml:170
 #: ../qml/SetSexAtBirthPage.qml:129 ../qml/SetWeightPage.qml:112
@@ -598,13 +562,6 @@ msgstr "Pode Alterar Isso Depois"
 msgid "Next"
 msgstr "Seguinte"
 
-#: ../qml/SetAgePage.qml:85
-msgid "What's Your Age?"
-msgstr "Qual é a sua idade?"
-
-#: ../qml/SetAgePage.qml:95
-msgid "Enter Your Age In Years"
-msgstr "Introduza a sua idade em anos"
 
 #: ../qml/SetFoodPage.qml:41
 msgid "Set Your Ingestion"
@@ -634,13 +591,6 @@ msgstr "Proteína: %1gr"
 msgid "Carbohydrates: %1gr"
 msgstr "Carboidratos: %1gr"
 
-#: ../qml/SetHeightPage.qml:89
-msgid "Your Height?"
-msgstr "A sua altura?"
-
-#: ../qml/SetHeightPage.qml:99
-msgid "Your Height In cm: 171"
-msgstr "A sua altura em cm: 171"
 
 #: ../qml/SetPlanPage.qml:66
 msgid "loose"
@@ -650,28 +600,21 @@ msgstr "perder"
 msgid "gain"
 msgstr "ganhar"
 
-#: ../qml/SetPlanPage.qml:100
-msgid "What's Your Goal?"
-msgstr "Qual é o seu objetivo?"
-
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:113
+#: ../qml/PlanActivity.qml:85
 msgid "LOOSE WEIGHT"
 msgstr "PERDER PESO"
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:130
+#: ../qml/PlanActivity.qml:105
 msgid "MAINTAIN WEIGHT"
 msgstr "MANTER PESO"
 
 #. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:147
+#: ../qml/PlanActivity.qml:122
 msgid "GAIN WEIGHT"
 msgstr "GANHAR PESO"
 
-#: ../qml/SetSexAtBirthPage.qml:85
-msgid "Sex Assigned At Birth?"
-msgstr "Sexo à Nascença?"
 
 #. TRANSLATORS PLease Keep This Letters All Capital
 #: ../qml/SetSexAtBirthPage.qml:98
@@ -683,13 +626,52 @@ msgstr "MASCULINO"
 msgid "FEMALE"
 msgstr "FEMININO"
 
-#: ../qml/SetWeightPage.qml:84
-msgid "Your Weight?"
-msgstr "O Seu Peso?"
 
-#: ../qml/SetWeightPage.qml:94
-msgid "Your Weight In KG: 63.3"
-msgstr "O Seu Peso em KG: 63.3"
+#: ../qml/UserProfileConfigPage.qml:34
+msgid "Objective"
+msgstr "Objetivo"
+
+#: ../qml/UserProfileConfigPage.qml:35
+msgid "Sex & Age"
+msgstr "Sexo e Idade"
+
+#: ../qml/UserProfileConfigPage.qml:56
+msgid "Calculate"
+msgstr "Calcular"
+
+#: ../qml/UserProfileConfigPage.qml:35
+msgid "Height & Weight"
+msgstr "Altura e Peso"
+
+#: ../qml/HeightWeight.qml:39
+msgid "Weight"
+msgstr "Peso"
+
+#: ../qml/HeightWeight.qml:125
+msgid "Height"
+msgstr "Altura"
+
+#: ../qml/HeightWeight.qml:134
+msgid "cm"
+msgstr "cm"
+
+#: ../qml/PlanActivity.qml:74
+msgid "Plan"
+msgstr "Plano"
+
+#: ../qml/SexAge.qml:50
+msgid "At Birth"
+msgstr "À Nascença"
+
+#: ../qml/SexAge.qml:91
+msgid "Age"
+msgstr "Idade"
+
+#. TRANSLATORS Please Add A WhiteSpace Before The Word
+#: ../qml/SexAge.qml:113
+msgid " years"
+msgstr " anos"
+
 
 #: ../qml/ThirdPartySoftwarePage.qml:75
 msgid "QML Modules"

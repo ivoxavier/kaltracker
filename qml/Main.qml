@@ -85,7 +85,7 @@ MainView {
     signal initDB()
     /* custom signals --end--*/
 
-    //creates a config file under /home/phablet/.config/utfoods.ivofernandes
+    //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
     AppSettings{id: app_settings}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
@@ -102,41 +102,12 @@ MainView {
         LogInPage{}
     }
 
-    //SetPlanPage, where users can set their objective
+    //UserProfileConfig
     Component{
-        id: set_plan_page
-        SetPlanPage{}
+        id: user_profile_config_page
+        UserProfileConfigPage{}
     }
-
-    //SetActivityPage, where users can set their activity level
-    Component{
-        id: set_activity_page
-        SetActivityPage{}
-    }
-
-    //SetSexAtBirth, where volunteers set their sex at birth
-    Component{
-        id: set_sex_at_birth_page
-        SetSexAtBirthPage{}
-    }
-
-    //SetAgePage, where volunteers set their age
-    Component{
-        id: set_age_page
-        SetAgePage{}
-    }
-
-    //SetWeightPage, where volunteers set their weight
-    Component{
-        id: set_weight_page
-        SetWeightPage{}
-    }
-
-    //SetAgePage, where volunteers set their age
-    Component{
-        id: set_height_page
-        SetHeightPage{}
-    }
+    
 
     //CreatePage, process for creating the db
     Component{
