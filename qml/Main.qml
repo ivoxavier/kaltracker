@@ -85,7 +85,7 @@ MainView {
     signal initDB()
     /* custom signals --end--*/
 
-    //creates a config file under /home/phablet/.config/utfoods.ivofernandes
+    //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
     AppSettings{id: app_settings}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
