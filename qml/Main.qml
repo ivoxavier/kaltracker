@@ -105,7 +105,7 @@ MainView {
     //UserProfileConfig
     Component{
         id: user_profile_config_page
-        UserProfileConfig{}
+        UserProfileConfigPage{}
     }
     //SetPlanPage, where users can set their objective
     Component{
