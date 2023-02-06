@@ -32,8 +32,8 @@ ColumnLayout{
     width: root.width
 
     function selectSex(sex){
-        //enables the next button after user clicking in one slotActity
-        user_profile_config_page.is_sex_at_birth_selected = true
+        //Change value of Object user_profile
+        user_profile_config_page.user_profile.sex = true
 
         //property to store type of sex assigned at birth 0 Male 1 Female
         root.user_sex_at_birth = sex == 0 ? 0 : 1
@@ -57,7 +57,7 @@ ColumnLayout{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
-        //TRANSLATORS PLease Keep This Letters All Capital
+        //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("MALE")
         img_path:"../assets/male-svgrepo-com.svg"
         color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
@@ -74,7 +74,7 @@ ColumnLayout{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
-        //TRANSLATORS PLease Keep This Letters All Capital
+        //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("FEMALE")
         img_path:"../assets/female-gender-svgrepo-com.svg"
         color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
@@ -119,6 +119,7 @@ ColumnLayout{
 
         onSelectedIndexChanged: {
             root.user_age = selectedIndex
+            user_profile_config_page.user_profile.age = true
         }
     }
 
