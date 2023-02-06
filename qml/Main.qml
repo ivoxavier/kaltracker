@@ -107,41 +107,7 @@ MainView {
         id: user_profile_config_page
         UserProfileConfigPage{}
     }
-    //SetPlanPage, where users can set their objective
-    Component{
-        id: set_plan_page
-        SetPlanPage{}
-    }
-
-    //SetActivityPage, where users can set their activity level
-    Component{
-        id: set_activity_page
-        SetActivityPage{}
-    }
-
-    //SetSexAtBirth, where volunteers set their sex at birth
-    Component{
-        id: set_sex_at_birth_page
-        SetSexAtBirthPage{}
-    }
-
-    //SetAgePage, where volunteers set their age
-    Component{
-        id: set_age_page
-        SetAgePage{}
-    }
-
-    //SetWeightPage, where volunteers set their weight
-    Component{
-        id: set_weight_page
-        SetWeightPage{}
-    }
-
-    //SetAgePage, where volunteers set their age
-    Component{
-        id: set_height_page
-        SetHeightPage{}
-    }
+    
 
     //CreatePage, process for creating the db
     Component{
