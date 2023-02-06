@@ -80,7 +80,7 @@ ColumnLayout{
                             anchors.fill: parent
                             onClicked:{
                                 weight_shape.weight_value-- , root.user_weight = weight_shape.weight_value
-                                user_profile_config_page.is_weight_inputed = true
+                                user_profile_config_page.user_profile.weight = true
                             }
                             
                         }
@@ -103,7 +103,7 @@ ColumnLayout{
                             anchors.fill: parent
                             onClicked:{
                                 weight_shape.weight_value++ , root.user_weight = weight_shape.weight_value
-                                user_profile_config_page.is_weight_inputed = true
+                                user_profile_config_page.user_profile.weight = true
                             }
                             
                         }
@@ -145,7 +145,6 @@ ColumnLayout{
         to: 250
         onValueChanged: {
             root.user_height = value
-            user_profile_config_page.is_height_inputed = true
             user_profile_config_page.user_profile.height = true
         }
     }
