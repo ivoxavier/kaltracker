@@ -50,7 +50,7 @@ ColumnLayout{
         color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
 
         //Stores the weight & height values
-        property int weight_value : 10
+        property int weight_value : 50
         property int height_value : 140 //cm
 
         ColumnLayout{
