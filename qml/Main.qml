@@ -18,6 +18,7 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import "style"
 
 MainView {
     id: root
@@ -87,6 +88,9 @@ MainView {
 
     //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
     AppSettings{id: app_settings}
+
+    //Style for the app
+    Style{id:app_style}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{
