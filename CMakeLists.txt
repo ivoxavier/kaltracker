@@ -89,6 +89,7 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(DIRECTORY "assets" DESTINATION .)
 install(DIRECTORY "qml" DESTINATION .)
 install(DIRECTORY "qml/components" DESTINATION /qml)
+install(DIRECTORY "qml/style" DESTINATION /qml)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
 
