@@ -48,6 +48,7 @@ ColumnLayout{
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(19)
         aspect: LomiriShape.DropShadow
+        radius: "large"
         backgroundColor : app_style.shape.shapeColor
 
         //Stores the weight & height values

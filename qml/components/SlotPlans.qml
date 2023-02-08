@@ -32,7 +32,7 @@ LomiriShape{
     property alias text : plan_label.text
     property alias text_color : plan_label.color
 
-    radius: "small"
+    radius: "large"
     aspect: LomiriShape.DropShadow
 
     backgroundColor: app_style.shape.shapeColor

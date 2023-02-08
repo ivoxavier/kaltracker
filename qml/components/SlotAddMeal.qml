@@ -34,7 +34,7 @@ LomiriShape{
     property alias img_path: add_meal_image_shape.img_path
 
     
-    radius: "small"
+    radius: "large"
     aspect: LomiriShape.DropShadow
     backgroundColor: app_style.shape.shapeColor
     
