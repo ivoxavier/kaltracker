@@ -59,15 +59,17 @@ QtObject{
     /** Progress Bar's **/
 
     property QtObject progressBar : QtObject{
+        property color backgroundColor : "#e6e6e6"
+        
         property QtObject nutrientBar : QtObject{
-            property color backgroundColor : "#e6e6e6"
+            
             property color fatProgress : nutrientsColors.fat
             property color carbProgress : nutrientsColors.carbo
             property color proteinProgress : nutrientsColors.protein
         } 
 
         property QtObject waterBar : QtObject{
-            property color backgroundColor : "#e6e6e6"
+            
             property color waterProgress : "#5abcd8"
         }
     }
