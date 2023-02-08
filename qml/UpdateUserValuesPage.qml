@@ -321,13 +321,13 @@ Page{
 
     RowAbstractUpdateButton{
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+        anchors.bottom: parent.bottom
         visible: is_goal_view ? true : false
     }
 
     RowAbstractUpdateBloodPressureButton{
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: app_settings.is_page_headers_enabled ? parent.bottom : navigation_shape.top
+        anchors.bottom: parent.bottom
         visible: is_blood_pressure_view ? true : false
     }
 }
