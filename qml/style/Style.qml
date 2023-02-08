@@ -32,11 +32,11 @@ QtObject{
 
     property QtObject button : QtObject{
 
-        property QtObject confirm{
+        property QtObject confirmButton : QtObject{
             property color buttonColor : LomiriColors.green
         }
 
-        property QtObject delete{
+        property QtObject deleteButton : QtObject{
             property color buttonColor : LomiriColors.red
         }
         
