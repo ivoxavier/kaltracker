@@ -109,6 +109,11 @@ Page{
         RecommendedCaloriesDialog{}
     }
     
+    Component{
+        id: help_dialog
+        MessageDialog{msg: i18n.tr("Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n\nLight Include: Walking 5 km, House Cleaning, Golf.\n\nModerate Include: Walking 6 km, Dancing, Tennis, Cycling.\n\nHeavy Include: Running, Soccer, Basketball, Football.")}
+    }
+
      
     QQC2.SwipeView{
         id: swipe_view

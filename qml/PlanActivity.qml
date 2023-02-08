@@ -199,4 +199,18 @@ ColumnLayout{
             onClicked: selectActivity(3) 
         }
     }
+
+    BlankSpace{}
+
+    Icon{
+        Layout.alignment: Qt.AlignCenter
+        Layout.preferredHeight: units.gu(4)
+        name: "info"
+        MouseArea{
+            anchors.fill: parent
+            onClicked: PopupUtils.open(help_dialog) 
+        }
+    }
+
+    BlankSpace{}
 }

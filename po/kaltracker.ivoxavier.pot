@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-08 17:34+0000\n"
+"POT-Creation-Date: 2023-02-08 18:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Ideal Weight"
 msgstr ""
 
-#: ../qml/BodyMeasuresPage.qml:131 ../qml/HeightWeight.qml:68
+#: ../qml/BodyMeasuresPage.qml:131 ../qml/HeightWeight.qml:69
 msgid "KG"
 msgstr ""
 
@@ -243,11 +243,11 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
-#: ../qml/HeightWeight.qml:126
+#: ../qml/HeightWeight.qml:127
 msgid "Height"
 msgstr ""
 
-#: ../qml/HeightWeight.qml:135
+#: ../qml/HeightWeight.qml:136
 msgid "cm"
 msgstr ""
 
@@ -292,7 +292,7 @@ msgstr ""
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:262 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:262 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
@@ -302,15 +302,15 @@ msgstr ""
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:273 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:273 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:284 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:284 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:295 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:295 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
@@ -758,6 +758,17 @@ msgstr ""
 msgid "gain"
 msgstr ""
 
+#: ../qml/UserProfileConfigPage.qml:114
+msgid ""
+"Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
+"\n"
+"Light Include: Walking 5 km, House Cleaning, Golf.\n"
+"\n"
+"Moderate Include: Walking 6 km, Dancing, Tennis, Cycling.\n"
+"\n"
+"Heavy Include: Running, Soccer, Basketball, Football."
+msgstr ""
+
 #: ../qml/components/AddNoteDialog.qml:31
 msgid "Add Your Notes"
 msgstr ""
@@ -772,7 +783,7 @@ msgstr ""
 
 #: ../qml/components/AddNoteDialog.qml:69
 #: ../qml/components/GoalDefinitionDialog.qml:135
-#: ../qml/components/MealFilterDialog.qml:72
+#: ../qml/components/MealFilterDialog.qml:73
 #: ../qml/components/MessageDialog.qml:41
 #: ../qml/components/RecommendedCaloriesDialog.qml:62
 msgid "Back"
@@ -946,11 +957,11 @@ msgstr ""
 msgid "Poor nutritional quality"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:26
+#: ../qml/components/MealFilterDialog.qml:27
 msgid "Show Ingestions From"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:35
+#: ../qml/components/MealFilterDialog.qml:36
 msgid "How Many Days Ago:"
 msgstr ""
 

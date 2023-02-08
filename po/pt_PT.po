@@ -596,6 +596,22 @@ msgid "Carbohydrates: %1gr"
 msgstr "Carboidratos: %1gr"
 
 
+#: ../qml/SetActivityPage.qml:64
+msgid ""
+"Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
+"\n"
+"Light Include: Walking 5 km, House Cleaning, Golf.\n"
+"\n"
+"Moderate Include: Walking 6 km, Dancing, Tennis, Cycling.\n"
+"\n"
+"Heavy Include: Running, Soccer, Basketball, Football."
+msgstr ""
+"Moderado Include: Corrida, Futebol, Bósquet, Ciclismo.\n"
+"\n"
+"Pesado Include: Corrida, Futebol, Bósquet, Ciclismo.\n"
+"\n"
+"Muito Pesado Include: Corrida, Futebol, Bósquet, Ciclismo."
+
 #: ../qml/SetPlanPage.qml:66
 msgid "loose"
 msgstr "perder"
