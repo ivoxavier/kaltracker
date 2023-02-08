@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
+import "../style"
 
 Picker {
     width: units.gu(10)
@@ -29,6 +30,11 @@ Picker {
     circular: false
     selectedIndex: 0
     model: [ "1/1", "1/2", "1/3", "1/4", "1/5", "1/6"] 
+    StyleHints {
+            highlightBackgroundColor: app_style.pickers.datePicker.highlightBackgroundColor
+            highlightColor: app_style.pickers.datePicker.highlightColor
+            backgroundColor: app_style.pickers.datePicker.backgroundColor
+        }
     delegate: PickerDelegate { 
         Label {
             text: modelData                    

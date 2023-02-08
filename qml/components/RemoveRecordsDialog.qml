@@ -19,7 +19,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import Lomiri.Components.Pickers 1.3
-
+import "../style"
 import "../../js/IngestionsTable.js" as IngestionsTable
 
 
@@ -29,12 +29,12 @@ Dialog {
     property string msg
     property color labelColor
     property int confirmed
-    
 
     title: i18n.tr("Delete")
+    
     Label{
         text: i18n.tr("Deletes your *%1* records.\nNo recovery possible").arg(msg)
-        color: labelColor
+        color: app_style.label.labelColor
     }
 
     
@@ -42,17 +42,18 @@ Dialog {
         id: confirm_delete_code
         width: units.gu(12)
         text: i18n.tr("Confirm Operation With: YES")
+        color: app_style.label.labelColor
     }
 
     BlankSpace{}
 
     ConfirmPicker{onSelectedIndexChanged: confirmed = selectedIndex}
 
-    Label{id: operation_label; color: LomiriColors.red}
+    Label{id: operation_label; color: app_style.label.labelError.labelColor}
 
     Button {
         text: i18n.tr("Delete")
-        color: LomiriColors.red
+        color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if (confirmed == 2){
                 switch(msg){
@@ -81,7 +82,6 @@ Dialog {
 
     Button {
         text: i18n.tr("Cancel")
-        color: LomiriColors.green
         onClicked: PopupUtils.close(delete_operation_dialog)
     }
     

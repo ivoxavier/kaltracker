@@ -24,6 +24,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 import "../js/Storage.js" as Storage
 import "../js/UserTable.js" as UserTable
 import "../js/WeightTrackerTable.js" as WeightTrackerTable
@@ -74,7 +75,7 @@ Page{
          Text{
             anchors.horizontalCenter: parent.horizontalCenter
             text: i18n.tr("Creating Database...")
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+            color : app_style.label.labelColor 
             font.bold : true
         }
 

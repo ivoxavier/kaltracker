@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
+import "../style"
 
 LomiriShape{
     id: slot_shape
@@ -30,13 +31,13 @@ LomiriShape{
     Layout.preferredHeight: width
 
     //public API's
-    property alias color : slot_shape.backgroundColor
     property alias icon_source : slot_icon.source
     property alias slot_label : label_text.text
     property alias slot_path_label : label_path.text
     
     radius: "large"
     aspect: LomiriShape.DropShadow
+    backgroundColor: app_style.shape.shapeColor
 
     ColumnLayout{
         width: parent.width
@@ -57,8 +58,5 @@ LomiriShape{
             Layout.alignment: Qt.AlignCenter
             font.pixelSize: units.gu(1)
         }
-
     }
-    
-    
 }  

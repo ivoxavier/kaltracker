@@ -24,6 +24,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 Page{
     id: api_page
@@ -70,6 +71,7 @@ Page{
                 ListItemLayout{
                     title.text: i18n.tr("OpenFoodsFacts")
                     title.font.bold : true
+                    title.color: app_style.label.labelColor
                     subtitle.text: i18n.tr("Search For Barcode In %1").arg("openfoodsfacts")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading

@@ -26,6 +26,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import "components"
+import "style"
 import "../js/UserTable.js" as UserTable
 import "../js/UpdateUserTable.js" as UpdateUserTable
 import "../js/RecommendedCalories.js" as RecommendedCalories
@@ -106,7 +107,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Height")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
                 font.bold : true
             }
 
@@ -117,13 +118,14 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                color : app_style.shape.textInput.shapeColor 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
+                    color: app_style.label.labelColor
                     onTextChanged: update_user_values_page.update_height = text 
                 }
             }
@@ -132,7 +134,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Weight")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
                 font.bold : true
             }
 
@@ -143,14 +145,14 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+                color : app_style.shape.textInput.shapeColor 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    color : app_style.label.labelColor
                     onTextChanged: update_user_values_page.update_weight = text 
                 }
             }
@@ -159,7 +161,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your New Age")
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
                 font.bold : true
             }
 
@@ -170,14 +172,14 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_values_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+                color : app_style.shape.textInput.shapeColor
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                    color : app_style.label.labelColor 
                     onTextChanged: update_user_values_page.update_age = text 
                 }
             }
@@ -188,7 +190,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Activity Level")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
                 font.bold : true
             }
 
@@ -210,7 +212,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Goal")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
                 font.bold : true
             }
 
@@ -240,7 +242,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Goal Definition")
                 visible: is_goal_view ? true : false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
                 font.bold : true
             }
 
@@ -266,7 +268,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your Systolic Presure (High Pressure)")
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
                 font.bold : true
             }
 
@@ -277,14 +279,14 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                color : app_style.shape.textInput.shapeColor 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    color : app_style.label.labelColor
                     onTextChanged: update_user_values_page.update_ap_hi = text 
                 }
             }
@@ -293,7 +295,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Your Diastolic Presure (Low Pressure)")
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
                 font.bold : true
             }
 
@@ -304,14 +306,14 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_blood_pressure_view ? true: false
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                color : app_style.shape.textInput.shapeColor 
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                    color : app_style.label.labelColor 
                     onTextChanged: update_user_values_page.update_ap_lo = text 
                 }
             }

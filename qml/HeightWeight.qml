@@ -26,6 +26,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 
 ColumnLayout{
@@ -47,7 +48,7 @@ ColumnLayout{
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(19)
         aspect: LomiriShape.DropShadow
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+        backgroundColor : app_style.shape.shapeColor
 
         //Stores the weight & height values
         property int weight_value : 50
@@ -87,7 +88,7 @@ ColumnLayout{
                         Label {
                             anchors.centerIn: parent
                             font.pixelSize: units.gu(4)
-                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            color : app_style.label.labelColor 
                             text: "-"
                         }
                     }
@@ -110,7 +111,7 @@ ColumnLayout{
                         Label {
                             anchors.centerIn: parent
                             font.pixelSize: units.gu(4)
-                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            color : app_style.label.labelColor 
                             text: "+"
                         }
                     }
@@ -130,7 +131,7 @@ ColumnLayout{
     Label {
         Layout.alignment: Qt.AlignCenter
         font.pixelSize: units.gu(4)
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+        color : app_style.label.labelColor  
         text: Math.round(height_slider.value) + i18n.tr("cm")
     }
 

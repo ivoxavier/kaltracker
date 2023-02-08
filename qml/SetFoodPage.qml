@@ -26,6 +26,7 @@ import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
 import "components"
+import "style"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/UserTable.js" as UserTable
@@ -70,20 +71,26 @@ Page{
         var ChartPieData = [
             {
                 value: fat_ingested,
-                color: "#ed3146",
-                highlight: "#FF5A5E",
+                color: app_style.chart.circle.productNutrients
+                .fatPie,
+                highlight: app_style.chart.circle.productNutrients
+                .pieHighlight,
                 label: i18n.tr("Fat/100g")
             },
             {
                 value: protein_ingested,
-                color: "#90ee90",
-                highlight: "#5AD3D1",
+                color: app_style.chart.circle.productNutrients
+                .proteinPie,
+                highlight: app_style.chart.circle.productNutrients
+                .pieHighlight,
                 label: i18n.tr("Protein/100g")
             },
             {
                 value: carbo_ingested,
-                color: "#19b6ee",
-                highlight:"#A8B3C5",
+                color: app_style.chart.circle.productNutrients
+                .carbPie,
+                highlight: app_style.chart.circle.productNutrients
+                .pieHighlight,
                 label: i18n.tr("Carbo/100g")
             }
         ]
@@ -126,7 +133,7 @@ Page{
                 font.pixelSize: units.gu(4)
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
             Text{
@@ -136,7 +143,7 @@ Page{
                 font.pixelSize: units.gu(3)
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
 
@@ -284,9 +291,4 @@ Page{
             }  
         }
     }
-
-   
 }
-
-    
-

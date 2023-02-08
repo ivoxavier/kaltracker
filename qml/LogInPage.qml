@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 
 
 Page{
@@ -54,7 +55,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Welcome")
                 font.pixelSize: units.gu(4) 
-                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color: app_style.label.labelColor 
             }
 
             BlankSpace{height: units.gu(3)}
@@ -74,7 +75,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: "KalTracker"
                 font.pixelSize: units.gu(3) 
-                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color: app_style.label.labelColor  
             }
 
 
@@ -84,7 +85,7 @@ Page{
                 id: next_button
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Start")
-                color : LomiriColors.green
+                color : app_style.button.confirmButton.buttonColor 
                 onClicked:{
                     page_stack.push(user_profile_config_page)
                 }

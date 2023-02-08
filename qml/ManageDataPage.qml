@@ -25,6 +25,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import io.thp.pyotherside 1.5
 import "components"
+import "style"
 
 
 Page{

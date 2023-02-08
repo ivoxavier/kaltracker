@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 
 
 Page{
@@ -45,10 +46,7 @@ Page{
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             visible: false
-            StyleHints {
-                foregroundColor: "white"
-                backgroundColor:  Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
-            }
+            StyleHints {backgroundColor: app_style.mainView.backgroundColor}
 
             numberOfSlots: 1
             actions:[  Action{

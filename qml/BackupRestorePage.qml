@@ -26,6 +26,7 @@ import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import io.thp.pyotherside 1.5
 import "components"
+import "style"
 import "../js/UserTable.js" as UserTable
 
 
@@ -157,7 +158,7 @@ Page{
                 icon_source: "../assets/export_icon.svg"
                 slot_label: i18n.tr("Export Data")
                 slot_path_label : "./local/share/kaltracker.ivoxavier/Export"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                 
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
@@ -174,7 +175,7 @@ Page{
                 icon_source: "../assets/import_icon.svg"
                 slot_label: i18n.tr("Import Data")
                 slot_path_label : "./local/share/kaltracker.ivoxavier/Import"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+                
                 MouseArea{
                     anchors.fill: parent
                     onClicked:{

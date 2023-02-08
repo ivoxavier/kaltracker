@@ -25,7 +25,7 @@ import "../../js/RecommendedCalories.js" as RecommendedCalories
 
 Dialog {
     id: updating_user_table_dialog
-    text: i18n.tr("Updating User Table")
+    title: i18n.tr("Updating User Table")
 
    
     Column{ 

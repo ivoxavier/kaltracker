@@ -20,6 +20,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
+import "../style"
 import "../../js/NotesTable.js" as NotesTable
 
 Dialog {
@@ -41,13 +42,14 @@ Dialog {
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+            color : app_style.label.labelColor  
             onTextChanged: note = text
         }
     }
 
     Button {
         text: i18n.tr("View Your Notes")
+        color: app_style.button.actionButton.buttonColor 
         onClicked:{
             PopupUtils.close(add_note_dialog)
             page_stack.push(notes_page)
@@ -56,6 +58,7 @@ Dialog {
     
     Button {
         text: i18n.tr("Add")
+        color: app_style.button.confirmButton.buttonColor 
         onClicked:{
             NotesTable.saveNote(note)
             PopupUtils.close(add_note_dialog)

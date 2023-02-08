@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
+import "../style"
 
 LomiriShape{
     id: slot_shape
@@ -41,13 +42,13 @@ LomiriShape{
             id: slot_indicatior
             Layout.alignment: Qt.AlignCenter
             font.bold: true
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            color : app_style.label.labelColor
         }
 
         Text{
             id: slot_icon_label
             Layout.alignment: Qt.AlignCenter
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            color : app_style.label.labelColor
         }
     }
 }  

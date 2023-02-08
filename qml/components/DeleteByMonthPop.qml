@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
+import "../style"
 import "../../js/IngestionsTable.js" as  IngestionsTable
 
 
@@ -36,6 +37,7 @@ Dialog {
         id: confirm_delete_code
         width: units.gu(12)
         text: i18n.tr("Confirm Operation With: YES")
+        color: app_style.label.labelColor
     } 
 
     TextField {
@@ -45,6 +47,7 @@ Dialog {
         horizontalAlignment: TextInput.AlignHCenter
         inputMethodHints: Qt.ImhDigitsOnly
         validator: IntValidator{}
+        color: app_style.label.labelColor
         onTextChanged:{
             if (month_to_delete_entry.text <= 9){
                 //necessary as date formart in database is 'yyyy-mm-dd'
@@ -63,6 +66,7 @@ Dialog {
         horizontalAlignment: TextInput.AlignHCenter
         inputMethodHints: Qt.ImhDigitsOnly
         validator: IntValidator{}
+        color: app_style.label.labelColor
         onTextChanged:{
             year_to_delete = year_to_delete_entry.text
         }
@@ -70,12 +74,12 @@ Dialog {
 
     ConfirmPicker{onSelectedIndexChanged: confirmed = selectedIndex}
 
-    Label{id: operation_label; color: LomiriColors.red}
+    Label{id: operation_label; color: app_style.label.labelError.labelColor}
     
     Button{
         id: delete_button
         text: i18n.tr("Delete")
-        color: LomiriColors.red
+        color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if(confirmed == 2){
                 IngestionsTable.deleteMonthYearIngestion(month_to_delete, year_to_delete)
@@ -92,11 +96,8 @@ Dialog {
 
     Button{
         text: i18n.tr("Cancel")
-        color: LomiriColors.green
         onClicked:{
             PopupUtils.close(delete_month_year_dialog)
         }
     }        
 }
-        
-

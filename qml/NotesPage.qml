@@ -25,6 +25,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 import "../js/NotesTable.js" as NotesTable
 
 Page{
@@ -60,6 +61,7 @@ Page{
             anchors.horizontalCenter: empty_icon.horizontalCenter
             text: i18n.tr("Empty List, Please Register Notes First..")
             opacity: 0.75
+            color: app_style.label.labelColor
         }
     }   
 

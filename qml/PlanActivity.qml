@@ -25,6 +25,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 
 ColumnLayout{
@@ -84,7 +85,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("LOOSE WEIGHT")
         img_path:"../assets/shoe-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: {
@@ -103,8 +103,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("MAINTAIN WEIGHT")
-        img_path:"../assets/kilograms-justice-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+        img_path:"../assets/kilograms-justice-svgrepo-com.svg" 
         MouseArea{
             anchors.fill: parent
             onClicked: selectPlan(0) 
@@ -120,8 +119,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("GAIN WEIGHT")
-        img_path:"../assets/dumbbell-gym-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal  
+        img_path:"../assets/dumbbell-gym-svgrepo-com.svg"  
         MouseArea{
             anchors.fill: parent
             onClicked: {
@@ -148,7 +146,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("VERY LIGHT")
         img_path:"../assets/cooking-stew-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(0)   
@@ -165,7 +162,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("LIGHT")
         img_path:"../assets/walking-the-dog-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(1)
@@ -182,7 +178,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("MODERATE")
         img_path:"../assets/cycling-color-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(2)   
@@ -199,7 +194,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("HEAVY")
         img_path:"../assets/soccer-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(3) 
