@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import "components"
+import "style"
 import "../js/UserTable.js" as UserTable
 import "../js/BodyMassIndex.js" as BMI
 import "../js/IdealWeight.js" as IBW
@@ -44,6 +45,7 @@ Page{
                 }
             }
 
+    BackgroundStyle{}
 
     //stores values for bmi calculation
     property int user_height : UserTable.getHeight()
@@ -56,16 +58,6 @@ Page{
     Component{
         id: info_bmi
         MessageDialog{msg: i18n.tr("KalTracker is not taking in consideration your muscule weight. This is ONLY e a reference")}
-    }
-
-    Rectangle{
-        anchors{
-            top: parent.header.bottom
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
     }
 
     

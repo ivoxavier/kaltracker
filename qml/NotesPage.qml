@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 import "../js/NotesTable.js" as NotesTable
 
 Page{
@@ -39,16 +40,8 @@ Page{
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
-    
-    Rectangle{
-        anchors{
-            top: parent.header.bottom
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? ThemeColors.utFoods_porcelain_theme_background : ThemeColors.utFoods_dark_theme_background 
-    }
+    BackgroundStyle{}
+
 
     Item{
         visible: notes_page_list.visible ? false : true
@@ -68,6 +61,7 @@ Page{
             anchors.horizontalCenter: empty_icon.horizontalCenter
             text: i18n.tr("Empty List, Please Register Notes First..")
             opacity: 0.75
+            color: app_style.label.labelColor
         }
     }   
 

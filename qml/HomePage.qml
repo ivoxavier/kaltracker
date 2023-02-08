@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 import "../js/GetData.js" as GetData
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
@@ -33,6 +34,8 @@ Page{
     id: home_page
     objectName: 'HomePage'
     header: PageHeader {visible:false}
+
+    BackgroundStyle{}
     
     // stores the query output
     property int query_total_cal_consumed 
@@ -50,7 +53,7 @@ Page{
     //stores the amount of days user wants to getback to (re)ingest
     property int amount_of_days_back : 1
 
-     ListModel{id: filtered_meal_model}
+    ListModel{id: filtered_meal_model}
     
     //this component is need to initializate the db. It's linked to main view so it runs everytime the iniDB signal is emitted
     //without it the dashboard will not update untill a close and opening the app again
@@ -98,16 +101,6 @@ Page{
         NotifyAutoCleanPop{}
     }
 
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
-    }
-
     Flickable {
         id: flickable
         anchors{
@@ -143,7 +136,7 @@ Page{
                     i18n.tr("Loose Weight") : planType(app_settings.plan_type) == 1 ?
                     i18n.tr("Gain Weight") : i18n.tr("Maintain Weight")
                     img_path:"../assets/goal-svgrepo-com.svg"
-                    color : "transparent"
+                    
                 }
             }
 
@@ -198,7 +191,8 @@ Page{
                     Layout.preferredHeight: units.gu(5)
                     //TRANSLATORS Please Keep This Only One Word
                     slot_icon_label: i18n.tr("FAT")
-                    bar_color: "#ed3146"
+                    bar_color: app_style.progressBar.nutrientBar
+                    .fatProgress
                     nutrient_value:  (home_page.query_total_fat_consumed / DefineMacroNutriensPerDay.fat(app_settings.plan_type) * 100.0) * 0.01
                 }
 
@@ -207,7 +201,8 @@ Page{
                     Layout.preferredHeight: units.gu(5)
                     //TRANSLATORS Please Keep This Only One Word
                     slot_icon_label: i18n.tr("CARBO")
-                    bar_color: "#19b6ee"
+                    bar_color: app_style.progressBar.nutrientBar
+                    .carbProgress
                     nutrient_value: (home_page.query_total_carbo_consumed / DefineMacroNutriensPerDay.carbo(app_settings.plan_type) * 100.0) * 0.01
                 }
 
@@ -217,7 +212,8 @@ Page{
                     Layout.preferredHeight: units.gu(5)
                     //TRANSLATORS Please Keep This Only One Word
                     slot_icon_label: i18n.tr("PROTEIN")
-                    bar_color: "#90ee90"
+                    bar_color: app_style.progressBar.nutrientBar
+                    .proteinProgress
                     nutrient_value: (home_page.query_total_protein_consumed / DefineMacroNutriensPerDay.protein(app_settings.plan_type) * 100.0) * 0.01
                 }
             }
@@ -234,6 +230,7 @@ Page{
                     Layout.alignment: Qt.AlignVCenter
                     text: root.stringDate
                     font.pixelSize: units.gu(2)
+                    color: app_style.label.labelColor
                 }
 
                 Icon{
@@ -267,7 +264,6 @@ Page{
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_breakfast)
                 img_path:"../assets/breakfast-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
             }  
 
             SlotAddMeal{
@@ -278,8 +274,7 @@ Page{
                 meal_category: 1
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_lunch)
-                img_path:"../assets/fried-chicken-meal-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                img_path:"../assets/fried-chicken-meal-svgrepo-com.svg" 
             } 
 
             SlotAddMeal{
@@ -290,8 +285,7 @@ Page{
                 meal_category: 2
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_dinner)
-                img_path:"../assets/dinner-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                img_path:"../assets/dinner-svgrepo-com.svg" 
             }
 
             SlotAddMeal{
@@ -302,8 +296,7 @@ Page{
                 meal_category: 3
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_snacks)
-                img_path:"../assets/snack-snacks-svgrepo-com.svg"
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                img_path:"../assets/snack-snacks-svgrepo-com.svg" 
             }
 
             BlankSpace{}
@@ -314,8 +307,7 @@ Page{
                 Layout.preferredWidth: root.width - units.gu(9)
                 Layout.preferredHeight: units.gu(7)
                 img_path:"../assets/glass-of-water-svgrepo-com.svg"
-                water_cups_drinked : (home_page.query_total_water_cups * 0.1)
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+                water_cups_drinked : (home_page.query_total_water_cups * 0.1) 
             }
         }  
     }
@@ -364,18 +356,11 @@ Page{
                     anchors.horizontalCenter: empty_icon.horizontalCenter
                     text: i18n.tr("Empty List, Register Ingestions First Or Choose A Filter.")
                     opacity: 0.75
+                    color: app_style.label.labelColor
                 }
             }
 
-             Rectangle{
-                anchors{
-                    top: app_settings.is_page_headers_enabled ? parent.header.bottom : parent.top
-                    left : parent.left
-                    right : parent.right
-                    bottom : parent.bottom
-                }
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-            }
+            BackgroundStyle{}
 
             header: PageHeader{
                 title : i18n.tr("Your Previous Ingestions")

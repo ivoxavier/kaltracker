@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
-
+import "../style"
 
 Dialog { 
     id: is_product_found_dialog
@@ -75,6 +75,7 @@ Dialog {
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         visible : is_code_empty ? true : false
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -82,6 +83,7 @@ Dialog {
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        color: app_style.label.labelColor
     
     }
     
@@ -92,6 +94,7 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Name: %1").arg(product_name)
         visible : is_code_empty ? false : true
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -101,6 +104,7 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Nutriscore: %1").arg(nutriscore_grade)
         visible : is_code_empty ? false : true
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -110,6 +114,7 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Calories/100gr: %1").arg(energy_kcal_100g)
         visible : is_code_empty ? false : true
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -119,6 +124,7 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Fat/100gr: %1").arg(fat_100g)
         visible : is_code_empty ? false : true
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -128,6 +134,7 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Protein/100gr: %1").arg(protein_100g)
         visible : is_code_empty ? false : true
+        color: app_style.label.labelColor
     }
 
     Label{
@@ -137,12 +144,32 @@ Dialog {
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         text: i18n.tr("Carbohydrates/100gr: %1").arg(carbohydrates_100g)
         visible : is_code_empty ? false : true
-    }
+        color: app_style.label.labelColor
+    } 
+
+    Button{
+        text: i18n.tr("Scan Again")
+        color: app_style.button.actionButton.buttonColor
+        onClicked:{
+            PopupUtils.close(is_product_found_dialog)
+        }
+    }    
+
+    Button{
+        id: enter_manually
+        text: i18n.tr("Enter Product Details Manually")
+        color: app_style.button.actionButton.buttonColor
+        visible: false
+        onClicked:{
+            page_stack.pop(scan_page)  
+            PopupUtils.close(is_product_found_dialog)
+        }
+    } 
 
     Button{
         id: next_button
         text: i18n.tr("Next")
-        color: LomiriColors.green
+        color: app_style.button.confirmButton.buttonColor
         enabled: false
         onClicked:{
             page_stack.pop(scan_page)  
@@ -154,25 +181,6 @@ Dialog {
             protein_set_food_page: protein_100g,
             nutriscore_set_food_page: nutriscore_grade,
             meal_set_food_page: is_product_found_dialog_meal})    
-        }
-    }  
-
-    Button{
-        text: i18n.tr("Scan Again")
-        color: LomiriColors.blue
-        onClicked:{
-            PopupUtils.close(is_product_found_dialog)
-        }
-    }    
-
-    Button{
-        id: enter_manually
-        text: i18n.tr("Enter Product Details Manually")
-        color: LomiriColors.blue
-        visible: false
-        onClicked:{
-            page_stack.pop(scan_page)  
-            PopupUtils.close(is_product_found_dialog)
         }
     }  
 }

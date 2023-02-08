@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,8 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
+import "../style"
 import "../../js/WeightTrackerTable.js" as  WeightTrackerTable
-
 
 
 Dialog { 
@@ -44,7 +44,7 @@ Dialog {
     Button{
         id: delete_button
         text: i18n.tr("Delete")
-        color: LomiriColors.red
+        color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if(confirmed == 2){
                 WeightTrackerTable.deleteAllWeightTracker()
@@ -61,7 +61,6 @@ Dialog {
 
     Button{
         text: i18n.tr("Cancel")
-        color: LomiriColors.green
         onClicked:{
             PopupUtils.close(delete_weight_tracker_dialog)
         }

@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@ import QtQuick.Layouts 1.3
 import Lomiri.Components.ListItems 1.3 
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQC2
+import "../style"
 import '../../js/DefineGoalCalories.js' as DefinePeriod
 
 Dialog {
@@ -35,7 +36,7 @@ Dialog {
         text: i18n.tr("A healthy %1 weight must be distributed among a safe period.").arg(format_string)
         font.pixelSize: units.gu(2)
         width: parent.width
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+        color : app_style.label.labelColor
         wrapMode: Text.Wrap;
         horizontalAlignment: Text.AlignJustify 
     }
@@ -44,7 +45,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text: i18n.tr("0,5kg by week")
-            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            title.color : app_style.label.labelColor
             QQC2.RadioButton{
                 id: radio_button_set1
                 checked: false
@@ -63,7 +64,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text : i18n.tr("1kg by week")
-            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            title.color : app_style.label.labelColor
             QQC2.RadioButton{
                 id: radio_button_set2
                 checked: false
@@ -83,7 +84,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text : i18n.tr("3kg by month")
-            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            title.color : app_style.label.labelColor
 
             QQC2.RadioButton{
                 id: radio_button_set3
@@ -103,7 +104,7 @@ Dialog {
         divider.visible : false
         ListItemLayout{
             title.text :  i18n.tr("4kg by month")
-            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            title.color : app_style.label.labelColor
             QQC2.RadioButton{
                 id: radio_button_set4
                 checked: false
@@ -118,25 +119,25 @@ Dialog {
         }
     }
         
-    Button{
-        text: i18n.tr("Back")
-        color: LomiriColors.blue
-        onClicked:{
-                module_goal_dialog.is_goal_defined = false
-                user_profile_config_page.is_loose_weight = false
-                user_profile_config_page.is_gain_weight = false
-                PopupUtils.close(module_goal_dialog)
-            }
-        }
     
     property bool is_goal_defined : false
 
     Button{
         text: i18n.tr("Confirm")
         enabled: module_goal_dialog.is_goal_defined
-        color: LomiriColors.green
+        color: app_style.button.confirmButton.buttonColor
         onClicked: {
             PopupUtils.close(module_goal_dialog)
         }
+    }
+
+    Button{
+        text: i18n.tr("Back")
+        onClicked:{
+                module_goal_dialog.is_goal_defined = false
+                user_profile_config_page.is_loose_weight = false
+                user_profile_config_page.is_gain_weight = false
+                PopupUtils.close(module_goal_dialog)
+            }
     }
 }

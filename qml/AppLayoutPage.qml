@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 
 
@@ -38,15 +39,7 @@ Page{
                 }
         }
 
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
+    BackgroundStyle{}
 
     Flickable {
 

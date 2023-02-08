@@ -236,6 +236,10 @@ msgstr "Colocar os ficheiros da Exportação na pasta de Import"
 msgid "Graphs"
 msgstr "Gráficos"
 
+#: ../qml/components/StoreIngestionDialog.qml:45
+msgid "It's ok for now"
+msgstr "Por agora é tudo"
+
 #: ../qml/GraphsPage.qml:86
 msgid "Weight Progress"
 msgstr "Progresso de Peso"

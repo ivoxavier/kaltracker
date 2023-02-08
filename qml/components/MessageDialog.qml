@@ -19,7 +19,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Suru 2.2
-
+import "../style"
 
 Dialog {
     id: msg_dialog
@@ -34,7 +34,7 @@ Dialog {
         width: parent.width
         wrapMode: Text.Wrap;
         horizontalAlignment: Text.AlignJustify    
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+        color : app_style.label.labelColor  
     }
     
     Button {

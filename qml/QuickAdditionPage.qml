@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 import "../js/UserTable.js" as UserTable
 import "../js/IngestionsTable.js" as IngestionsTable
 import "../js/UserFoodsListTable.js" as UserFoodsListTable
@@ -45,6 +46,8 @@ Page{
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
+
+    BackgroundStyle{}
 
     //receives meal category from HomePage.slotAddMeal
     property int meal_quick_addition_page
@@ -76,16 +79,6 @@ Page{
 
     Timer{id: timer;repeat: false}
 
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
-
     Flickable {
         id: flickable
         anchors{
@@ -111,7 +104,7 @@ Page{
                 text: i18n.tr("Product name")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
             LomiriShape{  
@@ -121,12 +114,13 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_details_view ? true: false
+                backgroundColor: app_style.shape.textInput.shapeColor
                 TextInput{
                     anchors.fill: parent
                     overwriteMode: true
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    color : app_style.label.labelColor 
                     onTextChanged: product_name_quick_addition_page = text
                 }
             }
@@ -138,7 +132,7 @@ Page{
                 text: i18n.tr("Calories")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
             }
             
             LomiriShape{  
@@ -148,6 +142,7 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.Inset
                 visible: is_details_view ? true: false
+                backgroundColor: app_style.shape.textInput.shapeColor
                 
                 TextInput{
                     anchors.fill: parent
@@ -155,7 +150,7 @@ Page{
                     horizontalAlignment: TextInput.AlignHCenter
                     verticalAlignment: TextInput.AlignVCenter
                     inputMethodHints: Qt.ImhDigitsOnly
-                    color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    color : app_style.label.labelColor 
                     onEditingFinished:{ 
                         cal_quick_addition_page = text
                     }
@@ -169,7 +164,7 @@ Page{
                 text: i18n.tr("Nutriscore Grade")
                 visible: is_details_view ? true: false
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
             OptionSelector {
@@ -199,13 +194,14 @@ Page{
                 text: i18n.tr("Fat/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor 
             }
 
             Text{
                 Layout.alignment: Qt.AlignCenter
                 text: fat_quick_addition_page
                 visible: is_details_view ? false: true
+                color : app_style.label.labelColor 
             }
 
             LomiriShape{
@@ -215,7 +211,8 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                backgroundColor: app_style.shape.sliderNutrient.shapeColor
+                
                 NutrientSlider{
                         id: fat_slider
                         anchors.centerIn: parent
@@ -231,13 +228,14 @@ Page{
                 text: i18n.tr("Protein/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
             Text{
                 Layout.alignment: Qt.AlignCenter
                 text: protein_quick_addition_page
                 visible: is_details_view ? false: true
+                color : app_style.label.labelColor
             }
 
             LomiriShape{
@@ -247,7 +245,7 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                backgroundColor: app_style.shape.sliderNutrient.shapeColor
                 NutrientSlider{
                         anchors.centerIn: parent
                         width: parent.width
@@ -264,13 +262,14 @@ Page{
                 text: i18n.tr("Carbo/100g")
                 visible: is_details_view ? false: true
                 font.bold : true
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color : app_style.label.labelColor
             }
 
             Text{
                 Layout.alignment: Qt.AlignCenter
                 text: carbo_quick_addition_page
                 visible: is_details_view ? false: true
+                color : app_style.label.labelColor
             }
 
             LomiriShape{
@@ -280,7 +279,7 @@ Page{
                 radius: "large"
                 aspect: LomiriShape.DropShadow
                 visible: is_details_view ? false: true
-                backgroundColor : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                backgroundColor: app_style.shape.sliderNutrient.shapeColor
                 NutrientSlider{
                         anchors.centerIn: parent
                         width: parent.width

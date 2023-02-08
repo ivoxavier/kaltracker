@@ -18,6 +18,7 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import "style"
 
 MainView {
     id: root
@@ -36,23 +37,6 @@ MainView {
 
     //provides date in string format masked for sqlite db
     property var stringDate: currentDate.toLocaleDateString(locale, 'yyyy-MM-dd')
-
-    //themes --start--*/
-    property var kaltracker_light_theme:  {
-        "background" : LomiriColors.porcelain,
-        "text_color" : "black",
-        "slot_add_meal" : "white",
-        "circle_chart" : "#90ee90"
-    }
-
-    property var kaltracker_dark_theme:  {
-        "background" : "#111111",
-        "text_color" : "white",
-        "slot_add_meal" : "#808080ff",
-        "circle_chart" : "#808080ff"
-    }
-
-    //themes --end--*/
     
     /*properties for calculating calories target --start--*/
 
@@ -87,6 +71,9 @@ MainView {
 
     //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
     AppSettings{id: app_settings}
+
+    //Style for the app
+    Style{id:app_style}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{

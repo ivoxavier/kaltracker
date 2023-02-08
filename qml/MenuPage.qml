@@ -1,5 +1,5 @@
 /*
- * 2022 Ivo Xavier
+ * 2022-2023 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@ import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import QtQuick.Window 2.0
 import "components"
+import "style"
 
 
 Page{
@@ -39,15 +40,7 @@ Page{
         }
     }
 
-    Rectangle{
-        anchors{
-            top: parent.top
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
+    BackgroundStyle{}
 
     Flickable{
         id: flickable
@@ -82,7 +75,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 text: i18n.tr("Version: ") + Qt.application.version
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                color : app_style.label.labelColor
             }
 
             ListItem{
@@ -100,7 +93,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Your Profile")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                    title.color : app_style.label.labelColor 
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         name : "account"
@@ -117,7 +110,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Data Analysis")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    title.color : app_style.label.labelColor
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         name : "x-office-presentation-symbolic"
@@ -187,7 +180,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Manage Data")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                    title.color : app_style.label.labelColor 
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -205,7 +198,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Backup & Restore Data")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                    title.color : app_style.label.labelColor 
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -233,7 +226,7 @@ Page{
                 ListItemLayout{
                     title.text : i18n.tr("Third Party Software")
                     title.font.bold : true
-                    title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+                    title.color : app_style.label.labelColor 
                     
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading

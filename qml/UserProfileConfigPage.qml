@@ -1,5 +1,5 @@
 /*
- * 2022 -2023 Ivo Xavier
+ * 2022-2023 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 
 
 Page{
@@ -45,10 +46,7 @@ Page{
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             visible: false
-            StyleHints {
-                foregroundColor: "white"
-                backgroundColor:  Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
-            }
+            StyleHints {backgroundColor: app_style.mainView.backgroundColor}
 
             numberOfSlots: 1
             actions:[  Action{
@@ -59,7 +57,9 @@ Page{
             ]
         }
 
-     }
+    }
+
+    BackgroundStyle{}
 
     function showTick(){
         //assign true if all values from Object are set to true
@@ -78,18 +78,7 @@ Page{
         interval: 500; running: true; repeat: true
         onTriggered: showTick()
     }
-
-    Rectangle{
-        anchors{
-            top: parent.header.bottom
-            left : parent.left
-            right : parent.right
-            bottom : parent.bottom
-        }
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background 
-    }
-
-    
+  
     //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
     property bool is_loose_weight: false
     property bool is_gain_weight: false
