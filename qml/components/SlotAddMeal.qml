@@ -33,7 +33,7 @@ LomiriShape{
     property alias img_path: add_meal_image_shape.img_path
     property alias color : slot_shape.backgroundColor
     
-    radius: "small"
+    radius: "large"
     aspect: LomiriShape.DropShadow
     
     ListItem{

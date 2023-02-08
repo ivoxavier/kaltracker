@@ -47,7 +47,8 @@ ColumnLayout{
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(19)
         aspect: LomiriShape.DropShadow
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
+        radius: "large"
+        backgroundColor : app_style.shape.shapeColor
 
         //Stores the weight & height values
         property int weight_value : 50
