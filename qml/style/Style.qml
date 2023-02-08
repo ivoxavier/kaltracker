@@ -36,6 +36,10 @@ QtObject{
             property color buttonColor : LomiriColors.green
         }
 
+        property QtObject actionButton : QtObject{
+            property color buttonColor : LomiriColors.blue
+        }
+
         property QtObject deleteButton : QtObject{
             property color buttonColor : LomiriColors.red
         }
