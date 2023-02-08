@@ -28,6 +28,10 @@ QtObject{
 
     property QtObject label : QtObject{
         property color labelColor : Suru.theme === 0 ? theme.palette.normal.backgroundText : theme.palette.normal.foregroundText
+    
+        property QtObject labelError : QtObject{
+            property color labelColor : LomiriColors.red
+        }
     }
 
     property QtObject button : QtObject{
@@ -43,11 +47,43 @@ QtObject{
         property QtObject deleteButton : QtObject{
             property color buttonColor : LomiriColors.red
         }
-        
+    }
+
+    property QtObject abstractButton : QtObject{
+        property color buttonColor : LomiriColors.green
+        property color iconColor : "#FFFFFF"
     }
 
     property QtObject shape : QtObject{
-        property color shapeColor : Suru.theme === 0 ? "#FFFFFF" : "#808080ff" 
+        property color shapeColor : Suru.theme === 0 ? "#FFFFFF" : "#808080ff"
+        
+        property QtObject textInput : QtObject{
+            property color shapeColor : Suru.theme === 0 ? "#FFFFFF" : LomiriColors.jet
+        }
+
+        property QtObject sliderNutrient : QtObject{
+            property color shapeColor : Suru.theme === 0 ? "#FFFFFF" : LomiriColors.jet
+        }  
+    }
+
+    property QtObject pickers : QtObject{
+        property QtObject datePicker : QtObject{
+            property color backgroundColor : shape.shapeColor
+            property color highlightColor :  LomiriColors.jet
+            property color highlightBackgroundColor : theme.palette.normal.raised
+        }
+
+        property QtObject yearsPicker : QtObject{
+            property color backgroundColor : shape.shapeColor
+            property color highlightColor :  LomiriColors.jet
+            property color highlightBackgroundColor : theme.palette.normal.raised
+        }
+
+        property QtObject sizePicker : QtObject{
+            property color backgroundColor : shape.shapeColor
+            property color highlightColor :  LomiriColors.jet
+            property color highlightBackgroundColor : theme.palette.normal.raised
+        }
     }
 
     property QtObject nutrientsColors : QtObject{
@@ -60,14 +96,13 @@ QtObject{
 
     property QtObject progressBar : QtObject{
         property color backgroundColor : "#e6e6e6"
-        
+
+        /** HomePage **/
         property QtObject nutrientBar : QtObject{
-            
             property color fatProgress : nutrientsColors.fat
             property color carbProgress : nutrientsColors.carbo
             property color proteinProgress : nutrientsColors.protein
         } 
-
         property QtObject waterBar : QtObject{
             
             property color waterProgress : "#5abcd8"
@@ -89,11 +124,10 @@ QtObject{
             /** SetFoodPage **/
             property QtObject productNutrients : QtObject{
                 property color fatPie :  nutrientsColors.fat
-                property color fatPieHighlight : "#FF5A5E"
                 property color carbPie : nutrientsColors.carbo 
-                property color carbPieHighlight : "#A8B3C5"
                 property color proteinPie : nutrientsColors.protein 
-                property color proteinPieHighlight : "#5AD3D1"
+                property color pieHighlight : LomiriColors.purple
+                
 
             }
         }
