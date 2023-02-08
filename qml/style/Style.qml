@@ -31,7 +31,15 @@ QtObject{
     }
 
     property QtObject button : QtObject{
-        property color buttonColor : LomiriColors.red
+
+        property QtObject confirm{
+            property color buttonColor : LomiriColors.green
+        }
+
+        property QtObject delete{
+            property color buttonColor : LomiriColors.red
+        }
+        
     }
 
     property QtObject shape : QtObject{
@@ -43,6 +51,8 @@ QtObject{
         property color carbo : "#19b6ee"
         property color protein : "#90ee90"
     }
+
+    /** Progress Bar's **/
 
     property QtObject progressBar : QtObject{
         property QtObject nutrientBar : QtObject{
@@ -58,12 +68,19 @@ QtObject{
         }
     }
 
+    /** Chart's **/
+
     property QtObject chart : QtObject{
+
         property QtObject circle : QtObject{
+
+            /** HomePage **/
             property QtObject calories : QtObject{
                 property color outColor : Suru.theme === 0 ? "#90ee90" : "#808080ff" 
                 property color inColor : "#aea79f" 
             }
+
+            /** SetFoodPage **/
             property QtObject productNutrients : QtObject{
                 property color fatPie :  nutrientsColors.fat
                 property color fatPieHighlight : "#FF5A5E"
@@ -76,11 +93,25 @@ QtObject{
         }
 
         property QtObject bar : QtObject{
+
+            /** GraphsPage **/
             property QtObject nutriscore : QtObject{
                 property color backgroundColor : mainView.backgroundColor
                 property string fillColor : Suru.theme === 0 ? "rgba(119,33,11,0.2)" : "rgba(144,238,144,0.2)"
                 property string strokeColor : Suru.theme === 0 ? "rgba(119,33,11,1)" : "rgba(144,238,144,1)"
             }
         }
+
+        property QtObject line: QtObject{
+
+            /** GraphsPage **/
+            property QtObject weight : QtObject{
+                property color backgroundColor : mainView.backgroundColor
+                property string fillColor : Suru.theme === 0 ? "rgba(119,33,11,0.2)" : "rgba(144,238,144,0.2)"
+                property string strokeColor : Suru.theme === 0 ? "rgba(119,33,11,1)" : "rgba(144,238,144,1)"
+            }
+
+        }
+
     }
 }
