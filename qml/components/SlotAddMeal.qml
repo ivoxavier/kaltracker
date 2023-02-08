@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
+import "../style"
 
 LomiriShape{
     id: slot_shape
@@ -31,10 +32,11 @@ LomiriShape{
     property alias subtitle: slot_layout.subtitle
     property alias meal_category : add_icon_yes.category
     property alias img_path: add_meal_image_shape.img_path
-    property alias color : slot_shape.backgroundColor
+
     
     radius: "large"
     aspect: LomiriShape.DropShadow
+    backgroundColor: app_style.shape.shapeColor
     
     ListItem{
         height: slot_layout.height
@@ -43,8 +45,9 @@ LomiriShape{
         ListItemLayout{
             id: slot_layout
             title.font.bold: true
-            title.color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            title.color : app_style.label.labelColor
             subtitle.font.bold: true
+    
             Rectangle{
                 height: units.gu(3.5)
                 width:  height

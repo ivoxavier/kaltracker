@@ -1,6 +1,6 @@
 /*
  * 2015 Johan Guerreros
- * 2022 Ivo Xavier 
+ * 2022-2023 Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-
+import "../style"
   
 Canvas {
     id: canvas
@@ -33,8 +33,8 @@ Canvas {
     antialiasing: true
     
 
-    property color primaryColor: "#aea79f"
-    property color secondaryColor: Suru.theme === 0 ? root.kaltracker_light_theme.circle_chart : root.kaltracker_dark_theme.circle_chart
+    property color primaryColor: app_style.chart.circle.calories.inColor
+    property color secondaryColor: app_style.chart.circle.calories.outColor
 
     property real centerWidth: width / 2
     property real centerHeight: height / 2
@@ -102,13 +102,13 @@ Canvas {
             anchors.horizontalCenter: parent.horizontalCenter
             text: home_page.query_total_cal_remaining
             font.pointSize: units.gu(1.7)
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            color : app_style.label.labelColor
         }
         Text{
             anchors.horizontalCenter: parent.horizontalCenter
             text: home_page.query_total_cal_remaining < 0 ? i18n.tr("EXCEED") : i18n.tr("REMAINING")
             font.pointSize: units.gu(1.3)
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
+            color : app_style.label.labelColor
         }
     }
 } 

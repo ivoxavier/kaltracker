@@ -460,8 +460,8 @@ function getChartLineData(date_from, date_to){
 var ChartLineData = {
   labels: getXWeightTracker(date_from, date_to),
 datasets: [{
-    fillColor : graphs_page.theme_applied === 0 ? "rgba(119,33,11,0.2)"  : "rgba(144,238,144,0.2)",
-    strokeColor : graphs_page.theme_applied === 0 ? "rgba(119,33,11,1)"  : "rgba(144,238,144,1)",
+    fillColor : app_style.chart.line.weight.fillColor,
+    strokeColor : app_style.chart.line.weight.strokeColor,
     pointColor : "rgba(220,220,220,1)",
     pointStrokeColor : "#fff",
     pointHighlightFill : "#90ee90",
@@ -499,8 +499,8 @@ function getChartBarData(){
   var ChartBarData = {
     labels: ["a","b","c","d","e"],
   datasets: [{
-      fillColor : graphs_page.theme_applied === 0 ? "rgba(119,33,11,0.2)"  : "rgba(144,238,144,0.2)",
-      strokeColor : graphs_page.theme_applied === 0 ? "rgba(119,33,11,1)"  : "rgba(144,238,144,1)",
+      fillColor : app_style.chart.bar.nutriscore.fillColor,
+      strokeColor : app_style.chart.bar.nutriscore.strokeColor,
       pointColor : "rgba(220,220,220,1)",
       pointStrokeColor : "#90ee90",
       pointHighlightFill : "#90ee90",

@@ -22,17 +22,19 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-
+import "../style"
 
 LomiriShape{
     id: slot_shape
 
     // make public API's
-    property alias color : slot_shape.backgroundColor
+
     property alias value: value_text.text
     property alias message: message_text.text
+
     radius: "large"
     aspect: LomiriShape.Flat
+    backgroundColor: app_style.shape.shapeColor
     
     ListItem{
         height: slot_layout.height
@@ -46,9 +48,7 @@ LomiriShape{
                 font.pixelSize: units.gu(3);
                 Layout.alignment: Qt.AlignCenter}
                 Text{id: message_text;Layout.alignment: Qt.AlignCenter}
-
             }
-            
         }
     }
 }  

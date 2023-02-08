@@ -26,6 +26,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 
 ColumnLayout{
@@ -59,8 +60,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("MALE")
-        img_path:"../assets/male-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal 
+        img_path:"../assets/male-svgrepo-com.svg" 
         MouseArea{
             anchors.fill: parent
             onClicked: selectSex(0)
@@ -77,7 +77,6 @@ ColumnLayout{
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("FEMALE")
         img_path:"../assets/female-gender-svgrepo-com.svg"
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.slot_add_meal : root.kaltracker_dark_theme.slot_add_meal
         MouseArea{
             anchors.fill: parent
             onClicked: selectSex(1)   
@@ -99,9 +98,9 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(9)
 
         StyleHints {
-            highlightBackgroundColor: theme.palette.normal.raised
-            highlightColor: LomiriColors.jet
-            backgroundColor: theme.palette.normal.base
+            highlightBackgroundColor: app_style.pickers.yearsPicker.highlightBackgroundColor
+            highlightColor: app_style.pickers.yearsPicker.highlightColor
+            backgroundColor: app_style.pickers.yearsPicker.backgroundColor
         }
 
         circular: false

@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import Lomiri.Components.Pickers 1.3
+import "../style"
 
 AbstractButton {
 	id: button
@@ -44,7 +45,7 @@ AbstractButton {
         anchors.centerIn: parent
         height: units.gu(7.5)
         width:  height
-		color: Suru.theme === 0 ? "#90ee90" : "#f1f1f1"
+		color: app_style.abstractButton.buttonColor
 		radius: height*0.5
 	}
 
@@ -52,6 +53,6 @@ AbstractButton {
 		id: icon
 		anchors.fill: parent
 		z: 1
-		color: LomiriColors.porcelain
+		color: app_style.abstractButton.iconColor
 	}
 }

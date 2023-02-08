@@ -24,9 +24,11 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
+import "../style"
 import "../../js/WaterTrackerTable.js" as WaterTrackerTable
 import "../../js/WaterDrinkCalc.js" as WaterDrinkCalc
 import "../../js/GetData.js" as GetData
+
 LomiriShape{
     id: slot_shape
 
@@ -36,6 +38,7 @@ LomiriShape{
 
     radius: "large"
     aspect: LomiriShape.DropShadow
+    backgroundColor: app_style.shape.shapeColor
     
     ListItem{
         height: slot_layout.height
@@ -52,7 +55,7 @@ LomiriShape{
                 background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 6
-                color: "#e6e6e6"
+                color: app_style.progressBar.backgroundColor
                 radius: 10
                 }
                 contentItem: Item {
@@ -64,7 +67,7 @@ LomiriShape{
                     width: bar.visualPosition * parent.width
                     height: parent.height
                     radius: 10
-                    color: "#5abcd8"
+                    color: app_style.progressBar.waterBar.waterProgress
                 }
             }
         }

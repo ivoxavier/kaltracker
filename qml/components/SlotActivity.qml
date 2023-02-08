@@ -22,19 +22,19 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-
+import "../style"
 
 LomiriShape{
     id: slot_shape
 
     // make public API's
     property alias img_path: slot_img_credentials.img_path
-    property alias color : slot_shape.backgroundColor
     property alias text : plan_label.text
     property alias text_color : plan_label.color
 
     radius: "large"
     aspect: LomiriShape.DropShadow
+    backgroundColor: app_style.shape.shapeColor
     
     ListItem{
         height: slot_layout.height

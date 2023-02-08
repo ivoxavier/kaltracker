@@ -25,6 +25,7 @@ import Lomiri.Components.ListItems 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/GetData.js" as GetData
@@ -35,10 +36,7 @@ Page {
     id: graphs_page
     objectName: 'GraphsPage'
 
-    //stores the theme applied, for picking right theme color for charts
-    property int theme_applied : Suru.theme === 0 ? 0 : 1
-
-    header: PageHeader {
+        header: PageHeader {
         title: i18n.tr("Graphs")
        // visible: app_settings.is_page_headers_enabled ? true : false
 
@@ -59,7 +57,7 @@ Page {
        // ctx.save();
         ctx.globalCompositeOperation = 'destination-over'
         // Now draw!
-        ctx.fillStyle = Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background
+        ctx.fillStyle = app_style.chart.bar.nutriscore.backgroundColor
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
     }

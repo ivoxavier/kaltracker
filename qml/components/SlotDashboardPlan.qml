@@ -29,11 +29,11 @@ LomiriShape{
 
     // make public API's
     property alias img_path: slot_img_credentials.img_path
-    property alias color : slot_shape.backgroundColor
     property alias title : slot_layout.title
     //property alias text_color : plan_label.color
 
     aspect: LomiriShape.Flat
+    backgroundColor: "transparent"
     
     ListItem{
         height: slot_layout.height

@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,36 +19,14 @@ import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
-import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import "../style"
 
-LomiriShape{
-    id: slot_shape
-
-    // make public API's
-    property alias slot_indicatior : slot_indicatior.text
-    property alias slot_icon_label : slot_icon_label.text
-
-    aspect: LomiriShape.Flat
-
-    ColumnLayout{
-        id: slot_layout
-        width: parent.width
-        spacing: units.gu(0.5)
-
-        Text{
-            id: slot_indicatior
-            Layout.alignment: Qt.AlignCenter
-            font.bold: true
-            color : app_style.label.labelColor
-        }
-
-        Text{
-            id: slot_icon_label
-            Layout.alignment: Qt.AlignCenter
-            color : app_style.label.labelColor
-        }
+Rectangle{
+    anchors{
+        top: parent.top
+        left : parent.left
+        right : parent.right
+        bottom : parent.bottom
     }
-}  
+    color : app_style.mainView.backgroundColor
+}

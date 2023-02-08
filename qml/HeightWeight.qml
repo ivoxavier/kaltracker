@@ -26,6 +26,7 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
+import "style"
 
 
 ColumnLayout{
@@ -88,7 +89,7 @@ ColumnLayout{
                         Label {
                             anchors.centerIn: parent
                             font.pixelSize: units.gu(4)
-                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            color : app_style.label.labelColor 
                             text: "-"
                         }
                     }
@@ -111,7 +112,7 @@ ColumnLayout{
                         Label {
                             anchors.centerIn: parent
                             font.pixelSize: units.gu(4)
-                            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                            color : app_style.label.labelColor 
                             text: "+"
                         }
                     }
@@ -131,7 +132,7 @@ ColumnLayout{
     Label {
         Layout.alignment: Qt.AlignCenter
         font.pixelSize: units.gu(4)
-        color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+        color : app_style.label.labelColor  
         text: Math.round(height_slider.value) + i18n.tr("cm")
     }
 

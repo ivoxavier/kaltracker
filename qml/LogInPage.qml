@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "components"
+import "style"
 
 
 Page{
@@ -30,15 +31,7 @@ Page{
     objectName: 'LoginPage'
     header: PageHeader {visible: false}
 
-
-    Rectangle{
-    anchors.fill: parent
-    gradient: Gradient {
-        GradientStop { position: 0.0; color: Suru.theme === 0 ? root.kaltracker_light_theme.background : root.kaltracker_dark_theme.background  }
-    }
-}
-
-
+    BackgroundStyle{}
     
     Flickable {
         anchors{
@@ -62,7 +55,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: i18n.tr("Welcome")
                 font.pixelSize: units.gu(4) 
-                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color: app_style.label.labelColor 
             }
 
             BlankSpace{height: units.gu(3)}
@@ -82,7 +75,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter 
                 text: "KalTracker"
                 font.pixelSize: units.gu(3) 
-                color: Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+                color: app_style.label.labelColor  
             }
 
 
@@ -92,9 +85,8 @@ Page{
                 id: next_button
                 Layout.alignment: Qt.AlignCenter
                 text: i18n.tr("Start")
-                color : LomiriColors.green
+                color : app_style.button.confirmButton.buttonColor 
                 onClicked:{
-                    //page_stack.push(set_plan_page)
                     page_stack.push(user_profile_config_page)
                 }
             } 

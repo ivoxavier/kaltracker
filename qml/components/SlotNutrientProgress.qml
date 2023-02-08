@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
+import "../style"
 
 LomiriShape{
     id: slot_shape
@@ -41,7 +42,7 @@ LomiriShape{
         Text{
             id: slot_icon_label
             Layout.alignment: Qt.AlignCenter
-            color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color 
+            color : app_style.label.labelColor 
         }
 
         Rectangle{  
@@ -57,7 +58,7 @@ LomiriShape{
                 background: Rectangle {
                 implicitWidth: 200
                 implicitHeight: 6
-                color: "#e6e6e6"
+                color: app_style.progressBar.backgroundColor
                 radius: 10
                 }
                 contentItem: Item {
@@ -68,7 +69,6 @@ LomiriShape{
                         width: bar.visualPosition * parent.width
                         height: parent.height
                         radius: 10
-                        color: "#5abcd8"
                     }
                 }
             }
