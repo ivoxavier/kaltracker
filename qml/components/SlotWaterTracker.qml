@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -82,17 +82,17 @@ LomiriShape{
                     name: "add"
                     anchors.centerIn: parent
                     height : units.gu(2.5)
-                    MouseArea{
-                        anchors.fill: parent
-                        onPressed:{
-                            bar.scale = 0.8
-                            WaterTrackerTable.saveCup() 
-                        }
-                        onReleased:{
-                            GetData.getCups()
-                            bar.scale = 1
-                            progression : true
-                        }
+                }
+                MouseArea{
+                    anchors.fill: parent
+                    onPressed:{
+                        bar.scale = 0.8
+                        WaterTrackerTable.saveCup() 
+                    }
+                    onReleased:{
+                        GetData.getCups()
+                        bar.scale = 1
+                        progression : true
                     }
                 }
             }
