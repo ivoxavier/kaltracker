@@ -24,8 +24,8 @@ import Lomiri.Components.Popups 1.3
 import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
+import "../components"
+import "../style"
 
 
 ColumnLayout{
@@ -84,7 +84,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("LOOSE WEIGHT")
-        img_path:"../assets/shoe-svgrepo-com.svg"
+        img_path:"../../assets/shoe-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
             onClicked: {
@@ -103,7 +103,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("MAINTAIN WEIGHT")
-        img_path:"../assets/kilograms-justice-svgrepo-com.svg" 
+        img_path:"../../assets/kilograms-justice-svgrepo-com.svg" 
         MouseArea{
             anchors.fill: parent
             onClicked: selectPlan(0) 
@@ -119,7 +119,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("GAIN WEIGHT")
-        img_path:"../assets/dumbbell-gym-svgrepo-com.svg"  
+        img_path:"../../assets/dumbbell-gym-svgrepo-com.svg"  
         MouseArea{
             anchors.fill: parent
             onClicked: {
@@ -145,7 +145,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("VERY LIGHT")
-        img_path:"../assets/cooking-stew-svgrepo-com.svg"
+        img_path:"../../assets/cooking-stew-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(0)   
@@ -161,7 +161,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("LIGHT")
-        img_path:"../assets/walking-the-dog-svgrepo-com.svg"
+        img_path:"../../assets/walking-the-dog-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(1)
@@ -177,7 +177,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("MODERATE")
-        img_path:"../assets/cycling-color-svgrepo-com.svg"
+        img_path:"../../assets/cycling-color-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(2)   
@@ -193,7 +193,7 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         //TRANSLATORS Please Keep All Letters Capital
         text: i18n.tr("HEAVY")
-        img_path:"../assets/soccer-svgrepo-com.svg"
+        img_path:"../../assets/soccer-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
             onClicked: selectActivity(3) 

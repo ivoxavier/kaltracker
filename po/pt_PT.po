@@ -407,6 +407,34 @@ msgstr "Gerir os Seus Alimentos"
 msgid "Menu"
 msgstr "Menu"
 
+#: ../qml/SetFoodPage.qml:43
+msgid "Product Details"
+msgstr "Detalhes do produto"
+
+#: ../qml/plugins/ProductDetails.qml:117 ../qml/plugins/ProductDetails.qml:161
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: ../qml/plugins/ProductDetails.qml:126
+msgid "NOVA Group"
+msgstr "Grupo NOVA"
+
+#: ../qml/plugins/ProductDetails.qml:158
+msgid "Unprocessed or minimally processed"
+msgstr "Não processado ou minimamente processado"
+
+#: ../qml/plugins/ProductDetails.qml:159
+msgid "Processed culinary ingredients"
+msgstr "Ingredientes culinários processados"
+
+#: ../qml/plugins/ProductDetails.qml:160
+msgid "Processed food"
+msgstr "Alimento processado"
+
+#: ../qml/plugins/ProductDetails.qml:161
+msgid "Ultra processed food"
+msgstr "Alimento ultra processado"
+
 #: ../qml/MenuPage.qml:85
 msgid "Version: "
 msgstr "Versão: "

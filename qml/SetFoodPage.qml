@@ -16,7 +16,7 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
+import QtQuick.Controls 2.2 as QQC2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
@@ -27,6 +27,7 @@ import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
 import "components"
 import "style"
+import "plugins"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/UserTable.js" as UserTable
@@ -38,8 +39,8 @@ Page{
     id: set_food_page
     objectName: 'SetFoodPage'
     header: PageHeader {
-
-                title: i18n.tr("Set Your Ingestion")
+                title: swipe_view.currentIndex == 0 ?
+        i18n.tr("Set Your Ingestion") : i18n.tr("Product Details")
                 StyleHints {
                     /*foregroundColor: "white"
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
@@ -47,10 +48,12 @@ Page{
         }
     
     BackgroundStyle{}
-
+    
+   
     //receives values from foods from QuickFoodsList{}
     property string product_name_set_food_page
     property string nutriscore_set_food_page
+    property string nova_groups_set_food_page
     property int cal_set_food_page
     property double carbo_set_food_page
     property double fat_set_food_page
@@ -108,140 +111,36 @@ Page{
         MessageDialog{msg:i18n.tr("Something went wrong. Please, restart the app and try again.")}
     }
 
-    Flickable {
+    QQC2.SwipeView{
+        id: swipe_view
+        currentIndex:0
+        anchors.top:parent.header.bottom
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: parent.height
 
-        anchors{
-            top: parent.header.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
+        Item{
+            //index 0
+            Flickable{
+                anchors.fill: parent
+                contentWidth: swipe_view.width
+                contentHeight: ingestions_config.implicitHeight
+                interactive: true
+
+                IngestionConfig{id:ingestions_config}
+            }
         }
+        Item{
+            //index 1
+            Flickable{
+                anchors.fill: parent
+                contentWidth: swipe_view.width
+                contentHeight: product_details.implicitHeight
+                interactive: true
 
-        contentWidth: parent.width
-        contentHeight: main_column.height  
-        
-        ColumnLayout{
-            id: main_column
-            width: root.width
-            
-            spacing: units.gu(1)
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width
-                text: set_food_page.product_name_set_food_page
-                font.pixelSize: units.gu(4)
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                color : app_style.label.labelColor
+                ProductDetails{id:product_details}
             }
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width
-                text: i18n.tr("Calories: %1 ").arg(cal_ingested) 
-                font.pixelSize: units.gu(3)
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                color : app_style.label.labelColor
-            }
-
-
-            BlankSpace{}
-
-            Grid {
-                id:chart_pie_wrapper
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(6)
-                Layout.preferredHeight:  units.gu(17)
-                visible: true
-                columns:1
-                columnSpacing: units.gu(1)
-
-                QChartJs {
-                    id: chart_pie
-                    width: parent.width
-                    height: parent.height
-                    chartType: ChartTypes.QChartJSTypes.PIE
-                    chartData: getChartPieValues()
-                    animation: app_settings.is_graphs_animation_enabled
-                    chartAnimationEasing: Easing.InOutElastic;
-                    chartAnimationDuration: 2000;
-                }
-
-            }
-            BlankSpace{}
-
-            ListItem{
-                divider.visible: false
-                Layout.preferredHeight: units.gu(9)
-                ListItemLayout{
-                    title.text: i18n.tr("Size Portion")
-                    title.font.bold : true
-                    SizePicker{
-                        Layout.preferredWidth: root.width - units.gu(9)
-                        height: units.gu(8)
-                        onSelectedIndexChanged: {
-                           selectedIndex == 0 ?
-                            size_portions = 1 : selectedIndex == 1 ?
-                            size_portions = 0.50 : selectedIndex == 2 ?
-                            size_portions = 0.33 : selectedIndex == 3 ?
-                            size_portions = 0.25 : selectedIndex == 4 ?
-                            size_portions = 0.20 : size_portions = 0.17
-                        }
-                    }
-                }
-            }
-
-            ListItem{
-                divider.visible: false
-                ListItemLayout{
-                    title.text: i18n.tr("Quantity")
-                    title.font.bold : true
-                    QuantitySpinner{
-                        Layout.preferredWidth: root.width - units.gu(13)
-                        height: units.gu(4)
-                        value : 1
-                        onValueChanged: quantity_portions = value    
-                    }
-
-                }
-            }
-
-            ListItem{
-                divider.visible : false
-                ListItemLayout{
-                    subtitle.text : i18n.tr("Macros") 
-                    subtitle.font.bold : true
-                }
-            }
-            
-            ListItem{
-                divider.visible : false
-                ListItemLayout{
-                    title.text: i18n.tr("Fat: %1gr").arg(fat_ingested)
-                    title.font.bold : true
-                    NutrientIcon{img_path: "../assets/olive-oil-svgrepo-com.svg"} 
-                }
-            }
-            ListItem{
-                divider.visible : false
-                ListItemLayout{
-                    title.text: i18n.tr("Protein: %1gr").arg(protein_ingested)
-                    title.font.bold : true
-                    NutrientIcon{img_path: "../assets/cheese-svgrepo-com.svg"}      
-                }
-            }
-            ListItem{
-                divider.visible : false
-                
-                ListItemLayout{
-                    title.text: i18n.tr("Carbohydrates: %1gr").arg(carbo_ingested)
-                    title.font.bold : true
-                    NutrientIcon{img_path: "../assets/bread-svgrepo-com.svg"}    
-                }
-            }
-        }  
+        }
     }
 
     Row{
@@ -291,4 +190,12 @@ Page{
             }  
         }
     }
+
+    QQC2.PageIndicator{
+        id: swipe_view_indicator
+        count: swipe_view.count
+        currentIndex: swipe_view.currentIndex
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter   
+    } 
 }

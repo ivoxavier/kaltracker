@@ -34,6 +34,8 @@ Dialog {
     property double protein_100g
     property int energy_kcal_100g
 
+    property string nova_group
+
     property bool is_code_empty : false
 
     JSONListModel {
@@ -49,6 +51,7 @@ Dialog {
                 fat_100g = (typeof _json.nutriments.fat_100g == "undefined") ? 0.0 : _json.nutriments.fat_100g
                 protein_100g = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
                 carbohydrates_100g = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
+                nova_group = (typeof _json.nova_groups == "undefined") ? "0" : _json.nova_groups
                 next_button.enabled = true
                 loading_circle.running = false
                 loading_circle.visible = false
@@ -97,55 +100,6 @@ Dialog {
         color: app_style.label.labelColor
     }
 
-    Label{
-        id: nutriscore_label
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Nutriscore: %1").arg(nutriscore_grade)
-        visible : is_code_empty ? false : true
-        color: app_style.label.labelColor
-    }
-
-    Label{
-        id: cal_label
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Calories/100gr: %1").arg(energy_kcal_100g)
-        visible : is_code_empty ? false : true
-        color: app_style.label.labelColor
-    }
-
-    Label{
-        id: fat_label
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Fat/100gr: %1").arg(fat_100g)
-        visible : is_code_empty ? false : true
-        color: app_style.label.labelColor
-    }
-
-    Label{
-        id: protein_label
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Protein/100gr: %1").arg(protein_100g)
-        visible : is_code_empty ? false : true
-        color: app_style.label.labelColor
-    }
-
-    Label{
-        id: carbo_label
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Carbohydrates/100gr: %1").arg(carbohydrates_100g)
-        visible : is_code_empty ? false : true
-        color: app_style.label.labelColor
-    } 
 
     Button{
         text: i18n.tr("Scan Again")
@@ -180,7 +134,8 @@ Dialog {
             fat_set_food_page: fat_100g,
             protein_set_food_page: protein_100g,
             nutriscore_set_food_page: nutriscore_grade,
-            meal_set_food_page: is_product_found_dialog_meal})    
+            meal_set_food_page: is_product_found_dialog_meal,
+            nova_groups_set_food_page: nova_group})    
         }
     }  
 }
