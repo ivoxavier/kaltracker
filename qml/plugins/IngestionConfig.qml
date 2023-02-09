@@ -101,7 +101,7 @@ ColumnLayout{
     SizePicker{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(12)
-        Layout.preferredHeight: units.gu(5)
+        Layout.preferredHeight: units.gu(7)
         onSelectedIndexChanged: {
             selectedIndex == 0 ?
             size_portions = 1 : selectedIndex == 1 ?
