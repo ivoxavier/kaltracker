@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,11 +58,11 @@ LomiriShape{
                     property int category
                     anchors.centerIn: parent
                     name: "add"
-                    height : units.gu(2.5)
-                    MouseArea{
+                    height : units.gu(2.5) 
+                }
+                MouseArea{
                         anchors.fill: parent
                         onClicked: page_stack.push(quick_list_foods_page,{meal_quick_list_foods_page: slot_shape.meal_category}) 
-                     }
                 }
             }
             
