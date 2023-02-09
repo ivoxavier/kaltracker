@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,9 +31,7 @@ function connectDB() {
       1,
       root.stringDate]);
       if (results.rowsAffected > 0) {
-        console.log("Water: OK")
       } else {
-        console.log("Water: Failed");
       }
     }
   )
@@ -48,5 +46,4 @@ var remove_all_water_tracker = 'DELETE FROM water_tracker'
      rs = tx.executeSql(remove_all_water_tracker);
     }
   );
-  return console.log("water_tracker removed from option remove_all_water_tracker")
  }

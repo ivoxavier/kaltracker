@@ -1,5 +1,5 @@
 /*
- * 2021  Ivo Fernandes
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,6 @@ function connectDB() {
         }
     }
     );
-    console.log(validationMessage)
     return validationMessage;
   }
 
@@ -110,5 +109,4 @@ function deleteFoods(id){
     rs = tx.executeSql(remove_statement);
    }
  );
- return console.log(rs.rowsAffected)
 }
