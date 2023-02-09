@@ -25,8 +25,8 @@ import Lomiri.Components.Pickers 1.3
 import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
+import "../components"
+import "../style"
 
 
 ColumnLayout{
