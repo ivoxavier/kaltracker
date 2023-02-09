@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -59,7 +59,6 @@ function connectDB() {
         }
     }
     );
-    console.log(validationMessage)
     return validationMessage;
   }
 
@@ -72,7 +71,6 @@ function connectDB() {
      rs = tx.executeSql(remove_all_ingestions);
     }
   );
-  return console.log("Ingestions removed from option remove_all_ingestions")
  }
 
  var remove_today_ingestions = 'DELETE FROM ingestions \
@@ -85,7 +83,6 @@ function connectDB() {
     rs = tx.executeSql(remove_today_ingestions);
    }
  );
- return console.log("Ingestions removed from option today_ingestions")
 }
 
 function deleteMonthYearIngestion(month, year){
@@ -109,7 +106,6 @@ function deleteIngestion(id){
     rs = tx.executeSql(statement);
    }
  );
- return console.log("Ingestion removed from by ID")
 }
 
 
@@ -140,7 +136,6 @@ function autoClean(){
    rs = tx.executeSql(auto_clean);
   }
 );
-return console.log('auto_clean_removed:' + rs.rowsAffected)
 }
 
 
@@ -153,5 +148,4 @@ function deleteSpecificTodayIngestion(id){
     rs = tx.executeSql(remove_today_speficic_ingestion);
    }
  );
- return console.log(rs.rowsAffected)
 }

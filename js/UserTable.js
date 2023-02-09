@@ -1,5 +1,5 @@
 /*
- * 2021  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,9 +42,8 @@ function connectDB() {
         activity,
         rec_cal]);
       if (results.rowsAffected > 0) {
-        console.log("Data stored")
       } else {
-        console.log("error");
+        console.log("Erro saving profile");
       }
     }
   )
