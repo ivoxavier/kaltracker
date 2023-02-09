@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< Updated upstream
 "POT-Creation-Date: 2023-02-09 11:50+0000\n"
+=======
+"POT-Creation-Date: 2023-02-09 14:54+0000\n"
+>>>>>>> Stashed changes
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -516,15 +520,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:40 ../qml/SetFoodPage.qml:214
+#: ../qml/QuickAdditionPage.qml:40 ../qml/SetFoodPage.qml:226
 msgid "Macros"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:72 ../qml/SetFoodPage.qml:103
+#: ../qml/QuickAdditionPage.qml:72 ../qml/SetFoodPage.qml:105
 msgid "Stored!"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:77 ../qml/SetFoodPage.qml:108
+#: ../qml/QuickAdditionPage.qml:77 ../qml/SetFoodPage.qml:110
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
@@ -560,15 +564,15 @@ msgstr ""
 msgid "E: Bad Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:194 ../qml/SetFoodPage.qml:78
+#: ../qml/QuickAdditionPage.qml:194 ../qml/SetFoodPage.qml:80
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:228 ../qml/SetFoodPage.qml:86
+#: ../qml/QuickAdditionPage.qml:228 ../qml/SetFoodPage.qml:88
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:262 ../qml/SetFoodPage.qml:94
+#: ../qml/QuickAdditionPage.qml:262 ../qml/SetFoodPage.qml:96
 msgid "Carbo/100g"
 msgstr ""
 
@@ -584,27 +588,27 @@ msgstr ""
 msgid "Set Your Ingestion"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:142
+#: ../qml/SetFoodPage.qml:154
 msgid "Calories: %1 "
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:179
+#: ../qml/SetFoodPage.qml:191
 msgid "Size Portion"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:199
+#: ../qml/SetFoodPage.qml:211
 msgid "Quantity"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:222
+#: ../qml/SetFoodPage.qml:234
 msgid "Fat: %1gr"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:230
+#: ../qml/SetFoodPage.qml:242
 msgid "Protein: %1gr"
 msgstr ""
 
-#: ../qml/SetFoodPage.qml:239
+#: ../qml/SetFoodPage.qml:251
 msgid "Carbohydrates: %1gr"
 msgstr ""
 
@@ -883,57 +887,57 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:64
+#: ../qml/components/IsProductFoundDialog.qml:67
 msgid "BarCode Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:64
+#: ../qml/components/IsProductFoundDialog.qml:67
 msgid "BarCode Not Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:73
+#: ../qml/components/IsProductFoundDialog.qml:76
 msgid ""
 "No product in DB, you may consider register the item on openfoodsfacts. Or "
 "enter the details manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:82
+#: ../qml/components/IsProductFoundDialog.qml:85
 msgid "Code:%1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:95
+#: ../qml/components/IsProductFoundDialog.qml:98
 msgid "Name: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:105
+#: ../qml/components/IsProductFoundDialog.qml:108
 msgid "Nutriscore: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:115
+#: ../qml/components/IsProductFoundDialog.qml:118
 msgid "Calories/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:125
+#: ../qml/components/IsProductFoundDialog.qml:128
 msgid "Fat/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:135
+#: ../qml/components/IsProductFoundDialog.qml:138
 msgid "Protein/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:145
+#: ../qml/components/IsProductFoundDialog.qml:148
 msgid "Carbohydrates/100gr: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:151
+#: ../qml/components/IsProductFoundDialog.qml:154
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:160
+#: ../qml/components/IsProductFoundDialog.qml:163
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:171
+#: ../qml/components/IsProductFoundDialog.qml:174
 msgid "Next"
 msgstr ""
 
