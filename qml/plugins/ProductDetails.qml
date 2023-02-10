@@ -75,89 +75,62 @@ ColumnLayout{
 
     BlankSpace{}
 
-    Text{
+    RowLayout{
         Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width
-        text : i18n.tr("Nutriscore Grade")
-        font.pixelSize: units.gu(2)
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        color : app_style.label.labelColor
-    }
-    LomiriShape{
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width - units.gu(40)
-        Layout.preferredHeight: width//units.gu(12)
-        color: ControlFoodsNutriscore.backgroundColor(score_label.text)
-        radius: "large"
-        aspect: LomiriShape.Inset
-        Label{
-            id: score_label
-            anchors.centerIn: parent
-            text: nutriscore_set_food_page
-            font.pixelSize: units.gu(4)
-            font.capitalization: Font.AllUppercase
-            color: "white"
-            font.bold : true
+        spacing: units.gu(1)
+        
+        Label {
+            Layout.alignment: Qt.AlignVCenter
+            text: i18n.tr("Classified as")
+            font.pixelSize: units.gu(2)
+            color: app_style.label.labelColor
+        }
+
+        Icon{
+            id: icon_down
+            Layout.alignment: Qt.AlignVCenter
+            property bool is_clicked : false
+            name: "go-up"
+            height: units.gu(4)
+            rotation: icon_down.is_clicked ? 180 : 0
+            Behavior on rotation {
+                LomiriNumberAnimation {}
+            }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    icon_down.is_clicked = !icon_down.is_clicked
+                    product_grades.visible = !product_grades.visible 
+                    
+                }
+            }
         }
     }
 
-    Text{
+    RowLayout{
+        id: product_grades
         Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width
-        font.pixelSize: units.gu(1.5)
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        color : app_style.label.labelColor
-        text : nutriscore_set_food_page === "a" ?
-        i18n.tr("Very good nutritional quality") : nutriscore_set_food_page === "b" ?
-        i18n.tr("Good nutritional quality") : nutriscore_set_food_page === "c" ?
-        i18n.tr("Average nutritional quality") : nutriscore_set_food_page === "d" ?
-        i18n.tr("Poor nutritional quality") : nutriscore_set_food_page === "e" ?
-        i18n.tr("Bad nutritional quality") : i18n.tr("Unknown")
-    }
+        visible: false
+        spacing: units.gu(1)
 
-
-    BlankSpace{}
-    
-    Text{
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width
-        text : i18n.tr("NOVA Group")
-        font.pixelSize: units.gu(2)
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        color : app_style.label.labelColor
-    }
-
-    LomiriShape{
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width - units.gu(40)
-        Layout.preferredHeight: width//units.gu(12)
-        color: ControlNOVAGroups.backgroundColor(nova_group.text)
-        radius: "large"
-        aspect: LomiriShape.Inset
-        Label{
-            id: nova_group
-            anchors.centerIn: parent
-            text: nova_groups_set_food_page
-            font.pixelSize: units.gu(4)
-            font.capitalization: Font.AllUppercase
-            color: "white"
-            font.bold : true
+        SlotProductGrades{
+            grade : nutriscore_set_food_page
+            subject : nutriscore_set_food_page === "a" ?
+            i18n.tr("Very good nutritional quality") : nutriscore_set_food_page === "b" ?
+            i18n.tr("Good nutritional quality") : nutriscore_set_food_page === "c" ?
+            i18n.tr("Average nutritional quality") : nutriscore_set_food_page === "d" ?
+            i18n.tr("Poor nutritional quality") : nutriscore_set_food_page === "e" ?
+            i18n.tr("Bad nutritional quality") : i18n.tr("Unknown")
+            color : ControlFoodsNutriscore.backgroundColor(nutriscore_set_food_page)
         }
-    }
-    Text{
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width
-        font.pixelSize: units.gu(1.5)
-        horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        color : app_style.label.labelColor
-        text : nova_groups_set_food_page === "1" ?
-        i18n.tr("Unprocessed or minimally processed") : nova_groups_set_food_page === "2" ?
-        i18n.tr("Processed culinary ingredients") : nova_groups_set_food_page === "3" ?
-        i18n.tr("Processed food") : nova_groups_set_food_page === "4" ?
-        i18n.tr("Ultra processed food") : i18n.tr("Unknown") 
+
+        SlotProductGrades{
+            grade : nova_groups_set_food_page
+            subject : nova_groups_set_food_page === "1" ?
+            i18n.tr("Unprocessed or minimally processed") : nova_groups_set_food_page === "2" ?
+            i18n.tr("Processed") : nova_groups_set_food_page === "3" ?
+            i18n.tr("Ultra-processed") : i18n.tr("Unknown")
+            color : ControlNOVAGroups.backgroundColor(nova_groups_set_food_page)
+        }
     }
 }

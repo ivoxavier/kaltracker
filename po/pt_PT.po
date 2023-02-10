@@ -407,6 +407,10 @@ msgstr "Gerir os Seus Alimentos"
 msgid "Menu"
 msgstr "Menu"
 
+#: ../qml/plugins/ProductDetails.qml:84
+msgid "Classified as"
+msgstr "Classificado como"
+
 #: ../qml/SetFoodPage.qml:43
 msgid "Product Details"
 msgstr "Detalhes do produto"
