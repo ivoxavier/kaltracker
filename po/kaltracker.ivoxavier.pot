@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 18:44+0000\n"
+"POT-Creation-Date: 2023-02-10 11:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -481,7 +481,7 @@ msgstr ""
 msgid "Calories"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:164 ../qml/plugins/ProductDetails.qml:81
+#: ../qml/QuickAdditionPage.qml:164
 msgid "Nutriscore Grade"
 msgstr ""
 
@@ -823,23 +823,23 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:43 ../qml/plugins/ProductDetails.qml:113
+#: ../qml/components/ListViewFoods.qml:43 ../qml/plugins/ProductDetails.qml:119
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:44 ../qml/plugins/ProductDetails.qml:114
+#: ../qml/components/ListViewFoods.qml:44 ../qml/plugins/ProductDetails.qml:120
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:45 ../qml/plugins/ProductDetails.qml:115
+#: ../qml/components/ListViewFoods.qml:45 ../qml/plugins/ProductDetails.qml:121
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:117
+#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:123
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:116
+#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:122
 msgid "Poor nutritional quality"
 msgstr ""
 
@@ -993,28 +993,24 @@ msgstr ""
 msgid "HEAVY"
 msgstr ""
 
-#: ../qml/plugins/ProductDetails.qml:117 ../qml/plugins/ProductDetails.qml:161
+#: ../qml/plugins/ProductDetails.qml:84
+msgid "Classified as"
+msgstr ""
+
+#: ../qml/plugins/ProductDetails.qml:123 ../qml/plugins/ProductDetails.qml:132
 msgid "Unknown"
 msgstr ""
 
-#: ../qml/plugins/ProductDetails.qml:126
-msgid "NOVA Group"
-msgstr ""
-
-#: ../qml/plugins/ProductDetails.qml:158
+#: ../qml/plugins/ProductDetails.qml:130
 msgid "Unprocessed or minimally processed"
 msgstr ""
 
-#: ../qml/plugins/ProductDetails.qml:159
-msgid "Processed culinary ingredients"
+#: ../qml/plugins/ProductDetails.qml:131
+msgid "Processed"
 msgstr ""
 
-#: ../qml/plugins/ProductDetails.qml:160
-msgid "Processed food"
-msgstr ""
-
-#: ../qml/plugins/ProductDetails.qml:161
-msgid "Ultra processed food"
+#: ../qml/plugins/ProductDetails.qml:132
+msgid "Ultra-processed"
 msgstr ""
 
 #: ../qml/plugins/SexAge.qml:51
