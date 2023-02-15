@@ -83,12 +83,6 @@ MainView {
         }   
     }
 
-    //LogInPage, where users enter their id and credential
-    Component{
-        id: login_page
-        LogInPage{}
-    }
-
     //UserProfileConfig
     Component{
         id: user_profile_config_page
@@ -227,7 +221,7 @@ MainView {
     Component.onCompleted:{
         if(app_settings.is_clean_install){
             //new install || not configured
-            page_stack.push(login_page)
+            page_stack.push(user_profile_config_page)
         }
         else{
         //during experiment time and app configured
