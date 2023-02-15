@@ -128,8 +128,9 @@ ColumnLayout{
             grade : nova_groups_set_food_page
             subject : nova_groups_set_food_page === "1" ?
             i18n.tr("Unprocessed or minimally processed") : nova_groups_set_food_page === "2" ?
-            i18n.tr("Processed") : nova_groups_set_food_page === "3" ?
-            i18n.tr("Ultra-processed") : i18n.tr("Unknown")
+            i18n.tr("Processed culinary ingredients") : nova_groups_set_food_page === "3" ?
+            i18n.tr("Processed foods") : nova_groups_set_food_page === "4" ?
+            i18n.tr("Ultra-processed foods") : i18n.tr("Unknown")
             color : ControlNOVAGroups.backgroundColor(nova_groups_set_food_page)
         }
     }

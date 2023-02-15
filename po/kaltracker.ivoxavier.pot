@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-10 11:43+0000\n"
+"POT-Creation-Date: 2023-02-15 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -308,14 +308,6 @@ msgstr ""
 
 #: ../qml/HomePage.qml:366
 msgid "Your Previous Ingestions"
-msgstr ""
-
-#: ../qml/LogInPage.qml:56
-msgid "Welcome"
-msgstr ""
-
-#: ../qml/LogInPage.qml:87
-msgid "Start"
 msgstr ""
 
 #: ../qml/ManageDataPage.qml:36 ../qml/MenuPage.qml:181
@@ -997,7 +989,7 @@ msgstr ""
 msgid "Classified as"
 msgstr ""
 
-#: ../qml/plugins/ProductDetails.qml:123 ../qml/plugins/ProductDetails.qml:132
+#: ../qml/plugins/ProductDetails.qml:123 ../qml/plugins/ProductDetails.qml:133
 msgid "Unknown"
 msgstr ""
 
@@ -1006,11 +998,15 @@ msgid "Unprocessed or minimally processed"
 msgstr ""
 
 #: ../qml/plugins/ProductDetails.qml:131
-msgid "Processed"
+msgid "Processed culinary ingredients"
 msgstr ""
 
 #: ../qml/plugins/ProductDetails.qml:132
-msgid "Ultra-processed"
+msgid "Processed foods"
+msgstr ""
+
+#: ../qml/plugins/ProductDetails.qml:133
+msgid "Ultra-processed foods"
 msgstr ""
 
 #: ../qml/plugins/SexAge.qml:51

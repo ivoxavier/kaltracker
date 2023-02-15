@@ -435,9 +435,9 @@ msgstr "Ingredientes culinários processados"
 msgid "Processed food"
 msgstr "Alimento processado"
 
-#: ../qml/plugins/ProductDetails.qml:161
-msgid "Ultra processed food"
-msgstr "Alimento ultra processado"
+#: ../qml/plugins/ProductDetails.qml:133
+msgid "Ultra-processed foods"
+msgstr "Alimento ultra-processado"
 
 #: ../qml/MenuPage.qml:85
 msgid "Version: "
