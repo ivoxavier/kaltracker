@@ -24,15 +24,15 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 
 
-Slider{
-    width: (parent.width / 2) - units.gu(2)
-    height: units.gu(10)
-    //value: 0
-    minimumValue: 0
-    maximumValue: 100
-    live: true
+QQC2.Slider{
     
-   function formatValue(v) { return Number(v.toFixed(1)).toLocaleString(Qt.locale()) }
+    Layout.preferredHeight: units.gu(35)
+    orientation: Qt.Vertical
+    live: true
+    from: 0
+    value: 0
+    to: 100
+    function formatValue(v) { return Number(v.toFixed(1)).toLocaleString(Qt.locale()) }
 }
 
    

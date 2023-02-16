@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import Lomiri.Components.Pickers 1.3
-
+import "../style"
 
 Popover{
     id: operation_result_popover
@@ -35,9 +35,10 @@ Popover{
         id: main_column_pop
         width: parent.width
         ListItem{
-            color: LomiriColors.porcelain
+            color: app_style.shape.shapeColor
             ListItemLayout{
                 title.text: i18n.tr("Operation Sucess")
+                title.color: app_style.label.labelColor
                 Icon{SlotsLayout.position: SlotsLayout.Leading; name: "ok"; color: LomiriColors.green; height: units.gu(4)}
             }
         }

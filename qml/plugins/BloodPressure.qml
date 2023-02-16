@@ -37,13 +37,13 @@ ColumnLayout{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Weight")
+            subtitle.text: i18n.tr("Systolic Pressure (High Pressure)")
             subtitle.font.bold: true
         }
     }
 
     LomiriShape{
-        id: weight_shape
+        id: systolic_shape
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(19)
@@ -51,22 +51,20 @@ ColumnLayout{
         radius: "large"
         backgroundColor : app_style.shape.shapeColor
 
-        //Stores the weight & height values
-        property int weight_value : 50
-        property int height_value : 140 //cm
+        //Stores the systolic_value & diastolic_value
+        property int systolic_value : 120
+        
 
         ColumnLayout{
             anchors.fill: parent
 
             Label{
-                id:weight_value_label
+                id:systolic_value_label
                 Layout.alignment: Qt.AlignCenter
                 font.pixelSize: units.gu(5)
                 font.bold: true
-                text:weight_shape.weight_value
+                text:systolic_shape.systolic_value
             }
-
-            Label{Layout.alignment: Qt.AlignCenter;font.bold: true;text:i18n.tr("KG")}
 
             RowLayout{
                 Layout.alignment: Qt.AlignCenter
@@ -81,16 +79,10 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                                    weight_shape.weight_value-- , root.user_weight = weight_shape.weight_value
-                                    user_profile_config_page.user_profile.weight = true
-                                }else{
-                                    weight_shape.weight_value-- , update_user_values_page.user_weight = weight_shape.weight_value
-                                    update_user_values_page.user_profile.weight = true
-                                }
-                                
-                            }
-                            
+                                systolic_shape.systolic_value-- , update_user_values_page.update_ap_hi = systolic_shape.systolic_value
+                                update_user_values_page.blood_pressure.ap_hi = true
+                            }       
+    
                         }
                         Label {
                             anchors.centerIn: parent
@@ -110,13 +102,8 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                                    weight_shape.weight_value++ , root.user_weight = weight_shape.weight_value
-                                    user_profile_config_page.user_profile.weight = true
-                                }else{
-                                    weight_shape.weight_value++ , update_user_values_page.update_weight = weight_shape.weight_value
-                                    update_user_values_page.user_profile.weight = true
-                                }
+                                systolic_shape.systolic_value++ , update_user_values_page.update_ap_lo = systolic_shape.systolic_value
+                                update_user_values_page.blood_pressure.ap_hi = true
                                 
                             }
                             
@@ -132,39 +119,85 @@ ColumnLayout{
         }
     }
 
+
     ListItem{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Height")
+            subtitle.text: i18n.tr("Diastolic Pressure (Low Pressure)")
             subtitle.font.bold: true
         }
     } 
-
-    Label {
+    LomiriShape{
+        id: diastolic_shape
         Layout.alignment: Qt.AlignCenter
-        font.pixelSize: units.gu(4)
-        color : app_style.label.labelColor  
-        text: Math.round(height_slider.value) + i18n.tr("cm")
-    }
+        Layout.preferredWidth: root.width - units.gu(9)
+        Layout.preferredHeight: units.gu(19)
+        aspect: LomiriShape.DropShadow
+        radius: "large"
+        backgroundColor : app_style.shape.shapeColor
 
-    QQC2.Slider{
-        id: height_slider
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredHeight: units.gu(22)
-        orientation: Qt.Vertical
-        live: true
-        from: 100
-        value: 140
-        to: 250
-        onValueChanged: {
-            if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                root.user_height = value
-                user_profile_config_page.user_profile.height = true
+        property int diastolic_value : 80
+
+        ColumnLayout{
+            anchors.fill: parent
+
+            Label{
+                id:diastolic_value_label
+                Layout.alignment: Qt.AlignCenter
+                font.pixelSize: units.gu(5)
+                font.bold: true
+                text:diastolic_shape.diastolic_value
             }
-            else{
-                update_user_values_page.update_height = value
-                update_user_values_page.user_profile.height = true
+
+            RowLayout{
+                Layout.alignment: Qt.AlignCenter
+                spacing: units.gu(6)
+                    Rectangle {
+                        width: units.gu(6)
+                        height: width
+                        color : "transparent"
+                        border.color: color
+                        border.width: 1
+                        radius: width*0.5
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked:{
+                                diastolic_shape.diastolic_value-- , update_user_values_page.update_ap_lo = diastolic_shape.diastolic_value
+                                update_user_values_page.blood_pressure.ap_lo = true
+                            }       
+    
+                        }
+                        Label {
+                            anchors.centerIn: parent
+                            font.pixelSize: units.gu(4)
+                            color : app_style.label.labelColor 
+                            text: "-"
+                        }
+                    }
+
+                    Rectangle {
+                        width: units.gu(6)
+                        height: width
+                        color : "transparent"
+                        border.color: color
+                        border.width: 1
+                        radius: width*0.5
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked:{
+                                diastolic_shape.diastolic_value++ , update_user_values_page.update_ap_hi = diastolic_shape.diastolic_value
+                                update_user_values_page.blood_pressure.ap_lo = true
+                            }
+                            
+                        }
+                        Label {
+                            anchors.centerIn: parent
+                            font.pixelSize: units.gu(4)
+                            color : app_style.label.labelColor 
+                            text: "+"
+                        }
+                    }
             }
         }
     }

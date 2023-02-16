@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier 
+ * 2022-2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@ import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import "style"
+import "settings"
 
 MainView {
     id: root

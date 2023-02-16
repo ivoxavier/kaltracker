@@ -115,32 +115,16 @@ Page{
             id: main_column
             width: root.width
 
-            RowLayout{
-                Layout.alignment: Qt.AlignCenter
-                width: parent.width
-                spacing: units.gu(2)
-
-                SlotDashboardPlan{
-                    id: male_slot
-                    Layout.alignment: Qt.AlignCenter
-                    Layout.preferredWidth: root.width - units.gu(9)
-                    Layout.preferredHeight: units.gu(7)
-
-                    function planType(plan){
-                        return plan == "loose" ? 
-                        0 : plan == "gain" ?
-                        1 : 2
-                    }                    
-
-                    title.text: planType(app_settings.plan_type) == 0 ?
-                    i18n.tr("Loose Weight") : planType(app_settings.plan_type) == 1 ?
-                    i18n.tr("Gain Weight") : i18n.tr("Maintain Weight")
-                    img_path:"../assets/goal-svgrepo-com.svg"
-                    
+            Icon{
+                Layout.alignment: Qt.AlignRight
+                name : "navigation-menu"
+                height: units.gu(3.5)
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: page_stack.push(menu_page)
                 }
-            }
-
-            BlankSpace{}
+             }
+            
 
             CaloriesCircleChart{Layout.alignment: Qt.AlignCenter}
 

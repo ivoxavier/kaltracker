@@ -76,7 +76,7 @@ Page{
 
     Timer{
         id: timer_profile_config
-        interval: 500; running: true; repeat: true
+        interval: 200; running: true; repeat: true
         onTriggered: showTick()
     }
   

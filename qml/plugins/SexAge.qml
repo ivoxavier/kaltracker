@@ -47,6 +47,7 @@ ColumnLayout{
     ListItem{
         width: root.width
         divider.visible: false
+        visible: page_stack.currentPage.objectName == "UpdateUserValuesPage" ? false : true
         ListItemLayout{
             subtitle.text: i18n.tr("At Birth")
             subtitle.font.bold: true
@@ -58,6 +59,7 @@ ColumnLayout{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
+        state: page_stack.currentPage.objectName
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("MALE")
         img_path:"../../assets/male-svgrepo-com.svg" 
@@ -67,13 +69,14 @@ ColumnLayout{
         }
     }
 
-    BlankSpace{}
+    BlankSpace{visible: page_stack.currentPage.objectName == "UpdateUserValuesPage" ? false : true}
 
     SlotBirthSex{
         id: female_slot
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
+        state: page_stack.currentPage.objectName
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("FEMALE")
         img_path:"../../assets/female-gender-svgrepo-com.svg"
@@ -117,8 +120,13 @@ ColumnLayout{
         }
 
         onSelectedIndexChanged: {
-            root.user_age = selectedIndex
-            user_profile_config_page.user_profile.age = true
+            if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+                root.user_age = selectedIndex
+                user_profile_config_page.user_profile.age = true
+            }else{
+                update_user_values_page.update_age = selectedIndex 
+                update_user_values_page.user_profile.age = true
+            }
         }
     }
 

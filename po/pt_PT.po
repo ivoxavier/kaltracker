@@ -196,6 +196,14 @@ msgstr "Lista Vazia, Por Favor Registe Ingestões Primeiro.."
 msgid "Backup & Restore Data"
 msgstr "Cópia e Restauro de Dados"
 
+#: ../qml/plugins/BloodPressure.qml:40
+msgid "Systolic Pressure (High Pressure)"
+msgstr "Pressão Sistólica (Pressão Alta)"
+
+#: ../qml/plugins/BloodPressure.qml:127
+msgid "Diastolic Pressure (Low Pressure)"
+msgstr "Pressão Diastólica (Pressão Baixa)"
+
 #: ../qml/BackupRestorePage.qml:99
 msgid "Something went wrong, please verify Logs"
 msgstr "Algo correu mal, verifique os logs"
@@ -442,6 +450,10 @@ msgstr "Alimento ultra-processado"
 #: ../qml/MenuPage.qml:85
 msgid "Version: "
 msgstr "Versão: "
+
+#: ../qml/QuickAdditionPage.qml:39
+msgid "Product Macros"
+msgstr "Nutrientes do Produto"
 
 #: ../qml/MenuPage.qml:93
 msgid "User"
