@@ -37,7 +37,7 @@ ColumnLayout{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Systolic Presure (High Pressure)")
+            subtitle.text: i18n.tr("Systolic Pressure (High Pressure)")
             subtitle.font.bold: true
         }
     }
@@ -124,7 +124,7 @@ ColumnLayout{
         width: root.width
         divider.visible: false
         ListItemLayout{
-            subtitle.text: i18n.tr("Diastolic Presure (Low Pressure)")
+            subtitle.text: i18n.tr("Diastolic Pressure (Low Pressure)")
             subtitle.font.bold: true
         }
     } 

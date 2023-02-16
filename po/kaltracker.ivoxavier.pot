@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 16:58+0000\n"
+"POT-Creation-Date: 2023-02-16 17:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -509,15 +509,15 @@ msgstr ""
 msgid "Height & Weight"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:113 ../qml/UserProfileConfigPage.qml:100
+#: ../qml/UpdateUserValuesPage.qml:111 ../qml/UserProfileConfigPage.qml:100
 msgid "loose"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:118 ../qml/UserProfileConfigPage.qml:105
+#: ../qml/UpdateUserValuesPage.qml:116 ../qml/UserProfileConfigPage.qml:105
 msgid "gain"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:128 ../qml/UserProfileConfigPage.qml:115
+#: ../qml/UpdateUserValuesPage.qml:126 ../qml/UserProfileConfigPage.qml:115
 msgid ""
 "Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
 "\n"
@@ -792,11 +792,11 @@ msgid "Updating User Table"
 msgstr ""
 
 #: ../qml/plugins/BloodPressure.qml:40
-msgid "Systolic Presure (High Pressure)"
+msgid "Systolic Pressure (High Pressure)"
 msgstr ""
 
 #: ../qml/plugins/BloodPressure.qml:127
-msgid "Diastolic Presure (Low Pressure)"
+msgid "Diastolic Pressure (Low Pressure)"
 msgstr ""
 
 #: ../qml/plugins/HeightWeight.qml:40
