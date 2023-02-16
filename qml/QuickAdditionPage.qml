@@ -16,7 +16,7 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
+import QtQuick.Controls 2.2 as QQC2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
@@ -25,6 +25,7 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
+import "plugins"
 import "../js/UserTable.js" as UserTable
 import "../js/IngestionsTable.js" as IngestionsTable
 import "../js/UserFoodsListTable.js" as UserFoodsListTable
@@ -34,14 +35,10 @@ Page{
     id: quick_addition_page
     objectName: 'QuickAdditionPage'
     header: PageHeader {
-                title : i18n.tr("Quick Addition")
+                title : swipe_view.currentIndex == 0 ?
+                i18n.tr("Product Details") : i18n.tr("Product Macros")
 
-                sections{
-                    model: {[i18n.tr("Details"), i18n.tr("Macros")]}
-                    onSelectedIndexChanged: sections.selectedIndex == 0 ? is_details_view = true : is_details_view = false
-                }
-
-                StyleHints {
+               StyleHints {
                     /*foregroundColor: "white"
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
@@ -62,10 +59,6 @@ Page{
     property double fat_quick_addition_page : 0.0
     property double protein_quick_addition_page : 0.0
  
-
-    //defines active view
-    property bool is_details_view : true
-   
    
     Component{
         id: sucess_dialog
@@ -79,217 +72,45 @@ Page{
 
     Timer{id: timer;repeat: false}
 
-    Flickable {
-        id: flickable
-        anchors{
-            top: parent.header.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
+    QQC2.SwipeView{
+        id: swipe_view
+        currentIndex:0
+        anchors.top:parent.header.bottom
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: parent.height
+
+        Item{
+            //index 0
+            Flickable{
+                anchors.fill: parent
+                contentWidth: swipe_view.width
+                contentHeight: product_name_calories.implicitHeight
+                interactive: true
+
+                ProductNameCalories{id:product_name_calories}
+            }
+
         }
 
-        contentWidth: parent.width
-        contentHeight: main_column.height  
-        
-        ColumnLayout{
-            id: main_column
-            width: root.width
-            
-            spacing: units.gu(1)
+        Item {
+            //index 1
+            ProductMacros{id:product_macros}
+        }
 
-            BlankSpace{}
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Product name")
-                visible: is_details_view ? true: false
-                font.bold : true
-                color : app_style.label.labelColor
-            }
-
-            LomiriShape{  
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(2)
-                Layout.preferredHeight: units.gu(4)
-                radius: "large"
-                aspect: LomiriShape.Inset
-                visible: is_details_view ? true: false
-                backgroundColor: app_style.shape.textInput.shapeColor
-                TextInput{
-                    anchors.fill: parent
-                    overwriteMode: true
-                    horizontalAlignment: TextInput.AlignHCenter
-                    verticalAlignment: TextInput.AlignVCenter
-                    color : app_style.label.labelColor 
-                    onTextChanged: product_name_quick_addition_page = text
-                }
-            }
-
-            BlankSpace{}
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Calories")
-                visible: is_details_view ? true: false
-                font.bold : true
-                color : app_style.label.labelColor 
-            }
-            
-            LomiriShape{  
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(2)
-                Layout.preferredHeight: units.gu(4)
-                radius: "large"
-                aspect: LomiriShape.Inset
-                visible: is_details_view ? true: false
-                backgroundColor: app_style.shape.textInput.shapeColor
-                
-                TextInput{
-                    anchors.fill: parent
-                    overwriteMode: true
-                    horizontalAlignment: TextInput.AlignHCenter
-                    verticalAlignment: TextInput.AlignVCenter
-                    inputMethodHints: Qt.ImhDigitsOnly
-                    color : app_style.label.labelColor 
-                    onEditingFinished:{ 
-                        cal_quick_addition_page = text
-                    }
-                }
-            }
-
-            BlankSpace{}
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Nutriscore Grade")
-                visible: is_details_view ? true: false
-                font.bold : true
-                color : app_style.label.labelColor
-            }
-
-            OptionSelector {
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(14)
-                expanded: true
-                model: [i18n.tr("A: Very Good Nutritional Quality"),
-                i18n.tr("B: Good Nutritional Quality"),
-                i18n.tr("C: Average Nutritional Quality"),
-                i18n.tr("D: Poor Nutritional Quality"),
-                i18n.tr("E: Bad Nutritional Quality")]
-                selectedIndex: -1
-                visible: is_details_view ? true: false
-                onSelectedIndexChanged: {
-                    nutriscore_quick_addition_page = selectedIndex == 0 ?
-                    "a" : selectedIndex == 1 ?
-                    "b" : selectedIndex == 2 ?
-                    "c" : selectedIndex == 3 ?
-                    "d" : "e"
-                }
-            }
-     
-            /*MACROS TAB*/
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Fat/100g")
-                visible: is_details_view ? false: true
-                font.bold : true
-                color : app_style.label.labelColor 
-            }
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: fat_quick_addition_page
-                visible: is_details_view ? false: true
-                color : app_style.label.labelColor 
-            }
-
-            LomiriShape{
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(30)
-                Layout.preferredHeight: units.gu(3)
-                radius: "large"
-                aspect: LomiriShape.DropShadow
-                visible: is_details_view ? false: true
-                backgroundColor: app_style.shape.sliderNutrient.shapeColor
-                
-                NutrientSlider{
-                        id: fat_slider
-                        anchors.centerIn: parent
-                        width: parent.width
-                        onPressedChanged: fat_quick_addition_page = Number(value.toFixed(1))
-                }
-            }
-
-            BlankSpace{}
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Protein/100g")
-                visible: is_details_view ? false: true
-                font.bold : true
-                color : app_style.label.labelColor
-            }
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: protein_quick_addition_page
-                visible: is_details_view ? false: true
-                color : app_style.label.labelColor
-            }
-
-            LomiriShape{
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(30)
-                Layout.preferredHeight: units.gu(3)
-                radius: "large"
-                aspect: LomiriShape.DropShadow
-                visible: is_details_view ? false: true
-                backgroundColor: app_style.shape.sliderNutrient.shapeColor
-                NutrientSlider{
-                        anchors.centerIn: parent
-                        width: parent.width
-                        onPressedChanged : {
-                            protein_quick_addition_page = Number(value.toFixed(1))
-                        }    
-                    }
-            }
-
-            BlankSpace{}
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: i18n.tr("Carbo/100g")
-                visible: is_details_view ? false: true
-                font.bold : true
-                color : app_style.label.labelColor
-            }
-
-            Text{
-                Layout.alignment: Qt.AlignCenter
-                text: carbo_quick_addition_page
-                visible: is_details_view ? false: true
-                color : app_style.label.labelColor
-            }
-
-            LomiriShape{
-                Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width - units.gu(30)
-                Layout.preferredHeight: units.gu(3)
-                radius: "large"
-                aspect: LomiriShape.DropShadow
-                visible: is_details_view ? false: true
-                backgroundColor: app_style.shape.sliderNutrient.shapeColor
-                NutrientSlider{
-                        anchors.centerIn: parent
-                        width: parent.width
-                        onPressedChanged : carbo_quick_addition_page = Number(value.toFixed(1))
-                    }
-            }           
-        }  
     }
+
+    
     RowAbstractConfirmButton{
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
+    }
+    
+    QQC2.PageIndicator{
+        id: swipe_view_indicator
+        count: swipe_view.count
+        currentIndex: swipe_view.currentIndex
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter   
     }
 }

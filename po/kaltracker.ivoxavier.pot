@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 11:35+0000\n"
+"POT-Creation-Date: 2023-02-16 12:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -243,70 +243,58 @@ msgstr ""
 msgid "Ingestion Saved!"
 msgstr ""
 
-#: ../qml/HomePage.qml:136 ../qml/UpdateUserValuesPage.qml:222
-msgid "Loose Weight"
-msgstr ""
-
-#: ../qml/HomePage.qml:137 ../qml/UpdateUserValuesPage.qml:222
-msgid "Gain Weight"
-msgstr ""
-
-#: ../qml/HomePage.qml:137 ../qml/UpdateUserValuesPage.qml:222
-msgid "Maintain Weight"
-msgstr ""
-
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:159
+#: ../qml/HomePage.qml:143
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:178
+#: ../qml/HomePage.qml:162
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:193
+#: ../qml/HomePage.qml:177
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:203
+#: ../qml/HomePage.qml:187
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:214
+#: ../qml/HomePage.qml:198
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:262 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:246 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:265 ../qml/HomePage.qml:276 ../qml/HomePage.qml:287
-#: ../qml/HomePage.qml:298 ../qml/ListFoodsIngestedMonthPage.qml:80
+#: ../qml/HomePage.qml:249 ../qml/HomePage.qml:260 ../qml/HomePage.qml:271
+#: ../qml/HomePage.qml:282 ../qml/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:273 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:284 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:268 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:295 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:279 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:357
+#: ../qml/HomePage.qml:341
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:366
+#: ../qml/HomePage.qml:350
 msgid "Your Previous Ingestions"
 msgstr ""
 
@@ -445,67 +433,88 @@ msgstr ""
 msgid "Search For Barcode In %1"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:37
-msgid "Quick Addition"
+#: ../qml/QuickAdditionPage.qml:39 ../qml/SetFoodPage.qml:43
+msgid "Product Details"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:40
-msgid "Details"
+#: ../qml/QuickAdditionPage.qml:39
+msgid "Product Macros"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:40 ../qml/plugins/ProductDetails.qml:46
-msgid "Macros"
-msgstr ""
-
-#: ../qml/QuickAdditionPage.qml:72 ../qml/SetFoodPage.qml:106
+#: ../qml/QuickAdditionPage.qml:65 ../qml/QuickAdditionPageBACKUP.qml:72
+#: ../qml/SetFoodPage.qml:106
 msgid "Stored!"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:77 ../qml/SetFoodPage.qml:111
+#: ../qml/QuickAdditionPage.qml:70 ../qml/QuickAdditionPageBACKUP.qml:77
+#: ../qml/SetFoodPage.qml:111
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:104
+#: ../qml/QuickAdditionPageBACKUP.qml:37
+msgid "Quick Addition"
+msgstr ""
+
+#: ../qml/QuickAdditionPageBACKUP.qml:40
+msgid "Details"
+msgstr ""
+
+#: ../qml/QuickAdditionPageBACKUP.qml:40 ../qml/plugins/ProductDetails.qml:46
+msgid "Macros"
+msgstr ""
+
+#: ../qml/QuickAdditionPageBACKUP.qml:124
+#: ../qml/plugins/ProductNameCalories.qml:39
 msgid "Product name"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:132
+#: ../qml/QuickAdditionPageBACKUP.qml:152
+#: ../qml/plugins/ProductNameCalories.qml:65
 msgid "Calories"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:164
+#: ../qml/QuickAdditionPageBACKUP.qml:184
+#: ../qml/plugins/ProductNameCalories.qml:94
 msgid "Nutriscore Grade"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:174
+#: ../qml/QuickAdditionPageBACKUP.qml:194
+#: ../qml/plugins/ProductNameCalories.qml:103
 msgid "A: Very Good Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:175
+#: ../qml/QuickAdditionPageBACKUP.qml:195
+#: ../qml/plugins/ProductNameCalories.qml:104
 msgid "B: Good Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:176
+#: ../qml/QuickAdditionPageBACKUP.qml:196
+#: ../qml/plugins/ProductNameCalories.qml:105
 msgid "C: Average Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:177
+#: ../qml/QuickAdditionPageBACKUP.qml:197
+#: ../qml/plugins/ProductNameCalories.qml:106
 msgid "D: Poor Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:178
+#: ../qml/QuickAdditionPageBACKUP.qml:198
+#: ../qml/plugins/ProductNameCalories.qml:107
 msgid "E: Bad Nutritional Quality"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:194 ../qml/SetFoodPage.qml:81
+#: ../qml/QuickAdditionPageBACKUP.qml:214 ../qml/SetFoodPage.qml:81
+#: ../qml/plugins/ProductMacros.qml:64
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:228 ../qml/SetFoodPage.qml:89
+#: ../qml/QuickAdditionPageBACKUP.qml:248 ../qml/SetFoodPage.qml:89
+#: ../qml/plugins/ProductMacros.qml:65
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:262 ../qml/SetFoodPage.qml:97
+#: ../qml/QuickAdditionPageBACKUP.qml:282 ../qml/SetFoodPage.qml:97
+#: ../qml/plugins/ProductMacros.qml:66
 msgid "Carbo/100g"
 msgstr ""
 
@@ -515,10 +524,6 @@ msgstr ""
 
 #: ../qml/ScanPage.qml:38
 msgid "Scanning"
-msgstr ""
-
-#: ../qml/SetFoodPage.qml:43
-msgid "Product Details"
 msgstr ""
 
 #: ../qml/SetFoodPage.qml:43
@@ -600,6 +605,18 @@ msgstr ""
 #: ../qml/UpdateUserValuesPage.qml:213
 #: ../qml/components/SlotDashboardCalories.qml:56
 msgid "Goal"
+msgstr ""
+
+#: ../qml/UpdateUserValuesPage.qml:222
+msgid "Gain Weight"
+msgstr ""
+
+#: ../qml/UpdateUserValuesPage.qml:222
+msgid "Loose Weight"
+msgstr ""
+
+#: ../qml/UpdateUserValuesPage.qml:222
+msgid "Maintain Weight"
 msgstr ""
 
 #: ../qml/UpdateUserValuesPage.qml:243

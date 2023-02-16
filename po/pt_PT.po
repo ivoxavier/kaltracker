@@ -443,6 +443,10 @@ msgstr "Alimento ultra-processado"
 msgid "Version: "
 msgstr "Versão: "
 
+#: ../qml/QuickAdditionPage.qml:39
+msgid "Product Macros"
+msgstr "Nutrientes do Produto"
+
 #: ../qml/MenuPage.qml:93
 msgid "User"
 msgstr "Utilizador"
