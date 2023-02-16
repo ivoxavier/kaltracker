@@ -91,6 +91,7 @@ install(DIRECTORY "qml" DESTINATION .)
 install(DIRECTORY "qml/components" DESTINATION /qml)
 install(DIRECTORY "qml/style" DESTINATION /qml)
 install(DIRECTORY "qml/plugins" DESTINATION /qml)
+install(DIRECTORY "qml/settings" DESTINATION /qml)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
 
