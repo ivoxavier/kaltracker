@@ -3,7 +3,7 @@ echo "Current Tag Version:"
 current_tag= git describe --tags --abbrev=0
 case $1 in
  --desktop)
- clickable desktop
+ CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable desktop
  ;;
  --device)
  clickable
