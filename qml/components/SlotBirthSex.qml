@@ -37,6 +37,23 @@ LomiriShape{
     aspect: LomiriShape.DropShadow
     backgroundColor: app_style.shape.shapeColor
     
+    states:[
+        State{
+            name: "UpdateUserValuesPage"
+            PropertyChanges{
+                target: slot_shape
+                visible: false
+            }
+        },
+        State{
+            name: "UserProfileConfigPage"
+            PropertyChanges{
+                target: slot_shape
+                visible: true
+            }
+        }
+    ]
+
     ListItem{
         height: slot_layout.height
         divider.visible: false

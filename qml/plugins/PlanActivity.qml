@@ -32,33 +32,43 @@ ColumnLayout{
     width: root.width
 
     function selectPlan(plan){
-        //Change the value of Object user_profile
-        user_profile_config_page.user_profile.plan = true
+        if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+            //Change the value of Object user_profile
+            user_profile_config_page.user_profile.plan = true
+            //property to store the user goal for further calories daily objectiv calculation.
+            root.user_goal = plan == 0 ? 0 : 0
 
-        //property to store the user goal for further calories daily objectiv calculation.
-        root.user_goal = plan == 0 ? 0 : 0
+            //property to store type of plan
+            root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
 
-        //property to store type of plan
-        root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
-
+            //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
+            user_profile_config_page.is_loose_weight = plan == 1 ? true : false
+            user_profile_config_page.is_gain_weight = plan == 2 ? true : false
+        } else{
+            update_user_values_page.user_profile.plan = true
+            update_user_values_page.update_activity_level = plan
+            update_user_values_page.update_type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
+            update_user_values_page.is_loose_weight = plan == 1 ? true : false
+            update_user_values_page.is_gain_weight = plan == 2 ? true : false
+        }
         //highlight Slots selection 
         maintain_weight_slot.text_color = plan == 0 ? LomiriColors.green : "black"
         loose_weight_slot.text_color = plan == 1 ? LomiriColors.green : "black"
         gain_weight_slot.text_color = plan == 2 ? LomiriColors.green : "black"
-
-        //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
-        user_profile_config_page.is_loose_weight = plan == 1 ? true : false
-        user_profile_config_page.is_gain_weight = plan == 2 ? true : false
     }
 
 
     function selectActivity(activity){
-        //Change the value of Object user_profile
-        user_profile_config_page.user_profile.activity = true
+        if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+            //Change the value of Object user_profile
+            user_profile_config_page.user_profile.activity = true
 
-        //property to store type of plan
-        root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
-
+            //property to store type of plan
+            root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
+        }else{
+            update_user_values_page.user_profile.activity = true
+            update_user_values_page.update_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
+        }
         //highlight Slots selection 
         very_light_slot.text_color = activity == 0 ? LomiriColors.green : "black"
         light_slot.text_color = activity == 1 ? LomiriColors.green : "black"
