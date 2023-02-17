@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-17 18:35+0000\n"
+"POT-Creation-Date: 2023-02-17 18:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -688,11 +688,11 @@ msgstr ""
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:114
+#: ../qml/components/IsProductFoundDialog.qml:115
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:125
+#: ../qml/components/IsProductFoundDialog.qml:126
 msgid "Next"
 msgstr ""
 
