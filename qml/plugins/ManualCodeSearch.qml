@@ -33,10 +33,26 @@ import "../style"
 ColumnLayout{
     width: root.width
 
-    TextInput{
+    LomiriShape{  
         Layout.alignment: Qt.AlignCenter
-        //placeholder: "Enter your name"
-        Layout.preferredWidth: units.gu(13)
-     Layout.preferredHeight: units.gu(5)
+        Layout.preferredWidth: root.width - units.gu(2)
+        Layout.preferredHeight: units.gu(4)
+        radius: "large"
+        aspect: LomiriShape.Inset
+        backgroundColor: app_style.shape.textInput.shapeColor
+        
+        TextField{
+            anchors.fill: parent
+            //overwriteMode: true
+            horizontalAlignment: TextField.AlignHCenter
+            verticalAlignment: TextField.AlignVCenter
+            inputMethodHints: Qt.ImhDigitsOnly
+            color : app_style.label.labelColor 
+            placeholderText: "5600380894296"
+            onTextChanged:{ 
+            
+            }
+        }
     }
+
 }

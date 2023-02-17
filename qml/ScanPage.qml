@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,8 +36,8 @@ Page {
     id: scan_page
     objectName: 'ScanPage'
     header: PageHeader {
-       //visible: app_settings.is_page_headers_enabled ? true : false
-       title: i18n.tr("Scanning")
+       title: swipe_view.currentIndex == 0 ? 
+       i18n.tr("Scanning") : i18n.tr("Manual search")
 
        StyleHints {
             /*foregroundColor: "white"
@@ -56,6 +56,8 @@ Page {
        IsProductFoundDialog{barcode: bar_code_founded; is_product_found_dialog_meal: meal_scan_page}
     }
 
+    
+
     QQC2.SwipeView{
         id: swipe_view
         currentIndex:0
@@ -63,23 +65,12 @@ Page {
         anchors.bottom: parent.bottom
         width: parent.width
         height: parent.height
-        onCurrentIndexChanged: {
-            if (currentIndex == 0){
-                print("start camera")
-                capture_shot.start();
-                camera.start();
-            }
-            else{
-                print("stop camera")
-                capture_shot.stop();
-                camera.stop();
-            }
-        }
+        onCurrentIndexChanged: currentIndex === 0 ?
+        barCodeReader.is_reading = true : barCodeReader.is_reading = false
+            
 
-        Item{
-            // index 0
-            BarCodeReader{}
-        }
+        //index 0
+        BarCodeReader{id:barCodeReader}
 
         Item{
             // index 1
