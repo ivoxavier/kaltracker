@@ -21,6 +21,7 @@ import Lomiri.Components 1.3
 import QtMultimedia 5.12
 import QtGraphicalEffects 1.0
 import QZXing 3.3
+import QtQuick.Controls 2.2 as QQC2
 import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
 import Lomiri.Components.Popups 1.3
@@ -28,6 +29,7 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
+import "plugins"
 
 
 Page {   
@@ -54,110 +56,43 @@ Page {
        IsProductFoundDialog{barcode: bar_code_founded; is_product_found_dialog_meal: meal_scan_page}
     }
 
-    Icon {
-        height: units.gu(6)
-        z:100
-        width: height
-        anchors {
-            right: parent.right
-            bottom: parent.bottom
-            margins: units.gu(2)
-        }
-        name: camera.flash.mode === Camera.FlashVideoLight ? "torch-off" : "torch-on"
-        color: "white"
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                camera.flash.mode = (camera.flash.mode === Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
-                
+    QQC2.SwipeView{
+        id: swipe_view
+        currentIndex:0
+        anchors.top:parent.header.bottom
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: parent.height
+        onCurrentIndexChanged: {
+            if (currentIndex == 0){
+                print("start camera")
+                capture_shot.start();
+                camera.start();
+            }
+            else{
+                print("stop camera")
+                capture_shot.stop();
+                camera.stop();
             }
         }
-    }
 
-   Camera {
-        id: camera
+        Item{
+            // index 0
+            BarCodeReader{}
+        }
 
-        focus.focusMode: Camera.FocusContinuous//Camera.FocusMacro + Camera.FocusContinuous
-        focus.focusPointMode: Camera.FocusPointCenter
-
-        captureMode: Camera.CaptureViewfinder
-        exposure.exposureMode: Camera.ExposureBarcode
-    }
-
-    Timer {
-        id: capture_shot
-        interval: 250
-        repeat: true
-        running: Qt.application.active
-        onTriggered: {
-            video_output.grabToImage(function(result) {
-                code_reader.decodeImage(result.image);
-            });
+        Item{
+            // index 1
+            ManualCodeSearch{}
         }
     }
 
-    VideoOutput {
-        id: video_output
+    QQC2.PageIndicator{
+        id: swipe_view_indicator
+        count: swipe_view.count
+        currentIndex: swipe_view.currentIndex
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter   
+    } 
 
-        anchors{
-            top:  parent.header.bottom 
-            left: parent.left
-            right: parent.right
-            bottom:  parent.bottom 
-        }
-
-        fillMode: VideoOutput.PreserveAspectCrop
-        source: camera
-        focus: true
-        orientation: Screen.primaryOrientation == Qt.PortraitOrientation ? -90 : 0
-    }
-
-    Rectangle {
-        id: zoneOverlay
-        anchors.fill: parent
-        color: "#000000"
-    }
-
-    Item {
-        id: zoneMask
-        anchors.fill: parent
-
-        Rectangle {
-            color: "red"
-            height: units.gu(35)
-            width: units.gu(50)
-            anchors.centerIn: parent
-        }
-    }
-
-    OpacityMask {
-        opacity: 0.83
-        invert: true
-        source: ShaderEffectSource {
-            sourceItem: zoneOverlay
-            hideSource: true
-        }
-        maskSource: ShaderEffectSource {
-            sourceItem: zoneMask
-            hideSource: true
-        }
-        anchors.fill: parent
-    }
-
-
-   QZXing {
-        id: code_reader
-
-        enabledDecoders: QZXing.DecoderFormat_UPC_A
-
-        onTagFound: {
-            //capture_shot.stop();
-            //camera.stop();
-            bar_code_founded = tag
-            PopupUtils.open(product_found_dialog)
-        }
-
-        tryHarder: true
-    }
 }    
