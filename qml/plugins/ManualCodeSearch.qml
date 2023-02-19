@@ -32,27 +32,78 @@ import "../style"
 
 ColumnLayout{
     width: root.width
+    property string manual_barcode
 
-    LomiriShape{  
+    BlankSpace{}
+
+    RowLayout{
         Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width - units.gu(2)
-        Layout.preferredHeight: units.gu(4)
-        radius: "large"
-        aspect: LomiriShape.Inset
-        backgroundColor: app_style.shape.textInput.shapeColor
+        LomiriShape{  
+            Layout.preferredWidth: root.width - units.gu(18)
+            Layout.preferredHeight: units.gu(4)
+            radius: "large"
+            aspect: LomiriShape.Inset
+            backgroundColor: app_style.shape.textInput.shapeColor
         
-        TextField{
-            anchors.fill: parent
-            //overwriteMode: true
-            horizontalAlignment: TextField.AlignHCenter
-            verticalAlignment: TextField.AlignVCenter
-            inputMethodHints: Qt.ImhDigitsOnly
-            color : app_style.label.labelColor 
-            placeholderText: "5600380894296"
-            onTextChanged:{ 
-            
+            TextField{
+                anchors.fill: parent
+                //overwriteMode: true
+                horizontalAlignment: TextField.AlignHCenter
+                verticalAlignment: TextField.AlignVCenter
+                inputMethodHints: Qt.ImhDigitsOnly
+                color : app_style.label.labelColor 
+                placeholderText: i18n.tr("Enter the code bar here")
+                onTextChanged:{ 
+                    manual_barcode = text
+                }
+            }
+        }
+        Button{
+            Layout.preferredWidth: units.gu(8)
+            Layout.preferredHeight: units.gu(4)
+            Layout.alignment: Qt.AlignCenter
+            text: i18n.tr("Search")
+            onClicked: {
+                activityIndicator.running = true, activityIndicator.visible = true
+                if (manual_barcode.length > 0) {
+                    openFoodFactJSON.source = "https://world.openfoodfacts.org/api/v0/product/" + manual_barcode + ".json";
+                    openFoodFactJSON.query = "$[*]"
+                    openFoodFactJSON.load()
+                }
+            }
+        }
+        ActivityIndicator{
+            id: activityIndicator
+            visible: false
+            running: false
+            Layout.preferredHeight: units.gu(2)
+        }
+    }
+    
+    JSONListModel {
+        id: openFoodFactJSON
+        onJsonChanged: {
+            var _json = openFoodFactJSON.model.get(0);
+            if (typeof _json !== "undefined" && typeof _json.product_name !== "undefined" ) {
+                product_name = _json.product_name
+                nutriscore_grade = (typeof _json.nutriscore_grade == "undefined") ? "a" :  _json.nutriscore_grade
+                energy_kcal_100g = (typeof _json.nutriments.energy_value == "undefined") ? 0 : _json.nutriments.energy_value
+                fat_100g = (typeof _json.nutriments.fat_100g == "undefined") ? 0.0 : _json.nutriments.fat_100g
+                protein_100g = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
+                carbohydrates_100g = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
+                nova_group = (typeof _json.nova_groups == "undefined") ? "0" : _json.nova_groups
+                activityIndicator.running = false, activityIndicator.visible = false
+                ok_button.visible = true
+            }else{
+                
             }
         }
     }
 
+    BlankSpace{}
+
+    Label{
+        Layout.alignment: Qt.AlignLeft
+        text: i18n.tr("Product name: ") + product_name
+    }
 }

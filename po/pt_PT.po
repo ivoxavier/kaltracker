@@ -136,6 +136,10 @@ msgstr "KG"
 msgid "Blood Pressure"
 msgstr "Pressão Arterial"
 
+#: ../qml/ScanPage.qml:40
+msgid "Reading Bar Code..."
+msgstr "A ler código de barras..."
+
 #: ../qml/BodyMeasuresPage.qml:164
 msgid "Normal"
 msgstr "Normal"
@@ -995,6 +999,15 @@ msgstr "Nome: %1"
 #: ../qml/components/IsProductFoundDialog.qml:84
 msgid "Nutriscore: %1"
 msgstr "Nutriscore: %1"
+
+
+#: ../qml/ScanPage.qml:40
+msgid "Manual search"
+msgstr "Pesquisa Manual"
+
+#: ../qml/plugins/BarCodeReader.qml:76
+msgid "Click here for manual search..."
+msgstr "Carregue aqui para pesquisa manual..."
 
 #: ../qml/components/IsProductFoundDialog.qml:93
 msgid "Calories/100gr: %1"

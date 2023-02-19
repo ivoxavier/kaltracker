@@ -37,7 +37,7 @@ Page {
     objectName: 'ScanPage'
     header: PageHeader {
        title: swipe_view.currentIndex == 0 ? 
-       i18n.tr("Scanning") : i18n.tr("Manual search")
+       i18n.tr("Reading Bar Code...") : i18n.tr("Manual search")
 
        StyleHints {
             /*foregroundColor: "white"
@@ -50,6 +50,16 @@ Page {
 
     //stores the barcode found and pass it to api openfoodsfact dialog
     property var bar_code_founded
+
+    property string barcode
+    property int is_product_found_dialog_meal
+    property string product_name
+    property string nutriscore_grade
+    property double fat_100g
+    property double carbohydrates_100g
+    property double protein_100g
+    property int energy_kcal_100g
+    property string nova_group
 
     Component{
        id: product_found_dialog
@@ -65,6 +75,7 @@ Page {
         anchors.bottom: parent.bottom
         width: parent.width
         height: parent.height
+        interactive: false
         onCurrentIndexChanged: currentIndex === 0 ?
         barCodeReader.is_reading = true : barCodeReader.is_reading = false
             
@@ -78,12 +89,40 @@ Page {
         }
     }
 
-    QQC2.PageIndicator{
+   /* QQC2.PageIndicator{
         id: swipe_view_indicator
         count: swipe_view.count
         currentIndex: swipe_view.currentIndex
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter   
-    } 
+    } */
 
-}    
+    
+    Row{
+        id: ok_button
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        width: root.width
+        layoutDirection: Qt.RightToLeft 
+        rightPadding: units.gu(1)
+        bottomPadding: units.gu(1)
+        visible: false
+        IconButton{
+            icon_name : "ok"
+            MouseArea{
+                anchors.fill: parent
+                onClicked:{
+                    page_stack.pop(scan_page)  
+                    page_stack.push(set_food_page,{product_name_set_food_page: product_name,
+                    cal_set_food_page: energy_kcal_100g,
+                    carbo_set_food_page: carbohydrates_100g,
+                    fat_set_food_page: fat_100g,
+                    protein_set_food_page: protein_100g,
+                    nutriscore_set_food_page: nutriscore_grade,
+                    meal_set_food_page: is_product_found_dialog_meal,
+                    nova_groups_set_food_page: nova_group}) 
+                }
+            }  
+        }
+    }
+}   

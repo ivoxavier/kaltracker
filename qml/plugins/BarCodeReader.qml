@@ -24,6 +24,7 @@ import QtQuick.Controls 2.2 as QQC2
 import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
 import Lomiri.Components.Popups 1.3
+import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import "../components"
@@ -34,7 +35,9 @@ Item{
     id: bar_code_components
     property bool is_reading: true
 
+
     Icon {
+        id: torch_icon
         height: units.gu(6)
         z:100
         width: height
@@ -55,6 +58,36 @@ Item{
         }
     }
 
+    Component{ 
+        id: manual_search_popover_component
+        Popover{
+            id: popover_manual_search
+            width: root.width //- units.gu(2)
+            height: units.gu(12)
+            y: 30
+            
+            Column{
+                id: main_column_pop
+                width: parent.width
+                anchors.centerIn: parent
+                ListItem{
+                    color: app_style.shape.shapeColor
+                    ListItemLayout{
+                        title.text: i18n.tr("Click here for manual search...")
+                        title.color: app_style.label.labelColor 
+                    }
+                }
+            }
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    swipe_view.currentIndex = 1;
+                    PopupUtils.close(popover_manual_search)
+                }
+            }
+        }
+    }
+
     Camera {
         id: camera
 
@@ -66,7 +99,7 @@ Item{
     }
 
     Timer {
-        id: timer
+        id: timer_capture_shot
         interval: 250
         repeat: true
         running: bar_code_components.is_reading
@@ -74,6 +107,17 @@ Item{
             video_output.grabToImage(function(result) {
                 code_reader.decodeImage(result.image);
             });
+        }
+    }
+
+    Timer{
+        id: timer_for_manual_code_search
+        interval: 8000
+        repeat: true
+        running: true
+        onTriggered: {
+            PopupUtils.open(manual_search_popover_component)
+            timer_for_manual_code_search.stop()
         }
     }
 
@@ -131,9 +175,8 @@ Item{
             enabledDecoders: QZXing.DecoderFormat_UPC_A
 
             onTagFound: {
-                timer.stop();
+                timer_capture_shot.stop();
                 //camera.stop();
-                
                 bar_code_founded = tag
                 PopupUtils.open(product_found_dialog)
             }

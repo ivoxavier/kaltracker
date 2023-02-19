@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-17 18:59+0000\n"
+"POT-Creation-Date: 2023-02-19 21:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -458,7 +458,7 @@ msgid "Manual search"
 msgstr ""
 
 #: ../qml/ScanPage.qml:40
-msgid "Scanning"
+msgid "Reading Bar Code..."
 msgstr ""
 
 #: ../qml/SetFoodPage.qml:43
@@ -795,6 +795,10 @@ msgstr ""
 msgid "Updating User Table"
 msgstr ""
 
+#: ../qml/plugins/BarCodeReader.qml:76
+msgid "Click here for manual search..."
+msgstr ""
+
 #: ../qml/plugins/BloodPressure.qml:40
 msgid "Systolic Pressure (High Pressure)"
 msgstr ""
@@ -837,6 +841,18 @@ msgstr ""
 
 #: ../qml/plugins/IngestionConfig.qml:120
 msgid "Quantity"
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:55
+msgid "Enter the code bar here"
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:65
+msgid "Search"
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:107
+msgid "Product name: "
 msgstr ""
 
 #: ../qml/plugins/PlanActivity.qml:85
