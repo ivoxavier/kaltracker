@@ -30,6 +30,7 @@ import QtQuick.Layouts 1.3
 import "../components"
 import "../style"
 
+
 ColumnLayout{
     width: root.width
     property string manual_barcode
@@ -58,17 +59,30 @@ ColumnLayout{
                 }
             }
         }
+
+        Timer{
+            id: code_searcher_timer
+            interval: 9000
+            repeat: true
+            running: false
+            onTriggered: {
+                PopupUtils.open(messageError)
+                code_searcher_timer.stop()
+                activityIndicator.running = false, activityIndicator.visible = false
+            }
+        }
         Button{
             Layout.preferredWidth: units.gu(8)
             Layout.preferredHeight: units.gu(4)
             Layout.alignment: Qt.AlignCenter
-            text: i18n.tr("Search")
+            iconName: "find"
             onClicked: {
+                code_searcher_timer.running = true
                 activityIndicator.running = true, activityIndicator.visible = true
                 if (manual_barcode.length > 0) {
                     openFoodFactJSON.source = "https://world.openfoodfacts.org/api/v0/product/" + manual_barcode + ".json";
                     openFoodFactJSON.query = "$[*]"
-                    openFoodFactJSON.load()
+                    openFoodFactJSON.load()    
                 }
             }
         }
@@ -76,8 +90,13 @@ ColumnLayout{
             id: activityIndicator
             visible: false
             running: false
-            Layout.preferredHeight: units.gu(2)
+            Layout.preferredHeight: units.gu(3.5)
         }
+    }
+
+    Component{
+        id: messageError
+        MessageDialog{msg:i18n.tr("Code not found. Try again, or check  if the code is correct. There's a possibility that the product is not in the database as well. In that case, you can add it manually and go over to OpenFoodsFacts and add it there also.")}
     }
     
     JSONListModel {

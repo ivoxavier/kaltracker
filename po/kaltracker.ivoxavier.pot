@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-19 21:22+0000\n"
+"POT-Creation-Date: 2023-02-20 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -843,15 +843,18 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:55
+#: ../qml/plugins/ManualCodeSearch.qml:56
 msgid "Enter the code bar here"
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:65
-msgid "Search"
+#: ../qml/plugins/ManualCodeSearch.qml:99
+msgid ""
+"Code not found. Try again, or check  if the code is correct. There's a "
+"possibility that the product is not in the database as well. In that case, "
+"you can add it manually and go over to OpenFoodsFacts and add it there also."
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:107
+#: ../qml/plugins/ManualCodeSearch.qml:126
 msgid "Product name: "
 msgstr ""
 
