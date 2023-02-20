@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 17:20+0000\n"
+"POT-Creation-Date: 2023-02-20 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -453,8 +453,12 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: ../qml/ScanPage.qml:38
-msgid "Scanning"
+#: ../qml/ScanPage.qml:40
+msgid "Manual search"
+msgstr ""
+
+#: ../qml/ScanPage.qml:40
+msgid "Reading Bar Code..."
 msgstr ""
 
 #: ../qml/SetFoodPage.qml:43
@@ -684,11 +688,11 @@ msgstr ""
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:114
+#: ../qml/components/IsProductFoundDialog.qml:115
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:125
+#: ../qml/components/IsProductFoundDialog.qml:126
 msgid "Next"
 msgstr ""
 
@@ -791,6 +795,10 @@ msgstr ""
 msgid "Updating User Table"
 msgstr ""
 
+#: ../qml/plugins/BarCodeReader.qml:76
+msgid "Click here for manual search..."
+msgstr ""
+
 #: ../qml/plugins/BloodPressure.qml:40
 msgid "Systolic Pressure (High Pressure)"
 msgstr ""
@@ -833,6 +841,21 @@ msgstr ""
 
 #: ../qml/plugins/IngestionConfig.qml:120
 msgid "Quantity"
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:56
+msgid "Enter the code bar here"
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:99
+msgid ""
+"Code not found. Try again, or check  if the code is correct. There's a "
+"possibility that the product is not in the database as well. In that case, "
+"you can add it manually and go over to OpenFoodsFacts and add it there also."
+msgstr ""
+
+#: ../qml/plugins/ManualCodeSearch.qml:126
+msgid "Product name: "
 msgstr ""
 
 #: ../qml/plugins/PlanActivity.qml:85

@@ -136,6 +136,10 @@ msgstr "KG"
 msgid "Blood Pressure"
 msgstr "Pressão Arterial"
 
+#: ../qml/ScanPage.qml:40
+msgid "Reading Bar Code..."
+msgstr "A ler código de barras..."
+
 #: ../qml/BodyMeasuresPage.qml:164
 msgid "Normal"
 msgstr "Normal"
@@ -276,6 +280,19 @@ msgstr "Manter Peso"
 #: ../qml/HomePage.qml:162
 msgid "FOODS"
 msgstr "ALIMENTOS"
+
+msgid ""
+"Code not found. Try again, or check  if the code is correct. There's a "
+"possibility that the product is not in the database as well. In that case, "
+"you can add it manually and go over to OpenFoodsFacts and add it there also."
+msgstr ""
+"Código não encontrado. Tente novamente, ou verifique se o código está correto. Existe"
+"a possibilidade de que este produto não esteja na base de dados. Nesse caso, "
+"pode adicionar manualmente e ir até à OpenFoodsFacts e adicioná-lo lá também"
+
+#: ../qml/plugins/ManualCodeSearch.qml:78
+msgid "Search"
+msgstr "Procurar"
 
 #. TRANSLATORS Please Keep This Only One Word
 #: ../qml/HomePage.qml:181
@@ -995,6 +1012,15 @@ msgstr "Nome: %1"
 #: ../qml/components/IsProductFoundDialog.qml:84
 msgid "Nutriscore: %1"
 msgstr "Nutriscore: %1"
+
+
+#: ../qml/ScanPage.qml:40
+msgid "Manual search"
+msgstr "Pesquisa Manual"
+
+#: ../qml/plugins/BarCodeReader.qml:76
+msgid "Click here for manual search..."
+msgstr "Carregue aqui para pesquisa manual..."
 
 #: ../qml/components/IsProductFoundDialog.qml:93
 msgid "Calories/100gr: %1"

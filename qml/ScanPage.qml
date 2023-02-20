@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@ import Lomiri.Components 1.3
 import QtMultimedia 5.12
 import QtGraphicalEffects 1.0
 import QZXing 3.3
+import QtQuick.Controls 2.2 as QQC2
 import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
 import Lomiri.Components.Popups 1.3
@@ -28,14 +29,15 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
+import "plugins"
 
 
 Page {   
     id: scan_page
     objectName: 'ScanPage'
     header: PageHeader {
-       //visible: app_settings.is_page_headers_enabled ? true : false
-       title: i18n.tr("Scanning")
+       title: swipe_view.currentIndex == 0 ? 
+       i18n.tr("Reading Bar Code...") : i18n.tr("Manual search")
 
        StyleHints {
             /*foregroundColor: "white"
@@ -49,115 +51,78 @@ Page {
     //stores the barcode found and pass it to api openfoodsfact dialog
     property var bar_code_founded
 
+    property string barcode
+    property int is_product_found_dialog_meal
+    property string product_name
+    property string nutriscore_grade
+    property double fat_100g
+    property double carbohydrates_100g
+    property double protein_100g
+    property int energy_kcal_100g
+    property string nova_group
+
     Component{
        id: product_found_dialog
        IsProductFoundDialog{barcode: bar_code_founded; is_product_found_dialog_meal: meal_scan_page}
     }
 
-    Icon {
-        height: units.gu(6)
-        z:100
-        width: height
-        anchors {
-            right: parent.right
-            bottom: parent.bottom
-            margins: units.gu(2)
-        }
-        name: camera.flash.mode === Camera.FlashVideoLight ? "torch-off" : "torch-on"
-        color: "white"
+    
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                camera.flash.mode = (camera.flash.mode === Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
-                
-            }
-        }
-    }
+    QQC2.SwipeView{
+        id: swipe_view
+        currentIndex:0
+        anchors.top:parent.header.bottom
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: parent.height
+        interactive: false
+        onCurrentIndexChanged: currentIndex === 0 ?
+        barCodeReader.is_reading = true : barCodeReader.is_reading = false
+            
 
-   Camera {
-        id: camera
+        //index 0
+        BarCodeReader{id:barCodeReader}
 
-        focus.focusMode: Camera.FocusContinuous//Camera.FocusMacro + Camera.FocusContinuous
-        focus.focusPointMode: Camera.FocusPointCenter
-
-        captureMode: Camera.CaptureViewfinder
-        exposure.exposureMode: Camera.ExposureBarcode
-    }
-
-    Timer {
-        id: capture_shot
-        interval: 250
-        repeat: true
-        running: Qt.application.active
-        onTriggered: {
-            video_output.grabToImage(function(result) {
-                code_reader.decodeImage(result.image);
-            });
+        Item{
+            // index 1
+            ManualCodeSearch{}
         }
     }
 
-    VideoOutput {
-        id: video_output
+   /* QQC2.PageIndicator{
+        id: swipe_view_indicator
+        count: swipe_view.count
+        currentIndex: swipe_view.currentIndex
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter   
+    } */
 
-        anchors{
-            top:  parent.header.bottom 
-            left: parent.left
-            right: parent.right
-            bottom:  parent.bottom 
+    
+    Row{
+        id: ok_button
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        width: root.width
+        layoutDirection: Qt.RightToLeft 
+        rightPadding: units.gu(1)
+        bottomPadding: units.gu(1)
+        visible: false
+        IconButton{
+            icon_name : "ok"
+            MouseArea{
+                anchors.fill: parent
+                onClicked:{
+                    page_stack.pop(scan_page)  
+                    page_stack.push(set_food_page,{product_name_set_food_page: product_name,
+                    cal_set_food_page: energy_kcal_100g,
+                    carbo_set_food_page: carbohydrates_100g,
+                    fat_set_food_page: fat_100g,
+                    protein_set_food_page: protein_100g,
+                    nutriscore_set_food_page: nutriscore_grade,
+                    meal_set_food_page: is_product_found_dialog_meal,
+                    nova_groups_set_food_page: nova_group}) 
+                }
+            }  
         }
-
-        fillMode: VideoOutput.PreserveAspectCrop
-        source: camera
-        focus: true
-        orientation: Screen.primaryOrientation == Qt.PortraitOrientation ? -90 : 0
     }
-
-    Rectangle {
-        id: zoneOverlay
-        anchors.fill: parent
-        color: "#000000"
-    }
-
-    Item {
-        id: zoneMask
-        anchors.fill: parent
-
-        Rectangle {
-            color: "red"
-            height: units.gu(35)
-            width: units.gu(50)
-            anchors.centerIn: parent
-        }
-    }
-
-    OpacityMask {
-        opacity: 0.83
-        invert: true
-        source: ShaderEffectSource {
-            sourceItem: zoneOverlay
-            hideSource: true
-        }
-        maskSource: ShaderEffectSource {
-            sourceItem: zoneMask
-            hideSource: true
-        }
-        anchors.fill: parent
-    }
-
-
-   QZXing {
-        id: code_reader
-
-        enabledDecoders: QZXing.DecoderFormat_UPC_A
-
-        onTagFound: {
-            //capture_shot.stop();
-            //camera.stop();
-            bar_code_founded = tag
-            PopupUtils.open(product_found_dialog)
-        }
-
-        tryHarder: true
-    }
-}    
+}   

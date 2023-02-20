@@ -105,6 +105,7 @@ Dialog {
         text: i18n.tr("Scan Again")
         color: app_style.button.actionButton.buttonColor
         onClicked:{
+            barCodeReader.is_reading = true
             PopupUtils.close(is_product_found_dialog)
         }
     }    
