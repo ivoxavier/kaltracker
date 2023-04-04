@@ -29,27 +29,47 @@ Dialog {
     id: recommended_calories_dialog
     title: i18n.tr("Recommended Calories")
 
-    Text{
+    //stores the recommended calories by the St. Mifflin Jeor Equation
+    property int equation_calories
+    
+    property bool is_manual_edit : false
+
+    RowLayout{
+        Layout.preferredWidth: parent.width
+        Text{
             id: recommended_calories_label
-            text: i18n.tr("%1 Calories").arg(root.equation_recommended_calories) + i18n.tr(" Calculated Using St. Mifflin Jeor Equation")
-            font.pixelSize: units.gu(2)
+            Layout.alignment: Qt.AlignCenter
+            text: i18n.tr("%1 Calories").arg(recommended_calories_dialog.equation_calories) 
+            font.pixelSize: units.gu(3)
             font.bold: true
             color : app_style.label.labelColor
             width: parent.width
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         }
 
-    Row{
-        spacing: units.gu(4)
-        Label{
-            anchors.verticalCenter: parent.verticalCenter
-            text: i18n.tr("Enter Manually")
-        }
+    }
+    
 
-        QQ2.CheckBox {
-            id: edit_recommended_calories
-            width: units.gu(1.5)
-            checked: false
+    Text{
+        text: i18n.tr("Calculated Using St. Mifflin Jeor Equation")
+        font.pixelSize: units.gu(1.5)
+        font.bold: false
+        color : app_style.label.labelColor
+        width: parent.width
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+    }
+
+    RowLayout{
+        Layout.preferredWidth: parent.width
+
+        Icon{
+            Layout.alignment: Qt.AlignCenter
+            name: "edit"
+            height: units.gu(3)
+            MouseArea{
+                anchors.fill: parent
+                onClicked: recommended_calories_dialog.is_manual_edit = !recommended_calories_dialog.is_manual_edit
+            }
         }
 
     }
@@ -60,7 +80,7 @@ Dialog {
         radius: "large"
         aspect: LomiriShape.Inset
 
-        visible: false
+        visible: recommended_calories_dialog.is_manual_edit
 
         TextInput{
             anchors.fill: parent
@@ -69,7 +89,7 @@ Dialog {
             verticalAlignment: TextInput.AlignVCenter
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             color : app_style.label.labelColor  
-            //onTextChanged: note = text
+            onTextChanged: root.equation_recommended_calories = text
         }
     }
 
@@ -92,5 +112,8 @@ Dialog {
             }
         }
 
-    Component.onCompleted: ControlRecommendedCalories.calcCal()
+    Component.onCompleted: {
+        ControlRecommendedCalories.calcCal()
+        recommended_calories_dialog.equation_calories = root.equation_recommended_calories
+    }
 }
