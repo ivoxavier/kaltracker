@@ -19,11 +19,14 @@ import QtQuick 2.9
 import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
+import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQ2
 import "../style"
 import '../../js/RecommendedCalories.js' as RecommendedCalories
 import "../../js/ControlRecommendedCalories.js" as ControlRecommendedCalories
+import "../../js/UpdateUserTable.js" as UpdateUserTable
+import "../../js/WeightTrackerTable.js" as WeightTrackerTable
 
 Dialog {
     id: recommended_calories_dialog
@@ -89,7 +92,14 @@ Dialog {
             verticalAlignment: TextInput.AlignVCenter
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             color : app_style.label.labelColor  
-            onTextChanged: root.equation_recommended_calories = text
+            onTextChanged: {
+                if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+                    root.equation_recommended_calories = text
+                }else{
+                    update_user_values_page.update_recommended_calories = text
+                }
+                
+            }
         }
     }
 
@@ -97,11 +107,32 @@ Dialog {
         text: i18n.tr("Confirm")
         color: LomiriColors.green
         onClicked: {
-            ////stores plan type
-            app_settings.plan_type = root.type_goal
+            if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+                ////stores plan type
+                app_settings.plan_type = root.type_goal
+                
+                page_stack.pop(user_profile_config_page)
+                page_stack.push(create_storage_page)
+            } else{
+                UpdateUserTable.updateWeight(update_user_values_page.update_weight)
+                UpdateUserTable.updateHeight(update_user_values_page.update_height)
+
+                WeightTrackerTable.newWeight(update_user_values_page.update_weight)
+
+                app_settings.water_weight_calc = update_user_values_page.update_weight
+
+                app_settings.plan_type = update_user_values_page.update_type_goal
+                app_settings.rec_cal =  update_user_values_page.update_recommended_calories
+
+                UpdateUserTable.updateAge(update_user_values_page.update_age)
+                UpdateUserTable.updateRecCal(update_user_values_page.update_recommended_calories)
+                UpdateUserTable.updateActivity(update_user_values_page.update_activity_level)
+                app_settings.is_weight_tracker_chart_enabled = true
+                root.initDB()
+                PopupUtils.close(recommended_calories_dialog)
+                page_stack.pop(update_user_values_page)
+            }
             
-            page_stack.pop(user_profile_config_page)
-            page_stack.push(create_storage_page)
         }
     }
 
@@ -113,7 +144,13 @@ Dialog {
         }
 
     Component.onCompleted: {
-        ControlRecommendedCalories.calcCal()
-        recommended_calories_dialog.equation_calories = root.equation_recommended_calories
+        if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
+            ControlRecommendedCalories.initialConfig()
+            recommended_calories_dialog.equation_calories = root.equation_recommended_calories
+        } else{
+            ControlRecommendedCalories.updatingProfile()
+            recommended_calories_dialog.equation_calories = update_user_values_page.update_recommended_calories
+        }
+        
     }
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 17:20+0000\n"
+"POT-Creation-Date: 2023-04-05 12:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -556,7 +556,7 @@ msgstr ""
 #: ../qml/components/GoalDefinitionDialog.qml:135
 #: ../qml/components/MealFilterDialog.qml:73
 #: ../qml/components/MessageDialog.qml:41
-#: ../qml/components/RecommendedCaloriesDialog.qml:107
+#: ../qml/components/RecommendedCaloriesDialog.qml:140
 msgid "Back"
 msgstr ""
 
@@ -658,7 +658,7 @@ msgid "4kg by month"
 msgstr ""
 
 #: ../qml/components/GoalDefinitionDialog.qml:126
-#: ../qml/components/RecommendedCaloriesDialog.qml:95
+#: ../qml/components/RecommendedCaloriesDialog.qml:107
 msgid "Confirm"
 msgstr ""
 
@@ -736,15 +736,15 @@ msgstr ""
 msgid "Operation Sucess"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:30
+#: ../qml/components/RecommendedCaloriesDialog.qml:33
 msgid "Recommended Calories"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:40
+#: ../qml/components/RecommendedCaloriesDialog.qml:45
 msgid "%1 Calories"
 msgstr ""
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:52
+#: ../qml/components/RecommendedCaloriesDialog.qml:57
 msgid "Calculated Using St. Mifflin Jeor Equation"
 msgstr ""
 

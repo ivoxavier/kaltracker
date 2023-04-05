@@ -127,11 +127,6 @@ Page{
     }
 
     Component{
-        id: state_updating_dialog
-        UpdateUserTableDialog{}
-    }
-
-    Component{
         id: state_updating_blood_pressure_dialog
         UpdateUserBloodPressureDialog{}
     }

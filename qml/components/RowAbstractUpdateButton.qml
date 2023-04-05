@@ -36,7 +36,7 @@ Row{
         icon_name: "sync"
         MouseArea{
             anchors.fill: parent
-            onClicked: PopupUtils.open(state_updating_dialog)
+            onClicked: PopupUtils.open(calculate_recommended_calories_dialog)
         }
     }
 }
