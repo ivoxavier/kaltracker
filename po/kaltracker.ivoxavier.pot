@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-05 12:15+0000\n"
+"POT-Creation-Date: 2023-04-05 14:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -791,7 +791,6 @@ msgid "It's ok for now"
 msgstr ""
 
 #: ../qml/components/UpdateUserBloodPressureDialog.qml:27
-#: ../qml/components/UpdateUserTableDialog.qml:28
 msgid "Updating User Table"
 msgstr ""
 
