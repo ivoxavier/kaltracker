@@ -23,6 +23,7 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQ2
 import "../style"
+import "../logicalFields"
 import '../../js/RecommendedCalories.js' as RecommendedCalories
 import "../../js/ControlRecommendedCalories.js" as ControlRecommendedCalories
 import "../../js/UpdateUserTable.js" as UpdateUserTable
@@ -94,7 +95,7 @@ Dialog {
             color : app_style.label.labelColor  
             onTextChanged: {
                 if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                    root.equation_recommended_calories = text
+                    logical_fields.user_profile.equation_recommended_calories = text
                 }else{
                     update_user_values_page.update_recommended_calories = text
                 }
@@ -109,7 +110,7 @@ Dialog {
         onClicked: {
             if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
                 ////stores plan type
-                app_settings.plan_type = root.type_goal
+                app_settings.plan_type = logical_fields.user_profile.type_goal
                 
                 page_stack.pop(user_profile_config_page)
                 page_stack.push(create_storage_page)
@@ -146,7 +147,7 @@ Dialog {
     Component.onCompleted: {
         if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
             ControlRecommendedCalories.initialConfig()
-            recommended_calories_dialog.equation_calories = root.equation_recommended_calories
+            recommended_calories_dialog.equation_calories = logical_fields.user_profile.equation_recommended_calories
         } else{
             ControlRecommendedCalories.updatingProfile()
             recommended_calories_dialog.equation_calories = update_user_values_page.update_recommended_calories

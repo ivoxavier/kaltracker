@@ -105,13 +105,13 @@ Page{
         try{
             Storage.dropTables()
             Storage.createTables()
-            UserTable.createUserProfile(root.user_age,root.user_sex_at_birth,
-            root.user_weight, root.user_height, root.user_activity_level, root.equation_recommended_calories)
-            WeightTrackerTable.newWeight(root.user_weight)
+            UserTable.createUserProfile(logical_fields.user_profile.user_age,logical_fields.user_profile.user_sex_at_birth,
+            logical_fields.user_profile.user_weight, logical_fields.user_profile.user_height, logical_fields.user_profile.user_activity_level, logical_fields.user_profile.equation_recommended_calories)
+            WeightTrackerTable.newWeight(logical_fields.user_profile.user_weight)
             loading_circle.running = !loading_circle.running
-            app_settings.water_weight_calc = root.user_weight
-            app_settings.rec_cal = root.equation_recommended_calories
-            app_settings.using_app_date = root.stringDate
+            app_settings.water_weight_calc = logical_fields.user_profile.user_weight
+            app_settings.rec_cal = logical_fields.user_profile.equation_recommended_calories
+            app_settings.using_app_date = logical_fields.application.date_utils.long_date
             app_settings.is_clean_install = !app_settings.is_clean_install
         }catch (err){console.log(err)} 
     }

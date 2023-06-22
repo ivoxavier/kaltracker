@@ -27,6 +27,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../style"
+import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
 import "../../js/UserTable.js" as UserTable
@@ -114,24 +115,24 @@ ColumnLayout{
         spacing: units.gu(1)
 
         SlotProductGrades{
-            grade : nutriscore_set_food_page
-            subject : nutriscore_set_food_page === "a" ?
-            i18n.tr("Very good nutritional quality") : nutriscore_set_food_page === "b" ?
-            i18n.tr("Good nutritional quality") : nutriscore_set_food_page === "c" ?
-            i18n.tr("Average nutritional quality") : nutriscore_set_food_page === "d" ?
-            i18n.tr("Poor nutritional quality") : nutriscore_set_food_page === "e" ?
+            grade : logical_fields.ingestion.nutriscore
+            subject : logical_fields.ingestion.nutriscore === "a" ?
+            i18n.tr("Very good nutritional quality") : logical_fields.ingestion.nutriscore === "b" ?
+            i18n.tr("Good nutritional quality") : logical_fields.ingestion.nutriscore === "c" ?
+            i18n.tr("Average nutritional quality") : logical_fields.ingestion.nutriscore === "d" ?
+            i18n.tr("Poor nutritional quality") : logical_fields.ingestion.nutriscore === "e" ?
             i18n.tr("Bad nutritional quality") : i18n.tr("Unknown")
-            color : ControlFoodsNutriscore.backgroundColor(nutriscore_set_food_page)
+            color : ControlFoodsNutriscore.backgroundColor(logical_fields.ingestion.nutriscore)
         }
 
         SlotProductGrades{
-            grade : nova_groups_set_food_page
-            subject : nova_groups_set_food_page === "1" ?
-            i18n.tr("Unprocessed or minimally processed") : nova_groups_set_food_page === "2" ?
-            i18n.tr("Processed culinary ingredients") : nova_groups_set_food_page === "3" ?
-            i18n.tr("Processed foods") : nova_groups_set_food_page === "4" ?
+            grade : logical_fields.ingestion.nova_groups
+            subject : logical_fields.ingestion.nova_groups === "1" ?
+            i18n.tr("Unprocessed or minimally processed") : logical_fields.ingestion.nova_groups === "2" ?
+            i18n.tr("Processed culinary ingredients") : logical_fields.ingestion.nova_groups === "3" ?
+            i18n.tr("Processed foods") : logical_fields.ingestion.nova_groups === "4" ?
             i18n.tr("Ultra-processed foods") : i18n.tr("Unknown")
-            color : ControlNOVAGroups.backgroundColor(nova_groups_set_food_page)
+            color : ControlNOVAGroups.backgroundColor(logical_fields.ingestion.nova_groups)
         }
     }
 }

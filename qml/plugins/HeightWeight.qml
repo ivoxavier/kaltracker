@@ -27,6 +27,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../style"
+import "../logicalFields"
 
 
 ColumnLayout{
@@ -82,7 +83,7 @@ ColumnLayout{
                             anchors.fill: parent
                             onClicked:{
                                 if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                                    weight_shape.weight_value-- , root.user_weight = weight_shape.weight_value
+                                    weight_shape.weight_value-- , logical_fields.user_profile.user_weight = weight_shape.weight_value
                                     user_profile_config_page.user_profile.weight = true
                                 }else{
                                     weight_shape.weight_value-- , update_user_values_page.user_weight = weight_shape.weight_value
@@ -111,7 +112,7 @@ ColumnLayout{
                             anchors.fill: parent
                             onClicked:{
                                 if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                                    weight_shape.weight_value++ , root.user_weight = weight_shape.weight_value
+                                    weight_shape.weight_value++ , logical_fields.user_profile.user_weight = weight_shape.weight_value
                                     user_profile_config_page.user_profile.weight = true
                                 }else{
                                     weight_shape.weight_value++ , update_user_values_page.update_weight = weight_shape.weight_value
@@ -159,7 +160,7 @@ ColumnLayout{
         to: 250
         onValueChanged: {
             if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                root.user_height = value
+                logical_fields.user_profile.user_height = value
                 user_profile_config_page.user_profile.height = true
             }
             else{

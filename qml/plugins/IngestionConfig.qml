@@ -27,6 +27,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../style"
+import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
 import "../../js/UserTable.js" as UserTable
@@ -41,7 +42,7 @@ ColumnLayout{
     Text{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width
-        text: set_food_page.product_name_set_food_page
+        text: logical_fields.ingestion.product_name
         font.pixelSize: units.gu(4)
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
@@ -51,7 +52,7 @@ ColumnLayout{
     Text{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width
-        text: i18n.tr("Calories: %1 ").arg(cal_ingested) 
+        text: i18n.tr("Calories: %1 ").arg(logical_fields.ingestion.cal_ingested) 
         font.pixelSize: units.gu(3)
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
@@ -62,7 +63,7 @@ ColumnLayout{
     ListItem{
         divider.visible : false
         ListItemLayout{
-            title.text: i18n.tr("Fat: %1gr").arg(fat_ingested)
+            title.text: i18n.tr("Fat: %1gr").arg(logical_fields.ingestion.fat_ingested)
             title.font.bold : false
             NutrientIcon{img_path: "../../assets/olive-oil-svgrepo-com.svg"} 
         }
@@ -71,7 +72,7 @@ ColumnLayout{
     ListItem{
         divider.visible : false
         ListItemLayout{
-            title.text: i18n.tr("Protein: %1gr").arg(protein_ingested)
+            title.text: i18n.tr("Protein: %1gr").arg(logical_fields.ingestion.protein_ingested)
             title.font.bold : false
             NutrientIcon{img_path: "../../assets/cheese-svgrepo-com.svg"}      
         }
@@ -81,7 +82,7 @@ ColumnLayout{
         divider.visible : false
         
         ListItemLayout{
-            title.text: i18n.tr("Carbohydrates: %1gr").arg(carbo_ingested)
+            title.text: i18n.tr("Carbohydrates: %1gr").arg(logical_fields.ingestion.carbo_ingested)
             title.font.bold : false
             NutrientIcon{img_path: "../../assets/bread-svgrepo-com.svg"}    
         }
@@ -104,11 +105,11 @@ ColumnLayout{
         Layout.preferredHeight: units.gu(7)
         onSelectedIndexChanged: {
             selectedIndex == 0 ?
-            size_portions = 1 : selectedIndex == 1 ?
-            size_portions = 0.50 : selectedIndex == 2 ?
-            size_portions = 0.33 : selectedIndex == 3 ?
-            size_portions = 0.25 : selectedIndex == 4 ?
-            size_portions = 0.20 : size_portions = 0.17
+            logical_fields.ingestion.size_portions = 1 : selectedIndex == 1 ?
+            logical_fields.ingestion.size_portions = 0.50 : selectedIndex == 2 ?
+            logical_fields.ingestion.size_portions = 0.33 : selectedIndex == 3 ?
+            logical_fields.ingestion.size_portions = 0.25 : selectedIndex == 4 ?
+            logical_fields.ingestion.size_portions = 0.20 : logical_fields.ingestion.size_portions = 0.17
         }
     }
 
@@ -140,7 +141,7 @@ ColumnLayout{
                 Layout.alignment: Qt.AlignCenter
                 font.pixelSize: units.gu(5)
                 font.bold: true
-                text:set_food_page.quantity_portions
+                text:logical_fields.ingestion.quantity_portions
             }
 
             RowLayout{
@@ -156,7 +157,7 @@ ColumnLayout{
                     MouseArea{
                         anchors.fill: parent
                         onClicked:{
-                            set_food_page.quantity_portions--
+                            logical_fields.ingestion.quantity_portions--
                         }      
                     }
                     Label {
@@ -177,7 +178,7 @@ ColumnLayout{
                     MouseArea{
                         anchors.fill: parent
                         onClicked:{
-                            set_food_page.quantity_portions++     
+                            logical_fields.ingestion.quantity_portions++     
                         }
                         
                     }

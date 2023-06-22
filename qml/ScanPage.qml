@@ -53,13 +53,14 @@ Page {
 
     property string barcode
     property int is_product_found_dialog_meal
-    property string product_name
-    property string nutriscore_grade
-    property double fat_100g
-    property double carbohydrates_100g
-    property double protein_100g
-    property int energy_kcal_100g
-    property string nova_group
+
+    //property string product_name
+    //property string nutriscore_grade
+    //property double fat_100g
+    //property double carbohydrates_100g
+    //property double protein_100g
+    //property int energy_kcal_100g
+    //property string nova_group
 
     Component{
        id: product_found_dialog
@@ -112,15 +113,15 @@ Page {
             MouseArea{
                 anchors.fill: parent
                 onClicked:{
+                    logical_fields.ingestions.product_name = product_name
+                    logical_fields.ingestions.cal = energy_kcal_100g
+                    logical_fields.ingestions.carbo = carbohydrates_100g
+                    logical_fields.ingestions.fat = fat_100g
+                    logical_fields.ingestions.protein = protein_100g
+                    logical_fields.ingestions.nutriscore = nutriscore_grade
+                    logical_fields.ingestions.nova_groups = nova_group
                     page_stack.pop(scan_page)  
-                    page_stack.push(set_food_page,{product_name_set_food_page: product_name,
-                    cal_set_food_page: energy_kcal_100g,
-                    carbo_set_food_page: carbohydrates_100g,
-                    fat_set_food_page: fat_100g,
-                    protein_set_food_page: protein_100g,
-                    nutriscore_set_food_page: nutriscore_grade,
-                    meal_set_food_page: is_product_found_dialog_meal,
-                    nova_groups_set_food_page: nova_group}) 
+                    page_stack.push(set_food_page) 
                 }
             }  
         }

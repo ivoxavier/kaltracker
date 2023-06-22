@@ -212,7 +212,7 @@ Page{
                 Label {
                     id: dateLabel
                     Layout.alignment: Qt.AlignVCenter
-                    text: root.stringDate
+                    text: logical_fields.application.date_utils.long_date//root.stringDate
                     font.pixelSize: units.gu(2)
                     color: app_style.label.labelColor
                 }

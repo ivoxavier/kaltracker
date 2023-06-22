@@ -51,7 +51,7 @@ function connectDB() {
           carbo,
           protein,
           meal,
-          root.stringDate]);
+          logical_fields.application.date_utils.long_date]);
         if (rs.rowsAffected > 0) {
           validationMessage = "Ingestion : OK";
         } else {

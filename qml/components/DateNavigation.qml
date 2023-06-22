@@ -23,13 +23,14 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import "../style"
+import "../logicalFields"
 
 Popover{
     contentWidth: day_month_picker.width
     DatePicker {
         id: day_month_picker
         mode: "Years|Months|Days"
-        date: root.currentDate
+        date: logical_fields.application.date_utils.current_date //root.currentDate
         width: Math.min(root.width - units.gu(8), units.gu(36))
         height: units.gu(10)
         
@@ -40,7 +41,8 @@ Popover{
         }
 
         Component.onDestruction: {
-            root.stringDate = Qt.formatDate(day_month_picker.date,"yyyy-MM-dd")
+            //root.stringDate = Qt.formatDate(day_month_picker.date,"yyyy-MM-dd")
+            logical_fields.application.date_utils.long_date = Qt.formatDate(day_month_picker.date,"yyyy-MM-dd")
             icon_down.is_clicked = !icon_down.is_clicked
             root.initDB()
         }

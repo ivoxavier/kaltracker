@@ -27,6 +27,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../style"
+import "../logicalFields"
 
 
 ColumnLayout{
@@ -37,7 +38,8 @@ ColumnLayout{
         user_profile_config_page.user_profile.sex = true
 
         //property to store type of sex assigned at birth 0 Male 1 Female
-        root.user_sex_at_birth = sex == 0 ? 0 : 1
+        //root.user_sex_at_birth = sex == 0 ? 0 : 1
+        logical_fields.user_profile.user_sex_at_birth = sex == 0 ? 0 : 1
 
         //highlight Slots selection 
         male_slot.text_color = sex == 0 ? LomiriColors.green : "black"
@@ -121,7 +123,8 @@ ColumnLayout{
 
         onSelectedIndexChanged: {
             if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                root.user_age = selectedIndex
+                //root.user_age = selectedIndex
+                logical_fields.user_profile.user_age = selectedIndex
                 user_profile_config_page.user_profile.age = true
             }else{
                 update_user_values_page.update_age = selectedIndex 

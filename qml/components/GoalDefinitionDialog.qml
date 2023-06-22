@@ -22,6 +22,7 @@ import Lomiri.Components.ListItems 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQC2
 import "../style"
+import "../logicalFields"
 import '../../js/DefineGoalCalories.js' as DefinePeriod
 
 Dialog {
@@ -51,7 +52,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    root.user_goal = DefinePeriod.periodOne()
+                    logical_fields.user_profile.user_goal = DefinePeriod.periodOne()
                     radio_button_set2.checked = false
                     radio_button_set3.checked = false
                     radio_button_set4.checked = false
@@ -70,7 +71,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    root.user_goal = DefinePeriod.periodTwo()
+                    logical_fields.user_profile.user_goal = DefinePeriod.periodTwo()
                     radio_button_set1.checked = false
                     radio_button_set3.checked = false
                     radio_button_set4.checked = false
@@ -91,7 +92,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    root.user_goal = DefinePeriod.periodThree()
+                    logical_fields.user_profile.user_goal = DefinePeriod.periodThree()
                     radio_button_set1.checked = false
                     radio_button_set2.checked = false
                     radio_button_set4.checked = false
@@ -110,7 +111,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    root.user_goal = DefinePeriod.periodFour()
+                    logical_fields.user_profile.user_goal = DefinePeriod.periodFour()
                     radio_button_set1.checked = false
                     radio_button_set2.checked = false
                     radio_button_set3.checked = false

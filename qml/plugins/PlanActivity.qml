@@ -26,6 +26,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../style"
+import "../logicalFields"
 
 
 ColumnLayout{
@@ -36,10 +37,13 @@ ColumnLayout{
             //Change the value of Object user_profile
             user_profile_config_page.user_profile.plan = true
             //property to store the user goal for further calories daily objectiv calculation.
-            root.user_goal = plan == 0 ? 0 : 0
+            //root.user_goal = plan == 0 ? 0 : 0
+            logical_fields.user_profile.user_goal = plan == 0 ? 0 : 0
 
             //property to store type of plan
-            root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
+            //root.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
+            logical_fields.user_profile.type_goal = plan == 0 ? "maintain" : plan == 1 ? "loose" : "gain"
+
 
             //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
             user_profile_config_page.is_loose_weight = plan == 1 ? true : false
@@ -64,7 +68,8 @@ ColumnLayout{
             user_profile_config_page.user_profile.activity = true
 
             //property to store type of plan
-            root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
+            //root.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
+            logical_fields.user_profile.user_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
         }else{
             update_user_values_page.user_profile.activity = true
             update_user_values_page.update_activity_level = activity == 0 ? 0 : activity == 1 ? 1 : activity == 2 ? 2 : 3
