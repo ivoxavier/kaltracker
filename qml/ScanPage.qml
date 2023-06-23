@@ -45,26 +45,14 @@ Page {
         }
     }
 
-    //stores the type meal choosed by user
-    property int meal_scan_page
-
     //stores the barcode found and pass it to api openfoodsfact dialog
     property var bar_code_founded
 
     property string barcode
-    property int is_product_found_dialog_meal
-
-    //property string product_name
-    //property string nutriscore_grade
-    //property double fat_100g
-    //property double carbohydrates_100g
-    //property double protein_100g
-    //property int energy_kcal_100g
-    //property string nova_group
 
     Component{
        id: product_found_dialog
-       IsProductFoundDialog{barcode: bar_code_founded; is_product_found_dialog_meal: meal_scan_page}
+       IsProductFoundDialog{barcode: bar_code_founded}
     }
 
     
@@ -113,13 +101,6 @@ Page {
             MouseArea{
                 anchors.fill: parent
                 onClicked:{
-                    logical_fields.ingestions.product_name = product_name
-                    logical_fields.ingestions.cal = energy_kcal_100g
-                    logical_fields.ingestions.carbo = carbohydrates_100g
-                    logical_fields.ingestions.fat = fat_100g
-                    logical_fields.ingestions.protein = protein_100g
-                    logical_fields.ingestions.nutriscore = nutriscore_grade
-                    logical_fields.ingestions.nova_groups = nova_group
                     page_stack.pop(scan_page)  
                     page_stack.push(set_food_page) 
                 }

@@ -105,13 +105,13 @@ ColumnLayout{
         onJsonChanged: {
             var _json = openFoodFactJSON.model.get(0);
             if (typeof _json !== "undefined" && typeof _json.product_name !== "undefined" ) {
-                logical_fields.ingestions.product_name = _json.product_name
-                logical_fields.ingestions.nutriscore = (typeof _json.nutriscore_grade == "undefined") ? "a" :  _json.nutriscore_grade
-                logical_fields.ingestions.cal = (typeof _json.nutriments.energy_value == "undefined") ? 0 : _json.nutriments.energy_value
-                logical_fields.ingestions.fat = (typeof _json.nutriments.fat_100g == "undefined") ? 0.0 : _json.nutriments.fat_100g
-                logical_fields.ingestions.protein = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
-                logical_fields.ingestions.carbo = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
-                logical_fields.ingestions.nova_groups = (typeof _json.nova_groups == "undefined") ? "0" : _json.nova_groups
+                logical_fields.ingestion.product_name = _json.product_name
+                logical_fields.ingestion.nutriscore = (typeof _json.nutriscore_grade == "undefined") ? "a" :  _json.nutriscore_grade
+                logical_fields.ingestion.cal = (typeof _json.nutriments.energy_value == "undefined") ? 0 : _json.nutriments.energy_value
+                logical_fields.ingestion.fat = (typeof _json.nutriments.fat_100g == "undefined") ? 0.0 : _json.nutriments.fat_100g
+                logical_fields.ingestion.protein = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
+                logical_fields.ingestion.carbo = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
+                logical_fields.ingestion.nova_groups = (typeof _json.nova_groups == "undefined") ? "0" : _json.nova_groups
                 activityIndicator.running = false, activityIndicator.visible = false
                 ok_button.visible = true
             }else{
@@ -124,6 +124,6 @@ ColumnLayout{
 
     Label{
         Layout.alignment: Qt.AlignLeft
-        text: i18n.tr("Product name: ") + logical_fields.ingestions.product_name
+        text: i18n.tr("Product name: ") + logical_fields.ingestion.product_name
     }
 }

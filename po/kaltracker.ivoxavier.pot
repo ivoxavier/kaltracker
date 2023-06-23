@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-22 14:49+0000\n"
+"POT-Creation-Date: 2023-06-23 08:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -662,37 +662,37 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:67
+#: ../qml/components/IsProductFoundDialog.qml:58
 msgid "BarCode Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:67
+#: ../qml/components/IsProductFoundDialog.qml:58
 msgid "BarCode Not Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:76
+#: ../qml/components/IsProductFoundDialog.qml:67
 msgid ""
 "No product in DB, you may consider register the item on openfoodsfacts. Or "
 "enter the details manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:85
+#: ../qml/components/IsProductFoundDialog.qml:76
 msgid "Code:%1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:98
+#: ../qml/components/IsProductFoundDialog.qml:89
 msgid "Name: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:105
+#: ../qml/components/IsProductFoundDialog.qml:96
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:115
+#: ../qml/components/IsProductFoundDialog.qml:106
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:126
+#: ../qml/components/IsProductFoundDialog.qml:117
 msgid "Next"
 msgstr ""
 
