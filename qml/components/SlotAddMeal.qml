@@ -62,7 +62,10 @@ LomiriShape{
                 }
                 MouseArea{
                         anchors.fill: parent
-                        onClicked: page_stack.push(quick_list_foods_page,{meal_quick_list_foods_page: slot_shape.meal_category}) 
+                        onClicked: {
+                            logical_fields.ingestion.meal_type = slot_shape.meal_category
+                            page_stack.push(quick_list_foods_page)
+                        }
                 }
             }
             

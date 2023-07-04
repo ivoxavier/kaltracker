@@ -25,6 +25,7 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
+import "logicalFields"
 import "../js/GetData.js" as GetData
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
@@ -36,19 +37,6 @@ Page{
     header: PageHeader {visible:false}
 
     BackgroundStyle{}
-    
-    // stores the query output
-    property int query_total_cal_consumed 
-    property int query_total_cal_remaining
-    property int query_total_cal_breakfast
-    property int query_total_cal_lunch
-    property int query_total_cal_dinner
-    property int query_total_cal_snacks
-    property int query_total_foods_consumed
-    property int query_total_water_cups
-    property double query_total_carbo_consumed
-    property double query_total_fat_consumed
-    property double query_total_protein_consumed
 
     //stores the amount of days user wants to getback to (re)ingest
     property int amount_of_days_back : 1
@@ -138,7 +126,7 @@ Page{
                 SlotDashboardIndicators{
                     Layout.preferredWidth: units.gu(13)
                     Layout.preferredHeight: units.gu(5)
-                    slot_indicatior: query_total_foods_consumed
+                    slot_indicatior: logical_fields.metrics.total_foods_consumed
                     //TRANSLATORS Please Keep This Only One Word
                     slot_icon_label: i18n.tr("FOODS")
                 }
@@ -157,7 +145,7 @@ Page{
                 SlotDashboardIndicators{
                     Layout.preferredWidth: units.gu(13)
                     Layout.preferredHeight: units.gu(5)
-                    slot_indicatior: query_total_cal_consumed
+                    slot_indicatior: logical_fields.user_profile.plan.cal_consumed
                     //TRANSLATORS Please Keep This Only One Word
                     slot_icon_label: i18n.tr("CONSUMED")
                 }
@@ -177,7 +165,7 @@ Page{
                     slot_icon_label: i18n.tr("FAT")
                     bar_color: app_style.progressBar.nutrientBar
                     .fatProgress
-                    nutrient_value:  (home_page.query_total_fat_consumed / DefineMacroNutriensPerDay.fat(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value:  (logical_fields.metrics.total_fat_consumed / DefineMacroNutriensPerDay.fat(app_settings.plan_type) * 100.0) * 0.01
                 }
 
                 SlotNutrientProgress{
@@ -187,7 +175,7 @@ Page{
                     slot_icon_label: i18n.tr("CARBO")
                     bar_color: app_style.progressBar.nutrientBar
                     .carbProgress
-                    nutrient_value: (home_page.query_total_carbo_consumed / DefineMacroNutriensPerDay.carbo(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value: (logical_fields.metrics.total_carbo_consumed / DefineMacroNutriensPerDay.carbo(app_settings.plan_type) * 100.0) * 0.01
                 }
 
 
@@ -198,7 +186,7 @@ Page{
                     slot_icon_label: i18n.tr("PROTEIN")
                     bar_color: app_style.progressBar.nutrientBar
                     .proteinProgress
-                    nutrient_value: (home_page.query_total_protein_consumed / DefineMacroNutriensPerDay.protein(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value: (logical_fields.metrics.total_protein_consumed / DefineMacroNutriensPerDay.protein(app_settings.plan_type) * 100.0) * 0.01
                 }
             }
             
@@ -212,7 +200,7 @@ Page{
                 Label {
                     id: dateLabel
                     Layout.alignment: Qt.AlignVCenter
-                    text: root.stringDate
+                    text: logical_fields.application.date_utils.long_date//root.stringDate
                     font.pixelSize: units.gu(2)
                     color: app_style.label.labelColor
                 }
@@ -246,7 +234,7 @@ Page{
                 title.text: i18n.tr("Breakfast")
                 meal_category: 0
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_breakfast)
+                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_breakfast)
                 img_path:"../assets/breakfast-svgrepo-com.svg"
             }  
 
@@ -257,7 +245,7 @@ Page{
                 title.text: i18n.tr("Lunch")
                 meal_category: 1
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_lunch)
+                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_lunch)
                 img_path:"../assets/fried-chicken-meal-svgrepo-com.svg" 
             } 
 
@@ -268,7 +256,7 @@ Page{
                 title.text: i18n.tr("Dinner")
                 meal_category: 2
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_dinner)
+                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_dinner)
                 img_path:"../assets/dinner-svgrepo-com.svg" 
             }
 
@@ -279,7 +267,7 @@ Page{
                 title.text: i18n.tr("Snacks")
                 meal_category: 3
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(home_page.query_total_cal_snacks)
+                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_snacks)
                 img_path:"../assets/snack-snacks-svgrepo-com.svg" 
             }
 
@@ -291,7 +279,7 @@ Page{
                 Layout.preferredWidth: root.width - units.gu(9)
                 Layout.preferredHeight: units.gu(7)
                 img_path:"../assets/glass-of-water-svgrepo-com.svg"
-                water_cups_drinked : (home_page.query_total_water_cups * 0.1) 
+                water_cups_drinked : (logical_fields.metrics.total_water_cups * 0.1) 
             }
         }  
     }

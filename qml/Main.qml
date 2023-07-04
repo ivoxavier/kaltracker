@@ -20,6 +20,7 @@ import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import "style"
 import "settings"
+import "logicalFields"
 
 MainView {
     id: root
@@ -30,42 +31,7 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    //provides locale specific properties
-    property var locale: Qt.locale()
-
-    //provides current datetime
-    property date currentDate: new Date()
-
-    //provides date in string format masked for sqlite db
-    property var stringDate: currentDate.toLocaleDateString(locale, 'yyyy-MM-dd')
     
-    /*properties for calculating calories target --start--*/
-
-    //setPlanPage
-    property int user_goal
-    property string type_goal
-
-    //setActivityPage
-    property int user_activity_level
-
-    //setUserSexAtBirthPage
-    property int user_sex_at_birth //0 for Male. 1 for Female
-
-    //setUserAgePage
-    property int user_age
-
-    //setWeightPage
-    property double user_weight
-
-    //setHeightPage
-    property int user_height
-
-    //recommended calories for user
-    property int equation_recommended_calories
-
-    /*properties for calculating calories target --end--*/
-    
-
     /* custom signals --start--*/
     signal initDB()
     /* custom signals --end--*/
@@ -75,6 +41,9 @@ MainView {
 
     //Style for the app
     Style{id:app_style}
+
+    //Logical Fields of the App
+    LogicalFields{id:logical_fields}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{

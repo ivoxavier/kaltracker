@@ -29,7 +29,7 @@ function connectDB() {
     db.transaction(function(tx) {
       var results = tx.executeSql(new_weight_tracking, [1,
       weight,
-      root.stringDate]);
+      logical_fields.application.date_utils.long_date]);
       if (results.rowsAffected > 0) {
       } else {
         console.log("Error saving weight");

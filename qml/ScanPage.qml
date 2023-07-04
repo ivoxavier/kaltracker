@@ -45,25 +45,14 @@ Page {
         }
     }
 
-    //stores the type meal choosed by user
-    property int meal_scan_page
-
     //stores the barcode found and pass it to api openfoodsfact dialog
     property var bar_code_founded
 
     property string barcode
-    property int is_product_found_dialog_meal
-    property string product_name
-    property string nutriscore_grade
-    property double fat_100g
-    property double carbohydrates_100g
-    property double protein_100g
-    property int energy_kcal_100g
-    property string nova_group
 
     Component{
        id: product_found_dialog
-       IsProductFoundDialog{barcode: bar_code_founded; is_product_found_dialog_meal: meal_scan_page}
+       IsProductFoundDialog{barcode: bar_code_founded}
     }
 
     
@@ -113,14 +102,7 @@ Page {
                 anchors.fill: parent
                 onClicked:{
                     page_stack.pop(scan_page)  
-                    page_stack.push(set_food_page,{product_name_set_food_page: product_name,
-                    cal_set_food_page: energy_kcal_100g,
-                    carbo_set_food_page: carbohydrates_100g,
-                    fat_set_food_page: fat_100g,
-                    protein_set_food_page: protein_100g,
-                    nutriscore_set_food_page: nutriscore_grade,
-                    meal_set_food_page: is_product_found_dialog_meal,
-                    nova_groups_set_food_page: nova_group}) 
+                    page_stack.push(set_food_page) 
                 }
             }  
         }

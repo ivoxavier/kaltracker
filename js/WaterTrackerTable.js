@@ -29,7 +29,7 @@ function connectDB() {
     db.transaction(function(tx) {
       var results = tx.executeSql(new_glass_of_water, [1,
       1,
-      root.stringDate]);
+      logical_fields.application.date_utils.long_date]);
       if (results.rowsAffected > 0) {
       } else {
       }

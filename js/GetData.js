@@ -24,7 +24,7 @@ function connectDB() {
 function getTotalCalConsumed(){
     var total_cal_consumed = 'SELECT SUM(i.cal) AS totalcal \
     FROM ingestions i \
-    WHERE i.date == "which_date"'.replace("which_date", root.stringDate);
+    WHERE i.date == "which_date"'.replace("which_date", logical_fields.application.date_utils.long_date);
       var db = connectDB();
       var rsToQML 
       db.transaction(function (tx) {
@@ -32,9 +32,9 @@ function getTotalCalConsumed(){
         for (var i = 0; i < results.rows.length; i++) {
           rsToQML = results.rows.item(i).totalcal                 
           if(rsToQML == 0 || rsToQML == null){
-              home_page.query_total_cal_consumed = 0
+              logical_fields.user_profile.plan.cal_consumed = 0
           } else{
-            home_page.query_total_cal_consumed = rsToQML
+            logical_fields.user_profile.plan.cal_consumed = rsToQML
           }
     
         }
@@ -47,16 +47,16 @@ function getTotalCalRemaining(){
   FROM ingestions i \
   JOIN user ON i.id_user = user.id \
   WHERE i.date == "which_date") \
-  SELECT remaining FROM dif'.replace("which_date",root.stringDate);
+  SELECT remaining FROM dif'.replace("which_date",logical_fields.application.date_utils.long_date);
   var db = connectDB();
   db.transaction(function (tx) {
     var results = tx.executeSql(total_cal_remaining)
     for (var i = 0; i < results.rows.length; i++) {
       var rsToQML = results.rows.item(i).remaining
       if (rsToQML === null || rsToQML === 0 ){
-        home_page.query_total_cal_remaining = app_settings.rec_cal
+        logical_fields.user_profile.plan.cal_remaining = app_settings.rec_cal
       } else {
-        home_page.query_total_cal_remaining =  rsToQML
+        logical_fields.user_profile.plan.cal_remaining =  rsToQML
       }
     }
   }) 
@@ -66,7 +66,7 @@ function getTotalCalRemaining(){
 function getTotalFoodsConsumed(){
   var total_foods_consumed = 'SELECT COUNT(i.id) AS totalFoods \
   FROM ingestions i \
-  WHERE i.date == "which_date"'.replace("which_date", root.stringDate);
+  WHERE i.date == "which_date"'.replace("which_date", logical_fields.application.date_utils.long_date);
     var db = connectDB();
     var rsToQML 
     db.transaction(function (tx) {
@@ -74,9 +74,9 @@ function getTotalFoodsConsumed(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalFoods                
         if(rsToQML == 0 || rsToQML == null){
-            home_page.query_total_foods_consumed = 0
+            logical_fields.metrics.total_foods_consumed = 0
         } else{
-          home_page.query_total_foods_consumed = rsToQML
+          logical_fields.metrics.total_foods_consumed = rsToQML
         }
       }
    })
@@ -86,7 +86,7 @@ function getTotalFoodsConsumed(){
 function getBreakfastCalories(){
   var total_cal_consumed_breakfast = 'SELECT SUM(i.cal) AS totalcal \
   FROM ingestions i \
-  WHERE i.date == "which_date" AND i.meal = 0'.replace("which_date", root.stringDate);
+  WHERE i.date == "which_date" AND i.meal = 0'.replace("which_date", logical_fields.application.date_utils.long_date);
   var db = connectDB();
   var rsToQML        
   db.transaction(function (tx) {
@@ -94,9 +94,9 @@ function getBreakfastCalories(){
     for (var i = 0; i < results.rows.length; i++) {
       rsToQML = results.rows.item(i).totalcal                             
       if(rsToQML == 0 || rsToQML == null){
-        home_page.query_total_cal_breakfast = 0
+        logical_fields.metrics.total_cal_breakfast = 0
       } else{
-        home_page.query_total_cal_breakfast = rsToQML
+        logical_fields.metrics.total_cal_breakfast = rsToQML
       }
     }
   })
@@ -128,7 +128,7 @@ function getBreakfastCalories(){
   function getLunchCalories(){
     var total_cal_consumed_lunch = 'SELECT SUM(i.cal) AS totalcal \
     FROM ingestions i \
-    WHERE i.date == "which_date" AND i.meal = 1'.replace("which_date", root.stringDate);
+    WHERE i.date == "which_date" AND i.meal = 1'.replace("which_date", logical_fields.application.date_utils.long_date);
     var db = connectDB();
     var rsToQML          
     db.transaction(function (tx) {
@@ -136,9 +136,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal                              
         if(rsToQML == 0 || rsToQML == null){
-          home_page.query_total_cal_lunch = 0
+          logical_fields.metrics.total_cal_lunch = 0
         } else{
-          home_page.query_total_cal_lunch = rsToQML
+          logical_fields.metrics.total_cal_lunch = rsToQML
         }
       }
     })
@@ -170,7 +170,7 @@ function getBreakfastCalories(){
   function getDinnerCalories(){
     var total_cal_consumed_dinner = 'SELECT SUM(i.cal) AS totalcal \
     FROM ingestions i \
-    WHERE i.date == "which_date" AND i.meal = 2'.replace("which_date", root.stringDate);
+    WHERE i.date == "which_date" AND i.meal = 2'.replace("which_date", logical_fields.application.date_utils.long_date);
     var db = connectDB();
     var rsToQML
     db.transaction(function (tx) {
@@ -178,9 +178,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal
         if(rsToQML == 0 ||  rsToQML == null){
-          home_page.query_total_cal_dinner = 0
+          logical_fields.metrics.total_cal_dinner = 0
         } else{
-          home_page.query_total_cal_dinner = rsToQML
+          logical_fields.metrics.total_cal_dinner = rsToQML
         }
       }
   })
@@ -212,7 +212,7 @@ function getBreakfastCalories(){
   function getSnacksCalories(){
     var total_cal_consumed_snacks = 'SELECT SUM(i.cal) AS totalcal \
     FROM ingestions i \
-    WHERE i.date == "which_date" AND i.meal = 3'.replace("which_date", root.stringDate);
+    WHERE i.date == "which_date" AND i.meal = 3'.replace("which_date", logical_fields.application.date_utils.long_date);
     var db = connectDB();
     var rsToQML
     db.transaction(function (tx) {
@@ -220,9 +220,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal
         if(rsToQML == 0 || rsToQML == null){
-          home_page.query_total_cal_snacks = 0
+          logical_fields.metrics.total_cal_snacks = 0
         } else{
-          home_page.query_total_cal_snacks = rsToQML
+          logical_fields.metrics.total_cal_snacks = rsToQML
         }
       }
   })
@@ -254,7 +254,7 @@ function getBreakfastCalories(){
   function getCups(){
     var water_cups = 'SELECT COUNT(cups) AS cups \
     FROM water_tracker \
-    WHERE date == "which_date"'.replace("which_date", root.stringDate);
+    WHERE date == "which_date"'.replace("which_date", logical_fields.application.date_utils.long_date);
     var db = connectDB();
     var rsToQML
     db.transaction(function (tx) {
@@ -262,9 +262,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).cups
         if(rsToQML == 0 || rsToQML == null ){
-          home_page.query_total_water_cups = 0
+          logical_fields.metrics.total_water_cups = 0
         } else{
-          home_page.query_total_water_cups = rsToQML
+          logical_fields.metrics.total_water_cups = rsToQML
         }
         
       }
@@ -295,16 +295,16 @@ function getCarboConsumed(){
     var total_carbo_consumed = 'SELECT SUM(carbo) as carbo \
     FROM ingestions i \
     JOIN user ON i.id_user = user.id \
-    WHERE i.date == "which_date"'.replace("which_date",root.stringDate);
+    WHERE i.date == "which_date"'.replace("which_date",logical_fields.application.date_utils.long_date);
     var db = connectDB();
     db.transaction(function (tx) {
       var results = tx.executeSql(total_carbo_consumed)
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).carbo
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_carbo_consumed = 0
+          logical_fields.metrics.total_carbo_consumed = 0
         } else {
-        home_page.query_total_carbo_consumed = rsToQML
+        logical_fields.metrics.total_carbo_consumed = rsToQML
         }
       }
     }) 
@@ -314,16 +314,16 @@ function getCarboConsumed(){
     var total_fat_consumed = 'SELECT SUM(fat) as fat \
     FROM ingestions i \
     JOIN user ON i.id_user = user.id \
-    WHERE i.date == "which_date"'.replace("which_date",root.stringDate);
+    WHERE i.date == "which_date"'.replace("which_date",logical_fields.application.date_utils.long_date);
     var db = connectDB();
     db.transaction(function (tx) {
       var results = tx.executeSql(total_fat_consumed)
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).fat
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_fat_consumed = 0
+          logical_fields.metrics.total_fat_consumed = 0
         } else {
-        home_page.query_total_fat_consumed = rsToQML
+        logical_fields.metrics.total_fat_consumed = rsToQML
         }
       }
     }) 
@@ -333,16 +333,16 @@ function getCarboConsumed(){
     var total_protein_consumed = 'SELECT SUM(protein) as protein \
     FROM ingestions i \
     JOIN user ON i.id_user = user.id \
-    WHERE i.date == "which_date"'.replace("which_date",root.stringDate);
+    WHERE i.date == "which_date"'.replace("which_date",logical_fields.application.date_utils.long_date);
     var db = connectDB();
     db.transaction(function (tx) {
       var results = tx.executeSql(total_protein_consumed)
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).protein
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_protein_consumed = 0
+          logical_fields.metrics.total_protein_consumed = 0
         } else {
-        home_page.query_total_protein_consumed = rsToQML
+        logical_fields.metrics.total_protein_consumed = rsToQML
         }
       }
     }) 

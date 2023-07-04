@@ -28,6 +28,7 @@ import Lomiri.Components.Pickers 1.3
 import "components"
 import "style"
 import "plugins"
+import "logicalFields"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/UserTable.js" as UserTable
@@ -49,31 +50,11 @@ Page{
     
     BackgroundStyle{}
     
-   
-    //receives values from foods from QuickFoodsList{}
-    property string product_name_set_food_page
-    property string nutriscore_set_food_page
-    property string nova_groups_set_food_page
-    property int cal_set_food_page
-    property double carbo_set_food_page
-    property double fat_set_food_page
-    property double protein_set_food_page
-    property int meal_set_food_page
-
-    //store quantity and portions
-    property int quantity_portions : 1
-    property double size_portions : 1
-
-    //cal and nutriens ingested
-    property int cal_ingested : Math.round(cal_set_food_page * quantity_portions) * size_portions
-    property double carbo_ingested : Math.round((carbo_set_food_page * quantity_portions) * size_portions * 10) / 10
-    property double fat_ingested : Math.round((fat_set_food_page * quantity_portions) * size_portions * 10) / 10
-    property double protein_ingested : Math.round((protein_set_food_page * quantity_portions) * size_portions * 10) / 10
     
     function getChartPieValues(){
         var ChartPieData = [
             {
-                value: fat_ingested,
+                value: logical_fields.ingestion.fat_ingested,
                 color: app_style.chart.circle.productNutrients
                 .fatPie,
                 highlight: app_style.chart.circle.productNutrients
@@ -81,7 +62,7 @@ Page{
                 label: i18n.tr("Fat/100g")
             },
             {
-                value: protein_ingested,
+                value: logical_fields.ingestion.protein_ingested,
                 color: app_style.chart.circle.productNutrients
                 .proteinPie,
                 highlight: app_style.chart.circle.productNutrients
@@ -89,7 +70,7 @@ Page{
                 label: i18n.tr("Protein/100g")
             },
             {
-                value: carbo_ingested,
+                value: logical_fields.ingestion.carbo_ingested,
                 color: app_style.chart.circle.productNutrients
                 .carbPie,
                 highlight: app_style.chart.circle.productNutrients
@@ -157,29 +138,29 @@ Page{
                 anchors.fill: parent
                 onClicked:{
                     try{
-                        if(UserFoodsListTable.isUnique(product_name_set_food_page) >= 1){
+                        if(UserFoodsListTable.isUnique(logical_fields.ingestion.product_name) >= 1){
                         /* REGISTER INGESTION */
                         //item already on DB
-                        IngestionsTable.saveIngestion(product_name_set_food_page,
-                        nutriscore_set_food_page, cal_ingested,
-                        fat_ingested, carbo_ingested,
-                        protein_ingested, meal_set_food_page)
+                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
+                        logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
+                        logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
                         root.initDB()
                         PopupUtils.open(sucess_dialog)
                     } else{
                         /* CREATE NEW ENTRY */
                         //new item
-                        UserFoodsListTable.saveIngestion(product_name_set_food_page,
-                        nutriscore_set_food_page, cal_set_food_page,
-                        fat_set_food_page, carbo_set_food_page,
-                        protein_set_food_page)
+                        UserFoodsListTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
+                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
+                        logical_fields.ingestion.protein)
                         root.initDB()
 
                         /* REGISTER INGESTION */
-                        IngestionsTable.saveIngestion(product_name_set_food_page,
-                        nutriscore_set_food_page, cal_ingested,
-                        fat_ingested, carbo_ingested,
-                        protein_ingested, meal_set_food_page)
+                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
+                        logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
+                        logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
                         root.initDB()
                         PopupUtils.open(sucess_dialog)
                     }

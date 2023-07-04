@@ -22,6 +22,7 @@ import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
+import "../logicalFields"
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 ListView{
@@ -65,13 +66,13 @@ ListView{
                 ProgressionSlot{}
             }
             onClicked: {
-                page_stack.push(set_food_page,{product_name_set_food_page: product_name,
-                cal_set_food_page: energy_kcal_100g,
-                carbo_set_food_page: carbohydrates_100g,
-                fat_set_food_page: fat_100g,
-                protein_set_food_page: proteins_100g,
-                nutriscore_set_food_page: nutriscore_grade,
-                meal_set_food_page: meal_quick_list_foods_page})
+                logical_fields.ingestion.product_name = product_name
+                logical_fields.ingestion.cal = energy_kcal_100g
+                logical_fields.ingestion.carbo = carbohydrates_100g
+                logical_fields.ingestion.fat = fat_100g
+                logical_fields.ingestion.protein = proteins_100g
+                logical_fields.ingestion.nutriscore = nutriscore_grade
+                page_stack.push(set_food_page)
             }  
         }
     }
