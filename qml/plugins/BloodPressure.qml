@@ -79,7 +79,7 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                systolic_shape.systolic_value-- , update_user_values_page.update_ap_hi = systolic_shape.systolic_value
+                                systolic_shape.systolic_value-- , logical_fields.user_profile.ap_hi = systolic_shape.systolic_value
                                 update_user_values_page.blood_pressure.ap_hi = true
                             }       
     
@@ -102,8 +102,8 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                systolic_shape.systolic_value++ , update_user_values_page.update_ap_lo = systolic_shape.systolic_value
-                                update_user_values_page.blood_pressure.ap_hi = true
+                                systolic_shape.systolic_value++ , logical_fields.user_profile.ap_lo = systolic_shape.systolic_value
+                                update_user_values_page.blood_pressure.ap_lo = true
                                 
                             }
                             
@@ -163,7 +163,7 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                diastolic_shape.diastolic_value-- , update_user_values_page.update_ap_lo = diastolic_shape.diastolic_value
+                                diastolic_shape.diastolic_value-- , logical_fields.user_profile.ap_lo = diastolic_shape.diastolic_value
                                 update_user_values_page.blood_pressure.ap_lo = true
                             }       
     
@@ -186,7 +186,7 @@ ColumnLayout{
                         MouseArea{
                             anchors.fill: parent
                             onClicked:{
-                                diastolic_shape.diastolic_value++ , update_user_values_page.update_ap_hi = diastolic_shape.diastolic_value
+                                diastolic_shape.diastolic_value++ , logical_fields.user_profile.ap_hi = diastolic_shape.diastolic_value
                                 update_user_values_page.blood_pressure.ap_lo = true
                             }
                             

@@ -54,17 +54,7 @@ Page{
 
     property bool is_loose_weight : false
     property bool is_gain_weight : false
-    property double update_weight
-    property int update_height
-    property int update_age
-    property int sex_at_birth : UserTable.getSexAtBirth()
-    property int update_activity_level
-    property int update_user_goal
-    property string update_type_goal
-    property int update_recommended_calories
 
-    property int update_ap_hi //systolic
-    property int update_ap_lo //diastolic
 
     function showTick(){
         //assign true if all values from Object are set to true
@@ -206,4 +196,6 @@ Page{
         anchors.bottom: tick_user_detais.visible ? tick_user_detais.top : parent.bottom
         visible: false
     }
+
+    Component.onCompleted: logical_fields.user_profile.user_sex_at_birth = UserTable.getSexAtBirth()
 }

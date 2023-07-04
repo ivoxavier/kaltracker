@@ -115,7 +115,7 @@ ColumnLayout{
                                     weight_shape.weight_value++ , logical_fields.user_profile.user_weight = weight_shape.weight_value
                                     user_profile_config_page.user_profile.weight = true
                                 }else{
-                                    weight_shape.weight_value++ , update_user_values_page.update_weight = weight_shape.weight_value
+                                    weight_shape.weight_value++ , logical_fields.user_profile.user_weight = weight_shape.weight_value
                                     update_user_values_page.user_profile.weight = true
                                 }
                                 
@@ -164,7 +164,7 @@ ColumnLayout{
                 user_profile_config_page.user_profile.height = true
             }
             else{
-                update_user_values_page.update_height = value
+                logical_fields.user_profile.user_height = value
                 update_user_values_page.user_profile.height = true
             }
         }

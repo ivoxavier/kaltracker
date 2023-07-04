@@ -97,7 +97,7 @@ Dialog {
                 if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
                     logical_fields.user_profile.equation_recommended_calories = text
                 }else{
-                    update_user_values_page.update_recommended_calories = text
+                    logical_fields.user_profile.equation_recommended_calories = text
                 }
                 
             }
@@ -115,19 +115,19 @@ Dialog {
                 page_stack.pop(user_profile_config_page)
                 page_stack.push(create_storage_page)
             } else{
-                UpdateUserTable.updateWeight(update_user_values_page.update_weight)
-                UpdateUserTable.updateHeight(update_user_values_page.update_height)
+                UpdateUserTable.updateWeight(logical_fields.user_profile.user_weight)
+                UpdateUserTable.updateHeight(logical_fields.user_profile.user_height)
 
-                WeightTrackerTable.newWeight(update_user_values_page.update_weight)
+                WeightTrackerTable.newWeight(logical_fields.user_profile.user_weight)
 
-                app_settings.water_weight_calc = update_user_values_page.update_weight
+                app_settings.water_weight_calc = logical_fields.user_profile.user_weight
 
-                app_settings.plan_type = update_user_values_page.update_type_goal
-                app_settings.rec_cal =  update_user_values_page.update_recommended_calories
+                app_settings.plan_type = logical_fields.user_profile.type_goal
+                app_settings.rec_cal =  logical_fields.user_profile.equation_recommended_calories
 
-                UpdateUserTable.updateAge(update_user_values_page.update_age)
-                UpdateUserTable.updateRecCal(update_user_values_page.update_recommended_calories)
-                UpdateUserTable.updateActivity(update_user_values_page.update_activity_level)
+                UpdateUserTable.updateAge(logical_fields.user_profile.user_age)
+                UpdateUserTable.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
+                UpdateUserTable.updateActivity(logical_fields.user_profile.user_activity_level)
                 app_settings.is_weight_tracker_chart_enabled = true
                 root.initDB()
                 PopupUtils.close(recommended_calories_dialog)
@@ -150,7 +150,7 @@ Dialog {
             recommended_calories_dialog.equation_calories = logical_fields.user_profile.equation_recommended_calories
         } else{
             ControlRecommendedCalories.updatingProfile()
-            recommended_calories_dialog.equation_calories = update_user_values_page.update_recommended_calories
+            recommended_calories_dialog.equation_calories = logical_fields.user_profile.equation_recommended_calories
         }
         
     }

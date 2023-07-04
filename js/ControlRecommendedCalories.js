@@ -18,19 +18,23 @@ function initialConfig(){
   var goal_calc = logical_fields.user_profile.type_goal == "loose" ?
   (-logical_fields.user_profile.user_goal) : logical_fields.user_profile.type_goal == "gain" ?
   logical_fields.user_profile.user_goal : 0
+  
   logical_fields.user_profile.equation_recommended_calories = (RecommendedCalories.equation(logical_fields.user_profile.user_age,
-  logical_fields.user_profile.user_weight,logical_fields.user_profile.user_height,logical_fields.user_profile.user_sex_at_birth,logical_fields.user_profile.user_activity_level)) + goal_calc  
+  logical_fields.user_profile.user_weight,
+  logical_fields.user_profile.user_height,
+  logical_fields.user_profile.user_sex_at_birth,
+  logical_fields.user_profile.user_activity_level)) + goal_calc  
 }
 
 function updatingProfile(){
-var update_goal_calc = update_user_values_page.update_type_goal == "loose" ?
-    (-update_user_values_page.update_user_goal) : update_user_values_page.update_type_goal == "gain" ?
-    update_user_values_page.update_user_goal : 0
+var update_goal_calc = logical_fields.user_profile.type_goal == "loose" ?
+  (-logical_fields.user_profile.user_goal) : logical_fields.user_profile.type_goal == "gain" ?
+  logical_fields.user_profile.user_goal : 0
 
-    update_user_values_page.update_recommended_calories = (RecommendedCalories.equation(update_user_values_page.update_age,
-    update_user_values_page.update_weight,
-    update_user_values_page.update_height,
-    update_user_values_page.sex_at_birth,
-    update_user_values_page.update_activity_level)) + update_goal_calc
+    logical_fields.user_profile.equation_recommended_calories = (RecommendedCalories.equation(logical_fields.user_profile.user_age,
+    logical_fields.user_profile.user_weight,
+    logical_fields.user_profile.user_height,
+    logical_fields.user_profile.user_sex_at_birth,
+    logical_fields.user_profile.user_activity_level)) + update_goal_calc
 
 }

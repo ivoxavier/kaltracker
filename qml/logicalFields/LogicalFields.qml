@@ -37,7 +37,13 @@ QtObject{
         property int user_age
         property double user_weight
         property int user_height
+        property int ap_hi //systolic
+        property int ap_lo //diastolic
         property int equation_recommended_calories
+        property QtObject plan : QtObject{
+            property int cal_consumed
+            property int cal_remaining
+        }
     }
 
     property QtObject ingestion : QtObject{
@@ -57,5 +63,16 @@ QtObject{
         property double protein_ingested : Math.round((protein * quantity_portions) * size_portions * 10) / 10 
     }
 
+    property QtObject metrics : QtObject{
+        property int total_cal_breakfast
+        property int total_cal_lunch
+        property int total_cal_dinner
+        property int total_cal_snacks
+        property int total_foods_consumed
+        property int total_water_cups
+        property double total_carbo_consumed
+        property double total_fat_consumed
+        property double total_protein_consumed
+    }
 
 }

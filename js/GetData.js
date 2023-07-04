@@ -32,9 +32,9 @@ function getTotalCalConsumed(){
         for (var i = 0; i < results.rows.length; i++) {
           rsToQML = results.rows.item(i).totalcal                 
           if(rsToQML == 0 || rsToQML == null){
-              home_page.query_total_cal_consumed = 0
+              logical_fields.user_profile.plan.cal_consumed = 0
           } else{
-            home_page.query_total_cal_consumed = rsToQML
+            logical_fields.user_profile.plan.cal_consumed = rsToQML
           }
     
         }
@@ -54,9 +54,9 @@ function getTotalCalRemaining(){
     for (var i = 0; i < results.rows.length; i++) {
       var rsToQML = results.rows.item(i).remaining
       if (rsToQML === null || rsToQML === 0 ){
-        home_page.query_total_cal_remaining = app_settings.rec_cal
+        logical_fields.user_profile.plan.cal_remaining = app_settings.rec_cal
       } else {
-        home_page.query_total_cal_remaining =  rsToQML
+        logical_fields.user_profile.plan.cal_remaining =  rsToQML
       }
     }
   }) 
@@ -74,9 +74,9 @@ function getTotalFoodsConsumed(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalFoods                
         if(rsToQML == 0 || rsToQML == null){
-            home_page.query_total_foods_consumed = 0
+            logical_fields.metrics.total_foods_consumed = 0
         } else{
-          home_page.query_total_foods_consumed = rsToQML
+          logical_fields.metrics.total_foods_consumed = rsToQML
         }
       }
    })
@@ -94,9 +94,9 @@ function getBreakfastCalories(){
     for (var i = 0; i < results.rows.length; i++) {
       rsToQML = results.rows.item(i).totalcal                             
       if(rsToQML == 0 || rsToQML == null){
-        home_page.query_total_cal_breakfast = 0
+        logical_fields.metrics.total_cal_breakfast = 0
       } else{
-        home_page.query_total_cal_breakfast = rsToQML
+        logical_fields.metrics.total_cal_breakfast = rsToQML
       }
     }
   })
@@ -136,9 +136,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal                              
         if(rsToQML == 0 || rsToQML == null){
-          home_page.query_total_cal_lunch = 0
+          logical_fields.metrics.total_cal_lunch = 0
         } else{
-          home_page.query_total_cal_lunch = rsToQML
+          logical_fields.metrics.total_cal_lunch = rsToQML
         }
       }
     })
@@ -178,9 +178,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal
         if(rsToQML == 0 ||  rsToQML == null){
-          home_page.query_total_cal_dinner = 0
+          logical_fields.metrics.total_cal_dinner = 0
         } else{
-          home_page.query_total_cal_dinner = rsToQML
+          logical_fields.metrics.total_cal_dinner = rsToQML
         }
       }
   })
@@ -220,9 +220,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).totalcal
         if(rsToQML == 0 || rsToQML == null){
-          home_page.query_total_cal_snacks = 0
+          logical_fields.metrics.total_cal_snacks = 0
         } else{
-          home_page.query_total_cal_snacks = rsToQML
+          logical_fields.metrics.total_cal_snacks = rsToQML
         }
       }
   })
@@ -262,9 +262,9 @@ function getBreakfastCalories(){
       for (var i = 0; i < results.rows.length; i++) {
         rsToQML = results.rows.item(i).cups
         if(rsToQML == 0 || rsToQML == null ){
-          home_page.query_total_water_cups = 0
+          logical_fields.metrics.total_water_cups = 0
         } else{
-          home_page.query_total_water_cups = rsToQML
+          logical_fields.metrics.total_water_cups = rsToQML
         }
         
       }
@@ -302,9 +302,9 @@ function getCarboConsumed(){
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).carbo
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_carbo_consumed = 0
+          logical_fields.metrics.total_carbo_consumed = 0
         } else {
-        home_page.query_total_carbo_consumed = rsToQML
+        logical_fields.metrics.total_carbo_consumed = rsToQML
         }
       }
     }) 
@@ -321,9 +321,9 @@ function getCarboConsumed(){
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).fat
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_fat_consumed = 0
+          logical_fields.metrics.total_fat_consumed = 0
         } else {
-        home_page.query_total_fat_consumed = rsToQML
+        logical_fields.metrics.total_fat_consumed = rsToQML
         }
       }
     }) 
@@ -340,9 +340,9 @@ function getCarboConsumed(){
       for (var i = 0; i < results.rows.length; i++) {
         var rsToQML = results.rows.item(i).protein
         if (rsToQML === null || rsToQML == 0.0){
-          home_page.query_total_protein_consumed = 0
+          logical_fields.metrics.total_protein_consumed = 0
         } else {
-        home_page.query_total_protein_consumed = rsToQML
+        logical_fields.metrics.total_protein_consumed = rsToQML
         }
       }
     }) 
