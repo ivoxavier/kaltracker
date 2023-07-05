@@ -49,7 +49,9 @@ MainView {
     PageStack{
         id: page_stack
         onCurrentPageChanged: {
-            console.log("Current Stack: " + currentPage.objectName)
+            if(currentPage !== null){
+                console.log("Current Stack: " + currentPage.objectName)
+            }
         }   
     }
 

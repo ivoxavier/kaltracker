@@ -48,7 +48,12 @@ ColumnLayout{
     ListItem{
         width: root.width
         divider.visible: false
-        visible: page_stack.currentPage.objectName == "UpdateUserValuesPage" ? false : true
+        visible: {
+            if(page_stack.currentPage !== null) {
+                page_stack.currentPage.objectName == "UpdateUserValuesPage" ? visible = false : visible = true
+            }
+            
+        }
         ListItemLayout{
             subtitle.text: i18n.tr("At Birth")
             subtitle.font.bold: true
@@ -60,7 +65,12 @@ ColumnLayout{
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
-        state: page_stack.currentPage.objectName
+        state: {
+            if (page_stack.currentPage !== null) {
+                state = page_stack.currentPage.objectName
+            }
+            
+        }
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("MALE")
         img_path:"../../assets/male-svgrepo-com.svg" 
@@ -70,14 +80,23 @@ ColumnLayout{
         }
     }
 
-    BlankSpace{visible: page_stack.currentPage.objectName == "UpdateUserValuesPage" ? false : true}
+    BlankSpace{
+        visible: {
+            if(page_stack.currentPage !== null){
+                page_stack.currentPage.objectName == "UpdateUserValuesPage" ? visible = false : visible = true
+            }
+        }}
 
     SlotBirthSex{
         id: female_slot
         Layout.alignment: Qt.AlignCenter
         Layout.preferredWidth: root.width - units.gu(9)
         Layout.preferredHeight: units.gu(7)
-        state: page_stack.currentPage.objectName
+        state: {
+            if(page_stack.currentPage !== null){
+                state = page_stack.currentPage.objectName
+            }
+        }
         //TRANSLATORS Please Keep This Letters All Capital
         text: i18n.tr("FEMALE")
         img_path:"../../assets/female-gender-svgrepo-com.svg"
