@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-04 09:31+0000\n"
+"POT-Creation-Date: 2023-07-05 08:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -505,7 +505,7 @@ msgstr ""
 msgid "Objective"
 msgstr ""
 
-#: ../qml/UpdateUserValuesPage.qml:44 ../qml/plugins/SexAge.qml:94
+#: ../qml/UpdateUserValuesPage.qml:44 ../qml/plugins/SexAge.qml:113
 msgid "Age"
 msgstr ""
 
@@ -960,22 +960,22 @@ msgstr ""
 msgid "E: Bad Nutritional Quality"
 msgstr ""
 
-#: ../qml/plugins/SexAge.qml:53
+#: ../qml/plugins/SexAge.qml:58
 msgid "At Birth"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Letters All Capital
-#: ../qml/plugins/SexAge.qml:65
+#: ../qml/plugins/SexAge.qml:75
 msgid "MALE"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Letters All Capital
-#: ../qml/plugins/SexAge.qml:82
+#: ../qml/plugins/SexAge.qml:101
 msgid "FEMALE"
 msgstr ""
 
 #. TRANSLATORS Please Add A WhiteSpace Before The Word
-#: ../qml/plugins/SexAge.qml:116
+#: ../qml/plugins/SexAge.qml:135
 msgid " years"
 msgstr ""
 
