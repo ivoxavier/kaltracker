@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-14 08:53+0000\n"
-"PO-Revision-Date: 2022-07-16 12:02+0200\n"
+"POT-Creation-Date: 2023-07-05 08:45+0000\n"
+"PO-Revision-Date: 2023-07-06 20:29+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -15,85 +15,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-#: ../qml/ExportDataPage.qml:100
-msgid "Data exported successfully"
-msgstr ""
-
-#: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:146
+#: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:138
 msgid "App Settings"
 msgstr "Appinstellingen"
 
-#: ../qml/AppLayoutPage.qml:72
+#: ../qml/AppLayoutPage.qml:64
 msgid "Charts Settings"
 msgstr "Grafiekinstellingen"
 
-#: ../qml/AppLayoutPage.qml:80
+#: ../qml/AppLayoutPage.qml:72
 msgid "Chart Animation"
 msgstr "Grafiekanimatie"
 
-#: ../qml/AverageCaloriesPage.qml:37 ../qml/DataAnalysisPage.qml:85
+#: ../qml/AverageCaloriesPage.qml:38 ../qml/DataAnalysisPage.qml:77
 msgid "Average Calories Consumption"
 msgstr "Gemiddeld aantal calorieën"
 
-#: ../qml/AverageCaloriesPage.qml:87 ../qml/ListFoodsIngestedMonthPage.qml:38
+#: ../qml/AverageCaloriesPage.qml:81 ../qml/ListFoodsIngestedMonthPage.qml:39
 msgid "January"
 msgstr "januari"
 
-#: ../qml/AverageCaloriesPage.qml:88 ../qml/ListFoodsIngestedMonthPage.qml:39
+#: ../qml/AverageCaloriesPage.qml:82 ../qml/ListFoodsIngestedMonthPage.qml:40
 msgid "February"
 msgstr "februari"
 
-#: ../qml/AverageCaloriesPage.qml:89 ../qml/ListFoodsIngestedMonthPage.qml:40
+#: ../qml/AverageCaloriesPage.qml:83 ../qml/ListFoodsIngestedMonthPage.qml:41
 msgid "March"
 msgstr "maart"
 
-#: ../qml/AverageCaloriesPage.qml:90 ../qml/ListFoodsIngestedMonthPage.qml:41
+#: ../qml/AverageCaloriesPage.qml:84 ../qml/ListFoodsIngestedMonthPage.qml:42
 msgid "April"
 msgstr "april"
 
-#: ../qml/AverageCaloriesPage.qml:91 ../qml/ListFoodsIngestedMonthPage.qml:42
+#: ../qml/AverageCaloriesPage.qml:85 ../qml/ListFoodsIngestedMonthPage.qml:43
 msgid "May"
 msgstr "mei"
 
-#: ../qml/AverageCaloriesPage.qml:92 ../qml/ListFoodsIngestedMonthPage.qml:43
+#: ../qml/AverageCaloriesPage.qml:86 ../qml/ListFoodsIngestedMonthPage.qml:44
 msgid "June"
 msgstr "juni"
 
-#: ../qml/AverageCaloriesPage.qml:93 ../qml/ListFoodsIngestedMonthPage.qml:44
+#: ../qml/AverageCaloriesPage.qml:87 ../qml/ListFoodsIngestedMonthPage.qml:45
 msgid "July"
 msgstr "juli"
 
-#: ../qml/AverageCaloriesPage.qml:94 ../qml/ListFoodsIngestedMonthPage.qml:45
+#: ../qml/AverageCaloriesPage.qml:88 ../qml/ListFoodsIngestedMonthPage.qml:46
 msgid "August"
 msgstr "augustus"
 
-#: ../qml/AverageCaloriesPage.qml:95 ../qml/ListFoodsIngestedMonthPage.qml:46
+#: ../qml/AverageCaloriesPage.qml:89 ../qml/ListFoodsIngestedMonthPage.qml:47
 msgid "September"
 msgstr "september"
 
-#: ../qml/AverageCaloriesPage.qml:96 ../qml/ListFoodsIngestedMonthPage.qml:47
+#: ../qml/AverageCaloriesPage.qml:90 ../qml/ListFoodsIngestedMonthPage.qml:48
 msgid "October"
 msgstr "oktober"
 
-#: ../qml/AverageCaloriesPage.qml:97 ../qml/ListFoodsIngestedMonthPage.qml:48
+#: ../qml/AverageCaloriesPage.qml:91 ../qml/ListFoodsIngestedMonthPage.qml:49
 msgid "December"
 msgstr "december"
 
-#: ../qml/AverageCaloriesPage.qml:97 ../qml/ListFoodsIngestedMonthPage.qml:48
+#: ../qml/AverageCaloriesPage.qml:91 ../qml/ListFoodsIngestedMonthPage.qml:49
 msgid "November"
 msgstr "november"
 
-#: ../qml/AverageCaloriesPage.qml:99
+#: ../qml/AverageCaloriesPage.qml:93
 msgid "%1 cal"
 msgstr "%1 cal."
 
-#: ../qml/BodyMeasuresPage.qml:39
+#: ../qml/BackupRestorePage.qml:39 ../qml/MenuPage.qml:199
+msgid "Backup & Restore Data"
+msgstr "Reservekopieën en herstel"
+
+#: ../qml/BackupRestorePage.qml:103
+msgid "Something went wrong, please verify Logs"
+msgstr "Er is iets misgegaan - bekijk de logboeken."
+
+#: ../qml/BackupRestorePage.qml:108
+msgid "Verify if files exists and if headers match accordingly"
+msgstr "Controleer of de bestanden bestaan en of de koppen overeenkomen."
+
+#: ../qml/BackupRestorePage.qml:114
+msgid "Data not loaded, please check logs"
+msgstr "De gegevens zijn niet geladen - bekijk de logboeken"
+
+#: ../qml/BackupRestorePage.qml:119
+msgid "Data exported!"
+msgstr "De gegevens zijn geëxporteerd!"
+
+#: ../qml/BackupRestorePage.qml:124
+msgid "Data loaded! We recomend a reboot of the app."
+msgstr "De gegevens zijn geïmporteerd! Herstart de app om ze te laden."
+
+#: ../qml/BackupRestorePage.qml:159
+msgid "Export Data"
+msgstr "Gegevens exporteren"
+
+#: ../qml/BackupRestorePage.qml:176
+msgid "Import Data"
+msgstr "Gegevens importeren"
+
+#: ../qml/BackupRestorePage.qml:195
+msgid "Importing Requirements"
+msgstr "Importinstructies"
+
+#: ../qml/BackupRestorePage.qml:207
+msgid "Place the files from ExportData in Import path."
+msgstr "Plaats de geëxporteerde bestanden op de importlocatie."
+
+#: ../qml/BodyMeasuresPage.qml:40
 msgid "Body Measures"
 msgstr "Lichaamsafmetingen"
 
-#: ../qml/BodyMeasuresPage.qml:58
+#: ../qml/BodyMeasuresPage.qml:60
 msgid ""
 "KalTracker is not taking in consideration your muscule weight. This is ONLY "
 "e a reference"
@@ -101,289 +137,237 @@ msgstr ""
 "Let op: spiermassa wordt niet meegenomen tijdens het berekenen. Dit is "
 "SLECHTS een indicatie."
 
-#: ../qml/BodyMeasuresPage.qml:93
+#: ../qml/BodyMeasuresPage.qml:85
 msgid "Body Mass Index"
 msgstr "Body Mass Index"
 
-#: ../qml/BodyMeasuresPage.qml:104
+#: ../qml/BodyMeasuresPage.qml:96
 msgid "Low Weigth"
 msgstr "Ondergewicht"
 
-#: ../qml/BodyMeasuresPage.qml:105
+#: ../qml/BodyMeasuresPage.qml:97
 msgid "Normal Weigth"
 msgstr "Normaal gewicht"
 
-#: ../qml/BodyMeasuresPage.qml:106
+#: ../qml/BodyMeasuresPage.qml:98
 msgid "Weigth Exceed"
 msgstr "Zwaar gewicht"
 
-#: ../qml/BodyMeasuresPage.qml:107
+#: ../qml/BodyMeasuresPage.qml:99
 msgid "Obesity"
 msgstr "Obesitas"
 
-#: ../qml/BodyMeasuresPage.qml:107
+#: ../qml/BodyMeasuresPage.qml:99
 msgid "Pre-Obesity"
 msgstr "Overgewicht"
 
-#: ../qml/BodyMeasuresPage.qml:124
+#: ../qml/BodyMeasuresPage.qml:116
 msgid "Ideal Weight"
 msgstr "Streefgewicht"
 
-#: ../qml/BodyMeasuresPage.qml:139
+#: ../qml/BodyMeasuresPage.qml:131 ../qml/plugins/HeightWeight.qml:70
 msgid "KG"
 msgstr "KG"
 
-#: ../qml/BodyMeasuresPage.qml:146
+#: ../qml/BodyMeasuresPage.qml:138 ../qml/UpdateUserValuesPage.qml:45
 msgid "Blood Pressure"
 msgstr "Bloeddruk"
 
-#: ../qml/BodyMeasuresPage.qml:164
+#: ../qml/BodyMeasuresPage.qml:156
 msgid "Normal"
 msgstr "Normaal"
 
-#: ../qml/BodyMeasuresPage.qml:165
+#: ../qml/BodyMeasuresPage.qml:157
 msgid "Elevated"
 msgstr "Hoog"
 
-#: ../qml/BodyMeasuresPage.qml:166
+#: ../qml/BodyMeasuresPage.qml:158
 msgid "High Blood Pressure Stage I"
 msgstr "Hoge bloeddruk, fase 1"
 
-#: ../qml/BodyMeasuresPage.qml:167
+#: ../qml/BodyMeasuresPage.qml:159
 msgid "High Blood Pressure Stage II"
 msgstr "Hoge bloeddruk, fase 2"
 
-#: ../qml/BodyMeasuresPage.qml:167
+#: ../qml/BodyMeasuresPage.qml:159
 msgid "Hypertensive Crisis"
 msgstr "Hypertensief spoedgeval"
 
-#: ../qml/CreateStoragePage.qml:85
+#: ../qml/CreateStoragePage.qml:77
 msgid "Creating Database..."
 msgstr "Bezig met aanmaken van databank…"
 
-#: ../qml/DataAnalysisPage.qml:39 ../qml/MenuPage.qml:119
+#: ../qml/DataAnalysisPage.qml:39 ../qml/MenuPage.qml:111
 msgid "Data Analysis"
 msgstr "Gegevensanalyse"
 
-#: ../qml/DataAnalysisPage.qml:77 ../qml/ManageDataPage.qml:118
+#: ../qml/DataAnalysisPage.qml:69 ../qml/ManageDataPage.qml:110
 msgid "Ingestions"
 msgstr "Calorieconsumptie"
 
-#: ../qml/DataAnalysisPage.qml:87
+#: ../qml/DataAnalysisPage.qml:79
 msgid "By Month"
 msgstr "Per maand"
 
-#: ../qml/DataAnalysisPage.qml:100
+#: ../qml/DataAnalysisPage.qml:92
 msgid "Charts"
 msgstr "Grafieken"
 
-#: ../qml/DataAnalysisPage.qml:115
+#: ../qml/DataAnalysisPage.qml:107
 msgid "Body Measurements"
 msgstr "Lichaamsmeting"
 
-#: ../qml/DataAnalysisPage.qml:122
+#: ../qml/DataAnalysisPage.qml:114
 msgid "Indexes"
 msgstr "Indexen"
 
-#: ../qml/DeleteTodayIngestionPage.qml:38
+#: ../qml/DeleteTodayIngestionPage.qml:39
 msgid "Select Ingestion To Delete"
 msgstr "Kies een te verwijderen consumptie"
 
-#: ../qml/DeleteTodayIngestionPage.qml:59 ../qml/ManageUserFoodsListPage.qml:73
+#: ../qml/DeleteTodayIngestionPage.qml:60 ../qml/ManageUserFoodsListPage.qml:65
 msgid "Empty List, Please Register Ingestions First.."
 msgstr "De lijst is blanco - voeg consumpties toe."
 
-#: ../qml/ExportDataPage.qml:39 ../qml/MenuPage.qml:207
-msgid "Export Data"
-msgstr "Gegevens exporteren"
-
-#: ../qml/ExportDataPage.qml:133
-msgid "Store Path: .local/share/kaltracker.ivoxavier/"
-msgstr "Opslaglocatie: ~/.local/share/kaltracker.ivoxavier/"
-
-#: ../qml/ExportDataPage.qml:145
-msgid "User Table"
-msgstr "Persoonstabel"
-
-#: ../qml/ExportDataPage.qml:157
-msgid "Ingestions Table"
-msgstr "Consumptietabel"
-
-#: ../qml/ExportDataPage.qml:169
-msgid "Water Table"
-msgstr "Watertabel"
-
-#: ../qml/ExportDataPage.qml:181
-msgid "Weight Table"
-msgstr "Gewichtstabel"
-
-#: ../qml/ExportDataPage.qml:206
-msgid "Please Wait A Few Seconds..."
-msgstr "Even geduld…"
-
-#: ../qml/ExportDataPage.qml:213
-msgid "Start Export Process"
-msgstr "Exporteren starten"
-
-#: ../qml/GraphsPage.qml:42
+#: ../qml/GraphsPage.qml:40
 msgid "Graphs"
 msgstr "Grafieken"
 
-#: ../qml/GraphsPage.qml:86
+#: ../qml/GraphsPage.qml:84
 msgid "Weight Progress"
 msgstr "Gewichtsprognose"
 
-#: ../qml/GraphsPage.qml:116
+#: ../qml/GraphsPage.qml:114
 msgid "Foods Distribution By Nutriscore"
 msgstr "Voedselverdeling op basis van Nutri-Score"
 
-#: ../qml/HomePage.qml:94
+#: ../qml/HomePage.qml:82
 msgid "Ingestion Saved!"
 msgstr "De consumptie is opgeslagen!"
 
-#: ../qml/HomePage.qml:139 ../qml/UpdateUserValuesPage.qml:229
-msgid "Loose Weight"
-msgstr "Afvallen noodzakelijk"
-
-#: ../qml/HomePage.qml:140 ../qml/UpdateUserValuesPage.qml:229
-msgid "Gain Weight"
-msgstr "Aankomen noodzakelijk"
-
-#: ../qml/HomePage.qml:140 ../qml/UpdateUserValuesPage.qml:229
-msgid "Maintain Weight"
-msgstr "Geen dieet benodigd"
-
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:162
+#: ../qml/HomePage.qml:131
 msgid "FOODS"
 msgstr "VOEDSEL"
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:181
+#: ../qml/HomePage.qml:150
 msgid "CONSUMED"
 msgstr "GECONSUMEERD"
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:196
+#: ../qml/HomePage.qml:165
 msgid "FAT"
 msgstr "VET"
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:205
+#: ../qml/HomePage.qml:175
 msgid "CARBO"
 msgstr "KOOLHYDRATEN"
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:215
+#: ../qml/HomePage.qml:186
 msgid "PROTEIN"
 msgstr "EIWITTEN"
 
-#: ../qml/HomePage.qml:258 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:234 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr "Ontbijt"
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:261 ../qml/HomePage.qml:273 ../qml/HomePage.qml:285
-#: ../qml/HomePage.qml:297 ../qml/ListFoodsIngestedMonthPage.qml:88
+#: ../qml/HomePage.qml:237 ../qml/HomePage.qml:248 ../qml/HomePage.qml:259
+#: ../qml/HomePage.qml:270 ../qml/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr "%1 calorieën"
 
-#: ../qml/HomePage.qml:270 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:245 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr "Lunch"
 
-#: ../qml/HomePage.qml:282 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:256 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr "Avondeten"
 
-#: ../qml/HomePage.qml:294 ../qml/components/MealFilterDialog.qml:66
+#: ../qml/HomePage.qml:267 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr "Tussendoortjes"
 
-#: ../qml/HomePage.qml:358
+#: ../qml/HomePage.qml:329
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr "De lijst is blanco. Voeg consumpties toe of kies een filter."
 
-#: ../qml/HomePage.qml:374
+#: ../qml/HomePage.qml:338
 msgid "Your Previous Ingestions"
 msgstr "Eerdere consumpties"
 
-#: ../qml/LogInPage.qml:64
-msgid "Welcome"
-msgstr "Welkom"
-
-#: ../qml/LogInPage.qml:93
-msgid "Start"
-msgstr "Aan de slag"
-
-#: ../qml/ManageDataPage.qml:36 ../qml/MenuPage.qml:189
+#: ../qml/ManageDataPage.qml:36 ../qml/MenuPage.qml:181
 msgid "Manage Data"
 msgstr "Gegevens beheren"
 
-#: ../qml/ManageDataPage.qml:127
+#: ../qml/ManageDataPage.qml:119
 msgid "Auto Delete Ingestions"
 msgstr "Consumpties automatisch verwijderen"
 
-#: ../qml/ManageDataPage.qml:129
+#: ../qml/ManageDataPage.qml:121
 msgid "Deletes All Previous Year Ingestions"
 msgstr "Alle consumpties van afgelopen jaar verwijderen"
 
-#: ../qml/ManageDataPage.qml:147
+#: ../qml/ManageDataPage.qml:139
 msgid "From a Month & To Year"
 msgstr "Vanaf een maand tot een jaar"
 
-#: ../qml/ManageDataPage.qml:164
+#: ../qml/ManageDataPage.qml:156
 msgid "Specific Today's Ingestion"
 msgstr "Bepaalde consumptie van vandaag"
 
-#: ../qml/ManageDataPage.qml:184
+#: ../qml/ManageDataPage.qml:176
 msgid "Only Today's Ingestions"
 msgstr "Alle consumpties van vandaag"
 
-#: ../qml/ManageDataPage.qml:188 ../qml/ManageDataPage.qml:205
-#: ../qml/ManageDataPage.qml:255 ../qml/ManageDataPage.qml:280
-#: ../qml/ManageDataPage.qml:305 ../qml/components/DeleteAllNotesDialog.qml:47
-#: ../qml/components/DeleteAllWaterDialog.qml:47
+#: ../qml/ManageDataPage.qml:180 ../qml/ManageDataPage.qml:197
+#: ../qml/ManageDataPage.qml:247 ../qml/ManageDataPage.qml:272
+#: ../qml/ManageDataPage.qml:297 ../qml/components/DeleteAllNotesDialog.qml:48
+#: ../qml/components/DeleteAllWaterDialog.qml:48
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:46
-#: ../qml/components/DeleteByMonthPop.qml:77
-#: ../qml/components/RemoveRecordsDialog.qml:34
-#: ../qml/components/RemoveRecordsDialog.qml:54
+#: ../qml/components/DeleteByMonthPop.qml:81
+#: ../qml/components/RemoveRecordsDialog.qml:33
+#: ../qml/components/RemoveRecordsDialog.qml:55
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../qml/ManageDataPage.qml:201
+#: ../qml/ManageDataPage.qml:193
 msgid "All Ingestions"
 msgstr "Alle consumpties"
 
-#: ../qml/ManageDataPage.qml:218
+#: ../qml/ManageDataPage.qml:210
 msgid "User Foods List"
 msgstr "Eigen voedsellijst"
 
-#: ../qml/ManageDataPage.qml:226
+#: ../qml/ManageDataPage.qml:218
 msgid "User Created Foods List"
 msgstr "Een zelfgemaakte voedsellijst"
 
-#: ../qml/ManageDataPage.qml:242
+#: ../qml/ManageDataPage.qml:234
 msgid "Water"
 msgstr "Water"
 
-#: ../qml/ManageDataPage.qml:251
+#: ../qml/ManageDataPage.qml:243
 msgid "All Water Records"
 msgstr "Alle items met water"
 
-#: ../qml/ManageDataPage.qml:268
+#: ../qml/ManageDataPage.qml:260
 msgid "Notes"
 msgstr "Aantekeningen"
 
-#: ../qml/ManageDataPage.qml:276
+#: ../qml/ManageDataPage.qml:268
 msgid "Delete All Notes"
 msgstr "Alle aantekeningen verwijderen"
 
-#: ../qml/ManageDataPage.qml:293
+#: ../qml/ManageDataPage.qml:285
 msgid "Weight Tracker"
 msgstr "Gewichtsprognose"
 
-#: ../qml/ManageDataPage.qml:301
+#: ../qml/ManageDataPage.qml:293
 msgid "All Records"
 msgstr "Alle items"
 
@@ -395,43 +379,43 @@ msgstr "Voedsel beheren"
 msgid "Menu"
 msgstr "Menu"
 
-#: ../qml/MenuPage.qml:85
+#: ../qml/MenuPage.qml:77
 msgid "Version: "
 msgstr "Versie: "
 
-#: ../qml/MenuPage.qml:93
+#: ../qml/MenuPage.qml:85
 msgid "User"
 msgstr "Gebruiker"
 
-#: ../qml/MenuPage.qml:102
+#: ../qml/MenuPage.qml:94
 msgid "Your Profile"
 msgstr "Mijn profiel"
 
-#: ../qml/MenuPage.qml:137
+#: ../qml/MenuPage.qml:129
 msgid "Settings"
 msgstr "Instellingen"
 
-#: ../qml/MenuPage.qml:162
+#: ../qml/MenuPage.qml:154
 msgid "Online Sources"
 msgstr "Online-bronnen"
 
-#: ../qml/MenuPage.qml:181
+#: ../qml/MenuPage.qml:173
 msgid "Storage"
 msgstr "Opslag"
 
-#: ../qml/MenuPage.qml:226
+#: ../qml/MenuPage.qml:218
 msgid "About"
 msgstr "Over"
 
-#: ../qml/MenuPage.qml:235 ../qml/ThirdPartySoftwarePage.qml:36
+#: ../qml/MenuPage.qml:227 ../qml/ThirdPartySoftwarePage.qml:37
 msgid "Third Party Software"
 msgstr "Externe software"
 
-#: ../qml/NotesPage.qml:35
+#: ../qml/NotesPage.qml:36
 msgid "Your Notes"
 msgstr "Mijn aantekeningen"
 
-#: ../qml/NotesPage.qml:69
+#: ../qml/NotesPage.qml:62
 msgid "Empty List, Please Register Notes First.."
 msgstr "De lijst is blanco - voeg aantekeningen toe."
 
@@ -439,101 +423,107 @@ msgstr "De lijst is blanco - voeg aantekeningen toe."
 msgid "Aplication Programming Interface"
 msgstr "Application Programming Interface"
 
-#: ../qml/OnlineSourcesPage.qml:73
+#: ../qml/OnlineSourcesPage.qml:64
 msgid "Application Programming Interface"
 msgstr "Application Programming Interface"
 
-#: ../qml/OnlineSourcesPage.qml:81
+#: ../qml/OnlineSourcesPage.qml:72
 msgid "OpenFoodsFacts"
 msgstr "OpenFoodsFacts"
 
-#: ../qml/OnlineSourcesPage.qml:83
+#: ../qml/OnlineSourcesPage.qml:75
 msgid "Search For Barcode In %1"
 msgstr "Barcode zoeken op %1"
 
-#: ../qml/QuickAdditionPage.qml:36
-msgid "Quick Addition"
-msgstr "Snel toevoegen"
+#: ../qml/QuickAdditionPage.qml:39 ../qml/SetFoodPage.qml:44
+msgid "Product Details"
+msgstr "Productgegevens"
 
 #: ../qml/QuickAdditionPage.qml:39
-msgid "Details"
-msgstr "Details"
+msgid "Product Macros"
+msgstr "Productmacro's"
 
-#: ../qml/QuickAdditionPage.qml:39 ../qml/SetFoodPage.qml:215
-msgid "Macros"
-msgstr "Macro's"
-
-#: ../qml/QuickAdditionPage.qml:69 ../qml/SetFoodPage.qml:94
+#: ../qml/QuickAdditionPage.qml:65 ../qml/SetFoodPage.qml:87
 msgid "Stored!"
 msgstr "Opgeslagen!"
 
-#: ../qml/QuickAdditionPage.qml:74 ../qml/SetFoodPage.qml:99
+#: ../qml/QuickAdditionPage.qml:70 ../qml/SetFoodPage.qml:92
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr "Er is iets misgegaan. Herstart de app en probeer het opnieuw."
 
-#: ../qml/QuickAdditionPage.qml:111
-msgid "Product name"
-msgstr "Productnaam"
-
-#: ../qml/QuickAdditionPage.qml:138
-msgid "Calories"
-msgstr "Aantal calorieën"
-
-#: ../qml/QuickAdditionPage.qml:169
-msgid "Nutriscore Grade"
-msgstr "Nutri-Score"
-
-#: ../qml/QuickAdditionPage.qml:179
-msgid "A: Very Good Nutritional Quality"
-msgstr "D: zeer hoge voedingswaarde"
-
-#: ../qml/QuickAdditionPage.qml:180
-msgid "B: Good Nutritional Quality"
-msgstr "B: hoge voedingswaarde"
-
-#: ../qml/QuickAdditionPage.qml:181
-msgid "C: Average Nutritional Quality"
-msgstr "C: redelijke voedingswaarde"
-
-#: ../qml/QuickAdditionPage.qml:182
-msgid "D: Poor Nutritional Quality"
-msgstr "D: lage voedingswaarde"
-
-#: ../qml/QuickAdditionPage.qml:183
-msgid "E: Bad Nutritional Quality"
-msgstr "E: zeer lage voedingswaarde"
-
-#: ../qml/QuickAdditionPage.qml:199 ../qml/SetFoodPage.qml:73
-msgid "Fat/100g"
-msgstr "Vet/100g"
-
-#: ../qml/QuickAdditionPage.qml:231 ../qml/SetFoodPage.qml:79
-msgid "Protein/100g"
-msgstr "Eiwitten/100g"
-
-#: ../qml/QuickAdditionPage.qml:264 ../qml/SetFoodPage.qml:85
-msgid "Carbo/100g"
-msgstr "Koolhydraten/100g"
-
-#: ../qml/QuickListFoodsPage.qml:40
+#: ../qml/QuickListFoodsPage.qml:39
 msgid "Search..."
 msgstr "Zoeken…"
 
-#: ../qml/ScanPage.qml:37
-msgid "Scanning"
-msgstr "Bezig met scannen…"
+#: ../qml/ScanPage.qml:40
+msgid "Manual search"
+msgstr "Handmatig zoeken"
 
-#: ../qml/SetActivityPage.qml:34 ../qml/SetAgePage.qml:36
-#: ../qml/SetHeightPage.qml:34 ../qml/SetPlanPage.qml:37
-#: ../qml/SetSexAtBirthPage.qml:35 ../qml/SetWeightPage.qml:34
-msgid "About You"
-msgstr "Over mij"
+#: ../qml/ScanPage.qml:40
+msgid "Reading Bar Code..."
+msgstr "Bezig met herkennen van barcode…"
 
-#: ../qml/SetActivityPage.qml:53
-msgid "Help"
-msgstr "Hulp"
+#: ../qml/SetFoodPage.qml:44
+msgid "Set Your Ingestion"
+msgstr "Consumptieniveau"
 
-#: ../qml/SetActivityPage.qml:64
+#: ../qml/SetFoodPage.qml:62 ../qml/plugins/ProductMacros.qml:64
+msgid "Fat/100g"
+msgstr "Vet/100g"
+
+#: ../qml/SetFoodPage.qml:70 ../qml/plugins/ProductMacros.qml:65
+msgid "Protein/100g"
+msgstr "Eiwitten/100g"
+
+#: ../qml/SetFoodPage.qml:78 ../qml/plugins/ProductMacros.qml:66
+msgid "Carbo/100g"
+msgstr "Koolhydraten/100g"
+
+#: ../qml/ThirdPartySoftwarePage.qml:67
+msgid "QML Modules"
+msgstr "QML-modules"
+
+#: ../qml/ThirdPartySoftwarePage.qml:90 ../qml/ThirdPartySoftwarePage.qml:111
+msgid "%1. Licensed under the MIT licence"
+msgstr "%1. Uitgebracht onder de MIT-licentie"
+
+#: ../qml/ThirdPartySoftwarePage.qml:100
+msgid "JavaScript Libs"
+msgstr "JavaScript-bibliotheken"
+
+#: ../qml/ThirdPartySoftwarePage.qml:121
+msgid "C++ Modules"
+msgstr "C++-modules"
+
+#: ../qml/ThirdPartySoftwarePage.qml:132
+msgid "%1. Licensed under the Apache License 2.0"
+msgstr "%1. Uitgebracht onder de Apache-licentie 2.0"
+
+#: ../qml/ThirdPartySoftwarePage.qml:141
+msgid "Icons"
+msgstr "Pictogrammen"
+
+#: ../qml/UpdateUserValuesPage.qml:43 ../qml/UserProfileConfigPage.qml:36
+msgid "Objective"
+msgstr "Doel"
+
+#: ../qml/UpdateUserValuesPage.qml:44 ../qml/plugins/SexAge.qml:113
+msgid "Age"
+msgstr "Leeftijd"
+
+#: ../qml/UpdateUserValuesPage.qml:45 ../qml/UserProfileConfigPage.qml:37
+msgid "Height & Weight"
+msgstr "Lengte en gewicht"
+
+#: ../qml/UpdateUserValuesPage.qml:101 ../qml/UserProfileConfigPage.qml:100
+msgid "loose"
+msgstr "afvallen"
+
+#: ../qml/UpdateUserValuesPage.qml:106 ../qml/UserProfileConfigPage.qml:105
+msgid "gain"
+msgstr "aankomen"
+
+#: ../qml/UpdateUserValuesPage.qml:116 ../qml/UserProfileConfigPage.qml:115
 msgid ""
 "Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
 "\n"
@@ -551,242 +541,13 @@ msgstr ""
 "\n"
 "Hoge inspanning: hardlopen, voetbal, basketbal, rugby, etc."
 
-#: ../qml/SetActivityPage.qml:103
-msgid "Your Level Of Activity?"
-msgstr "Inspanningsniveau"
+#: ../qml/UserProfileConfigPage.qml:37
+msgid "Sex & Age"
+msgstr "Leeftijd en geslacht"
 
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:116
-msgid "VERY LIGHT"
-msgstr "ERG LAAG"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:133
-msgid "LIGHT"
-msgstr "LAAG"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:150
-msgid "MODERATE"
-msgstr "REDELIJK"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetActivityPage.qml:167
-msgid "HEAVY"
-msgstr "HOOG"
-
-#: ../qml/SetActivityPage.qml:180 ../qml/SetAgePage.qml:103
-#: ../qml/SetHeightPage.qml:107 ../qml/SetPlanPage.qml:160
-#: ../qml/SetWeightPage.qml:103
-msgid "You Can Change It Later"
-msgstr "Je kunt dit later nog aanpassen"
-
-#: ../qml/SetActivityPage.qml:190 ../qml/SetAgePage.qml:112
-#: ../qml/SetHeightPage.qml:116 ../qml/SetPlanPage.qml:170
-#: ../qml/SetSexAtBirthPage.qml:129 ../qml/SetWeightPage.qml:112
-#: ../qml/components/IsProductFoundDialog.qml:126
-msgid "Next"
-msgstr "Volgende"
-
-#: ../qml/SetAgePage.qml:85
-msgid "What's Your Age?"
-msgstr "Leeftijd"
-
-#: ../qml/SetAgePage.qml:95
-msgid "Enter Your Age In Years"
-msgstr "Voer je leeftijd in (in jaren)"
-
-#: ../qml/SetFoodPage.qml:41
-msgid "Set Your Ingestion"
-msgstr "Consumptieniveau"
-
-#: ../qml/SetFoodPage.qml:143
-msgid "Calories: %1 "
-msgstr "Calorieën: %1 "
-
-#: ../qml/SetFoodPage.qml:180
-msgid "Size Portion"
-msgstr "Portie"
-
-#: ../qml/SetFoodPage.qml:200
-msgid "Quantity"
-msgstr "Hoeveelheid"
-
-#: ../qml/SetFoodPage.qml:223
-msgid "Fat: %1gr"
-msgstr "Vet: %1 gram"
-
-#: ../qml/SetFoodPage.qml:231
-msgid "Protein: %1gr"
-msgstr "Eiwitten: %1 gram"
-
-#: ../qml/SetFoodPage.qml:240
-msgid "Carbohydrates: %1gr"
-msgstr "Koolhydraten: %1 gram"
-
-#: ../qml/SetHeightPage.qml:89
-msgid "Your Height?"
-msgstr "Lengte"
-
-#: ../qml/SetHeightPage.qml:99
-msgid "Your Height In cm: 171"
-msgstr "Je lengte in cm: 171"
-
-#: ../qml/SetPlanPage.qml:66
-msgid "loose"
-msgstr "afvallen"
-
-#: ../qml/SetPlanPage.qml:71
-msgid "gain"
-msgstr "aankomen"
-
-#: ../qml/SetPlanPage.qml:100
-msgid "What's Your Goal?"
-msgstr "Doel"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:113
-msgid "LOOSE WEIGHT"
-msgstr "AFVALLEN"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:130
-msgid "MAINTAIN WEIGHT"
-msgstr "NIETS"
-
-#. TRANSLATORS Please Keep All Letters Capital
-#: ../qml/SetPlanPage.qml:147
-msgid "GAIN WEIGHT"
-msgstr "AANKOMEN"
-
-#: ../qml/SetSexAtBirthPage.qml:85
-msgid "Sex Assigned At Birth?"
-msgstr "Geslacht (biologisch gezien)"
-
-#. TRANSLATORS PLease Keep This Letters All Capital
-#: ../qml/SetSexAtBirthPage.qml:98
-msgid "MALE"
-msgstr "MAN"
-
-#. TRANSLATORS PLease Keep This Letters All Capital
-#: ../qml/SetSexAtBirthPage.qml:115
-msgid "FEMALE"
-msgstr "VROUW"
-
-#: ../qml/SetWeightPage.qml:84
-msgid "Your Weight?"
-msgstr "Gewicht"
-
-#: ../qml/SetWeightPage.qml:94
-msgid "Your Weight In KG: 63.3"
-msgstr "Je gewicht in kg: 63.3"
-
-#: ../qml/ThirdPartySoftwarePage.qml:75
-msgid "QML Modules"
-msgstr "QML-modules"
-
-#: ../qml/ThirdPartySoftwarePage.qml:98 ../qml/ThirdPartySoftwarePage.qml:119
-msgid "%1. Licensed under the MIT licence"
-msgstr "%1. Uitgebracht onder de MIT-licentie"
-
-#: ../qml/ThirdPartySoftwarePage.qml:108
-msgid "JavaScript Libs"
-msgstr "JavaScript-bibliotheken"
-
-#: ../qml/ThirdPartySoftwarePage.qml:129
-msgid "C++ Modules"
-msgstr "C++-modules"
-
-#: ../qml/ThirdPartySoftwarePage.qml:140
-msgid "%1. Licensed under the Apache License 2.0"
-msgstr "%1. Uitgebracht onder de Apache-licentie 2.0"
-
-#: ../qml/ThirdPartySoftwarePage.qml:149
-msgid "Icons"
-msgstr "Pictogrammen"
-
-#: ../qml/UpdateUserValuesPage.qml:41
-msgid "Enter New Nalues"
-msgstr "Voer de nieuwe waarden in"
-
-#: ../qml/UpdateUserValuesPage.qml:43
-msgid "Goals"
-msgstr "Doelen"
-
-#: ../qml/UpdateUserValuesPage.qml:43
-msgid "Tension"
-msgstr "Spanning"
-
-#: ../qml/UpdateUserValuesPage.qml:43
-msgid "Values"
-msgstr "Waarden"
-
-#: ../qml/UpdateUserValuesPage.qml:116
-msgid "Your New Height"
-msgstr "Nieuwe lengte"
-
-#: ../qml/UpdateUserValuesPage.qml:142
-msgid "Your New Weight"
-msgstr "Nieuw gewicht"
-
-#: ../qml/UpdateUserValuesPage.qml:169
-msgid "Your New Age"
-msgstr "Nieuwe leeftijd"
-
-#: ../qml/UpdateUserValuesPage.qml:198
-msgid "Activity Level"
-msgstr "Inspanningsniveau"
-
-#: ../qml/UpdateUserValuesPage.qml:207
-msgid "High"
-msgstr "Hoog"
-
-#: ../qml/UpdateUserValuesPage.qml:207
-msgid "Light"
-msgstr "Laag"
-
-#: ../qml/UpdateUserValuesPage.qml:207
-msgid "Moderate"
-msgstr "Redelijk"
-
-#: ../qml/UpdateUserValuesPage.qml:207
-msgid "Very Light"
-msgstr "Erg laag"
-
-#: ../qml/UpdateUserValuesPage.qml:220
-#: ../qml/components/SlotDashboardCalories.qml:56
-msgid "Goal"
-msgstr "Doel"
-
-#: ../qml/UpdateUserValuesPage.qml:250
-msgid "Goal Definition"
-msgstr "Streven"
-
-#: ../qml/UpdateUserValuesPage.qml:260
-#: ../qml/components/GoalDefinitionDialog.qml:47
-msgid "0,5kg by week"
-msgstr "0,5 kg per week"
-
-#: ../qml/UpdateUserValuesPage.qml:260
-#: ../qml/components/GoalDefinitionDialog.qml:66
-msgid "1kg by week"
-msgstr "1 kg per week"
-
-#: ../qml/UpdateUserValuesPage.qml:260
-msgid "3kg by week"
-msgstr "3 kg per week"
-
-#: ../qml/UpdateUserValuesPage.qml:260
-msgid "4kg by week"
-msgstr "4 kg per week"
-
-#: ../qml/UpdateUserValuesPage.qml:276
-msgid "Your Systolic Presure (High Pressure)"
-msgstr "Bovendruk (hoge bloeddruk)"
-
-#: ../qml/UpdateUserValuesPage.qml:303
-msgid "Your Diastolic Presure (Low Pressure)"
-msgstr "Onderdruk (lage bloeddruk)"
+#: ../qml/UserProfileConfigPage.qml:55
+msgid "Calculate"
+msgstr "Berekenen"
 
 #: ../qml/components/AddNoteDialog.qml:31
 msgid "Add Your Notes"
@@ -796,114 +557,130 @@ msgstr "Aantekeningen toevoegen"
 msgid "View Your Notes"
 msgstr "Aantekeningen bekijken"
 
-#: ../qml/components/AddNoteDialog.qml:59
+#: ../qml/components/AddNoteDialog.qml:60
 msgid "Add"
 msgstr "Toevoegen"
 
-#: ../qml/components/AddNoteDialog.qml:67
-#: ../qml/components/GoalDefinitionDialog.qml:123
-#: ../qml/components/MealFilterDialog.qml:72
+#: ../qml/components/AddNoteDialog.qml:69
+#: ../qml/components/GoalDefinitionDialog.qml:136
+#: ../qml/components/MealFilterDialog.qml:73
 #: ../qml/components/MessageDialog.qml:41
-#: ../qml/components/RecommendedCaloriesDialog.qml:51
+#: ../qml/components/RecommendedCaloriesDialog.qml:141
 msgid "Back"
 msgstr "Terug"
 
-#: ../qml/components/CaloriesCircleChart.qml:110
+#: ../qml/components/BackupRestoreNotifyPop.qml:50
+msgid "Exporting"
+msgstr "Bezig met exporteren…"
+
+#: ../qml/components/BackupRestoreNotifyPop.qml:52
+msgid "Please, wait a few moments"
+msgstr "Even geduld…"
+
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "EXCEED"
 msgstr "OVERSCHREDEN"
 
-#: ../qml/components/CaloriesCircleChart.qml:110
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "REMAINING"
 msgstr "RESTEREND"
 
-#: ../qml/components/ConfirmPicker.qml:31
+#: ../qml/components/ConfirmPicker.qml:32
 msgid "NO"
 msgstr "NEE"
 
-#: ../qml/components/ConfirmPicker.qml:31
+#: ../qml/components/ConfirmPicker.qml:32
 msgid "STILL NO"
 msgstr "NOG STEEDS NEE"
 
-#: ../qml/components/ConfirmPicker.qml:31
+#: ../qml/components/ConfirmPicker.qml:32
 msgid "YES"
 msgstr "JA"
 
-#: ../qml/components/DeleteAllNotesDialog.qml:32
+#: ../qml/components/DeleteAllNotesDialog.qml:33
 msgid "Delete Notes"
 msgstr "Aantekeningen verwijderen"
 
-#: ../qml/components/DeleteAllNotesDialog.qml:37
-#: ../qml/components/DeleteAllWaterDialog.qml:37
+#: ../qml/components/DeleteAllNotesDialog.qml:38
+#: ../qml/components/DeleteAllWaterDialog.qml:38
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:36
-#: ../qml/components/DeleteByMonthPop.qml:38
+#: ../qml/components/DeleteByMonthPop.qml:39
 #: ../qml/components/RemoveRecordsDialog.qml:44
 msgid "Confirm Operation With: YES"
 msgstr "Bevestig de actie met JA"
 
-#: ../qml/components/DeleteAllNotesDialog.qml:57
-#: ../qml/components/DeleteAllWaterDialog.qml:57
+#: ../qml/components/DeleteAllNotesDialog.qml:58
+#: ../qml/components/DeleteAllWaterDialog.qml:58
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:57
-#: ../qml/components/DeleteByMonthPop.qml:88
-#: ../qml/components/RemoveRecordsDialog.qml:77
+#: ../qml/components/DeleteByMonthPop.qml:92
+#: ../qml/components/RemoveRecordsDialog.qml:78
 msgid "Wrong Answer, Try Again"
 msgstr "Onjuist antwoord; probeer het opnieuw"
 
-#: ../qml/components/DeleteAllNotesDialog.qml:63
-#: ../qml/components/DeleteAllWaterDialog.qml:63
+#: ../qml/components/DeleteAllNotesDialog.qml:64
+#: ../qml/components/DeleteAllWaterDialog.qml:64
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:63
-#: ../qml/components/DeleteByMonthPop.qml:94
-#: ../qml/components/RemoveRecordsDialog.qml:83
+#: ../qml/components/DeleteByMonthPop.qml:98
+#: ../qml/components/RemoveRecordsDialog.qml:84
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: ../qml/components/DeleteAllWaterDialog.qml:32
+#: ../qml/components/DeleteAllWaterDialog.qml:33
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:31
 msgid "Delete Weight Tracker Records"
 msgstr "Gewichtsprognose wissen"
 
-#: ../qml/components/DeleteByMonthPop.qml:33
+#: ../qml/components/DeleteByMonthPop.qml:34
 msgid "Enter Month & Year"
 msgstr "Voer een maand en jaartal in"
 
-#: ../qml/components/DeleteByMonthPop.qml:44
+#: ../qml/components/DeleteByMonthPop.qml:46
 msgid "Month From 1 to 12"
 msgstr "Maand (1-12)"
 
-#: ../qml/components/DeleteByMonthPop.qml:62
+#: ../qml/components/DeleteByMonthPop.qml:65
 msgid "Year"
 msgstr "Jaar"
 
-#: ../qml/components/GoalDefinitionDialog.qml:29
+#: ../qml/components/GoalDefinitionDialog.qml:30
 msgid "Module your goal"
 msgstr "Doel aanpassen"
 
-#: ../qml/components/GoalDefinitionDialog.qml:36
+#: ../qml/components/GoalDefinitionDialog.qml:37
 msgid "A healthy %1 weight must be distributed among a safe period."
 msgstr ""
 "Om een gezond gewicht - %1 - te bereiken, moet je het aantal kg verdelen."
 
-#: ../qml/components/GoalDefinitionDialog.qml:86
+#: ../qml/components/GoalDefinitionDialog.qml:48
+msgid "0,5kg by week"
+msgstr "0,5 kg per week"
+
+#: ../qml/components/GoalDefinitionDialog.qml:67
+msgid "1kg by week"
+msgstr "1 kg per week"
+
+#: ../qml/components/GoalDefinitionDialog.qml:87
 msgid "3kg by month"
 msgstr "3 kg per maand"
 
-#: ../qml/components/GoalDefinitionDialog.qml:106
+#: ../qml/components/GoalDefinitionDialog.qml:107
 msgid "4kg by month"
 msgstr "4 kg per maand"
 
-#: ../qml/components/GoalDefinitionDialog.qml:136
-#: ../qml/components/RecommendedCaloriesDialog.qml:59
+#: ../qml/components/GoalDefinitionDialog.qml:127
+#: ../qml/components/RecommendedCaloriesDialog.qml:108
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: ../qml/components/IsProductFoundDialog.qml:46
+#: ../qml/components/IsProductFoundDialog.qml:58
 msgid "BarCode Found"
 msgstr "Barcode aangetroffen"
 
-#: ../qml/components/IsProductFoundDialog.qml:46
+#: ../qml/components/IsProductFoundDialog.qml:58
 msgid "BarCode Not Found"
 msgstr "Geen barcode aangetroffen"
 
-#: ../qml/components/IsProductFoundDialog.qml:55
+#: ../qml/components/IsProductFoundDialog.qml:67
 msgid ""
 "No product in DB, you may consider register the item on openfoodsfacts. Or "
 "enter the details manually"
@@ -911,59 +688,43 @@ msgstr ""
 "Dit product is niet opgenomen in de databank. Voeg het item toe op "
 "OpenFoodFacts of voer de productgegevens hier in."
 
-#: ../qml/components/IsProductFoundDialog.qml:63
+#: ../qml/components/IsProductFoundDialog.qml:76
 msgid "Code:%1"
 msgstr "Barcode: %1"
 
-#: ../qml/components/IsProductFoundDialog.qml:75
+#: ../qml/components/IsProductFoundDialog.qml:89
 msgid "Name: %1"
 msgstr "Naam: %1"
 
-#: ../qml/components/IsProductFoundDialog.qml:84
-msgid "Nutriscore: %1"
-msgstr "Nutri-Score: %1"
-
-#: ../qml/components/IsProductFoundDialog.qml:93
-msgid "Calories/100gr: %1"
-msgstr "Aantal calorieën per 100 gram: %1"
-
-#: ../qml/components/IsProductFoundDialog.qml:102
-msgid "Fat/100gr: %1"
-msgstr "Vet per 100 gram: %1"
-
-#: ../qml/components/IsProductFoundDialog.qml:111
-msgid "Protein/100gr: %1"
-msgstr "Aantal eiwitten per 100 gram: %1"
-
-#: ../qml/components/IsProductFoundDialog.qml:120
-msgid "Carbohydrates/100gr: %1"
-msgstr "Aantal koolhydraten per 100 gram: %1"
-
-#: ../qml/components/IsProductFoundDialog.qml:143
+#: ../qml/components/IsProductFoundDialog.qml:96
 msgid "Scan Again"
 msgstr "Opnieuw scannen"
 
-#: ../qml/components/IsProductFoundDialog.qml:152
+#: ../qml/components/IsProductFoundDialog.qml:106
 msgid "Enter Product Details Manually"
 msgstr "Voer de productgegevens in"
 
-#: ../qml/components/ListViewFoods.qml:44
+#: ../qml/components/IsProductFoundDialog.qml:117
+msgid "Next"
+msgstr "Volgende"
+
+#: ../qml/components/ListViewFoods.qml:44 ../qml/plugins/ProductDetails.qml:120
 msgid "Very good nutritional quality"
 msgstr "Zeer hoge voedingswaarde"
 
-#: ../qml/components/ListViewFoods.qml:45
+#: ../qml/components/ListViewFoods.qml:45 ../qml/plugins/ProductDetails.qml:121
 msgid "Good nutritional quality"
 msgstr "Hoge voedingswaarde"
 
-#: ../qml/components/ListViewFoods.qml:46
+#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:122
 msgid "Average nutritional quality"
 msgstr "Redelijke voedingswaarde"
 
-#: ../qml/components/ListViewFoods.qml:47
+#: ../qml/components/ListViewFoods.qml:47 ../qml/plugins/ProductDetails.qml:124
 msgid "Bad nutritional quality"
 msgstr "Lage voedingswaarde"
 
-#: ../qml/components/ListViewFoods.qml:47
+#: ../qml/components/ListViewFoods.qml:47 ../qml/plugins/ProductDetails.qml:123
 msgid "Poor nutritional quality"
 msgstr "Zeer lage voedingswaarde"
 
@@ -987,15 +748,15 @@ msgstr "Wacht tot deze melding verdwijnt…"
 msgid "Operation Sucess"
 msgstr "De actie is afgerond"
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:29
+#: ../qml/components/RecommendedCaloriesDialog.qml:34
 msgid "Recommended Calories"
 msgstr "Aanbevolen aantal calorieën"
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:33
+#: ../qml/components/RecommendedCaloriesDialog.qml:46
 msgid "%1 Calories"
 msgstr "%1 calorieën"
 
-#: ../qml/components/RecommendedCaloriesDialog.qml:41
+#: ../qml/components/RecommendedCaloriesDialog.qml:58
 msgid "Calculated Using St. Mifflin Jeor Equation"
 msgstr "Berekend met behulp van St. Mifflin Jeor Equation"
 
@@ -1005,15 +766,19 @@ msgid ""
 "No recovery possible"
 msgstr ""
 "Hierdoor worden er *%1* items gewist.\n"
-"Deze actie kan niet ongedaan worden gemaakt."
+"Deze actie is onomkeerbaar."
 
-#: ../qml/components/RemoveRecordsDialog.qml:74
+#: ../qml/components/RemoveRecordsDialog.qml:75
 msgid "Something Went Wrong"
 msgstr "Er is iets misgegaan"
 
 #: ../qml/components/SlotDashboardCalories.qml:48
 msgid "Consumed"
 msgstr "Geconsumeerd"
+
+#: ../qml/components/SlotDashboardCalories.qml:56
+msgid "Goal"
+msgstr "Doel"
 
 #: ../qml/components/SlotDashboardCalories.qml:83
 #: ../qml/components/SlotDashboardCalories.qml:91
@@ -1031,19 +796,338 @@ msgstr "Afvallen noodzakelijk"
 msgid "Maintain weight"
 msgstr "Geen dieet benodigd"
 
-#: ../qml/components/StoreIngestionDialog.qml:40
-msgid "I'm not going eat more"
-msgstr "Ik ga niet meer eten"
-
-#: ../qml/components/StoreIngestionDialog.qml:46
+#: ../qml/components/StoreIngestionDialog.qml:31
 msgid "Continue registering..."
 msgstr "Doorgaan…"
 
+#: ../qml/components/StoreIngestionDialog.qml:45
+msgid "It's ok for now"
+msgstr "Alles is in orde"
+
 #: ../qml/components/UpdateUserBloodPressureDialog.qml:27
-#: ../qml/components/UpdateUserTableDialog.qml:28
 msgid "Updating User Table"
 msgstr "Bezig met bijwerken…"
+
+#: ../qml/plugins/BarCodeReader.qml:76
+msgid "Click here for manual search..."
+msgstr "Druk hier om handmatig te zoeken…"
+
+#: ../qml/plugins/BloodPressure.qml:40
+msgid "Systolic Pressure (High Pressure)"
+msgstr "Bovendruk (hoge bloeddruk)"
+
+#: ../qml/plugins/BloodPressure.qml:127
+msgid "Diastolic Pressure (Low Pressure)"
+msgstr "Onderdruk (lage bloeddruk)"
+
+#: ../qml/plugins/HeightWeight.qml:41
+msgid "Weight"
+msgstr "Gewicht"
+
+#: ../qml/plugins/HeightWeight.qml:140
+msgid "Height"
+msgstr "Lengte"
+
+#: ../qml/plugins/HeightWeight.qml:149
+msgid "cm"
+msgstr "cm"
+
+#: ../qml/plugins/IngestionConfig.qml:55
+msgid "Calories: %1 "
+msgstr "Calorieën: %1 "
+
+#: ../qml/plugins/IngestionConfig.qml:66
+msgid "Fat: %1gr"
+msgstr "Vet: %1 gram"
+
+#: ../qml/plugins/IngestionConfig.qml:75
+msgid "Protein: %1gr"
+msgstr "Eiwitten: %1 gram"
+
+#: ../qml/plugins/IngestionConfig.qml:85
+msgid "Carbohydrates: %1gr"
+msgstr "Koolhydraten: %1 gram"
+
+#: ../qml/plugins/IngestionConfig.qml:95
+msgid "Size Portion"
+msgstr "Portie"
+
+#: ../qml/plugins/IngestionConfig.qml:121
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+#: ../qml/plugins/ManualCodeSearch.qml:57
+msgid "Enter the code bar here"
+msgstr "Voer de barcode in"
+
+#: ../qml/plugins/ManualCodeSearch.qml:100
+msgid ""
+"Code not found. Try again, or check  if the code is correct. There's a "
+"possibility that the product is not in the database as well. In that case, "
+"you can add it manually and go over to OpenFoodsFacts and add it there also."
+msgstr ""
+"De code is niet gevonden. Probeer het opnieuw of controleer de code. Het kan "
+"ook zo zijn dat het product niet beschikbaar is in de databank. Als dat zo "
+"is, dan kun je het zelf toevoegen, zowel in de app als op OpenFoodFacts."
+
+#: ../qml/plugins/ManualCodeSearch.qml:127
+msgid "Product name: "
+msgstr "Productnaam: "
+
+#: ../qml/plugins/PlanActivity.qml:87
+msgid "Plan"
+msgstr "Plan"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:98
+msgid "LOOSE WEIGHT"
+msgstr "AFVALLEN"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:117
+msgid "MAINTAIN WEIGHT"
+msgstr "NIETS"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:133
+msgid "GAIN WEIGHT"
+msgstr "AANKOMEN"
+
+#: ../qml/plugins/PlanActivity.qml:148
+msgid "Activity Level"
+msgstr "Inspanningsniveau"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:159
+msgid "VERY LIGHT"
+msgstr "ERG LAAG"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:175
+msgid "LIGHT"
+msgstr "LAAG"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:191
+msgid "MODERATE"
+msgstr "REDELIJK"
+
+#. TRANSLATORS Please Keep All Letters Capital
+#: ../qml/plugins/PlanActivity.qml:207
+msgid "HEAVY"
+msgstr "HOOG"
+
+#: ../qml/plugins/ProductDetails.qml:47
+msgid "Macros"
+msgstr "Macro's"
+
+#: ../qml/plugins/ProductDetails.qml:85
+msgid "Classified as"
+msgstr "Geclassificeerd als"
+
+#: ../qml/plugins/ProductDetails.qml:124 ../qml/plugins/ProductDetails.qml:134
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: ../qml/plugins/ProductDetails.qml:131
+msgid "Unprocessed or minimally processed"
+msgstr "Onbewerkt of minimaal bewerkt"
+
+#: ../qml/plugins/ProductDetails.qml:132
+msgid "Processed culinary ingredients"
+msgstr "Culinaire ingrediënten bewerkt"
+
+#: ../qml/plugins/ProductDetails.qml:133
+msgid "Processed foods"
+msgstr "Bewerkt voedsel"
+
+#: ../qml/plugins/ProductDetails.qml:134
+msgid "Ultra-processed foods"
+msgstr "Hoogbewerkt voedsel"
+
+#: ../qml/plugins/ProductNameCalories.qml:39
+msgid "Product name"
+msgstr "Productnaam"
+
+#: ../qml/plugins/ProductNameCalories.qml:65
+msgid "Calories"
+msgstr "Aantal calorieën"
+
+#: ../qml/plugins/ProductNameCalories.qml:94
+msgid "Nutriscore Grade"
+msgstr "Nutri-Score"
+
+#: ../qml/plugins/ProductNameCalories.qml:103
+msgid "A: Very Good Nutritional Quality"
+msgstr "D: zeer hoge voedingswaarde"
+
+#: ../qml/plugins/ProductNameCalories.qml:104
+msgid "B: Good Nutritional Quality"
+msgstr "B: hoge voedingswaarde"
+
+#: ../qml/plugins/ProductNameCalories.qml:105
+msgid "C: Average Nutritional Quality"
+msgstr "C: redelijke voedingswaarde"
+
+#: ../qml/plugins/ProductNameCalories.qml:106
+msgid "D: Poor Nutritional Quality"
+msgstr "D: lage voedingswaarde"
+
+#: ../qml/plugins/ProductNameCalories.qml:107
+msgid "E: Bad Nutritional Quality"
+msgstr "E: zeer lage voedingswaarde"
+
+#: ../qml/plugins/SexAge.qml:58
+msgid "At Birth"
+msgstr "Bij geboorte"
+
+#. TRANSLATORS Please Keep This Letters All Capital
+#: ../qml/plugins/SexAge.qml:75
+msgid "MALE"
+msgstr "MAN"
+
+#. TRANSLATORS Please Keep This Letters All Capital
+#: ../qml/plugins/SexAge.qml:101
+msgid "FEMALE"
+msgstr "VROUW"
+
+#. TRANSLATORS Please Add A WhiteSpace Before The Word
+#: ../qml/plugins/SexAge.qml:135
+msgid " years"
+msgstr " jaar"
 
 #: kaltracker.desktop.in.h:1
 msgid "KalTracker"
 msgstr "KalTracker"
+
+#~ msgid "Store Path: .local/share/kaltracker.ivoxavier/"
+#~ msgstr "Opslaglocatie: ~/.local/share/kaltracker.ivoxavier/"
+
+#~ msgid "User Table"
+#~ msgstr "Persoonstabel"
+
+#~ msgid "Ingestions Table"
+#~ msgstr "Consumptietabel"
+
+#~ msgid "Water Table"
+#~ msgstr "Watertabel"
+
+#~ msgid "Weight Table"
+#~ msgstr "Gewichtstabel"
+
+#~ msgid "Start Export Process"
+#~ msgstr "Exporteren starten"
+
+#~ msgid "Loose Weight"
+#~ msgstr "Afvallen noodzakelijk"
+
+#~ msgid "Maintain Weight"
+#~ msgstr "Geen dieet benodigd"
+
+#~ msgid "Welcome"
+#~ msgstr "Welkom"
+
+#~ msgid "Start"
+#~ msgstr "Aan de slag"
+
+#~ msgid "Quick Addition"
+#~ msgstr "Snel toevoegen"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Scanning"
+#~ msgstr "Bezig met scannen…"
+
+#~ msgid "About You"
+#~ msgstr "Over mij"
+
+#~ msgid "Help"
+#~ msgstr "Hulp"
+
+#~ msgid "Your Level Of Activity?"
+#~ msgstr "Inspanningsniveau"
+
+#~ msgid "You Can Change It Later"
+#~ msgstr "Je kunt dit later nog aanpassen"
+
+#~ msgid "What's Your Age?"
+#~ msgstr "Leeftijd"
+
+#~ msgid "Enter Your Age In Years"
+#~ msgstr "Voer je leeftijd in (in jaren)"
+
+#~ msgid "Your Height?"
+#~ msgstr "Lengte"
+
+#~ msgid "Your Height In cm: 171"
+#~ msgstr "Je lengte in cm: 171"
+
+#~ msgid "What's Your Goal?"
+#~ msgstr "Doel"
+
+#~ msgid "Sex Assigned At Birth?"
+#~ msgstr "Geslacht (biologisch gezien)"
+
+#~ msgid "Your Weight?"
+#~ msgstr "Gewicht"
+
+#~ msgid "Your Weight In KG: 63.3"
+#~ msgstr "Je gewicht in kg: 63.3"
+
+#~ msgid "Enter New Nalues"
+#~ msgstr "Voer de nieuwe waarden in"
+
+#~ msgid "Goals"
+#~ msgstr "Doelen"
+
+#~ msgid "Tension"
+#~ msgstr "Spanning"
+
+#~ msgid "Values"
+#~ msgstr "Waarden"
+
+#~ msgid "Your New Height"
+#~ msgstr "Nieuwe lengte"
+
+#~ msgid "Your New Weight"
+#~ msgstr "Nieuw gewicht"
+
+#~ msgid "Your New Age"
+#~ msgstr "Nieuwe leeftijd"
+
+#~ msgid "High"
+#~ msgstr "Hoog"
+
+#~ msgid "Moderate"
+#~ msgstr "Redelijk"
+
+#~ msgid "Very Light"
+#~ msgstr "Erg laag"
+
+#~ msgid "Goal Definition"
+#~ msgstr "Streven"
+
+#~ msgid "3kg by week"
+#~ msgstr "3 kg per week"
+
+#~ msgid "4kg by week"
+#~ msgstr "4 kg per week"
+
+#~ msgid "Nutriscore: %1"
+#~ msgstr "Nutri-Score: %1"
+
+#~ msgid "Calories/100gr: %1"
+#~ msgstr "Aantal calorieën per 100 gram: %1"
+
+#~ msgid "Fat/100gr: %1"
+#~ msgstr "Vet per 100 gram: %1"
+
+#~ msgid "Protein/100gr: %1"
+#~ msgstr "Aantal eiwitten per 100 gram: %1"
+
+#~ msgid "Carbohydrates/100gr: %1"
+#~ msgstr "Aantal koolhydraten per 100 gram: %1"
+
+#~ msgid "I'm not going eat more"
+#~ msgstr "Ik ga niet meer eten"
