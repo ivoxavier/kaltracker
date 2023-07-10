@@ -140,13 +140,9 @@ ColumnLayout{
         }
 
         onSelectedIndexChanged: {
-            if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                logical_fields.user_profile.user_age = selectedIndex
-                user_profile_config_page.user_profile.age = true
-            }else{
-                logical_fields.user_profile.user_age = selectedIndex 
-                update_user_values_page.user_profile.age = true
-            }
+            logical_fields.user_profile.user_age = selectedIndex
+            page_stack.currentPage.objectName == "UserProfileConfigPage" ? 
+            user_profile_config_page.user_profile.age = true : update_user_values_page.user_profile.age = true
         }
     }
 
