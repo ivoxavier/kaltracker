@@ -62,13 +62,29 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 set(SOURCES main.cpp)
 
-# Sets BUILD_VERSION: tag of the current git HEAD 
+# Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
   COMMAND git describe --tags --abbrev=0
   OUTPUT_VARIABLE BUILD_VERSION_RAW
   OUTPUT_STRIP_TRAILING_WHITESPACE
   ERROR_QUIET
   )
+  if(NOT BUILD_VERSION_RAW)
+     execute_process(
+      COMMAND git describe --tags --abbrev=0
+      OUTPUT_VARIABLE LAST_VERSION_RAW
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+      ERROR_QUIET
+      )
+     execute_process(
+      COMMAND git rev-parse --short HEAD
+      OUTPUT_VARIABLE GIT_HASH
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+      ERROR_QUIET
+     )
+     string(TIMESTAMP BUILD_VERSION_RAW "${LAST_VERSION_RAW}.%y%m%d%H%M%S" UTC)
+     message(STATUS "Development build. Git hash is: ${GIT_HASH}")
+endif(NOT BUILD_VERSION_RAW)
 string(SUBSTRING ${BUILD_VERSION_RAW} 1 -1 BUILD_VERSION)
 configure_file(git_tag.h.in ${CMAKE_CURRENT_BINARY_DIR}/git_tag.h)
 message(STATUS "Build version is: ${BUILD_VERSION}")
