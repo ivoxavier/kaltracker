@@ -35,24 +35,24 @@ GridLayout{
     columns: 3
    
     //first row
-    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter; text: fat_quick_addition_page; font.bold: true;color : app_style.label.labelColor  }
-    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter;text: protein_quick_addition_page; font.bold: true;color : app_style.label.labelColor  }
-    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter;text: carbo_quick_addition_page; font.bold: true;color : app_style.label.labelColor }
+    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter; text: logical_fields.ingestion.fat; font.bold: true;color : app_style.label.labelColor  }
+    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter;text: logical_fields.ingestion.protein; font.bold: true;color : app_style.label.labelColor  }
+    Text {Layout.alignment: Qt.AlignTop | Qt.AlignHCenter;text: logical_fields.ingestion.carbo; font.bold: true;color : app_style.label.labelColor }
     
     //second row
     NutrientSlider{
         Layout.alignment: Qt.AlignCenter | Qt.AlignHCenter
-        onValueChanged: fat_quick_addition_page = Number(value.toFixed(1))
+        onValueChanged: logical_fields.ingestion.fat = Number(value.toFixed(1))
     }
 
     NutrientSlider{
         Layout.alignment: Qt.AlignCenter | Qt.AlignHCenter
-        onValueChanged : protein_quick_addition_page = Number(value.toFixed(1))   
+        onValueChanged : logical_fields.ingestion.protein = Number(value.toFixed(1))   
     }
 
     NutrientSlider{
         Layout.alignment: Qt.AlignCenter | Qt.AlignHCenter
-        onValueChanged : carbo_quick_addition_page = Number(value.toFixed(1))
+        onValueChanged : logical_fields.ingestion.carbo = Number(value.toFixed(1))
     }
     
     //third row

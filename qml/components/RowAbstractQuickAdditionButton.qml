@@ -35,7 +35,7 @@ Row{
         icon_source: "../../assets/apple-fruit-svgrepo-com.svg"
         MouseArea{
             anchors.fill: parent
-            onClicked: page_stack.push(quick_addition_page,{meal_quick_addition_page : meal_quick_list_foods_page})
+            onClicked: page_stack.push(quick_addition_page)
         }
     }
 }
