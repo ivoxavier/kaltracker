@@ -48,12 +48,12 @@ QtObject{
 
     property QtObject ingestion : QtObject{
         property string product_name
-        property string nutriscore
+        property string nutriscore : "a"
         property string nova_groups
         property int cal
-        property double carbo
-        property double fat
-        property double protein
+        property double carbo : 0.0
+        property double fat : 0.0
+        property double protein : 0.0
         property int meal_type
         property int quantity_portions : 1
         property double size_portions : 1

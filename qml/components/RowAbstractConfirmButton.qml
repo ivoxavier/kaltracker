@@ -38,32 +38,31 @@ Row{
             anchors.fill: parent
             onClicked: {
                 try{
-                    if(UserFoodsListTable.isUnique(product_name_quick_addition_page) >= 1){
+                    if(UserFoodsListTable.isUnique(logical_fields.ingestion.product_name) >= 1){
                         /* REGISTER INGESTION */
                         //item already on DB
-                        IngestionsTable.saveIngestion(product_name_quick_addition_page,
-                        nutriscore_quick_addition_page, cal_quick_addition_page,
-                        fat_quick_addition_page, carbo_quick_addition_page,
-                        protein_quick_addition_page, meal_quick_addition_page)
-                        root.initDB()
-                        PopupUtils.open(sucess_dialog)
+                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
+                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
+                        logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)
+                        
                     } else{
                         /* CREATE NEW ENTRY */
                         //new item
-                        UserFoodsListTable.saveIngestion(product_name_quick_addition_page,
-                        nutriscore_quick_addition_page, cal_quick_addition_page,
-                        fat_quick_addition_page, carbo_quick_addition_page,
-                        protein_quick_addition_page)
-                        root.initDB()
+                        UserFoodsListTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
+                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
+                        logical_fields.ingestion.protein)
 
                         /* REGISTER INGESTION */
-                        IngestionsTable.saveIngestion(product_name_quick_addition_page,
-                        nutriscore_quick_addition_page, cal_quick_addition_page,
-                        fat_quick_addition_page, carbo_quick_addition_page,
-                        protein_quick_addition_page, meal_quick_addition_page)
-                        root.initDB()
-                        PopupUtils.open(sucess_dialog)
+                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
+                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
+                        logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)  
                     }
+
+                    root.initDB()
+                    PopupUtils.open(sucess_dialog)
                 } catch (err){
                     PopupUtils.open(error_dialog)
                 }  

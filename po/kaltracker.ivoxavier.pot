@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-10 09:28+0000\n"
+"POT-Creation-Date: 2023-07-10 15:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -441,11 +441,11 @@ msgstr ""
 msgid "Product Macros"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:65 ../qml/SetFoodPage.qml:87
+#: ../qml/QuickAdditionPage.qml:52 ../qml/SetFoodPage.qml:87
 msgid "Stored!"
 msgstr ""
 
-#: ../qml/QuickAdditionPage.qml:70 ../qml/SetFoodPage.qml:92
+#: ../qml/QuickAdditionPage.qml:57 ../qml/SetFoodPage.qml:92
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 

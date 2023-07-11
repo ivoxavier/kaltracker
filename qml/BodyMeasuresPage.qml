@@ -52,8 +52,8 @@ Page{
     property int user_weight : UserTable.getWeight()
     property string user_sex_at_birth : UserTable.getSexAtBirth()
     property double user_bmi : BMI.getBmi(user_height, user_weight)
-    property int user_ap_hi : UserTable.getApHi()
-    property int user_ap_lo : UserTable.getApLo()
+    property var user_ap_hi : UserTable.getApHi()
+    property var user_ap_lo : UserTable.getApLo()
 
     Component{
         id: info_bmi
