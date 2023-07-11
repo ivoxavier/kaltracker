@@ -45,19 +45,6 @@ Page{
         }
 
     BackgroundStyle{}
-
-    //receives meal category from HomePage.slotAddMeal
-    property int meal_quick_addition_page
-
-    //food detail
-    property string product_name_quick_addition_page
-    property string nutriscore_quick_addition_page : "a"
-
-    //macros for calculating nutriscore
-    property int cal_quick_addition_page
-    property double carbo_quick_addition_page : 0.0
-    property double fat_quick_addition_page : 0.0
-    property double protein_quick_addition_page : 0.0
  
    
     Component{

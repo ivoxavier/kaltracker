@@ -54,7 +54,7 @@ ColumnLayout{
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
             color : app_style.label.labelColor 
-            onTextChanged: product_name_quick_addition_page = text
+            onTextChanged: logical_fields.ingestion.product_name = text
         }
     }
 
@@ -83,7 +83,7 @@ ColumnLayout{
             inputMethodHints: Qt.ImhDigitsOnly
             color : app_style.label.labelColor 
             onEditingFinished:{ 
-                cal_quick_addition_page = text
+                logical_fields.ingestion.cal = text
             }
         }
     }
@@ -107,7 +107,7 @@ ColumnLayout{
             i18n.tr("E: Bad Nutritional Quality")]
             selectedIndex: -1
             onSelectedIndexChanged: {
-                nutriscore_quick_addition_page = selectedIndex == 0 ?
+                logical_fields.ingestion.nutriscore = selectedIndex == 0 ?
                 "a" : selectedIndex == 1 ?
                 "b" : selectedIndex == 2 ?
                 "c" : selectedIndex == 3 ?
