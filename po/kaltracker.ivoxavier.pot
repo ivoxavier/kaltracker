@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-10 15:16+0000\n"
+"POT-Creation-Date: 2023-07-11 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,57 +244,57 @@ msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:131
+#: ../qml/HomePage.qml:132
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:150
+#: ../qml/HomePage.qml:151
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:165
+#: ../qml/HomePage.qml:166
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:175
+#: ../qml/HomePage.qml:176
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:186
+#: ../qml/HomePage.qml:187
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:234 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:235 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:237 ../qml/HomePage.qml:248 ../qml/HomePage.qml:259
-#: ../qml/HomePage.qml:270 ../qml/ListFoodsIngestedMonthPage.qml:80
+#: ../qml/HomePage.qml:238 ../qml/HomePage.qml:249 ../qml/HomePage.qml:260
+#: ../qml/HomePage.qml:271 ../qml/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:245 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:246 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:256 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:267 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:268 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:329
+#: ../qml/HomePage.qml:330
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:338
+#: ../qml/HomePage.qml:339
 msgid "Your Previous Ingestions"
 msgstr ""
 
