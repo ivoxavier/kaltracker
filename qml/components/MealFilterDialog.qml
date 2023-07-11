@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ Dialog {
                     home_page.amount_of_days_back = text
                     var yesterday_date = new Date()
                     yesterday_date.setDate(yesterday_date.getDate() - home_page.amount_of_days_back)
-                    bottom_edge.yesterday_formated_date = yesterday_date.toLocaleDateString(root.locale, 'yyyy-MM-dd')  
+                    bottom_edge.yesterday_formated_date = yesterday_date.toLocaleDateString(logical_fields.application.date_utils.locale, 'yyyy-MM-dd')  
                 }
             }
         }
