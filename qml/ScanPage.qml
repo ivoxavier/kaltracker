@@ -64,7 +64,6 @@ Page {
         anchors.bottom: parent.bottom
         width: parent.width
         height: parent.height
-        interactive: false
         onCurrentIndexChanged: currentIndex === 0 ?
         barCodeReader.is_reading = true : barCodeReader.is_reading = false
             
@@ -76,6 +75,8 @@ Page {
             // index 1
             ManualCodeSearch{}
         }
+
+        FoodRecognition{id:foodRecognition}
     }
 
    /* QQC2.PageIndicator{

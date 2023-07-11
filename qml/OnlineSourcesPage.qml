@@ -85,6 +85,25 @@ Page{
                     }
                 }  
             }
+            ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    title.text: i18n.tr("Google Cloud Vision")
+                    title.font.bold : true
+                    title.color: app_style.label.labelColor
+                    subtitle.text: i18n.tr("Food Recognition")
+                    Icon{
+                        SlotsLayout.position: SlotsLayout.Leading
+                        source : "../assets/mangifying_glass_barcodes.svg"
+                        height : units.gu(3.5)
+                    }
+
+                    Switch{
+                        checked: app_settings.is_api_googlevision_enabled
+                        onClicked: app_settings.is_api_googlevision_enabled = !app_settings.is_api_googlevision_enabled
+                    }
+                }  
+            }
         }  
     }
 }

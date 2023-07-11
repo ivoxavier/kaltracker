@@ -35,7 +35,7 @@ Row{
         icon_source: "../../assets/barcode_icon.svg"
         MouseArea{
             anchors.fill: parent
-            onClicked : page_stack.push(scan_page,{meal_scan_page : meal_quick_list_foods_page })
+            onClicked : page_stack.push(scan_page)
         }
     }
 }

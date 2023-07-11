@@ -89,10 +89,10 @@ Page{
         width: parent.width
     }
 
-    RowAbstractBarcodeButton{
+    RowAbstractScanButton{
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: quick_addition_button.top
-        visible : app_settings.is_api_openfoodsfacts_enabled ? true : false
+        visible : app_settings.is_api_openfoodsfacts_enabled || app_settings.is_api_googlevision_enabled ? true : false
     }
 
     RowAbstractQuickAdditionButton{
