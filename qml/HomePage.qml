@@ -438,15 +438,11 @@ Page{
         GetData.getCarboConsumed()
         GetData.getFatConsumed()
         GetData.getProteinConsumed()
-        if(app_settings.is_auto_cleaning){
-            var app_installed_date = new Date(app_settings.using_app_date)
-            var year_dif = root.currentDate.getYear() - app_installed_date.getYear()
-            if(year_dif >= 1){
-                PopupUtils.open(notification_pop)
-                IngestionsTable.autoClean()
-            }
-        } else{
-            //first if
+        const installed_date = new Date(app_settings.using_app_date);
+        const year_diff = logical_fields.application.date_utils.current_date.getYear() - installed_date.getYear();
+        if (app_settings.is_auto_cleaning && year_diff >= 1) {
+            PopupUtils.open(notification_pop);
+            IngestionsTable.autoClean();
         }
     }        
 }
