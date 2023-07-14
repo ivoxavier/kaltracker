@@ -12,38 +12,36 @@ AF = [VL = 1,3 ; L = 1,5 ; M = 1,6 ; H = 1,9]
 EER = BMR * AF
 */
 
-function equation(age,weight,height,sex,activity){
-    var af
-    var bmr_Men
-    var bmr_Woman
-    var eer
-    
-    switch (activity) {
-        case 0:
-            af = 1.3; 
-            break;
-        case 1:
-            af = 1.5;
-            break;
-        case 2:
-            af = 1.6;
-            break;
-        case 3:
-            af = 1.9;
-            break;
-        default:
-            break;
-    }
-    
 
-    if(sex === 0){
-        bmr_Men = (10 * weight) + (6.25 * height) - (5 * age) + 5
-        eer = bmr_Men * af
-    }
-    else {
-        bmr_Woman = (10 * weight) + (6.25 * height) - (5 * age) - 161
-        eer = bmr_Woman * af
-    }
-    var roundEER = Math.round(eer)    
-    return roundEER
+function equation(age, weight, height, sex, activity) {
+  var af;
+  var bmr;
+  
+  switch (activity) {
+    case 0:
+      af = 1.3; 
+      break;
+    case 1:
+      af = 1.5;
+      break;
+    case 2:
+      af = 1.6;
+      break;
+    case 3:
+      af = 1.9;
+      break;
+    default:
+      af = 1.3; // Valor padrão para atividade desconhecida
+      break;
+  }
+  
+  if (sex === 0) {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+  } else {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+  }
+  
+  var eer = Math.round(bmr * af);
+  return eer;
 }
+
