@@ -1,11 +1,11 @@
 /*
- * 2022  Ivo Fernandes <pg27165@alunos.uminho.pt>
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
  *
- * utFoods is distributed in the hope that it will be useful,
+ * kaltracker is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -15,16 +15,9 @@
  */
 
 
-function getIdealWeight(sex_at_birth,height){
-    //0 male; 1 female 
-    var ideal_wt
-
-    if (sex_at_birth > 0){
-        ideal_wt = (height-100) * 1.5
-    } else{
-        ideal_wt = (height-100) * 0.9
-    }
-    
-    return (Math.round(ideal_wt) * 10) / 10
+function getIdealWeight(sex_at_birth, height) {
+  var multiplier = (sex_at_birth > 0) ? 1.5 : 0.9;
+  var ideal_wt = (height - 100) * multiplier;
+  return Math.round(ideal_wt * 10) / 10;
 }
 
