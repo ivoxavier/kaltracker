@@ -56,6 +56,29 @@ Page{
         }
     }
 
+    Item{
+        visible: list_view_foods.modelCount == 0 ? true : false
+        anchors.centerIn: parent
+        height: parent.height / 2
+        width: parent.width / 2
+
+        z: 100
+
+        Icon {
+            id: empty_icon
+            anchors.fill: parent
+            name: "empty-symbolic"
+            opacity: 0.75
+        }
+
+        Label{
+            anchors.top: empty_icon.bottom
+            anchors.horizontalCenter: empty_icon.horizontalCenter
+            text: i18n.tr("Empty List, Please Register Ingestions First..")
+            opacity: 0.75
+        }
+    } 
+
     BackgroundStyle{}
 
     //receives meal category from HomePage.slotAddMeal
@@ -79,6 +102,7 @@ Page{
     
     ListViewFoods{
         id: list_view_foods
+        visible: list_view_foods.modelCount == 0 ? false : true
         anchors{
             top: parent.header.bottom
             left: parent.left
@@ -87,6 +111,7 @@ Page{
         }
         height: parent.height
         width: parent.width
+
     }
 
     RowAbstractBarcodeButton{

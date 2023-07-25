@@ -19,18 +19,22 @@ import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../logicalFields"
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 ListView{
+    id: foodsListView
+
+    property int modelCount : foodsListView.count
+
     highlightRangeMode: ListView.ApplyRange
     highlightMoveDuration: LomiriAnimation.SnapDuration
 
     model: sorted_model
-           
+
     delegate: ListItem{  
         divider.visible: false
         height: units.gu(8)
@@ -73,6 +77,6 @@ ListView{
                 logical_fields.ingestion.protein = proteins_100g
                 logical_fields.ingestion.nutriscore = nutriscore_grade
                 page_stack.push(set_food_page)
-            }  
+            }
         }
     }
