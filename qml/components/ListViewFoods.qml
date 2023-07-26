@@ -28,6 +28,7 @@ import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 ListView{
     id: foodsListView
 
+    //property that allows decide QuickFoodsPage to either show or not the empty state icon
     property int modelCount : foodsListView.count
 
     highlightRangeMode: ListView.ApplyRange
@@ -70,6 +71,9 @@ ListView{
                 ProgressionSlot{}
             }
             onClicked: {
+                if(selectMode){
+                    selectMode = !selectMode
+                }
                 logical_fields.ingestion.product_name = product_name
                 logical_fields.ingestion.cal = energy_kcal_100g
                 logical_fields.ingestion.carbo = carbohydrates_100g
@@ -78,5 +82,11 @@ ListView{
                 logical_fields.ingestion.nutriscore = nutriscore_grade
                 page_stack.push(set_food_page)
             }
+
+            onPressAndHold:{
+                selectMode = !selectMode
+                var yolo = foodsListView.ViewItems.selectedIndices = [index]
+            }
+
         }
     }
