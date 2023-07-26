@@ -84,6 +84,8 @@ Page{
     //receives meal category from HomePage.slotAddMeal
     property int meal_quick_list_foods_page
 
+
+
     Timer{id: timer;repeat: false}
 
     SortFilterModel{
@@ -115,14 +117,30 @@ Page{
     }
 
     RowAbstractBarcodeButton{
+        id: barcode_button
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: quick_addition_button.top
-        visible : app_settings.is_api_openfoodsfacts_enabled ? true : false
+        visible : app_settings.is_api_openfoodsfacts_enabled && quick_addition_button.visible ?
+        true : quick_addition_button.visible == false ?
+        false : false
     }
 
     RowAbstractQuickAdditionButton{
         id: quick_addition_button
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
+        visible : list_view_foods.selectionCount == 0 ? true : false
+    }
+
+    SlotMultiAddition{
+        id: slotMultiAddition
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin : units.gu(2)
+        width: parent.width - units.gu(5)
+        height: units.gu(9)
+        selectCount.text: i18n.tr("Total item selected %1").arg(list_view_foods.selectionCount) 
+        selectSum.text: list_view_foods.getCalSelection() + i18n.tr(" calories")
+        visible : list_view_foods.selectionCount == 0 ? false : true
     }
 }

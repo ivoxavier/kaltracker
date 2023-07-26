@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,13 +28,34 @@ import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 ListView{
     id: foodsListView
 
-    //property that allows decide QuickFoodsPage to either show or not the empty state icon
-    property int modelCount : foodsListView.count
-
     highlightRangeMode: ListView.ApplyRange
     highlightMoveDuration: LomiriAnimation.SnapDuration
 
     model: sorted_model
+
+    //property that allows decide QuickFoodsPage to either show or not the empty state icon
+    property int modelCount : foodsListView.count
+
+    //property that allows decision on QuickFoodsPage to either show the RowAbstracts Buttons
+    property int selectionCount : foodsListView.ViewItems.selectedIndices.length
+
+
+    function getCalSelection(){
+        var indices = foodsListView.ViewItems.selectedIndices
+        var user_selection = []
+        for (var i in indices){
+            user_selection.push(foodsListView.model.get(indices[i]).energy_kcal_100g)
+        }
+        return user_selection.reduce((acc, currentValue) => acc + currentValue, 0);
+    }
+
+
+    Timer{
+        id: multiAddition_timer
+        interval: 10; running: true; repeat: true
+        onTriggered: getCalSelection()
+    }
+
 
     delegate: ListItem{  
         divider.visible: false
@@ -73,6 +94,10 @@ ListView{
             onClicked: {
                 if(selectMode){
                     selectMode = !selectMode
+                    //clear the selection
+                    foodsListView.ViewItems.selectedIndices = -1
+                    //makes the selectionCount reset to 0 for SlotMultiAdditon makes proper math
+                    list_view_foods.selectionCount = 0
                 }
                 logical_fields.ingestion.product_name = product_name
                 logical_fields.ingestion.cal = energy_kcal_100g
@@ -82,11 +107,6 @@ ListView{
                 logical_fields.ingestion.nutriscore = nutriscore_grade
                 page_stack.push(set_food_page)
             }
-
-            onPressAndHold:{
-                selectMode = !selectMode
-                var yolo = foodsListView.ViewItems.selectedIndices = [index]
-            }
-
+            onPressAndHold: selectMode = !selectMode
         }
-    }
+}

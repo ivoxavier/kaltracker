@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 17:46+0000\n"
+"POT-Creation-Date: 2023-07-26 16:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -454,6 +454,14 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
+#: ../qml/QuickListFoodsPage.qml:142
+msgid "Total item selected %1"
+msgstr ""
+
+#: ../qml/QuickListFoodsPage.qml:143
+msgid " calories"
+msgstr ""
+
 #: ../qml/ScanPage.qml:40
 msgid "Manual search"
 msgstr ""
@@ -697,23 +705,23 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:48 ../qml/plugins/ProductDetails.qml:120
+#: ../qml/components/ListViewFoods.qml:70 ../qml/plugins/ProductDetails.qml:120
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:49 ../qml/plugins/ProductDetails.qml:121
+#: ../qml/components/ListViewFoods.qml:71 ../qml/plugins/ProductDetails.qml:121
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:50 ../qml/plugins/ProductDetails.qml:122
+#: ../qml/components/ListViewFoods.qml:72 ../qml/plugins/ProductDetails.qml:122
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:51 ../qml/plugins/ProductDetails.qml:124
+#: ../qml/components/ListViewFoods.qml:73 ../qml/plugins/ProductDetails.qml:124
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:51 ../qml/plugins/ProductDetails.qml:123
+#: ../qml/components/ListViewFoods.qml:73 ../qml/plugins/ProductDetails.qml:123
 msgid "Poor nutritional quality"
 msgstr ""
 
