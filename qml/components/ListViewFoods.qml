@@ -25,6 +25,8 @@ import QtQuick.Controls.Suru 2.2
 import "../logicalFields"
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
+
+
 ListView{
     id: foodsListView
 
@@ -39,9 +41,10 @@ ListView{
     //property that allows decision on QuickFoodsPage to either show the RowAbstracts Buttons
     property int selectionCount : foodsListView.ViewItems.selectedIndices.length
 
+    //
+    property var indices : foodsListView.ViewItems.selectedIndices 
 
     function getCalSelection(){
-        var indices = foodsListView.ViewItems.selectedIndices
         var user_selection = []
         for (var i in indices){
             user_selection.push(foodsListView.model.get(indices[i]).energy_kcal_100g)
@@ -49,10 +52,27 @@ ListView{
         return user_selection.reduce((acc, currentValue) => acc + currentValue, 0);
     }
 
+    function getSelection() {
+        var user_selection = [];
+        for (var i in indices) {
+            var selectedProduct = foodsListView.model.get(indices[i]);
+            var productData = {
+                id: selectedProduct.id,
+                nutriscore_grade: selectedProduct.nutriscore_grade,
+                product_name: selectedProduct.product_name,
+                energy_kcal_100g: selectedProduct.energy_kcal_100g,
+                fat_100g: selectedProduct.fat_100g,
+                carbohydrates_100g: selectedProduct.carbohydrates_100g,
+                proteins_100g: selectedProduct.proteins_100g
+            };
+            user_selection.push(productData);
+        }
+        return user_selection 
+    }
 
     Timer{
-        id: multiAddition_timer
-        interval: 10; running: true; repeat: true
+        id: multi_selection_time
+        interval: 10; running: false; repeat: true
         onTriggered: getCalSelection()
     }
 
@@ -75,7 +95,7 @@ ListView{
                 LomiriShape{
                     SlotsLayout.position: SlotsLayout.Leading
                     
-                    height: units.gu(6)
+                    height: units.gu(4)
                     width: height
                     color: ControlFoodsNutriscore.backgroundColor(score_label.text)
                     radius: "large"
@@ -107,6 +127,6 @@ ListView{
                 logical_fields.ingestion.nutriscore = nutriscore_grade
                 page_stack.push(set_food_page)
             }
-            onPressAndHold: selectMode = !selectMode
+            onPressAndHold: selectMode = !selectMode, multi_selection_time.start()
         }
 }
