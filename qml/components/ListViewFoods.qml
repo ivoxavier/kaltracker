@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,18 +19,64 @@ import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
+import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../logicalFields"
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
+
+
 ListView{
+    id: foodsListView
+
     highlightRangeMode: ListView.ApplyRange
     highlightMoveDuration: LomiriAnimation.SnapDuration
 
     model: sorted_model
-           
+
+    //property that allows decide QuickFoodsPage to either show or not the empty state icon
+    property int modelCount : foodsListView.count
+
+    //property that allows decision on QuickFoodsPage to either show the RowAbstracts Buttons
+    property int selectionCount : foodsListView.ViewItems.selectedIndices.length
+
+    //
+    property var indices : foodsListView.ViewItems.selectedIndices 
+
+    function getCalSelection(){
+        var user_selection = []
+        for (var i in indices){
+            user_selection.push(foodsListView.model.get(indices[i]).energy_kcal_100g)
+        }
+        return user_selection.reduce((acc, currentValue) => acc + currentValue, 0);
+    }
+
+    function getSelection() {
+        var user_selection = [];
+        for (var i in indices) {
+            var selectedProduct = foodsListView.model.get(indices[i]);
+            var productData = {
+                id: selectedProduct.id,
+                nutriscore_grade: selectedProduct.nutriscore_grade,
+                product_name: selectedProduct.product_name,
+                energy_kcal_100g: selectedProduct.energy_kcal_100g,
+                fat_100g: selectedProduct.fat_100g,
+                carbohydrates_100g: selectedProduct.carbohydrates_100g,
+                proteins_100g: selectedProduct.proteins_100g
+            };
+            user_selection.push(productData);
+        }
+        return user_selection 
+    }
+
+    Timer{
+        id: multi_selection_time
+        interval: 10; running: false; repeat: true
+        onTriggered: getCalSelection()
+    }
+
+
     delegate: ListItem{  
         divider.visible: false
         height: units.gu(8)
@@ -49,7 +95,7 @@ ListView{
                 LomiriShape{
                     SlotsLayout.position: SlotsLayout.Leading
                     
-                    height: units.gu(6)
+                    height: units.gu(4)
                     width: height
                     color: ControlFoodsNutriscore.backgroundColor(score_label.text)
                     radius: "large"
@@ -66,6 +112,13 @@ ListView{
                 ProgressionSlot{}
             }
             onClicked: {
+                if(selectMode){
+                    selectMode = !selectMode
+                    //clear the selection
+                    foodsListView.ViewItems.selectedIndices = -1
+                    //makes the selectionCount reset to 0 for SlotMultiAdditon makes proper math
+                    list_view_foods.selectionCount = 0
+                }
                 logical_fields.ingestion.product_name = product_name
                 logical_fields.ingestion.cal = energy_kcal_100g
                 logical_fields.ingestion.carbo = carbohydrates_100g
@@ -73,6 +126,7 @@ ListView{
                 logical_fields.ingestion.protein = proteins_100g
                 logical_fields.ingestion.nutriscore = nutriscore_grade
                 page_stack.push(set_food_page)
-            }  
+            }
+            onPressAndHold: selectMode = !selectMode, multi_selection_time.start()
         }
-    }
+}

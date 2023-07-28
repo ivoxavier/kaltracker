@@ -31,35 +31,30 @@ function connectDB() {
     date)\
     VALUES (?,?,?,?,?,?,?,?,?)';
   
-  function saveIngestion(name,
-    nutriscore,
-    cal,
-    fat,
-    carbo,
-    protein,
-    meal){          
-    var db = connectDB();
-    var validationMessage = "";
-  
-    
-    db.transaction(function(tx) {
-        var rs = tx.executeSql(insert_foods_statement, [1,
-          name,
-          nutriscore,
-          cal,
-          fat,
-          carbo,
-          protein,
-          meal,
-          logical_fields.application.date_utils.long_date]);
-        if (rs.rowsAffected > 0) {
-          validationMessage = "Ingestion : OK";
-        } else {
-          validationMessage = "Ingestion : Failed ";
+  function saveIngestion(name,nutriscore,cal,fat,carbo,protein,meal) {      
+      var db = connectDB();
+
+      //In multiSelection case an object is passed rather than single arguments
+      if(typeof name === 'object' && name !== null) {
+        for(var i in name){
+          db.transaction(function(tx) {
+            tx.executeSql(insert_foods_statement, [1,
+              name[i].product_name,name[i].nutriscore_grade,name[i].energy_kcal_100g,name[i].fat_100g,name[i].carbohydrates_100g,name[i].proteins_100g,
+              logical_fields.ingestion.meal_type,logical_fields.application.date_utils.long_date]);
+          }
+        );
+
         }
-    }
-    );
-    return validationMessage;
+
+      } else {
+        // for single arguments 
+        db.transaction(function(tx) {
+          tx.executeSql(insert_foods_statement, [1,
+            name,nutriscore,cal,fat,carbo,protein,meal,
+            logical_fields.application.date_utils.long_date]);
+        }
+      );
+      }
   }
 
   var remove_all_ingestions = 'DELETE FROM ingestions'

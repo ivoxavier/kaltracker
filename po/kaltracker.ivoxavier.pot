@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 10:27+0000\n"
+"POT-Creation-Date: 2023-07-28 14:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -224,6 +224,7 @@ msgid "Select Ingestion To Delete"
 msgstr ""
 
 #: ../qml/DeleteTodayIngestionPage.qml:60 ../qml/ManageUserFoodsListPage.qml:65
+#: ../qml/QuickListFoodsPage.qml:78
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
@@ -244,57 +245,57 @@ msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:132
+#: ../qml/HomePage.qml:131
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:151
+#: ../qml/HomePage.qml:150
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:166
+#: ../qml/HomePage.qml:165
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:176
+#: ../qml/HomePage.qml:175
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:187
+#: ../qml/HomePage.qml:186
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:235 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:234 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:238 ../qml/HomePage.qml:249 ../qml/HomePage.qml:260
-#: ../qml/HomePage.qml:271 ../qml/ListFoodsIngestedMonthPage.qml:80
+#: ../qml/HomePage.qml:237 ../qml/HomePage.qml:248 ../qml/HomePage.qml:259
+#: ../qml/HomePage.qml:270 ../qml/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:246 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:245 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:256 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:268 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:267 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:330
+#: ../qml/HomePage.qml:329
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:339
+#: ../qml/HomePage.qml:338
 msgid "Your Previous Ingestions"
 msgstr ""
 
@@ -451,6 +452,14 @@ msgstr ""
 
 #: ../qml/QuickListFoodsPage.qml:39
 msgid "Search..."
+msgstr ""
+
+#: ../qml/QuickListFoodsPage.qml:143
+msgid "Total item selected %1"
+msgstr ""
+
+#: ../qml/QuickListFoodsPage.qml:144
+msgid " calories"
 msgstr ""
 
 #: ../qml/ScanPage.qml:40
@@ -696,23 +705,23 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:44 ../qml/plugins/ProductDetails.qml:120
+#: ../qml/components/ListViewFoods.qml:91 ../qml/plugins/ProductDetails.qml:120
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:45 ../qml/plugins/ProductDetails.qml:121
+#: ../qml/components/ListViewFoods.qml:92 ../qml/plugins/ProductDetails.qml:121
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:46 ../qml/plugins/ProductDetails.qml:122
+#: ../qml/components/ListViewFoods.qml:93 ../qml/plugins/ProductDetails.qml:122
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:47 ../qml/plugins/ProductDetails.qml:124
+#: ../qml/components/ListViewFoods.qml:94 ../qml/plugins/ProductDetails.qml:124
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:47 ../qml/plugins/ProductDetails.qml:123
+#: ../qml/components/ListViewFoods.qml:94 ../qml/plugins/ProductDetails.qml:123
 msgid "Poor nutritional quality"
 msgstr ""
 

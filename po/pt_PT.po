@@ -1150,3 +1150,11 @@ msgstr "A atualizar a Tabela de Utilizador"
 #: kaltracker.desktop.in.h:1
 msgid "KalTracker"
 msgstr "KalTracker"
+
+#: ../qml/QuickListFoodsPage.qml:143
+msgid "Total item selected %1"
+msgstr "Total de itens selecionados %1"
+
+#: ../qml/QuickListFoodsPage.qml:144
+msgid " calories"
+msgstr " calorias"
