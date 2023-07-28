@@ -19,10 +19,12 @@ import Lomiri.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
+import QtQuick.LocalStorage 2.12
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../style"
+import "../../js/IngestionsTable.js" as Ingestions
 
 LomiriShape{
     id: slot_shape
@@ -47,7 +49,7 @@ LomiriShape{
             Rectangle{
                 height: units.gu(3.5)
                 width:  height
-                color: "#f1f1f1"
+                color: app_style.abstractButton.buttonColor
                 radius: height*0.5
                 Icon {
                     id: add_icon_yes
@@ -55,10 +57,14 @@ LomiriShape{
                     anchors.centerIn: parent
                     name: "ok"
                     height : units.gu(2.5) 
+                    color: app_style.abstractButton.iconColor
                 }
                 MouseArea{
                         anchors.fill: parent
                         onClicked: {
+                            Ingestions.saveIngestion(list_view_foods.getSelection())
+                            root.initDB()
+                            page_stack.pop(stored_dialog)
                         }
                 }
             }
