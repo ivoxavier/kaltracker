@@ -64,7 +64,7 @@ LomiriShape{
                         onClicked: {
                             Ingestions.saveIngestion(list_view_foods.getSelection())
                             root.initDB()
-                            page_stack.pop(stored_dialog)
+                            page_stack.pop()
                         }
                 }
             }
