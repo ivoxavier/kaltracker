@@ -56,6 +56,7 @@ Page{
         }
     }
 
+
     Item{
         visible: list_view_foods.modelCount == 0 ? true : false
         anchors.centerIn: parent
@@ -138,7 +139,7 @@ Page{
         anchors.bottom: parent.bottom
         anchors.bottomMargin : units.gu(2)
         width: parent.width - units.gu(5)
-        height: units.gu(9)
+        height: units.gu(8)
         selectCount.text: i18n.tr("Total item selected %1").arg(list_view_foods.selectionCount) 
         selectSum.text: list_view_foods.getCalSelection() + i18n.tr(" calories")
         visible : list_view_foods.selectionCount == 0 ? false : true
