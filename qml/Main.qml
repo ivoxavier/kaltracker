@@ -18,6 +18,8 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import StreamsConn 1.0
+import QtQuick.LocalStorage 2.12 as Sql
 import "style"
 import "settings"
 import "logicalFields"
@@ -189,6 +191,28 @@ MainView {
         id: scan_page
         ScanPage{}
     }
+
+    Streams {
+        id: streams
+        
+        databasePath: Sql.LocalStorage.openDatabaseSync("kaltracker_db", "0.2", "keepsYourData", 2000000).toString()
+
+            function dataBase() {
+           
+                var query = `SELECT * FROM user; `
+                if(streams.openDatabase()){
+                    print("yes")
+                    var ehehe = streams.executeQuery(query)
+                    print(ehehe)
+                }
+                else{
+                    print("no")
+                }
+            }
+    Component.onCompleted: dataBase()
+
+    }
+
 
     Component.onCompleted:{
         if(app_settings.is_clean_install){

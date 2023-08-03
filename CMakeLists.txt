@@ -11,6 +11,7 @@ find_package(Qt5Qml REQUIRED)
 find_package(Qt5Quick REQUIRED)
 find_package(Qt5QuickControls2 REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
+find_package(Qt5 COMPONENTS Core Sql REQUIRED)
 
 execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -60,7 +61,9 @@ add_subdirectory(qzxing/src)
 include_directories(qzxing/src/zxing)
 include_directories("${PROJECT_BINARY_DIR}")
 
-set(SOURCES main.cpp)
+set(SOURCES 
+main.cpp
+streams/streams.cpp)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
@@ -97,7 +100,7 @@ install(FILES assets/logo.svg DESTINATION assets)
 add_executable(${PROJECT_NAME} ${SOURCES} ${QT_RESOURCES})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
-target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2)
+target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::Sql)
 target_link_libraries(${PROJECT_NAME} qzxing)
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 
@@ -111,6 +114,7 @@ install(DIRECTORY "qml/settings" DESTINATION /qml)
 install(DIRECTORY "qml/logicalFields" DESTINATION /qml)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
+install(DIRECTORY "streams" DESTINATION .)
 
 
 # Translations

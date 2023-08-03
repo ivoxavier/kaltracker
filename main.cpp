@@ -6,6 +6,7 @@
 #include "QZXing.h"
 #include <iostream>
 #include "git_tag.h"
+#include "streams/streams.h"
 
 
 int main(int argc, char *argv[]) {
@@ -13,7 +14,9 @@ int main(int argc, char *argv[]) {
    app->setApplicationName("kaltracker.ivoxavier");
 
    QCoreApplication::setApplicationVersion(QStringLiteral(BUILD_VERSION));
-
+		
+   qmlRegisterType<Streams>("StreamsConn", 1, 0, "Streams");
+   
    QZXing::registerQMLTypes();
 
    QQuickView *view = new QQuickView();
