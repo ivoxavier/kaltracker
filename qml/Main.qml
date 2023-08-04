@@ -55,6 +55,12 @@ MainView {
     //Semaphores for Streams
     Semaphores{id:streams_smph}
 
+    //Control Streams Execution
+    ControlStreams{id:ctrl_strs}
+
+    //Streams
+    Streams{id:streams}
+
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{
         id: page_stack

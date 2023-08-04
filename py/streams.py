@@ -1,5 +1,5 @@
-/*
- * 2022-2023  Ivo Xavier
+'''
+ * 2022  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,11 +11,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ '''
+import csv
+import os
+import sqlite3
+import pyotherside
+#import glob
 
-import QtQuick 2.9
-import Lomiri.Components 1.3
-import Qt.labs.settings 1.0
-
-Item {objectName:"Semaphores"; property string light : "yellow"; onLightChanged:print(objectName,light)}
+class Streams:
+    @staticmethod
+    def moduleState():
+        return 'Streams Module Imported'
+    

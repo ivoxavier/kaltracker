@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 11:38+0000\n"
+"POT-Creation-Date: 2023-08-04 16:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,7 +195,7 @@ msgstr ""
 msgid "By Month"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:92 ../qml/SettingsPage.qml:64
+#: ../qml/DataAnalysisPage.qml:92 ../qml/SettingsPage.qml:108
 msgid "Charts"
 msgstr ""
 
@@ -478,20 +478,20 @@ msgstr ""
 msgid "Carbo/100g"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:72
-msgid "Animation"
-msgstr ""
-
-#: ../qml/SettingsPage.qml:84
+#: ../qml/SettingsPage.qml:65
 msgid "Notifications"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:92
+#: ../qml/SettingsPage.qml:73
 msgid "Streams"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:104
+#: ../qml/SettingsPage.qml:85
 msgid "Calories Consumption"
+msgstr ""
+
+#: ../qml/SettingsPage.qml:116
+msgid "Animation"
 msgstr ""
 
 #: ../qml/ThirdPartySoftwarePage.qml:67

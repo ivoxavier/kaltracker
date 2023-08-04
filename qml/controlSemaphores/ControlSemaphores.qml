@@ -30,7 +30,10 @@ Item {
     function forceForward(smph_id){
         smph_id.light = "yellow"
     }
-    function stop(smph_id){
+    function stopSemaphore(smph_id){
         smph_id.light = "red"
+    }
+    function defaultSemaphore(smph_id){
+        smph_id.light = "yellow"
     }
 }

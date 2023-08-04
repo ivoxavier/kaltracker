@@ -57,26 +57,7 @@ Page{
             id: main_column
             width: root.width    
 
-            
-            ListItem {
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Charts")
-                    subtitle.font.bold : true
-                }  
-            }
 
-            ListItem {
-                divider.visible: false
-                ListItemLayout{
-                    title.text: i18n.tr("Animation")
-                    title.font.bold : true
-                    Switch{
-                        checked: app_settings.is_graphs_animation_enabled
-                        onClicked: app_settings.is_graphs_animation_enabled = !app_settings.is_graphs_animation_enabled
-                    }
-                }  
-            }
 
             ListItem {
                 divider.visible: false
@@ -115,8 +96,31 @@ Page{
                 }  
             }
 
-            
 
+
+
+
+
+
+            ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    subtitle.text: i18n.tr("Charts")
+                    subtitle.font.bold : true
+                }  
+            }
+
+            ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    title.text: i18n.tr("Animation")
+                    title.font.bold : true
+                    Switch{
+                        checked: app_settings.is_graphs_animation_enabled
+                        onClicked: app_settings.is_graphs_animation_enabled = !app_settings.is_graphs_animation_enabled
+                    }
+                }  
+            }
         }  
     }
 }

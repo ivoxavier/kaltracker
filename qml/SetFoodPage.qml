@@ -145,8 +145,7 @@ Page{
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
                         logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
                         logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
-                        root.initDB()
-                        PopupUtils.open(sucess_dialog)
+                        
                     } else{
                         /* CREATE NEW ENTRY */
                         //new item
@@ -154,19 +153,18 @@ Page{
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
                         logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
                         logical_fields.ingestion.protein)
-                        root.initDB()
 
                         /* REGISTER INGESTION */
                         IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
                         logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
                         logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
-                        root.initDB()
-                        PopupUtils.open(sucess_dialog)
                     }
                     } catch (err){
                             PopupUtils.open(error_dialog)
                     } 
+                    root.initDB()
+                    PopupUtils.open(sucess_dialog)
                 }
             }  
         }

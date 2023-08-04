@@ -17,9 +17,31 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import io.thp.pyotherside 1.5
+import QtQuick.LocalStorage 2.12
+
 
 Item {
 
-    
 
+    function executeStream(){}
+
+    Timer{
+        id: ctrl_strs_timer
+        interval: 100
+        running: app_settings.is_streams_enabled
+        repeat: true
+        onTriggered: {
+            if(streams_smph.light == "yellow"){
+                if(app_settings.stream_kcal_consumption){
+                    streams.call('streams.Streams.moduleState', [] ,function(returnValue){
+                    console.log(returnValue)
+                    })
+                }
+            } 
+
+            
+        }
+    }
+    
 }
