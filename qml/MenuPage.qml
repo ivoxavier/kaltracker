@@ -139,13 +139,13 @@ Page{
                     title.font.bold : true
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
-                        name : "preferences-desktop-wallpaper-symbolic"
+                        name : "settings"
                         height : units.gu(3.5)
                     }
 
                     ProgressionSlot{}
                 }
-                onClicked: page_stack.push(app_layout_page)
+                onClicked: page_stack.push(settings_page)
             }
 
             ListItem{

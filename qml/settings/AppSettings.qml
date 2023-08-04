@@ -44,4 +44,10 @@ Settings {
     //stores recommended calories
     property int rec_cal
 
+    //streams
+    property bool is_streams_enabled : true
+
+    property bool stream_kcal_consumption : true
+
+
 }

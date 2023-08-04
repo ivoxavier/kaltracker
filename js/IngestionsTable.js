@@ -33,7 +33,6 @@ function connectDB() {
   
   function saveIngestion(name,nutriscore,cal,fat,carbo,protein,meal) {      
       var db = connectDB();
-
       //In multiSelection case an object is passed rather than single arguments
       if(typeof name === 'object' && name !== null) {
         for(var i in name){

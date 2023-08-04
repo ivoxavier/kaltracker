@@ -26,6 +26,7 @@ import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
 import "logicalFields"
+import "semaphores"
 import "../js/GetData.js" as GetData
 import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore

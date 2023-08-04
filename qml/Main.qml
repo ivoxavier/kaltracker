@@ -21,6 +21,10 @@ import Qt.labs.settings 1.0
 import "style"
 import "settings"
 import "logicalFields"
+import "controlSemaphores"
+import "semaphores"
+import "controlStreams"
+import "streams"
 
 MainView {
     id: root
@@ -44,6 +48,12 @@ MainView {
 
     //Logical Fields of the App
     LogicalFields{id:logical_fields}
+
+    //Control Semaphores by setting their light
+    ControlSemaphores{id:ctrl_smph}
+
+    //Semaphores for Streams
+    Semaphores{id:streams_smph}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{
@@ -105,10 +115,10 @@ MainView {
         UpdateUserValuesPage{}
     }
 
-    //AppLayoutPage, let users define appearance settings
+    //SettingsPage, let users define app settings
     Component{
-        id: app_layout_page
-        AppLayoutPage{}
+        id: settings_page
+        SettingsPage{}
     }
 
     //OnlineSourcesPage, let enable online sources
@@ -198,6 +208,8 @@ MainView {
         else{
         //during experiment time and app configured
             page_stack.push(home_page)
+            
+
         }
     }
 }

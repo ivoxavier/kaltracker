@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 14:24+0000\n"
+"POT-Creation-Date: 2023-08-04 11:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,18 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../qml/AppLayoutPage.qml:35 ../qml/MenuPage.qml:138
-msgid "App Settings"
-msgstr ""
-
-#: ../qml/AppLayoutPage.qml:64
-msgid "Charts Settings"
-msgstr ""
-
-#: ../qml/AppLayoutPage.qml:72
-msgid "Chart Animation"
-msgstr ""
 
 #: ../qml/AverageCaloriesPage.qml:38 ../qml/DataAnalysisPage.qml:77
 msgid "Average Calories Consumption"
@@ -207,7 +195,7 @@ msgstr ""
 msgid "By Month"
 msgstr ""
 
-#: ../qml/DataAnalysisPage.qml:92
+#: ../qml/DataAnalysisPage.qml:92 ../qml/SettingsPage.qml:64
 msgid "Charts"
 msgstr ""
 
@@ -240,62 +228,62 @@ msgstr ""
 msgid "Foods Distribution By Nutriscore"
 msgstr ""
 
-#: ../qml/HomePage.qml:82
+#: ../qml/HomePage.qml:83
 msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:131
+#: ../qml/HomePage.qml:132
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:150
+#: ../qml/HomePage.qml:151
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:165
+#: ../qml/HomePage.qml:166
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:175
+#: ../qml/HomePage.qml:176
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/HomePage.qml:186
+#: ../qml/HomePage.qml:187
 msgid "PROTEIN"
 msgstr ""
 
-#: ../qml/HomePage.qml:234 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:235 ../qml/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/HomePage.qml:237 ../qml/HomePage.qml:248 ../qml/HomePage.qml:259
-#: ../qml/HomePage.qml:270 ../qml/ListFoodsIngestedMonthPage.qml:80
+#: ../qml/HomePage.qml:238 ../qml/HomePage.qml:249 ../qml/HomePage.qml:260
+#: ../qml/HomePage.qml:271 ../qml/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/HomePage.qml:245 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:246 ../qml/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/HomePage.qml:256 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:257 ../qml/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/HomePage.qml:267 ../qml/components/MealFilterDialog.qml:67
+#: ../qml/HomePage.qml:268 ../qml/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../qml/HomePage.qml:329
+#: ../qml/HomePage.qml:330
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/HomePage.qml:338
+#: ../qml/HomePage.qml:339
 msgid "Your Previous Ingestions"
 msgstr ""
 
@@ -394,6 +382,10 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: ../qml/MenuPage.qml:138 ../qml/SettingsPage.qml:35
+msgid "App Settings"
+msgstr ""
+
 #: ../qml/MenuPage.qml:154
 msgid "Online Sources"
 msgstr ""
@@ -484,6 +476,22 @@ msgstr ""
 
 #: ../qml/SetFoodPage.qml:78 ../qml/plugins/ProductMacros.qml:66
 msgid "Carbo/100g"
+msgstr ""
+
+#: ../qml/SettingsPage.qml:72
+msgid "Animation"
+msgstr ""
+
+#: ../qml/SettingsPage.qml:84
+msgid "Notifications"
+msgstr ""
+
+#: ../qml/SettingsPage.qml:92
+msgid "Streams"
+msgstr ""
+
+#: ../qml/SettingsPage.qml:104
+msgid "Calories Consumption"
 msgstr ""
 
 #: ../qml/ThirdPartySoftwarePage.qml:67
@@ -705,23 +713,23 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:91 ../qml/plugins/ProductDetails.qml:120
+#: ../qml/components/ListViewFoods.qml:90 ../qml/plugins/ProductDetails.qml:120
 msgid "Very good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:92 ../qml/plugins/ProductDetails.qml:121
+#: ../qml/components/ListViewFoods.qml:91 ../qml/plugins/ProductDetails.qml:121
 msgid "Good nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:93 ../qml/plugins/ProductDetails.qml:122
+#: ../qml/components/ListViewFoods.qml:92 ../qml/plugins/ProductDetails.qml:122
 msgid "Average nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:94 ../qml/plugins/ProductDetails.qml:124
+#: ../qml/components/ListViewFoods.qml:93 ../qml/plugins/ProductDetails.qml:124
 msgid "Bad nutritional quality"
 msgstr ""
 
-#: ../qml/components/ListViewFoods.qml:94 ../qml/plugins/ProductDetails.qml:123
+#: ../qml/components/ListViewFoods.qml:93 ../qml/plugins/ProductDetails.qml:123
 msgid "Poor nutritional quality"
 msgstr ""
 

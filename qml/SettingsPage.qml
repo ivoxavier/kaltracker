@@ -29,8 +29,8 @@ import "style"
 
 
 Page{
-    id: app_layout_page
-    objectName: 'AppLayoutPage'
+    id: settings_page
+    objectName: 'SettingsPage'
     header: PageHeader {
                 title: i18n.tr("App Settings")
                 StyleHints {
@@ -44,7 +44,7 @@ Page{
     Flickable {
 
         anchors{
-            top: parent.top
+            top: parent.header.bottom
             left: parent.left
             right: parent.right
             bottom: parent.bottom
@@ -61,7 +61,7 @@ Page{
             ListItem {
                 divider.visible: false
                 ListItemLayout{
-                    subtitle.text: i18n.tr("Charts Settings")
+                    subtitle.text: i18n.tr("Charts")
                     subtitle.font.bold : true
                 }  
             }
@@ -69,7 +69,7 @@ Page{
             ListItem {
                 divider.visible: false
                 ListItemLayout{
-                    title.text: i18n.tr("Chart Animation")
+                    title.text: i18n.tr("Animation")
                     title.font.bold : true
                     Switch{
                         checked: app_settings.is_graphs_animation_enabled
@@ -77,6 +77,45 @@ Page{
                     }
                 }  
             }
+
+            ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    subtitle.text: i18n.tr("Notifications")
+                    subtitle.font.bold : true
+                }  
+            }
+
+            ListItem {
+                divider.visible: false
+                ListItemLayout{
+                    title.text: i18n.tr("Streams")
+                    title.font.bold : true
+                    Switch{
+                        checked: app_settings.is_streams_enabled
+                        onClicked: app_settings.is_streams_enabled = !app_settings.is_streams_enabled
+                    }
+                }  
+            }
+
+            ListItem {
+                divider.visible: true
+                ListItemLayout{
+                    title.text: i18n.tr("Calories Consumption")
+                    title.font.bold : true
+                    CheckBox{
+                        enabled: app_settings.is_streams_enabled
+                        checked: app_settings.stream_kcal_consumption
+                        onClicked: app_settings.stream_kcal_consumption = !app_settings.stream_kcal_consumption
+                        onEnabledChanged: {
+                            checked = false
+                            app_settings.stream_kcal_consumption = false
+                        }
+                    }
+                }  
+            }
+
+            
 
         }  
     }
