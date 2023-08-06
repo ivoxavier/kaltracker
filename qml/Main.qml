@@ -35,7 +35,7 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    
+
     /* custom signals --start--*/
     signal initDB()
     /* custom signals --end--*/

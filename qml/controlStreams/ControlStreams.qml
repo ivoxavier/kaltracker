@@ -28,7 +28,7 @@ Item {
 
     Timer{
         id: ctrl_strs_timer
-        interval: 100
+        interval: 200
         running: app_settings.is_streams_enabled
         repeat: true
         onTriggered: {
@@ -38,10 +38,7 @@ Item {
                     console.log(returnValue)
                     })
                 }
-            } 
-
-            
+            }        
         }
     }
-    
 }
