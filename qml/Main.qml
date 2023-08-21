@@ -18,6 +18,7 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import Lomiri.PushNotifications 0.1
 import "style"
 import "settings"
 import "logicalFields"
@@ -25,6 +26,7 @@ import "controlSemaphores"
 import "semaphores"
 import "controlStreams"
 import "streams"
+import "pushNotifications"
 
 MainView {
     id: root
@@ -60,6 +62,9 @@ MainView {
 
     //Streams
     Streams{id:streams}
+
+    //PushNotifications Client
+    PushNotifications{id:push_notif}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{
@@ -214,6 +219,7 @@ MainView {
         else{
         //during experiment time and app configured
             page_stack.push(home_page)
+            
             
 
         }

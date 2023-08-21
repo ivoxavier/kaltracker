@@ -93,6 +93,9 @@ configure_file(manifest.json.in ${CMAKE_CURRENT_BINARY_DIR}/manifest.json)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(FILES ${PROJECT_NAME}.apparmor DESTINATION ${DATA_DIR})
 install(FILES assets/logo.svg DESTINATION assets)
+install(FILES pushexec PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ DESTINATION ${DATA_DIR})
+install(FILES push.json DESTINATION ${DATA_DIR})
+install(FILES push-apparmor.json DESTINATION ${DATA_DIR})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${QT_RESOURCES})
 
@@ -113,6 +116,7 @@ install(DIRECTORY "qml/controlStreams" DESTINATION /qml)
 install(DIRECTORY "qml/streams" DESTINATION /qml)
 install(DIRECTORY "qml/controlSemaphores" DESTINATION /qml)
 install(DIRECTORY "qml/semaphores" DESTINATION /qml)
+install(DIRECTORY "qml/pushNotifications" DESTINATION /qml)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
 

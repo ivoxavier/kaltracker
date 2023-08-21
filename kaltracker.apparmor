@@ -1,6 +1,7 @@
 {
     "policy_groups": [ "networking",
     "camera",
-    "video"],
+    "video",
+    "push-notification-client"],
     "policy_version": 20.04
 }

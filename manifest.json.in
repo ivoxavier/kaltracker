@@ -7,8 +7,14 @@
         "kaltracker": {
             "apparmor": "kaltracker.apparmor",
             "desktop":  "kaltracker.desktop"
-        }
+        },
+        "push": {
+    
+    	"apparmor":"push-apparmor.json",
+    	"push-helper":"push.json"
+    	}
     },
+    
     "version": "@BUILD_VERSION@",
     "maintainer": "Ivo Xavier <ivofernandes12@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
