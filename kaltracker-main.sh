@@ -18,7 +18,7 @@ case $1 in
     CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable desktop
     ;;
   --device)
-    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable
+    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable -a arm64
     ;;
   --build-all)
     CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build -a arm64
