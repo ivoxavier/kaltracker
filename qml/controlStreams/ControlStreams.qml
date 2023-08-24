@@ -19,26 +19,77 @@ import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import io.thp.pyotherside 1.5
 import QtQuick.LocalStorage 2.12
+import Lomiri.Components.Popups 1.3
+import "../components"
+
 
 
 Item {
+    id: ctrl_strs
 
+    property var notification_data: ({title: "", subtitle: ""})
 
-    function executeStream(){}
+    Component{
+        id:ctrl_strs_notif
+            NotificationPop{
+                title.text: ctrl_strs.notification_data.title
+                subtitle.text: ctrl_strs.notification_data.subtitle
+            }
+    }
+    
+    property bool has_executed_strmKcal : false
+    property bool has_executed_ddWthReg : false
+    
+
+    Timer{id: notification_queue_timer;repeat: false}
+
+    function strmKcal(){
+        if(ctrl_strs.has_executed_strmKcal){} 
+        else {
+            
+            streams.call('streams.Streams.kcal_consumption', [] ,function(returnValue){
+            ctrl_strs.notification_data.title = i18n.tr("Total Calories Registed In The Kaltracker")
+            ctrl_strs.notification_data.subtitle = returnValue
+            PopupUtils.open(ctrl_strs_notif) 
+        })
+
+        }
+        
+        ctrl_strs.has_executed_strmKcal = true
+    }
+
+    function ddWthReg(){
+        if(ctrl_strs.has_executed_ddWthReg){}
+        else{
+            streams.call('streams.Streams.days_without_reg', [] ,function(returnValue){
+                if(returnValue === 0){
+                    ctrl_strs.notification_data.title = i18n.tr("You Haven't Registed Foods In The Last 5 Days")
+                        function delayNotif(delayMiliseconds, cb) {
+                            notification_queue_timer.interval = delayMiliseconds;
+                            notification_queue_timer.triggered.connect(cb);
+                            notification_queue_timer.start();
+                        }  
+                        delayNotif(3000, function () {
+                            PopupUtils.open(ctrl_strs_notif)
+                        })
+                }   
+            })
+        }
+        ctrl_strs.has_executed_ddWthReg = true
+    }
 
     Timer{
         id: ctrl_strs_timer
-        interval: 200
-        running: app_settings.is_streams_enabled
+        interval: 9000
+        running: (app_settings.is_streams_enabled && !app_settings.is_clean_install)
         repeat: true
         onTriggered: {
-            if(streams_smph.light == "yellow"){
-                if(app_settings.stream_kcal_consumption){
-                    streams.call('streams.Streams.moduleState', [] ,function(returnValue){
-                    console.log(returnValue)
-                    })
+                if (streams_smph.light === "yellow" && app_settings.stream_kcal_consumption) {
+                    ctrl_strs.strmKcal();
                 }
-            }        
+                if(streams_smph.light === "yellow" && app_settings.stream_days_without_reg){
+                    ctrl_strs.ddWthReg();
+                }
         }
     }
 }

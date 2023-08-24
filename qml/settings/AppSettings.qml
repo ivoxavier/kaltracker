@@ -37,6 +37,7 @@ Settings {
 
     //stores the user starts using date
     property string using_app_date
+    property string last_time_opened
 
     //stores plan type
     property string plan_type
@@ -45,9 +46,16 @@ Settings {
     property int rec_cal
 
     //streams
-    property bool is_streams_enabled : true
+    property bool is_streams_enabled : false
 
-    property bool stream_kcal_consumption : true
+    property bool stream_kcal_consumption : false
+
+    property bool stream_days_without_reg : false
+
+    //pushNotification Token
+    property string token
+
+    property bool is_token_set : false
 
 
 }

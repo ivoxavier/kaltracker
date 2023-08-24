@@ -14,30 +14,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  '''
 
-import csv
-import os
-import sqlite3
-import pyotherside
-import dbus
-import glob
-import sql_statements
+#gets the sum of calories registed in the app
+TOTAL_CAL = 'SELECT SUM(cal) FROM ingestions'
 
-class Streams:
+#to verify if has been ingestions in the app
+DAYS_WITHOUT_REG = "SELECT COUNT(*) FROM ingestions WHERE DATE(date) > DATE('now', '-5 day')"
 
-    @staticmethod
-    def moduleState():
-        return 'Python Module Imported'
-    
-    @staticmethod
-    def kcal_consumption():
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        cursor.execute(sql_statements.TOTAL_CAL)
-        return cursor.fetchall()
-    
-    @staticmethod
-    def days_without_reg():
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        cursor.execute(sql_statements.DAYS_WITHOUT_REG)
-        return cursor.fetchall()

@@ -23,13 +23,12 @@ PushClient {
     id: pushClient
 
     appId: "kaltracker.ivoxavier_kaltracker"
-    onTokenChanged: console.log("PUSH CLIENTE TOKEN", pushClient.token)
+    //onTokenChanged: console.log("TOKEN", pushClient.token)
 
-    onCountChanged: console.log("count: " + count)
+    //onCountChanged: console.log("count: " + count)
 
-    function sendPush(title, body, iconName, url){
-        var is_cool = true
-        if(is_cool) {
+
+    function sendPush(title, body){
             var req = new XMLHttpRequest();
             req.open("post", "https://push.ubports.com/notify", true);
             req.setRequestHeader("Content-type", "application/json");
@@ -47,13 +46,13 @@ PushClient {
             var jsonData = JSON.stringify({
                     "appid" : appId,
                     "expire_on": approxExpire.toISOString(),
-                    "token": "a2FsdHJhY2tlci5pdm94YXZpZXJfa2FsdHJhY2tlcjo6NU5mdUE1RDlnVERSMm9iWWpBdFdVanhaZ1BXOW5nTzFTd2R0eHc9PQ==",
+                    "token": app_settings.token,
                     "data": {
                             "notification": {
                                     "card": {
-                                            "icon": 'notification',
-                                            "summary": "title",
-                                            "body": "body",
+                                            "icon": 'info',
+                                            "summary": title,
+                                            "body": body,
                                             "popup": true,
                                             "persist": true
                                     },
@@ -63,6 +62,6 @@ PushClient {
                     }
             })
             req.send(jsonData);
-        }
+            console.log("AQJI",pushClient.token)
     }
 }
