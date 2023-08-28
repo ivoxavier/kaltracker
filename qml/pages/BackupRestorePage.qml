@@ -155,7 +155,7 @@ Page{
 
             SlotBackupRestore{
                 Layout.alignment: Qt.AlignCenter
-                icon_source: "../assets/export_icon.svg"
+                icon_source: "../../assets/export_icon.svg"
                 slot_label: i18n.tr("Export Data")
                 slot_path_label : "./local/share/kaltracker.ivoxavier/Export"
                  
@@ -172,7 +172,7 @@ Page{
 
             SlotBackupRestore{
                 Layout.alignment: Qt.AlignCenter
-                icon_source: "../assets/import_icon.svg"
+                icon_source: "../../assets/import_icon.svg"
                 slot_label: i18n.tr("Import Data")
                 slot_path_label : "./local/share/kaltracker.ivoxavier/Import"
                 
