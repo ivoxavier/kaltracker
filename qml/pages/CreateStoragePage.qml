@@ -65,7 +65,7 @@ Page{
             height: units.gu(12)
             aspect: LomiriShape.Flat
             source: Image{
-                source: "../assets/db_logo.svg"
+                source: "../../assets/db_logo.svg"
                 fillMode: Image.PreserveAspectFit
             }
         }

@@ -70,7 +70,7 @@ Page{
                     subtitle.text: i18n.tr("Search For Barcode In %1").arg("openfoodsfacts")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../assets/mangifying_glass_barcodes.svg"
+                        source : "../../assets/mangifying_glass_barcodes.svg"
                         height : units.gu(3.5)
                     }
 

@@ -74,7 +74,7 @@ Page{
                     subtitle.text: i18n.tr("By Month")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../assets/average_icon.svg"
+                        source : "../../assets/average_icon.svg"
                         height : units.gu(3.8)
                     }
                     ProgressionSlot{}
@@ -87,7 +87,7 @@ Page{
                     title.text: i18n.tr("Charts")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../assets/graphs_icon.svg"
+                        source : "../../assets/graphs_icon.svg"
                         height : units.gu(3.8)
                     }
                     ProgressionSlot{}
@@ -106,7 +106,7 @@ Page{
                     title.text: i18n.tr("Indexes")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../assets/body_icon.svg"
+                        source : "../../assets/body_icon.svg"
                         height : units.gu(3.8)
                     }
                     ProgressionSlot{}
