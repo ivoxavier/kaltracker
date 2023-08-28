@@ -24,12 +24,12 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
-import "components"
-import "style"
-import "../js/UserTable.js" as UserTable
-import "../js/BodyMassIndex.js" as BMI
-import "../js/IdealWeight.js" as IBW
-import "../js/BloodPressureIndex.js" as BloodPressureIndex
+import "../components"
+import "../style"
+import "../../js/UserTable.js" as UserTable
+import "../../js/BodyMassIndex.js" as BMI
+import "../../js/IdealWeight.js" as IBW
+import "../../js/BloodPressureIndex.js" as BloodPressureIndex
 
 
 Page{

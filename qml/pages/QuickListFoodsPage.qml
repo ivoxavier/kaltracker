@@ -23,9 +23,9 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "../js/Regex.js" as Regex
+import "../components"
+import "../style"
+import "../../js/Regex.js" as Regex
 
 Page{
     id: quick_list_foods_page

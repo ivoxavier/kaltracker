@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier 
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,49 +24,58 @@ import Lomiri.Components.Popups 1.3
 import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
-import "../js/GetData.js" as GetData
+import "../components"
+import "../style"
+import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 
 
 Page{
-    id: average_calories_page
-    objectName: 'AverageCaloriesPage'
+    id: manage_user_foods_list_page
+    objectName: 'ManageUserFoodsListPage'
     header: PageHeader {
-                title : i18n.tr("Average Calories Consumption")
+                //visible: app_settings.is_page_headers_enabled ? true : false
+                title : i18n.tr("Manage Your Foods")
 
                 StyleHints {
-                    /*foregroundColor: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
+                   /* foregroundColor: "white"
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
             }
         }
-        
+    
     BackgroundStyle{}
     
-
-    Icon{
-        name: "cancel"
-        height : units.gu(5)
+   Item{
+        visible: user_foods_list.visible ? false : true
         anchors.centerIn: parent
-        visible : average_calories_list.visible ? false : true
-    }
+        height: parent.height / 2
+        width: parent.width / 2
 
-    ListModel{
-        id: avg_month_calories
-        Component.onCompleted: GetData.getAverageCalories()
-    }
+        Icon {
+            id: empty_icon
+            anchors.fill: parent
+            name: "empty-symbolic"
+            opacity: 0.75
+        }
+
+        Label{
+            anchors.top: empty_icon.bottom
+            anchors.horizontalCenter: empty_icon.horizontalCenter
+            text: i18n.tr("Empty List, Please Register Ingestions First..")
+            opacity: 0.75
+        }
+    }  
 
     ListView{
-        id: average_calories_list
+        id: user_foods_list
         anchors{
-            top: parent.header.bottom
-            bottom: parent.bottom
+            top: parent.header.bottom 
+            bottom: parent.bottom 
             left: parent.left
             right: parent.right
         }
-        model: avg_month_calories
+        model: UserFoodsList{}
         clip: true
         removeDisplaced: Transition {
             NumberAnimation { 
@@ -77,26 +86,22 @@ Page{
         visible: model.count === 0 ? false : true
         delegate: ListItem{
             ListItemLayout{
-                title.text: month === '01' ?
-                i18n.tr("January") : month === '02' ?
-                i18n.tr("February") : month === '03' ?
-                i18n.tr("March") : month === '04' ?
-                i18n.tr("April") : month === '05' ?
-                i18n.tr("May") : month === '06' ?
-                i18n.tr("June") : month === '07' ?
-                i18n.tr("July") : month === '08' ?
-                i18n.tr("August") : month === '09' ?
-                i18n.tr("September") : month === '10' ?
-                i18n.tr("October") : month === '11' ?
-                i18n.tr("November") : i18n.tr("December")
+                title.text: product_name
                 title.font.bold : true
-                subtitle.text: i18n.tr("%1 cal").arg(Math.round(average * 10) /10) 
-                ProgressionSlot{}
-                }
-            onClicked:{
-                page_stack.push(list_foods_ingested_month_page,{requested_month: month})
+                subtitle.text : cal
+
+            }
+            leadingActions: ListItemActions{
+                actions:[
+                    Action{
+                        iconName: "delete"
+                        onTriggered:{
+                            UserFoodsListTable.deleteFoods(id)
+                            user_foods_list.model.remove(index)
+                        }
+                    }
+                ]
             }
         }
     }
-    
 }

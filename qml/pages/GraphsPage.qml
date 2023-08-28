@@ -24,12 +24,12 @@ import Lomiri.Components.Pickers 1.3
 import Lomiri.Components.ListItems 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "logicalFields"
-import "../js/Chart.js" as Charts
-import "../js/QChartJsTypes.js" as ChartTypes
-import "../js/GetData.js" as GetData
+import "../components"
+import "../style"
+import "../logicalFields"
+import "../../js/Chart.js" as Charts
+import "../../js/QChartJsTypes.js" as ChartTypes
+import "../../js/GetData.js" as GetData
 
 
 

@@ -25,13 +25,13 @@ import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
-import "components"
-import "style"
-import "plugins"
-import "../js/UserTable.js" as UserTable
-import "../js/UpdateUserTable.js" as UpdateUserTable
-import "../js/RecommendedCalories.js" as RecommendedCalories
-import "../js/DefineGoalCalories.js" as DefinePeriod
+import "../components"
+import "../style"
+import "../plugins"
+import "../../js/UserTable.js" as UserTable
+import "../../js/UpdateUserTable.js" as UpdateUserTable
+import "../../js/RecommendedCalories.js" as RecommendedCalories
+import "../../js/DefineGoalCalories.js" as DefinePeriod
 
 
 Page{

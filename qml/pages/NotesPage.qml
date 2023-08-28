@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,28 +21,30 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
+import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
-import "../js/IngestionsTable.js" as IngestionsTable
-import "../js/GetData.js" as GetData
-
-
-
+import "../components"
+import "../style"
+import "../../js/NotesTable.js" as NotesTable
 
 Page{
-    id: list_foods_ingested_month_page
-    objectName: 'ListFoodsIngestedMonthPage'
+    id: notes_page
+    objectName: 'NotesPage'
     header: PageHeader {
-               // visible: app_settings.is_page_headers_enabled ? true : false
-                title : i18n.tr("Select Ingestion To Delete")
-        }
+                
+                title : i18n.tr("Your Notes")
 
-    property string requested_month
+                StyleHints {
+                    /*foregroundColor: "white"
+                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
+            }
+        }
+    BackgroundStyle{}
+
 
     Item{
-        visible: all_today_ingestions_list.visible ? false : true
+        visible: notes_page_list.visible ? false : true
         anchors.centerIn: parent
         height: parent.height / 2
         width: parent.width / 2
@@ -57,42 +59,47 @@ Page{
         Label{
             anchors.top: empty_icon.bottom
             anchors.horizontalCenter: empty_icon.horizontalCenter
-            text: i18n.tr("Empty List, Please Register Ingestions First..")
+            text: i18n.tr("Empty List, Please Register Notes First..")
             opacity: 0.75
+            color: app_style.label.labelColor
         }
-    }
-
-    ListModel{
-        id: all_today_ingestions
-        Component.onCompleted: GetData.getTodayIngestions()
-    }
+    }   
 
     ListView{
-        id: all_today_ingestions_list
+        id: notes_page_list
         anchors{
             top: parent.header.bottom
-            bottom: parent.bottom
+            bottom: parent.bottom 
             left: parent.left
             right: parent.right
         }
-        model: all_today_ingestions
+        model: NotesList{}
         clip: true
-        visible : model.count === 0 ? false : true
+        removeDisplaced: Transition {
+            NumberAnimation { 
+                properties: "x,y"
+                 duration: 1000 
+                }
+            }
+        visible: model.count === 0 ? false : true
         delegate: ListItem{
-            ListItemLayout{title.text : name;subtitle.text: cal}
+            ListItemLayout{
+                title.text: note
+                title.font.bold : true
+                subtitle.text: date
+                }
             leadingActions: ListItemActions{
                 actions:[
                     Action{
                         iconName: "delete"
                         onTriggered:{
-                            IngestionsTable.deleteSpecificTodayIngestion(id)
-                            all_today_ingestions_list.model.remove(index)
-                            root.initDB()
+                            NotesTable.deleteNote(id)
+                            notes_page_list.model.remove(index)
                         }
                     }
                 ]
-            }    
+            }
         }
     }
-   
+    
 }

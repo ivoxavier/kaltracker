@@ -23,9 +23,9 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
-import "../js/Token.js" as KaltrackerToken
+import "../components"
+import "../style"
+import "../../js/Token.js" as KaltrackerToken
 
 
 Page{

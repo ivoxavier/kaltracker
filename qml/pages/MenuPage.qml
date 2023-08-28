@@ -25,8 +25,8 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import QtQuick.Window 2.0
-import "components"
-import "style"
+import "../components"
+import "../style"
 
 
 Page{
@@ -67,7 +67,7 @@ Page{
                 Layout.preferredHeight: units.gu(12)
                 aspect: LomiriShape.DropShadow
                 source: Image{
-                    source: "../assets/logo.svg"
+                    source: "../../assets/logo.svg"
                 }
             }
 

@@ -23,14 +23,14 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "logicalFields"
-import "semaphores"
-import "../js/GetData.js" as GetData
-import "../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
-import "../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
-import "../js/IngestionsTable.js" as IngestionsTable
+import "../components"
+import "../style"
+import "../logicalFields"
+import "../semaphores"
+import "../../js/GetData.js" as GetData
+import "../../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
+import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
+import "../../js/IngestionsTable.js" as IngestionsTable
 
 Page{
     id: home_page
@@ -236,7 +236,7 @@ Page{
                 meal_category: 0
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_breakfast)
-                img_path:"../assets/breakfast-svgrepo-com.svg"
+                img_path:"../../assets/breakfast-svgrepo-com.svg"
             }  
 
             SlotAddMeal{
@@ -247,7 +247,7 @@ Page{
                 meal_category: 1
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_lunch)
-                img_path:"../assets/fried-chicken-meal-svgrepo-com.svg" 
+                img_path:"../../assets/fried-chicken-meal-svgrepo-com.svg" 
             } 
 
             SlotAddMeal{
@@ -258,7 +258,7 @@ Page{
                 meal_category: 2
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_dinner)
-                img_path:"../assets/dinner-svgrepo-com.svg" 
+                img_path:"../../assets/dinner-svgrepo-com.svg" 
             }
 
             SlotAddMeal{
@@ -269,7 +269,7 @@ Page{
                 meal_category: 3
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
                 subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_snacks)
-                img_path:"../assets/snack-snacks-svgrepo-com.svg" 
+                img_path:"../../assets/snack-snacks-svgrepo-com.svg" 
             }
 
             BlankSpace{}
@@ -279,7 +279,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(9)
                 Layout.preferredHeight: units.gu(7)
-                img_path:"../assets/glass-of-water-svgrepo-com.svg"
+                img_path:"../../assets/glass-of-water-svgrepo-com.svg"
                 water_cups_drinked : (logical_fields.metrics.total_water_cups * 0.1) 
             }
         }  

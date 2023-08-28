@@ -27,9 +27,9 @@ import Lomiri.Components.Pickers 1.3
 import Lomiri.Components.Popups 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "plugins"
+import "../components"
+import "../style"
+import "../plugins"
 
 
 Page {   

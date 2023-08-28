@@ -25,9 +25,9 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import io.thp.pyotherside 1.5
-import "components"
-import "style"
-import "../js/UserTable.js" as UserTable
+import "../components"
+import "../style"
+import "../../js/UserTable.js" as UserTable
 
 
 

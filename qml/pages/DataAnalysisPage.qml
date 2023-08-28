@@ -24,9 +24,9 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
-import "components"
-import "style"
-import "../js/UserTable.js" as UserTable
+import "../components"
+import "../style"
+import "../../js/UserTable.js" as UserTable
 
 
 

@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,33 +21,28 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
-import QtCharts 2.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
-import "components"
-import "style"
-import "../js/UserFoodsListTable.js" as UserFoodsListTable
+import "../components"
+import "../style"
+import "../../js/IngestionsTable.js" as IngestionsTable
+import "../../js/GetData.js" as GetData
 
 
 
 
 Page{
-    id: manage_user_foods_list_page
-    objectName: 'ManageUserFoodsListPage'
+    id: list_foods_ingested_month_page
+    objectName: 'ListFoodsIngestedMonthPage'
     header: PageHeader {
-                //visible: app_settings.is_page_headers_enabled ? true : false
-                title : i18n.tr("Manage Your Foods")
-
-                StyleHints {
-                   /* foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-            }
+               // visible: app_settings.is_page_headers_enabled ? true : false
+                title : i18n.tr("Select Ingestion To Delete")
         }
-    
-    BackgroundStyle{}
-    
-   Item{
-        visible: user_foods_list.visible ? false : true
+
+    property string requested_month
+
+    Item{
+        visible: all_today_ingestions_list.visible ? false : true
         anchors.centerIn: parent
         height: parent.height / 2
         width: parent.width / 2
@@ -65,43 +60,39 @@ Page{
             text: i18n.tr("Empty List, Please Register Ingestions First..")
             opacity: 0.75
         }
-    }  
+    }
+
+    ListModel{
+        id: all_today_ingestions
+        Component.onCompleted: GetData.getTodayIngestions()
+    }
 
     ListView{
-        id: user_foods_list
+        id: all_today_ingestions_list
         anchors{
-            top: parent.header.bottom 
-            bottom: parent.bottom 
+            top: parent.header.bottom
+            bottom: parent.bottom
             left: parent.left
             right: parent.right
         }
-        model: UserFoodsList{}
+        model: all_today_ingestions
         clip: true
-        removeDisplaced: Transition {
-            NumberAnimation { 
-                properties: "x,y"
-                 duration: 1000 
-                }
-            }
-        visible: model.count === 0 ? false : true
+        visible : model.count === 0 ? false : true
         delegate: ListItem{
-            ListItemLayout{
-                title.text: product_name
-                title.font.bold : true
-                subtitle.text : cal
-
-            }
+            ListItemLayout{title.text : name;subtitle.text: cal}
             leadingActions: ListItemActions{
                 actions:[
                     Action{
                         iconName: "delete"
                         onTriggered:{
-                            UserFoodsListTable.deleteFoods(id)
-                            user_foods_list.model.remove(index)
+                            IngestionsTable.deleteSpecificTodayIngestion(id)
+                            all_today_ingestions_list.model.remove(index)
+                            root.initDB()
                         }
                     }
                 ]
-            }
+            }    
         }
     }
+   
 }

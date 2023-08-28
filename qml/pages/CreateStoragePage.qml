@@ -23,11 +23,11 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "../js/Storage.js" as Storage
-import "../js/UserTable.js" as UserTable
-import "../js/WeightTrackerTable.js" as WeightTrackerTable
+import "../components"
+import "../style"
+import "../../js/Storage.js" as Storage
+import "../../js/UserTable.js" as UserTable
+import "../../js/WeightTrackerTable.js" as WeightTrackerTable
 
 Page{
     id: create_storage_page

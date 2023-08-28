@@ -25,15 +25,15 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import Lomiri.Components.Pickers 1.3
-import "components"
-import "style"
-import "plugins"
-import "logicalFields"
-import "../js/Chart.js" as Charts
-import "../js/QChartJsTypes.js" as ChartTypes
-import "../js/UserTable.js" as UserTable
-import "../js/IngestionsTable.js" as IngestionsTable
-import "../js/UserFoodsListTable.js" as UserFoodsListTable
+import "../components"
+import "../style"
+import "../plugins"
+import "../logicalFields"
+import "../../js/Chart.js" as Charts
+import "../../js/QChartJsTypes.js" as ChartTypes
+import "../../js/UserTable.js" as UserTable
+import "../../js/IngestionsTable.js" as IngestionsTable
+import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 Page{

@@ -23,12 +23,12 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
-import "components"
-import "style"
-import "plugins"
-import "../js/UserTable.js" as UserTable
-import "../js/IngestionsTable.js" as IngestionsTable
-import "../js/UserFoodsListTable.js" as UserFoodsListTable
+import "../components"
+import "../style"
+import "../plugins"
+import "../../js/UserTable.js" as UserTable
+import "../../js/IngestionsTable.js" as IngestionsTable
+import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 Page{
