@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-28 11:08+0000\n"
+"POT-Creation-Date: 2023-08-28 14:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -415,70 +415,70 @@ msgstr ""
 msgid "Place the files from ExportData in Import path."
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:40
+#: ../qml/pages/BodyMeasuresPage.qml:38
 msgid "Body Measures"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:60
+#: ../qml/pages/BodyMeasuresPage.qml:58
 msgid ""
 "KalTracker is not taking in consideration your muscule weight. This is ONLY "
 "e a reference"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:85
+#: ../qml/pages/BodyMeasuresPage.qml:83
 msgid "Body Mass Index"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:96
+#: ../qml/pages/BodyMeasuresPage.qml:94
 msgid "Low Weigth"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:97
+#: ../qml/pages/BodyMeasuresPage.qml:95
 msgid "Normal Weigth"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:98
+#: ../qml/pages/BodyMeasuresPage.qml:96
 msgid "Weigth Exceed"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:99
+#: ../qml/pages/BodyMeasuresPage.qml:97
 msgid "Obesity"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:99
+#: ../qml/pages/BodyMeasuresPage.qml:97
 msgid "Pre-Obesity"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:116
+#: ../qml/pages/BodyMeasuresPage.qml:114
 msgid "Ideal Weight"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:131 ../qml/plugins/HeightWeight.qml:70
+#: ../qml/pages/BodyMeasuresPage.qml:129 ../qml/plugins/HeightWeight.qml:70
 msgid "KG"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:138
+#: ../qml/pages/BodyMeasuresPage.qml:136
 #: ../qml/pages/UpdateUserValuesPage.qml:45
 msgid "Blood Pressure"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:156
+#: ../qml/pages/BodyMeasuresPage.qml:154
 msgid "Normal"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:157
+#: ../qml/pages/BodyMeasuresPage.qml:155
 msgid "Elevated"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:158
+#: ../qml/pages/BodyMeasuresPage.qml:156
 msgid "High Blood Pressure Stage I"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:159
+#: ../qml/pages/BodyMeasuresPage.qml:157
 msgid "High Blood Pressure Stage II"
 msgstr ""
 
-#: ../qml/pages/BodyMeasuresPage.qml:159
+#: ../qml/pages/BodyMeasuresPage.qml:157
 msgid "Hypertensive Crisis"
 msgstr ""
 

@@ -27,9 +27,7 @@ import Lomiri.Content 1.3
 import "../components"
 import "../style"
 import "../../js/UserTable.js" as UserTable
-import "../../js/BodyMassIndex.js" as BMI
-import "../../js/IdealWeight.js" as IBW
-import "../../js/BloodPressureIndex.js" as BloodPressureIndex
+import "../../js/KaltrackerUtils.js" as KaltrackerUtils
 
 
 Page{
@@ -51,7 +49,7 @@ Page{
     property int user_height : UserTable.getHeight()
     property int user_weight : UserTable.getWeight()
     property string user_sex_at_birth : UserTable.getSexAtBirth()
-    property double user_bmi : BMI.getBmi(user_height, user_weight)
+    property double user_bmi : KaltrackerUtils.getBmi(user_height, user_weight)
     property var user_ap_hi : UserTable.getApHi()
     property var user_ap_lo : UserTable.getApLo()
 
@@ -92,10 +90,10 @@ Page{
                 Layout.preferredWidth: root.width - units.gu(17)
                 Layout.preferredHeight: units.gu(9)
                 value: user_bmi
-                message: BMI.getIndex(user_bmi) == 1 ?
-                i18n.tr('Low Weigth') : BMI.getIndex(user_bmi) == 2 ?
-                i18n.tr('Normal Weigth') : BMI.getIndex(user_bmi) == 3 ?
-                i18n.tr('Weigth Exceed') : BMI.getIndex(user_bmi) == 4 ?
+                message: KaltrackerUtils.getIndex(user_bmi) == 1 ?
+                i18n.tr('Low Weigth') : KaltrackerUtils.getIndex(user_bmi) == 2 ?
+                i18n.tr('Normal Weigth') : KaltrackerUtils.getIndex(user_bmi) == 3 ?
+                i18n.tr('Weigth Exceed') : KaltrackerUtils.getIndex(user_bmi) == 4 ?
                 i18n.tr('Pre-Obesity') : i18n.tr('Obesity')
 
             }
@@ -119,7 +117,7 @@ Page{
 
             Icon{
                 Layout.alignment: Qt.AlignCenter
-                source: "../assets/balance_icon.svg"
+                source: "../../assets/balance_icon.svg"
                 height: units.gu(3.5)
             }
 
@@ -127,7 +125,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(28)
                 Layout.preferredHeight: units.gu(12)
-                value: IBW.getIdealWeight(user_sex_at_birth, user_height) 
+                value: KaltrackerUtils.getIdealWeight(user_sex_at_birth, user_height) 
                 message: i18n.tr("KG")
             }
 
@@ -142,7 +140,7 @@ Page{
             Icon{
                 Layout.alignment: Qt.AlignCenter
                 visible: app_settings.is_blood_pressure_defined
-                source: "../assets/blood_icon.svg"
+                source: "../../assets/blood_icon.svg"
                 height: units.gu(3.5)
             }
 
@@ -152,17 +150,12 @@ Page{
                 Layout.preferredWidth: root.width// - units.gu(26)
                 Layout.preferredHeight: units.gu(12)
                 visible: app_settings.is_blood_pressure_defined
-                value: BloodPressureIndex.getIndex(user_ap_hi,user_ap_lo) == 0 ?
-                i18n.tr("Normal") : BloodPressureIndex.getIndex(user_ap_hi,user_ap_lo) == 1 ?
-                i18n.tr("Elevated") : BloodPressureIndex.getIndex(user_ap_hi,user_ap_lo) == 2 ?
-                i18n.tr("High Blood Pressure Stage I") : BloodPressureIndex.getIndex(user_ap_hi,user_ap_lo) == 3 ?
+                value: KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 0 ?
+                i18n.tr("Normal") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 1 ?
+                i18n.tr("Elevated") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 2 ?
+                i18n.tr("High Blood Pressure Stage I") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 3 ?
                 i18n.tr("High Blood Pressure Stage II") : i18n.tr("Hypertensive Crisis")
-            
-
             }
-
-            
-
         }  
     }
     
