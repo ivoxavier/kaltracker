@@ -62,6 +62,5 @@ PushClient {
                     }
             })
             req.send(jsonData);
-            console.log("AQJI",pushClient.token)
     }
 }
