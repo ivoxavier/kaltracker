@@ -25,7 +25,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "components"
 import "style"
-
+import "../js/Token.js" as KaltrackerToken
 
 
 Page{
@@ -58,32 +58,34 @@ Page{
             width: root.width    
 
 
-
-            ListItem {
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Notifications")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Notifications")
-                    subtitle.font.bold : true
-                }  
             }
 
             ListItem {
                 divider.visible: false
                 ListItemLayout{
-                    title.text: i18n.tr("Streams")
-                    title.font.bold : true
+                    title.text: i18n.tr("Streams:")
                     Switch{
                         checked: app_settings.is_streams_enabled
-                        onClicked: app_settings.is_streams_enabled = !app_settings.is_streams_enabled
+                        onClicked: {
+                            if(app_settings.is_token_set){
+                                app_settings.is_streams_enabled = !app_settings.is_streams_enabled
+                            } else{
+                                app_settings.token = KaltrackerToken.generateToken() 
+                                app_settings.is_streams_enabled = !app_settings.is_streams_enabled
+                            }
+                        }
                     }
                 }  
             }
 
             ListItem {
                 divider.visible: true
+                enabled: app_settings.is_streams_enabled
                 ListItemLayout{
-                    title.text: i18n.tr("Calories Consumption")
-                    title.font.bold : true
+                    title.text: i18n.tr(" Calories Consumption")
                     CheckBox{
                         enabled: app_settings.is_streams_enabled
                         checked: app_settings.stream_kcal_consumption
@@ -96,25 +98,33 @@ Page{
                 }  
             }
 
-
-
-
-
-
-
             ListItem {
-                divider.visible: false
+                divider.visible: true
+                enabled: app_settings.is_streams_enabled
                 ListItemLayout{
-                    subtitle.text: i18n.tr("Charts")
-                    subtitle.font.bold : true
+                    title.text: i18n.tr(" Days Without Registing")
+                    CheckBox{
+                        enabled: app_settings.is_streams_enabled
+                        checked: app_settings.stream_days_without_reg
+                        onClicked: app_settings.stream_days_without_reg = !app_settings.stream_days_without_reg
+                        onEnabledChanged: {
+                            checked = false
+                            app_settings.stream_days_without_reg = false
+                        }
+                    }
                 }  
+            }
+
+
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Charts")
+                divider.visible: false
             }
 
             ListItem {
                 divider.visible: false
                 ListItemLayout{
                     title.text: i18n.tr("Animation")
-                    title.font.bold : true
                     Switch{
                         checked: app_settings.is_graphs_animation_enabled
                         onClicked: app_settings.is_graphs_animation_enabled = !app_settings.is_graphs_animation_enabled

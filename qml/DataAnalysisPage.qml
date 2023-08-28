@@ -62,20 +62,15 @@ Page{
         ColumnLayout{
             id: main_column
             width: root.width
-
-            ListItem{
-                divider.visible : false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Ingestions")
-                    subtitle.font.bold : true
-                }
+            
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Ingestions")
+                divider.visible: false
             }
-           
 
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Average Calories Consumption")
-                    title.font.bold : true
                     subtitle.text: i18n.tr("By Month")
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -90,7 +85,6 @@ Page{
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Charts")
-                    title.font.bold : true
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         source : "../assets/graphs_icon.svg"
@@ -101,18 +95,15 @@ Page{
                 onClicked : page_stack.push(graphs_page)
             }
 
-            ListItem{
-                divider.visible : false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Body Measurements")
-                    subtitle.font.bold: true
-                }
+
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Body Measurements")
+                divider.visible: false
             }
 
             ListItem{
                 ListItemLayout{
                     title.text: i18n.tr("Indexes")
-                    title.font.bold : true
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         source : "../assets/body_icon.svg"
@@ -123,6 +114,5 @@ Page{
                 onClicked : page_stack.push(body_measures_page)
             }
         }
-    }  
-   
+    }   
 }

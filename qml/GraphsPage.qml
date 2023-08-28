@@ -26,6 +26,7 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "components"
 import "style"
+import "logicalFields"
 import "../js/Chart.js" as Charts
 import "../js/QChartJsTypes.js" as ChartTypes
 import "../js/GetData.js" as GetData
@@ -78,12 +79,10 @@ Page {
             id: main_column
             width: root.width
 
-            ListItem{
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text : i18n.tr("Weight Progress")
-                    subtitle.font.bold : true
-                }
+
+            ListItemHeader{
+               text_header.title.text: i18n.tr("Weight Progress")
+               divider.visible: false
             }
 
             Grid {
@@ -100,7 +99,7 @@ Page {
                     width: parent.width
                     height: parent.height
                     chartType: ChartTypes.QChartJSTypes.LINE
-                    chartData: GetData.getChartLineData(app_settings.using_app_date, root.stringDate)
+                    chartData: GetData.getChartLineData(app_settings.using_app_date, logical_fields.application.date_utils.long_date)
                     animation: app_settings.is_graphs_animation_enabled
                     chartAnimationEasing: Easing.InOutElastic;
                     chartAnimationDuration: 2000;
@@ -108,12 +107,10 @@ Page {
 
             }
             
-            ListItem{
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text : i18n.tr("Foods Distribution By Nutriscore")
-                    subtitle.font.bold : true
-                }
+
+            ListItemHeader{
+               text_header.title.text: i18n.tr("Foods Distribution By Nutriscore")
+               divider.visible: false
             }
 
             Grid {

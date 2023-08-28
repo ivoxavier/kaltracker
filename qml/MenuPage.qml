@@ -78,21 +78,15 @@ Page{
                 color : app_style.label.labelColor
             }
 
-            ListItem{
-                width: root.width
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("User")
-                    subtitle.font.bold: true
-                }
+            ListItemHeader{
+               text_header.title.text: i18n.tr("User")
+               divider.visible: false
             }
-
-
+            
             ListItem{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Your Profile")
-                    title.font.bold : true
                     title.color : app_style.label.labelColor 
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -109,7 +103,6 @@ Page{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Data Analysis")
-                    title.font.bold : true
                     title.color : app_style.label.labelColor
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -122,21 +115,18 @@ Page{
                 onClicked: page_stack.push(data_analysis_page)
             }
 
-            ListItem{
-                width: root.width
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Settings")
-                    subtitle.font.bold: true
-                }
+
+            ListItemHeader{
+               text_header.title.text: i18n.tr("Settings")
+               divider.visible: false
             }
+
 
             ListItem{
                 width: root.width
         
                 ListItemLayout{
                     title.text : i18n.tr("App Settings")
-                    title.font.bold : true
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
                         name : "settings"
@@ -152,7 +142,6 @@ Page{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Online Sources")
-                    title.font.bold : true
 
                     Icon{
                         SlotsLayout.position: SlotsLayout.Leading
@@ -166,20 +155,16 @@ Page{
             }
 
 
-            ListItem{
-                width: root.width
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Storage")
-                    subtitle.font.bold: true
-                }
+            ListItemHeader{
+               text_header.title.text: i18n.tr("Storage")
+               divider.visible: false
             }
+
 
             ListItem{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Manage Data")
-                    title.font.bold : true
                     title.color : app_style.label.labelColor 
                     
                     Icon{
@@ -197,7 +182,6 @@ Page{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Backup & Restore Data")
-                    title.font.bold : true
                     title.color : app_style.label.labelColor 
                     
                     Icon{
@@ -211,21 +195,15 @@ Page{
                 onClicked: page_stack.push(backup_restore_page)
             }
 
-            ListItem{
-                width: root.width
-                divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("About")
-                    subtitle.font.bold: true
-                }
+            ListItemHeader{
+               text_header.title.text: i18n.tr("About")
+               divider.visible: false
             }
-
 
             ListItem{
                 width: root.width
                 ListItemLayout{
                     title.text : i18n.tr("Third Party Software")
-                    title.font.bold : true
                     title.color : app_style.label.labelColor 
                     
                     Icon{

@@ -61,12 +61,9 @@ Page{
             width: root.width
 
 
-            ListItem{
+            ListItemHeader{
+                text_header.title.text: i18n.tr("QML Modules")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("QML Modules")
-                    subtitle.font.bold : true
-                }
             }
 
             ListItem{
@@ -76,7 +73,6 @@ Page{
                 onClicked : Qt.openUrlExternally(github_url)
                 ListItemLayout{
                     title.text: "QChartsJs"
-                    title.font.bold : true
                     subtitle.text: chart_list_item.github_url
                 }
             }
@@ -88,18 +84,14 @@ Page{
                 onClicked : Qt.openUrlExternally(github_url)
                 ListItemLayout{
                     title.text: i18n.tr("%1. Licensed under the MIT licence").arg("JSONListModel")
-                    title.font.bold : true
                     subtitle.text: json_list_model_list.github_url
                 }
             }
 
 
-            ListItem{
+            ListItemHeader{
+                text_header.title.text: i18n.tr("JavaScript Libs")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("JavaScript Libs")
-                    subtitle.font.bold : true
-                }
             }
 
             ListItem{
@@ -109,18 +101,13 @@ Page{
                 onClicked : Qt.openUrlExternally(url)
                 ListItemLayout{
                     title.text: i18n.tr("%1. Licensed under the MIT licence").arg("jsonpath")
-                    title.font.bold : true
                     subtitle.text: json_path_list.url
                 }
             }
 
-
-            ListItem{
+            ListItemHeader{
+                text_header.title.text: i18n.tr("C++ Modules")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("C++ Modules")
-                    subtitle.font.bold : true
-                }
             }
 
             ListItem{
@@ -130,17 +117,13 @@ Page{
                 onClicked : Qt.openUrlExternally(github_url)
                 ListItemLayout{
                     title.text: i18n.tr("%1. Licensed under the Apache License 2.0").arg("qzxing")
-                    title.font.bold : true
                     subtitle.text: qzxing_list.github_url
                 }
             } 
 
-            ListItem{
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Icons")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Icons")
-                    subtitle.font.bold : true
-                }
             }
 
             ListItem{
@@ -150,7 +133,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "cycling-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: cycling_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -163,7 +145,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "swimming-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : swimming_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -176,7 +157,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "running-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : running_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -189,7 +169,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "walking-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : walking_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -202,7 +181,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "gym-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : gym_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -215,7 +193,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "people-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : people_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -228,7 +205,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "apple-fruit-svg-repo-com"
-                    title.font.bold : true
                     subtitle.text: apple_fruit_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -241,7 +217,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "olive-oil-fruit-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : olive_oil.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -254,7 +229,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "breakfast-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : breakfast_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -267,7 +241,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "bread-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: bread_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -280,7 +253,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "cheese-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: cheese_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -293,7 +265,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "meal-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : meal_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -306,7 +277,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "dinner-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : dinner_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -319,7 +289,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "cycling-color-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : cycling_color_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -332,7 +301,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "dumbbell-gym-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : dumbbel_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -345,7 +313,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "female-gender-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: female_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -358,7 +325,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "fried-chicken-meal-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : fried_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -371,7 +337,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "glass-water-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: glass_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -384,7 +349,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "goal-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: goal_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -397,7 +361,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "kilograms-justice-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : kilograms_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -410,7 +373,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "male-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : male_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -423,7 +385,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "snack-snacks-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : snack_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -436,7 +397,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "soccer-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text : snack_list.svgrepo_url
                     ProgressionSlot{}
                 }
@@ -449,7 +409,6 @@ Page{
                 onClicked : Qt.openUrlExternally(svgrepo_url)
                 ListItemLayout{
                     title.text: "walking-the-dog-svgrepo-com"
-                    title.font.bold : true
                     subtitle.text: walking__dog_list.svgrepo_url
                     ProgressionSlot{}
                 }

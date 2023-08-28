@@ -31,10 +31,10 @@ Item {
 
     Component{
         id:ctrl_strs_notif
-            NotificationPop{
-                title.text: ctrl_strs.notification_data.title
-                subtitle.text: ctrl_strs.notification_data.subtitle
-            }
+        NotificationPop{
+            title.text: ctrl_strs.notification_data.title
+            subtitle.text: ctrl_strs.notification_data.subtitle !== null ? ctrl_strs.notification_data.subtitle : " "
+        }
     }
     
     property bool has_executed_strmKcal : false
@@ -44,34 +44,32 @@ Item {
     Timer{id: notification_queue_timer;repeat: false}
 
     function strmKcal(){
-        if(ctrl_strs.has_executed_strmKcal){} 
-        else {
-            
-            streams.call('streams.Streams.kcal_consumption', [] ,function(returnValue){
-            ctrl_strs.notification_data.title = i18n.tr("Total Calories Registed In The Kaltracker")
-            ctrl_strs.notification_data.subtitle = returnValue
-            PopupUtils.open(ctrl_strs_notif) 
-        })
-
+        if (!ctrl_strs.has_executed_strmKcal) {
+            if(!app_settings.using_app_date === logical_fields.application.date_utils.long_date){
+                streams.call('streams.Streams.kcal_consumption', [] ,function(returnValue){
+                    ctrl_strs.notification_data.title = i18n.tr("Total Calories Registed In The Kaltracker")
+                    ctrl_strs.notification_data.subtitle = returnValue
+                    PopupUtils.open(ctrl_strs_notif) 
+                })
+            }
         }
-        
         ctrl_strs.has_executed_strmKcal = true
     }
 
+    function delayNotif(delayMiliseconds, cb) {
+        notification_queue_timer.interval = delayMiliseconds;
+        notification_queue_timer.triggered.connect(cb);
+        notification_queue_timer.start();
+    } 
+
     function ddWthReg(){
-        if(ctrl_strs.has_executed_ddWthReg){}
-        else{
+        if (!ctrl_strs.has_executed_ddWthReg) {
             streams.call('streams.Streams.days_without_reg', [] ,function(returnValue){
                 if(returnValue === 0){
-                    ctrl_strs.notification_data.title = i18n.tr("You Haven't Registed Foods In The Last 5 Days")
-                        function delayNotif(delayMiliseconds, cb) {
-                            notification_queue_timer.interval = delayMiliseconds;
-                            notification_queue_timer.triggered.connect(cb);
-                            notification_queue_timer.start();
-                        }  
-                        delayNotif(3000, function () {
+                    ctrl_strs.notification_data.title = i18n.tr("You Haven't Registed Foods In The Last 5 Days")  
+                    delayNotif(3000, function () {
                             PopupUtils.open(ctrl_strs_notif)
-                        })
+                    })
                 }   
             })
         }

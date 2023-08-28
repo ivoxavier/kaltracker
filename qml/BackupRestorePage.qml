@@ -188,14 +188,12 @@ Page{
             
             BlankSpace{height:units.gu(4)}
 
-            ListItem{
-                width: parent.width
+
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Importing Requirements")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Importing Requirements")
-                    subtitle.font.bold: true
-                }
             }
+
 
             Label{
                 Layout.alignment: Qt.AlignCenter

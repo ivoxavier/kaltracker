@@ -29,9 +29,8 @@ import "style"
 Page{
     id: api_page
     objectName: 'ApiPage'
-    header: PageHeader {
-            
-                title: i18n.tr("Aplication Programming Interface")
+    header: PageHeader {        
+        title: i18n.tr("Aplication Programming Interface")
                 StyleHints {
                    /* foregroundColor: "white"
                     backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
@@ -58,19 +57,15 @@ Page{
             id: main_column
             width: root.width
 
-            ListItem{
+            ListItemHeader{
+                text_header.title.text: i18n.tr("Application Programming Interface")
                 divider.visible: false
-                ListItemLayout{
-                    subtitle.text: i18n.tr("Application Programming Interface")
-                    subtitle.font.bold : true
-                }
             }
 
             ListItem {
                 divider.visible: false
                 ListItemLayout{
                     title.text: i18n.tr("OpenFoodsFacts")
-                    title.font.bold : true
                     title.color: app_style.label.labelColor
                     subtitle.text: i18n.tr("Search For Barcode In %1").arg("openfoodsfacts")
                     Icon{
