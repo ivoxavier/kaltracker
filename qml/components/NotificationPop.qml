@@ -37,7 +37,7 @@ Popover{
 
     ColumnLayout{
         id: main_column_pop
-        width: parent.width
+        width: root.width
         spacing: units.gu(2)
         ListItem{
             color: LomiriColors.porcelain
