@@ -45,10 +45,10 @@ Item {
 
     function strmKcal(){
         if (!ctrl_strs.has_executed_strmKcal) {
-            if(!app_settings.using_app_date === logical_fields.application.date_utils.long_date){
+            if(!(app_settings.using_app_date === logical_fields.application.date_utils.long_date)){
                 streams.call('streams.Streams.kcal_consumption', [] ,function(returnValue){
                     ctrl_strs.notification_data.title = i18n.tr("Total Calories Registed In The Kaltracker")
-                    ctrl_strs.notification_data.subtitle = returnValue
+                    ctrl_strs.notification_data.subtitle = returnValue.toString()
                     PopupUtils.open(ctrl_strs_notif) 
                 })
             }
