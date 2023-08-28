@@ -11,6 +11,7 @@ find_package(Qt5Qml REQUIRED)
 find_package(Qt5Quick REQUIRED)
 find_package(Qt5QuickControls2 REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
+find_package(Qt5Network)
 
 execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -60,7 +61,8 @@ add_subdirectory(qzxing/src)
 include_directories(qzxing/src/zxing)
 include_directories("${PROJECT_BINARY_DIR}")
 
-set(SOURCES main.cpp)
+set(SOURCES main.cpp
+internetchecker/internetchecker.cpp)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
