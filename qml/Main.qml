@@ -19,6 +19,7 @@ import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import Lomiri.PushNotifications 0.1
+import "components"
 import "style"
 import "settings"
 import "logicalFields"
@@ -217,11 +218,9 @@ MainView {
             page_stack.push(user_profile_config_page)
         }
         else{
-        //during experiment time and app configured
             page_stack.push(home_page)
-            
-            
-
         }
     }
+
+    Component.onDestruction: app_settings.last_time_opened = logical_fields.application.date_utils.long_date
 }
