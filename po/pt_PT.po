@@ -136,6 +136,30 @@ msgstr "KG"
 msgid "Blood Pressure"
 msgstr "Pressão Arterial"
 
+#: ../qml/pages/SettingsPage.qml:62
+msgid "Notifications"
+msgstr "Notificações"
+
+#: ../qml/pages/SettingsPage.qml:69
+msgid "Streams:"
+msgstr "Fluxos"
+
+#: ../qml/pages/SettingsPage.qml:88
+msgid " Calories Consumption"
+msgstr " Consumo de Calorias"
+
+#: ../qml/pages/SettingsPage.qml:105
+msgid " Days Without Registing"
+msgstr " Dias Sem Atividade"
+
+#: ../qml/controlStreams/ControlStreams.qml:50
+msgid "Total Calories Registed In The Kaltracker"
+msgstr "Total Calories Registadas no Kaltracker"
+
+#: ../qml/controlStreams/ControlStreams.qml:69
+msgid "You Haven't Registed Foods In The Last 5 Days"
+msgstr "Você não registrou alimentos nos últimos 5 dias."
+
 #: ../qml/ScanPage.qml:40
 msgid "Reading Bar Code..."
 msgstr "A ler código de barras..."
@@ -174,7 +198,7 @@ msgstr "Ingestões"
 
 #: ../qml/DataAnalysisPage.qml:87
 msgid "By Month"
-msgstr "Po Mês"
+msgstr "Por Mês"
 
 #: ../qml/DataAnalysisPage.qml:100
 msgid "Charts"
