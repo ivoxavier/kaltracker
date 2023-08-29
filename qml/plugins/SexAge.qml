@@ -60,6 +60,7 @@ ColumnLayout{
         }
     }
 
+
     SlotBirthSex{
         id: male_slot
         Layout.alignment: Qt.AlignCenter

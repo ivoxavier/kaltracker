@@ -11,6 +11,7 @@ find_package(Qt5Qml REQUIRED)
 find_package(Qt5Quick REQUIRED)
 find_package(Qt5QuickControls2 REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
+find_package(Qt5Network)
 
 execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -60,7 +61,8 @@ add_subdirectory(qzxing/src)
 include_directories(qzxing/src/zxing)
 include_directories("${PROJECT_BINARY_DIR}")
 
-set(SOURCES main.cpp)
+set(SOURCES main.cpp
+internetchecker/internetchecker.cpp)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
@@ -93,6 +95,9 @@ configure_file(manifest.json.in ${CMAKE_CURRENT_BINARY_DIR}/manifest.json)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(FILES ${PROJECT_NAME}.apparmor DESTINATION ${DATA_DIR})
 install(FILES assets/logo.svg DESTINATION assets)
+install(FILES pushexec PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ DESTINATION ${DATA_DIR})
+install(FILES push.json DESTINATION ${DATA_DIR})
+install(FILES push-apparmor.json DESTINATION ${DATA_DIR})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${QT_RESOURCES})
 
@@ -104,11 +109,17 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 #set directories 
 install(DIRECTORY "assets" DESTINATION .)
 install(DIRECTORY "qml" DESTINATION .)
+install(DIRECTORY "qml/pages" DESTINATION /qml)
 install(DIRECTORY "qml/components" DESTINATION /qml)
 install(DIRECTORY "qml/style" DESTINATION /qml)
 install(DIRECTORY "qml/plugins" DESTINATION /qml)
 install(DIRECTORY "qml/settings" DESTINATION /qml)
 install(DIRECTORY "qml/logicalFields" DESTINATION /qml)
+install(DIRECTORY "qml/controlStreams" DESTINATION /qml)
+install(DIRECTORY "qml/streams" DESTINATION /qml)
+install(DIRECTORY "qml/controlSemaphores" DESTINATION /qml)
+install(DIRECTORY "qml/semaphores" DESTINATION /qml)
+install(DIRECTORY "qml/pushNotifications" DESTINATION /qml)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
 

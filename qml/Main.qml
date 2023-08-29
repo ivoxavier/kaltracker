@@ -18,9 +18,17 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import Lomiri.PushNotifications 0.1
+import "pages"
+import "components"
 import "style"
 import "settings"
 import "logicalFields"
+import "controlSemaphores"
+import "semaphores"
+import "controlStreams"
+import "streams"
+import "pushNotifications"
 
 MainView {
     id: root
@@ -31,7 +39,7 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    
+
     /* custom signals --start--*/
     signal initDB()
     /* custom signals --end--*/
@@ -44,6 +52,21 @@ MainView {
 
     //Logical Fields of the App
     LogicalFields{id:logical_fields}
+
+    //Control Semaphores by setting their light
+    ControlSemaphores{id:ctrl_smph}
+
+    //Semaphores for Streams
+    Semaphores{id:streams_smph}
+
+    //Control Streams Execution
+    ControlStreams{id:ctrl_strs}
+
+    //Streams
+    Streams{id:streams}
+
+    //PushNotifications Client
+    PushNotifications{id:push_notif}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack{
@@ -105,10 +128,10 @@ MainView {
         UpdateUserValuesPage{}
     }
 
-    //AppLayoutPage, let users define appearance settings
+    //SettingsPage, let users define app settings
     Component{
-        id: app_layout_page
-        AppLayoutPage{}
+        id: settings_page
+        SettingsPage{}
     }
 
     //OnlineSourcesPage, let enable online sources
@@ -196,8 +219,9 @@ MainView {
             page_stack.push(user_profile_config_page)
         }
         else{
-        //during experiment time and app configured
             page_stack.push(home_page)
         }
     }
+
+    Component.onDestruction: app_settings.last_time_opened = logical_fields.application.date_utils.long_date
 }

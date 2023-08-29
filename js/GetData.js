@@ -385,39 +385,45 @@ function getNotes() {
 
   /*Axis: for Weight Tracker  --start--*/
 
-  function getYWeightTracker(date_from, date_to) {
-    var get_y_weight_table = `SELECT weight FROM weight_tracker wt
-      WHERE date(wt.date) <= date(?) AND date(wt.date) >= date(?)
-      ORDER BY wt.date ASC`;
+function getYWeightTracker(date_from, date_to){
+  var get_y_weight_table = 'SELECT weight FROM weight_tracker wt \
+  WHERE date(wt.date) <= date("which_date_to") AND date(wt.date) >= date("which_date_from") \
+  ORDER BY wt.date ASC'.replace("which_date_to", date_to).replace("which_date_from", date_from)
+  var db = connectDB();
+  var rs = "";
+  db.transaction(function(tx) {
+    rs = tx.executeSql(get_y_weight_table);
+  });
   
-    var tx = db.transaction(function(tx) {
-      var rs = tx.executeSql(get_y_weight_table, [date_to, date_from]);
-      return Array.from(rs.rows).map(function(row) {
-        return row.weight;
-      });
-    });
-  
-    return tx;
+  var weight_values = [];
+  for(var i =0;i < rs.rows.length;i++) {
+    weight_values.push(rs.rows.item(i).weight);
   }
+  
+  return weight_values;
+}
   
 
 
   /*X axis: measurement dates*/
-  function getXWeightTracker(date_from, date_to) {
-    var get_x_weight_table = `SELECT date
-    FROM weight_tracker wt
-    WHERE date(wt.date) <= date(?) AND date(wt.date) >= date(?)
-    ORDER BY wt.date ASC`;
+function getXWeightTracker(date_from, date_to){
+  var get_x_weight_table = 'SELECT date FROM weight_tracker wt \
+  WHERE date(wt.date) <= date("which_date_to") AND date(wt.date) >= date("which_date_from") \
+  ORDER BY wt.date ASC'.replace("which_date_to", date_to).replace("which_date_from", date_from)
+  var db = connectDB();
   
-    var tx = db.transaction(function(tx) {
-      var rs = tx.executeSql(get_x_weight_table, [date_to, date_from]);
-      return Array.from(rs.rows).map(function(row) {
-        return row.date;
-      });
-    });
-  
-    return tx;
+  var rs = "";
+  db.transaction(function(tx) {
+    rs = tx.executeSql(get_x_weight_table);
+  });
+
+  /* build the array */
+  var date_registered = [];
+  for(var i =0;i < rs.rows.length;i++) {
+    date_registered.push(rs.rows.item(i).date);
   }
+return date_registered;
+}
   
 /* Axis: for Weight Tracker  --end--*/
 
@@ -441,20 +447,22 @@ return ChartLineData;
 
  /*Axis: for Weight Tracker  --start--*/
 
- function getYNutriscore() {
-  var get_y_nutriscores_values = `SELECT COUNT(nutriscore) AS nutriscore
-    FROM ingestions
-    GROUP BY nutriscore
-    ORDER BY 1 ASC`;
-
-  var tx = db.transaction(function(tx) {
-    var rs = tx.executeSql(get_y_nutriscores_values);
-    return Array.from(rs.rows).map(function(row) {
-      return row.nutriscore;
-    });
+ function getYNutriscore(){
+  var get_y_nutriscores_values = 'SELECT COUNT(nutriscore) AS nutriscore \
+   FROM ingestions \
+   GROUP BY nutriscore \
+   ORDER BY 1 ASC'
+  var db = connectDB();
+  var rs = "";
+  db.transaction(function(tx) {
+    rs = tx.executeSql(get_y_nutriscores_values);
   });
-
-  return tx;
+  
+  var nutriscore_count = [];
+  for(var i =0;i < rs.rows.length;i++) {
+    nutriscore_count.push(rs.rows.item(i).nutriscore);
+  }
+  return nutriscore_count;
 }
 
 

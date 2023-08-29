@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2023  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,23 +14,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+function generateToken() {
+  var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+  var date = new Date();
+  var token = '';
 
+  for (var i = 0; i < 50; i++) {
+    token += letters[Math.floor(Math.random() * letters.length)];
+  }
 
-import QtQuick 2.9
-import Lomiri.Components 1.3
+  token += date.toISOString();
 
-
-ListItem {
-    id: headerListItem
-
-    property alias text_header: headerText
-
-    height: headerText.height + divider.height
-    divider.anchors.leftMargin: units.gu(2)
-    divider.anchors.rightMargin: units.gu(2)
-
-    ListItemLayout {
-        id: headerText
-        title.font.bold: true
-    }
+  return token;
 }

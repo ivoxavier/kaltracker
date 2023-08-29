@@ -32,8 +32,8 @@ function connectDB() {
     VALUES (?,?,?,?,?,?,?,?,?)';
   
   function saveIngestion(name,nutriscore,cal,fat,carbo,protein,meal) {      
+      ctrl_smph.setSemaphore(streams_smph,"user_event")
       var db = connectDB();
-
       //In multiSelection case an object is passed rather than single arguments
       if(typeof name === 'object' && name !== null) {
         for(var i in name){
@@ -55,32 +55,38 @@ function connectDB() {
         }
       );
       }
+      ctrl_smph.defaultSemaphore(streams_smph)
   }
 
   var remove_all_ingestions = 'DELETE FROM ingestions'
 
   function deleteAllIngestions(){
+    ctrl_smph.setSemaphore(streams_smph,"user_event")
    var db = connectDB();
    var rs;
    db.transaction(function(tx) {
      rs = tx.executeSql(remove_all_ingestions);
     }
   );
+  ctrl_smph.defaultSemaphore(streams_smph)
  }
 
  var remove_today_ingestions = 'DELETE FROM ingestions \
  WHERE ingestions.date == date("now")'
 
  function deleteTodayIngestions(){
+  ctrl_smph.setSemaphore(streams_smph,"user_event")
   var db = connectDB();
   var rs;
   db.transaction(function(tx) {
     rs = tx.executeSql(remove_today_ingestions);
    }
  );
+ ctrl_smph.setSemaphore(streams_smph)
 }
 
 function deleteMonthYearIngestion(month, year){
+  ctrl_smph.setSemaphore(streams_smph,"user_event")
   var statement = 'DELETE FROM ingestions \
   WHERE strftime("%m", date) == "which_month" AND strftime("%Y", date) == "which_year"'.replace("which_month", month).replace("which_year", year)
   var db = connectDB();
@@ -89,10 +95,12 @@ function deleteMonthYearIngestion(month, year){
     rs = tx.executeSql(statement);
    }
  );
+ ctrl_smph.defaultSemaphore(streams_smph)
  return console.log("Ingestions removed from option month_year")
 }
 
 function deleteIngestion(id){
+  ctrl_smph.setSemaphore(streams_smph,"user_event")
   var statement = 'DELETE FROM ingestions \
   WHERE id == "which_id"'.replace("which_id", id)
   var db = connectDB();
@@ -101,6 +109,7 @@ function deleteIngestion(id){
     rs = tx.executeSql(statement);
    }
  );
+ ctrl_smph.defaultSemaphore(streams_smph)
 }
 
 
@@ -125,16 +134,19 @@ var auto_clean = 'DELETE FROM ingestions \
 WHERE ingestions.date < strftime("%Y", date())'
 
 function autoClean(){
+  ctrl_smph.setSemaphore(streams_smph,"user_event")
  var db = connectDB();
  var rs;
  db.transaction(function(tx) {
    rs = tx.executeSql(auto_clean);
   }
 );
+ctrl_smph.defaultSemaphore(streams_smph)
 }
 
 
 function deleteSpecificTodayIngestion(id){
+  ctrl_smph.setSemaphore(streams_smph,"user_event")
   var remove_today_speficic_ingestion = 'DELETE FROM ingestions \
   WHERE ingestions.id = which_id'.replace("which_id",id)
    var db = connectDB();
@@ -143,4 +155,5 @@ function deleteSpecificTodayIngestion(id){
     rs = tx.executeSql(remove_today_speficic_ingestion);
    }
  );
+ ctrl_smph.defaultSemaphore(streams_smph)
 }

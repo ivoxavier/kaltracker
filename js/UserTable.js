@@ -32,7 +32,9 @@ function connectDB() {
     activity,
     rec_cal){          
     var db = connectDB();
-    
+
+    ctrl_smph.setSemaphore(streams_smph,"user_event")
+
     db.transaction(function(tx) {
       var results = tx.executeSql(save_user_profile, [1,
         age,
@@ -47,6 +49,7 @@ function connectDB() {
       }
     }
   )
+  ctrl_smph.defaultSemaphore(streams_smph)
 }
 
 var user_sex = 'SELECT u.sex_at_birth AS sex_at_birth \
@@ -76,7 +79,7 @@ var user_age = 'SELECT u.age AS age \
         rsToQML = results.rows.item(i).age
       }
 })
-   return rsToQML
+  return rsToQML
 }
 
 var user_goal = 'SELECT u.rec_cal AS rec_cal \

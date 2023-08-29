@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2023  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,22 +15,28 @@
  */
 
 
+#ifndef INTERNETCHECKER_H
+#define INTERNETCHECKER_H
 
-import QtQuick 2.9
-import Lomiri.Components 1.3
+#include <QObject>
+#include <QNetworkAccessManager>
+#include <QNetworkConfigurationManager>
 
+class InternetChecker : public QObject {
+    Q_OBJECT
 
-ListItem {
-    id: headerListItem
+public:
+    explicit InternetChecker(QObject *parent = nullptr);
 
-    property alias text_header: headerText
+signals:
+    void internetStatusChanged(bool isConnected);
 
-    height: headerText.height + divider.height
-    divider.anchors.leftMargin: units.gu(2)
-    divider.anchors.rightMargin: units.gu(2)
+public slots:
+    void checkInternetConnection();
 
-    ListItemLayout {
-        id: headerText
-        title.font.bold: true
-    }
-}
+private:
+    QNetworkAccessManager *m_networkManager;
+    QNetworkConfigurationManager *m_networkConfigManager;
+};
+
+#endif
