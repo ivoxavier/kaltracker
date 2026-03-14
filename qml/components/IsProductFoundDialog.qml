@@ -20,6 +20,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
+import InternetChecker 0.1
 import "../style"
 import "../logicalFields"
 
@@ -28,10 +29,38 @@ Dialog {
     
     property string barcode
     property bool is_code_empty : false
+    
+    property bool no_internet : false 
+
+    
+    InternetChecker {
+        id: internetChecker
+        onInternetStatusChanged: {
+            if (isConnected) {
+            
+                openFoodFactJSON.source = "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
+            } else {
+        
+                loading_circle.running = false
+                loading_circle.visible = false
+                no_internet = true
+            }
+        }
+    }
+
+    
+    onBarcodeChanged: {
+        if (barcode !== "") {
+            loading_circle.running = true
+            loading_circle.visible = true
+            no_internet = false
+            is_code_empty = false
+            internetChecker.checkInternetConnection()
+        }
+    }
 
     JSONListModel {
         id: openFoodFactJSON
-        source: "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
         query: "$[*]"
         onJsonChanged: {
             var _json = openFoodFactJSON.model.get(0);
@@ -46,7 +75,7 @@ Dialog {
                 next_button.enabled = true
                 loading_circle.running = false
                 loading_circle.visible = false
-            }else{
+            } else {
                 loading_circle.running = false
                 loading_circle.visible = false
                 enter_manually.visible = true
@@ -55,7 +84,8 @@ Dialog {
         }
     }
 
-    title: is_code_empty ? i18n.tr("BarCode Not Found")  : i18n.tr("BarCode Found")
+    
+    title: no_internet ? i18n.tr("No Internet Connection") : (is_code_empty ? i18n.tr("BarCode Not Found") : i18n.tr("BarCode Found"))
 
     ActivityIndicator{
         id: loading_circle
@@ -63,12 +93,22 @@ Dialog {
         visible: true
     }
 
+    
+    Label {
+        text: i18n.tr("Please activate your internet connection and try again.")
+        width: parent.width
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        visible: no_internet
+        color: app_style.label.labelColor
+    }
+
     Label{
         text: i18n.tr("No product in DB, you may consider register the item on openfoodsfacts. Or enter the details manually")
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        visible : is_code_empty ? true : false
+        visible : is_code_empty && !no_internet 
         color: app_style.label.labelColor
     }
 
@@ -78,7 +118,6 @@ Dialog {
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         color: app_style.label.labelColor
-    
     }
     
     Label{
@@ -86,11 +125,10 @@ Dialog {
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        text: i18n.tr("Name: %1").arg(product_name)
-        visible : is_code_empty ? false : true
+        text: i18n.tr("Name: %1").arg(typeof product_name !== "undefined" ? product_name : "")
+        visible : !is_code_empty && !no_internet && !loading_circle.running
         color: app_style.label.labelColor
     }
-
 
     Button{
         text: i18n.tr("Scan Again")
@@ -105,7 +143,7 @@ Dialog {
         id: enter_manually
         text: i18n.tr("Enter Product Details Manually")
         color: app_style.button.actionButton.buttonColor
-        visible: false
+        visible: is_code_empty || no_internet
         onClicked:{
             page_stack.pop(scan_page)  
             PopupUtils.close(is_product_found_dialog)
@@ -117,6 +155,7 @@ Dialog {
         text: i18n.tr("Next")
         color: app_style.button.confirmButton.buttonColor
         enabled: false
+        visible: !no_internet && !is_code_empty
         onClicked:{
             page_stack.pop(scan_page)  
             PopupUtils.close(is_product_found_dialog)
