@@ -15,14 +15,14 @@ current_tag=$(git describe --tags --abbrev=0)
 
 case $1 in
   --desktop)
-    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable desktop
+    CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable desktop
     ;;
   --device)
-    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable -a arm64
+    CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable -a arm64
     ;;
   --build-all)
-    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build -a arm64
-    CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build -a armhf
+    CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build -a arm64
+    CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build -a armhf
     ;;
   --add-tag)
     echo -n "New Tag: "
