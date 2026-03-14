@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-28 16:10+0000\n"
+"POT-Creation-Date: 2026-03-14 11:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,11 @@ msgstr ""
 msgid "Please, wait a few moments"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChartBACKUP.qml:109
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "EXCEED"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChartBACKUP.qml:109
+#: ../qml/components/CaloriesCircleChart.qml:109
 msgid "REMAINING"
 msgstr ""
 
@@ -151,37 +151,45 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:58
+#: ../qml/components/IsProductFoundDialog.qml:88
 msgid "BarCode Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:58
+#: ../qml/components/IsProductFoundDialog.qml:88
 msgid "BarCode Not Found"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:67
+#: ../qml/components/IsProductFoundDialog.qml:88
+msgid "No Internet Connection"
+msgstr ""
+
+#: ../qml/components/IsProductFoundDialog.qml:98
+msgid "Please activate your internet connection and try again."
+msgstr ""
+
+#: ../qml/components/IsProductFoundDialog.qml:107
 msgid ""
 "No product in DB, you may consider register the item on openfoodsfacts. Or "
 "enter the details manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:76
+#: ../qml/components/IsProductFoundDialog.qml:116
 msgid "Code:%1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:89
+#: ../qml/components/IsProductFoundDialog.qml:128
 msgid "Name: %1"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:96
+#: ../qml/components/IsProductFoundDialog.qml:134
 msgid "Scan Again"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:106
+#: ../qml/components/IsProductFoundDialog.qml:144
 msgid "Enter Product Details Manually"
 msgstr ""
 
-#: ../qml/components/IsProductFoundDialog.qml:117
+#: ../qml/components/IsProductFoundDialog.qml:155
 msgid "Next"
 msgstr ""
 
