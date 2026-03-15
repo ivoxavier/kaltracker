@@ -13,32 +13,34 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include <QEventLoop>
-#include <QNetworkReply>
 #include "internetchecker.h"
+#include <QNetworkReply>
+#include <QNetworkRequest>
 
 InternetChecker::InternetChecker(QObject *parent) : QObject(parent) {
     m_networkManager = new QNetworkAccessManager(this);
-    m_networkConfigManager = new QNetworkConfigurationManager(this);
+    
+    connect(m_networkManager, &QNetworkAccessManager::finished, this, &InternetChecker::onReplyFinished);
 }
 
 void InternetChecker::checkInternetConnection()
 {
+    
+    QNetworkRequest request(QUrl("https://www.ubports.com"));
+    m_networkManager->head(request);
+}
+
+void InternetChecker::onReplyFinished(QNetworkReply *reply)
+{
     bool isConnected = false;
 
-    if (m_networkConfigManager->isOnline()) {
-        QNetworkRequest request(QUrl("https://www.ubports.com")); 
-        QNetworkReply *reply = m_networkManager->get(request);
-        QEventLoop loop;
-        QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-        loop.exec();
-
-        if (reply->error() == QNetworkReply::NoError) {
-            isConnected = true;
-        }
-
-        reply->deleteLater();
+    
+    if (reply->error() == QNetworkReply::NoError) {
+        isConnected = true;
     }
 
+    reply->deleteLater();
+    
+    
     emit internetStatusChanged(isConnected);
 }
