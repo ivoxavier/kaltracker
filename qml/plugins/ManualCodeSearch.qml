@@ -27,41 +27,58 @@ import Lomiri.Components.Popups 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Suru 2.2
 import QtQuick.Layouts 1.3
+import InternetChecker 0.1
 import "../components"
 import "../style"
 import "../logicalFields"
 
-
-ColumnLayout{
+ColumnLayout {
     width: root.width
     property string manual_barcode
 
-    BlankSpace{}
+    BlankSpace {}
 
-    RowLayout{
+    InternetChecker {
+        id: internetChecker
+        onInternetStatusChanged: {
+            if (isConnected) {
+                
+                code_searcher_timer.running = true
+                openFoodFactJSON.source = "https://world.openfoodfacts.org/api/v0/product/" + manual_barcode + ".json";
+                openFoodFactJSON.query = "$[*]"
+                openFoodFactJSON.load()    
+            } else {
+            
+                activityIndicator.running = false
+                activityIndicator.visible = false
+                PopupUtils.open(messageNoInternet)
+            }
+        }
+    }
+
+    RowLayout {
         Layout.alignment: Qt.AlignCenter
-        LomiriShape{  
+        LomiriShape {  
             Layout.preferredWidth: root.width - units.gu(18)
             Layout.preferredHeight: units.gu(4)
             radius: "large"
             aspect: LomiriShape.Inset
             backgroundColor: app_style.shape.textInput.shapeColor
         
-            TextField{
+            TextField {
                 anchors.fill: parent
-                //overwriteMode: true
                 horizontalAlignment: TextField.AlignHCenter
                 verticalAlignment: TextField.AlignVCenter
                 inputMethodHints: Qt.ImhDigitsOnly
                 color : app_style.label.labelColor 
                 placeholderText: i18n.tr("Enter the code bar here")
-                onTextChanged:{ 
+                onTextChanged: { 
                     manual_barcode = text
                 }
             }
         }
 
-        Timer{
+        Timer {
             id: code_searcher_timer
             interval: 9000
             repeat: true
@@ -69,25 +86,27 @@ ColumnLayout{
             onTriggered: {
                 PopupUtils.open(messageError)
                 code_searcher_timer.stop()
-                activityIndicator.running = false, activityIndicator.visible = false
+                activityIndicator.running = false
+                activityIndicator.visible = false
             }
         }
-        Button{
+
+        Button {
             Layout.preferredWidth: units.gu(8)
             Layout.preferredHeight: units.gu(4)
             Layout.alignment: Qt.AlignCenter
             iconName: "find"
             onClicked: {
-                code_searcher_timer.running = true
-                activityIndicator.running = true, activityIndicator.visible = true
                 if (manual_barcode.length > 0) {
-                    openFoodFactJSON.source = "https://world.openfoodfacts.org/api/v0/product/" + manual_barcode + ".json";
-                    openFoodFactJSON.query = "$[*]"
-                    openFoodFactJSON.load()    
+                    
+                    activityIndicator.running = true
+                    activityIndicator.visible = true
+                    internetChecker.checkInternetConnection()
                 }
             }
         }
-        ActivityIndicator{
+
+        ActivityIndicator {
             id: activityIndicator
             visible: false
             running: false
@@ -95,9 +114,15 @@ ColumnLayout{
         }
     }
 
-    Component{
+    Component {
         id: messageError
-        MessageDialog{msg:i18n.tr("Code not found. Try again, or check  if the code is correct. There's a possibility that the product is not in the database as well. In that case, you can add it manually and go over to OpenFoodsFacts and add it there also.")}
+        MessageDialog { msg: i18n.tr("Code not found. Try again, or check if the code is correct. There's a possibility that the product is not in the database as well. In that case, you can add it manually and go over to OpenFoodsFacts and add it there also.") }
+    }
+
+   
+    Component {
+        id: messageNoInternet
+        MessageDialog { msg: i18n.tr("No Internet Connection. Please activate your internet connection and try again.") }
     }
     
     JSONListModel {
@@ -112,17 +137,19 @@ ColumnLayout{
                 logical_fields.ingestion.protein = (typeof _json.nutriments.proteins_100g == "undefined") ? 0.0 : _json.nutriments.proteins_100g
                 logical_fields.ingestion.carbo = (typeof _json.nutriments.carbohydrates_100g == "undefined") ? 0.0 : _json.nutriments.carbohydrates_100g
                 logical_fields.ingestion.nova_groups = (typeof _json.nova_groups == "undefined") ? "0" : _json.nova_groups
-                activityIndicator.running = false, activityIndicator.visible = false
+                activityIndicator.running = false
+                activityIndicator.visible = false
+                code_searcher_timer.stop()
                 ok_button.visible = true
-            }else{
-                
+            } else {
+                // ...
             }
         }
     }
 
-    BlankSpace{}
+    BlankSpace {}
 
-    Label{
+    Label {
         Layout.alignment: Qt.AlignLeft
         text: i18n.tr("Product name: ") + logical_fields.ingestion.product_name
     }

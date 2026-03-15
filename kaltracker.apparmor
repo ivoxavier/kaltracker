@@ -3,5 +3,5 @@
     "camera",
     "video",
     "push-notification-client"],
-    "policy_version": 20.04
+    "policy_version": 2404.1
 }
