@@ -17,7 +17,6 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
@@ -32,7 +31,6 @@ Canvas {
     height: units.gu(20)
     antialiasing: true
     
-
     property color primaryColor: app_style.chart.circle.calories.inColor
     property color secondaryColor: app_style.chart.circle.calories.outColor
 
@@ -43,17 +41,25 @@ Canvas {
 
     property real minimumValue: 0
     property real maximumValue: 100
-    property real currentValue: (logical_fields.user_profile.plan.cal_consumed / app_settings.rec_cal) * 100
+    
+    property real targetValue: (logical_fields.user_profile.plan.cal_consumed / app_settings.rec_cal) * 100
+    property real currentValue: 0
 
-    // this is the angle that splits the circle in two arcs
-    // first arc is drawn from 0 radians to angle radians
-    // second arc is angle radians to 2*PI radians
     property real angle: (currentValue - minimumValue) / (maximumValue - minimumValue) * 2 * Math.PI
-
-    // we want both circle to start / end at 12 o'clock
-    // without this offset we would start / end at 9 o'clock
     property real angleOffset: -Math.PI / 2
 
+    
+    Behavior on currentValue {
+        enabled: app_settings.is_graphs_animation_enabled 
+        
+        NumberAnimation {
+            duration: 1000 
+            easing.type: Easing.OutCubic 
+        }
+    }
+
+    Component.onCompleted: currentValue = targetValue
+    onTargetValueChanged: currentValue = targetValue
 
     onPrimaryColorChanged: requestPaint()
     onSecondaryColorChanged: requestPaint()
@@ -68,8 +74,6 @@ Canvas {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // First, thinner arc
-        // From angle to 2*PI
-
         ctx.beginPath();
         ctx.lineWidth = units.gu(0.5);
         ctx.strokeStyle = primaryColor;
@@ -81,8 +85,6 @@ Canvas {
         ctx.stroke();
 
         // Second, thicker arc
-        // From 0 to angle
-
         ctx.beginPath();
         ctx.lineWidth = units.gu(1);
         ctx.strokeStyle = canvas.secondaryColor;
@@ -111,4 +113,4 @@ Canvas {
             color : app_style.label.labelColor
         }
     }
-} 
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-15 22:20+0000\n"
+"POT-Creation-Date: 2026-03-16 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,11 @@ msgstr ""
 msgid "Please, wait a few moments"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChart.qml:109
+#: ../qml/components/CaloriesCircleChart.qml:111
 msgid "EXCEED"
 msgstr ""
 
-#: ../qml/components/CaloriesCircleChart.qml:109
+#: ../qml/components/CaloriesCircleChart.qml:111
 msgid "REMAINING"
 msgstr ""
 
@@ -752,15 +752,15 @@ msgstr ""
 msgid "Set Your Ingestion"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:62 ../qml/plugins/ProductMacros.qml:64
+#: ../qml/pages/SetFoodPage.qml:62
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:70 ../qml/plugins/ProductMacros.qml:65
+#: ../qml/pages/SetFoodPage.qml:70
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:78 ../qml/plugins/ProductMacros.qml:66
+#: ../qml/pages/SetFoodPage.qml:78
 msgid "Carbo/100g"
 msgstr ""
 
@@ -901,24 +901,24 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:75
+#: ../qml/plugins/ManualCodeSearch.qml:74
 msgid "Enter the code bar here"
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:121
+#: ../qml/plugins/ManualCodeSearch.qml:119
 msgid ""
 "Code not found. Try again, or check if the code is correct. There's a "
 "possibility that the product is not in the database as well. In that case, "
 "you can add it manually and go over to OpenFoodsFacts and add it there also."
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:127
+#: ../qml/plugins/ManualCodeSearch.qml:125
 msgid ""
 "No Internet Connection. Please activate your internet connection and try "
 "again."
 msgstr ""
 
-#: ../qml/plugins/ManualCodeSearch.qml:156
+#: ../qml/plugins/ManualCodeSearch.qml:154
 msgid "Product name: "
 msgstr ""
 
@@ -991,6 +991,18 @@ msgstr ""
 
 #: ../qml/plugins/ProductDetails.qml:134
 msgid "Ultra-processed foods"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:48
+msgid "Fat"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:121
+msgid "Protein"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:190
+msgid "Carbo"
 msgstr ""
 
 #: ../qml/plugins/ProductNameCalories.qml:39
