@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-15 23:40+0000\n"
+"POT-Creation-Date: 2026-03-15 23:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -752,15 +752,15 @@ msgstr ""
 msgid "Set Your Ingestion"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:62 ../qml/plugins/ProductMacros.qml:64
+#: ../qml/pages/SetFoodPage.qml:62
 msgid "Fat/100g"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:70 ../qml/plugins/ProductMacros.qml:65
+#: ../qml/pages/SetFoodPage.qml:70
 msgid "Protein/100g"
 msgstr ""
 
-#: ../qml/pages/SetFoodPage.qml:78 ../qml/plugins/ProductMacros.qml:66
+#: ../qml/pages/SetFoodPage.qml:78
 msgid "Carbo/100g"
 msgstr ""
 
@@ -991,6 +991,18 @@ msgstr ""
 
 #: ../qml/plugins/ProductDetails.qml:134
 msgid "Ultra-processed foods"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:50
+msgid "Fat"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:127
+msgid "Protein"
+msgstr ""
+
+#: ../qml/plugins/ProductMacros.qml:200
+msgid "Carbo"
 msgstr ""
 
 #: ../qml/plugins/ProductNameCalories.qml:39
