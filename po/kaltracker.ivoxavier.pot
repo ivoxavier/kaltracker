@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-15 23:53+0000\n"
+"POT-Creation-Date: 2026-03-16 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -993,15 +993,15 @@ msgstr ""
 msgid "Ultra-processed foods"
 msgstr ""
 
-#: ../qml/plugins/ProductMacros.qml:50
+#: ../qml/plugins/ProductMacros.qml:48
 msgid "Fat"
 msgstr ""
 
-#: ../qml/plugins/ProductMacros.qml:127
+#: ../qml/plugins/ProductMacros.qml:121
 msgid "Protein"
 msgstr ""
 
-#: ../qml/plugins/ProductMacros.qml:200
+#: ../qml/plugins/ProductMacros.qml:190
 msgid "Carbo"
 msgstr ""
 
