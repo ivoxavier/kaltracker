@@ -1,22 +1,13 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
- *
- * kaltracker is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
@@ -28,26 +19,34 @@ import "../components"
 import "../style"
 import "../../js/UserTable.js" as UserTable
 
-
-
-
-Page{
+Page {
     id: data_analysis_page
     objectName: 'DataAnalysisPage'
+    
     header: PageHeader {
-              //  visible: app_settings.is_page_headers_enabled ? true : false
-                title: i18n.tr("Data Analysis")
-                StyleHints {
-                   /* foregroundColor: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-                }
-        }
+        title: i18n.tr("Data Analysis")
+    }
 
-    BackgroundStyle{}
+    BackgroundStyle {}
+
+
+    Component {
+        id: noAgentDialogComponent
+        Dialog {
+            id: noAgentDialog
+            title: i18n.tr("Agent Not Configured")
+            text: i18n.tr("Please activate and configure at least one AI Agent in the API settings before using this feature.")
+            
+            Button {
+                text: i18n.tr("Close")
+                color: theme.palette.normal.focus
+                onClicked: PopupUtils.close(noAgentDialog)
+            }
+        }
+    }
 
     Flickable {
-
-        anchors{
+        anchors {
             top: parent.header.bottom 
             left: parent.left
             right: parent.right
@@ -57,61 +56,91 @@ Page{
         contentWidth: parent.width
         contentHeight: main_column.height  
 
-        interactive : root.height > root.width ? false : true
+        interactive: root.height > root.width ? false : true
         
-        ColumnLayout{
+        ColumnLayout {
             id: main_column
             width: root.width
             
-            ListItemHeader{
+            ListItemHeader {
                 text_header.title.text: i18n.tr("Ingestions")
                 divider.visible: false
             }
 
-            ListItem{
-                ListItemLayout{
+            ListItem {
+                ListItemLayout {
                     title.text: i18n.tr("Average Calories Consumption")
                     subtitle.text: i18n.tr("By Month")
-                    Icon{
+                    Icon {
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../../assets/average_icon.svg"
-                        height : units.gu(3.8)
+                        source: "../../assets/average_icon.svg"
+                        height: units.gu(3.8)
                     }
-                    ProgressionSlot{}
+                    ProgressionSlot {}
                 }
-                onClicked : page_stack.push(average_calories_page)
+                onClicked: page_stack.push(average_calories_page)
             }
 
-            ListItem{
-                ListItemLayout{
+            ListItem {
+                ListItemLayout {
                     title.text: i18n.tr("Charts")
-                    Icon{
+                    Icon {
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../../assets/graphs_icon.svg"
-                        height : units.gu(3.8)
+                        source: "../../assets/graphs_icon.svg"
+                        height: units.gu(3.8)
                     }
-                    ProgressionSlot{}
+                    ProgressionSlot {}
                 }
-                onClicked : page_stack.push(graphs_page)
+                onClicked: page_stack.push(graphs_page)
             }
 
-
-            ListItemHeader{
+            ListItemHeader {
                 text_header.title.text: i18n.tr("Body Measurements")
                 divider.visible: false
             }
 
-            ListItem{
-                ListItemLayout{
+            ListItem {
+                ListItemLayout {
                     title.text: i18n.tr("Indexes")
-                    Icon{
+                    Icon {
                         SlotsLayout.position: SlotsLayout.Leading
-                        source : "../../assets/body_icon.svg"
-                        height : units.gu(3.8)
+                        source: "../../assets/body_icon.svg"
+                        height: units.gu(3.8)
                     }
-                    ProgressionSlot{}
+                    ProgressionSlot {}
                 }
-                onClicked : page_stack.push(body_measures_page)
+                onClicked: page_stack.push(body_measures_page)
+            }
+
+        
+            ListItemHeader {
+                text_header.title.text: i18n.tr("Agent Analysis")
+                divider.visible: false
+            }
+
+            ListItem {
+                ListItemLayout {
+                    title.text: i18n.tr("Ask Your Agent")
+                    Icon {
+                        SlotsLayout.position: SlotsLayout.Leading
+                        source: "../../assets/ai-agent_icon.svg"
+                        height: units.gu(3.8)
+                    }
+                    ProgressionSlot {}
+                }
+                onClicked: {
+                    
+                    var isAnyAgentActive = app_settings.is_agent_gemini_enabled || 
+                                           app_settings.is_agent_chatgpt_enabled || 
+                                           app_settings.is_agent_claude_enabled;
+                    
+                    if (isAnyAgentActive) {
+                        page_stack.push(ai_agent);
+                    } else {
+                    
+                        PopupUtils.open(noAgentDialogComponent);
+                    }
+                }
             }
         }
     }   

@@ -57,5 +57,18 @@ Settings {
 
     property bool is_token_set : false
 
+    //stores AI Agents configuration
+    property bool is_agent_gemini_enabled: false
+    property string agent_gemini_key: ""
+    property string agent_gemini_model: "gemini-3.5-flash"
+    
+    property bool is_agent_chatgpt_enabled: false
+    property string agent_chatgpt_key: ""
+    property string agent_chatgpt_model: ""
+    
+    property bool is_agent_claude_enabled: false
+    property string agent_claude_key: ""
+    property string agent_claude_model: ""
+
 
 }

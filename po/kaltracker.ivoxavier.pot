@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 22:50+0000\n"
+"POT-Creation-Date: 2026-08-28 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,6 +102,7 @@ msgstr ""
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:63
 #: ../qml/components/DeleteByMonthPop.qml:98
 #: ../qml/components/RemoveRecordsDialog.qml:84
+#: ../qml/pages/OnlineSourcesPage.qml:116
 msgid "Cancel"
 msgstr ""
 
@@ -315,7 +316,33 @@ msgstr ""
 msgid "You Haven't Registed Foods In The Last 5 Days"
 msgstr ""
 
-#: ../qml/pages/AverageCaloriesPage.qml:38 ../qml/pages/DataAnalysisPage.qml:73
+#: ../qml/pages/AiAgent.qml:29
+msgid "Your Agent"
+msgstr ""
+
+#: ../qml/pages/AiAgent.qml:51
+msgid "Error: "
+msgstr ""
+
+#: ../qml/pages/AiAgent.qml:57
+msgid ""
+"Hello! I have analyzed your health and nutrition data. What would you like "
+"to know today?"
+msgstr ""
+
+#: ../qml/pages/AiAgent.qml:94
+msgid "Thinking..."
+msgstr ""
+
+#: ../qml/pages/AiAgent.qml:163
+msgid "Ask a question..."
+msgstr ""
+
+#: ../qml/pages/AiAgent.qml:168
+msgid "Send"
+msgstr ""
+
+#: ../qml/pages/AverageCaloriesPage.qml:38 ../qml/pages/DataAnalysisPage.qml:72
 msgid "Average Calories Consumption"
 msgstr ""
 
@@ -494,28 +521,50 @@ msgstr ""
 msgid "Creating Database..."
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:39 ../qml/pages/MenuPage.qml:105
+#: ../qml/pages/DataAnalysisPage.qml:27 ../qml/pages/MenuPage.qml:105
 msgid "Data Analysis"
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:67 ../qml/pages/ManageDataPage.qml:107
+#: ../qml/pages/DataAnalysisPage.qml:37
+msgid "Agent Not Configured"
+msgstr ""
+
+#: ../qml/pages/DataAnalysisPage.qml:38
+msgid ""
+"Please activate and configure at least one AI Agent in the API settings "
+"before using this feature."
+msgstr ""
+
+#: ../qml/pages/DataAnalysisPage.qml:41
+msgid "Close"
+msgstr ""
+
+#: ../qml/pages/DataAnalysisPage.qml:66 ../qml/pages/ManageDataPage.qml:107
 msgid "Ingestions"
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:74
+#: ../qml/pages/DataAnalysisPage.qml:73
 msgid "By Month"
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:87 ../qml/pages/SettingsPage.qml:120
+#: ../qml/pages/DataAnalysisPage.qml:86 ../qml/pages/SettingsPage.qml:120
 msgid "Charts"
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:100
+#: ../qml/pages/DataAnalysisPage.qml:98
 msgid "Body Measurements"
 msgstr ""
 
-#: ../qml/pages/DataAnalysisPage.qml:106
+#: ../qml/pages/DataAnalysisPage.qml:104
 msgid "Indexes"
+msgstr ""
+
+#: ../qml/pages/DataAnalysisPage.qml:117
+msgid "Agent Analysis"
+msgstr ""
+
+#: ../qml/pages/DataAnalysisPage.qml:123
+msgid "Ask Your Agent"
 msgstr ""
 
 #: ../qml/pages/DeleteTodayIngestionPage.qml:39
@@ -696,20 +745,48 @@ msgstr ""
 msgid "Empty List, Please Register Notes First.."
 msgstr ""
 
-#: ../qml/pages/OnlineSourcesPage.qml:33
+#: ../qml/pages/OnlineSourcesPage.qml:25
 msgid "Aplication Programming Interface"
 msgstr ""
 
-#: ../qml/pages/OnlineSourcesPage.qml:61
+#: ../qml/pages/OnlineSourcesPage.qml:35
+msgid "Manage AI Agents"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:81
+msgid "Model version (e.g. gemini-1.5-flash)"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:89
+msgid "Enter %1 API Key"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:100
+msgid "Save"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:142
 msgid "Application Programming Interface"
 msgstr ""
 
-#: ../qml/pages/OnlineSourcesPage.qml:68
+#: ../qml/pages/OnlineSourcesPage.qml:149
 msgid "OpenFoodsFacts"
 msgstr ""
 
-#: ../qml/pages/OnlineSourcesPage.qml:70
+#: ../qml/pages/OnlineSourcesPage.qml:151
 msgid "Search For Barcode In %1"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:166
+msgid "AI Agents"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:173
+msgid "Agents Keys"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:175
+msgid "Manage Your Agents Keys"
 msgstr ""
 
 #: ../qml/pages/QuickAdditionPage.qml:39 ../qml/pages/SetFoodPage.qml:44

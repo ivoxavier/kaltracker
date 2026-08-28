@@ -213,6 +213,12 @@ MainView {
         ScanPage{}
     }
 
+    //AiAgent, opens a chat with the ai agent set by the user
+    Component{
+        id: ai_agent
+        AiAgent{}
+    }
+
     Component.onCompleted:{
         if(app_settings.is_clean_install){
             //new install || not configured
