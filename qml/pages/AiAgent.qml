@@ -29,8 +29,33 @@ Page {
         title: i18n.tr("Your Agent")
     }
 
+<<<<<<< Updated upstream
     ListModel {
         id: chatModel
+=======
+    ListModel {id: chatModel}
+
+    property string aiPrompt: ""
+    property string pendingUserMessage: ""
+
+    InternetChecker {
+        id: internetChecker
+        onInternetStatusChanged: {
+            if (isConnected) {
+                var activeProvider = "gemini";
+                var apiKey = app_settings.agent_gemini_key; 
+                var modelName = app_settings.agent_gemini_model;
+                aiBackend.sendMessage(activeProvider, apiKey, modelName, aiPrompt, pendingUserMessage);
+                pendingUserMessage = "";
+            } else {
+                if (chatModel.get(chatModel.count - 1).role === "agent_loading") {
+                    chatModel.remove(chatModel.count - 1);
+                }
+                chatModel.append({"role": "agent", "text": i18n.tr("Error: No internet connection. Please check your network and try again.")});
+                pendingUserMessage = "";
+            }
+        }
+>>>>>>> Stashed changes
     }
 
     property string systemContextPrompt: ""
@@ -53,11 +78,11 @@ Page {
     }
 
     Component.onCompleted: {
-        buildSystemContext();
+        getUserProfileContext();
         chatModel.append({"role": "agent", "text": i18n.tr("Hello! I have analyzed your health and nutrition data. What would you like to know today?")});
     }
 
-    function buildSystemContext() {
+    function getUserProfileContext() {
         var sex = UserData.getSexAtBirth() == "0" ? "M" : "W";
         var age = UserData.getAge();
         var goal = UserData.getGoal();
@@ -69,7 +94,7 @@ Page {
         var ap_lo = UserData.getApLo();
         var weightHistory = GetData.getWeightTracker();
 
-        systemContextPrompt = "You are a health and nutrition AI assistant inside the Kaltracker app. " +
+        aiPrompt = "You are a health and nutrition AI assistant inside the Kaltracker app. " +
                       "Here is the user's current data context:\n" +
                       "- Sex: " + sex + "\n" +
                       "- Age: " + age + " years\n" +
