@@ -381,6 +381,24 @@ function getNotes() {
 }
 
 
+
+function getWeightTracker(){
+  var get_weight = 'SELECT weight FROM weight_tracker wt \
+  ORDER BY wt.date ASC'
+  var db = connectDB();
+  var rs = "";
+  db.transaction(function(tx) {
+    rs = tx.executeSql(get_weight);
+  });
+  
+  var weight_values = [];
+  for(var i =0;i < rs.rows.length;i++) {
+    weight_values.push(rs.rows.item(i).weight);
+  }
+  
+  return weight_values;
+}
+
   /*Charts*/
 
   /*Axis: for Weight Tracker  --start--*/

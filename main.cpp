@@ -5,6 +5,7 @@
 #include <QQuickView>
 #include "QZXing.h"
 #include "internetchecker/internetchecker.h"
+#include "aiagent/askyouragent.h"
 #include <iostream>
 #include "git_tag.h"
 
@@ -16,6 +17,7 @@ int main(int argc, char *argv[]) {
    QCoreApplication::setApplicationVersion(QStringLiteral(BUILD_VERSION));
    
    qmlRegisterType<InternetChecker>("InternetChecker", 0, 1, "InternetChecker");
+   qmlRegisterType<AskYourAgent>("AiAgents", 0, 1, "AskYourAgent");
 
    QZXing::registerQMLTypes();
 

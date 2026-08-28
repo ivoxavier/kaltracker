@@ -62,7 +62,8 @@ include_directories(qzxing/src/zxing)
 include_directories("${PROJECT_BINARY_DIR}")
 
 set(SOURCES main.cpp
-internetchecker/internetchecker.cpp)
+internetchecker/internetchecker.cpp
+aiagent/askyouragent.cpp)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
