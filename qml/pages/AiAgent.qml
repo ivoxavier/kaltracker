@@ -20,6 +20,7 @@ import "../logicalFields"
 import "../../js/GetData.js" as GetData
 import "../../js/UserTable.js" as UserData
 import AiAgents 0.1
+import InternetChecker 0.1
 
 Page {
     id: ai_agent
@@ -29,11 +30,9 @@ Page {
         title: i18n.tr("Your Agent")
     }
 
-<<<<<<< Updated upstream
     ListModel {
         id: chatModel
-=======
-    ListModel {id: chatModel}
+    }
 
     property string aiPrompt: ""
     property string pendingUserMessage: ""
@@ -55,12 +54,8 @@ Page {
                 pendingUserMessage = "";
             }
         }
->>>>>>> Stashed changes
     }
 
-    property string systemContextPrompt: ""
-
-    
     AskYourAgent {
         id: aiBackend
         onResponseReceived: function(response) {
@@ -105,24 +100,16 @@ Page {
                       "- Blood Pressure (Sys/Dia): " + ap_hi + "/" + ap_lo + "\n" +
                       "- Weight History over time (kg): " + weightHistory.join(", ") + "\n\n" +
                       "Answer the user's questions taking these metrics into account. Keep answers concise and helpful.";
-                      console.log(systemContextPrompt);
     }
 
     function sendMessage() {
         if (messageInput.text.trim() === "") return;
 
-        var userMessage = messageInput.text;
-        chatModel.append({"role": "user", "text": userMessage});
+        pendingUserMessage = messageInput.text;
+        chatModel.append({"role": "user", "text": pendingUserMessage});
         messageInput.text = "";
-
-
         chatModel.append({"role": "agent_loading", "text": i18n.tr("Thinking...")});
-
-        var activeProvider = "gemini";
-        var apiKey = app_settings.agent_gemini_key; 
-        var modelName = app_settings.agent_gemini_model;
-        
-        aiBackend.sendMessage(activeProvider, apiKey, modelName, systemContextPrompt, userMessage);
+        internetChecker.checkInternetConnection();
     }
 
     ColumnLayout {
@@ -162,7 +149,6 @@ Page {
                         id: msgText
                         text: model.text
                         wrapMode: Text.Wrap
-                        
                         width: Math.min(implicitWidth, chatView.width * 0.8 - units.gu(4))
                         anchors.centerIn: parent
                         color: model.role === "user" ? "white" : theme.palette.normal.baseText
@@ -188,7 +174,6 @@ Page {
                     placeholderText: i18n.tr("Ask a question...")
                     onAccepted: sendMessage()
                 }
-
                 Button {
                     text: i18n.tr("Send")
                     color: theme.palette.normal.focus
