@@ -1,5 +1,5 @@
 '''
- * 2022  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,11 +16,11 @@
 
 import os
 
-SHAREPATH = "%s/kaltracker.ivoxavier/" % os.environ["XDG_DATA_HOME"]
+XDG_DATA_HOME = os.environ.get("XDG_DATA_HOME", os.path.expanduser("~/.local/share"))
+SHAREPATH = os.path.join(XDG_DATA_HOME, "kaltracker.ivoxavier") + "/"
 DBPATH = SHAREPATH + "Databases/baabdb5fba30cf6014354be8893cdf5c.sqlite"
 EXPORTPATH = SHAREPATH + "Export/"
 IMPORTPATH = SHAREPATH + "Import/"
-
 
 EXPORT_CSV_USER = EXPORTPATH + 'user_table.csv'
 EXPORT_CSV_INGESTIONS = EXPORTPATH + 'ingestions_table.csv'
@@ -33,12 +33,12 @@ IMPORT_CSV_WATER = IMPORTPATH + 'water_tracker_table.csv'
 
 if not os.path.exists(EXPORTPATH):
     try:
-        os.makedirs(EXPORTPATH)
+        os.makedirs(EXPORTPATH, exist_ok=True)
     except Exception as e:
-        print("Can't create dir:\n"+EXPORTPATH)
+        print("Can't create dir:\n" + EXPORTPATH)
 
 if not os.path.exists(IMPORTPATH):
     try:
-        os.makedirs(IMPORTPATH)
+        os.makedirs(IMPORTPATH, exist_ok=True)
     except Exception as e:
-        print("Can't create dir:\n"+IMPORTPATH)
+        print("Can't create dir:\n" + IMPORTPATH)

@@ -30,14 +30,14 @@ class Streams:
     
     @staticmethod
     def kcal_consumption():
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        cursor.execute(sql_statements.TOTAL_CAL)
-        return cursor.fetchall()
+        with sqlite3.connect(glob.DBPATH) as db:
+            cursor = db.cursor()
+            cursor.execute(sql_statements.TOTAL_CAL)
+            return cursor.fetchall()
     
     @staticmethod
     def days_without_reg():
-        db = sqlite3.connect(glob.DBPATH)
-        cursor = db.cursor()
-        cursor.execute(sql_statements.DAYS_WITHOUT_REG)
-        return cursor.fetchall()
+        with sqlite3.connect(glob.DBPATH) as db:
+            cursor = db.cursor()
+            cursor.execute(sql_statements.DAYS_WITHOUT_REG)
+            return cursor.fetchall()

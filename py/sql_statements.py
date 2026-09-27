@@ -14,9 +14,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  '''
 
-#gets the sum of calories registed in the app
-TOTAL_CAL = 'SELECT SUM(cal) FROM ingestions'
+# Gets the sum of calories registered in the app (returns 0 instead of None if empty)
+TOTAL_CAL = "SELECT COALESCE(SUM(cal), 0) FROM ingestions"
 
-#to verify if has been ingestions in the app
+# To verify if there have been ingestions in the app in the last 5 days
 DAYS_WITHOUT_REG = "SELECT COUNT(*) FROM ingestions WHERE DATE(date) > DATE('now', '-5 day')"
 
