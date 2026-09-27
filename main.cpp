@@ -6,6 +6,7 @@
 #include "QZXing.h"
 #include "internetchecker/internetchecker.h"
 #include "aiagent/askyouragent.h"
+#include "chatsupport/chatsupport.h"
 #include <iostream>
 #include "git_tag.h"
 
@@ -18,6 +19,8 @@ int main(int argc, char *argv[]) {
    
    qmlRegisterType<InternetChecker>("InternetChecker", 0, 1, "InternetChecker");
    qmlRegisterType<AskYourAgent>("AiAgents", 0, 1, "AskYourAgent");
+   qmlRegisterType<ChatSupport>("ChatSupport", 0, 1, "ChatSupport");
+
 
    QZXing::registerQMLTypes();
 

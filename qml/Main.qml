@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier 
+ * 2022-2026  Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -216,8 +216,35 @@ MainView {
     //AiAgent, opens a chat with the ai agent set by the user
     Component{
         id: ai_agent
-        AiAgent{}
+        AiAgentPage{}
     }
+
+    Component{
+        id: chat_support_page
+        ChatSupportPage{}
+    }
+
+
+    Component{
+        id: manage_subscription_page
+        ManageSubscriptionPage{}
+    }
+
+    Component{
+        id: create_account_page
+        CreateAccountPage{}
+    }
+
+    Component{
+        id: admin_chats_page
+        AdminChatsPage{}
+    }
+
+    Component{
+        id: chat_room_page
+        ChatRoomPage{}
+    }
+
 
     Component.onCompleted:{
         if(app_settings.is_clean_install){

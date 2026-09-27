@@ -71,4 +71,11 @@ Settings {
     property string agent_claude_model: ""
 
 
+    //stores the Chat Support configuration
+    property bool is_chat_support_enabled: false
+    property string chat_user_email : ""
+    property string chat_username : ""
+    property string is_chat_logged_in : ""
+    property bool is_chat_subscribed : false
+
 }
