@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 09:41+0000\n"
+"POT-Creation-Date: 2026-09-27 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -534,7 +534,7 @@ msgid "KG"
 msgstr ""
 
 #: ../qml/pages/BodyMeasuresPage.qml:136
-#: ../qml/pages/UpdateUserValuesPage.qml:45
+#: ../qml/pages/UpdateUserValuesPage.qml:44
 msgid "Blood Pressure"
 msgstr ""
 
@@ -1185,32 +1185,32 @@ msgstr ""
 msgid "Icons"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:43
+#: ../qml/pages/UpdateUserValuesPage.qml:42
 #: ../qml/pages/UserProfileConfigPage.qml:36
 msgid "Objective"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:44 ../qml/plugins/SexAge.qml:114
+#: ../qml/pages/UpdateUserValuesPage.qml:43 ../qml/plugins/SexAge.qml:114
 msgid "Age"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:45
+#: ../qml/pages/UpdateUserValuesPage.qml:44
 #: ../qml/pages/UserProfileConfigPage.qml:37
 msgid "Height & Weight"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:101
-#: ../qml/pages/UserProfileConfigPage.qml:100
+#: ../qml/pages/UpdateUserValuesPage.qml:95
+#: ../qml/pages/UserProfileConfigPage.qml:95
 msgid "loose"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:106
-#: ../qml/pages/UserProfileConfigPage.qml:105
+#: ../qml/pages/UpdateUserValuesPage.qml:100
+#: ../qml/pages/UserProfileConfigPage.qml:100
 msgid "gain"
 msgstr ""
 
-#: ../qml/pages/UpdateUserValuesPage.qml:116
-#: ../qml/pages/UserProfileConfigPage.qml:115
+#: ../qml/pages/UpdateUserValuesPage.qml:111
+#: ../qml/pages/UserProfileConfigPage.qml:111
 msgid ""
 "Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n"
 "\n"
@@ -1225,7 +1225,7 @@ msgstr ""
 msgid "Sex & Age"
 msgstr ""
 
-#: ../qml/pages/UserProfileConfigPage.qml:55
+#: ../qml/pages/UserProfileConfigPage.qml:52
 msgid "Calculate"
 msgstr ""
 

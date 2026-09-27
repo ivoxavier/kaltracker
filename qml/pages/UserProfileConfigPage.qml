@@ -1,5 +1,5 @@
 /*
- * 2022-2023 Ivo Xavier
+ * 2022-2026 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,66 +26,61 @@ import "../components"
 import "../style"
 import "../plugins"
 
-
-Page{
+Page {
     id: user_profile_config_page
     objectName: 'UserProfileConfigPage'
+
     header: PageHeader {
         visible: true
         title: swipe_view.currentIndex == 0 ?
-        i18n.tr("Objective") : swipe_view.currentIndex == 1 ?
-        i18n.tr("Sex & Age") : i18n.tr("Height & Weight")
-        
+            i18n.tr("Objective") : swipe_view.currentIndex == 1 ?
+            i18n.tr("Sex & Age") : i18n.tr("Height & Weight")
 
-        StyleHints {
-          /*  foregroundColor: "white"
-            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-        }
+        StyleHints {}
 
         ActionBar {
             id: head_action_bar
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             visible: false
-            StyleHints {backgroundColor: app_style.mainView.backgroundColor}
+            StyleHints { backgroundColor: app_style.mainView.backgroundColor }
 
             numberOfSlots: 1
-            actions:[  Action{
+            actions: [
+                Action {
                     iconName: "tick"
                     text: i18n.tr("Calculate")
-                    onTriggered: PopupUtils.open(calculate_recommended_calories_dialog)  
+                    onTriggered: PopupUtils.open(calculate_recommended_calories_dialog)
                 }
             ]
         }
-
     }
 
-    BackgroundStyle{}
+    BackgroundStyle {}
 
-    function showTick(){
-        //assign true if all values from Object are set to true
+    function showTick() {
         var is_user_profile_set = Object.values(user_profile_config_page.user_profile).every(
-                    value => value === true
+            value => value === true
         )
-        
-        if(is_user_profile_set){
+
+        if (is_user_profile_set) {
             head_action_bar.visible = true
             timer_profile_config.running = false
         }
     }
 
-    Timer{
+    Timer {
         id: timer_profile_config
-        interval: 200; running: true; repeat: true
+        interval: 200
+        running: true
+        repeat: true
         onTriggered: showTick()
     }
-  
-    //when true this property triggers the dialog propomt user to select how we would like to loose or gain weight
+
     property bool is_loose_weight: false
     property bool is_gain_weight: false
-    
-    //Object that when all its values became true make 'tick' icon availabe
-    property var user_profile:({
+
+    property var user_profile: ({
         plan: false,
         activity: false,
         sex: false,
@@ -94,75 +89,103 @@ Page{
         height: false
     })
 
-    /*  Dialogs */
-    Component{
+    /* Dialogs */
+    Component {
         id: loose_weight_definition_dialog
-        GoalDefinitionDialog{type_of_goal: i18n.tr("loose")}
+        GoalDefinitionDialog { type_of_goal: i18n.tr("loose") }
     }
 
-    Component{
+    Component {
         id: gain_weight_definition_dialog
-        GoalDefinitionDialog{type_of_goal: i18n.tr("gain")}
+        GoalDefinitionDialog { type_of_goal: i18n.tr("gain") }
     }
 
-    Component{
+    Component {
         id: calculate_recommended_calories_dialog
-        RecommendedCaloriesDialog{}
+        RecommendedCaloriesDialog {}
     }
-    
-    Component{
+
+    Component {
         id: help_dialog
-        MessageDialog{msg: i18n.tr("Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n\nLight Include: Walking 5 km, House Cleaning, Golf.\n\nModerate Include: Walking 6 km, Dancing, Tennis, Cycling.\n\nHeavy Include: Running, Soccer, Basketball, Football.")}
+        MessageDialog {
+            msg: i18n.tr("Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n\nLight Include: Walking 5 km, House Cleaning, Golf.\n\nModerate Include: Walking 6 km, Dancing, Tennis, Cycling.\n\nHeavy Include: Running, Soccer, Basketball, Football.")
+        }
     }
 
-     
-    QQC2.SwipeView{
+    QQC2.SwipeView {
         id: swipe_view
-        currentIndex:0
-        anchors.top:parent.header.bottom
-        anchors.bottom: parent.bottom
-        width: parent.width
-        height: parent.height
-        
-        Item{
-            //index 0
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: planActivity.implicitHeight
+        currentIndex: 0
+        clip: true
+        anchors {
+            top: parent.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: swipe_view_indicator.top
+        }
 
-                PlanActivity{id:planActivity}
+        onWidthChanged: {
+            if (width > 0 && contentItem && typeof contentItem.forceLayout === "function") {
+                contentItem.forceLayout()
             }
         }
-        Item{
-            //index 1
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: sexAge.implicitHeight
-                interactive: false
 
-                SexAge{id:sexAge}
+        Item {
+            // index 0
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(planActivity.implicitHeight, planActivity.childrenRect.height)
+                interactive: true
+                clip: true
+
+                PlanActivity {
+                    id: planActivity
+                    width: parent.width
+                }
             }
         }
-        Item{
-            //index 2
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: heightWeight.implicitHeight
-                interactive: false
 
-                HeightWeight{id:heightWeight}
+        Item {
+            // index 1
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(sexAge.implicitHeight, sexAge.childrenRect.height)
+                interactive: false
+                clip: true
+
+                SexAge {
+                    id: sexAge
+                    width: parent.width
+                }
+            }
+        }
+
+        Item {
+            // index 2
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(heightWeight.implicitHeight, heightWeight.childrenRect.height)
+                interactive: false
+                clip: true
+
+                HeightWeight {
+                    id: heightWeight
+                    width: parent.width
+                }
             }
         }
     }
 
-    QQC2.PageIndicator{
+    QQC2.PageIndicator {
         id: swipe_view_indicator
         count: swipe_view.count
         currentIndex: swipe_view.currentIndex
         anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter   
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }

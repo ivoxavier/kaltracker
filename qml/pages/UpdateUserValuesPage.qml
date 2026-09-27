@@ -1,5 +1,5 @@
 /*
- * 2022-2023 Ivo Xavier
+ * 2022-2026 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,56 +33,50 @@ import "../../js/UpdateUserTable.js" as UpdateUserTable
 import "../../js/RecommendedCalories.js" as RecommendedCalories
 import "../../js/DefineGoalCalories.js" as DefinePeriod
 
-
-Page{
+Page {
     id: update_user_values_page
     objectName: 'UpdateUserValuesPage'
-    header: PageHeader {
 
+    header: PageHeader {
         title: swipe_view.currentIndex == 0 ?
-        i18n.tr("Objective") : swipe_view.currentIndex == 1 ?
-        i18n.tr("Age") : swipe_view.currentIndex == 2 ?
-        i18n.tr("Height & Weight") :i18n.tr("Blood Pressure")
-        StyleHints {
-            /*foregroundColor: "white"
-            backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-        }
+            i18n.tr("Objective") : swipe_view.currentIndex == 1 ?
+            i18n.tr("Age") : swipe_view.currentIndex == 2 ?
+            i18n.tr("Height & Weight") : i18n.tr("Blood Pressure")
+        StyleHints {}
     }
 
-    BackgroundStyle{}
+    BackgroundStyle {}
 
+    property bool is_loose_weight: false
+    property bool is_gain_weight: false
 
-    property bool is_loose_weight : false
-    property bool is_gain_weight : false
-
-
-    function showTick(){
-        //assign true if all values from Object are set to true
+    function showTick() {
         var is_user_profile_set = Object.values(update_user_values_page.user_profile).every(
-                    value => value === true
+            value => value === true
         )
-        
-        if(is_user_profile_set){
+
+        if (is_user_profile_set) {
             tick_user_detais.visible = true
         }
 
         var is_blood_pressure_set = Object.values(update_user_values_page.blood_pressure).every(
-                    value => value === true
+            value => value === true
         )
 
-        if(is_blood_pressure_set){
+        if (is_blood_pressure_set) {
             tick_user_blood_pressure.visible = true
         }
     }
 
-    Timer{
+    Timer {
         id: timer_profile_config
-        interval: 200; running: true; repeat: true
+        interval: 200
+        running: true
+        repeat: true
         onTriggered: showTick()
     }
 
-    //Object that when all its values became true make 'tick' icon availabe
-    property var user_profile:({
+    property var user_profile: ({
         plan: false,
         activity: false,
         age: false,
@@ -90,107 +84,140 @@ Page{
         height: false
     })
 
-    property var blood_pressure:({
+    property var blood_pressure: ({
         ap_hi: false,
         ap_lo: false
     })
 
-    /*  Dialogs */
-    Component{
+    /* Dialogs */
+    Component {
         id: loose_weight_definition_dialog
-        GoalDefinitionDialog{type_of_goal: i18n.tr("loose")}
+        GoalDefinitionDialog { type_of_goal: i18n.tr("loose") }
     }
 
-    Component{
+    Component {
         id: gain_weight_definition_dialog
-        GoalDefinitionDialog{type_of_goal: i18n.tr("gain")}
+        GoalDefinitionDialog { type_of_goal: i18n.tr("gain") }
     }
 
-    Component{
+    Component {
         id: calculate_recommended_calories_dialog
-        RecommendedCaloriesDialog{}
+        RecommendedCaloriesDialog {}
     }
-    
-    Component{
+
+    Component {
         id: help_dialog
-        MessageDialog{msg: i18n.tr("Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n\nLight Include: Walking 5 km, House Cleaning, Golf.\n\nModerate Include: Walking 6 km, Dancing, Tennis, Cycling.\n\nHeavy Include: Running, Soccer, Basketball, Football.")}
+        MessageDialog {
+            msg: i18n.tr("Very Light Include: Driving, Typing, Sewing, Ironing, Cooking.\n\nLight Include: Walking 5 km, House Cleaning, Golf.\n\nModerate Include: Walking 6 km, Dancing, Tennis, Cycling.\n\nHeavy Include: Running, Soccer, Basketball, Football.")
+        }
     }
 
-    Component{
+    Component {
         id: state_updating_blood_pressure_dialog
-        UpdateUserBloodPressureDialog{}
+        UpdateUserBloodPressureDialog {}
     }
-    
-    QQC2.SwipeView{
+
+    QQC2.SwipeView {
         id: swipe_view
-        currentIndex:0
-        anchors.top:parent.header.bottom
-        anchors.bottom: parent.bottom
-        width: parent.width
-        height: parent.height
-        
-        Item{
-            //index 0
-            Flickable{
+        currentIndex: 0
+        clip: true
+        anchors {
+            top: parent.header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: swipe_view_indicator.top
+        }
+        onWidthChanged: {
+            if (width > 0 && contentItem && typeof contentItem.forceLayout === "function") {
+                contentItem.forceLayout()
+            }
+        }
+
+        Item {
+            // index 0
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
                 anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: planActivity.implicitHeight
+                contentWidth: width
+                contentHeight: Math.max(planActivity.implicitHeight, planActivity.childrenRect.height)
                 interactive: true
+                clip: true
 
-                PlanActivity{id:planActivity}
+                PlanActivity {
+                    id: planActivity
+                    width: parent.width
+                }
             }
         }
-        Item{
-            //index 1
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: sexAge.implicitHeight
-                interactive: false
 
-                SexAge{id:sexAge}
+        Item {
+            // index 1
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(sexAge.implicitHeight, sexAge.childrenRect.height)
+                interactive: false
+                clip: true
+
+                SexAge {
+                    id: sexAge
+                    width: parent.width
+                }
             }
         }
-        Item{
-            //index 2
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: heightWeight.implicitHeight
-                interactive: false
 
-                HeightWeight{id:heightWeight}
+        Item {
+            // index 2
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(heightWeight.implicitHeight, heightWeight.childrenRect.height)
+                interactive: false
+                clip: true
+
+                HeightWeight {
+                    id: heightWeight
+                    width: parent.width
+                }
             }
         }
-        Item{
-            //index 3
-            Flickable{
-                anchors.fill: parent
-                contentWidth: swipe_view.width
-                contentHeight: bloodPressure.implicitHeight
-                interactive: false
 
-                BloodPressure{id:bloodPressure}
+        Item {
+            // index 3
+            opacity: QQC2.SwipeView.isCurrentItem ? 1.0 : 0.0
+            Flickable {
+                anchors.fill: parent
+                contentWidth: width
+                contentHeight: Math.max(bloodPressure.implicitHeight, bloodPressure.childrenRect.height)
+                interactive: false
+                clip: true
+
+                BloodPressure {
+                    id: bloodPressure
+                    width: parent.width
+                }
             }
         }
     }
 
-    QQC2.PageIndicator{
+    QQC2.PageIndicator {
         id: swipe_view_indicator
         count: swipe_view.count
         currentIndex: swipe_view.currentIndex
         anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter   
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    RowAbstractUpdateButton{
+    RowAbstractUpdateButton {
         id: tick_user_detais
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         visible: false
     }
 
-    RowAbstractUpdateBloodPressureButton{
+    RowAbstractUpdateBloodPressureButton {
         id: tick_user_blood_pressure
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: tick_user_detais.visible ? tick_user_detais.top : parent.bottom
