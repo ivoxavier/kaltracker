@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-28 19:35+0000\n"
+"POT-Creation-Date: 2026-09-27 08:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,6 +102,9 @@ msgstr ""
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:63
 #: ../qml/components/DeleteByMonthPop.qml:98
 #: ../qml/components/RemoveRecordsDialog.qml:84
+#: ../qml/pages/ManageSubscriptionPage.qml:117
+#: ../qml/pages/ManageSubscriptionPage.qml:141
+#: ../qml/pages/ManageSubscriptionPage.qml:214
 #: ../qml/pages/OnlineSourcesPage.qml:116
 msgid "Cancel"
 msgstr ""
@@ -222,19 +225,19 @@ msgstr ""
 msgid "How Many Days Ago:"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:235
+#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:279
 msgid "Breakfast"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:257
+#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:301
 msgid "Dinner"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:246
+#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:290
 msgid "Lunch"
 msgstr ""
 
-#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:268
+#: ../qml/components/MealFilterDialog.qml:67 ../qml/pages/HomePage.qml:312
 msgid "Snacks"
 msgstr ""
 
@@ -316,29 +319,67 @@ msgstr ""
 msgid "You Haven't Registed Foods In The Last 5 Days"
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:29
+#: ../qml/pages/AdminChatsPage.qml:26
+msgid "Support Chats"
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:30 ../qml/pages/ChatRoomPage.qml:32
+#: ../qml/pages/ChatSupportPage.qml:36
+msgid "Refresh"
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:66
+msgid "No active user chats found."
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:88 ../qml/pages/MenuPage.qml:82
+msgid "User"
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:91
+msgid "No messages yet"
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:92
+msgid "You: "
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:106
+msgid "FREE"
+msgstr ""
+
+#: ../qml/pages/AdminChatsPage.qml:106
+msgid "PRO"
+msgstr ""
+
+#: ../qml/pages/AiAgentPage.qml:30
 msgid "Your Agent"
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:51
+#: ../qml/pages/AiAgentPage.qml:53 ../qml/pages/ChatSupportPage.qml:83
+msgid "Error: No internet connection. Please check your network and try again."
+msgstr ""
+
+#: ../qml/pages/AiAgentPage.qml:71
 msgid "Error: "
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:57
+#: ../qml/pages/AiAgentPage.qml:77
 msgid ""
 "Hello! I have analyzed your health and nutrition data. What would you like "
 "to know today?"
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:94
+#: ../qml/pages/AiAgentPage.qml:111
 msgid "Thinking..."
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:163
+#: ../qml/pages/AiAgentPage.qml:174
 msgid "Ask a question..."
 msgstr ""
 
-#: ../qml/pages/AiAgent.qml:168
+#: ../qml/pages/AiAgentPage.qml:178 ../qml/pages/ChatRoomPage.qml:171
+#: ../qml/pages/ChatSupportPage.qml:176
 msgid "Send"
 msgstr ""
 
@@ -517,6 +558,54 @@ msgstr ""
 msgid "Hypertensive Crisis"
 msgstr ""
 
+#: ../qml/pages/ChatRoomPage.qml:20 ../qml/pages/HomePage.qml:141
+#: ../qml/pages/ManageSubscriptionPage.qml:279
+#: ../qml/pages/ManageSubscriptionPage.qml:438
+#: ../qml/pages/OnlineSourcesPage.qml:197
+msgid "KalTracker Team"
+msgstr ""
+
+#: ../qml/pages/ChatRoomPage.qml:165 ../qml/pages/ChatSupportPage.qml:172
+msgid "Write a message..."
+msgstr ""
+
+#: ../qml/pages/ChatSupportPage.qml:32
+#: ../qml/pages/ManageSubscriptionPage.qml:33
+#: ../qml/pages/OnlineSourcesPage.qml:190
+msgid "Chat Support"
+msgstr ""
+
+#: ../qml/pages/ChatSupportPage.qml:66
+msgid "Error: Could not send message."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:22
+#: ../qml/pages/ManageSubscriptionPage.qml:323
+msgid "Create Account"
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:64
+#: ../qml/pages/ManageSubscriptionPage.qml:97
+msgid "Email"
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:71
+msgid "Username"
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:77
+#: ../qml/pages/ManageSubscriptionPage.qml:103
+msgid "Password"
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:84
+msgid "Register"
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:93
+msgid "Please fill in all fields."
+msgstr ""
+
 #: ../qml/pages/CreateStoragePage.qml:77
 msgid "Creating Database..."
 msgstr ""
@@ -589,47 +678,47 @@ msgstr ""
 msgid "Foods Distribution By Nutriscore"
 msgstr ""
 
-#: ../qml/pages/HomePage.qml:83
+#: ../qml/pages/HomePage.qml:84
 msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/pages/HomePage.qml:132
+#: ../qml/pages/HomePage.qml:176
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/pages/HomePage.qml:151
+#: ../qml/pages/HomePage.qml:195
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/pages/HomePage.qml:166
+#: ../qml/pages/HomePage.qml:210
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/pages/HomePage.qml:176
+#: ../qml/pages/HomePage.qml:220
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../qml/pages/HomePage.qml:187
+#: ../qml/pages/HomePage.qml:231
 msgid "PROTEIN"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../qml/pages/HomePage.qml:238 ../qml/pages/HomePage.qml:249
-#: ../qml/pages/HomePage.qml:260 ../qml/pages/HomePage.qml:271
+#: ../qml/pages/HomePage.qml:282 ../qml/pages/HomePage.qml:293
+#: ../qml/pages/HomePage.qml:304 ../qml/pages/HomePage.qml:315
 #: ../qml/pages/ListFoodsIngestedMonthPage.qml:80
 msgid "%1 calories"
 msgstr ""
 
-#: ../qml/pages/HomePage.qml:330
+#: ../qml/pages/HomePage.qml:373
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../qml/pages/HomePage.qml:339
+#: ../qml/pages/HomePage.qml:382
 msgid "Your Previous Ingestions"
 msgstr ""
 
@@ -693,6 +782,155 @@ msgstr ""
 msgid "All Records"
 msgstr ""
 
+#: ../qml/pages/ManageSubscriptionPage.qml:37
+msgid "Refresh Status"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:93
+msgid "Sign In"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:108
+msgid "Login"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:128
+#: ../qml/pages/ManageSubscriptionPage.qml:383
+msgid "Delete Account"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:129
+msgid ""
+"Are you sure you want to permanently delete your account and all chat "
+"history? This action cannot be undone."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:132
+msgid "Delete Permanently"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:152
+msgid "Payment Instructions"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:153
+msgid ""
+"To activate your monthly Chat Support subscription (%1 / month), please "
+"complete the payment using the details below:"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:175
+msgid "1. Send %1 via PayPal."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:182
+msgid ""
+"2. IMPORTANT: Include your account email (%1) in the payment note so we can "
+"identify your account."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:190
+msgid ""
+"3. Click the button below after completing the transfer. Your subscription "
+"will be activated as soon as we verify the payment."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:196
+msgid "Open PayPal (%1)"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:205
+msgid "I Have Made the Payment"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:287
+msgid "Step 1: Account Required"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:288
+msgid "Monthly Subscription Active"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:289
+msgid "Step 2: Verification Pending"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:290
+msgid "Step 2: Payment Required (%1 / month)"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:300
+msgid "Create an account or sign in to subscribe to Chat Support (%1 / month)."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:301
+msgid "Monthly renewal date: %1"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:302
+msgid ""
+"We are verifying your payment. Your subscription will be unlocked shortly."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:303
+msgid ""
+"Complete your monthly subscription payment (%1) to unlock direct chat with "
+"our team."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:315
+msgid "1. Account"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:325
+msgid "Register a new account for Chat Support"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:342
+msgid "Already have an account?"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:344
+msgid "Sign in to check your subscription"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:369
+msgid "Logout"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:385
+msgid "Permanently remove your account and chat history"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:399
+msgid "2. Subscription & Payment"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:413
+msgid "Subscription Active"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:414
+msgid "Awaiting Payment Approval..."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:415
+msgid "Subscribe (%1 / month)"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:430
+msgid "3. Service Status"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:441
+#: ../qml/pages/OnlineSourcesPage.qml:199
+msgid "Talk To Our Team"
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:442
+msgid "Requires account and active subscription"
+msgstr ""
+
 #: ../qml/pages/ManageUserFoodsListPage.qml:39
 msgid "Manage Your Foods"
 msgstr ""
@@ -703,10 +941,6 @@ msgstr ""
 
 #: ../qml/pages/MenuPage.qml:77
 msgid "Version: "
-msgstr ""
-
-#: ../qml/pages/MenuPage.qml:82
-msgid "User"
 msgstr ""
 
 #: ../qml/pages/MenuPage.qml:89
@@ -746,7 +980,7 @@ msgid "Empty List, Please Register Notes First.."
 msgstr ""
 
 #: ../qml/pages/OnlineSourcesPage.qml:25
-msgid "Aplication Programming Interface"
+msgid "Online Services"
 msgstr ""
 
 #: ../qml/pages/OnlineSourcesPage.qml:35
@@ -787,6 +1021,14 @@ msgstr ""
 
 #: ../qml/pages/OnlineSourcesPage.qml:175
 msgid "Manage Your Agents Keys"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:209
+msgid "Active"
+msgstr ""
+
+#: ../qml/pages/OnlineSourcesPage.qml:209
+msgid "Inactive"
 msgstr ""
 
 #: ../qml/pages/QuickAdditionPage.qml:39 ../qml/pages/SetFoodPage.qml:44

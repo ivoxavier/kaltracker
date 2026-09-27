@@ -63,7 +63,8 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 set(SOURCES main.cpp
 internetchecker/internetchecker.cpp
-aiagent/askyouragent.cpp)
+aiagent/askyouragent.cpp
+chatsupport/chatsupport.cpp)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
@@ -99,6 +100,7 @@ install(FILES assets/logo.svg DESTINATION assets)
 install(FILES pushexec PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ DESTINATION ${DATA_DIR})
 install(FILES push.json DESTINATION ${DATA_DIR})
 install(FILES push-apparmor.json DESTINATION ${DATA_DIR})
+install(FILES .env DESTINATION ${DATA_DIR})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${QT_RESOURCES})
 

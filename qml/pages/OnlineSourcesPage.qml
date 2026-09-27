@@ -22,7 +22,7 @@ Page {
     objectName: 'ApiPage'
     
     header: PageHeader {        
-        title: i18n.tr("Aplication Programming Interface")
+        title: i18n.tr("Online Services")
     }
 
     BackgroundStyle {}
@@ -183,6 +183,39 @@ Page {
                 }  
                 onClicked: {
                     PopupUtils.open(agentsDialogComponent)
+                }
+            }
+
+            ListItemHeader {
+                text_header.title.text: i18n.tr("Chat Support")
+                divider.visible: false
+            }
+
+              ListItem {
+                divider.visible: false
+                ListItemLayout {
+                    title.text: i18n.tr("KalTracker Team")
+                    title.color: app_style.label.labelColor
+                    subtitle.text: i18n.tr("Talk To Our Team")
+                    
+                    Icon {
+                        SlotsLayout.position: SlotsLayout.Leading
+                        source: "../../assets/chat-support_icon.svg"
+                        height: units.gu(3.5)
+                    }
+
+                    Label {
+                        SlotsLayout.position: SlotsLayout.Trailing
+                        text: app_settings.is_chat_support_enabled ? i18n.tr("Active") : i18n.tr("Inactive")
+                        color: app_settings.is_chat_support_enabled ? theme.palette.normal.positive : theme.palette.normal.backgroundSecondaryText
+                        font.weight: Font.DemiBold
+                    }
+
+                    ProgressionSlot {}
+                }  
+                onClicked: {
+                    // Ajusta 'page_stack' para o id da tua PageStack principal
+                    page_stack.push(Qt.resolvedUrl("ManageSubscriptionPage.qml"))
                 }
             }
         }  

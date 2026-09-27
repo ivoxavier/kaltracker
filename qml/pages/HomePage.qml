@@ -23,6 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
+import ChatSupport 0.1
 import "../components"
 import "../style"
 import "../logicalFields"
@@ -90,6 +91,15 @@ Page{
         NotifyAutoCleanPop{}
     }
 
+    ChatSupport {
+        id: chat_auth
+        Component.onCompleted: {
+            if (app_settings.is_chat_support_enabled) {
+                chat_auth.verifySession()
+            }
+        }
+    }
+
     Flickable {
         id: flickable
         anchors{
@@ -104,15 +114,49 @@ Page{
             id: main_column
             width: root.width
 
-            Icon{
+            RowLayout {
                 Layout.alignment: Qt.AlignRight
-                name : "navigation-menu"
-                height: units.gu(3.5)
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: page_stack.push(menu_page)
+                Layout.topMargin: units.gu(1)
+                Layout.rightMargin: units.gu(1)
+                spacing: units.gu(2)
+
+                Icon {
+                    id: chat_icon
+                    visible: app_settings.is_chat_support_enabled 
+                    source: "../../assets/chat-support_icon.svg"
+                    height: units.gu(3.5)
+                    width: units.gu(3.5)
+                    //color: app_style.button.primaryColor 
+                    
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            if (chat_auth.isAdmin) {
+                                // Admin validado pelo Supabase JWT + coluna is_admin na DB
+                                page_stack.push(Qt.resolvedUrl("AdminChatsPage.qml"))
+                            } else {
+                                // Utilizador normal: usa o email extraído do Token JWT
+                                page_stack.push(Qt.resolvedUrl("ChatRoomPage.qml"), {
+                                    "targetUserEmail": chat_auth.currentEmail,
+                                    "targetUsername": i18n.tr("KalTracker Team"),
+                                    "myEmail": chat_auth.currentEmail
+                                })
+                            }
+                        }
+                    }
                 }
-             }
+
+                Icon {
+                    name: "navigation-menu"
+                    height: units.gu(3.5)
+                    width: units.gu(3.5)
+                    
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: page_stack.push(menu_page)
+                    }
+                }
+            }
             
 
             CaloriesCircleChart{Layout.alignment: Qt.AlignCenter}
@@ -284,7 +328,6 @@ Page{
             }
         }  
     }
-
     BottomEdge{
         id: bottom_edge
         parent : home_page
@@ -445,5 +488,10 @@ Page{
             PopupUtils.open(notification_pop);
             IngestionsTable.autoClean();
         }
-    }        
+    } 
+    onVisibleChanged: {
+        if (visible && app_settings.is_chat_support_enabled) {
+            chat_auth.verifySession()
+        }
+    }       
 }

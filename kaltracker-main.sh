@@ -20,9 +20,8 @@ case $1 in
   --device)
     CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable -a arm64
     ;;
-  --build-all)
+  --build-device)
     CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build -a arm64
-    CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build -a armhf
     ;;
   --add-tag)
     echo -n "New Tag: "
