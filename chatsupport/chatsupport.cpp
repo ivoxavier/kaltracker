@@ -18,31 +18,45 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSettings>
+#include <QCoreApplication>
 
 ChatSupport::ChatSupport(QObject *parent) : QObject(parent)
 {
     m_manager = new QNetworkAccessManager(this);
-    
-    
+
     m_baseUrl = "";
     m_apiKey = "";
+    m_paypalPaymentUrl = "";
 
-    
-    QFile envFile(".env");
+    QStringList possiblePaths = {
+        ".env",
+        QCoreApplication::applicationDirPath() + "/.env",
+        QCoreApplication::applicationDirPath() + "/../.env",
+        QCoreApplication::applicationDirPath() + "/../../.env",
+        ":/.env"
+    };
 
-    if (envFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    QFile envFile;
+    for (const QString &path : possiblePaths) {
+        if (QFile::exists(path)) {
+            envFile.setFileName(path);
+            break;
+        }
+    }
+
+    if (!envFile.fileName().isEmpty() && envFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << ".env loadde:" << envFile.fileName();
         QTextStream in(&envFile);
         while (!in.atEnd()) {
             QString line = in.readLine().trimmed();
-            
-            
+
             if (line.isEmpty() || line.startsWith("#")) continue;
 
             int separatorIndex = line.indexOf('=');
             if (separatorIndex != -1) {
                 QString key = line.left(separatorIndex).trimmed();
                 QString value = line.mid(separatorIndex + 1).trimmed();
-                
+
                 if (value.startsWith('"') && value.endsWith('"')) {
                     value = value.mid(1, value.length() - 2);
                 }
@@ -51,7 +65,7 @@ ChatSupport::ChatSupport(QObject *parent) : QObject(parent)
                     m_baseUrl = value;
                 } else if (key == "SUPABASE_KEY") {
                     m_apiKey = value;
-                } else if(key == "PAYPAL_PAYMENT_URL"){
+                } else if (key == "PAYPAL_PAYMENT_URL") {
                     m_paypalPaymentUrl = value;
                 }
             }
@@ -61,38 +75,41 @@ ChatSupport::ChatSupport(QObject *parent) : QObject(parent)
         qWarning() << "No possible to read or find .env";
     }
 
-   QSettings settings;
-m_accessToken = settings.value("chat_access_token", "").toString();
-if (!m_accessToken.isEmpty()) {
-    verifySession();
-}
+    QSettings settings;
+    m_accessToken = settings.value("chat_access_token", "").toString();
+    if (!m_accessToken.isEmpty()) {
+        verifySession();
+    }
+    if (!m_baseUrl.isEmpty()) {
+        fetchSubscriptionPrice();
+    }
 }
 
 void ChatSupport::createAccount(const QString &email, const QString &username, const QString &password)
 {
+    if (m_baseUrl.isEmpty() || m_apiKey.isEmpty()) {
+        qWarning() << "CreateAccount failed: Missing .env configuration";
+        emit createAccountResult(false, "CONFIG_ERROR");
+        return;
+    }
 
     QNetworkRequest requestAuth = createRequest("/auth/v1/signup");
-    
     QJsonObject jsonAuth;
     jsonAuth["email"] = email;
     jsonAuth["password"] = password;
-    
+
     QNetworkReply *replyAuth = m_manager->post(requestAuth, QJsonDocument(jsonAuth).toJson());
-    
+
     connect(replyAuth, &QNetworkReply::finished, this, [this, email, username, replyAuth]() {
         if (replyAuth->error() == QNetworkReply::NoError) {
-            
-            
             QByteArray authResponseData = replyAuth->readAll();
-
             QJsonObject authResponse = QJsonDocument::fromJson(authResponseData).object();
-            
-           m_accessToken = authResponse.value("access_token").toString();
+
+            m_accessToken = authResponse.value("access_token").toString();
             if (!m_accessToken.isEmpty()) {
                 QSettings settings;
                 settings.setValue("chat_access_token", m_accessToken);
             }
-    
 
             QNetworkRequest requestDb = createRequest("/rest/v1/accounts");
             requestDb.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -101,38 +118,36 @@ void ChatSupport::createAccount(const QString &email, const QString &username, c
             QJsonObject jsonDb;
             jsonDb["email"] = email;
             jsonDb["user"] = username;
-            jsonDb["enable"] = false; // account stsart disable
+            jsonDb["enable"] = false;
 
             QNetworkReply *replyDb = m_manager->post(requestDb, QJsonDocument(jsonDb).toJson());
-            
+
             connect(replyDb, &QNetworkReply::finished, this, [this, replyDb]() {
                 if (replyDb->error() == QNetworkReply::NoError) {
-                    emit createAccountResult(true, "Account created!");
+                    verifySession();
+                    emit createAccountResult(true, "ACCOUNT_CREATED");
                 } else {
-                
-                    QByteArray dbResponse = replyDb->readAll();
-                
-
-                    QJsonObject response = QJsonDocument::fromJson(dbResponse).object();
-                    QString errorMsg = response.value("message").toString();
-                    if (errorMsg.isEmpty()) {
-                        errorMsg = replyDb->errorString();
-                    }
-                    
-                    emit createAccountResult(false, "Error DB: " + errorMsg);
+                    qWarning() << "DB Error (createAccount):" << replyDb->readAll();
+                    emit createAccountResult(false, "SERVER_ERROR");
                 }
                 replyDb->deleteLater();
             });
 
         } else {
-
             QByteArray responseData = replyAuth->readAll();
-            QJsonObject response = QJsonDocument::fromJson(responseData).object();
-            
-            QString errorMsg = response.value("msg").toString();
-            if (errorMsg.isEmpty()) errorMsg = response.value("message").toString();
-            
-            emit createAccountResult(false, errorMsg.isEmpty() ? replyAuth->errorString() : errorMsg);
+            qWarning() << "DB Auth Error (createAccount):" << responseData << replyAuth->errorString();
+
+            if (replyAuth->error() == QNetworkReply::HostNotFoundError ||
+                replyAuth->error() == QNetworkReply::TimeoutError ||
+                replyAuth->error() == QNetworkReply::TemporaryNetworkFailureError) {
+                emit createAccountResult(false, "NETWORK_ERROR");
+            } else if (responseData.contains("already registered") || responseData.contains("already exists")) {
+                emit createAccountResult(false, "EMAIL_ALREADY_EXISTS");
+            } else if (responseData.contains("password")) {
+                emit createAccountResult(false, "WEAK_PASSWORD");
+            } else {
+                emit createAccountResult(false, "REGISTRATION_FAILED");
+            }
         }
         replyAuth->deleteLater();
     });
@@ -284,8 +299,13 @@ void ChatSupport::verifySession()
 
 void ChatSupport::login(const QString &email, const QString &password)
 {
-    QNetworkRequest requestAuth = createRequest("/auth/v1/token?grant_type=password");
+    if (m_baseUrl.isEmpty() || m_apiKey.isEmpty()) {
+        qWarning() << "Login failed: Missing .env configuration";
+        emit loginResult(false, "CONFIG_ERROR");
+        return;
+    }
 
+    QNetworkRequest requestAuth = createRequest("/auth/v1/token?grant_type=password");
     QJsonObject jsonAuth;
     jsonAuth["email"] = email;
     jsonAuth["password"] = password;
@@ -294,9 +314,7 @@ void ChatSupport::login(const QString &email, const QString &password)
 
     connect(replyAuth, &QNetworkReply::finished, this, [this, replyAuth]() {
         if (replyAuth->error() == QNetworkReply::NoError) {
-            QByteArray authData = replyAuth->readAll();
-            QJsonObject authObj = QJsonDocument::fromJson(authData).object();
-            
+            QJsonObject authObj = QJsonDocument::fromJson(replyAuth->readAll()).object();
             m_accessToken = authObj.value("access_token").toString();
 
             if (!m_accessToken.isEmpty()) {
@@ -304,17 +322,23 @@ void ChatSupport::login(const QString &email, const QString &password)
                 settings.setValue("chat_access_token", m_accessToken);
             }
 
-        
             verifySession();
-            emit loginResult(true, "Sucess Login!");
+            emit loginResult(true, "LOGIN_SUCCESS");
         } else {
             QByteArray errData = replyAuth->readAll();
-            QJsonObject errObj = QJsonDocument::fromJson(errData).object();
-            QString errorMsg = errObj.value("error_description").toString();
-            if (errorMsg.isEmpty()) errorMsg = errObj.value("msg").toString();
-            if (errorMsg.isEmpty()) errorMsg = "Email or Password Are Incorrect.";
+            qWarning() << "DB Auth Error (login):" << errData << replyAuth->errorString();
 
-            emit loginResult(false, errorMsg);
+            if (replyAuth->error() == QNetworkReply::HostNotFoundError ||
+                replyAuth->error() == QNetworkReply::TimeoutError ||
+                replyAuth->error() == QNetworkReply::TemporaryNetworkFailureError) {
+                emit loginResult(false, "NETWORK_ERROR");
+            } else if (errData.contains("Invalid login credentials")) {
+                emit loginResult(false, "INVALID_CREDENTIALS");
+            } else if (errData.contains("Email not confirmed")) {
+                emit loginResult(false, "EMAIL_NOT_CONFIRMED");
+            } else {
+                emit loginResult(false, "AUTH_ERROR");
+            }
         }
         replyAuth->deleteLater();
     });
@@ -363,11 +387,10 @@ void ChatSupport::deleteAccount()
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             logout();
-            emit deleteAccountResult(true, "Account deleteed!");
+            emit deleteAccountResult(true, "ACCOUNT_DELETED");
         } else {
-            QByteArray errData = reply->readAll();
-
-            emit deleteAccountResult(false, "Err on delete account");
+            qWarning() << "DB RPC Error (deleteAccount):" << reply->readAll();
+            emit deleteAccountResult(false, "DELETE_FAILED");
         }
         reply->deleteLater();
     });

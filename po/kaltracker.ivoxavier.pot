@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 08:07+0000\n"
+"POT-Creation-Date: 2026-09-27 09:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,9 +102,9 @@ msgstr ""
 #: ../qml/components/DeleteAllWeightTrackerDialog.qml:63
 #: ../qml/components/DeleteByMonthPop.qml:98
 #: ../qml/components/RemoveRecordsDialog.qml:84
-#: ../qml/pages/ManageSubscriptionPage.qml:117
-#: ../qml/pages/ManageSubscriptionPage.qml:141
-#: ../qml/pages/ManageSubscriptionPage.qml:214
+#: ../qml/pages/ManageSubscriptionPage.qml:150
+#: ../qml/pages/ManageSubscriptionPage.qml:174
+#: ../qml/pages/ManageSubscriptionPage.qml:247
 #: ../qml/pages/OnlineSourcesPage.qml:116
 msgid "Cancel"
 msgstr ""
@@ -559,8 +559,8 @@ msgid "Hypertensive Crisis"
 msgstr ""
 
 #: ../qml/pages/ChatRoomPage.qml:20 ../qml/pages/HomePage.qml:141
-#: ../qml/pages/ManageSubscriptionPage.qml:279
-#: ../qml/pages/ManageSubscriptionPage.qml:438
+#: ../qml/pages/ManageSubscriptionPage.qml:404
+#: ../qml/pages/ManageSubscriptionPage.qml:563
 #: ../qml/pages/OnlineSourcesPage.qml:197
 msgid "KalTracker Team"
 msgstr ""
@@ -570,7 +570,7 @@ msgid "Write a message..."
 msgstr ""
 
 #: ../qml/pages/ChatSupportPage.qml:32
-#: ../qml/pages/ManageSubscriptionPage.qml:33
+#: ../qml/pages/ManageSubscriptionPage.qml:65
 #: ../qml/pages/OnlineSourcesPage.qml:190
 msgid "Chat Support"
 msgstr ""
@@ -579,30 +579,67 @@ msgstr ""
 msgid "Error: Could not send message."
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:22
-#: ../qml/pages/ManageSubscriptionPage.qml:323
+#: ../qml/pages/CreateAccountPage.qml:27
+#: ../qml/pages/ManageSubscriptionPage.qml:41
+msgid "Account created successfully."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:29
+#: ../qml/pages/ManageSubscriptionPage.qml:49
+msgid "An account with this email already exists."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:31
+#: ../qml/pages/ManageSubscriptionPage.qml:51
+msgid "Password is too weak. Please use at least 6 characters."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:33
+#: ../qml/pages/ManageSubscriptionPage.qml:53
+msgid "No internet connection. Please check your network and try again."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:35
+msgid "Could not create account. Please verify your details and try again."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:39
+#: ../qml/pages/ManageSubscriptionPage.qml:58
+msgid "Service temporarily unavailable. Please try again later."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:45
+#: ../qml/pages/ManageSubscriptionPage.qml:448
 msgid "Create Account"
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:64
-#: ../qml/pages/ManageSubscriptionPage.qml:97
+#: ../qml/pages/CreateAccountPage.qml:129
+#: ../qml/pages/ManageSubscriptionPage.qml:128
 msgid "Email"
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:71
+#: ../qml/pages/CreateAccountPage.qml:137
 msgid "Username"
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:77
-#: ../qml/pages/ManageSubscriptionPage.qml:103
+#: ../qml/pages/CreateAccountPage.qml:144
+#: ../qml/pages/ManageSubscriptionPage.qml:134
 msgid "Password"
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:84
+#: ../qml/pages/CreateAccountPage.qml:159
+msgid "Creating your account..."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:168
+msgid "Please wait..."
+msgstr ""
+
+#: ../qml/pages/CreateAccountPage.qml:168
 msgid "Register"
 msgstr ""
 
-#: ../qml/pages/CreateAccountPage.qml:93
+#: ../qml/pages/CreateAccountPage.qml:184
 msgid "Please fill in all fields."
 msgstr ""
 
@@ -782,152 +819,172 @@ msgstr ""
 msgid "All Records"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:37
+#: ../qml/pages/ManageSubscriptionPage.qml:39
+msgid "Signed in successfully."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:43
+msgid "Your account has been permanently deleted."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:45
+msgid "Incorrect email or password. Please try again."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:47
+msgid "Please confirm your email address before signing in."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:69
 msgid "Refresh Status"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:93
+#: ../qml/pages/ManageSubscriptionPage.qml:124
 msgid "Sign In"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:108
+#: ../qml/pages/ManageSubscriptionPage.qml:139
 msgid "Login"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:128
-#: ../qml/pages/ManageSubscriptionPage.qml:383
+#: ../qml/pages/ManageSubscriptionPage.qml:161
+#: ../qml/pages/ManageSubscriptionPage.qml:508
 msgid "Delete Account"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:129
+#: ../qml/pages/ManageSubscriptionPage.qml:162
 msgid ""
 "Are you sure you want to permanently delete your account and all chat "
 "history? This action cannot be undone."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:132
+#: ../qml/pages/ManageSubscriptionPage.qml:165
 msgid "Delete Permanently"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:152
+#: ../qml/pages/ManageSubscriptionPage.qml:185
 msgid "Payment Instructions"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:153
+#: ../qml/pages/ManageSubscriptionPage.qml:186
 msgid ""
 "To activate your monthly Chat Support subscription (%1 / month), please "
 "complete the payment using the details below:"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:175
+#: ../qml/pages/ManageSubscriptionPage.qml:208
 msgid "1. Send %1 via PayPal."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:182
+#: ../qml/pages/ManageSubscriptionPage.qml:215
 msgid ""
 "2. IMPORTANT: Include your account email (%1) in the payment note so we can "
 "identify your account."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:190
+#: ../qml/pages/ManageSubscriptionPage.qml:223
 msgid ""
 "3. Click the button below after completing the transfer. Your subscription "
 "will be activated as soon as we verify the payment."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:196
+#: ../qml/pages/ManageSubscriptionPage.qml:229
 msgid "Open PayPal (%1)"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:205
+#: ../qml/pages/ManageSubscriptionPage.qml:238
 msgid "I Have Made the Payment"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:287
+#: ../qml/pages/ManageSubscriptionPage.qml:280
+msgid "Signing in, please wait..."
+msgstr ""
+
+#: ../qml/pages/ManageSubscriptionPage.qml:412
 msgid "Step 1: Account Required"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:288
+#: ../qml/pages/ManageSubscriptionPage.qml:413
 msgid "Monthly Subscription Active"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:289
+#: ../qml/pages/ManageSubscriptionPage.qml:414
 msgid "Step 2: Verification Pending"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:290
+#: ../qml/pages/ManageSubscriptionPage.qml:415
 msgid "Step 2: Payment Required (%1 / month)"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:300
+#: ../qml/pages/ManageSubscriptionPage.qml:425
 msgid "Create an account or sign in to subscribe to Chat Support (%1 / month)."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:301
+#: ../qml/pages/ManageSubscriptionPage.qml:426
 msgid "Monthly renewal date: %1"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:302
+#: ../qml/pages/ManageSubscriptionPage.qml:427
 msgid ""
 "We are verifying your payment. Your subscription will be unlocked shortly."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:303
+#: ../qml/pages/ManageSubscriptionPage.qml:428
 msgid ""
 "Complete your monthly subscription payment (%1) to unlock direct chat with "
 "our team."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:315
+#: ../qml/pages/ManageSubscriptionPage.qml:440
 msgid "1. Account"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:325
+#: ../qml/pages/ManageSubscriptionPage.qml:450
 msgid "Register a new account for Chat Support"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:342
+#: ../qml/pages/ManageSubscriptionPage.qml:467
 msgid "Already have an account?"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:344
+#: ../qml/pages/ManageSubscriptionPage.qml:469
 msgid "Sign in to check your subscription"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:369
+#: ../qml/pages/ManageSubscriptionPage.qml:494
 msgid "Logout"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:385
+#: ../qml/pages/ManageSubscriptionPage.qml:510
 msgid "Permanently remove your account and chat history"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:399
+#: ../qml/pages/ManageSubscriptionPage.qml:524
 msgid "2. Subscription & Payment"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:413
+#: ../qml/pages/ManageSubscriptionPage.qml:538
 msgid "Subscription Active"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:414
+#: ../qml/pages/ManageSubscriptionPage.qml:539
 msgid "Awaiting Payment Approval..."
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:415
+#: ../qml/pages/ManageSubscriptionPage.qml:540
 msgid "Subscribe (%1 / month)"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:430
+#: ../qml/pages/ManageSubscriptionPage.qml:555
 msgid "3. Service Status"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:441
+#: ../qml/pages/ManageSubscriptionPage.qml:566
 #: ../qml/pages/OnlineSourcesPage.qml:199
 msgid "Talk To Our Team"
 msgstr ""
 
-#: ../qml/pages/ManageSubscriptionPage.qml:442
+#: ../qml/pages/ManageSubscriptionPage.qml:567
 msgid "Requires account and active subscription"
 msgstr ""
 

@@ -28,6 +28,38 @@ Page {
     property bool isPaymentPending: false
     property string renewalDate: ""
     property string subscriptionPrice: chat_support.subscriptionPrice
+    property bool isAuthenticating: false
+    property string feedbackMessage: ""
+    property bool feedbackIsError: false
+
+
+    function getTranslatedMessage(code) {
+        switch (code) {
+        case "LOGIN_SUCCESS":
+            return i18n.tr("Signed in successfully.")
+        case "ACCOUNT_CREATED":
+            return i18n.tr("Account created successfully.")
+        case "ACCOUNT_DELETED":
+            return i18n.tr("Your account has been permanently deleted.")
+        case "INVALID_CREDENTIALS":
+            return i18n.tr("Incorrect email or password. Please try again.")
+        case "EMAIL_NOT_CONFIRMED":
+            return i18n.tr("Please confirm your email address before signing in.")
+        case "EMAIL_ALREADY_EXISTS":
+            return i18n.tr("An account with this email already exists.")
+        case "WEAK_PASSWORD":
+            return i18n.tr("Password is too weak. Please use at least 6 characters.")
+        case "NETWORK_ERROR":
+            return i18n.tr("No internet connection. Please check your network and try again.")
+        case "CONFIG_ERROR":
+        case "SERVER_ERROR":
+        case "DELETE_FAILED":
+        default:
+            return i18n.tr("Service temporarily unavailable. Please try again later.")
+        }
+    }
+
+
 
     header: PageHeader {
         title: i18n.tr("Chat Support")
@@ -50,18 +82,17 @@ Page {
         id: chat_support
 
         onLoginResult: {
-            if (success) {
-                console.log("Login sucess:")
-            } else {
-                console.log("Error on Login", message)
-            }
+            manage_subscription_page.isAuthenticating = false
+            manage_subscription_page.feedbackIsError = !success
+            manage_subscription_page.feedbackMessage = getTranslatedMessage(message)
         }
 
         onDeleteAccountResult: {
+            manage_subscription_page.isAuthenticating = false
+            manage_subscription_page.feedbackIsError = !success
+            manage_subscription_page.feedbackMessage = getTranslatedMessage(message)
             if (success) {
                 app_settings.is_chat_support_enabled = false
-            } else {
-                console.log(message)
             }
         }
 
@@ -108,6 +139,8 @@ Page {
                 text: i18n.tr("Login")
                 color: theme.palette.normal.focus
                 onClicked: {
+                    manage_subscription_page.feedbackMessage = ""
+                    manage_subscription_page.isAuthenticating = true
                     chat_support.login(loginEmail.text.trim(), loginPassword.text)
                     PopupUtils.close(loginDialog)
                 }
@@ -232,6 +265,98 @@ Page {
             id: main_column
             width: parent.width
             spacing: units.gu(1)
+
+    
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.margins: units.gu(2)
+                visible: isAuthenticating
+                spacing: units.gu(1.5)
+
+                ActivityIndicator {
+                    running: isAuthenticating
+                }
+                Label {
+                    text: i18n.tr("Signing in, please wait...")
+                    color: app_style.label.labelColor
+                }
+            }
+
+            
+            Item {
+                Layout.fillWidth: true
+                Layout.preferredHeight: feedback_card.height
+                Layout.leftMargin: units.gu(2)
+                Layout.rightMargin: units.gu(2)
+                Layout.topMargin: units.gu(1)
+                visible: feedbackMessage !== ""
+
+                LomiriShape {
+                    id: feedback_card
+                    width: parent.width
+                    height: feedback_row.height + units.gu(3)
+                    aspect: LomiriShape.Flat
+                    backgroundColor: feedbackIsError ? theme.palette.normal.negative : theme.palette.normal.positive
+
+                    RowLayout {
+                        id: feedback_row
+                        anchors {
+                            top: parent.top
+                            left: parent.left
+                            right: parent.right
+                            margins: units.gu(1.5)
+                        }
+                        spacing: units.gu(1)
+
+                        Icon {
+                            name: feedbackIsError ? "dialog-warning-symbolic" : "tick"
+                            width: units.gu(3)
+                            height: units.gu(3)
+                            color: "white"
+                        }
+
+                        Label {
+                            text: feedbackMessage
+                            color: "white"
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            fontSize: "small"
+                        }
+
+                        Icon {
+                            name: "close"
+                            width: units.gu(2.5)
+                            height: units.gu(2.5)
+                            color: "white"
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: feedbackMessage = ""
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             Item {
