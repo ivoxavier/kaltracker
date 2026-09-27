@@ -1,3 +1,12 @@
+/*
+ * 2022-2026  Ivo Xavier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ */
+
+
 #include "chatsupport.h"
 #include <QUrl>
 #include <QVariantMap>
@@ -205,8 +214,8 @@ void ChatSupport::sendMessage(const QString &targetUserEmail, const QString &sen
     QNetworkRequest request = createRequest("/rest/v1/messages");
     
     QJsonObject json;
-    json["user_email"] = targetUserEmail; // Dono da conversa (sempre o email do cliente)
-    json["sender_email"] = senderEmail;   // Quem escreveu (cliente OU ivofernandes12@gmail.com)
+    json["user_email"] = targetUserEmail; 
+    json["sender_email"] = senderEmail;   
     json["message"] = messageText;
 
     QNetworkReply *reply = m_manager->post(request, QJsonDocument(json).toJson());
@@ -214,9 +223,9 @@ void ChatSupport::sendMessage(const QString &targetUserEmail, const QString &sen
     connect(reply, &QNetworkReply::finished, this, [this, targetUserEmail, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             emit messageSent(true);
-            fetchMessages(targetUserEmail); // Atualiza logo o ecrã de chat
+            fetchMessages(targetUserEmail);
         } else {
-            qWarning() << "Erro ao enviar mensagem:" << reply->readAll();
+            qWarning() << "Err on reading messages:" << reply->readAll();
             emit messageSent(false);
         }
         reply->deleteLater();
@@ -247,7 +256,7 @@ void ChatSupport::verifySession()
             QJsonObject userObj = QJsonDocument::fromJson(reply->readAll()).object();
             m_currentEmail = userObj.value("email").toString();
 
-            // Lê user, enable (subscrição), is_admin e renewal_date da tabela accounts
+            
             QString endpoint = QString("/rest/v1/accounts?email=eq.%1&select=user,enable,is_admin,renewal_date").arg(m_currentEmail);
             QNetworkReply *dbReply = m_manager->get(createRequest(endpoint));
 
@@ -295,15 +304,15 @@ void ChatSupport::login(const QString &email, const QString &password)
                 settings.setValue("chat_access_token", m_accessToken);
             }
 
-            // Valida a sessão no servidor para preencher m_currentEmail e m_isAdmin
+        
             verifySession();
-            emit loginResult(true, "Login efetuado com sucesso!");
+            emit loginResult(true, "Sucess Login!");
         } else {
             QByteArray errData = replyAuth->readAll();
             QJsonObject errObj = QJsonDocument::fromJson(errData).object();
             QString errorMsg = errObj.value("error_description").toString();
             if (errorMsg.isEmpty()) errorMsg = errObj.value("msg").toString();
-            if (errorMsg.isEmpty()) errorMsg = "Email ou password incorretos.";
+            if (errorMsg.isEmpty()) errorMsg = "Email or Password Are Incorrect.";
 
             emit loginResult(false, errorMsg);
         }
@@ -321,7 +330,7 @@ void ChatSupport::requestPaymentVerification()
             m_isPaymentPending = true;
             emit sessionChanged();
         } else {
-            qWarning() << "Erro ao registar pedido de verificação de pagamento:" << reply->readAll();
+            qWarning() << "Err on registering payment request:" << reply->readAll();
         }
         reply->deleteLater();
     });
