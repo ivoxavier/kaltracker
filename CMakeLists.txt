@@ -24,6 +24,11 @@ set(PROJECT_NAME "kaltracker")
 set(FULL_PROJECT_NAME "kaltracker.ivoxavier")
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
+set(REPOSITORY_DIR "repository/")
+set(LOCAL_SERVICES_DIR "${REPOSITORY_DIR}services/local/")
+set(REMOTE_SERVICES_DIR "${REPOSITORY_DIR}services/remote/")
+set(UI_SCREENS_DIR "ui/screens/")
+set(UI_THEME_DIR "ui/theme/")
 
 # This command figures out the minimum SDK framework for use in the manifest
 # file via the environment variable provided by Clickable or sets a default value otherwise.
@@ -57,14 +62,24 @@ add_definitions(
   -DENABLE_DECODER_1D_BARCODES 
 )
 
-add_subdirectory(qzxing/src)
-include_directories(qzxing/src/zxing)
+set(QZXING_DIR "${LOCAL_SERVICES_DIR}qzxing")
+
+add_subdirectory("${QZXING_DIR}/src")
+include_directories("${QZXING_DIR}/src/zxing")
 include_directories("${PROJECT_BINARY_DIR}")
 
-set(SOURCES main.cpp
-internetchecker/internetchecker.cpp
-aiagent/askyouragent.cpp
-chatsupport/chatsupport.cpp)
+set(SOURCES
+    main.cpp
+    "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.cpp"
+    "${REMOTE_SERVICES_DIR}aiagent/askyouragent.cpp"
+    "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.cpp"
+)
+
+set(HEADERS
+    "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.h"
+    "${REMOTE_SERVICES_DIR}aiagent/askyouragent.h"
+    "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
+)
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
 execute_process(
@@ -102,7 +117,17 @@ install(FILES push.json DESTINATION ${DATA_DIR})
 install(FILES push-apparmor.json DESTINATION ${DATA_DIR})
 install(FILES .env DESTINATION ${DATA_DIR})
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${QT_RESOURCES})
+add_executable(${PROJECT_NAME}
+    ${SOURCES}
+    ${HEADERS}
+    ${QT_RESOURCES}
+)
+
+target_include_directories(${PROJECT_NAME} PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/${LOCAL_SERVICES_DIR}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/${REMOTE_SERVICES_DIR}"
+)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2)
@@ -111,18 +136,19 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 #set directories 
 install(DIRECTORY "assets" DESTINATION .)
-install(DIRECTORY "qml" DESTINATION .)
-install(DIRECTORY "qml/pages" DESTINATION /qml)
-install(DIRECTORY "qml/components" DESTINATION /qml)
-install(DIRECTORY "qml/style" DESTINATION /qml)
-install(DIRECTORY "qml/plugins" DESTINATION /qml)
-install(DIRECTORY "qml/settings" DESTINATION /qml)
-install(DIRECTORY "qml/logicalFields" DESTINATION /qml)
-install(DIRECTORY "qml/controlStreams" DESTINATION /qml)
-install(DIRECTORY "qml/streams" DESTINATION /qml)
-install(DIRECTORY "qml/controlSemaphores" DESTINATION /qml)
-install(DIRECTORY "qml/semaphores" DESTINATION /qml)
-install(DIRECTORY "qml/pushNotifications" DESTINATION /qml)
+install(DIRECTORY "ui" DESTINATION .)
+install(DIRECTORY "repository" DESTINATION .)
+install(FILES "MainView.qml" DESTINATION .)
+install(DIRECTORY "${UI_SCREENS_DIR}components" DESTINATION /ui)
+install(DIRECTORY "${UI_THEME_DIR}" DESTINATION /ui/theme)
+install(DIRECTORY "${UI_SCREENS_DIR}plugins" DESTINATION /ui)
+install(DIRECTORY "${REPOSITORY_DIR}" DESTINATION /repository)
+install(DIRECTORY "${UI_SCREENS_DIR}logicalFields" DESTINATION /ui)
+install(DIRECTORY "${UI_SCREENS_DIR}controlStreams" DESTINATION /ui)
+install(DIRECTORY "${UI_SCREENS_DIR}streams" DESTINATION /ui)
+install(DIRECTORY "${UI_SCREENS_DIR}controlSemaphores" DESTINATION /ui)
+install(DIRECTORY "${UI_SCREENS_DIR}semaphores" DESTINATION /ui)
+install(DIRECTORY "${UI_SCREENS_DIR}pushNotifications" DESTINATION /ui)
 install(DIRECTORY "js" DESTINATION .)
 install(DIRECTORY "py" DESTINATION .)
 
@@ -149,12 +175,12 @@ add_custom_target(${DESKTOP_FILE_NAME} ALL
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME} DESTINATION ${DATA_DIR})
 
 add_subdirectory(po)
-add_subdirectory(qml)
+add_subdirectory(ui)
 # Make source files visible in qtcreator
 file(GLOB_RECURSE PROJECT_SRC_FILES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
-    qml/*.qml
-    qml/*.js
+    ui/*.qml
+    ui/*.js
     src/*
     *.json
     *.json.in

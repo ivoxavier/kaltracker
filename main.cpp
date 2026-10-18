@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
    QZXing::registerQMLTypes();
 
    QQuickView *view = new QQuickView();
-   view->setSource(QUrl::fromLocalFile("qml/Main.qml"));
+   view->setSource(QUrl::fromLocalFile("MainView.qml"));
    view->setResizeMode(QQuickView::SizeRootObjectToView);
    view->show();
 
