@@ -1,0 +1,100 @@
+name: kaltracker
+base: core24
+version: '1.13.0'
+summary: Track your ingested food calories
+description: |
+  KalTracker helps you track your daily calorie intake, macronutrients,
+  weight, water consumption, and blood pressure.
+
+grade: stable
+confinement: strict
+icon: assets/logo.svg
+
+platforms:
+  amd64:
+  arm64:
+
+apps:
+  kaltracker:
+    command: kaltracker
+    desktop: kaltracker.desktop
+    plugs:
+      - network
+      - network-bind
+      - camera
+      - home
+      - opengl
+      - wayland
+      - x11
+      - desktop
+      - desktop-legacy
+    environment:
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages:$SNAP/py
+      QML2_IMPORT_PATH: $SNAP/usr/lib/${CRAFT_ARCH_TRIPLET_BUILD_FOR}/qt5/qml:$SNAP/lib/${CRAFT_ARCH_TRIPLET_BUILD_FOR}
+      QT_PLUGIN_PATH: $SNAP/usr/lib/${CRAFT_ARCH_TRIPLET_BUILD_FOR}/qt5/plugins
+      QT_QPA_PLATFORMTHEME: gtk3
+      QT_QUICK_CONTROLS_STYLE: Suru
+      UITK_ICON_THEME: suru
+      XDG_DATA_DIRS: $SNAP/usr/share:$XDG_DATA_DIRS
+      XDG_DATA_HOME: $SNAP_USER_COMMON/.local/share
+
+parts:
+  kaltracker:
+    plugin: cmake
+    source: .
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/
+      - -DCMAKE_BUILD_TYPE=Release
+    build-packages:
+      - build-essential
+      - cmake
+      - dpkg-dev
+      - git
+      - gettext
+      - intltool
+      - qtbase5-dev
+      - qtdeclarative5-dev
+      - qtquickcontrols2-5-dev
+      - qtmultimedia5-dev
+      - libqt5svg5-dev
+      - libqt5charts5-dev
+      - python3-dev
+    stage-packages:
+      - libqt5core5t64
+      - libqt5gui5t64
+      - libqt5network5t64
+      - libqt5qml5
+      - libqt5quick5
+      - libqt5quickcontrols2-5
+      - libqt5sql5t64
+      - libqt5sql5-sqlite
+      - libqt5svg5
+      - libqt5charts5
+      - libqt5multimedia5
+      - libqt5multimedia5-plugins
+      - qml-module-qtquick2
+      - qml-module-qtquick-window2
+      - qml-module-qtquick-layouts
+      - qml-module-qtquick-controls2
+      - qml-module-qtquick-localstorage
+      - qml-module-qtcharts
+      - qml-module-qtmultimedia
+      - qml-module-qt-labs-settings
+      - qml-module-qt-labs-folderlistmodel
+      - qml-module-lomiri-components
+      - qml-module-lomiri-layouts
+      - qml-module-lomiri-content
+      - qml-module-lomiri-performancemetrics
+      - suru-icon-theme
+      - qml-module-io-thp-pyotherside
+      - python3-minimal
+      - python3-dbus
+      - libpython3.12t64
+      - libsqlite3-0
+    override-prime: |
+      craftctl default
+      # Correção dos caminhos do ficheiro .desktop
+      if [ -f "$CRAFT_PRIME/kaltracker.desktop" ]; then
+        sed -i 's|^Icon=.*|Icon=${SNAP}/assets/logo.svg|g' "$CRAFT_PRIME/kaltracker.desktop"
+        sed -i 's|^Exec=.*|Exec=kaltracker|g' "$CRAFT_PRIME/kaltracker.desktop"
+      fi
