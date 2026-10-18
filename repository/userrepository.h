@@ -2,6 +2,7 @@
 #define USERREPOSITORY_H
 
 #include <QObject>
+#include <QVariantMap>
 
 #include "models/usermodel.h"
 
@@ -14,6 +15,7 @@ public:
 
     // Create
     bool createUserProfile(const UserModel &user);
+    Q_INVOKABLE bool createUserProfile(const QVariantMap &userData);
 
     // Read
     bool getUser(UserModel &user);

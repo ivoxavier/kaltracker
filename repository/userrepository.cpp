@@ -14,6 +14,8 @@ UserRepository::UserRepository(QObject *parent)
 {
 }
 
+
+
 bool UserRepository::createUserProfile(const UserModel &user)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
@@ -38,11 +40,30 @@ bool UserRepository::createUserProfile(const UserModel &user)
     if (!query.exec()) {
         qWarning() << "UserRepository: Failed to create user profile:"
                    << query.lastError().text();
-
         return false;
     }
 
     return query.numRowsAffected() > 0;
+}
+
+
+
+
+bool UserRepository::createUserProfile(const QVariantMap &userData)
+{
+    UserModel user;
+    
+    user.id = userData.value("id", 1).toInt();
+    user.age = userData.value("age", 0).toInt();
+    user.sexAtBirth = userData.value("sexAtBirth", 0).toInt();
+    user.weight = userData.value("weight", 0.0).toDouble();
+    user.height = userData.value("height", 0).toInt();
+    user.activity = userData.value("activity", 0).toInt();
+    user.recommendedCalories = userData.value("recommendedCalories", 0).toInt();
+    user.diastolicBloodPressure = userData.value("diastolicBloodPressure", 0).toInt();
+    user.systolicBloodPressure = userData.value("systolicBloodPressure", 0).toInt();
+
+    return createUserProfile(user); 
 }
 
 bool UserRepository::getUser(UserModel &user)
@@ -269,3 +290,4 @@ bool UserRepository::updateApLo(int apLo)
 
     return query.numRowsAffected() > 0;
 }
+

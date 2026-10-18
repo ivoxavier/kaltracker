@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     user.id = 1;
 
     // Register existing QML types.
+    qRegisterMetaType<UserModel>("UserModel");
     qmlRegisterType<InternetChecker>("InternetChecker", 0, 1, "InternetChecker");
 
     qmlRegisterType<AskYourAgent>("AiAgents", 0, 1, "AskYourAgent");
@@ -48,6 +49,7 @@ int main(int argc, char *argv[])
     QQuickView view;
 
     view.rootContext()->setContextProperty("userRepository",&userRepository);
+    view.rootContext()->setContextProperty("localStorage", &LocalStorage::instance());
 
     view.setSource(QUrl::fromLocalFile("MainView.qml"));
     view.setResizeMode(QQuickView::SizeRootObjectToView);

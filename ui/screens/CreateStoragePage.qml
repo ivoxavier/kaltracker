@@ -25,7 +25,6 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
-import "../../js/Storage.js" as Storage
 import "../../js/UserTable.js" as UserTable
 import "../../js/WeightTrackerTable.js" as WeightTrackerTable
 
@@ -103,11 +102,25 @@ Page{
     }
     Component.onCompleted: {
         try{
-            Storage.dropTables()
-            Storage.createTables()
-            UserTable.createUserProfile(logical_fields.user_profile.user_age,logical_fields.user_profile.user_sex_at_birth,
-            logical_fields.user_profile.user_weight, logical_fields.user_profile.user_height, logical_fields.user_profile.user_activity_level, logical_fields.user_profile.equation_recommended_calories)
-            WeightTrackerTable.newWeight(logical_fields.user_profile.user_weight)
+            localStorage.dropTables()
+            localStorage.createTables()
+            userRepository.
+
+            //UserTable.createUserProfile(logical_fields.user_profile.user_age,logical_fields.user_profile.user_sex_at_birth,
+            //logical_fields.user_profile.user_weight, logical_fields.user_profile.user_height, logical_fields.user_profile.user_activity_level, logical_fields.user_profile.equation_recommended_calories)
+            userRepository.createUserProfile({
+                "id": 1,
+                "age": logical_fields.user_profile.user_age,
+                "sexAtBirth": logical_fields.user_profile.user_sex_at_birth,
+                "weight": logical_fields.user_profile.user_weight,
+                "height": logical_fields.user_profile.user_height,
+                "activity": logical_fields.user_profile.user_activity_level,
+                "recommendedCalories": logical_fields.user_profile.equation_recommended_calories
+            })
+            
+            
+            //WeightTrackerTable.newWeight(logical_fields.user_profile.user_weight)
+
             loading_circle.running = !loading_circle.running
             app_settings.water_weight_calc = logical_fields.user_profile.user_weight
             app_settings.rec_cal = logical_fields.user_profile.equation_recommended_calories
