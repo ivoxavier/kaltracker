@@ -12,6 +12,7 @@ find_package(Qt5Quick REQUIRED)
 find_package(Qt5QuickControls2 REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
 find_package(Qt5Network)
+find_package(Qt5 REQUIRED COMPONENTS Sql)
 
 execute_process(
     COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH
@@ -71,14 +72,19 @@ include_directories("${PROJECT_BINARY_DIR}")
 set(SOURCES
     main.cpp
     "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.cpp"
+    "${LOCAL_SERVICES_DIR}database/localstorage.cpp"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.cpp"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.cpp"
+    "${REPOSITORY_DIR}userrepository.cpp"
 )
 
 set(HEADERS
     "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.h"
+    "${LOCAL_SERVICES_DIR}database/localstorage.h"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.h"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
+    "${REPOSITORY_DIR}userrepository.h"
+    "${REPOSITORY_DIR}models/usermodel.h"
 )
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build
@@ -126,11 +132,12 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}"
     "${CMAKE_CURRENT_SOURCE_DIR}/${LOCAL_SERVICES_DIR}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/${REPOSITORY_DIR}"
     "${CMAKE_CURRENT_SOURCE_DIR}/${REMOTE_SERVICES_DIR}"
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
-target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2)
+target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::Sql)
 target_link_libraries(${PROJECT_NAME} qzxing)
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 
