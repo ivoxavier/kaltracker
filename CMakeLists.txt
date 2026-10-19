@@ -85,6 +85,7 @@ set(HEADERS
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
     "${REPOSITORY_DIR}userrepository.h"
     "${REPOSITORY_DIR}models/usermodel.h"
+    "${REPOSITORY_DIR}models/userweightmodel.h"
 )
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build

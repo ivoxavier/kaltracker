@@ -291,3 +291,40 @@ bool UserRepository::updateApLo(int apLo)
     return query.numRowsAffected() > 0;
 }
 
+//UserWeight
+bool UserRepository::saveWeight(const UserWeightModel &userWeight)
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+
+    query.prepare(
+        "INSERT INTO weight_tracker "
+        "(id_user, weight, date) "
+        "VALUES "
+        "(:id,:weight,:date)"
+    );
+
+    query.bindValue(":id_user", userWeight.id_user);
+    query.bindValue(":weight", userWeight.weight);
+    query.bindValue(":date", userWeight.date);
+
+    if (!query.exec()) {
+        qWarning() << "UserRepository: Failed to save user weight:"
+                   << query.lastError().text();
+        return false;
+    }
+
+    return query.numRowsAffected() > 0;
+}
+
+
+
+bool UserRepository::saveWeight(const QVariantMap &userWeightData)
+{
+    UserWeightModel userWeight;
+    
+    userWeight.id_user = userWeightData.value("id_user", 1).toInt();
+    userWeight.weight = userWeightData.value("weight", 0.0).toDouble();
+    userWeight.date = userWeightData.value("date", 0).toString();
+    
+    return createUserProfile(user); 
+}
