@@ -25,8 +25,7 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
-import "../../js/UserTable.js" as UserTable
-import "../../js/WeightTrackerTable.js" as WeightTrackerTable
+
 
 Page{
     id: create_storage_page

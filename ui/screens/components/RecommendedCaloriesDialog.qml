@@ -26,8 +26,6 @@ import "../theme"
 import "../logicalFields"
 import '../../js/RecommendedCalories.js' as RecommendedCalories
 import "../../js/ControlRecommendedCalories.js" as ControlRecommendedCalories
-import "../../js/UpdateUserTable.js" as UpdateUserTable
-import "../../js/WeightTrackerTable.js" as WeightTrackerTable
 
 Dialog {
     id: recommended_calories_dialog
@@ -115,19 +113,20 @@ Dialog {
                 page_stack.pop(user_profile_config_page)
                 page_stack.push(create_storage_page)
             } else{
-                UpdateUserTable.updateWeight(logical_fields.user_profile.user_weight)
-                UpdateUserTable.updateHeight(logical_fields.user_profile.user_height)
 
-                WeightTrackerTable.newWeight(logical_fields.user_profile.user_weight)
+                localStorage.updateWeight(logical_fields.user_profile.user_weight)
+                localStorage.updateHeight(logical_fields.user_profile.user_height)
+
+                localStorage.newWeight(logical_fields.user_profile.user_weight)
 
                 app_settings.water_weight_calc = logical_fields.user_profile.user_weight
 
                 app_settings.plan_type = logical_fields.user_profile.type_goal
                 app_settings.rec_cal =  logical_fields.user_profile.equation_recommended_calories
 
-                UpdateUserTable.updateAge(logical_fields.user_profile.user_age)
-                UpdateUserTable.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
-                UpdateUserTable.updateActivity(logical_fields.user_profile.user_activity_level)
+                localStorage.updateAge(logical_fields.user_profile.user_age)
+                localStorage.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
+                localStorage.updateActivity(logical_fields.user_profile.user_activity_level)
                 app_settings.is_weight_tracker_chart_enabled = true
                 root.initDB()
                 PopupUtils.close(recommended_calories_dialog)

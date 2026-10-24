@@ -28,8 +28,6 @@ import Lomiri.Content 1.3
 import "../components"
 import "../theme"
 import "../plugins"
-import "../../js/UserTable.js" as UserTable
-import "../../js/UpdateUserTable.js" as UpdateUserTable
 import "../../js/RecommendedCalories.js" as RecommendedCalories
 import "../../js/DefineGoalCalories.js" as DefinePeriod
 

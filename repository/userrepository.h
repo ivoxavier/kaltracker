@@ -19,7 +19,7 @@ public:
     bool createUserProfile(const UserModel &user);
     Q_INVOKABLE bool createUserProfile(const QVariantMap &userData);
 
-    bool saveWeight(const UserWeightModel &userWeight)
+    bool saveWeight(const UserWeightModel &userWeight);
     Q_INVOKABLE bool saveWeight(const QVariantMap &userWeightData);
 
     // Read

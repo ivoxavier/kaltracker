@@ -321,10 +321,10 @@ bool UserRepository::saveWeight(const UserWeightModel &userWeight)
 bool UserRepository::saveWeight(const QVariantMap &userWeightData)
 {
     UserWeightModel userWeight;
-    
+
     userWeight.id_user = userWeightData.value("id_user", 1).toInt();
     userWeight.weight = userWeightData.value("weight", 0.0).toDouble();
-    userWeight.date = userWeightData.value("date", 0).toString();
-    
-    return createUserProfile(user); 
+    userWeight.date = userWeightData.value("date", "").toString();
+
+    return saveWeight(userWeight);
 }

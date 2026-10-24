@@ -26,7 +26,6 @@ import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
 import "../plugins"
-import "../../js/UserTable.js" as UserTable
 import "../../js/IngestionsTable.js" as IngestionsTable
 import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 

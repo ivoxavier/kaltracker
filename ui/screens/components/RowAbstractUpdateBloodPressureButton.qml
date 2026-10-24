@@ -23,7 +23,6 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
-import "../../js/UpdateUserTable.js" as UpdateUserTable
 
 Row{
 	width: root.width

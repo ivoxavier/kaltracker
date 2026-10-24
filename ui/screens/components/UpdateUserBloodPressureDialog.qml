@@ -19,7 +19,6 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Layouts 1.3
-import "../../js/UpdateUserTable.js" as UpdateUserTable
 
 
 Dialog {
@@ -59,8 +58,8 @@ Dialog {
     }
 
     Component.onCompleted: {
-        UpdateUserTable.updateApHi(update_user_values_page.update_ap_hi)
-        UpdateUserTable.updateApLo(update_user_values_page.update_ap_lo)
+        localStorage.updateApHi(update_user_values_page.update_ap_hi)
+        localStorage.updateApLo(update_user_values_page.update_ap_lo)
         app_settings.is_blood_pressure_defined = true
         loadingCircle.running = true
     }
