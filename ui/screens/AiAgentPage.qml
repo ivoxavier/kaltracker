@@ -18,7 +18,6 @@ import "../components"
 import "../theme"
 import "../logicalFields"
 import "../../js/GetData.js" as GetData
-import "../../js/UserTable.js" as UserData
 import AiAgents 0.1
 import InternetChecker 0.1
 
@@ -78,15 +77,15 @@ Page {
     }
 
     function getUserProfileContext() {
-        var sex = UserData.getSexAtBirth() == "0" ? "M" : "W";
-        var age = UserData.getAge();
-        var goal = UserData.getGoal();
-        var weight = UserData.getWeight();
-        var height = UserData.getHeight();
-        var activity = UserData.getActivity() == "0" ? "Very Light" :  UserData.getActivity() == "1" ?
-        "Light" :  UserData.getActivity() == "2" ? "Moderate" : "Heavy";
-        var ap_hi = UserData.getApHi();
-        var ap_lo = UserData.getApLo();
+        var sex = localStorage.getSexAtBirth() == "0" ? "M" : "W";
+        var age = localStorage.getAge();
+        var goal = localStorage.getGoal();
+        var weight = localStorage.getWeight();
+        var height = localStorage.getHeight();
+        var activity = localStorage.getActivity() == "0" ? "Very Light" :  localStorage.getActivity() == "1" ?
+        "Light" :  localStorage.getActivity() == "2" ? "Moderate" : "Heavy";
+        var ap_hi = localStorage.getApHi();
+        var ap_lo = localStorage.getApLo();
         var weightHistory = GetData.getWeightTracker();
 
         aiPrompt = "You are a health and nutrition AI assistant inside the Kaltracker app. " +

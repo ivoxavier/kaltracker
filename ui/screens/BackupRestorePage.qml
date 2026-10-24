@@ -27,7 +27,6 @@ import Lomiri.Content 1.3
 import io.thp.pyotherside 1.5
 import "../components"
 import "../theme"
-import "../../js/UserTable.js" as UserTable
 
 
 

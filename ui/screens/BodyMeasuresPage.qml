@@ -26,7 +26,6 @@ import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import "../components"
 import "../theme"
-import "../../js/UserTable.js" as UserTable
 import "../../js/KaltrackerUtils.js" as KaltrackerUtils
 
 
