@@ -26,9 +26,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../theme"
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
-
-
 
 
 Page{
@@ -96,7 +93,7 @@ Page{
                     Action{
                         iconName: "delete"
                         onTriggered:{
-                            UserFoodsListTable.deleteFoods(id)
+                            ingestionRepository.deleteFoods(id)
                             user_foods_list.model.remove(index)
                         }
                     }

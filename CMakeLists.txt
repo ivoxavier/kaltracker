@@ -76,6 +76,9 @@ set(SOURCES
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.cpp"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.cpp"
     "${REPOSITORY_DIR}userrepository.cpp"
+    "${REPOSITORY_DIR}ingestionrepository.cpp"
+    "${REPOSITORY_DIR}notesrepository.cpp"
+    "${REPOSITORY_DIR}dataanalysisrepository.cpp"
 )
 
 set(HEADERS
@@ -84,8 +87,12 @@ set(HEADERS
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.h"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
     "${REPOSITORY_DIR}userrepository.h"
+    "${REPOSITORY_DIR}ingestionrepository.h"
+    "${REPOSITORY_DIR}notesrepository.h"
+    "${REPOSITORY_DIR}dataanalysisrepository.h"
     "${REPOSITORY_DIR}models/usermodel.h"
     "${REPOSITORY_DIR}models/userweightmodel.h"
+    "${REPOSITORY_DIR}models/ingestionmodel.h"
 )
 
 # Sets BUILD_VERSION: tag of the current git HEAD or devel build

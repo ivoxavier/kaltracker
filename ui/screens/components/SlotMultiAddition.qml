@@ -24,7 +24,6 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../theme"
-import "../../js/IngestionsTable.js" as Ingestions
 
 LomiriShape{
     id: slot_shape
@@ -62,7 +61,7 @@ LomiriShape{
                 MouseArea{
                         anchors.fill: parent
                         onClicked: {
-                            Ingestions.saveIngestion(list_view_foods.getSelection())
+                            ingestionRepository.saveIngestion(list_view_foods.getSelection())
                             root.initDB()
                             page_stack.pop()
                         }

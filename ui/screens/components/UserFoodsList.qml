@@ -24,7 +24,6 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtQuick.LocalStorage 2.0
 import QtQuick.XmlListModel 2.7
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 ListModel {
@@ -32,5 +31,5 @@ ListModel {
     
         dynamicRoles: true
 
-        Component.onCompleted: UserFoodsListTable.getFoods()     
+        Component.onCompleted: ingestionRepository.getFoods()     
 }

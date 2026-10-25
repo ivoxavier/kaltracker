@@ -30,8 +30,6 @@ import "../theme"
 import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
-import "../../js/IngestionsTable.js" as IngestionsTable
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 ColumnLayout{

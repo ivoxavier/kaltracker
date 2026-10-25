@@ -26,9 +26,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../theme"
-import "../../js/GetData.js" as GetData
-
-
 
 
 Page{
@@ -55,7 +52,7 @@ Page{
 
     ListModel{
         id: avg_month_calories
-        Component.onCompleted: GetData.getAverageCalories()
+        Component.onCompleted: dataanalysisRepository.getAverageCalories()
     }
 
     ListView{

@@ -58,8 +58,8 @@ Dialog {
     }
 
     Component.onCompleted: {
-        localStorage.updateApHi(update_user_values_page.update_ap_hi)
-        localStorage.updateApLo(update_user_values_page.update_ap_lo)
+        userRepository.updateApHi(update_user_values_page.update_ap_hi)
+        userRepository.updateApLo(update_user_values_page.update_ap_lo)
         app_settings.is_blood_pressure_defined = true
         loadingCircle.running = true
     }

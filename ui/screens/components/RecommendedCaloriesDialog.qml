@@ -114,19 +114,19 @@ Dialog {
                 page_stack.push(create_storage_page)
             } else{
 
-                localStorage.updateWeight(logical_fields.user_profile.user_weight)
-                localStorage.updateHeight(logical_fields.user_profile.user_height)
+                userRepository.updateWeight(logical_fields.user_profile.user_weight)
+                userRepository.updateHeight(logical_fields.user_profile.user_height)
 
-                localStorage.newWeight(logical_fields.user_profile.user_weight)
+                userRepository.newWeight(logical_fields.user_profile.user_weight)
 
                 app_settings.water_weight_calc = logical_fields.user_profile.user_weight
 
                 app_settings.plan_type = logical_fields.user_profile.type_goal
                 app_settings.rec_cal =  logical_fields.user_profile.equation_recommended_calories
 
-                localStorage.updateAge(logical_fields.user_profile.user_age)
-                localStorage.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
-                localStorage.updateActivity(logical_fields.user_profile.user_activity_level)
+                userRepository.updateAge(logical_fields.user_profile.user_age)
+                userRepository.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
+                userRepository.updateActivity(logical_fields.user_profile.user_activity_level)
                 app_settings.is_weight_tracker_chart_enabled = true
                 root.initDB()
                 PopupUtils.close(recommended_calories_dialog)

@@ -17,7 +17,6 @@ import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
 import "../logicalFields"
-import "../../js/GetData.js" as GetData
 import AiAgents 0.1
 import InternetChecker 0.1
 
@@ -77,15 +76,15 @@ Page {
     }
 
     function getUserProfileContext() {
-        var sex = localStorage.getSexAtBirth() == "0" ? "M" : "W";
-        var age = localStorage.getAge();
-        var goal = localStorage.getGoal();
-        var weight = localStorage.getWeight();
-        var height = localStorage.getHeight();
-        var activity = localStorage.getActivity() == "0" ? "Very Light" :  localStorage.getActivity() == "1" ?
-        "Light" :  localStorage.getActivity() == "2" ? "Moderate" : "Heavy";
-        var ap_hi = localStorage.getApHi();
-        var ap_lo = localStorage.getApLo();
+        var sex = userRepository.getSexAtBirth() == "0" ? "M" : "W";
+        var age = userRepository.getAge();
+        var goal = userRepository.getGoal();
+        var weight = userRepository.getWeight();
+        var height = userRepository.getHeight();
+        var activity = userRepository.getActivity() == "0" ? "Very Light" :  userRepository.getActivity() == "1" ?
+        "Light" :  userRepository.getActivity() == "2" ? "Moderate" : "Heavy";
+        var ap_hi = userRepository.getApHi();
+        var ap_lo = userRepository.getApLo();
         var weightHistory = GetData.getWeightTracker();
 
         aiPrompt = "You are a health and nutrition AI assistant inside the Kaltracker app. " +

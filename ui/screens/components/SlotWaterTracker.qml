@@ -27,7 +27,6 @@ import QtQuick.LocalStorage 2.12
 import "../theme"
 import "../../js/WaterTrackerTable.js" as WaterTrackerTable
 import "../../js/WaterDrinkCalc.js" as WaterDrinkCalc
-import "../../js/GetData.js" as GetData
 
 LomiriShape{
     id: slot_shape
@@ -90,7 +89,7 @@ LomiriShape{
                         WaterTrackerTable.saveCup() 
                     }
                     onReleased:{
-                        GetData.getCups()
+                        dataanalysisRepository.getCups()
                         bar.scale = 1
                         progression : true
                     }

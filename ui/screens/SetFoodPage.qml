@@ -31,8 +31,6 @@ import "../plugins"
 import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
-import "../../js/IngestionsTable.js" as IngestionsTable
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 Page{
@@ -137,10 +135,10 @@ Page{
                 anchors.fill: parent
                 onClicked:{
                     try{
-                        if(UserFoodsListTable.isUnique(logical_fields.ingestion.product_name) >= 1){
+                        if(ingestionRepository.isUnique(logical_fields.ingestion.product_name) >= 1){
                         /* REGISTER INGESTION */
                         //item already on DB
-                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
                         logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
                         logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
@@ -148,19 +146,20 @@ Page{
                     } else{
                         /* CREATE NEW ENTRY */
                         //new item
-                        UserFoodsListTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
                         logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
                         logical_fields.ingestion.protein)
 
                         /* REGISTER INGESTION */
-                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
                         logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
                         logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
                     }
                     } catch (err){
                             PopupUtils.open(error_dialog)
+                            
                     } 
                     root.initDB()
                     PopupUtils.open(sucess_dialog)

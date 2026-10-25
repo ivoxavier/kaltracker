@@ -23,8 +23,7 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
-import "../../js/IngestionsTable.js" as IngestionsTable
+
 
 Row{
 	width: root.width
@@ -38,10 +37,10 @@ Row{
             anchors.fill: parent
             onClicked: {
                 try{
-                    if(UserFoodsListTable.isUnique(logical_fields.ingestion.product_name) >= 1){
+                    if(ingestionRepository.isUnique(logical_fields.ingestion.product_name) >= 1){
                         /* REGISTER INGESTION */
                         //item already on DB
-                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
                         logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
                         logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)
@@ -49,13 +48,13 @@ Row{
                     } else{
                         /* CREATE NEW ENTRY */
                         //new item
-                        UserFoodsListTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveUserFood(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
                         logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
                         logical_fields.ingestion.protein)
 
                         /* REGISTER INGESTION */
-                        IngestionsTable.saveIngestion(logical_fields.ingestion.product_name,
+                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
                         logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
                         logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
                         logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)  

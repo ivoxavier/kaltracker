@@ -28,10 +28,8 @@ import "../components"
 import "../theme"
 import "../logicalFields"
 import "../semaphores"
-import "../../js/GetData.js" as GetData
 import "../../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
-import "../../js/IngestionsTable.js" as IngestionsTable
 
 Page{
     id: home_page
@@ -50,17 +48,17 @@ Page{
     Connections{
         target: root
         onInitDB:{
-            GetData.getTotalCalConsumed()
-            GetData.getTotalCalRemaining()
-            GetData.getBreakfastCalories()
-            GetData.getLunchCalories()
-            GetData.getDinnerCalories()
-            GetData.getSnacksCalories()
-            GetData.getTotalFoodsConsumed()
-            GetData.getCups()
-            GetData.getCarboConsumed()
-            GetData.getFatConsumed()
-            GetData.getProteinConsumed()
+            dataanalysisRepository.getTotalCalConsumed()
+            dataanalysisRepository.getTotalCalRemaining()
+            dataanalysisRepository.getBreakfastCalories()
+            dataanalysisRepository.getLunchCalories()
+            dataanalysisRepository.getDinnerCalories()
+            dataanalysisRepository.getSnacksCalories()
+            dataanalysisRepository.getTotalFoodsConsumed()
+            dataanalysisRepository.getCups()
+            dataanalysisRepository.getCarboConsumed()
+            dataanalysisRepository.getFatConsumed()
+            dataanalysisRepository.getProteinConsumed()
         }
     }
 
@@ -339,10 +337,10 @@ Page{
 
         //filter handler
         onMeal_filterChanged : meal_filter == 0 ?
-        GetData.getYesterdayBreakfast() : meal_filter == 1 ? 
-        GetData.getYesterdayLunch() : meal_filter == 2 ? 
-        GetData.getYesterdayDinner() : meal_filter == 3 ?
-        GetData.getYesterdaySnacks() : {}
+        dataanalysisRepository.getYesterdayBreakfast() : meal_filter == 1 ? 
+        dataanalysisRepository.getYesterdayLunch() : meal_filter == 2 ? 
+        dataanalysisRepository.getYesterdayDinner() : meal_filter == 3 ?
+        dataanalysisRepository.getYesterdaySnacks() : {}
 
         Component{
             id: meal_filter_dialog
@@ -450,7 +448,7 @@ Page{
                                         Action{
                                            iconName : "delete" 
                                            onTriggered:{
-                                               IngestionsTable.deleteIngestion(id)
+                                               ingestionRepository.deleteIngestion(id)
                                                filtered_meal_model.remove(index)
                                            }
                                         }
@@ -458,7 +456,7 @@ Page{
                                 }
 
                             onClicked:{
-                                IngestionsTable.saveIngestion(name,
+                                ingestionRepository.saveIngestion(name,
                                 nutriscore, cal,
                                 fat, carbo,
                                 protein, bottom_edge.meal_filter)
@@ -470,23 +468,28 @@ Page{
         }
     }
         
-    Component.onCompleted:{
-        GetData.getTotalCalConsumed()
-        GetData.getTotalCalRemaining()
-        GetData.getBreakfastCalories()
-        GetData.getLunchCalories()
-        GetData.getDinnerCalories()
-        GetData.getSnacksCalories()
-        GetData.getTotalFoodsConsumed()
-        GetData.getCups()
-        GetData.getCarboConsumed()
-        GetData.getFatConsumed()
-        GetData.getProteinConsumed()
+    Component.onCompleted: {
+        var currentDate = logical_fields.application.date_utils.long_date;
+
+        logical_fields.user_profile.plan.cal_consumed = ingestionRepository.getTotalCalConsumed(currentDate)
+        logical_fields.user_profile.plan.cal_remaining = ingestionRepository.getTotalCalRemaining(currentDate)
+        logical_fields.metrics.total_foods_consumed = ingestionRepository.getTotalFoodsConsumed(currentDate)
+        logical_fields.metrics.total_cal_breakfast = ingestionRepository.getMealCalories(currentDate, 0)
+        logical_fields.metrics.total_cal_lunch = ingestionRepository.getMealCalories(currentDate, 1)
+        logical_fields.metrics.total_cal_dinner = ingestionRepository.getMealCalories(currentDate, 2)
+        logical_fields.metrics.total_cal_snacks = ingestionRepository.getMealCalories(currentDate, 3)
+        logical_fields.metrics.total_carbo_consumed = ingestionRepository.getMacroConsumed(currentDate, "carbo")
+        logical_fields.metrics.total_fat_consumed = ingestionRepository.getMacroConsumed(currentDate, "fat")
+        logical_fields.metrics.total_protein_consumed = ingestionRepository.getMacroConsumed(currentDate, "protein")
+        
+        logical_fields.metrics.total_water_cups = dataanalysisRepository.getCups(currentDate)
+
         const installed_date = new Date(app_settings.using_app_date);
         const year_diff = logical_fields.application.date_utils.current_date.getYear() - installed_date.getYear();
+        
         if (app_settings.is_auto_cleaning && year_diff >= 1) {
             PopupUtils.open(notification_pop);
-            IngestionsTable.autoClean();
+            ingestionRepository.autoClean();
         }
     } 
     onVisibleChanged: {

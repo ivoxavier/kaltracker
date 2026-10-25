@@ -25,10 +25,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../theme"
-import "../../js/GetData.js" as GetData
-
-
-
 
 Page{
     id: list_foods_ingested_month_page
@@ -60,7 +56,7 @@ Page{
 
     ListModel{
         id: all_month_ingestions
-        Component.onCompleted: GetData.getAllFoodsMonth(requested_month)
+        Component.onCompleted: dataanalysisRepository.getAllFoodsMonth(requested_month)
     }
 
     ListView{

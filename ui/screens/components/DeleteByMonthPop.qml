@@ -21,9 +21,6 @@ import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../theme"
-import "../../js/IngestionsTable.js" as  IngestionsTable
-
-
 
 Dialog { 
     id: delete_month_year_dialog

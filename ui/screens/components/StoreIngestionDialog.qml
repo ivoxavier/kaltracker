@@ -20,7 +20,6 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Layouts 1.3
 import "../theme"
-import "../../js/UserFoodsListTable.js" as UserFoodsListTable
 
 
 Dialog {

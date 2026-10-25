@@ -29,7 +29,6 @@ import "../theme"
 import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
-import "../../js/GetData.js" as GetData
 
 
 
@@ -99,7 +98,7 @@ Page {
                     width: parent.width
                     height: parent.height
                     chartType: ChartTypes.QChartJSTypes.LINE
-                    chartData: GetData.getChartLineData(app_settings.using_app_date, logical_fields.application.date_utils.long_date)
+                    chartData: dataanalysisRepository.getChartLineData(app_settings.using_app_date, logical_fields.application.date_utils.long_date)
                     animation: app_settings.is_graphs_animation_enabled
                     chartAnimationEasing: Easing.InOutElastic;
                     chartAnimationDuration: 2000;
@@ -126,7 +125,7 @@ Page {
                     width: parent.width
                     height: parent.height
                     chartType: ChartTypes.QChartJSTypes.BAR
-                    chartData: GetData.getChartBarData()
+                    chartData: dataanalysisRepository.getChartBarData()
                     animation: app_settings.is_graphs_animation_enabled
                     chartAnimationEasing: Easing.InOutElastic;
                     chartAnimationDuration: 2000;
