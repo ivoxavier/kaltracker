@@ -22,19 +22,28 @@ public:
     bool saveWeight(const UserWeightModel &userWeight);
     Q_INVOKABLE bool saveWeight(const QVariantMap &userWeightData);
 
+    
+    Q_INVOKABLE bool updateWeight(double newWeight);
+
+    Q_INVOKABLE int calculateGoalCalories(int baseCalories, const QString &goalType, int goalValue);
+
     // Read
     bool getUser(UserModel &user);
+    
+    
+    Q_INVOKABLE QVariantMap getUser(); 
 
     // Update
     bool updateUser(const UserModel &user);
 
-    bool updateWeight(double weight);
-    bool updateAge(int age);
-    bool updateHeight(int height);
-    bool updateRecCal(int recCal);
-    bool updateActivity(int activity);
-    bool updateApHi(int apHi);
-    bool updateApLo(int apLo);
+ 
+    Q_INVOKABLE bool updateAge(int age);
+    Q_INVOKABLE bool updateHeight(int height);
+    Q_INVOKABLE bool updateRecCal(int recCal);
+    Q_INVOKABLE bool updateActivity(int activity);
+    Q_INVOKABLE bool updateApHi(int apHi);
+    Q_INVOKABLE bool updateApLo(int apLo);
+    
 };
 
 #endif // USERREPOSITORY_H

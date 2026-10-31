@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // Create the user repository.
     UserRepository userRepository;
     IngestionRepository ingestionRepository;
-    DataAnalysisRepository dataanalysisRepository;
+    DataAnalysisRepository dataAnalysisRepository;
     NotesRepository notesRepository;
     UserModel user;
     user.id = 1;
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     view.rootContext()->setContextProperty("userRepository",&userRepository);
     view.rootContext()->setContextProperty("ingestionRepository", &ingestionRepository);
     view.rootContext()->setContextProperty("notesRepository", &notesRepository);
-    view.rootContext()->setContextProperty("dataanalysisRepository", &dataanalysisRepository);
+    view.rootContext()->setContextProperty("dataAnalysisRepository", &dataAnalysisRepository);
     view.rootContext()->setContextProperty("localStorage", &LocalStorage::instance());
 
     view.setSource(QUrl::fromLocalFile("MainView.qml"));

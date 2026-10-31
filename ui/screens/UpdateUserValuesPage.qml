@@ -222,5 +222,11 @@ Page {
         visible: false
     }
 
-    Component.onCompleted: logical_fields.user_profile.user_sex_at_birth = UserTable.getSexAtBirth()
+    Component.onCompleted: {
+
+        var userData = userRepository.getUser();
+        if (userData) {
+            logical_fields.user_profile.user_sex_at_birth = userData.sex_at_birth;
+        }
+    }
 }

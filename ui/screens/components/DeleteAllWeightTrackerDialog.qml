@@ -20,7 +20,6 @@ import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../theme"
-import "../../js/WeightTrackerTable.js" as  WeightTrackerTable
 
 
 Dialog { 
@@ -47,7 +46,7 @@ Dialog {
         color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if(confirmed == 2){
-                WeightTrackerTable.deleteAllWeightTracker()
+                dataAnalysisRepository.deleteAllWeightTracker()
                 root.initDB()
                 app_settings.is_weight_tracker_chart_enabled = false
                 PopupUtils.close(delete_weight_tracker_dialog)

@@ -1,6 +1,8 @@
 #include "dataanalysisrepository.h"
 #include "services/local/database/localstorage.h"
 #include <QSqlQuery>
+#include <QDebug>
+#include <QSqlError>
 
 DataAnalysisRepository::DataAnalysisRepository(QObject *parent) : QObject(parent) {}
 
@@ -52,4 +54,56 @@ QVariantList DataAnalysisRepository::getYNutriscore() {
         while (query.next()) list.append(query.value("nutriscore_count").toInt());
     }
     return list;
+}
+
+bool DataAnalysisRepository::saveWeight(double weight, const QString &date) 
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    query.prepare("INSERT INTO weight_tracker (id_user, weight, date) VALUES (1, :weight, :date)");
+    query.bindValue(":weight", weight);
+    query.bindValue(":date", date);
+    
+    if (!query.exec()) {
+        qWarning() << "DataAnalysisRepository: Failed to save weight:" << query.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+bool DataAnalysisRepository::deleteAllWeightTracker() 
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    if (!query.exec("DELETE FROM weight_tracker")) {
+        qWarning() << "DataAnalysisRepository: Failed to delete all weight data:" << query.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+bool DataAnalysisRepository::saveCup(const QString &date) 
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    
+    query.prepare("INSERT INTO water_tracker (id_user, cups, date) VALUES (1, 1, :date)");
+    query.bindValue(":date", date);
+    
+    if (!query.exec()) {
+        qWarning() << "DataAnalysisRepository: Failed to save cup of water:" << query.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+bool DataAnalysisRepository::deleteAllWaterTracker() 
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    if (!query.exec("DELETE FROM water_tracker")) {
+        qWarning() << "DataAnalysisRepository: Failed to delete all water data:" << query.lastError().text();
+        return false;
+    }
+    return true;
 }

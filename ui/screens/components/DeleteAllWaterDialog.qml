@@ -21,7 +21,6 @@ import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Pickers 1.3
 import QtQuick.LocalStorage 2.12
 import "../theme"
-import "../../js/WaterTrackerTable.js" as  WaterTrackerTable
 
 
 
@@ -49,7 +48,7 @@ Dialog {
         color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if(confirmed == 2){
-                WaterTrackerTable.deleteAllWaterTracker()
+                dataAnalysisRepository.deleteAllWaterTracker()
                 root.initDB()
                 PopupUtils.close(delete_water_dialog)
                 PopupUtils.open(operation_result_popover)

@@ -21,7 +21,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "../theme"
-import "../../js/NotesTable.js" as NotesTable
 
 Dialog {
     id: add_note_dialog
@@ -60,7 +59,7 @@ Dialog {
         text: i18n.tr("Add")
         color: app_style.button.confirmButton.buttonColor 
         onClicked:{
-            NotesTable.saveNote(note)
+            notesRepository.saveNote(note, root.stringDate)
             PopupUtils.close(add_note_dialog)
         } 
     }

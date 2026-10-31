@@ -36,34 +36,51 @@ Row{
         MouseArea{
             anchors.fill: parent
             onClicked: {
-                try{
-                    if(ingestionRepository.isUnique(logical_fields.ingestion.product_name) >= 1){
+                try {
+                    if (ingestionRepository.checkUserFoodExists(logical_fields.ingestion.product_name) >= 1) {
                         /* REGISTER INGESTION */
                         //item already on DB
-                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
-                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
-                        logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)
+                        ingestionRepository.saveIngestion({
+                            "name": String(logical_fields.ingestion.product_name),
+                            "nutriscore": String(logical_fields.ingestion.nutriscore),
+                            "calories": Number(logical_fields.ingestion.cal),
+                            "fat": Number(logical_fields.ingestion.fat),
+                            "carbs": Number(logical_fields.ingestion.carbo),
+                            "protein": Number(logical_fields.ingestion.protein),
+                            "mealType": Number(logical_fields.ingestion.meal_type),
+                            "date": logical_fields.application.date_utils.long_date
+                        });
                         
-                    } else{
+                    } else {
                         /* CREATE NEW ENTRY */
                         //new item
-                        ingestionRepository.saveUserFood(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
-                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
-                        logical_fields.ingestion.protein)
+                        ingestionRepository.saveUserFood({
+                            "name": String(logical_fields.ingestion.product_name),
+                            "nutriscore": String(logical_fields.ingestion.nutriscore),
+                            "cal": Number(logical_fields.ingestion.cal),
+                            "fat": Number(logical_fields.ingestion.fat),
+                            "carbo": Number(logical_fields.ingestion.carbo),
+                            "protein": Number(logical_fields.ingestion.protein)
+                        });
 
                         /* REGISTER INGESTION */
-                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
-                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
-                        logical_fields.ingestion.protein, logical_fields.ingestion.meal_type)  
+                        ingestionRepository.saveIngestion({
+                            "name": String(logical_fields.ingestion.product_name),
+                            "nutriscore": String(logical_fields.ingestion.nutriscore),
+                            "calories": Number(logical_fields.ingestion.cal),
+                            "fat": Number(logical_fields.ingestion.fat),
+                            "carbs": Number(logical_fields.ingestion.carbo),
+                            "protein": Number(logical_fields.ingestion.protein),
+                            "mealType": Number(logical_fields.ingestion.meal_type),
+                            "date": logical_fields.application.date_utils.long_date
+                        });
                     }
 
                     root.initDB()
                     PopupUtils.open(sucess_dialog)
                 } catch (err){
                     PopupUtils.open(error_dialog)
+                    console.log(err)
                 }  
             }
         }

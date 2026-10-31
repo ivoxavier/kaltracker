@@ -144,26 +144,7 @@ bool UserRepository::updateUser(const UserModel &user)
     return query.numRowsAffected() > 0;
 }
 
-bool UserRepository::updateWeight(double weight)
-{
-    QSqlQuery query(LocalStorage::instance().localstorage());
 
-    query.prepare(
-        "UPDATE user SET weight = :weight WHERE id = :id"
-    );
-
-    query.bindValue(":weight", weight);
-    query.bindValue(":id", 1);
-
-    if (!query.exec()) {
-        qWarning() << "UserRepository: Failed to update weight:"
-                   << query.lastError().text();
-
-        return false;
-    }
-
-    return query.numRowsAffected() > 0;
-}
 
 bool UserRepository::updateAge(int age)
 {
@@ -327,4 +308,53 @@ bool UserRepository::saveWeight(const QVariantMap &userWeightData)
     userWeight.date = userWeightData.value("date", "").toString();
 
     return saveWeight(userWeight);
+}
+
+bool UserRepository::updateWeight(double newWeight)
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    
+    query.prepare("UPDATE user SET weight = :weight WHERE id = 1");
+    query.bindValue(":weight", newWeight);
+    
+    if (!query.exec()) {
+        qWarning() << "UserRepository: Failed to update weight:" << query.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+QVariantMap UserRepository::getUser()
+{
+    QVariantMap userData;
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    if (query.exec("SELECT * FROM user WHERE id = 1") && query.next()) {
+        userData["id"] = query.value("id").toInt();
+        userData["age"] = query.value("age").toInt();
+        userData["sex_at_birth"] = query.value("sex_at_birth").toInt();
+        userData["weight"] = query.value("weight").toDouble();
+        userData["height"] = query.value("height").toInt();
+        userData["activity"] = query.value("activity").toInt();
+        userData["rec_cal"] = query.value("rec_cal").toInt();
+        userData["ap_lo"] = query.value("ap_lo").toInt();
+        userData["ap_hi"] = query.value("ap_hi").toInt();
+    }
+    
+    return userData;
+}
+
+int UserRepository::calculateGoalCalories(int baseCalories, const QString &goalType, int goalValue)
+{
+    int goalAdjustment = 0;
+    
+    if (goalType == "loose") {
+        goalAdjustment = -goalValue;
+    } else if (goalType == "gain") {
+        goalAdjustment = goalValue;
+    }
+
+    
+    return baseCalories + goalAdjustment;
 }

@@ -26,7 +26,7 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../components"
 import "../theme"
-import "../../js/NotesTable.js" as NotesTable
+
 
 Page{
     id: notes_page
@@ -93,7 +93,7 @@ Page{
                     Action{
                         iconName: "delete"
                         onTriggered:{
-                            NotesTable.deleteNote(id)
+                            notesRepository.deleteNote(id)
                             notes_page_list.model.remove(index)
                         }
                     }

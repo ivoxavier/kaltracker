@@ -279,8 +279,7 @@ QVariantList IngestionRepository::getAllFoodsMonth(const QString &month) {
 
 // --- Métodos para a tabela user_foods_list ---
 
-bool IngestionRepository::saveUserFood(const QString &name, const QString &nutriscore, 
-                                       int cal, double fat, double carbo, double protein) 
+bool IngestionRepository::saveUserFood(const QVariantMap &data) 
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
     
@@ -288,12 +287,13 @@ bool IngestionRepository::saveUserFood(const QString &name, const QString &nutri
                   "(id_user, name, nutriscore, cal, fat, carbo, protein) "
                   "VALUES (1, :name, :nutriscore, :cal, :fat, :carbo, :protein)");
                   
-    query.bindValue(":name", name);
-    query.bindValue(":nutriscore", nutriscore);
-    query.bindValue(":cal", cal);
-    query.bindValue(":fat", fat);
-    query.bindValue(":carbo", carbo);
-    query.bindValue(":protein", protein);
+    // Extrai os valores do objeto JSON do QML
+    query.bindValue(":name", data.value("name").toString());
+    query.bindValue(":nutriscore", data.value("nutriscore").toString());
+    query.bindValue(":cal", data.value("cal").toInt());
+    query.bindValue(":fat", data.value("fat").toDouble());
+    query.bindValue(":carbo", data.value("carbo").toDouble());
+    query.bindValue(":protein", data.value("protein").toDouble());
 
     if (!query.exec()) {
         qWarning() << "IngestionRepository: Failed to save user food:" << query.lastError().text();
@@ -352,4 +352,20 @@ bool IngestionRepository::deleteUserFood(int id)
         return false;
     }
     return true;
+}
+
+int IngestionRepository::checkUserFoodExists(const QString &productName)
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+    
+    query.prepare("SELECT id FROM user_foods_list WHERE name = :name");
+    query.bindValue(":name", productName);
+    
+    // Se a query correr bem e encontrar um resultado, devolve o ID
+    if (query.exec() && query.next()) {
+        return query.value("id").toInt(); 
+    }
+    
+    // Devolve -1 se o alimento não existir na base de dados
+    return -1; 
 }

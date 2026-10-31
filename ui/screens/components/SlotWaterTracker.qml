@@ -25,7 +25,6 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../theme"
-import "../../js/WaterTrackerTable.js" as WaterTrackerTable
 import "../../js/WaterDrinkCalc.js" as WaterDrinkCalc
 
 LomiriShape{
@@ -86,12 +85,13 @@ LomiriShape{
                     anchors.fill: parent
                     onPressed:{
                         bar.scale = 0.8
-                        WaterTrackerTable.saveCup() 
+                        dataAnalysisRepository.saveCup(logical_fields.application.date_utils.long_date) 
                     }
                     onReleased:{
-                        dataanalysisRepository.getCups()
+                        dataAnalysisRepository.getCups(logical_fields.application.date_utils.long_date)
                         bar.scale = 1
                         progression : true
+                        root.initDB()
                     }
                 }
             }

@@ -25,7 +25,6 @@ import QtQuick.Controls 2.2 as QQ2
 import "../theme"
 import "../logicalFields"
 import '../../js/RecommendedCalories.js' as RecommendedCalories
-import "../../js/ControlRecommendedCalories.js" as ControlRecommendedCalories
 
 Dialog {
     id: recommended_calories_dialog
@@ -117,7 +116,7 @@ Dialog {
                 userRepository.updateWeight(logical_fields.user_profile.user_weight)
                 userRepository.updateHeight(logical_fields.user_profile.user_height)
 
-                userRepository.newWeight(logical_fields.user_profile.user_weight)
+                dataAnalysisRepository.saveWeight(Number(logical_fields.user_profile.user_weight), logical_fields.application.date_utils.long_date)
 
                 app_settings.water_weight_calc = logical_fields.user_profile.user_weight
 
@@ -144,13 +143,22 @@ Dialog {
         }
 
     Component.onCompleted: {
-        if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-            ControlRecommendedCalories.initialConfig()
-            recommended_calories_dialog.equation_calories = logical_fields.user_profile.equation_recommended_calories
-        } else{
-            ControlRecommendedCalories.updatingProfile()
-            recommended_calories_dialog.equation_calories = logical_fields.user_profile.equation_recommended_calories
-        }
         
+        var baseCal = RecommendedCalories.equation(
+            logical_fields.user_profile.user_age,
+            logical_fields.user_profile.user_weight,
+            logical_fields.user_profile.user_height,
+            logical_fields.user_profile.user_sex_at_birth,
+            logical_fields.user_profile.user_activity_level
+        );
+
+        var finalCalories = userRepository.calculateGoalCalories(
+            baseCal, 
+            logical_fields.user_profile.type_goal, 
+            logical_fields.user_profile.user_goal
+        );
+
+        logical_fields.user_profile.equation_recommended_calories = finalCalories;
+        recommended_calories_dialog.equation_calories = finalCalories;
     }
 }
