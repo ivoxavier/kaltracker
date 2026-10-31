@@ -23,7 +23,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQC2
 import "../theme"
 import "../logicalFields"
-import '../../js/DefineGoalCalories.js' as DefinePeriod
 
 Dialog {
     id: module_goal_dialog
@@ -52,7 +51,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    logical_fields.user_profile.user_goal = DefinePeriod.periodOne()
+                    logical_fields.user_profile.user_goal = userRepository.calculateDailyDeficit(1)
                     radio_button_set2.checked = false
                     radio_button_set3.checked = false
                     radio_button_set4.checked = false
@@ -71,7 +70,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    logical_fields.user_profile.user_goal = DefinePeriod.periodTwo()
+                    logical_fields.user_profile.user_goal = userRepository.calculateDailyDeficit(2)
                     radio_button_set1.checked = false
                     radio_button_set3.checked = false
                     radio_button_set4.checked = false
@@ -92,7 +91,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    logical_fields.user_profile.user_goal = DefinePeriod.periodThree()
+                    logical_fields.user_profile.user_goal = userRepository.calculateDailyDeficit(3)
                     radio_button_set1.checked = false
                     radio_button_set2.checked = false
                     radio_button_set4.checked = false
@@ -111,7 +110,7 @@ Dialog {
                 checked: false
                 onClicked: {
                     module_goal_dialog.is_goal_defined = true
-                    logical_fields.user_profile.user_goal = DefinePeriod.periodFour()
+                    logical_fields.user_profile.user_goal = userRepository.calculateDailyDeficit(4)
                     radio_button_set1.checked = false
                     radio_button_set2.checked = false
                     radio_button_set3.checked = false

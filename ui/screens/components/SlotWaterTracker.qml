@@ -25,7 +25,7 @@ import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import QtQuick.LocalStorage 2.12
 import "../theme"
-import "../../js/WaterDrinkCalc.js" as WaterDrinkCalc
+
 
 LomiriShape{
     id: slot_shape

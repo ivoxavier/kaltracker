@@ -28,7 +28,6 @@ import "../components"
 import "../theme"
 import "../logicalFields"
 import "../semaphores"
-import "../../js/DefineMacroNutriensPerDay.js" as DefineMacroNutriensPerDay
 import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 Page{
@@ -211,7 +210,7 @@ Page{
                     slot_icon_label: i18n.tr("FAT")
                     bar_color: app_style.progressBar.nutrientBar
                     .fatProgress
-                    nutrient_value:  (logical_fields.metrics.total_fat_consumed / DefineMacroNutriensPerDay.fat(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value:  (logical_fields.metrics.total_fat_consumed / userRepository.getMacroFat(app_settings.plan_type) * 100.0) * 0.01
                 }
 
                 SlotNutrientProgress{
@@ -221,7 +220,7 @@ Page{
                     slot_icon_label: i18n.tr("CARBO")
                     bar_color: app_style.progressBar.nutrientBar
                     .carbProgress
-                    nutrient_value: (logical_fields.metrics.total_carbo_consumed / DefineMacroNutriensPerDay.carbo(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value: (logical_fields.metrics.total_carbo_consumed / userRepository.getMacroCarbo(app_settings.plan_type) * 100.0) * 0.01
                 }
 
 
@@ -232,7 +231,7 @@ Page{
                     slot_icon_label: i18n.tr("PROTEIN")
                     bar_color: app_style.progressBar.nutrientBar
                     .proteinProgress
-                    nutrient_value: (logical_fields.metrics.total_protein_consumed / DefineMacroNutriensPerDay.protein(app_settings.plan_type) * 100.0) * 0.01
+                    nutrient_value: (logical_fields.metrics.total_protein_consumed / userRepository.getMacroProtein(app_settings.plan_type) * 100.0) * 0.01
                 }
             }
             

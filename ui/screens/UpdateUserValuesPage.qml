@@ -28,8 +28,7 @@ import Lomiri.Content 1.3
 import "../components"
 import "../theme"
 import "../plugins"
-import "../../js/RecommendedCalories.js" as RecommendedCalories
-import "../../js/DefineGoalCalories.js" as DefinePeriod
+
 
 Page {
     id: update_user_values_page

@@ -1,7 +1,7 @@
 #include "userrepository.h"
 
 #include "services/local/database/localstorage.h"
-
+#include <cmath>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -357,4 +357,74 @@ int UserRepository::calculateGoalCalories(int baseCalories, const QString &goalT
 
     
     return baseCalories + goalAdjustment;
+}
+
+
+double UserRepository::calculateWaterLiters(double weight) {
+    return weight / 30.0;
+}
+
+double UserRepository::calculateWaterGlasses(double weight) {
+    double liters = calculateWaterLiters(weight);
+    double glass_ml = 0.250;
+    return std::round((liters / glass_ml) * 10.0) / 10.0;
+}
+
+//  (Mifflin-St Jeor) ---
+int UserRepository::calculateBaseCalories(int age, double weight, int height, int sex, int activity) {
+    double af = 1.3;
+    
+    switch (activity) {
+        case 0: af = 1.3; break;
+        case 1: af = 1.5; break;
+        case 2: af = 1.6; break;
+        case 3: af = 1.9; break;
+        default: af = 1.3; break;
+    }
+    
+    double bmr;
+    if (sex == 0) { // Male
+        bmr = (10.0 * weight) + (6.25 * height) - (5.0 * age) + 5.0;
+    } else {        // Female
+        bmr = (10.0 * weight) + (6.25 * height) - (5.0 * age) - 161.0;
+    }
+    
+    return std::round(bmr * af);
+}
+
+
+int UserRepository::getMacroCarbo(const QString &plan) {
+    if (plan == "loose") return 130;
+    if (plan == "gain") return 172;
+    return 150;
+}
+
+int UserRepository::getMacroProtein(const QString &plan) {
+    if (plan == "loose") return 50;
+    if (plan == "gain") return 130;
+    return 100;
+}
+
+int UserRepository::getMacroFat(const QString &plan) {
+    if (plan == "loose") return 41;
+    if (plan == "gain") return 50;
+    return 45;
+}
+
+
+double UserRepository::calculateDailyDeficit(int periodLevel) {
+    double adipose_tissue_1kg = 7700.0;
+    
+    switch (periodLevel) {
+        case 1: // periodOne: 0.5kg por semana
+            return (adipose_tissue_1kg * 0.5) / 7.0;
+        case 2: // periodTwo: 1.0kg por semana
+            return (adipose_tissue_1kg * 1.0) / 7.0;
+        case 3: // periodThree: 3.0kg por mês
+            return (adipose_tissue_1kg * 3.0) / 30.0;
+        case 4: // periodFour: 4.0kg por mês
+            return (adipose_tissue_1kg * 4.0) / 30.0;
+        default:
+            return 0.0;
+    }
 }

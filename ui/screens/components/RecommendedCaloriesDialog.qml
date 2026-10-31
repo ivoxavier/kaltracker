@@ -24,7 +24,6 @@ import QtQuick.Controls.Suru 2.2
 import QtQuick.Controls 2.2 as QQ2
 import "../theme"
 import "../logicalFields"
-import '../../js/RecommendedCalories.js' as RecommendedCalories
 
 Dialog {
     id: recommended_calories_dialog
@@ -144,7 +143,7 @@ Dialog {
 
     Component.onCompleted: {
         
-        var baseCal = RecommendedCalories.equation(
+        var baseCal = userRepository.calculateBaseCalories(
             logical_fields.user_profile.user_age,
             logical_fields.user_profile.user_weight,
             logical_fields.user_profile.user_height,

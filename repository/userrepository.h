@@ -43,6 +43,22 @@ public:
     Q_INVOKABLE bool updateActivity(int activity);
     Q_INVOKABLE bool updateApHi(int apHi);
     Q_INVOKABLE bool updateApLo(int apLo);
+
+    
+    Q_INVOKABLE double calculateWaterLiters(double weight);
+    Q_INVOKABLE double calculateWaterGlasses(double weight);
+
+    
+    Q_INVOKABLE int calculateBaseCalories(int age, double weight, int height, int sex, int activity);
+
+    
+    Q_INVOKABLE int getMacroCarbo(const QString &plan);
+    Q_INVOKABLE int getMacroProtein(const QString &plan);
+    Q_INVOKABLE int getMacroFat(const QString &plan);
+
+    
+
+    Q_INVOKABLE double calculateDailyDeficit(int periodLevel);
     
 };
 
