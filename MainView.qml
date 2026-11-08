@@ -122,12 +122,6 @@ MainView {
         MenuPage{}
     }
 
-    //UpdateUserValuesPage, let users import a profile pic 
-    Component{
-        id: update_user_values_page
-        UpdateUserValuesPage{}
-    }
-
     //SettingsPage, let users define app settings
     Component{
         id: settings_page
