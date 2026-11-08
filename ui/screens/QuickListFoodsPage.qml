@@ -25,11 +25,17 @@ import QtQuick.LocalStorage 2.12
 import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
-import "../../js/Regex.js" as Regex
 
 Page{
     id: quick_list_foods_page
     objectName: 'QuickListFoodsPage'
+
+
+
+    property var regex_char: /[a-zA-Z]+/
+
+
+
     header: PageHeader {
         
         contents: TextField{
@@ -37,7 +43,7 @@ Page{
             anchors.centerIn: parent
             width: parent.width
             placeholderText: i18n.tr("Search...")
-            validator: RegExpValidator { regExp: Regex.regex_char}
+            validator: RegExpValidator { regExp: regex_char}
             function searchTimer(delayMiliseconds, cb) {
                 timer.interval = delayMiliseconds;
                 timer.triggered.connect(cb);
