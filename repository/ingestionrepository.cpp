@@ -15,19 +15,6 @@
  */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include "ingestionrepository.h"
 #include "services/local/database/localstorage.h"
 
