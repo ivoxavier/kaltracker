@@ -135,36 +135,55 @@ Page{
                 anchors.fill: parent
                 onClicked:{
                     try{
-                        if(ingestionRepository.isUnique(logical_fields.ingestion.product_name) >= 1){
-                        /* REGISTER INGESTION */
-                        //item already on DB
-                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
-                        logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
-                        logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
-                        
-                    } else{
-                        /* CREATE NEW ENTRY */
-                        //new item
-                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal,
-                        logical_fields.ingestion.fat, logical_fields.ingestion.carbo,
-                        logical_fields.ingestion.protein)
+                        var current_date = logical_fields.application.date_utils.long_date;
 
-                        /* REGISTER INGESTION */
-                        ingestionRepository.saveIngestion(logical_fields.ingestion.product_name,
-                        logical_fields.ingestion.nutriscore, logical_fields.ingestion.cal_ingested,
-                        logical_fields.ingestion.fat_ingested, logical_fields.ingestion.carbo_ingested,
-                        logical_fields.ingestion.protein_ingested, logical_fields.ingestion.meal_type)
-                    }
-                    } catch (err){
-                            PopupUtils.open(error_dialog)
+                       
+                        if(ingestionRepository.checkUserFoodExists(logical_fields.ingestion.product_name) >= 1){
                             
+                            /* REGISTER INGESTION (Alimento que já existe) */
+                            ingestionRepository.saveIngestion({
+                                "name": logical_fields.ingestion.product_name,
+                                "nutriscore": logical_fields.ingestion.nutriscore,
+                                "calories": logical_fields.ingestion.cal_ingested, // No teu C++ a chave é "calories"
+                                "fat": logical_fields.ingestion.fat_ingested,
+                                "carbs": logical_fields.ingestion.carbo_ingested,  // No teu C++ a chave é "carbs"
+                                "protein": logical_fields.ingestion.protein_ingested,
+                                "mealType": logical_fields.ingestion.meal_type,
+                                "date": current_date // Data a ser passada corretamente!
+                            })
+                            
+                        } else {
+                            /* CREATE NEW ENTRY (Registar novo alimento na BD) */
+                            
+                            ingestionRepository.saveUserFood({
+                                "name": logical_fields.ingestion.product_name,
+                                "nutriscore": logical_fields.ingestion.nutriscore,
+                                "cal": logical_fields.ingestion.cal,
+                                "fat": logical_fields.ingestion.fat,
+                                "carbo": logical_fields.ingestion.carbo,
+                                "protein": logical_fields.ingestion.protein
+                            })
+
+                            /* REGISTER INGESTION (Registar a ingestão desse novo alimento) */
+                            ingestionRepository.saveIngestion({
+                                "name": logical_fields.ingestion.product_name,
+                                "nutriscore": logical_fields.ingestion.nutriscore,
+                                "calories": logical_fields.ingestion.cal_ingested,
+                                "fat": logical_fields.ingestion.fat_ingested,
+                                "carbs": logical_fields.ingestion.carbo_ingested,
+                                "protein": logical_fields.ingestion.protein_ingested,
+                                "mealType": logical_fields.ingestion.meal_type,
+                                "date": current_date
+                            })
+                        }
+                    } catch (err){
+                        PopupUtils.open(error_dialog)
                     } 
+                    
                     root.initDB()
                     PopupUtils.open(sucess_dialog)
                 }
-            }  
+          }      
         }
     }
 

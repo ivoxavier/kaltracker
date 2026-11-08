@@ -37,6 +37,8 @@ Page{
 
     BackgroundStyle{}
 
+    property int updateTrigger: 0
+
     //stores the amount of days user wants to getback to (re)ingest
     property int amount_of_days_back : 1
 
@@ -61,6 +63,8 @@ Page{
             logical_fields.metrics.total_protein_consumed = ingestionRepository.getMacroConsumed(currentDate, "protein")
             
             logical_fields.metrics.total_water_cups = dataAnalysisRepository.getCups(currentDate)
+
+            home_page.updateTrigger += 1
         }
     }
 
@@ -279,7 +283,7 @@ Page{
                 title.text: i18n.tr("Breakfast")
                 meal_category: 0
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_breakfast)
+                subtitle.text: i18n.tr("%1 calories").arg((home_page.updateTrigger * 0) + logical_fields.metrics.total_cal_breakfast)
                 img_path:"../../assets/breakfast-svgrepo-com.svg"
             }  
 
@@ -290,7 +294,7 @@ Page{
                 title.text: i18n.tr("Lunch")
                 meal_category: 1
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_lunch)
+                subtitle.text: i18n.tr("%1 calories").arg((home_page.updateTrigger * 0) + logical_fields.metrics.total_cal_lunch)
                 img_path:"../../assets/fried-chicken-meal-svgrepo-com.svg" 
             } 
 
@@ -301,7 +305,7 @@ Page{
                 title.text: i18n.tr("Dinner")
                 meal_category: 2
                 //TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-                subtitle.text: i18n.tr("%1 calories").arg(logical_fields.metrics.total_cal_dinner)
+                subtitle.text: i18n.tr("%1 calories").arg((home_page.updateTrigger * 0) + logical_fields.metrics.total_cal_dinner)
                 img_path:"../../assets/dinner-svgrepo-com.svg" 
             }
 

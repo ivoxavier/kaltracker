@@ -1,3 +1,20 @@
+/*
+ * 2022-2023  Ivo Xavier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * kaltracker is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
 #ifndef USERREPOSITORY_H
 #define USERREPOSITORY_H
 
@@ -55,7 +72,10 @@ public:
     Q_INVOKABLE int getMacroCarbo(const QString &plan);
     Q_INVOKABLE int getMacroProtein(const QString &plan);
     Q_INVOKABLE int getMacroFat(const QString &plan);
-
+    Q_INVOKABLE int getBloodPressureIndex(int apHi, int apLo);
+    Q_INVOKABLE double getBmi(int height, double weight);
+    Q_INVOKABLE int getBmiIndex(double bmi);
+    Q_INVOKABLE double getIdealWeight(int sexAtBirth, int height);
     
 
     Q_INVOKABLE double calculateDailyDeficit(int periodLevel);

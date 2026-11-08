@@ -1,3 +1,22 @@
+/*
+ * 2022-2023  Ivo Xavier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * kaltracker is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+
+
 #include "userrepository.h"
 
 #include "services/local/database/localstorage.h"
@@ -427,4 +446,38 @@ double UserRepository::calculateDailyDeficit(int periodLevel) {
         default:
             return 0.0;
     }
+}
+
+int UserRepository::getBloodPressureIndex(int apHi, int apLo) {
+    if (apHi < 120 && apLo < 80) {
+        return 0; // Normal
+    } else if (apHi >= 120 && apHi < 129 && apLo < 80) {
+        return 1; // Elevated
+    } else if ((apHi >= 130 && apHi < 139) || (apLo >= 80 && apLo < 89)) {
+        return 2; // Stage I
+    } else if (apHi >= 140 || apLo >= 90) {
+        return 3; // Stage II
+    } else {
+        return 4; // Hypertensive Crisis
+    }
+}
+
+double UserRepository::getBmi(int height, double weight) {
+    double heightInMeters = height / 100.0;
+    return std::round((weight / (heightInMeters * heightInMeters)) * 10.0) / 10.0;
+}
+
+int UserRepository::getBmiIndex(double bmi) {
+    if (bmi < 18.5) return 1;
+    if (bmi >= 18.5 && bmi <= 24.9) return 2;
+    if (bmi == 25.0) return 3; // Lógica exata do teu JS
+    if (bmi > 25.0 && bmi <= 29.9) return 4;
+    return 5;
+}
+
+
+double UserRepository::getIdealWeight(int sexAtBirth, int height) {
+    double multiplier = (sexAtBirth > 0) ? 1.5 : 0.9;
+    double idealWt = (height - 100) * multiplier;
+    return std::round(idealWt * 10.0) / 10.0;
 }

@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier 
+ * 2022-2026 Ivo Xavier 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,50 +16,51 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
-import QtQuick.LocalStorage 2.12
 import Lomiri.Content 1.3
 import "../components"
 import "../theme"
-import "../../js/KaltrackerUtils.js" as KaltrackerUtils
 
 
-Page{
+Page {
     id: body_measures_page
     objectName: 'BodyMeasuresPage'
     header: PageHeader {
-                //visible: app_settings.is_page_headers_enabled ? true : false
-                title: i18n.tr("Body Measures")
-
-                StyleHints {
-                  /*  foregroundColor: Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_text : ThemeColors.utFoods_dark_theme_text 
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-                }
-            }
+        title: i18n.tr("Body Measures")
+    }
 
     BackgroundStyle{}
 
-    //stores values for bmi calculation
-    property int user_height : UserTable.getHeight()
-    property int user_weight : UserTable.getWeight()
-    property string user_sex_at_birth : UserTable.getSexAtBirth()
-    property double user_bmi : KaltrackerUtils.getBmi(user_height, user_weight)
-    property var user_ap_hi : UserTable.getApHi()
-    property var user_ap_lo : UserTable.getApLo()
+    // properties updated from C++
+    property int user_height: 0
+    property double user_weight: 0
+    property int user_sex_at_birth: 0
+    property double user_bmi: 0
+    property int user_ap_hi: 0
+    property int user_ap_lo: 0
+
+    Component.onCompleted: {
+        var userData = userRepository.getUser();
+        if (userData) {
+            user_height = userData.height;
+            user_weight = userData.weight;
+            user_sex_at_birth = userData.sex_at_birth;
+            user_ap_hi = userData.ap_hi;
+            user_ap_lo = userData.ap_lo;
+            user_bmi = userRepository.getBmi(user_height, user_weight);
+        }
+    }
 
     Component{
         id: info_bmi
         MessageDialog{msg: i18n.tr("KalTracker is not taking in consideration your muscule weight. This is ONLY e a reference")}
     }
-
     
     Flickable {
-
         anchors{
             top:   parent.header.bottom 
             left: parent.left
@@ -70,7 +71,7 @@ Page{
         contentWidth: parent.width
         contentHeight: main_column.height  
         
-        interactive : root.height > root.width ? false : true
+        interactive: root.height > root.width ? false : true
 
         ColumnLayout{
             id: main_column
@@ -89,12 +90,14 @@ Page{
                 Layout.preferredWidth: root.width - units.gu(17)
                 Layout.preferredHeight: units.gu(9)
                 value: user_bmi
-                message: KaltrackerUtils.getIndex(user_bmi) == 1 ?
-                i18n.tr('Low Weigth') : KaltrackerUtils.getIndex(user_bmi) == 2 ?
-                i18n.tr('Normal Weigth') : KaltrackerUtils.getIndex(user_bmi) == 3 ?
-                i18n.tr('Weigth Exceed') : KaltrackerUtils.getIndex(user_bmi) == 4 ?
-                i18n.tr('Pre-Obesity') : i18n.tr('Obesity')
-
+                message: {
+                    var index = userRepository.getBmiIndex(user_bmi);
+                    if (index === 1) return i18n.tr('Low Weigth');
+                    if (index === 2) return i18n.tr('Normal Weigth');
+                    if (index === 3) return i18n.tr('Weigth Exceed');
+                    if (index === 4) return i18n.tr('Pre-Obesity');
+                    return i18n.tr('Obesity');
+                }
             }
 
             Icon{
@@ -124,7 +127,7 @@ Page{
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(28)
                 Layout.preferredHeight: units.gu(12)
-                value: KaltrackerUtils.getIdealWeight(user_sex_at_birth, user_height) 
+                value: userRepository.getIdealWeight(user_sex_at_birth, user_height) 
                 message: i18n.tr("KG")
             }
 
@@ -142,20 +145,21 @@ Page{
                 source: "../../assets/blood_icon.svg"
                 height: units.gu(3.5)
             }
-
             
             SlotIndexes{
                 Layout.alignment: Qt.AlignCenter
-                Layout.preferredWidth: root.width// - units.gu(26)
+                Layout.preferredWidth: root.width
                 Layout.preferredHeight: units.gu(12)
                 visible: app_settings.is_blood_pressure_defined
-                value: KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 0 ?
-                i18n.tr("Normal") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 1 ?
-                i18n.tr("Elevated") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 2 ?
-                i18n.tr("High Blood Pressure Stage I") : KaltrackerUtils.getIndex(user_ap_hi,user_ap_lo) == 3 ?
-                i18n.tr("High Blood Pressure Stage II") : i18n.tr("Hypertensive Crisis")
+                value: {
+                    var index = userRepository.getBloodPressureIndex(user_ap_hi, user_ap_lo);
+                    if (index === 0) return i18n.tr("Normal");
+                    if (index === 1) return i18n.tr("Elevated");
+                    if (index === 2) return i18n.tr("High Blood Pressure Stage I");
+                    if (index === 3) return i18n.tr("High Blood Pressure Stage II");
+                    return i18n.tr("Hypertensive Crisis");
+                }
             }
         }  
     }
-    
 }
