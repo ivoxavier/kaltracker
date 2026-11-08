@@ -28,7 +28,6 @@ import "../components"
 import "../theme"
 import "../logicalFields"
 import "../semaphores"
-import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 Page{
     id: home_page
@@ -66,6 +65,16 @@ Page{
 
             home_page.updateTrigger += 1
         }
+    }
+
+    function getGradeColor(grade) {
+        var g = String(grade).toLowerCase();
+        if (g === 'a' || g === '1') return "green";
+        if (g === 'b' || g === '2') return "#09b227";
+        if (g === 'c' || g === '3') return "#cba000";
+        if (g === 'd' || g === '4') return "#e57a01";
+        if (g === 'e') return LomiriColors.red;
+        return "black"; // fallback
     }
 
 
@@ -435,7 +444,7 @@ Page{
                     
                                     height: units.gu(6)
                                     width: height
-                                    color: ControlFoodsNutriscore.backgroundColor(score_label.text)
+                                    color: getGradeColor(score_label.text)
                                     radius: "large"
                                     aspect: LomiriShape.Inset
                                     Label{

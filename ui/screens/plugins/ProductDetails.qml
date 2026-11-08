@@ -30,13 +30,21 @@ import "../theme"
 import "../logicalFields"
 import "../../js/Chart.js" as Charts
 import "../../js/QChartJsTypes.js" as ChartTypes
-import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
-import "../../js/ControlNOVAGroups.js" as ControlNOVAGroups
 
 
 ColumnLayout{
     width: root.width
     spacing: units.gu(1)
+
+    function getGradeColor(grade) {
+        var g = String(grade).toLowerCase();
+        if (g === 'a' || g === '1') return "green";
+        if (g === 'b' || g === '2') return "#09b227";
+        if (g === 'c' || g === '3') return "#cba000";
+        if (g === 'd' || g === '4') return "#e57a01";
+        if (g === 'e') return LomiriColors.red;
+        return "black"; // fallback
+    }
 
     Text{
         Layout.alignment: Qt.AlignCenter
@@ -119,7 +127,7 @@ ColumnLayout{
             i18n.tr("Average nutritional quality") : logical_fields.ingestion.nutriscore === "d" ?
             i18n.tr("Poor nutritional quality") : logical_fields.ingestion.nutriscore === "e" ?
             i18n.tr("Bad nutritional quality") : i18n.tr("Unknown")
-            color : ControlFoodsNutriscore.backgroundColor(logical_fields.ingestion.nutriscore)
+            color : getGradeColor(logical_fields.ingestion.nutriscore)
         }
 
         SlotProductGrades{
@@ -129,7 +137,7 @@ ColumnLayout{
             i18n.tr("Processed culinary ingredients") : logical_fields.ingestion.nova_groups === "3" ?
             i18n.tr("Processed foods") : logical_fields.ingestion.nova_groups === "4" ?
             i18n.tr("Ultra-processed foods") : i18n.tr("Unknown")
-            color : ControlNOVAGroups.backgroundColor(logical_fields.ingestion.nova_groups)
+            color : getGradeColor(logical_fields.ingestion.nova_groups)
         }
     }
 }

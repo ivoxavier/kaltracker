@@ -23,7 +23,6 @@ import Lomiri.Components.ListItems 1.3
 import Lomiri.Components.Popups 1.3
 import QtQuick.Controls.Suru 2.2
 import "../logicalFields"
-import "../../js/ControlFoodsNutriscore.js" as ControlFoodsNutriscore
 
 
 
@@ -50,6 +49,16 @@ ListView{
             user_selection.push(foodsListView.model.get(indices[i]).energy_kcal_100g)
         }
         return user_selection.reduce((acc, currentValue) => acc + currentValue, 0);
+    }
+
+    function getGradeColor(grade) {
+        var g = String(grade).toLowerCase();
+        if (g === 'a' || g === '1') return "green";
+        if (g === 'b' || g === '2') return "#09b227";
+        if (g === 'c' || g === '3') return "#cba000";
+        if (g === 'd' || g === '4') return "#e57a01";
+        if (g === 'e') return LomiriColors.red;
+        return "black"; // fallback
     }
 
     function getSelection() {
@@ -97,7 +106,7 @@ ListView{
                     
                     height: units.gu(4)
                     width: height
-                    color: ControlFoodsNutriscore.backgroundColor(score_label.text)
+                    color: getGradeColor(score_label.text)
                     radius: "large"
                     aspect: LomiriShape.Inset
                     Label{
