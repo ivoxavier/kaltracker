@@ -94,7 +94,10 @@ MainView {
     //HomePage, its home
     Component{
         id: home_page
-        HomePage{}
+        HomePage{
+            visible: true 
+            anchors.fill: parent
+        }
     }
 
     //QuickListFoodsPage gives users a list of foods

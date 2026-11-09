@@ -108,7 +108,7 @@ Dialog {
                 ////stores plan type
                 app_settings.plan_type = logical_fields.user_profile.type_goal
                 
-                page_stack.pop(user_profile_config_page)
+                page_stack.pop(user_profile_page)
                 page_stack.push(create_storage_page)
             } else{
 
@@ -128,7 +128,7 @@ Dialog {
                 app_settings.is_weight_tracker_chart_enabled = true
                 root.initDB()
                 PopupUtils.close(recommended_calories_dialog)
-                page_stack.pop(update_user_values_page)
+                page_stack.pop(user_profile_page)
             }
             
         }

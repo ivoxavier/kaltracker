@@ -35,13 +35,11 @@ Page {
 
     BackgroundStyle {}
 
-    // --- PROPRIEDADES REATIVAS ---
     property bool isPlanSet: logical_fields.user_profile.type_goal !== ""
     property bool isActivitySet: logical_fields.user_profile.user_activity_level >= 0
     property bool isBodySet: logical_fields.user_profile.user_weight > 0 && logical_fields.user_profile.user_height > 0
     property bool isFormComplete: isPlanSet && isActivitySet && isBodySet
 
-    // --- DIÁLOGOS ---
     Component { id: loose_weight_definition_dialog; GoalDefinitionDialog { type_of_goal: i18n.tr("loose") } }
     Component { id: gain_weight_definition_dialog; GoalDefinitionDialog { type_of_goal: i18n.tr("gain") } }
     Component { id: calculate_recommended_calories_dialog; RecommendedCaloriesDialog {} }
@@ -55,15 +53,14 @@ Page {
 
     Component.onCompleted: {
         if (isUpdateMode) {
-            // Nota: Corrige o bindValue na query SQL do getUser() no C++ para o erro do terminal desaparecer!
             var userData = userRepository.getUser();
-            if (userData) {
+            if (userData && userData.sex_at_birth !== undefined) {
                 logical_fields.user_profile.user_sex_at_birth = userData.sex_at_birth;
             }
         }
     }
 
-    // --- CONTEÚDO PRINCIPAL ---
+
     QQC2.SwipeView {
         id: swipe_view
         anchors {
@@ -74,7 +71,6 @@ Page {
         }
         clip: true
 
-        // 1. SEPARADOR: OBJETIVO E ATIVIDADE
         Flickable {
             contentHeight: plan_column.implicitHeight + units.gu(4)
             contentWidth: width
@@ -88,7 +84,6 @@ Page {
                 width: parent.width - units.gu(4)
                 spacing: units.gu(3)
                 
-                // CARTÃO: OBJETIVO
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: goal_layout.implicitHeight + units.gu(4)
@@ -124,7 +119,6 @@ Page {
                     }
                 }
 
-                // CARTÃO: ATIVIDADE
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: activity_layout.implicitHeight + units.gu(4)
@@ -172,7 +166,6 @@ Page {
             }
         }
 
-        // 2. SEPARADOR: DETALHES FÍSICOS
         Flickable {
             contentHeight: body_column.implicitHeight + units.gu(4)
             contentWidth: width
@@ -186,7 +179,6 @@ Page {
                 width: parent.width - units.gu(4)
                 spacing: units.gu(3)
 
-                // CARTÃO: IDENTIDADE
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: identity_layout.implicitHeight + units.gu(4)
@@ -225,20 +217,20 @@ Page {
                             Layout.fillWidth: true; Layout.preferredHeight: units.gu(9)
                             circular: false
                             model: Array.from(Array(101).keys())
-                            selectedIndex: logical_fields.user_profile.user_age > 0 ? logical_fields.user_profile.user_age : 25
+                            
+                            Component.onCompleted: {
+                                selectedIndex = logical_fields.user_profile.user_age > 0 ? logical_fields.user_profile.user_age : 25
+                            }
+                            
                             delegate: PickerDelegate {
                                 Label { text: modelData + i18n.tr(" years"); anchors.fill: parent; verticalAlignment: Text.AlignVCenter; horizontalAlignment: Text.AlignHCenter }
                             }
-                            onSelectedIndexChanged: {
-                                if (logical_fields.user_profile.user_age !== selectedIndex) {
-                                    logical_fields.user_profile.user_age = selectedIndex;
-                                }
-                            }
+                            onSelectedIndexChanged: logical_fields.user_profile.user_age = selectedIndex
                         }
                     }
                 }
 
-                // CARTÃO: MEDIDAS CORPORAIS
+            
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: metrics_layout.implicitHeight + units.gu(4)
@@ -255,25 +247,24 @@ Page {
                         Label { text: i18n.tr("Height"); font.bold: true; color: app_style.label.labelColor; Layout.alignment: Qt.AlignHCenter }
                         Label { text: i18n.tr("Weight"); font.bold: true; color: app_style.label.labelColor; Layout.alignment: Qt.AlignHCenter }
 
-                        // Altura
+                
                         ColumnLayout {
                             Layout.alignment: Qt.AlignCenter
                             QQC2.Slider {
                                 id: height_slider
                                 Layout.alignment: Qt.AlignCenter; Layout.preferredHeight: units.gu(18)
                                 orientation: Qt.Vertical; live: true; from: 100; to: 250
-                                value: logical_fields.user_profile.user_height > 100 ? logical_fields.user_profile.user_height : 170
-                                onValueChanged: {
-                                    
-                                    if (logical_fields.user_profile.user_height !== Math.round(value)) {
-                                        logical_fields.user_profile.user_height = Math.round(value);
-                                    }
+                                
+                                Component.onCompleted: {
+                                    value = logical_fields.user_profile.user_height > 100 ? logical_fields.user_profile.user_height : 170
                                 }
+                                
+                                onValueChanged: logical_fields.user_profile.user_height = Math.round(value)
                             }
                             Label { Layout.alignment: Qt.AlignCenter; font.bold: true; color: app_style.label.labelColor; text: Math.round(height_slider.value) + " cm" }
                         }
 
-                        // Peso
+                    
                         LomiriShape {
                             Layout.alignment: Qt.AlignCenter
                             Layout.preferredWidth: units.gu(15)
@@ -310,7 +301,7 @@ Page {
             }
         }
 
-        // 3. SEPARADOR: TENSÃO ARTERIAL (Sempre acessível para evitar quebras do SwipeView)
+    
         Flickable {
             contentHeight: bp_column.implicitHeight + units.gu(4)
             contentWidth: width
@@ -388,7 +379,7 @@ Page {
                             }
                         }
 
-                        // Substituição do RowAbstractUpdateBloodPressureButton antigo por um botão limpo
+                        
                         Rectangle {
                             Layout.alignment: Qt.AlignCenter
                             Layout.topMargin: units.gu(2)
