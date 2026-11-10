@@ -406,7 +406,7 @@ Page {
 
     QQC2.PageIndicator {
         id: swipe_view_indicator
-        count: 3 // Sempre 3 páginas, evitando erros de renderização
+        count: 3
         currentIndex: swipe_view.currentIndex
         anchors.bottom: fab_container.top
         anchors.bottomMargin: units.gu(1)
@@ -448,6 +448,27 @@ Page {
                 onPressed: fab_button.scale = 0.95
                 onReleased: {
                     fab_button.scale = 1.0
+                    
+                    if (!isUpdateMode) {
+                        userRepository.createUserProfile({
+                            "id": 1,
+                            "age": logical_fields.user_profile.user_age,
+                            "sexAtBirth": logical_fields.user_profile.user_sex_at_birth,
+                            "weight": logical_fields.user_profile.user_weight,
+                            "height": logical_fields.user_profile.user_height,
+                            "activity": logical_fields.user_profile.user_activity_level,
+                            "recommendedCalories": 0,
+                            "diastolicBloodPressure": 80,
+                            "systolicBloodPressure": 120
+                        })
+                        
+                
+                        var today = new Date().toISOString().slice(0, 10)
+                        dataAnalysisRepository.saveWeight(logical_fields.user_profile.user_weight, today)
+                        
+                        app_settings.is_clean_install = false
+                    }
+
                     PopupUtils.open(calculate_recommended_calories_dialog)
                 }
             }

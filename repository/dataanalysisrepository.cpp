@@ -77,9 +77,9 @@ bool DataAnalysisRepository::saveWeight(double weight, const QString &date)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
     
-    query.prepare("INSERT INTO weight_tracker (id_user, weight, date) VALUES (1, :weight, :date)");
-    query.bindValue(":weight", weight);
-    query.bindValue(":date", date);
+    query.prepare("INSERT INTO weight_tracker (id_user, weight, date) VALUES (1, ?, ?)");
+    query.addBindValue(weight);
+    query.addBindValue(date);
     
     if (!query.exec()) {
         qWarning() << "DataAnalysisRepository: Failed to save weight:" << query.lastError().text();
@@ -123,4 +123,43 @@ bool DataAnalysisRepository::deleteAllWaterTracker()
         return false;
     }
     return true;
+}
+
+QVariantMap DataAnalysisRepository::getChartLineData(const QString &dateFrom, const QString &dateTo) {
+    QVariantMap chartData;
+    chartData["labels"] = getXWeightTracker(dateFrom, dateTo);
+    
+    QVariantMap dataset;
+    dataset["data"] = getYWeightTracker(dateFrom, dateTo);
+    dataset["label"] = "Weight Progress";
+    // Optional: Add default chart styling to prevent Chart.js errors if theme colors aren't passed
+    dataset["borderColor"] = "#4CAF50"; 
+    dataset["backgroundColor"] = "rgba(76, 175, 80, 0.2)";
+    dataset["fill"] = false;
+
+    QVariantList datasets;
+    datasets.append(dataset);
+    
+    chartData["datasets"] = datasets;
+    return chartData;
+}
+
+QVariantMap DataAnalysisRepository::getChartBarData() {
+    QVariantMap chartData;
+    
+    // Nutriscore labels: A, B, C, D, E
+    QVariantList labels;
+    labels << "A" << "B" << "C" << "D" << "E";
+    chartData["labels"] = labels;
+    
+    QVariantMap dataset;
+    dataset["data"] = getYNutriscore();
+    dataset["label"] = "Nutriscore Distribution";
+    dataset["backgroundColor"] = QVariantList() << "#008b4c" << "#85bb2f" << "#fecb02" << "#ee8100" << "#e63e11";
+    
+    QVariantList datasets;
+    datasets.append(dataset);
+    
+    chartData["datasets"] = datasets;
+    return chartData;
 }

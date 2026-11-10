@@ -128,84 +128,48 @@ bool UserRepository::updateUser(const UserModel &user)
 bool UserRepository::updateAge(int age)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
+    QString sql = QString("UPDATE user SET age = %1 WHERE id = 1").arg(age);
 
-    query.prepare(
-        "UPDATE user SET age = :age WHERE id = :id"
-    );
-
-    query.bindValue(":age", age);
-    query.bindValue(":id", 1);
-
-    if (!query.exec()) {
-        qWarning() << "UserRepository: Failed to update age:"
-                   << query.lastError().text();
-
+    if (!query.exec(sql)) {
+        qWarning() << "UserRepository: Failed to update age:" << query.lastError().text();
         return false;
     }
-
     return query.numRowsAffected() > 0;
 }
 
 bool UserRepository::updateHeight(int height)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
+    QString sql = QString("UPDATE user SET height = %1 WHERE id = 1").arg(height);
 
-    query.prepare(
-        "UPDATE user SET height = :height WHERE id = :id"
-    );
-
-    query.bindValue(":height", height);
-    query.bindValue(":id", 1);
-
-    if (!query.exec()) {
-        qWarning() << "UserRepository: Failed to update height:"
-                   << query.lastError().text();
-
+    if (!query.exec(sql)) {
+        qWarning() << "UserRepository: Failed to update height:" << query.lastError().text();
         return false;
     }
-
     return query.numRowsAffected() > 0;
 }
 
 bool UserRepository::updateRecCal(int recCal)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
+    QString sql = QString("UPDATE user SET rec_cal = %1 WHERE id = 1").arg(recCal);
 
-    query.prepare(
-        "UPDATE user SET rec_cal = :calories WHERE id = :id"
-    );
-
-    query.bindValue(":calories", recCal);
-    query.bindValue(":id", 1);
-
-    if (!query.exec()) {
-        qWarning() << "UserRepository: Failed to update calories:"
-                   << query.lastError().text();
-
+    if (!query.exec(sql)) {
+        qWarning() << "UserRepository: Failed to update calories:" << query.lastError().text();
         return false;
     }
-
     return query.numRowsAffected() > 0;
 }
 
 bool UserRepository::updateActivity(int activity)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
+    QString sql = QString("UPDATE user SET activity = %1 WHERE id = 1").arg(activity);
 
-    query.prepare(
-        "UPDATE user SET activity = :activity WHERE id = :id"
-    );
-
-    query.bindValue(":activity", activity);
-    query.bindValue(":id", 1);
-
-    if (!query.exec()) {
-        qWarning() << "UserRepository: Failed to update activity:"
-                   << query.lastError().text();
-
+    if (!query.exec(sql)) {
+        qWarning() << "UserRepository: Failed to update activity:" << query.lastError().text();
         return false;
     }
-
     return query.numRowsAffected() > 0;
 }
 
@@ -276,47 +240,34 @@ bool UserRepository::saveWeight(const QVariantMap &userWeightData)
 bool UserRepository::updateWeight(double newWeight)
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
-    
-    query.prepare("UPDATE user SET weight = :weight WHERE id = :id");
-    query.bindValue(":weight", newWeight);
-    query.bindValue(":id", 1);
-    
-    if (!query.exec()) {
+    QString sql = QString("UPDATE user SET weight = %1 WHERE id = 1").arg(newWeight);
+
+    if (!query.exec(sql)) {
         qWarning() << "UserRepository: Failed to update weight:" << query.lastError().text();
         return false;
     }
     return true;
 }
 
-bool UserRepository::getUser(UserModel &user)
+QVariantMap UserRepository::getUser()
 {
+    QVariantMap userData;
     QSqlQuery query(LocalStorage::instance().localstorage());
+    
 
-    QString sql = QString(
-        "SELECT id, age, sex_at_birth, weight, height, "
-        "activity, rec_cal, ap_lo, ap_hi "
-        "FROM user "
-        "WHERE id = %1"
-    ).arg(user.id);
-
-    if (!query.exec(sql)) {
-        qWarning() << "UserRepository: Failed to retrieve user:" << query.lastError().text();
-        return false;
+    if (query.exec("SELECT * FROM user WHERE id = 1") && query.next()) {
+        userData["id"] = query.value("id").toInt();
+        userData["age"] = query.value("age").toInt();
+        userData["sex_at_birth"] = query.value("sex_at_birth").toInt();
+        userData["weight"] = query.value("weight").toDouble();
+        userData["height"] = query.value("height").toInt();
+        userData["activity"] = query.value("activity").toInt();
+        userData["rec_cal"] = query.value("rec_cal").toInt();
+        userData["ap_lo"] = query.value("ap_lo").toInt();
+        userData["ap_hi"] = query.value("ap_hi").toInt();
     }
-
-    if (!query.next()) return false;
-
-    user.id = query.value("id").toInt();
-    user.age = query.value("age").toInt();
-    user.sexAtBirth = query.value("sex_at_birth").toInt();
-    user.weight = query.value("weight").toDouble();
-    user.height = query.value("height").toInt();
-    user.activity = query.value("activity").toInt();
-    user.recommendedCalories = query.value("rec_cal").toInt();
-    user.diastolicBloodPressure = query.value("ap_lo").toInt();
-    user.systolicBloodPressure = query.value("ap_hi").toInt();
-
-    return true;
+    
+    return userData;
 }
 
 
@@ -434,4 +385,35 @@ int UserRepository::calculateGoalCalories(int baseCalories, const QString &goalT
     }
 
     return baseCalories + goalAdjustment;
+}
+
+bool UserRepository::getUser(UserModel &user)
+{
+    QSqlQuery query(LocalStorage::instance().localstorage());
+
+    QString sql = QString(
+        "SELECT id, age, sex_at_birth, weight, height, "
+        "activity, rec_cal, ap_lo, ap_hi "
+        "FROM user "
+        "WHERE id = %1"
+    ).arg(user.id);
+
+    if (!query.exec(sql)) {
+        qWarning() << "UserRepository: Failed to retrieve user:" << query.lastError().text();
+        return false;
+    }
+
+    if (!query.next()) return false;
+
+    user.id = query.value("id").toInt();
+    user.age = query.value("age").toInt();
+    user.sexAtBirth = query.value("sex_at_birth").toInt();
+    user.weight = query.value("weight").toDouble();
+    user.height = query.value("height").toInt();
+    user.activity = query.value("activity").toInt();
+    user.recommendedCalories = query.value("rec_cal").toInt();
+    user.diastolicBloodPressure = query.value("ap_lo").toInt();
+    user.systolicBloodPressure = query.value("ap_hi").toInt();
+
+    return true;
 }

@@ -69,13 +69,22 @@ MainView {
     PushNotifications{id:push_notif}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
-    PageStack{
+    PageStack {
         id: page_stack
-        onCurrentPageChanged: {
-            if(currentPage !== null){
-                console.log("Current Stack: " + currentPage.objectName)
+        
+        Component.onCompleted: {
+            var userData = userRepository.getUser();
+            
+            if (userData && userData.id === 1) {
+                app_settings.is_clean_install = false; 
+                
+                page_stack.push(home_page);
+            } 
+            else {
+        
+                page_stack.push(user_profile_config_page);
             }
-        }   
+        }
     }
 
     //UserProfileConfig
@@ -240,17 +249,6 @@ MainView {
     Component{
         id: chat_room_page
         ChatRoomPage{}
-    }
-
-
-    Component.onCompleted:{
-        if(app_settings.is_clean_install){
-            //new install || not configured
-            page_stack.push(user_profile_config_page)
-        }
-        else{
-            page_stack.push(home_page)
-        }
     }
 
     Component.onDestruction: app_settings.last_time_opened = logical_fields.application.date_utils.long_date

@@ -52,7 +52,7 @@ Page{
 
     ListModel{
         id: avg_month_calories
-        Component.onCompleted: dataanalysisRepository.getAverageCalories()
+        Component.onCompleted: dataAnalysisRepository.getAverageCalories()
     }
 
     ListView{

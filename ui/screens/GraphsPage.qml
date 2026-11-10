@@ -98,7 +98,7 @@ Page {
                     width: parent.width
                     height: parent.height
                     chartType: ChartTypes.QChartJSTypes.LINE
-                    chartData: dataanalysisRepository.getChartLineData(app_settings.using_app_date, logical_fields.application.date_utils.long_date)
+                    chartData: dataAnalysisRepository.getChartLineData(app_settings.using_app_date, logical_fields.application.date_utils.long_date)
                     animation: app_settings.is_graphs_animation_enabled
                     chartAnimationEasing: Easing.InOutElastic;
                     chartAnimationDuration: 2000;
@@ -125,7 +125,7 @@ Page {
                     width: parent.width
                     height: parent.height
                     chartType: ChartTypes.QChartJSTypes.BAR
-                    chartData: dataanalysisRepository.getChartBarData()
+                    chartData: dataAnalysisRepository.getChartBarData()
                     animation: app_settings.is_graphs_animation_enabled
                     chartAnimationEasing: Easing.InOutElastic;
                     chartAnimationDuration: 2000;

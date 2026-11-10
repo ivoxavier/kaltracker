@@ -1,19 +1,10 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
- *
- * kaltracker is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
@@ -29,120 +20,106 @@ Dialog {
     id: recommended_calories_dialog
     title: i18n.tr("Recommended Calories")
 
-    //stores the recommended calories by the St. Mifflin Jeor Equation
+    // stores the recommended calories by the St. Mifflin Jeor Equation
     property int equation_calories
-    
-    property bool is_manual_edit : false
+    property bool is_manual_edit: false
 
-    RowLayout{
+    RowLayout {
         Layout.preferredWidth: parent.width
-        Text{
+        Text {
             id: recommended_calories_label
             Layout.alignment: Qt.AlignCenter
             text: i18n.tr("%1 Calories").arg(recommended_calories_dialog.equation_calories) 
             font.pixelSize: units.gu(3)
             font.bold: true
-            color : app_style.label.labelColor
+            color: app_style.label.labelColor
             width: parent.width
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         }
-
     }
     
-
-    Text{
+    Text {
         text: i18n.tr("Calculated Using St. Mifflin Jeor Equation")
         font.pixelSize: units.gu(1.5)
         font.bold: false
-        color : app_style.label.labelColor
+        color: app_style.label.labelColor
         width: parent.width
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
     }
 
-    RowLayout{
+    RowLayout {
         Layout.preferredWidth: parent.width
-
-        Icon{
+        Icon {
             Layout.alignment: Qt.AlignCenter
             name: "edit"
             height: units.gu(3)
-            MouseArea{
+            MouseArea {
                 anchors.fill: parent
                 onClicked: recommended_calories_dialog.is_manual_edit = !recommended_calories_dialog.is_manual_edit
             }
         }
-
     }
     
-    LomiriShape{
-        width : parent.width
-        height : units.gu(10)
+    LomiriShape {
+        width: parent.width
+        height: units.gu(10)
         radius: "large"
         aspect: LomiriShape.Inset
-
         visible: recommended_calories_dialog.is_manual_edit
 
-        TextInput{
+        TextInput {
             anchors.fill: parent
             overwriteMode: true
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            color : app_style.label.labelColor  
+            color: app_style.label.labelColor  
             onTextChanged: {
-                if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                    logical_fields.user_profile.equation_recommended_calories = text
-                }else{
-                    logical_fields.user_profile.equation_recommended_calories = text
-                }
-                
+                logical_fields.user_profile.equation_recommended_calories = text
             }
         }
     }
 
-    Button{
+    Button {
         text: i18n.tr("Confirm")
         color: LomiriColors.green
         onClicked: {
-            if(page_stack.currentPage.objectName == "UserProfileConfigPage"){
-                ////stores plan type
-                app_settings.plan_type = logical_fields.user_profile.type_goal
-                
-                page_stack.pop(user_profile_page)
-                page_stack.push(create_storage_page)
-            } else{
+        
+            userRepository.updateWeight(logical_fields.user_profile.user_weight)
+            userRepository.updateHeight(logical_fields.user_profile.user_height)
 
-                userRepository.updateWeight(logical_fields.user_profile.user_weight)
-                userRepository.updateHeight(logical_fields.user_profile.user_height)
+            var today = new Date().toISOString().slice(0, 10)
+            dataAnalysisRepository.saveWeight(Number(logical_fields.user_profile.user_weight), today)
 
-                dataAnalysisRepository.saveWeight(Number(logical_fields.user_profile.user_weight), logical_fields.application.date_utils.long_date)
-
-                app_settings.water_weight_calc = logical_fields.user_profile.user_weight
-
-                app_settings.plan_type = logical_fields.user_profile.type_goal
-                app_settings.rec_cal =  logical_fields.user_profile.equation_recommended_calories
-
-                userRepository.updateAge(logical_fields.user_profile.user_age)
-                userRepository.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
-                userRepository.updateActivity(logical_fields.user_profile.user_activity_level)
-                app_settings.is_weight_tracker_chart_enabled = true
-                root.initDB()
-                PopupUtils.close(recommended_calories_dialog)
-                page_stack.pop(user_profile_page)
-            }
             
+            app_settings.water_weight_calc = logical_fields.user_profile.user_weight
+            app_settings.plan_type = logical_fields.user_profile.type_goal
+            app_settings.rec_cal = logical_fields.user_profile.equation_recommended_calories
+            app_settings.is_weight_tracker_chart_enabled = true
+
+    
+            userRepository.updateAge(logical_fields.user_profile.user_age)
+            userRepository.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
+            userRepository.updateActivity(logical_fields.user_profile.user_activity_level)
+            
+            root.initDB()
+            PopupUtils.close(recommended_calories_dialog)
+            
+            if (user_profile_page.isUpdateMode) {
+                page_stack.pop()
+            } else {
+                page_stack.clear()
+                page_stack.push(create_storage_page)
+            }
         }
     }
 
-    Button{
+    Button {
         text: i18n.tr("Back")
-        onClicked:{
-                PopupUtils.close(recommended_calories_dialog)
-            }
-        }
+        onClicked: PopupUtils.close(recommended_calories_dialog)
+    }
 
     Component.onCompleted: {
-        
         var baseCal = userRepository.calculateBaseCalories(
             logical_fields.user_profile.user_age,
             logical_fields.user_profile.user_weight,
