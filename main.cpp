@@ -19,6 +19,7 @@
 #include "repository/notesrepository.h"
 #include "repository/dataanalysisrepository.h"
 #include "repository/models/ingestionmodel.h"
+#include "repository/services/remote/openfoodfactsservice.h"
 
 int main(int argc, char *argv[])
 {
@@ -44,6 +45,8 @@ int main(int argc, char *argv[])
     UserModel user;
     user.id = 1;
 
+    OpenFoodFactsService offService;
+
     // Register existing QML types.
     qRegisterMetaType<UserModel>("UserModel");
     qRegisterMetaType<UserWeightModel>("UserWeightModel");
@@ -64,6 +67,9 @@ int main(int argc, char *argv[])
     view.rootContext()->setContextProperty("notesRepository", &notesRepository);
     view.rootContext()->setContextProperty("dataAnalysisRepository", &dataAnalysisRepository);
     view.rootContext()->setContextProperty("localStorage", &LocalStorage::instance());
+
+    
+    view.rootContext()->setContextProperty("openFoodFactsService", &offService);
 
     view.setSource(QUrl::fromLocalFile("MainView.qml"));
     view.setResizeMode(QQuickView::SizeRootObjectToView);
