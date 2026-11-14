@@ -1,207 +1,196 @@
-/*
- * 2022-2023  Ivo Xavier 
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; version 3.
- *
- * kaltracker is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
 import Lomiri.Components.Popups 1.3
-import QtQuick.Controls.Suru 2.2
-import QtQuick.LocalStorage 2.12
-import Lomiri.Content 1.3
-import io.thp.pyotherside 1.5
 import "../components"
 import "../theme"
 
-
-
-Page{
+Page {
     id: backuprestore_page
     objectName: 'BackupRestorePage'
+    
     header: PageHeader {
-               //visible: app_settings.is_page_headers_enabled ? true : false
-                title: i18n.tr("Backup & Restore Data")
+        title: i18n.tr("Backup & Restore Data")
+    }
 
-                StyleHints {
-                   /* foregroundColor: "white"
-                    backgroundColor:  Suru.theme === 0 ? ThemeColors.utFoods_blue_theme_background : ThemeColors.utFoods_dark_theme_background */
-                }
+    BackgroundStyle {}
+
+    // ==========================================
+    // LIGAÇÃO C++: BACKUP & RESTORE
+    // ==========================================
+    Connections {
+        target: backupRestoreService
+
+        function onExportSuccess() { 
+            PopupUtils.open(data_exported_dialog); 
+        }
+        
+        function onExportFail(errorString) { 
+            console.log("Export Error: " + errorString); 
+            PopupUtils.open(error_dialog); 
+        }
+        
+        function onImportVerificationSuccess() { 
+            backupRestoreService.importData(); 
+        }
+        
+        function onImportVerificationFail() { 
+            PopupUtils.open(files_not_valid); 
+        }
+        
+        function onImportSuccess() { 
+            PopupUtils.open(data_loaded_dialog); 
+        }
+        
+        function onImportFail(errorString) { 
+            console.log("Import Error: " + errorString); 
+            PopupUtils.open(data_not_loaded_dialog); 
+        }
+    }
+
+    // ==========================================
+    // DIÁLOGOS DE RESULTADO
+    // ==========================================
+    Component { id: error_dialog; MessageDialog { msg: i18n.tr("Something went wrong, please verify Logs") } }
+    Component { id: files_not_valid; MessageDialog { msg: i18n.tr("Verify if files exist in the Import folder.") } }
+    Component { id: data_not_loaded_dialog; MessageDialog { msg: i18n.tr("Data not loaded, please check logs") } }
+    Component { id: data_exported_dialog; MessageDialog { msg: i18n.tr("Data exported successfully!") } }
+    Component { id: data_loaded_dialog; MessageDialog { msg: i18n.tr("Data loaded! We recommend restarting the app.") } }
+    
+    // ==========================================
+    // INTERFACE DE UTILIZADOR
+    // ==========================================
+    Flickable {
+        anchors.top: parent.header.bottom 
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        contentWidth: parent.width
+        contentHeight: main_column.height + units.gu(8) 
+        clip: true
+
+        Column { 
+            id: main_column
+            width: parent.width
+            spacing: units.gu(3)
+            
+            // --- ANIMAÇÃO DE ENTRADA SUAVE ---
+            opacity: 0
+            transform: Translate { id: slide_anim; y: units.gu(3) }
+            
+            Component.onCompleted: entry_anim.start()
+            
+            ParallelAnimation {
+                id: entry_anim
+                NumberAnimation { target: main_column; property: "opacity"; to: 1; duration: 400; easing.type: Easing.OutCubic }
+                NumberAnimation { target: slide_anim; property: "y"; to: 0; duration: 500; easing.type: Easing.OutBack }
             }
 
-    BackgroundStyle{}
-    
+            Item { width: 1; height: units.gu(2) }
 
-    Python{
-        id: py
-        Component.onCompleted:{
-            addImportPath(Qt.resolvedUrl('../py/'))
-            importModule('backup_restore', function() {
-                py.call('backup_restore.ExportData.moduleState', [] ,function(returnValue){
-                    console.log(returnValue)
-            })
-         
-            })
+            // --- HERO GRAPHIC MODERNO ---
+            Item {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: units.gu(12)
+                height: units.gu(12)
+                
+                Rectangle {
+                    anchors.fill: parent
+                    radius: width / 2
+                    color: app_style.button.actionButton.buttonColor
+                    opacity: 0.15 
+                }
+                
+                Icon {
+                    anchors.centerIn: parent
+                    width: units.gu(6)
+                    height: units.gu(6)
+                    name: "document-save" 
+                    color: app_style.button.actionButton.buttonColor
+                }
+            }
+            
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: i18n.tr("Keep your data safe")
+                font.weight: Font.Light
+                font.pixelSize: units.gu(2.5)
+                color: app_style.label.labelColor
+            }
 
-             /* handlers sent from pyotherside */
-
-            setHandler('file_verification_success', function() {
-                PopupUtils.open(backuprestore_notify_pop)
-                py.call('backup_restore.ImportData.loadData', [] ,function(isDataLoaded){})
-            });
-
-            setHandler('file_verification_fail', function() {
-                backuprestore_page.operationFinished()
-                PopupUtils.open(files_not_valid)
-            });
-
-            setHandler('load_success', function() {
-                backuprestore_page.operationFinished()
-                PopupUtils.open(data_loaded_dialog)
-            });
-
-            setHandler('load_fail', function() {
-                backuprestore_page.operationFinished()
-                PopupUtils.open(data_not_loaded_dialog)
-            });
-
-            setHandler('files_export_success', function() {
-                backuprestore_page.operationFinished()
-                PopupUtils.open(data_exported_dialog)
-            });
-
-            setHandler('files_export_fail', function() {
-                backuprestore_page.operationFinished()
-                PopupUtils.open(error_dialog)
-            });
-
-
-        }
-        onError: {
-            console.log('Python error: ' + traceback);
-        }
-
-    }
-
-    Component{
-        id: error_dialog
-        MessageDialog{msg:i18n.tr("Something went wrong, please verify Logs")}
-    }
-
-    Component{
-        id: files_not_valid
-        MessageDialog{msg:i18n.tr("Verify if files exists and if headers match accordingly")}
-    }
-
-
-    Component{
-        id: data_not_loaded_dialog
-        MessageDialog{msg:i18n.tr("Data not loaded, please check logs")}
-    }
-
-    Component{
-        id: data_exported_dialog
-        MessageDialog{msg:i18n.tr("Data exported!")}
-    }
-
-    Component{
-        id: data_loaded_dialog
-        MessageDialog{msg:i18n.tr("Data loaded! We recomend a reboot of the app.")}
-    }
-
-    Component{
-        id: backuprestore_notify_pop
-        BackupRestoreNotifyPop{}
-    }
-    
-    //to allow the popup be closed
-    signal operationFinished()
-
-    Flickable {
-
-        anchors{
-            top:  parent.header.bottom 
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-
-        contentWidth: parent.width
-        contentHeight: main_column.height  
-        
-        //interactive : root.height > root.width ? false : true
-
-        ColumnLayout{
-            id: main_column
-            width: root.width
-            //spacing: units.gu(2)
-
-            BlankSpace{height:units.gu(4.5)}
-
-            SlotBackupRestore{
-                Layout.alignment: Qt.AlignCenter
+            // --- BOTÃO DE EXPORTAR ---
+            SlotBackupRestore {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - units.gu(4)
+                height: units.gu(14) 
+                
                 icon_source: "../../assets/export_icon.svg"
                 slot_label: i18n.tr("Export Data")
-                slot_path_label : "./local/share/kaltracker.ivoxavier/Export"
+                slot_path_label: "./local/share/kaltracker.ivoxavier/Export"
                  
-                MouseArea{
+                MouseArea {
                     anchors.fill: parent
-                    onClicked: {
-                        PopupUtils.open(backuprestore_notify_pop)
-                        py.call('backup_restore.ExportData.createFiles', [] ,function(returnValue){})    
-                    }    
+                    onClicked: { backupRestoreService.exportData(); }    
                 }
             }
 
-            BlankSpace{height:units.gu(6)}
+            // --- BOTÃO DE IMPORTAR ---
+            SlotBackupRestore {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - units.gu(4)
+                height: units.gu(14) 
 
-            SlotBackupRestore{
-                Layout.alignment: Qt.AlignCenter
                 icon_source: "../../assets/import_icon.svg"
                 slot_label: i18n.tr("Import Data")
-                slot_path_label : "./local/share/kaltracker.ivoxavier/Import"
+                slot_path_label: "./local/share/kaltracker.ivoxavier/Import"
                 
-                MouseArea{
+                MouseArea {
                     anchors.fill: parent
-                    onClicked:{
-                        py.call('backup_restore.ImportData.filesExists', [] ,function(filesOK){
-                            if (filesOK < 1){PopupUtils.open(files_not_valid);console.log("files not in folder OR wrong name")}
-                        })              
-                    }
+                    onClicked: { backupRestoreService.verifyImportFiles(); }
                 }
             }  
             
-            BlankSpace{height:units.gu(4)}
+            // --- INSTRUÇÕES (BANNER INFORMATIVO) ---
+            Item { width: 1; height: units.gu(1) } // Espaçador
 
+            Column {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - units.gu(4)
+                spacing: units.gu(1)
 
-            ListItemHeader{
-                text_header.title.text: i18n.tr("Importing Requirements")
-                divider.visible: false
-            }
+                Label {
+                    text: i18n.tr("Importing Requirements")
+                    font.weight: Font.DemiBold
+                    color: LomiriColors.ash
+                }
 
-
-            Label{
-                Layout.alignment: Qt.AlignCenter
-                font.pixelSize: units.gu(1.5)
-               // width: parent.width
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                horizontalAlignment: Text.AlignLeft    
-                color : Suru.theme === 0 ? root.kaltracker_light_theme.text_color : root.kaltracker_dark_theme.text_color
-                text: i18n.tr("Place the files from ExportData in Import path.") 
+                Rectangle {
+                    width: parent.width
+                    height: info_row.height + units.gu(4)
+                    color: app_style.shape.shapeColor
+                    radius: units.gu(1)
+                    
+                    Row {
+                        id: info_row
+                        width: parent.width - units.gu(4)
+                        anchors.centerIn: parent
+                        spacing: units.gu(2)
+                        
+                        Icon {
+                            name: "info"
+                            width: units.gu(3)
+                            height: units.gu(3)
+                            color: LomiriColors.ash
+                        }
+                        
+                        Label {
+                            width: parent.width - units.gu(5) 
+                            font.pixelSize: units.gu(1.5)
+                            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                            color: app_style.label.labelColor
+                            text: i18n.tr("Place the files from the ExportData folder into the Import path before restoring.") 
+                        }
+                    }
+                }
             }
         }  
     }

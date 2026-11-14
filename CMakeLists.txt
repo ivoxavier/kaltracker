@@ -73,6 +73,7 @@ set(SOURCES
     main.cpp
     "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.cpp"
     "${LOCAL_SERVICES_DIR}database/localstorage.cpp"
+    "${LOCAL_SERVICES_DIR}backup/backuprestoreservice.cpp"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.cpp"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.cpp"
     "${REMOTE_SERVICES_DIR}openfoodfacts/openfoodfactsservice.cpp"
@@ -85,6 +86,7 @@ set(SOURCES
 set(HEADERS
     "${LOCAL_SERVICES_DIR}internetchecker/internetchecker.h"
     "${LOCAL_SERVICES_DIR}database/localstorage.h"
+    "${LOCAL_SERVICES_DIR}backup/backuprestoreservice.h"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.h"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
     "${REMOTE_SERVICES_DIR}openfoodfacts/openfoodfactsservice.h"
