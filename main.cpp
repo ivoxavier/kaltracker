@@ -19,7 +19,7 @@
 #include "repository/notesrepository.h"
 #include "repository/dataanalysisrepository.h"
 #include "repository/models/ingestionmodel.h"
-#include "repository/services/remote/openfoodfactsservice.h"
+#include "repository/services/remote/openfoodfacts/openfoodfactsservice.h"
 
 int main(int argc, char *argv[])
 {

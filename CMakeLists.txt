@@ -75,6 +75,7 @@ set(SOURCES
     "${LOCAL_SERVICES_DIR}database/localstorage.cpp"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.cpp"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.cpp"
+    "${REMOTE_SERVICES_DIR}openfoodfacts/openfoodfactsservice.cpp"
     "${REPOSITORY_DIR}userrepository.cpp"
     "${REPOSITORY_DIR}ingestionrepository.cpp"
     "${REPOSITORY_DIR}notesrepository.cpp"
@@ -86,6 +87,7 @@ set(HEADERS
     "${LOCAL_SERVICES_DIR}database/localstorage.h"
     "${REMOTE_SERVICES_DIR}aiagent/askyouragent.h"
     "${REMOTE_SERVICES_DIR}chatsupport/chatsupport.h"
+    "${REMOTE_SERVICES_DIR}openfoodfacts/openfoodfactsservice.h"
     "${REPOSITORY_DIR}userrepository.h"
     "${REPOSITORY_DIR}ingestionrepository.h"
     "${REPOSITORY_DIR}notesrepository.h"
@@ -145,7 +147,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
-target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::Sql)
+target_link_libraries(${PROJECT_NAME} Qt5::Gui Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::Sql Qt5::Network)
 target_link_libraries(${PROJECT_NAME} qzxing)
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 
