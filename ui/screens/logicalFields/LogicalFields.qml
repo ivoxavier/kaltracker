@@ -1,35 +1,27 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
- *
- * kaltracker is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * ...
  */
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
 import Qt.labs.settings 1.0
 
-QtObject{
+QtObject {
 
-    property QtObject application : QtObject{
-        property QtObject date_utils : QtObject{
+    property QtObject application : QtObject {
+        property QtObject date_utils : QtObject {
             property var locale : Qt.locale()
             property date current_date : new Date()
             property var long_date: current_date.toLocaleDateString(locale, 'yyyy-MM-dd')
         }
     }
 
-    property QtObject user_profile : QtObject{
+    property QtObject user_profile : QtObject {
         property int user_goal
         property string type_goal
         property int user_activity_level
@@ -40,30 +32,46 @@ QtObject{
         property int ap_hi //systolic
         property int ap_lo //diastolic
         property int equation_recommended_calories
-        property QtObject plan : QtObject{
+        property QtObject plan : QtObject {
             property int cal_consumed
             property int cal_remaining
         }
     }
 
-    property QtObject ingestion : QtObject{
-        property string product_name
+    property QtObject ingestion : QtObject {
+        // --- IDENTIFICAÇÃO DO PRODUTO ---
+        property string product_name: ""
+        property string brands: ""       // NOVO: Marca do produto (ex: "Mimosa")
+        property string image_url: ""    // NOVO: URL da imagem do produto
+        property string quantity: ""     // NOVO: Quantidade (ex: "330 ml", "1 kg")
+        
+        // --- CLASSIFICAÇÕES ---
         property string nutriscore : "a"
-        property string nova_groups
-        property int cal
+        property string nova_groups: "0"
+        
+        // --- MACROS (por 100g/ml) ---
+        property int cal: 0
         property double carbo : 0.0
         property double fat : 0.0
         property double protein : 0.0
+        property double fiber : 0.0      // NOVO: Fibra
+        property double salt : 0.0       // NOVO: Sal (Sódio)
+        
+        // --- LÓGICA DE REFEIÇÃO ---
         property int meal_type
         property int quantity_portions : 1
         property double size_portions : 1
+        
+        // --- TOTAIS CALCULADOS ---
         property int cal_ingested : Math.round(cal * quantity_portions) * size_portions
         property double carbo_ingested : Math.round((carbo * quantity_portions) * size_portions * 10) / 10
         property double fat_ingested : Math.round((fat * quantity_portions) * size_portions * 10) / 10
         property double protein_ingested : Math.round((protein * quantity_portions) * size_portions * 10) / 10 
+        property double fiber_ingested : Math.round((fiber * quantity_portions) * size_portions * 10) / 10  // NOVO: Calculado
+        property double salt_ingested : Math.round((salt * quantity_portions) * size_portions * 10) / 10    // NOVO: Calculado
     }
 
-    property QtObject metrics : QtObject{
+    property QtObject metrics : QtObject {
         property int total_cal_breakfast
         property int total_cal_lunch
         property int total_cal_dinner
@@ -74,5 +82,4 @@ QtObject{
         property double total_fat_consumed
         property double total_protein_consumed
     }
-
 }
