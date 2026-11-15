@@ -14,7 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
@@ -25,8 +24,6 @@ import "ui/screens/components"
 import "ui/theme"
 import "repository"
 import "ui/screens/logicalFields"
-import "ui/screens/controlSemaphores"
-import "ui/screens/semaphores"
 import "ui/screens/pushNotifications"
 
 MainView {
@@ -38,14 +35,14 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-
     /* custom signals --start--*/
     signal initDB()
     /* custom signals --end--*/
 
     property var notification_data: ({ title: "", subtitle: "" })
-    property bool streamsActive: (app_settings.is_streams_enabled && !app_settings.is_clean_install && streams_smph.light === "yellow")
-
+    
+    // Removida a dependência do streams_smph.light === "yellow"
+    property bool streamsActive: (app_settings.is_streams_enabled && !app_settings.is_clean_install)
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack {
@@ -56,44 +53,40 @@ MainView {
             
             if (userData && userData.id === 1) {
                 app_settings.is_clean_install = false; 
-                
                 page_stack.push(home_page);
             } 
             else {
-        
                 page_stack.push(user_profile_config_page);
             }
         }
     }
 
-
     Connections {
-            target: streamsService
-            function onShowNotification(title, subtitle) {
-                root.notification_data = { title: title, subtitle: subtitle };
-                PopupUtils.open(streams_notif_pop);
-            }
+        target: streamsService
+        function onShowNotification(title, subtitle) {
+            root.notification_data = { title: title, subtitle: subtitle };
+            PopupUtils.open(streams_notif_pop);
         }
-
+    }
 
     onStreamsActiveChanged: {
-            if (streamsActive) {
-                var checkKcal = app_settings.stream_kcal_consumption && (app_settings.using_app_date !== logical_fields.application.date_utils.long_date);
-                var checkDays = app_settings.stream_days_without_reg;
-                streamsService.startMonitoring(checkKcal, checkDays);
-            } else {
-                streamsService.stopMonitoring();
-            }
+        if (streamsActive) {
+            var checkKcal = app_settings.stream_kcal_consumption && (app_settings.using_app_date !== logical_fields.application.date_utils.long_date);
+            var checkDays = app_settings.stream_days_without_reg;
+    
+            streamsService.startMonitoring(checkKcal, checkDays);
+        } else {
+            streamsService.stopMonitoring();
         }
-
+    }
 
     Component {
-            id: streams_notif_pop
-            NotificationPop {
-                title.text: root.notification_data.title
-                subtitle.text: root.notification_data.subtitle
-            }
+        id: streams_notif_pop
+        NotificationPop {
+            title.text: root.notification_data.title
+            subtitle.text: root.notification_data.subtitle
         }
+    }
 
     //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
     AppSettings{id: app_settings}
@@ -104,12 +97,6 @@ MainView {
     //Logical Fields of the App
     LogicalFields{id:logical_fields}
 
-    //Control Semaphores by setting their light
-    ControlSemaphores{id:ctrl_smph}
-
-    //Semaphores for Streams
-    Semaphores{id:streams_smph}
-
     //PushNotifications Client
     PushNotifications{id:push_notif}
 
@@ -119,7 +106,6 @@ MainView {
         UserProfileConfigPage{}
     }
     
-
     //CreatePage, process for creating the db
     Component{
         id: create_storage_page
@@ -141,12 +127,11 @@ MainView {
         QuickListFoodsPage{}
     }
 
-    //QuickListFoodsPage gives users a list of foods
+    //QuickAdditionPage
     Component{
         id: quick_addition_page
         QuickAdditionPage{}
     }
-
 
     //SetFoodPage, let uses set the ingestions
     Component{
@@ -177,7 +162,6 @@ MainView {
         id: manage_data_page
         ManageDataPage{}
     }
-
 
     //ManageUserFoodsListPage, let enable online sources
     Component{
@@ -255,7 +239,6 @@ MainView {
         id: chat_support_page
         ChatSupportPage{}
     }
-
 
     Component{
         id: manage_subscription_page
