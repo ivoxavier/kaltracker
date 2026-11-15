@@ -1,2 +1,10 @@
+# ===================
+# UbuntuTouch || Clickable
 build/
 .env
+# ===================
+
+# ===================
+# QtCreator IDE
+CMakeLists.txt*
+# ===================
