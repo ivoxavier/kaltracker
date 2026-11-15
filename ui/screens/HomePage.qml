@@ -76,7 +76,6 @@ Page{
         return "black"; // fallback
     }
 
-
     //popus a datepicker
     Component{
         id: date_popUP
