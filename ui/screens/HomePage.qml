@@ -27,7 +27,6 @@ import ChatSupport 0.1
 import "../components"
 import "../theme"
 import "../logicalFields"
-import "../semaphores"
 
 Page{
     id: home_page
@@ -76,7 +75,6 @@ Page{
         if (g === 'e') return LomiriColors.red;
         return "black"; // fallback
     }
-
 
     //popus a datepicker
     Component{
