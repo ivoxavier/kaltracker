@@ -21,6 +21,7 @@
 #include "repository/models/ingestionmodel.h"
 #include "repository/services/remote/openfoodfacts/openfoodfactsservice.h"
 #include "repository/services/local/backup/backuprestoreservice.h"
+#include "repository/services/local/streamsservice.h"
 
 int main(int argc, char *argv[])
 {
@@ -46,8 +47,10 @@ int main(int argc, char *argv[])
     UserModel user;
     user.id = 1;
 
+    //Services
     OpenFoodFactsService offService;
-     BackupRestoreService backupRestoreService;
+    BackupRestoreService backupRestoreService;
+    StreamsService streamsService;
 
     // Register existing QML types.
     qRegisterMetaType<UserModel>("UserModel");
@@ -73,6 +76,7 @@ int main(int argc, char *argv[])
     
     view.rootContext()->setContextProperty("openFoodFactsService", &offService);
     view.rootContext()->setContextProperty("backupRestoreService", &backupRestoreService);
+    view.rootContext()->setContextProperty("streamsService", &streamsService);
 
     view.setSource(QUrl::fromLocalFile("MainView.qml"));
     view.setResizeMode(QQuickView::SizeRootObjectToView);

@@ -19,6 +19,7 @@ import QtQuick 2.9
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
 import Lomiri.PushNotifications 0.1
+import Lomiri.Components.Popups 1.3
 import "ui/screens"
 import "ui/screens/components"
 import "ui/theme"
@@ -44,29 +45,9 @@ MainView {
     signal initDB()
     /* custom signals --end--*/
 
-    //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
-    AppSettings{id: app_settings}
+    property var notification_data: ({ title: "", subtitle: "" })
+    property bool streamsActive: (app_settings.is_streams_enabled && !app_settings.is_clean_install && streams_smph.light === "yellow")
 
-    //Style for the app
-    Style{id:app_style}
-
-    //Logical Fields of the App
-    LogicalFields{id:logical_fields}
-
-    //Control Semaphores by setting their light
-    ControlSemaphores{id:ctrl_smph}
-
-    //Semaphores for Streams
-    Semaphores{id:streams_smph}
-
-    //Control Streams Execution
-    ControlStreams{id:ctrl_strs}
-
-    //Streams
-    Streams{id:streams}
-
-    //PushNotifications Client
-    PushNotifications{id:push_notif}
 
     //handles the push and pop of stacks in MainView. Plus, logs the currentPage
     PageStack {
@@ -86,6 +67,53 @@ MainView {
             }
         }
     }
+
+
+    Connections {
+            target: streamsService
+            function onShowNotification(title, subtitle) {
+                root.notification_data = { title: title, subtitle: subtitle };
+                PopupUtils.open(streams_notif_pop);
+            }
+        }
+
+
+    onStreamsActiveChanged: {
+            if (streamsActive) {
+                var checkKcal = app_settings.stream_kcal_consumption && (app_settings.using_app_date !== logical_fields.application.date_utils.long_date);
+                var checkDays = app_settings.stream_days_without_reg;
+                streamsService.startMonitoring(checkKcal, checkDays);
+            } else {
+                streamsService.stopMonitoring();
+            }
+        }
+
+
+    Component {
+            id: streams_notif_pop
+            NotificationPop {
+                title.text: root.notification_data.title
+                subtitle.text: root.notification_data.subtitle
+            }
+        }
+
+    //creates a config file under /home/phablet/.config/kaltracker.ivoxavier
+    AppSettings{id: app_settings}
+
+    //Style for the app
+    Style{id:app_style}
+
+    //Logical Fields of the App
+    LogicalFields{id:logical_fields}
+
+    //Control Semaphores by setting their light
+    ControlSemaphores{id:ctrl_smph}
+
+    //Semaphores for Streams
+    Semaphores{id:streams_smph}
+
+    //PushNotifications Client
+    PushNotifications{id:push_notif}
 
     //UserProfileConfig
     Component{
