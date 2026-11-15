@@ -27,8 +27,6 @@ import "repository"
 import "ui/screens/logicalFields"
 import "ui/screens/controlSemaphores"
 import "ui/screens/semaphores"
-import "ui/screens/controlStreams"
-import "ui/screens/streams"
 import "ui/screens/pushNotifications"
 
 MainView {
