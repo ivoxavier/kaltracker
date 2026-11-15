@@ -123,22 +123,6 @@ Page{
 
     }
 
-    RowAbstractBarcodeButton{
-        id: barcode_button
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: quick_addition_button.top
-        visible : app_settings.is_api_openfoodsfacts_enabled && quick_addition_button.visible ?
-        true : quick_addition_button.visible == false ?
-        false : false
-    }
-
-    RowAbstractQuickAdditionButton{
-        id: quick_addition_button
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        visible : list_view_foods.selectionCount == 0 ? true : false
-    }
-
     SlotMultiAddition{
         id: slotMultiAddition
         anchors.horizontalCenter: parent.horizontalCenter
@@ -150,4 +134,26 @@ Page{
         selectSum.text: list_view_foods.getCalSelection() + i18n.tr(" calories")
         visible : list_view_foods.selectionCount == 0 ? false : true
     }
+
+        Column {
+            anchors.right: parent.right
+            anchors.bottom: slotMultiAddition.visible ? slotMultiAddition.top : parent.bottom
+            anchors.margins: units.gu(2)
+            spacing: units.gu(2)
+            z: 10
+
+            FloatingActionButton {
+                id: barcode_button
+                iconSource: "../../assets/barcode_icon.svg"
+                visible: app_settings.is_api_openfoodsfacts_enabled && quick_addition_button.visible
+                onClicked: page_stack.push(scan_page, { meal_scan_page: meal_quick_list_foods_page })
+            }
+
+            FloatingActionButton {
+                id: quick_addition_button
+                iconSource: "../../assets/apple-fruit-svgrepo-com.svg"
+                visible: list_view_foods.selectionCount === 0
+                onClicked: page_stack.push(quick_addition_page)
+            }
+        }
 }
