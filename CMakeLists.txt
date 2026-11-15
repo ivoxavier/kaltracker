@@ -139,6 +139,8 @@ add_executable(${PROJECT_NAME}
     ${SOURCES}
     ${HEADERS}
     ${QT_RESOURCES}
+    repository/services/local/streams/streamsservice.h
+    repository/services/local/streams/streamsservice.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
@@ -163,13 +165,10 @@ install(DIRECTORY "${UI_THEME_DIR}" DESTINATION /ui/theme)
 install(DIRECTORY "${UI_SCREENS_DIR}plugins" DESTINATION /ui)
 install(DIRECTORY "${REPOSITORY_DIR}" DESTINATION /repository)
 install(DIRECTORY "${UI_SCREENS_DIR}logicalFields" DESTINATION /ui)
-install(DIRECTORY "${UI_SCREENS_DIR}controlStreams" DESTINATION /ui)
-install(DIRECTORY "${UI_SCREENS_DIR}streams" DESTINATION /ui)
 install(DIRECTORY "${UI_SCREENS_DIR}controlSemaphores" DESTINATION /ui)
 install(DIRECTORY "${UI_SCREENS_DIR}semaphores" DESTINATION /ui)
 install(DIRECTORY "${UI_SCREENS_DIR}pushNotifications" DESTINATION /ui)
 install(DIRECTORY "js" DESTINATION .)
-install(DIRECTORY "py" DESTINATION .)
 
 
 # Translations
