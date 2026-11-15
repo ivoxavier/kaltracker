@@ -21,7 +21,7 @@
 #include "repository/models/ingestionmodel.h"
 #include "repository/services/remote/openfoodfacts/openfoodfactsservice.h"
 #include "repository/services/local/backup/backuprestoreservice.h"
-#include "repository/services/local/streamsservice.h"
+#include "repository/services/local/steams/streamsservice.h"
 
 int main(int argc, char *argv[])
 {
