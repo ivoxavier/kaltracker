@@ -141,6 +141,7 @@ add_executable(${PROJECT_NAME}
     ${QT_RESOURCES}
     repository/services/local/streams/streamsservice.h
     repository/services/local/streams/streamsservice.cpp
+    ui/screens/components/FloatingActionButton.qml
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
