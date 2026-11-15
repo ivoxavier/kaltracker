@@ -27,7 +27,6 @@ import ChatSupport 0.1
 import "../components"
 import "../theme"
 import "../logicalFields"
-import "../semaphores"
 
 Page{
     id: home_page
