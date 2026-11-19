@@ -79,7 +79,7 @@ Dialog {
         color: app_style.button.deleteButton.buttonColor
         onClicked:{
             if(confirmed == 2){
-                IngestionsTable.deleteMonthYearIngestion(month_to_delete, year_to_delete)
+                ingestionRepository.deleteMonthYearIngestion(month_to_delete, year_to_delete)
                 root.initDB()
                 //root.refreshListModel()
                 PopupUtils.close(delete_month_year_dialog)

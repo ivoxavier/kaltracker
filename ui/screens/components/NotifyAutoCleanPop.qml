@@ -50,7 +50,7 @@ Popover{
     }
 
     Component.onCompleted:{
-        IngestionsTable.autoClean()
+        ingestionRepository.autoClean()
 
         function animationState(delayMiliseconds, cb) {
                 timer.interval = delayMiliseconds;
