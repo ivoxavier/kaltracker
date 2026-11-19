@@ -45,7 +45,6 @@ private:
     QString getExportPath() const;
     QString getImportPath() const;
     bool writeTableToCsv(const QString &tableName, const QStringList &headers, const QString &filePath);
-    bool clearDatabase();
     bool importCsvToTable(const QString &tableName, const QString &filePath, const QString &insertQuery, int expectedColumns);
 };
 
