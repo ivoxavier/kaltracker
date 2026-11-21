@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 13:22+0000\n"
+"POT-Creation-Date: 2026-11-21 14:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -196,71 +196,86 @@ msgid ""
 "restoring."
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:33
+#: ../ui/screens/BodyMeasuresPage.qml:29
 msgid "Body Measures"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:60
-msgid ""
-"KalTracker is not taking in consideration your muscule weight. This is ONLY "
-"e a reference"
+#: ../ui/screens/BodyMeasuresPage.qml:61
+msgid "Underweight"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:83
-msgid "Body Mass Index"
+#: ../ui/screens/BodyMeasuresPage.qml:62
+msgid "Normal Weight"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:95
-msgid "Low Weigth"
+#: ../ui/screens/BodyMeasuresPage.qml:63
+msgid "Overweight"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:96
-msgid "Normal Weigth"
-msgstr ""
-
-#: ../ui/screens/BodyMeasuresPage.qml:97
-msgid "Weigth Exceed"
-msgstr ""
-
-#: ../ui/screens/BodyMeasuresPage.qml:98
+#: ../ui/screens/BodyMeasuresPage.qml:64
 msgid "Pre-Obesity"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:99
+#: ../ui/screens/BodyMeasuresPage.qml:65
 msgid "Obesity"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:116
-msgid "Ideal Weight"
-msgstr ""
-
-#: ../ui/screens/BodyMeasuresPage.qml:131
-#: ../ui/screens/UserProfileConfigPage.qml:282
-msgid "KG"
-msgstr ""
-
-#: ../ui/screens/BodyMeasuresPage.qml:138
-msgid "Blood Pressure"
-msgstr ""
-
-#: ../ui/screens/BodyMeasuresPage.qml:156
+#: ../ui/screens/BodyMeasuresPage.qml:77
 msgid "Normal"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:157
+#: ../ui/screens/BodyMeasuresPage.qml:78
 msgid "Elevated"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:158
+#: ../ui/screens/BodyMeasuresPage.qml:79
 msgid "High Blood Pressure Stage I"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:159
+#: ../ui/screens/BodyMeasuresPage.qml:80
 msgid "High Blood Pressure Stage II"
 msgstr ""
 
-#: ../ui/screens/BodyMeasuresPage.qml:160
+#: ../ui/screens/BodyMeasuresPage.qml:81
 msgid "Hypertensive Crisis"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:94
+msgid ""
+"KalTracker does not take muscle mass into consideration. This value is only "
+"a reference."
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:136
+msgid "Body Mass Index (BMI)"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:259
+msgid "Weight Overview"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:283
+msgid "Current"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:307
+msgid "Ideal"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:325
+msgid "You are right on your ideal weight!"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:326
+msgid "%1 kg above ideal weight"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:327
+msgid "%1 kg below ideal weight"
+msgstr ""
+
+#: ../ui/screens/BodyMeasuresPage.qml:361
+msgid "Blood Pressure"
 msgstr ""
 
 #: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:158
@@ -412,16 +427,24 @@ msgstr ""
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
-#: ../ui/screens/GraphsPage.qml:40
+#: ../ui/screens/GraphsPage.qml:55
 msgid "Graphs"
 msgstr ""
 
-#: ../ui/screens/GraphsPage.qml:83
+#: ../ui/screens/GraphsPage.qml:97
 msgid "Weight Progress"
 msgstr ""
 
-#: ../ui/screens/GraphsPage.qml:111
+#: ../ui/screens/GraphsPage.qml:149
+msgid "No weight records yet."
+msgstr ""
+
+#: ../ui/screens/GraphsPage.qml:173
 msgid "Foods Distribution By Nutriscore"
+msgstr ""
+
+#: ../ui/screens/GraphsPage.qml:216
+msgid "No food records yet."
 msgstr ""
 
 #: ../ui/screens/HomePage.qml:101
@@ -1091,6 +1114,10 @@ msgstr ""
 
 #: ../ui/screens/UserProfileConfigPage.qml:248
 msgid "Weight"
+msgstr ""
+
+#: ../ui/screens/UserProfileConfigPage.qml:282
+msgid "KG"
 msgstr ""
 
 #: ../ui/screens/UserProfileConfigPage.qml:330
