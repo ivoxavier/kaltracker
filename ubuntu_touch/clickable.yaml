@@ -1,0 +1,3 @@
+clickable_minimum_required: "8"
+builder: cmake
+kill: qmlscene

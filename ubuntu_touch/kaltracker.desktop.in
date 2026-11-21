@@ -1,0 +1,11 @@
+[Desktop Entry]
+_Name=KalTracker
+Exec=kaltracker %U
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Lomiri-Touch=true
+X-Lomiri-Supported-Orientations=portrait
+X-Lomiri-Splash-Show-Header=false
+X-Lomiri-Splash-Color=#FF8080
+X-Lomiri-Splash-Image=assets/logo.svg
