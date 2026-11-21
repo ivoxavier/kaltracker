@@ -1,4 +1,3 @@
-
 # KalTracker
 
 <div align="center">
@@ -21,24 +20,31 @@
 
 ```bash
 gh repo clone ivoxavier/kaltracker
+cd kaltracker
 ```
 
 ### Debug in Desktop Mode
 
 ```bash
-clickable desktop
+clickable desktop --gdb
 ```
 
-### Debug in Desktop Mode with Dark Mode
+### Run in Desktop Mode with Dark Mode
 
 ```bash
 clickable desktop --dark-mode
 ```
 
-### Debug in a specific language
+### Run in a specific language
 
 ```bash
 clickable desktop --lang pt_PT
+```
+
+### Open the IDE
+
+```bash
+clickable ide
 ```
 
 ---
@@ -55,7 +61,7 @@ Thanks to everyone who has contributed to KalTracker!
 
 ## License
 
-Copyright © 2022–2026 Ivo Xavier
+Copyright © 2022–2023 Ivo Xavier
 
 This project is licensed under the GNU GPL v3.
 
