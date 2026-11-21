@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 12:17+0000\n"
+"POT-Creation-Date: 2026-11-21 12:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -435,6 +435,7 @@ msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
 #: ../ui/screens/HomePage.qml:212
+#: ../ui/screens/components/CaloriesCircleChart.qml:158
 msgid "CONSUMED"
 msgstr ""
 
@@ -1132,12 +1133,24 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: ../ui/screens/components/CaloriesCircleChart.qml:111
-msgid "EXCEED"
+#: ../ui/screens/components/CaloriesCircleChart.qml:156
+msgid "EXCEEDED"
 msgstr ""
 
-#: ../ui/screens/components/CaloriesCircleChart.qml:111
+#: ../ui/screens/components/CaloriesCircleChart.qml:156
 msgid "REMAINING"
+msgstr ""
+
+#: ../ui/screens/components/CaloriesCircleChart.qml:160
+msgid "OF GOAL"
+msgstr ""
+
+#: ../ui/screens/components/CaloriesCircleChart.qml:173
+msgid "daily"
+msgstr ""
+
+#: ../ui/screens/components/CaloriesCircleChart.qml:173
+msgid "kcal"
 msgstr ""
 
 #: ../ui/screens/components/ConfirmDeleteDialog.qml:38
