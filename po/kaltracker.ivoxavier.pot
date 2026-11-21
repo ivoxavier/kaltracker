@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 16:13+0000\n"
+"POT-Creation-Date: 2026-11-21 16:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -423,7 +423,6 @@ msgstr ""
 
 #: ../ui/screens/DeleteTodayIngestionPage.qml:55
 #: ../ui/screens/ManageUserFoodsListPage.qml:62
-#: ../ui/screens/QuickListFoodsPage.qml:84
 msgid "Empty List, Please Register Ingestions First.."
 msgstr ""
 
@@ -559,6 +558,7 @@ msgid "User Created Foods List"
 msgstr ""
 
 #: ../ui/screens/ManageDataPage.qml:182
+#: ../ui/screens/components/SlotWaterTracker.qml:71
 msgid "Water"
 msgstr ""
 
@@ -889,15 +889,35 @@ msgstr ""
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
-#: ../ui/screens/QuickListFoodsPage.qml:45
-msgid "Search..."
+#: ../ui/screens/QuickListFoodsPage.qml:44
+msgid "Search foods..."
 msgstr ""
 
-#: ../ui/screens/QuickListFoodsPage.qml:133
+#: ../ui/screens/QuickListFoodsPage.qml:127
+msgid "No results for \"%1\""
+msgstr ""
+
+#: ../ui/screens/QuickListFoodsPage.qml:128
+msgid "No foods registered yet"
+msgstr ""
+
+#: ../ui/screens/QuickListFoodsPage.qml:138
+msgid "You can add it as a new product right away."
+msgstr ""
+
+#: ../ui/screens/QuickListFoodsPage.qml:139
+msgid "Tap the buttons below to add a food manually or scan a barcode."
+msgstr ""
+
+#: ../ui/screens/QuickListFoodsPage.qml:145
+msgid "Add \"%1\""
+msgstr ""
+
+#: ../ui/screens/QuickListFoodsPage.qml:161
 msgid "Total item selected %1"
 msgstr ""
 
-#: ../ui/screens/QuickListFoodsPage.qml:134
+#: ../ui/screens/QuickListFoodsPage.qml:162
 msgid " calories"
 msgstr ""
 
@@ -1003,24 +1023,23 @@ msgstr ""
 msgid "QML Modules"
 msgstr ""
 
-#: ../ui/screens/ThirdPartySoftwarePage.qml:86
-#: ../ui/screens/ThirdPartySoftwarePage.qml:103
-msgid "%1. Licensed under the MIT licence"
-msgstr ""
-
-#: ../ui/screens/ThirdPartySoftwarePage.qml:93
+#: ../ui/screens/ThirdPartySoftwarePage.qml:81
 msgid "JavaScript Libs"
 msgstr ""
 
-#: ../ui/screens/ThirdPartySoftwarePage.qml:109
+#: ../ui/screens/ThirdPartySoftwarePage.qml:91
+msgid "%1. Licensed under the MIT licence"
+msgstr ""
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:97
 msgid "C++ Modules"
 msgstr ""
 
-#: ../ui/screens/ThirdPartySoftwarePage.qml:119
+#: ../ui/screens/ThirdPartySoftwarePage.qml:107
 msgid "%1. Licensed under the Apache License 2.0"
 msgstr ""
 
-#: ../ui/screens/ThirdPartySoftwarePage.qml:125
+#: ../ui/screens/ThirdPartySoftwarePage.qml:113
 msgid "Icons"
 msgstr ""
 
@@ -1132,11 +1151,11 @@ msgstr ""
 msgid "Update Values"
 msgstr ""
 
-#: ../ui/screens/UserProfileConfigPage.qml:440
+#: ../ui/screens/UserProfileConfigPage.qml:439
 msgid "Calculate & Save"
 msgstr ""
 
-#: ../ui/screens/UserProfileConfigPage.qml:440
+#: ../ui/screens/UserProfileConfigPage.qml:439
 msgid "Update Profile"
 msgstr ""
 

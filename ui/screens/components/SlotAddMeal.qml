@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,75 +16,78 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
-import Lomiri.Components.Popups 1.3
-import QtQuick.Controls.Suru 2.2
 import "../theme"
 
-LomiriShape{
+LomiriShape {
     id: slot_shape
 
-    //public API's
     property alias title: slot_layout.title
     property alias subtitle: slot_layout.subtitle
-    property alias meal_category : add_icon_yes.category
-    property alias img_path: add_meal_image_shape.img_path
+    property alias img_path: img.source
+    property int meal_category: 0
 
-    
     radius: "large"
     aspect: LomiriShape.DropShadow
     backgroundColor: app_style.shape.shapeColor
-    
-    ListItem{
-        height: slot_layout.height
-        divider.visible: false
 
-        ListItemLayout{
+    scale: card_mouse_area.pressed ? 0.97 : 1.0
+    Behavior on scale {
+        NumberAnimation {
+            duration: 120
+            easing.type: Easing.OutQuad
+        }
+    }
+
+    ListItemLayout {
             id: slot_layout
-            title.font.bold: true
-            title.color : app_style.label.labelColor
-            subtitle.font.bold: true
-    
-            Rectangle{
-                height: units.gu(3.5)
-                width:  height
-                color: "#f1f1f1"
-                radius: height*0.5
-                Icon {
-                    id: add_icon_yes
-                    property int category
-                    anchors.centerIn: parent
-                    name: "add"
-                    height : units.gu(2.5) 
-                }
-                MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            logical_fields.ingestion.meal_type = slot_shape.meal_category
-                            page_stack.push(quick_list_foods_page)
-                        }
-                }
-            }
-            
+            anchors.verticalCenter: parent.verticalCenter
+            width: parent.width
 
-            LomiriShape{
-                id: add_meal_image_shape
-                //public API
-                property alias img_path: img.source
+            title.font.weight: Font.DemiBold
+            title.color: app_style.label.labelColor
+            subtitle.font.weight: Font.Normal
+            subtitle.color: app_style.label.secondaryColor
 
+            Rectangle {
                 SlotsLayout.position: SlotsLayout.Leading
                 width: units.gu(5)
                 height: units.gu(5)
-                radius: "large"
-                aspect: LomiriShape.DropShadow
-                source: Image{
+                radius: units.gu(1.4)
+                color: app_style.shape.textInput.shapeColor
+
+                Image {
                     id: img
-                    source: add_meal_image_shape.img_path
+                    anchors.centerIn: parent
+                    width: units.gu(3.4)
+                    height: units.gu(3.4)
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
                 }
-            }  
+            }
+
+            Rectangle {
+                SlotsLayout.position: SlotsLayout.Trailing
+                width: units.gu(3.6)
+                height: units.gu(3.6)
+                radius: height * 0.5
+                color: app_style.shape.textInput.shapeColor
+
+                Icon {
+                    anchors.centerIn: parent
+                    name: "add"
+                    width: units.gu(2.2)
+                    height: units.gu(2.2)
+                    color: app_style.label.labelColor
+                }
+            }
+        }
+
+    MouseArea {
+        id: card_mouse_area
+        anchors.fill: parent
+        onClicked: {
+            logical_fields.ingestion.meal_type = slot_shape.meal_category
+            page_stack.push(quick_list_foods_page)
         }
     }
-}  
+}
