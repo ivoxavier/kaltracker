@@ -80,7 +80,7 @@ Page{
                     Action{
                         iconName: "delete"
                         onTriggered:{
-                            IngestionsTable.deleteSpecificTodayIngestion(id)
+                            ingestionRepository.deleteSpecificTodayIngestion(id)
                             all_today_ingestions_list.model.remove(index)
                             root.initDB()
                         }

@@ -109,7 +109,7 @@ bool IngestionRepository::deleteAllIngestions()
 bool IngestionRepository::deleteTodayIngestions()
 {
     QSqlQuery query(LocalStorage::instance().localstorage());
-    if (!query.exec("DELETE FROM ingestions WHERE date = date('now')")) {
+    if (!query.exec("DELETE FROM ingestions WHERE date = date('now', 'localtime')")) {
         qWarning() << "IngestionRepository: Failed to delete today's ingestions:" << query.lastError().text();
         return false;
     }

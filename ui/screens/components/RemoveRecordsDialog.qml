@@ -55,14 +55,14 @@ Dialog {
             if (confirmed == 2){
                 switch(msg){
                     case "today":
-                        IngestionsTable.deleteTodayIngestions()
+                        ingestionRepository.deleteTodayIngestions()
                         root.initDB()
                         //root.refreshListModel()
                         PopupUtils.close(delete_operation_dialog)
                         PopupUtils.open(operation_result_popover)
                     break
                     case "all":
-                        IngestionsTable.deleteAllIngestions()
+                        ingestionRepository.deleteAllIngestions()
                         root.initDB()
                         //root.refreshListModel()
                         PopupUtils.close(delete_operation_dialog)
