@@ -1,3 +1,20 @@
+/*
+ * 2022-2023  Ivo Xavier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * kaltracker is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
 import QtQuick 2.9
 import QtQuick.Window 2.0
 import Lomiri.Components 1.3
@@ -14,18 +31,19 @@ Page {
     id: scan_page
     objectName: 'ScanPage'
     
-    // --- CONTROLO DE ESTADO ---
+    property int meal_scan_page: 0
+
     property bool showResult: false
     property bool isLoading: false
     property bool isCodeEmpty: false
     property bool noInternet: false
     
-    // --- DADOS DO PRODUTO ---
+
     property string bar_code_founded: ""
     property string productImageUrl: ""
     property string productQuantity: ""
 
-    // O cabeçalho muda dinamicamente conforme o que estamos a ver
+
     header: PageHeader {
        title: showResult ? 
               (noInternet ? i18n.tr("No Internet") : (isCodeEmpty ? i18n.tr("Not Found") : i18n.tr("Product Found"))) : 
@@ -35,7 +53,7 @@ Page {
             Action {
                 iconName: swipe_view.currentIndex === 0 ? "find" : "camera-app"
                 text: swipe_view.currentIndex === 0 ? i18n.tr("Manual") : i18n.tr("Camera")
-                visible: !showResult // Esconde o botão se estivermos a ver o resultado
+                visible: !showResult
                 onTriggered: {
                     swipe_view.currentIndex = (swipe_view.currentIndex === 0) ? 1 : 0;
                 }
@@ -43,7 +61,7 @@ Page {
         ]
     }
 
-    // --- LÓGICA DE API & INTERNET ---
+
     InternetChecker {
         id: internetChecker
         onInternetStatusChanged: {
@@ -87,12 +105,12 @@ Page {
         }
     }
 
-    // --- FUNÇÕES DE TRANSIÇÃO ---
+
     function processBarcode(code) {
-        barCodeReader.is_reading = false; // Desliga a câmara
+        barCodeReader.is_reading = false;
         bar_code_founded = code;
         
-        showResult = true; // Esconde o Scanner, mostra a vista de Loading/Resultado
+        showResult = true;
         isLoading = true;
         noInternet = false;
         isCodeEmpty = false;
@@ -101,19 +119,17 @@ Page {
     }
 
     function resetScanner() {
-        showResult = false; // Volta à vista da câmara
+        showResult = false;
         if (swipe_view.currentIndex === 0) {
             barCodeReader.is_reading = true;
         }
     }
 
-    // ==========================================
-    // VISTA 1: SCANNER & PESQUISA MANUAL
-    // ==========================================
+
     QQC2.SwipeView {
         id: swipe_view
         currentIndex: 0
-        visible: !showResult // Só é visível se NÃO houver um resultado a ser processado/mostrado
+        visible: !showResult
         
         anchors.top: parent.header.bottom
         anchors.left: parent.left
@@ -140,12 +156,9 @@ Page {
         }
     }
 
-    // ==========================================
-    // VISTA 2: RESULTADO DO PRODUTO (Substitui o Dialog)
-    // ==========================================
     Item {
         id: resultView
-        visible: showResult // Só é visível quando um código foi lido
+        visible: showResult
         
         anchors.top: parent.header.bottom
         anchors.left: parent.left
@@ -157,14 +170,14 @@ Page {
             width: parent.width - units.gu(6)
             spacing: units.gu(2)
 
-            // LOADING SPINNER
+
             ActivityIndicator {
                 Layout.alignment: Qt.AlignCenter
                 running: isLoading
                 visible: running
             }
 
-            // CARTÃO DO PRODUTO (Sucesso)
+
             ColumnLayout {
                 Layout.fillWidth: true
                 visible: !isLoading && !isCodeEmpty && !noInternet
@@ -174,7 +187,7 @@ Page {
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredHeight: units.gu(18)
                     Layout.preferredWidth: units.gu(18)
-                    source: productImageUrl !== "" ? productImageUrl : "image://theme/food"
+                    source: productImageUrl !== "" ? productImageUrl : "../../assets/apple-fruit-svgrepo-com.svg"
                     fillMode: Image.PreserveAspectFit
                     asynchronous: true
                     
@@ -226,7 +239,7 @@ Page {
                 }
             }
 
-            // MENSAGENS DE ERRO
+
             Label {
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignHCenter
@@ -245,10 +258,8 @@ Page {
                 text: i18n.tr("Product not in OpenFoodFacts database.\nYou can enter the details manually.")
             }
 
-            // ==========================================
-            // BOTÕES DE AÇÃO DO RESULTADO
-            // ==========================================
-            Item { Layout.preferredHeight: units.gu(2) } // Espaçador
+
+            Item { Layout.preferredHeight: units.gu(2) }
 
             Button {
                 Layout.alignment: Qt.AlignCenter
@@ -270,17 +281,16 @@ Page {
                 visible: isCodeEmpty || noInternet
                 onClicked: {
                     page_stack.pop(scan_page)  
-                    // Assumo que aqui chamas a página para colocar os dados nutricionais à mão
+
                 }
             } 
 
-            // Este botão substitui a necessidade de carregar num (X) do pop-up.
-            // Permite cancelar a leitura e tentar de novo fluidamente.
+
             Button {
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: parent.width * 0.8
                 text: i18n.tr("Scan Again / Cancel")
-                color: "transparent" // Fica com o aspeto de um botão secundário limpo
+                color: "transparent"
                 visible: !isLoading
                 onClicked: {
                     resetScanner();

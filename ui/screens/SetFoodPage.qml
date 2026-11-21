@@ -246,7 +246,7 @@ Page {
         anchors.bottomMargin: units.gu(2)
         width: swipe_view_indicator.width + units.gu(4)
         height: swipe_view_indicator.height + units.gu(1)
-        color: LomiriColors.ink
+        color: LomiriColors.inkstone
         opacity: 0.5
         radius: units.gu(2)
         

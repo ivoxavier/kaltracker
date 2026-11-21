@@ -82,7 +82,7 @@ Page {
         anchors.bottomMargin: units.gu(2)
         width: swipe_view_indicator.width + units.gu(4)
         height: swipe_view_indicator.height + units.gu(1)
-        color: LomiriColors.ink
+        color: LomiriColors.inkstone
         opacity: 0.5
         radius: units.gu(2)
 
@@ -90,13 +90,12 @@ Page {
             id: swipe_view_indicator
             count: swipe_view.count
             currentIndex: swipe_view.currentIndex
-            anchors.centerIn: parent // Centrado dentro do retângulo escuro
+            anchors.centerIn: parent
         }
     }
 
     FloatingActionButton {
         anchors.right: parent.right
-        // Fica logo acima da área do indicador de página
         anchors.bottom: parent.bottom
         anchors.bottomMargin: units.gu(8)
         anchors.margins: units.gu(2)
