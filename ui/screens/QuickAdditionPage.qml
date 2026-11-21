@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,9 @@ import "../plugins"
 Page {
     id: quick_addition_page
     objectName: 'QuickAdditionPage'
+
+    readonly property bool isValid: String(logical_fields.ingestion.product_name || "").trim().length > 0
+                                    && Number(logical_fields.ingestion.cal) > 0
 
     header: PageHeader {
         title : swipe_view.currentIndex == 0 ? i18n.tr("Product Details") : i18n.tr("Product Macros")
@@ -75,7 +78,6 @@ Page {
         }
     }
 
-
     Rectangle {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
@@ -99,8 +101,15 @@ Page {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: units.gu(8)
         anchors.margins: units.gu(2)
-        iconName: "tick"
+        iconName: "ok"
         z: 10
+
+        enabled: quick_addition_page.isValid
+        opacity: quick_addition_page.isValid ? 1.0 : 0.45
+
+        Behavior on opacity {
+            NumberAnimation { duration: 200 }
+        }
 
         onClicked: {
             try {

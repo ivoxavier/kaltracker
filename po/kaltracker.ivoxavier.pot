@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 12:27+0000\n"
+"POT-Creation-Date: 2026-11-21 13:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -850,19 +850,19 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:36 ../ui/screens/SetFoodPage.qml:28
+#: ../ui/screens/QuickAdditionPage.qml:39 ../ui/screens/SetFoodPage.qml:28
 msgid "Product Details"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:36
+#: ../ui/screens/QuickAdditionPage.qml:39
 msgid "Product Macros"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:43 ../ui/screens/SetFoodPage.qml:157
+#: ../ui/screens/QuickAdditionPage.qml:46 ../ui/screens/SetFoodPage.qml:157
 msgid "Stored!"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:48 ../ui/screens/SetFoodPage.qml:158
+#: ../ui/screens/QuickAdditionPage.qml:51 ../ui/screens/SetFoodPage.qml:158
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
@@ -1150,6 +1150,7 @@ msgid "daily"
 msgstr ""
 
 #: ../ui/screens/components/CaloriesCircleChart.qml:173
+#: ../ui/screens/plugins/ProductNameCalories.qml:94
 msgid "kcal"
 msgstr ""
 
@@ -1386,47 +1387,58 @@ msgstr ""
 msgid "Ultra-processed foods"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductMacros.qml:48
+#: ../ui/screens/plugins/ProductMacros.qml:70
+msgid "Macro Distribution"
+msgstr ""
+
+#: ../ui/screens/plugins/ProductMacros.qml:125
+#: ../ui/screens/plugins/ProductMacros.qml:154
 msgid "Fat"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductMacros.qml:121
+#: ../ui/screens/plugins/ProductMacros.qml:132
+#: ../ui/screens/plugins/ProductMacros.qml:161
 msgid "Protein"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductMacros.qml:190
+#: ../ui/screens/plugins/ProductMacros.qml:139
+#: ../ui/screens/plugins/ProductMacros.qml:168
 msgid "Carbo"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:39
-msgid "Product name"
+#: ../ui/screens/plugins/ProductNameCalories.qml:50
+msgid "Product Name"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:65
+#: ../ui/screens/plugins/ProductNameCalories.qml:59
+msgid "e.g. Greek Yogurt, Banana..."
+msgstr ""
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:73
 msgid "Calories"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:94
+#: ../ui/screens/plugins/ProductNameCalories.qml:121
 msgid "Nutriscore Grade"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:103
+#: ../ui/screens/plugins/ProductNameCalories.qml:132
 msgid "A: Very Good Nutritional Quality"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:104
+#: ../ui/screens/plugins/ProductNameCalories.qml:133
 msgid "B: Good Nutritional Quality"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:105
+#: ../ui/screens/plugins/ProductNameCalories.qml:134
 msgid "C: Average Nutritional Quality"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:106
+#: ../ui/screens/plugins/ProductNameCalories.qml:135
 msgid "D: Poor Nutritional Quality"
 msgstr ""
 
-#: ../ui/screens/plugins/ProductNameCalories.qml:107
+#: ../ui/screens/plugins/ProductNameCalories.qml:136
 msgid "E: Bad Nutritional Quality"
 msgstr ""
 
