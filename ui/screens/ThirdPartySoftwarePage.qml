@@ -77,18 +77,6 @@ Page{
                 }
             }
 
-            ListItem{
-                id: json_list_model_list
-                divider.visible: false
-                property string github_url : "https://github.com/kromain/qml-utils"
-                onClicked : Qt.openUrlExternally(github_url)
-                ListItemLayout{
-                    title.text: i18n.tr("%1. Licensed under the MIT licence").arg("JSONListModel")
-                    subtitle.text: json_list_model_list.github_url
-                }
-            }
-
-
             ListItemHeader{
                 text_header.title.text: i18n.tr("JavaScript Libs")
                 divider.visible: false

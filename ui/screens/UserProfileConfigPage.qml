@@ -413,7 +413,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    // --- BOTÃO FLUTUANTE (FAB) ---
     Item {
         id: fab_container
         anchors.bottom: parent.bottom
