@@ -1,0 +1,140 @@
+/*
+ * 2022-2026 Ivo Xavier
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ */
+
+import QtQuick 2.9
+import Lomiri.Components 1.3
+import Lomiri.Components.Popups 1.3
+import QtQuick.Layouts 1.3
+import QtQuick.LocalStorage 2.12
+import QtQuick.Controls.Suru 2.2
+import QtQuick.Controls 2.2 as QQ2
+import "../theme"
+import "../logicalFields"
+
+Dialog {
+    id: recommended_calories_dialog
+    title: i18n.tr("Recommended Calories")
+
+    // stores the recommended calories by the St. Mifflin Jeor Equation
+    property int equation_calories
+    property bool is_manual_edit: false
+
+    RowLayout {
+        Layout.preferredWidth: parent.width
+        Text {
+            id: recommended_calories_label
+            Layout.alignment: Qt.AlignCenter
+            text: i18n.tr("%1 Calories").arg(recommended_calories_dialog.equation_calories) 
+            font.pixelSize: units.gu(3)
+            font.bold: true
+            color: app_style.label.labelColor
+            width: parent.width
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+        }
+    }
+    
+    Text {
+        text: i18n.tr("Calculated Using St. Mifflin Jeor Equation")
+        font.pixelSize: units.gu(1.5)
+        font.bold: false
+        color: app_style.label.labelColor
+        width: parent.width
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+    }
+
+    RowLayout {
+        Layout.preferredWidth: parent.width
+        Icon {
+            Layout.alignment: Qt.AlignCenter
+            name: "edit"
+            height: units.gu(3)
+            MouseArea {
+                anchors.fill: parent
+                onClicked: recommended_calories_dialog.is_manual_edit = !recommended_calories_dialog.is_manual_edit
+            }
+        }
+    }
+    
+    LomiriShape {
+        width: parent.width
+        height: units.gu(10)
+        radius: "large"
+        aspect: LomiriShape.Inset
+        visible: recommended_calories_dialog.is_manual_edit
+
+        TextInput {
+            anchors.fill: parent
+            overwriteMode: true
+            horizontalAlignment: TextInput.AlignHCenter
+            verticalAlignment: TextInput.AlignVCenter
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            color: app_style.label.labelColor  
+            onTextChanged: {
+                logical_fields.user_profile.equation_recommended_calories = text
+            }
+        }
+    }
+
+    Button {
+        text: i18n.tr("Confirm")
+        color: LomiriColors.green
+        onClicked: {
+        
+            userRepository.updateWeight(logical_fields.user_profile.user_weight)
+            userRepository.updateHeight(logical_fields.user_profile.user_height)
+
+            var today = new Date().toISOString().slice(0, 10)
+            dataAnalysisRepository.saveWeight(Number(logical_fields.user_profile.user_weight), today)
+
+            
+            app_settings.water_weight_calc = logical_fields.user_profile.user_weight
+            app_settings.plan_type = logical_fields.user_profile.type_goal
+            app_settings.rec_cal = logical_fields.user_profile.equation_recommended_calories
+            app_settings.is_weight_tracker_chart_enabled = true
+
+    
+            userRepository.updateAge(logical_fields.user_profile.user_age)
+            userRepository.updateRecCal(logical_fields.user_profile.equation_recommended_calories)
+            userRepository.updateActivity(logical_fields.user_profile.user_activity_level)
+            
+            root.initDB()
+            PopupUtils.close(recommended_calories_dialog)
+            
+            if (user_profile_page.isUpdateMode) {
+                page_stack.pop()
+            } else {
+                page_stack.clear()
+                page_stack.push(create_storage_page)
+            }
+        }
+    }
+
+    Button {
+        text: i18n.tr("Back")
+        onClicked: PopupUtils.close(recommended_calories_dialog)
+    }
+
+    Component.onCompleted: {
+        var baseCal = userRepository.calculateBaseCalories(
+            logical_fields.user_profile.user_age,
+            logical_fields.user_profile.user_weight,
+            logical_fields.user_profile.user_height,
+            logical_fields.user_profile.user_sex_at_birth,
+            logical_fields.user_profile.user_activity_level
+        );
+
+        var finalCalories = userRepository.calculateGoalCalories(
+            baseCal, 
+            logical_fields.user_profile.type_goal, 
+            logical_fields.user_profile.user_goal
+        );
+
+        logical_fields.user_profile.equation_recommended_calories = finalCalories;
+        recommended_calories_dialog.equation_calories = finalCalories;
+    }
+}

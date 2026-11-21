@@ -1,0 +1,1452 @@
+# Italian translation for kaltracker.ivoxavier.
+# This file is distributed under the same license as the kaltracker.ivoxavier package.
+msgid ""
+msgstr ""
+"Project-Id-Version: kaltracker.ivoxavier\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-19 19:29+0100\n"
+"PO-Revision-Date: 2026-11-19 18:32+0000\n"
+"Last-Translator: Dennis Schneck (DD6DS) <dd6ds@eclipso.de>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../ui/screens/AdminChatsPage.qml:26
+msgid "Support Chats"
+msgstr "Chat di supporto"
+
+#: ../ui/screens/AdminChatsPage.qml:30 ../ui/screens/ChatRoomPage.qml:31
+#: ../ui/screens/ChatSupportPage.qml:35
+msgid "Refresh"
+msgstr "Aggiorna"
+
+#: ../ui/screens/AdminChatsPage.qml:66
+msgid "No active user chats found."
+msgstr "Nessuna chat utente attiva trovata."
+
+#: ../ui/screens/AdminChatsPage.qml:88 ../ui/screens/MenuPage.qml:82
+msgid "User"
+msgstr "Utente"
+
+#: ../ui/screens/AdminChatsPage.qml:91
+msgid "No messages yet"
+msgstr "Ancora nessun messaggio"
+
+#: ../ui/screens/AdminChatsPage.qml:92
+msgid "You: "
+msgstr "Tu: "
+
+#: ../ui/screens/AdminChatsPage.qml:106
+msgid "FREE"
+msgstr "FREE"
+
+#: ../ui/screens/AdminChatsPage.qml:106
+msgid "PRO"
+msgstr "PRO"
+
+#: ../ui/screens/AiAgentPage.qml:28
+msgid "Your Agent"
+msgstr "Il tuo agente"
+
+#: ../ui/screens/AiAgentPage.qml:51 ../ui/screens/ChatSupportPage.qml:82
+msgid "Error: No internet connection. Please check your network and try again."
+msgstr "Errore: nessuna connessione a Internet. Controlla la rete e riprova."
+
+#: ../ui/screens/AiAgentPage.qml:69
+msgid "Error: "
+msgstr "Errore: "
+
+#: ../ui/screens/AiAgentPage.qml:75
+msgid ""
+"Hello! I have analyzed your health and nutrition data. What would you like to"
+" know today?"
+msgstr ""
+"Ciao! Ho analizzato i tuoi dati su salute e alimentazione. Cosa vorresti "
+"sapere oggi?"
+
+#: ../ui/screens/AiAgentPage.qml:109
+msgid "Thinking..."
+msgstr "Sto pensando…"
+
+#: ../ui/screens/AiAgentPage.qml:172
+msgid "Ask a question..."
+msgstr "Fai una domanda…"
+
+#: ../ui/screens/AiAgentPage.qml:176 ../ui/screens/ChatRoomPage.qml:169
+#: ../ui/screens/ChatSupportPage.qml:174
+msgid "Send"
+msgstr "Invia"
+
+#: ../ui/screens/AverageCaloriesPage.qml:35
+#: ../ui/screens/DataAnalysisPage.qml:71
+msgid "Average Calories Consumption"
+msgstr "Consumo medio di calorie"
+
+#: ../ui/screens/AverageCaloriesPage.qml:78
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:35
+msgid "January"
+msgstr "Gennaio"
+
+#: ../ui/screens/AverageCaloriesPage.qml:79
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:36
+msgid "February"
+msgstr "Febbraio"
+
+#: ../ui/screens/AverageCaloriesPage.qml:80
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:37
+msgid "March"
+msgstr "Marzo"
+
+#: ../ui/screens/AverageCaloriesPage.qml:81
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:38
+msgid "April"
+msgstr "Aprile"
+
+#: ../ui/screens/AverageCaloriesPage.qml:82
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:39
+msgid "May"
+msgstr "Maggio"
+
+#: ../ui/screens/AverageCaloriesPage.qml:83
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:40
+msgid "June"
+msgstr "Giugno"
+
+#: ../ui/screens/AverageCaloriesPage.qml:84
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:41
+msgid "July"
+msgstr "Luglio"
+
+#: ../ui/screens/AverageCaloriesPage.qml:85
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:42
+msgid "August"
+msgstr "Agosto"
+
+#: ../ui/screens/AverageCaloriesPage.qml:86
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:43
+msgid "September"
+msgstr "Settembre"
+
+#: ../ui/screens/AverageCaloriesPage.qml:87
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:44
+msgid "October"
+msgstr "Ottobre"
+
+#: ../ui/screens/AverageCaloriesPage.qml:88
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:45
+msgid "December"
+msgstr "Dicembre"
+
+#: ../ui/screens/AverageCaloriesPage.qml:88
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:45
+msgid "November"
+msgstr "Novembre"
+
+#: ../ui/screens/AverageCaloriesPage.qml:90
+msgid "%1 cal"
+msgstr "%1 kcal"
+
+#: ../ui/screens/BackupRestorePage.qml:12 ../ui/screens/MenuPage.qml:184
+msgid "Backup & Restore Data"
+msgstr "Backup e ripristino dati"
+
+#: ../ui/screens/BackupRestorePage.qml:53
+msgid "Something went wrong, please verify Logs"
+msgstr "Qualcosa è andato storto, controlla i log"
+
+#: ../ui/screens/BackupRestorePage.qml:54
+msgid "Verify if files exist in the Import folder."
+msgstr "Verifica che i file siano presenti nella cartella Import."
+
+#: ../ui/screens/BackupRestorePage.qml:55
+msgid "Data not loaded, please check logs"
+msgstr "Dati non caricati, controlla i log"
+
+#: ../ui/screens/BackupRestorePage.qml:56
+msgid "Data exported successfully!"
+msgstr "Dati esportati con successo!"
+
+#: ../ui/screens/BackupRestorePage.qml:57
+msgid "Data loaded! We recommend restarting the app."
+msgstr "Dati caricati! Consigliamo di riavviare l'app."
+
+#: ../ui/screens/BackupRestorePage.qml:114
+msgid "Keep your data safe"
+msgstr "Mantieni i tuoi dati al sicuro"
+
+#: ../ui/screens/BackupRestorePage.qml:127
+msgid "Export Data"
+msgstr "Esporta dati"
+
+#: ../ui/screens/BackupRestorePage.qml:143
+msgid "Import Data"
+msgstr "Importa dati"
+
+#: ../ui/screens/BackupRestorePage.qml:161
+msgid "Importing Requirements"
+msgstr "Requisiti per l'importazione"
+
+#: ../ui/screens/BackupRestorePage.qml:190
+msgid ""
+"Place the files from the ExportData folder into the Import path before "
+"restoring."
+msgstr ""
+"Prima del ripristino, copia i file della cartella ExportData nel percorso di "
+"importazione."
+
+#: ../ui/screens/BodyMeasuresPage.qml:33
+msgid "Body Measures"
+msgstr "Misure corporee"
+
+#: ../ui/screens/BodyMeasuresPage.qml:60
+msgid ""
+"KalTracker is not taking in consideration your muscule weight. This is ONLY e"
+" a reference"
+msgstr ""
+"KalTracker non tiene conto della tua massa muscolare. È SOLO un riferimento"
+
+#: ../ui/screens/BodyMeasuresPage.qml:83
+msgid "Body Mass Index"
+msgstr "Indice di massa corporea"
+
+#: ../ui/screens/BodyMeasuresPage.qml:95
+msgid "Low Weigth"
+msgstr "Sottopeso"
+
+#: ../ui/screens/BodyMeasuresPage.qml:96
+msgid "Normal Weigth"
+msgstr "Normopeso"
+
+#: ../ui/screens/BodyMeasuresPage.qml:97
+msgid "Weigth Exceed"
+msgstr "Sovrappeso"
+
+#: ../ui/screens/BodyMeasuresPage.qml:98
+msgid "Pre-Obesity"
+msgstr "Pre-obesità"
+
+#: ../ui/screens/BodyMeasuresPage.qml:99
+msgid "Obesity"
+msgstr "Obesità"
+
+#: ../ui/screens/BodyMeasuresPage.qml:116
+msgid "Ideal Weight"
+msgstr "Peso ideale"
+
+#: ../ui/screens/BodyMeasuresPage.qml:131
+#: ../ui/screens/UserProfileConfigPage.qml:282
+msgid "KG"
+msgstr "KG"
+
+#: ../ui/screens/BodyMeasuresPage.qml:138
+msgid "Blood Pressure"
+msgstr "Pressione sanguigna"
+
+#: ../ui/screens/BodyMeasuresPage.qml:156
+msgid "Normal"
+msgstr "Normale"
+
+#: ../ui/screens/BodyMeasuresPage.qml:157
+msgid "Elevated"
+msgstr "Elevata"
+
+#: ../ui/screens/BodyMeasuresPage.qml:158
+msgid "High Blood Pressure Stage I"
+msgstr "Ipertensione di grado I"
+
+#: ../ui/screens/BodyMeasuresPage.qml:159
+msgid "High Blood Pressure Stage II"
+msgstr "Ipertensione di grado II"
+
+#: ../ui/screens/BodyMeasuresPage.qml:160
+msgid "Hypertensive Crisis"
+msgstr "Crisi ipertensiva"
+
+#: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:152
+#: ../ui/screens/ManageSubscriptionPage.qml:404
+#: ../ui/screens/ManageSubscriptionPage.qml:563
+#: ../ui/screens/OnlineSourcesPage.qml:197
+msgid "KalTracker Team"
+msgstr "Team KalTracker"
+
+#: ../ui/screens/ChatRoomPage.qml:163 ../ui/screens/ChatSupportPage.qml:170
+msgid "Write a message..."
+msgstr "Scrivi un messaggio…"
+
+#: ../ui/screens/ChatSupportPage.qml:31
+#: ../ui/screens/ManageSubscriptionPage.qml:65
+#: ../ui/screens/OnlineSourcesPage.qml:190
+msgid "Chat Support"
+msgstr "Chat di supporto"
+
+#: ../ui/screens/ChatSupportPage.qml:65
+msgid "Error: Could not send message."
+msgstr "Errore: impossibile inviare il messaggio."
+
+#: ../ui/screens/CreateAccountPage.qml:27
+#: ../ui/screens/ManageSubscriptionPage.qml:41
+msgid "Account created successfully."
+msgstr "Account creato con successo."
+
+#: ../ui/screens/CreateAccountPage.qml:29
+#: ../ui/screens/ManageSubscriptionPage.qml:49
+msgid "An account with this email already exists."
+msgstr "Esiste già un account con questa email."
+
+#: ../ui/screens/CreateAccountPage.qml:31
+#: ../ui/screens/ManageSubscriptionPage.qml:51
+msgid "Password is too weak. Please use at least 6 characters."
+msgstr "Password troppo debole. Usa almeno 6 caratteri."
+
+#: ../ui/screens/CreateAccountPage.qml:33
+#: ../ui/screens/ManageSubscriptionPage.qml:53
+msgid "No internet connection. Please check your network and try again."
+msgstr "Nessuna connessione a Internet. Controlla la rete e riprova."
+
+#: ../ui/screens/CreateAccountPage.qml:35
+msgid "Could not create account. Please verify your details and try again."
+msgstr "Impossibile creare l'account. Verifica i tuoi dati e riprova."
+
+#: ../ui/screens/CreateAccountPage.qml:39
+#: ../ui/screens/ManageSubscriptionPage.qml:58
+msgid "Service temporarily unavailable. Please try again later."
+msgstr "Servizio temporaneamente non disponibile. Riprova più tardi."
+
+#: ../ui/screens/CreateAccountPage.qml:45
+#: ../ui/screens/ManageSubscriptionPage.qml:448
+msgid "Create Account"
+msgstr "Crea account"
+
+#: ../ui/screens/CreateAccountPage.qml:129
+#: ../ui/screens/ManageSubscriptionPage.qml:128
+msgid "Email"
+msgstr "Email"
+
+#: ../ui/screens/CreateAccountPage.qml:137
+msgid "Username"
+msgstr "Nome utente"
+
+#: ../ui/screens/CreateAccountPage.qml:144
+#: ../ui/screens/ManageSubscriptionPage.qml:134
+msgid "Password"
+msgstr "Password"
+
+#: ../ui/screens/CreateAccountPage.qml:159
+msgid "Creating your account..."
+msgstr "Creazione dell'account in corso…"
+
+#: ../ui/screens/CreateAccountPage.qml:168
+msgid "Please wait..."
+msgstr "Attendere…"
+
+#: ../ui/screens/CreateAccountPage.qml:168
+msgid "Register"
+msgstr "Registrati"
+
+#: ../ui/screens/CreateAccountPage.qml:184
+msgid "Please fill in all fields."
+msgstr "Compila tutti i campi."
+
+#: ../ui/screens/CreateStoragePage.qml:126
+msgid "Setting up your journey..."
+msgstr "Stiamo preparando il tuo percorso…"
+
+#: ../ui/screens/CreateStoragePage.qml:141
+msgid "Preparing your KalTracker profile"
+msgstr "Preparazione del tuo profilo KalTracker"
+
+#: ../ui/screens/DataAnalysisPage.qml:26 ../ui/screens/MenuPage.qml:105
+msgid "Data Analysis"
+msgstr "Analisi dei dati"
+
+#: ../ui/screens/DataAnalysisPage.qml:36
+msgid "Agent Not Configured"
+msgstr "Agente non configurato"
+
+#: ../ui/screens/DataAnalysisPage.qml:37
+msgid ""
+"Please activate and configure at least one AI Agent in the API settings "
+"before using this feature."
+msgstr ""
+"Attiva e configura almeno un agente IA nelle impostazioni API prima di usare "
+"questa funzione."
+
+#: ../ui/screens/DataAnalysisPage.qml:40
+msgid "Close"
+msgstr "Chiudi"
+
+#: ../ui/screens/DataAnalysisPage.qml:65 ../ui/screens/ManageDataPage.qml:107
+msgid "Ingestions"
+msgstr "Pasti"
+
+#: ../ui/screens/DataAnalysisPage.qml:72
+msgid "By Month"
+msgstr "Per mese"
+
+#: ../ui/screens/DataAnalysisPage.qml:85 ../ui/screens/SettingsPage.qml:120
+msgid "Charts"
+msgstr "Grafici"
+
+#: ../ui/screens/DataAnalysisPage.qml:97
+msgid "Body Measurements"
+msgstr "Misurazioni corporee"
+
+#: ../ui/screens/DataAnalysisPage.qml:103
+msgid "Indexes"
+msgstr "Indici"
+
+#: ../ui/screens/DataAnalysisPage.qml:116
+msgid "Agent Analysis"
+msgstr "Analisi dell'agente"
+
+#: ../ui/screens/DataAnalysisPage.qml:122
+msgid "Ask Your Agent"
+msgstr "Chiedi al tuo agente"
+
+#: ../ui/screens/DeleteTodayIngestionPage.qml:34
+msgid "Select Ingestion To Delete"
+msgstr "Seleziona il pasto da eliminare"
+
+#: ../ui/screens/DeleteTodayIngestionPage.qml:55
+#: ../ui/screens/ManageUserFoodsListPage.qml:62
+#: ../ui/screens/QuickListFoodsPage.qml:84
+msgid "Empty List, Please Register Ingestions First.."
+msgstr "Elenco vuoto, registra prima dei pasti."
+
+#: ../ui/screens/GraphsPage.qml:40
+msgid "Graphs"
+msgstr "Grafici"
+
+#: ../ui/screens/GraphsPage.qml:83
+msgid "Weight Progress"
+msgstr "Andamento del peso"
+
+#: ../ui/screens/GraphsPage.qml:111
+msgid "Foods Distribution By Nutriscore"
+msgstr "Distribuzione degli alimenti per Nutri-Score"
+
+#: ../ui/screens/HomePage.qml:95
+msgid "Ingestion Saved!"
+msgstr "Pasto salvato!"
+
+#. TRANSLATORS Please Keep This Only One Word
+#: ../ui/screens/HomePage.qml:187
+msgid "FOODS"
+msgstr "ALIMENTI"
+
+#. TRANSLATORS Please Keep This Only One Word
+#: ../ui/screens/HomePage.qml:206
+msgid "CONSUMED"
+msgstr "CONSUMATE"
+
+#. TRANSLATORS Please Keep This Only One Word
+#: ../ui/screens/HomePage.qml:221
+msgid "FAT"
+msgstr "GRASSI"
+
+#. TRANSLATORS Please Keep This Only One Word
+#: ../ui/screens/HomePage.qml:231
+msgid "CARBO"
+msgstr "CARBOIDR."
+
+#. TRANSLATORS Please Keep This Only One Word
+#: ../ui/screens/HomePage.qml:242
+msgid "PROTEIN"
+msgstr "PROTEINE"
+
+#: ../ui/screens/HomePage.qml:290
+#: ../ui/screens/components/MealFilterDialog.qml:67
+msgid "Breakfast"
+msgstr "Colazione"
+
+#. TRANSLATORS %1 is a format parameter. When translating make sure you write
+#. %1
+#: ../ui/screens/HomePage.qml:293 ../ui/screens/HomePage.qml:304
+#: ../ui/screens/HomePage.qml:315 ../ui/screens/HomePage.qml:326
+#: ../ui/screens/ListFoodsIngestedMonthPage.qml:76
+msgid "%1 calories"
+msgstr "%1 calorie"
+
+#: ../ui/screens/HomePage.qml:301
+#: ../ui/screens/components/MealFilterDialog.qml:67
+msgid "Lunch"
+msgstr "Pranzo"
+
+#: ../ui/screens/HomePage.qml:312
+#: ../ui/screens/components/MealFilterDialog.qml:67
+msgid "Dinner"
+msgstr "Cena"
+
+#: ../ui/screens/HomePage.qml:323
+#: ../ui/screens/components/MealFilterDialog.qml:67
+msgid "Snacks"
+msgstr "Spuntini"
+
+#: ../ui/screens/HomePage.qml:384
+msgid "Empty List, Register Ingestions First Or Choose A Filter."
+msgstr "Elenco vuoto, registra prima dei pasti o scegli un filtro."
+
+#: ../ui/screens/HomePage.qml:393
+msgid "Your Previous Ingestions"
+msgstr "I tuoi pasti precedenti"
+
+#: ../ui/screens/ManageDataPage.qml:36 ../ui/screens/MenuPage.qml:167
+msgid "Manage Data"
+msgstr "Gestisci dati"
+
+#: ../ui/screens/ManageDataPage.qml:115
+msgid "Auto Delete Ingestions"
+msgstr "Eliminazione automatica pasti"
+
+#: ../ui/screens/ManageDataPage.qml:116
+msgid "Deletes All Previous Year Ingestions"
+msgstr "Elimina tutti i pasti dell'anno precedente"
+
+#: ../ui/screens/ManageDataPage.qml:134
+msgid "From a Month & To Year"
+msgstr "Da un mese e anno"
+
+#: ../ui/screens/ManageDataPage.qml:150
+msgid "Specific Today's Ingestion"
+msgstr "Pasto specifico di oggi"
+
+#: ../ui/screens/ManageDataPage.qml:169
+msgid "Only Today's Ingestions"
+msgstr "Solo i pasti di oggi"
+
+#: ../ui/screens/ManageDataPage.qml:172 ../ui/screens/ManageDataPage.qml:188
+#: ../ui/screens/ManageDataPage.qml:231 ../ui/screens/ManageDataPage.qml:253
+#: ../ui/screens/ManageDataPage.qml:273
+#: ../ui/screens/components/DeleteAllNotesDialog.qml:47
+#: ../ui/screens/components/DeleteAllWaterDialog.qml:47
+#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:45
+#: ../ui/screens/components/DeleteByMonthPop.qml:78
+#: ../ui/screens/components/RemoveRecordsDialog.qml:30
+#: ../ui/screens/components/RemoveRecordsDialog.qml:52
+msgid "Delete"
+msgstr "Elimina"
+
+#: ../ui/screens/ManageDataPage.qml:185
+msgid "All Ingestions"
+msgstr "Tutti i pasti"
+
+#: ../ui/screens/ManageDataPage.qml:200
+msgid "User Foods List"
+msgstr "Elenco alimenti utente"
+
+#: ../ui/screens/ManageDataPage.qml:207
+msgid "User Created Foods List"
+msgstr "Elenco alimenti creati dall'utente"
+
+#: ../ui/screens/ManageDataPage.qml:220
+msgid "Water"
+msgstr "Acqua"
+
+#: ../ui/screens/ManageDataPage.qml:228
+msgid "All Water Records"
+msgstr "Tutte le registrazioni d'acqua"
+
+#: ../ui/screens/ManageDataPage.qml:243
+msgid "Notes"
+msgstr "Note"
+
+#: ../ui/screens/ManageDataPage.qml:250
+msgid "Delete All Notes"
+msgstr "Elimina tutte le note"
+
+#: ../ui/screens/ManageDataPage.qml:263
+msgid "Weight Tracker"
+msgstr "Monitoraggio peso"
+
+#: ../ui/screens/ManageDataPage.qml:270
+msgid "All Records"
+msgstr "Tutte le registrazioni"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:39
+msgid "Signed in successfully."
+msgstr "Accesso effettuato."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:43
+msgid "Your account has been permanently deleted."
+msgstr "Il tuo account è stato eliminato definitivamente."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:45
+msgid "Incorrect email or password. Please try again."
+msgstr "Email o password errate. Riprova."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:47
+msgid "Please confirm your email address before signing in."
+msgstr "Conferma il tuo indirizzo email prima di accedere."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:69
+msgid "Refresh Status"
+msgstr "Aggiorna stato"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:124
+msgid "Sign In"
+msgstr "Accedi"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:139
+msgid "Login"
+msgstr "Login"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:150
+#: ../ui/screens/ManageSubscriptionPage.qml:174
+#: ../ui/screens/ManageSubscriptionPage.qml:247
+#: ../ui/screens/OnlineSourcesPage.qml:116
+#: ../ui/screens/components/DeleteAllNotesDialog.qml:63
+#: ../ui/screens/components/DeleteAllWaterDialog.qml:63
+#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:62
+#: ../ui/screens/components/DeleteByMonthPop.qml:95
+#: ../ui/screens/components/RemoveRecordsDialog.qml:81
+msgid "Cancel"
+msgstr "Annulla"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:161
+#: ../ui/screens/ManageSubscriptionPage.qml:508
+msgid "Delete Account"
+msgstr "Elimina account"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:162
+msgid ""
+"Are you sure you want to permanently delete your account and all chat "
+"history? This action cannot be undone."
+msgstr ""
+"Vuoi davvero eliminare definitivamente il tuo account e tutta la cronologia "
+"delle chat? Questa azione non può essere annullata."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:165
+msgid "Delete Permanently"
+msgstr "Elimina definitivamente"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:185
+msgid "Payment Instructions"
+msgstr "Istruzioni di pagamento"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:186
+msgid ""
+"To activate your monthly Chat Support subscription (%1 / month), please "
+"complete the payment using the details below:"
+msgstr ""
+"Per attivare l'abbonamento mensile alla chat di supporto (%1 / mese), "
+"effettua il pagamento con i dati seguenti:"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:208
+msgid "1. Send %1 via PayPal."
+msgstr "1. Invia %1 tramite PayPal."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:215
+msgid ""
+"2. IMPORTANT: Include your account email (%1) in the payment note so we can "
+"identify your account."
+msgstr ""
+"2. IMPORTANTE: indica l'email del tuo account (%1) nella nota del pagamento, "
+"così potremo identificare il tuo account."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:223
+msgid ""
+"3. Click the button below after completing the transfer. Your subscription "
+"will be activated as soon as we verify the payment."
+msgstr ""
+"3. Tocca il pulsante qui sotto dopo aver completato il trasferimento. "
+"L'abbonamento sarà attivato non appena verificheremo il pagamento."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:229
+msgid "Open PayPal (%1)"
+msgstr "Apri PayPal (%1)"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:238
+msgid "I Have Made the Payment"
+msgstr "Ho effettuato il pagamento"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:280
+msgid "Signing in, please wait..."
+msgstr "Accesso in corso, attendere…"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:412
+msgid "Step 1: Account Required"
+msgstr "Passo 1: account richiesto"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:413
+msgid "Monthly Subscription Active"
+msgstr "Abbonamento mensile attivo"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:414
+msgid "Step 2: Verification Pending"
+msgstr "Passo 2: verifica in corso"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:415
+msgid "Step 2: Payment Required (%1 / month)"
+msgstr "Passo 2: pagamento richiesto (%1 / mese)"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:425
+msgid "Create an account or sign in to subscribe to Chat Support (%1 / month)."
+msgstr ""
+"Crea un account o accedi per abbonarti alla chat di supporto (%1 / mese)."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:426
+msgid "Monthly renewal date: %1"
+msgstr "Data di rinnovo mensile: %1"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:427
+msgid ""
+"We are verifying your payment. Your subscription will be unlocked shortly."
+msgstr ""
+"Stiamo verificando il tuo pagamento. L'abbonamento sarà sbloccato a breve."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:428
+msgid ""
+"Complete your monthly subscription payment (%1) to unlock direct chat with "
+"our team."
+msgstr ""
+"Completa il pagamento dell'abbonamento mensile (%1) per sbloccare la chat "
+"diretta con il nostro team."
+
+#: ../ui/screens/ManageSubscriptionPage.qml:440
+msgid "1. Account"
+msgstr "1. Account"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:450
+msgid "Register a new account for Chat Support"
+msgstr "Registra un nuovo account per la chat di supporto"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:467
+msgid "Already have an account?"
+msgstr "Hai già un account?"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:469
+msgid "Sign in to check your subscription"
+msgstr "Accedi per controllare il tuo abbonamento"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:494
+msgid "Logout"
+msgstr "Esci"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:510
+msgid "Permanently remove your account and chat history"
+msgstr "Rimuovi definitivamente account e cronologia chat"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:524
+msgid "2. Subscription & Payment"
+msgstr "2. Abbonamento e pagamento"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:538
+msgid "Subscription Active"
+msgstr "Abbonamento attivo"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:539
+msgid "Awaiting Payment Approval..."
+msgstr "In attesa di approvazione del pagamento…"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:540
+msgid "Subscribe (%1 / month)"
+msgstr "Abbonati (%1 / mese)"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:555
+msgid "3. Service Status"
+msgstr "3. Stato del servizio"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:566
+#: ../ui/screens/OnlineSourcesPage.qml:199
+msgid "Talk To Our Team"
+msgstr "Parla con il nostro team"
+
+#: ../ui/screens/ManageSubscriptionPage.qml:567
+msgid "Requires account and active subscription"
+msgstr "Richiede un account e un abbonamento attivo"
+
+#: ../ui/screens/ManageUserFoodsListPage.qml:36
+msgid "Manage Your Foods"
+msgstr "Gestisci i tuoi alimenti"
+
+#: ../ui/screens/MenuPage.qml:36
+msgid "Menu"
+msgstr "Menu"
+
+#: ../ui/screens/MenuPage.qml:77
+msgid "Version: "
+msgstr "Versione: "
+
+#: ../ui/screens/MenuPage.qml:89
+msgid "Your Profile"
+msgstr "Il tuo profilo"
+
+#: ../ui/screens/MenuPage.qml:120
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: ../ui/screens/MenuPage.qml:129 ../ui/screens/SettingsPage.qml:35
+msgid "App Settings"
+msgstr "Impostazioni app"
+
+#: ../ui/screens/MenuPage.qml:144
+msgid "Online Sources"
+msgstr "Fonti online"
+
+#: ../ui/screens/MenuPage.qml:159
+msgid "Storage"
+msgstr "Archiviazione"
+
+#: ../ui/screens/MenuPage.qml:199
+msgid "About"
+msgstr "Informazioni"
+
+#: ../ui/screens/MenuPage.qml:206 ../ui/screens/ThirdPartySoftwarePage.qml:37
+msgid "Third Party Software"
+msgstr "Software di terze parti"
+
+#: ../ui/screens/NotesPage.qml:36
+msgid "Your Notes"
+msgstr "Le tue note"
+
+#: ../ui/screens/NotesPage.qml:62
+msgid "Empty List, Please Register Notes First.."
+msgstr "Elenco vuoto, registra prima delle note."
+
+#: ../ui/screens/OnlineSourcesPage.qml:25
+msgid "Online Services"
+msgstr "Servizi online"
+
+#: ../ui/screens/OnlineSourcesPage.qml:35
+msgid "Manage AI Agents"
+msgstr "Gestisci agenti IA"
+
+#: ../ui/screens/OnlineSourcesPage.qml:81
+msgid "Model version (e.g. gemini-1.5-flash)"
+msgstr "Versione del modello (es. gemini-1.5-flash)"
+
+#: ../ui/screens/OnlineSourcesPage.qml:89
+msgid "Enter %1 API Key"
+msgstr "Inserisci la chiave API di %1"
+
+#: ../ui/screens/OnlineSourcesPage.qml:100 ../ui/screens/SetFoodPage.qml:33
+msgid "Save"
+msgstr "Salva"
+
+#: ../ui/screens/OnlineSourcesPage.qml:142
+msgid "Application Programming Interface"
+msgstr "Interfaccia di programmazione (API)"
+
+#: ../ui/screens/OnlineSourcesPage.qml:149
+msgid "OpenFoodsFacts"
+msgstr "OpenFoodsFacts"
+
+#: ../ui/screens/OnlineSourcesPage.qml:151
+msgid "Search For Barcode In %1"
+msgstr "Cerca codice a barre in %1"
+
+#: ../ui/screens/OnlineSourcesPage.qml:166
+msgid "AI Agents"
+msgstr "Agenti IA"
+
+#: ../ui/screens/OnlineSourcesPage.qml:173
+msgid "Agents Keys"
+msgstr "Chiavi degli agenti"
+
+#: ../ui/screens/OnlineSourcesPage.qml:175
+msgid "Manage Your Agents Keys"
+msgstr "Gestisci le chiavi dei tuoi agenti"
+
+#: ../ui/screens/OnlineSourcesPage.qml:209
+msgid "Active"
+msgstr "Attivo"
+
+#: ../ui/screens/OnlineSourcesPage.qml:209
+msgid "Inactive"
+msgstr "Inattivo"
+
+#: ../ui/screens/QuickAdditionPage.qml:36 ../ui/screens/SetFoodPage.qml:28
+msgid "Product Details"
+msgstr "Dettagli prodotto"
+
+#: ../ui/screens/QuickAdditionPage.qml:36
+msgid "Product Macros"
+msgstr "Macronutrienti"
+
+#: ../ui/screens/QuickAdditionPage.qml:43 ../ui/screens/SetFoodPage.qml:157
+msgid "Stored!"
+msgstr "Salvato!"
+
+#: ../ui/screens/QuickAdditionPage.qml:48 ../ui/screens/SetFoodPage.qml:158
+msgid "Something went wrong. Please, restart the app and try again."
+msgstr "Qualcosa è andato storto. Riavvia l'app e riprova."
+
+#: ../ui/screens/QuickListFoodsPage.qml:45
+msgid "Search..."
+msgstr "Cerca…"
+
+#: ../ui/screens/QuickListFoodsPage.qml:133
+msgid "Total item selected %1"
+msgstr "Elementi selezionati: %1"
+
+#: ../ui/screens/QuickListFoodsPage.qml:134
+msgid " calories"
+msgstr " calorie"
+
+#: ../ui/screens/ScanPage.qml:31
+msgid "No Internet"
+msgstr "Nessuna connessione"
+
+#: ../ui/screens/ScanPage.qml:31
+msgid "Not Found"
+msgstr "Non trovato"
+
+#: ../ui/screens/ScanPage.qml:31
+msgid "Product Found"
+msgstr "Prodotto trovato"
+
+#: ../ui/screens/ScanPage.qml:32
+msgid "Manual search"
+msgstr "Ricerca manuale"
+
+#: ../ui/screens/ScanPage.qml:32
+msgid "Reading Bar Code..."
+msgstr "Lettura del codice a barre…"
+
+#: ../ui/screens/ScanPage.qml:37
+msgid "Camera"
+msgstr "Fotocamera"
+
+#: ../ui/screens/ScanPage.qml:37
+msgid "Manual"
+msgstr "Manuale"
+
+#: ../ui/screens/ScanPage.qml:196 ../ui/screens/SetFoodPage.qml:106
+msgid "Unknown Product Name"
+msgstr "Nome prodotto sconosciuto"
+
+#: ../ui/screens/ScanPage.qml:205
+msgid "N/A"
+msgstr "N/D"
+
+#: ../ui/screens/ScanPage.qml:222
+msgid "Code: %1"
+msgstr "Codice: %1"
+
+#: ../ui/screens/ScanPage.qml:236
+msgid "Please check your internet connection and try again."
+msgstr "Controlla la connessione a Internet e riprova."
+
+#: ../ui/screens/ScanPage.qml:245
+msgid ""
+"Product not in OpenFoodFacts database.\n"
+"You can enter the details manually."
+msgstr ""
+"Prodotto non presente nel database OpenFoodFacts.\n"
+"Puoi inserire i dati manualmente."
+
+#: ../ui/screens/ScanPage.qml:256
+msgid "Confirm & Next"
+msgstr "Conferma e avanti"
+
+#: ../ui/screens/ScanPage.qml:268
+msgid "Enter Manually"
+msgstr "Inserisci manualmente"
+
+#: ../ui/screens/ScanPage.qml:282
+msgid "Scan Again / Cancel"
+msgstr "Scansiona di nuovo / Annulla"
+
+#: ../ui/screens/SetFoodPage.qml:28
+msgid "Set Your Ingestion"
+msgstr "Imposta il pasto"
+
+#: ../ui/screens/SetFoodPage.qml:140
+msgid "Fat/100g"
+msgstr "Grassi/100 g"
+
+#: ../ui/screens/SetFoodPage.qml:146
+msgid "Protein/100g"
+msgstr "Proteine/100 g"
+
+#: ../ui/screens/SetFoodPage.qml:152
+msgid "Carbo/100g"
+msgstr "Carboidr./100 g"
+
+#: ../ui/screens/SettingsPage.qml:62
+msgid "Notifications"
+msgstr "Notifiche"
+
+#: ../ui/screens/SettingsPage.qml:69
+msgid "Streams:"
+msgstr "Promemoria:"
+
+#: ../ui/screens/SettingsPage.qml:88
+msgid " Calories Consumption"
+msgstr " Consumo di calorie"
+
+#: ../ui/screens/SettingsPage.qml:105
+msgid " Days Without Registing"
+msgstr " Giorni senza registrazioni"
+
+#: ../ui/screens/SettingsPage.qml:127
+msgid "Animation"
+msgstr "Animazione"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:65
+msgid "QML Modules"
+msgstr "Moduli QML"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:86
+#: ../ui/screens/ThirdPartySoftwarePage.qml:103
+msgid "%1. Licensed under the MIT licence"
+msgstr "%1. Rilasciato con licenza MIT"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:93
+msgid "JavaScript Libs"
+msgstr "Librerie JavaScript"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:109
+msgid "C++ Modules"
+msgstr "Moduli C++"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:119
+msgid "%1. Licensed under the Apache License 2.0"
+msgstr "%1. Rilasciato con licenza Apache 2.0"
+
+#: ../ui/screens/ThirdPartySoftwarePage.qml:125
+msgid "Icons"
+msgstr "Icone"
+
+#: ../ui/screens/UserProfileConfigPage.qml:30
+msgid "Goal & Activity"
+msgstr "Obiettivo e attività"
+
+#: ../ui/screens/UserProfileConfigPage.qml:31
+msgid "Body Metrics"
+msgstr "Parametri corporei"
+
+#: ../ui/screens/UserProfileConfigPage.qml:32
+msgid "Health Tracker"
+msgstr "Monitoraggio salute"
+
+#: ../ui/screens/UserProfileConfigPage.qml:43
+msgid "loose"
+msgstr "perdita"
+
+#: ../ui/screens/UserProfileConfigPage.qml:44
+msgid "gain"
+msgstr "aumento"
+
+#: ../ui/screens/UserProfileConfigPage.qml:50
+msgid ""
+"Very Light: Driving, Typing, Cooking.\n"
+"Light: Walking 5 km, Golf.\n"
+"Moderate: Walking 6 km, Dancing, Cycling.\n"
+"Heavy: Running, Soccer, Basketball."
+msgstr ""
+"Molto leggera: guidare, scrivere al computer, cucinare.\n"
+"Leggera: camminare 5 km, golf.\n"
+"Moderata: camminare 6 km, ballare, andare in bicicletta.\n"
+"Intensa: corsa, calcio, pallacanestro."
+
+#: ../ui/screens/UserProfileConfigPage.qml:99
+msgid "Main Goal"
+msgstr "Obiettivo principale"
+
+#: ../ui/screens/UserProfileConfigPage.qml:103
+msgid "LOOSE WEIGHT"
+msgstr "PERDERE PESO"
+
+#: ../ui/screens/UserProfileConfigPage.qml:109
+msgid "MAINTAIN WEIGHT"
+msgstr "MANTENERE IL PESO"
+
+#: ../ui/screens/UserProfileConfigPage.qml:115
+msgid "GAIN WEIGHT"
+msgstr "AUMENTARE DI PESO"
+
+#: ../ui/screens/UserProfileConfigPage.qml:136
+msgid "Daily Activity"
+msgstr "Attività quotidiana"
+
+#: ../ui/screens/UserProfileConfigPage.qml:142
+msgid "VERY LIGHT"
+msgstr "MOLTO LEGGERA"
+
+#: ../ui/screens/UserProfileConfigPage.qml:148
+msgid "LIGHT"
+msgstr "LEGGERA"
+
+#: ../ui/screens/UserProfileConfigPage.qml:154
+msgid "MODERATE"
+msgstr "MODERATA"
+
+#: ../ui/screens/UserProfileConfigPage.qml:160
+msgid "HEAVY"
+msgstr "INTENSA"
+
+#: ../ui/screens/UserProfileConfigPage.qml:194
+msgid "Sex at Birth"
+msgstr "Sesso alla nascita"
+
+#: ../ui/screens/UserProfileConfigPage.qml:201
+msgid "MALE"
+msgstr "MASCHIO"
+
+#: ../ui/screens/UserProfileConfigPage.qml:207
+msgid "FEMALE"
+msgstr "FEMMINA"
+
+#: ../ui/screens/UserProfileConfigPage.qml:214
+msgid "Age"
+msgstr "Età"
+
+#: ../ui/screens/UserProfileConfigPage.qml:226
+msgid " years"
+msgstr " anni"
+
+#: ../ui/screens/UserProfileConfigPage.qml:247
+msgid "Height"
+msgstr "Altezza"
+
+#: ../ui/screens/UserProfileConfigPage.qml:248
+msgid "Weight"
+msgstr "Peso"
+
+#: ../ui/screens/UserProfileConfigPage.qml:330
+msgid "Systolic Pressure (High)"
+msgstr "Pressione sistolica (massima)"
+
+#: ../ui/screens/UserProfileConfigPage.qml:356
+msgid "Diastolic Pressure (Low)"
+msgstr "Pressione diastolica (minima)"
+
+#: ../ui/screens/UserProfileConfigPage.qml:392
+msgid "Update Values"
+msgstr "Aggiorna valori"
+
+#: ../ui/screens/UserProfileConfigPage.qml:440
+msgid "Calculate & Save"
+msgstr "Calcola e salva"
+
+#: ../ui/screens/UserProfileConfigPage.qml:440
+msgid "Update Profile"
+msgstr "Aggiorna profilo"
+
+#: ../ui/screens/components/AddNoteDialog.qml:30
+msgid "Add Your Notes"
+msgstr "Aggiungi le tue note"
+
+#: ../ui/screens/components/AddNoteDialog.qml:50
+msgid "View Your Notes"
+msgstr "Visualizza le tue note"
+
+#: ../ui/screens/components/AddNoteDialog.qml:59
+msgid "Add"
+msgstr "Aggiungi"
+
+#: ../ui/screens/components/AddNoteDialog.qml:68
+#: ../ui/screens/components/GoalDefinitionDialog.qml:135
+#: ../ui/screens/components/MealFilterDialog.qml:73
+#: ../ui/screens/components/MessageDialog.qml:41
+#: ../ui/screens/components/RecommendedCaloriesDialog.qml:118
+msgid "Back"
+msgstr "Indietro"
+
+#: ../ui/screens/components/CaloriesCircleChart.qml:111
+msgid "EXCEED"
+msgstr "ECCEDENZA"
+
+#: ../ui/screens/components/CaloriesCircleChart.qml:111
+msgid "REMAINING"
+msgstr "RIMANENTI"
+
+#: ../ui/screens/components/ConfirmPicker.qml:32
+msgid "NO"
+msgstr "NO"
+
+#: ../ui/screens/components/ConfirmPicker.qml:32
+msgid "STILL NO"
+msgstr "ANCORA NO"
+
+#: ../ui/screens/components/ConfirmPicker.qml:32
+msgid "YES"
+msgstr "SÌ"
+
+#: ../ui/screens/components/DeleteAllNotesDialog.qml:32
+msgid "Delete Notes"
+msgstr "Elimina note"
+
+#: ../ui/screens/components/DeleteAllNotesDialog.qml:37
+#: ../ui/screens/components/DeleteAllWaterDialog.qml:37
+#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:35
+#: ../ui/screens/components/DeleteByMonthPop.qml:36
+#: ../ui/screens/components/RemoveRecordsDialog.qml:41
+msgid "Confirm Operation With: YES"
+msgstr "Conferma l'operazione con: SÌ"
+
+#: ../ui/screens/components/DeleteAllNotesDialog.qml:57
+#: ../ui/screens/components/DeleteAllWaterDialog.qml:57
+#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:56
+#: ../ui/screens/components/DeleteByMonthPop.qml:89
+#: ../ui/screens/components/RemoveRecordsDialog.qml:75
+msgid "Wrong Answer, Try Again"
+msgstr "Risposta errata, riprova"
+
+#: ../ui/screens/components/DeleteAllWaterDialog.qml:32
+#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:30
+msgid "Delete Weight Tracker Records"
+msgstr "Elimina le registrazioni del peso"
+
+#: ../ui/screens/components/DeleteByMonthPop.qml:31
+msgid "Enter Month & Year"
+msgstr "Inserisci mese e anno"
+
+#: ../ui/screens/components/DeleteByMonthPop.qml:43
+msgid "Month From 1 to 12"
+msgstr "Mese da 1 a 12"
+
+#: ../ui/screens/components/DeleteByMonthPop.qml:62
+msgid "Year"
+msgstr "Anno"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:29
+msgid "Module your goal"
+msgstr "Modula il tuo obiettivo"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:36
+msgid "A healthy %1 weight must be distributed among a safe period."
+msgstr "Una sana %1 di peso deve essere distribuita in un periodo sicuro."
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:47
+msgid "0,5kg by week"
+msgstr "0,5 kg a settimana"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:66
+msgid "1kg by week"
+msgstr "1 kg a settimana"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:86
+msgid "3kg by month"
+msgstr "3 kg al mese"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:106
+msgid "4kg by month"
+msgstr "4 kg al mese"
+
+#: ../ui/screens/components/GoalDefinitionDialog.qml:126
+#: ../ui/screens/components/RecommendedCaloriesDialog.qml:84
+msgid "Confirm"
+msgstr "Conferma"
+
+#: ../ui/screens/components/ListViewFoods.qml:99
+#: ../ui/screens/plugins/ProductDetails.qml:94
+msgid "Very good nutritional quality"
+msgstr "Qualità nutrizionale molto buona"
+
+#: ../ui/screens/components/ListViewFoods.qml:100
+#: ../ui/screens/plugins/ProductDetails.qml:95
+msgid "Good nutritional quality"
+msgstr "Buona qualità nutrizionale"
+
+#: ../ui/screens/components/ListViewFoods.qml:101
+#: ../ui/screens/plugins/ProductDetails.qml:96
+msgid "Average nutritional quality"
+msgstr "Qualità nutrizionale media"
+
+#: ../ui/screens/components/ListViewFoods.qml:102
+#: ../ui/screens/plugins/ProductDetails.qml:98
+msgid "Bad nutritional quality"
+msgstr "Cattiva qualità nutrizionale"
+
+#: ../ui/screens/components/ListViewFoods.qml:102
+#: ../ui/screens/plugins/ProductDetails.qml:97
+msgid "Poor nutritional quality"
+msgstr "Scarsa qualità nutrizionale"
+
+#: ../ui/screens/components/MealFilterDialog.qml:27
+msgid "Show Ingestions From"
+msgstr "Mostra i pasti a partire da"
+
+#: ../ui/screens/components/MealFilterDialog.qml:36
+msgid "How Many Days Ago:"
+msgstr "Quanti giorni fa:"
+
+#: ../ui/screens/components/NotifyAutoCleanPop.qml:41
+msgid "Deleting Old Ingestions"
+msgstr "Eliminazione dei vecchi pasti"
+
+#: ../ui/screens/components/NotifyAutoCleanPop.qml:43
+msgid "Please, wait this notify dissapears"
+msgstr "Attendi che questa notifica scompaia"
+
+#: ../ui/screens/components/OperationResultPopOver.qml:40
+msgid "Operation Sucess"
+msgstr "Operazione riuscita"
+
+#: ../ui/screens/components/RecommendedCaloriesDialog.qml:21
+msgid "Recommended Calories"
+msgstr "Calorie consigliate"
+
+#: ../ui/screens/components/RecommendedCaloriesDialog.qml:32
+msgid "%1 Calories"
+msgstr "%1 calorie"
+
+#: ../ui/screens/components/RecommendedCaloriesDialog.qml:42
+msgid "Calculated Using St. Mifflin Jeor Equation"
+msgstr "Calcolate con l'equazione di Mifflin-St Jeor"
+
+#: ../ui/screens/components/RemoveRecordsDialog.qml:33
+msgid ""
+"Deletes your *%1* records.\n"
+"No recovery possible"
+msgstr ""
+"Elimina le tue registrazioni *%1*.\n"
+"Nessun recupero possibile"
+
+#: ../ui/screens/components/RemoveRecordsDialog.qml:72
+msgid "Something Went Wrong"
+msgstr "Qualcosa è andato storto"
+
+#: ../ui/screens/components/SlotDashboardCalories.qml:48
+msgid "Consumed"
+msgstr "Consumate"
+
+#: ../ui/screens/components/SlotDashboardCalories.qml:56
+msgid "Goal"
+msgstr "Obiettivo"
+
+#: ../ui/screens/components/SlotDashboardCalories.qml:83
+#: ../ui/screens/components/SlotDashboardCalories.qml:91
+msgid "Gain weight"
+msgstr "Aumentare di peso"
+
+#: ../ui/screens/components/SlotDashboardCalories.qml:83
+#: ../ui/screens/components/SlotDashboardCalories.qml:91
+msgid "Loose weight"
+msgstr "Perdere peso"
+
+#: ../ui/screens/components/SlotDashboardCalories.qml:83
+#: ../ui/screens/components/SlotDashboardCalories.qml:91
+#: ../ui/screens/components/SlotDashboardCalories.qml:98
+msgid "Maintain weight"
+msgstr "Mantenere il peso"
+
+#: ../ui/screens/components/StoreIngestionDialog.qml:30
+msgid "Continue registering..."
+msgstr "Continua a registrare…"
+
+#: ../ui/screens/components/StoreIngestionDialog.qml:44
+msgid "It's ok for now"
+msgstr "Per ora va bene così"
+
+#: ../ui/screens/components/UpdateUserBloodPressureDialog.qml:16
+msgid "Updating Blood Pressure"
+msgstr "Aggiornamento della pressione sanguigna"
+
+#: ../ui/screens/plugins/IngestionConfig.qml:52
+msgid "Calories: %1 "
+msgstr "Calorie: %1 "
+
+#: ../ui/screens/plugins/IngestionConfig.qml:63
+msgid "Fat: %1gr"
+msgstr "Grassi: %1 g"
+
+#: ../ui/screens/plugins/IngestionConfig.qml:72
+msgid "Protein: %1gr"
+msgstr "Proteine: %1 g"
+
+#: ../ui/screens/plugins/IngestionConfig.qml:82
+msgid "Carbohydrates: %1gr"
+msgstr "Carboidrati: %1 g"
+
+#: ../ui/screens/plugins/IngestionConfig.qml:92
+msgid "Size Portion"
+msgstr "Dimensione porzione"
+
+#: ../ui/screens/plugins/IngestionConfig.qml:118
+msgid "Quantity"
+msgstr "Quantità"
+
+#: ../ui/screens/plugins/ManualCodeSearch.qml:34
+msgid "Manual Entry"
+msgstr "Inserimento manuale"
+
+#: ../ui/screens/plugins/ManualCodeSearch.qml:42
+msgid "Type the numbers located under the barcode"
+msgstr "Digita i numeri sotto il codice a barre"
+
+#: ../ui/screens/plugins/ManualCodeSearch.qml:69
+msgid "e.g. 5601234567890"
+msgstr "es. 5601234567890"
+
+#: ../ui/screens/plugins/ProductDetails.qml:42
+msgid "Macros"
+msgstr "Macronutrienti"
+
+#: ../ui/screens/plugins/ProductDetails.qml:73
+msgid "Classified as"
+msgstr "Classificato come"
+
+#: ../ui/screens/plugins/ProductDetails.qml:99
+#: ../ui/screens/plugins/ProductDetails.qml:110
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+#: ../ui/screens/plugins/ProductDetails.qml:106
+msgid "Unprocessed or minimally processed"
+msgstr "Non trasformati o minimamente trasformati"
+
+#: ../ui/screens/plugins/ProductDetails.qml:107
+msgid "Processed culinary ingredients"
+msgstr "Ingredienti culinari trasformati"
+
+#: ../ui/screens/plugins/ProductDetails.qml:108
+msgid "Processed foods"
+msgstr "Alimenti trasformati"
+
+#: ../ui/screens/plugins/ProductDetails.qml:109
+msgid "Ultra-processed foods"
+msgstr "Alimenti ultra-trasformati"
+
+#: ../ui/screens/plugins/ProductMacros.qml:48
+msgid "Fat"
+msgstr "Grassi"
+
+#: ../ui/screens/plugins/ProductMacros.qml:121
+msgid "Protein"
+msgstr "Proteine"
+
+#: ../ui/screens/plugins/ProductMacros.qml:190
+msgid "Carbo"
+msgstr "Carboidr."
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:39
+msgid "Product name"
+msgstr "Nome prodotto"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:65
+msgid "Calories"
+msgstr "Calorie"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:94
+msgid "Nutriscore Grade"
+msgstr "Nutri-Score"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:103
+msgid "A: Very Good Nutritional Quality"
+msgstr "A: Qualità nutrizionale molto buona"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:104
+msgid "B: Good Nutritional Quality"
+msgstr "B: Buona qualità nutrizionale"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:105
+msgid "C: Average Nutritional Quality"
+msgstr "C: Qualità nutrizionale media"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:106
+msgid "D: Poor Nutritional Quality"
+msgstr "D: Scarsa qualità nutrizionale"
+
+#: ../ui/screens/plugins/ProductNameCalories.qml:107
+msgid "E: Bad Nutritional Quality"
+msgstr "E: Cattiva qualità nutrizionale"
+
+#: kaltracker.desktop.in.h:1
+msgid "KalTracker"
+msgstr "KalTracker"
