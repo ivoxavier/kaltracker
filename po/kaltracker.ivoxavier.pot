@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 16:48+0000\n"
+"POT-Creation-Date: 2026-11-21 17:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../ui/screens/AdminChatsPage.qml:26
@@ -30,7 +30,7 @@ msgstr ""
 msgid "No active user chats found."
 msgstr ""
 
-#: ../ui/screens/AdminChatsPage.qml:88 ../ui/screens/MenuPage.qml:82
+#: ../ui/screens/AdminChatsPage.qml:88
 msgid "User"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgid "Send"
 msgstr ""
 
 #: ../ui/screens/AverageCaloriesPage.qml:35
-#: ../ui/screens/DataAnalysisPage.qml:71
+#: ../ui/screens/DataAnalysisPage.qml:105
 msgid "Average Calories Consumption"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "%1 cal"
 msgstr ""
 
-#: ../ui/screens/BackupRestorePage.qml:12 ../ui/screens/MenuPage.qml:184
+#: ../ui/screens/BackupRestorePage.qml:12 ../ui/screens/MenuPage.qml:351
 msgid "Backup & Restore Data"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "Blood Pressure"
 msgstr ""
 
-#: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:158
+#: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:144
 #: ../ui/screens/ManageSubscriptionPage.qml:404
 #: ../ui/screens/ManageSubscriptionPage.qml:563
 #: ../ui/screens/OnlineSourcesPage.qml:197
@@ -371,50 +371,70 @@ msgstr ""
 msgid "Preparing your KalTracker profile"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:26 ../ui/screens/MenuPage.qml:105
+#: ../ui/screens/DataAnalysisPage.qml:32 ../ui/screens/MenuPage.qml:161
 msgid "Data Analysis"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:36
+#: ../ui/screens/DataAnalysisPage.qml:41
 msgid "Agent Not Configured"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:37
+#: ../ui/screens/DataAnalysisPage.qml:42
 msgid ""
 "Please activate and configure at least one AI Agent in the API settings "
 "before using this feature."
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:40
+#: ../ui/screens/DataAnalysisPage.qml:45
+msgid "Open Online Sources"
+msgstr ""
+
+#: ../ui/screens/DataAnalysisPage.qml:54
 msgid "Close"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:65 ../ui/screens/ManageDataPage.qml:77
-msgid "Ingestions"
+#: ../ui/screens/DataAnalysisPage.qml:82 ../ui/screens/ManageDataPage.qml:88
+msgid "INGESTIONS"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:72
-msgid "By Month"
+#: ../ui/screens/DataAnalysisPage.qml:108
+msgid "Monthly calorie intake overview"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:85 ../ui/screens/SettingsPage.qml:120
+#: ../ui/screens/DataAnalysisPage.qml:145 ../ui/screens/SettingsPage.qml:120
 msgid "Charts"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:97
-msgid "Body Measurements"
+#: ../ui/screens/DataAnalysisPage.qml:148
+msgid "Weight progress and Nutri-Score distribution"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:103
+#: ../ui/screens/DataAnalysisPage.qml:178
+msgid "BODY MEASUREMENTS"
+msgstr ""
+
+#: ../ui/screens/DataAnalysisPage.qml:198
 msgid "Indexes"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:116
-msgid "Agent Analysis"
+#: ../ui/screens/DataAnalysisPage.qml:201
+msgid "BMI, ideal weight and blood pressure"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:122
+#: ../ui/screens/DataAnalysisPage.qml:231
+msgid "AGENT ANALYSIS"
+msgstr ""
+
+#: ../ui/screens/DataAnalysisPage.qml:257
 msgid "Ask Your Agent"
+msgstr ""
+
+#: ../ui/screens/DataAnalysisPage.qml:261
+msgid "AI-powered nutrition insights"
+msgstr ""
+
+#: ../ui/screens/DataAnalysisPage.qml:262
+msgid "Not configured — tap to set up"
 msgstr ""
 
 #: ../ui/screens/DeleteTodayIngestionPage.qml:34
@@ -446,98 +466,126 @@ msgstr ""
 msgid "No food records yet."
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:101
+#: ../ui/screens/HomePage.qml:89
 msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:193
+#: ../ui/screens/HomePage.qml:217
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:212
+#: ../ui/screens/HomePage.qml:231
 #: ../ui/screens/components/CaloriesCircleChart.qml:158
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:227
+#: ../ui/screens/HomePage.qml:250
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:237
+#: ../ui/screens/HomePage.qml:259
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:248
+#: ../ui/screens/HomePage.qml:268
 msgid "PROTEIN"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:296
+#: ../ui/screens/HomePage.qml:326
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../ui/screens/HomePage.qml:299 ../ui/screens/HomePage.qml:310
-#: ../ui/screens/HomePage.qml:321 ../ui/screens/HomePage.qml:332
+#: ../ui/screens/HomePage.qml:329 ../ui/screens/HomePage.qml:339
+#: ../ui/screens/HomePage.qml:349 ../ui/screens/HomePage.qml:359
 #: ../ui/screens/ListFoodsIngestedMonthPage.qml:76
 msgid "%1 calories"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:307
+#: ../ui/screens/HomePage.qml:336
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:318
+#: ../ui/screens/HomePage.qml:346
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:329
+#: ../ui/screens/HomePage.qml:356
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:390
+#: ../ui/screens/HomePage.qml:412
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:399
+#: ../ui/screens/HomePage.qml:421
 msgid "Your Previous Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:22 ../ui/screens/MenuPage.qml:167
+#: ../ui/screens/ManageDataPage.qml:28 ../ui/screens/MenuPage.qml:312
 msgid "Manage Data"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:84
+#: ../ui/screens/ManageDataPage.qml:111
 msgid "Auto Delete Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:85
-msgid "Deletes All Previous Year Ingestions"
+#: ../ui/screens/ManageDataPage.qml:114
+msgid "Deletes all previous year ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:103
+#: ../ui/screens/ManageDataPage.qml:154
 msgid "From a Month & To Year"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:117
+#: ../ui/screens/ManageDataPage.qml:157
+msgid "Remove ingestions by date range"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:193
 msgid "Specific Today's Ingestion"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:133
-msgid "Only Today's Ingestions"
+#: ../ui/screens/ManageDataPage.qml:196
+msgid "Pick individual items to remove"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:136 ../ui/screens/ManageDataPage.qml:152
-#: ../ui/screens/ManageDataPage.qml:192 ../ui/screens/ManageDataPage.qml:213
-#: ../ui/screens/ManageDataPage.qml:234
+#: ../ui/screens/ManageDataPage.qml:226
+msgid "USER FOODS LIST"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:246
+msgid "User Created Foods List"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:249
+msgid "Edit or delete your custom foods"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:276
+msgid "CLEAR RECORDS"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:298
+msgid "Today's Ingestions"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:301
+msgid "Clear all meals logged today"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:307 ../ui/screens/ManageDataPage.qml:338
+#: ../ui/screens/ManageDataPage.qml:369 ../ui/screens/ManageDataPage.qml:400
+#: ../ui/screens/ManageDataPage.qml:431
 #: ../ui/screens/components/ConfirmDeleteDialog.qml:57
 #: ../ui/screens/components/DeleteByMonthPop.qml:78
 #: ../ui/screens/components/RemoveRecordsDialog.qml:30
@@ -545,52 +593,47 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:149
+#: ../ui/screens/ManageDataPage.qml:329
 msgid "All Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:163
-msgid "User Foods List"
+#: ../ui/screens/ManageDataPage.qml:332
+msgid "Permanently remove entire history"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:170
-msgid "User Created Foods List"
+#: ../ui/screens/ManageDataPage.qml:360
+msgid "Water Records"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:182
-#: ../ui/screens/components/SlotWaterTracker.qml:71
-msgid "Water"
+#: ../ui/screens/ManageDataPage.qml:363
+msgid "Clear all hydration history"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:189
-msgid "All Water Records"
-msgstr ""
-
-#: ../ui/screens/ManageDataPage.qml:195
+#: ../ui/screens/ManageDataPage.qml:372
 msgid "Delete Water Records"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:203
+#: ../ui/screens/ManageDataPage.qml:391
 msgid "Notes"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:210
-msgid "Delete All Notes"
+#: ../ui/screens/ManageDataPage.qml:394
+msgid "Delete all saved notes"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:216
+#: ../ui/screens/ManageDataPage.qml:403
 msgid "Delete Notes"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:224
+#: ../ui/screens/ManageDataPage.qml:422
 msgid "Weight Tracker"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:231
-msgid "All Records"
+#: ../ui/screens/ManageDataPage.qml:425
+msgid "Delete all weight records"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:237
+#: ../ui/screens/ManageDataPage.qml:434
 msgid "Delete Weight Tracker Records"
 msgstr ""
 
@@ -777,40 +820,72 @@ msgstr ""
 msgid "Manage Your Foods"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:36
+#: ../ui/screens/MenuPage.qml:27
 msgid "Menu"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:77
-msgid "Version: "
+#: ../ui/screens/MenuPage.qml:88
+msgid "Version %1"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:89
+#: ../ui/screens/MenuPage.qml:99
+msgid "USER"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:122
 msgid "Your Profile"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:120
-msgid "Settings"
+#: ../ui/screens/MenuPage.qml:125
+msgid "Personal data and nutrition goals"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:129 ../ui/screens/SettingsPage.qml:35
+#: ../ui/screens/MenuPage.qml:164
+msgid "Graphs, BMI and body measures"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:194
+msgid "SETTINGS"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:217 ../ui/screens/SettingsPage.qml:35
 msgid "App Settings"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:144
+#: ../ui/screens/MenuPage.qml:220
+msgid "Preferences, animations and features"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:256
 msgid "Online Sources"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:159
-msgid "Storage"
+#: ../ui/screens/MenuPage.qml:259
+msgid "Open Food Facts and external APIs"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:199
-msgid "About"
+#: ../ui/screens/MenuPage.qml:289
+msgid "STORAGE"
 msgstr ""
 
-#: ../ui/screens/MenuPage.qml:206 ../ui/screens/ThirdPartySoftwarePage.qml:37
+#: ../ui/screens/MenuPage.qml:315
+msgid "Clean old records and manage database"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:354
+msgid "Export or restore your local data"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:384
+msgid "ABOUT"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:404 ../ui/screens/ThirdPartySoftwarePage.qml:37
 msgid "Third Party Software"
+msgstr ""
+
+#: ../ui/screens/MenuPage.qml:407
+msgid "Open-source licenses and credits"
 msgstr ""
 
 #: ../ui/screens/NotesPage.qml:36
@@ -1332,28 +1407,8 @@ msgstr ""
 msgid "Something Went Wrong"
 msgstr ""
 
-#: ../ui/screens/components/SlotDashboardCalories.qml:48
-msgid "Consumed"
-msgstr ""
-
-#: ../ui/screens/components/SlotDashboardCalories.qml:56
-msgid "Goal"
-msgstr ""
-
-#: ../ui/screens/components/SlotDashboardCalories.qml:83
-#: ../ui/screens/components/SlotDashboardCalories.qml:91
-msgid "Gain weight"
-msgstr ""
-
-#: ../ui/screens/components/SlotDashboardCalories.qml:83
-#: ../ui/screens/components/SlotDashboardCalories.qml:91
-msgid "Loose weight"
-msgstr ""
-
-#: ../ui/screens/components/SlotDashboardCalories.qml:83
-#: ../ui/screens/components/SlotDashboardCalories.qml:91
-#: ../ui/screens/components/SlotDashboardCalories.qml:98
-msgid "Maintain weight"
+#: ../ui/screens/components/SlotWaterTracker.qml:71
+msgid "Water"
 msgstr ""
 
 #: ../ui/screens/components/StoreIngestionDialog.qml:30

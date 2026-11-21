@@ -1,5 +1,5 @@
 /*
- * 2022  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,39 +16,32 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
-import Lomiri.Components.Popups 1.3
-import QtQuick.Controls.Suru 2.2
 import "../theme"
 
-LomiriShape{
-    id: slot_shape
+Item {
+    id: indicator_root
 
-    // make public API's
-    property alias slot_indicatior : slot_indicatior.text
-    property alias slot_icon_label : slot_icon_label.text
+    property var slot_indicatior: 0
+    property alias slot_icon_label: indicator_label.text
 
-    aspect: LomiriShape.Flat
+    Column {
+        anchors.centerIn: parent
+        spacing: units.gu(0.3)
 
-    ColumnLayout{
-        id: slot_layout
-        width: parent.width
-        spacing: units.gu(0.5)
-
-        Text{
-            id: slot_indicatior
-            Layout.alignment: Qt.AlignCenter
-            font.bold: true
-            color : app_style.label.labelColor
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: indicator_root.slot_indicatior
+            font.pixelSize: units.gu(2.4)
+            font.weight: Font.DemiBold
+            color: app_style.label.labelColor
         }
 
-        Text{
-            id: slot_icon_label
-            Layout.alignment: Qt.AlignCenter
-            color : app_style.label.labelColor
+        Label {
+            id: indicator_label
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.pixelSize: units.gu(1.2)
+            font.weight: Font.DemiBold
+            color: app_style.label.secondaryColor
         }
     }
-}  
+}
