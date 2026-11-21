@@ -48,8 +48,9 @@ Item {
             anchors.centerIn: parent
             width: units.gu(3)
             height: units.gu(3)
-            name: fab_root.iconName !== "" ? fab_root.iconName : ""
-            source: fab_root.iconSource !== "" ? fab_root.iconSource : ""
+            source: fab_root.iconSource !== ""
+                    ? fab_root.iconSource
+                    : (fab_root.iconName !== "" ? "image://theme/" + fab_root.iconName : "")
             color: fab_root.iconColor
         }
 

@@ -1,5 +1,5 @@
 /*
- * 2022-2023  Ivo Xavier
+ * 2022-2026  Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,102 +16,132 @@
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-//import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
-import Lomiri.Components.Popups 1.3
-import Lomiri.Components.Pickers 1.3
-import QtCharts 2.3
-import QtQuick.Controls.Suru 2.2
-import QtQuick.LocalStorage 2.12
 import "../components"
 import "../theme"
 
+Column {
+    id: details_root
 
-ColumnLayout{
-    width: root.width
+    width: parent ? parent.width : root.width
+    topPadding: units.gu(2)
+    bottomPadding: units.gu(12) // espaço para o FAB e PageIndicator
+    spacing: units.gu(2)
 
-    BlankSpace{}
-
-    Text{
-        Layout.alignment: Qt.AlignCenter
-        text: i18n.tr("Product name")
-        font.bold : true
-        color : app_style.label.labelColor
-    }
-
-    LomiriShape{  
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width - units.gu(2)
-        Layout.preferredHeight: units.gu(4)
+    // ==========================================
+    // CARTÃO 1: DETALHES DO PRODUTO (NOME + KCAL)
+    // ==========================================
+    LomiriShape {
+        width: parent.width - units.gu(4)
+        anchors.horizontalCenter: parent.horizontalCenter
+        height: details_col.height + units.gu(4)
         radius: "large"
-        aspect: LomiriShape.Inset
-        backgroundColor: app_style.shape.textInput.shapeColor
-        TextInput{
-            anchors.fill: parent
-            overwriteMode: true
-            horizontalAlignment: TextInput.AlignHCenter
-            verticalAlignment: TextInput.AlignVCenter
-            color : app_style.label.labelColor 
-            onTextChanged: logical_fields.ingestion.product_name = text
-        }
-    }
+        aspect: LomiriShape.DropShadow
+        backgroundColor: app_style.shape.shapeColor
 
-    BlankSpace{}
+        Column {
+            id: details_col
+            width: parent.width - units.gu(3)
+            anchors.centerIn: parent
+            spacing: units.gu(1.5)
 
-    Text{
-        Layout.alignment: Qt.AlignCenter
-        text: i18n.tr("Calories")
-        font.bold : true
-        color : app_style.label.labelColor 
-    }
+            // Nome do Produto
+            Label {
+                text: i18n.tr("Product Name")
+                font.pixelSize: units.gu(1.7)
+                font.weight: Font.DemiBold
+                color: app_style.label.labelColor
+            }
 
-    LomiriShape{  
-        Layout.alignment: Qt.AlignCenter
-        Layout.preferredWidth: root.width - units.gu(2)
-        Layout.preferredHeight: units.gu(4)
-        radius: "large"
-        aspect: LomiriShape.Inset
-        backgroundColor: app_style.shape.textInput.shapeColor
-        
-        TextInput{
-            anchors.fill: parent
-            overwriteMode: true
-            horizontalAlignment: TextInput.AlignHCenter
-            verticalAlignment: TextInput.AlignVCenter
-            inputMethodHints: Qt.ImhDigitsOnly
-            color : app_style.label.labelColor 
-            onEditingFinished:{ 
-                logical_fields.ingestion.cal = text
+            TextField {
+                id: product_name_input
+                width: parent.width
+                placeholderText: i18n.tr("e.g. Greek Yogurt, Banana...")
+                text: logical_fields.ingestion.product_name || ""
+                onTextChanged: logical_fields.ingestion.product_name = text
+            }
+
+            // Separador subtil
+            Rectangle {
+                width: parent.width
+                height: units.dp(1)
+                color: Qt.rgba(0.5, 0.5, 0.5, 0.15)
+            }
+
+            // Calorias
+            Label {
+                text: i18n.tr("Calories")
+                font.pixelSize: units.gu(1.7)
+                font.weight: Font.DemiBold
+                color: app_style.label.labelColor
+            }
+
+            RowLayout {
+                width: parent.width
+                spacing: units.gu(1.5)
+
+                TextField {
+                    id: calories_input
+                    Layout.fillWidth: true
+                    placeholderText: "0"
+                    inputMethodHints: Qt.ImhDigitsOnly
+                    validator: IntValidator { bottom: 0; top: 99999 }
+                    text: logical_fields.ingestion.cal > 0 ? String(logical_fields.ingestion.cal) : ""
+                    onTextChanged: logical_fields.ingestion.cal = Number(text) || 0
+                }
+
+                Label {
+                    text: i18n.tr("kcal")
+                    font.pixelSize: units.gu(1.9)
+                    font.weight: Font.DemiBold
+                    color: LomiriColors.ash
+                }
             }
         }
     }
-        BlankSpace{}
 
-        Text{
-            Layout.alignment: Qt.AlignCenter
-            text: i18n.tr("Nutriscore Grade")
-            font.bold : true
-            color : app_style.label.labelColor
-        }
+    // ==========================================
+    // CARTÃO 2: NUTRI-SCORE
+    // ==========================================
+    LomiriShape {
+        width: parent.width - units.gu(4)
+        anchors.horizontalCenter: parent.horizontalCenter
+        height: nutriscore_col.height + units.gu(3)
+        radius: "large"
+        aspect: LomiriShape.DropShadow
+        backgroundColor: app_style.shape.shapeColor
 
-        OptionSelector {
-            Layout.alignment: Qt.AlignCenter
-            Layout.preferredWidth: root.width - units.gu(10)
-            expanded: true
-            model: [i18n.tr("A: Very Good Nutritional Quality"),
-            i18n.tr("B: Good Nutritional Quality"),
-            i18n.tr("C: Average Nutritional Quality"),
-            i18n.tr("D: Poor Nutritional Quality"),
-            i18n.tr("E: Bad Nutritional Quality")]
-            selectedIndex: -1
-            onSelectedIndexChanged: {
-                logical_fields.ingestion.nutriscore = selectedIndex == 0 ?
-                "a" : selectedIndex == 1 ?
-                "b" : selectedIndex == 2 ?
-                "c" : selectedIndex == 3 ?
-                "d" : "e"
+        Column {
+            id: nutriscore_col
+            width: parent.width - units.gu(3)
+            anchors.centerIn: parent
+            spacing: units.gu(1)
+
+            Label {
+                text: i18n.tr("Nutriscore Grade")
+                font.pixelSize: units.gu(1.7)
+                font.weight: Font.DemiBold
+                color: app_style.label.labelColor
+            }
+
+            OptionSelector {
+                width: parent.width
+                expanded: true
+                selectedIndex: -1
+                model: [
+                    i18n.tr("A: Very Good Nutritional Quality"),
+                    i18n.tr("B: Good Nutritional Quality"),
+                    i18n.tr("C: Average Nutritional Quality"),
+                    i18n.tr("D: Poor Nutritional Quality"),
+                    i18n.tr("E: Bad Nutritional Quality")
+                ]
+                onSelectedIndexChanged: {
+                    var grades = ["a", "b", "c", "d", "e"];
+                    if (selectedIndex >= 0 && selectedIndex < grades.length) {
+                        logical_fields.ingestion.nutriscore = grades[selectedIndex];
+                    }
+                }
             }
         }
+    }
 }

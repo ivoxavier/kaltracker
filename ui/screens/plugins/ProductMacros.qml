@@ -17,230 +17,276 @@
 import QtQuick 2.9
 import Lomiri.Components 1.3
 import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import QtQuick.Controls.Suru 2.2
 import "../components"
 import "../theme"
 
-Item {
+Flickable {
+    id: macros_root
+
     width: parent ? parent.width : units.gu(40)
     height: parent ? parent.height : units.gu(60)
+    contentWidth: width
+    contentHeight: main_col.height + units.gu(12) // espaço extra para o FAB e PageIndicator
+    clip: true
 
-    RowLayout {
-        anchors.centerIn: parent
+    readonly property real fatVal: Number(logical_fields.ingestion.fat) || 0
+    readonly property real proteinVal: Number(logical_fields.ingestion.protein) || 0
+    readonly property real carboVal: Number(logical_fields.ingestion.carbo) || 0
+    readonly property real totalGrams: fatVal + proteinVal + carboVal
+    readonly property int estimatedKcal: Math.round((fatVal * 9) + (proteinVal * 4) + (carboVal * 4))
+
+    readonly property color fatColor: app_style.progressBar.nutrientBar.fatProgress
+    readonly property color proteinColor: app_style.progressBar.nutrientBar.proteinProgress
+    readonly property color carboColor: app_style.progressBar.nutrientBar.carbProgress
+
+    Column {
+        id: main_col
         width: parent.width - units.gu(4)
-        height: parent.height - units.gu(18)
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: units.gu(2)
         spacing: units.gu(2)
 
-        
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            spacing: units.gu(1.5)
+        // ==========================================
+        // CARTÃO DE RESUMO + BARRA DE PROPORÇÃO
+        // ==========================================
+        LomiriShape {
+            width: parent.width
+            height: summary_col.height + units.gu(3)
+            radius: "large"
+            aspect: LomiriShape.DropShadow
+            backgroundColor: app_style.shape.shapeColor
 
-            NutrientIcon {
-                Layout.alignment: Qt.AlignHCenter
-                img_path: "../../assets/olive-oil-svgrepo-com.svg"
-            }
+            Column {
+                id: summary_col
+                width: parent.width - units.gu(3)
+                anchors.centerIn: parent
+                spacing: units.gu(1.2)
 
-            Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr("Fat")
-                font.weight: Font.DemiBold
-                color: app_style.label.labelColor
-            }
-            
-            Rectangle {
-                id: fatSlider
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: units.gu(20)
-                color: Qt.rgba(0.5, 0.5, 0.5, 0.15)
-                radius: units.gu(1)
-                clip: true
+                RowLayout {
+                    width: parent.width
 
-                property real minValue: 0
-                property real maxValue: 100 
-                property real currentValue: logical_fields.ingestion.fat
-                
-                
-                property real fillHeight: (currentValue - minValue) / (maxValue - minValue) * height
+                    Label {
+                        text: i18n.tr("Macro Distribution")
+                        font.pixelSize: units.gu(1.7)
+                        font.weight: Font.DemiBold
+                        color: app_style.label.labelColor
+                        Layout.fillWidth: true
+                    }
 
-                
+                    Label {
+                        text: "~ " + macros_root.estimatedKcal + " kcal"
+                        font.pixelSize: units.gu(1.6)
+                        font.weight: Font.DemiBold
+                        color: LomiriColors.ash
+                    }
+                }
+
+                // Barra horizontal empilhada (Gordura / Proteína / Hidratos)
                 Rectangle {
                     width: parent.width
-                    height: parent.fillHeight
-                    anchors.bottom: parent.bottom 
-                    color: "#F2B705" 
-                    radius: parent.radius
-                    
-                    Behavior on height {
-                        NumberAnimation { duration: 150; easing.type: Easing.OutQuad }
+                    height: units.gu(1.2)
+                    radius: height / 2
+                    color: Qt.rgba(0.5, 0.5, 0.5, 0.18)
+                    clip: true
+
+                    Row {
+                        anchors.fill: parent
+                        visible: macros_root.totalGrams > 0
+
+                        Rectangle {
+                            height: parent.height
+                            width: parent.width * (macros_root.fatVal / macros_root.totalGrams)
+                            color: macros_root.fatColor
+                            Behavior on width { NumberAnimation { duration: 200; easing.type: Easing.OutQuad } }
+                        }
+                        Rectangle {
+                            height: parent.height
+                            width: parent.width * (macros_root.proteinVal / macros_root.totalGrams)
+                            color: macros_root.proteinColor
+                            Behavior on width { NumberAnimation { duration: 200; easing.type: Easing.OutQuad } }
+                        }
+                        Rectangle {
+                            height: parent.height
+                            width: parent.width * (macros_root.carboVal / macros_root.totalGrams)
+                            color: macros_root.carboColor
+                            Behavior on width { NumberAnimation { duration: 200; easing.type: Easing.OutQuad } }
+                        }
                     }
                 }
 
-                
-                Label {
-                    anchors.centerIn: parent
-                    text: fatSlider.currentValue.toFixed(1) + " g"
-                    font.pixelSize: units.gu(2.5)
-                    font.weight: Font.DemiBold
-                    color: app_style.label.labelColor
-                    z: 2
-                }
+                // Legenda em percentagens
+                RowLayout {
+                    width: parent.width
+                    spacing: units.gu(1)
 
-                MouseArea {
-                    anchors.fill: parent
-                    preventStealing: true
-
-                    function updateValue(mouse) {
-                        var clickY = Math.max(0, Math.min(mouse.y, height));
-                        var percent = 1.0 - (clickY / height);
-                        var rawValue = fatSlider.minValue + (percent * (fatSlider.maxValue - fatSlider.minValue));
-                        logical_fields.ingestion.fat = Number(rawValue.toFixed(1));
+                    Label {
+                        Layout.fillWidth: true
+                        text: i18n.tr("Fat") + " " + (macros_root.totalGrams > 0 ? Math.round((macros_root.fatVal / macros_root.totalGrams) * 100) : 0) + "%"
+                        font.pixelSize: units.gu(1.3)
+                        color: macros_root.fatColor
                     }
-
-                    onPressed: updateValue(mouse)
-                    onPositionChanged: updateValue(mouse)
+                    Label {
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                        text: i18n.tr("Protein") + " " + (macros_root.totalGrams > 0 ? Math.round((macros_root.proteinVal / macros_root.totalGrams) * 100) : 0) + "%"
+                        font.pixelSize: units.gu(1.3)
+                        color: macros_root.proteinColor
+                    }
+                    Label {
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignRight
+                        text: i18n.tr("Carbo") + " " + (macros_root.totalGrams > 0 ? Math.round((macros_root.carboVal / macros_root.totalGrams) * 100) : 0) + "%"
+                        font.pixelSize: units.gu(1.3)
+                        color: macros_root.carboColor
+                    }
                 }
             }
         }
 
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            spacing: units.gu(1.5)
+        // ==========================================
+        // CARTÕES DE MACROS (FAT / PROTEIN / CARBO)
+        // ==========================================
+        Repeater {
+            model: [
+                {
+                    "field": "fat",
+                    "label": i18n.tr("Fat"),
+                    "icon": "../../assets/olive-oil-svgrepo-com.svg",
+                    "accent": macros_root.fatColor,
+                    "max": 100
+                },
+                {
+                    "field": "protein",
+                    "label": i18n.tr("Protein"),
+                    "icon": "../../assets/cheese-svgrepo-com.svg",
+                    "accent": macros_root.proteinColor,
+                    "max": 100
+                },
+                {
+                    "field": "carbo",
+                    "label": i18n.tr("Carbo"),
+                    "icon": "../../assets/bread-svgrepo-com.svg",
+                    "accent": macros_root.carboColor,
+                    "max": 100
+                }
+            ]
 
-            NutrientIcon {
-                Layout.alignment: Qt.AlignHCenter
-                img_path: "../../assets/cheese-svgrepo-com.svg"
-            }
+            delegate: LomiriShape {
+                id: macro_card
+                width: main_col.width
+                height: card_col.height + units.gu(3)
+                radius: "large"
+                aspect: LomiriShape.DropShadow
+                backgroundColor: app_style.shape.shapeColor
 
-            Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr("Protein")
-                font.weight: Font.DemiBold
-                color: app_style.label.labelColor
-            }
+                property real currentVal: Number(logical_fields.ingestion[modelData.field]) || 0
 
-            Rectangle {
-                id: proteinSlider
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: units.gu(20)
-                color: Qt.rgba(0.5, 0.5, 0.5, 0.15)
-                radius: units.gu(1)
-                clip: true
-
-                property real minValue: 0
-                property real maxValue: 100
-                property real currentValue: logical_fields.ingestion.protein
-                property real fillHeight: (currentValue - minValue) / (maxValue - minValue) * height
-
-                Rectangle {
-                    width: parent.width
-                    height: parent.fillHeight
-                    anchors.bottom: parent.bottom
-                    color: "#4A90E2"
-                    radius: parent.radius
-                    
-                    Behavior on height {
-                        NumberAnimation { duration: 150; easing.type: Easing.OutQuad }
-                    }
+                function setMacroValue(val) {
+                    var clamped = Math.max(0, Math.min(modelData.max, val));
+                    logical_fields.ingestion[modelData.field] = Number(clamped.toFixed(1));
                 }
 
-                Label {
+                Column {
+                    id: card_col
+                    width: parent.width - units.gu(3)
                     anchors.centerIn: parent
-                    text: proteinSlider.currentValue.toFixed(1) + " g"
-                    font.pixelSize: units.gu(2.5)
-                    font.weight: Font.DemiBold
-                    color: app_style.label.labelColor
-                    z: 2
-                }
+                    spacing: units.gu(1.5)
 
-                MouseArea {
-                    anchors.fill: parent
-                    preventStealing: true
+                    // Linha superior: Ícone + Nome + Input Numérico editável
+                    RowLayout {
+                        width: parent.width
+                        spacing: units.gu(1.5)
 
-                    function updateValue(mouse) {
-                        var clickY = Math.max(0, Math.min(mouse.y, height));
-                        var percent = 1.0 - (clickY / height);
-                        var rawValue = proteinSlider.minValue + (percent * (proteinSlider.maxValue - proteinSlider.minValue));
-                        logical_fields.ingestion.protein = Number(rawValue.toFixed(1));
+                        NutrientIcon {
+                            img_path: modelData.icon
+                        }
+
+                        Label {
+                            text: modelData.label
+                            font.pixelSize: units.gu(2)
+                            font.weight: Font.DemiBold
+                            color: app_style.label.labelColor
+                            Layout.fillWidth: true
+                        }
+
+                        TextField {
+                            id: value_input
+                            Layout.preferredWidth: units.gu(9.5)
+                            horizontalAlignment: TextInput.AlignRight
+                            inputMethodHints: Qt.ImhFormattedNumbersOnly
+                            text: macro_card.currentVal.toFixed(1)
+
+                            function commitText() {
+                                var parsed = parseFloat(text.replace(",", "."));
+                                if (!isNaN(parsed)) {
+                                    macro_card.setMacroValue(parsed);
+                                } else {
+                                    text = macro_card.currentVal.toFixed(1);
+                                }
+                            }
+
+                            onAccepted: commitText()
+                            onActiveFocusChanged: if (!activeFocus) commitText()
+                        }
+
+                        Label {
+                            text: "g"
+                            font.pixelSize: units.gu(1.8)
+                            font.weight: Font.DemiBold
+                            color: LomiriColors.ash
+                        }
                     }
 
-                    onPressed: updateValue(mouse)
-                    onPositionChanged: updateValue(mouse)
-                }
-            }
-        }
+                    // Linha inferior: Slider horizontal com área táctil generosa
+                    Item {
+                        width: parent.width
+                        height: units.gu(3.5)
 
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            spacing: units.gu(1.5)
+                        // Trilho de fundo
+                        Rectangle {
+                            id: slider_track
+                            anchors.verticalCenter: parent.verticalCenter
+                            width: parent.width
+                            height: units.gu(0.9)
+                            radius: height / 2
+                            color: Qt.rgba(0.5, 0.5, 0.5, 0.18)
 
-            NutrientIcon {
-                Layout.alignment: Qt.AlignHCenter
-                img_path: "../../assets/bread-svgrepo-com.svg"
-            }
+                            // Preenchimento ativo
+                            Rectangle {
+                                height: parent.height
+                                width: Math.max(0, Math.min(parent.width, (macro_card.currentVal / modelData.max) * parent.width))
+                                radius: parent.radius
+                                color: modelData.accent
+                                Behavior on width { NumberAnimation { duration: 100; easing.type: Easing.OutQuad } }
+                            }
+                        }
 
-            Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr("Carbo")
-                font.weight: Font.DemiBold
-                color: app_style.label.labelColor
-            }
+                        // Pega (thumb) circular
+                        Rectangle {
+                            width: units.gu(2.4)
+                            height: units.gu(2.4)
+                            radius: width / 2
+                            anchors.verticalCenter: parent.verticalCenter
+                            x: Math.max(0, Math.min(parent.width - width, (macro_card.currentVal / modelData.max) * parent.width - width / 2))
+                            color: "white"
+                            border.color: modelData.accent
+                            border.width: units.dp(3)
+                        }
 
-            
-            Rectangle {
-                id: carboSlider
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumHeight: units.gu(20)
-                color: Qt.rgba(0.5, 0.5, 0.5, 0.15)
-                radius: units.gu(1)
-                clip: true
+                        MouseArea {
+                            anchors.fill: parent
+                            preventStealing: true
 
-                property real minValue: 0
-                property real maxValue: 100
-                property real currentValue: logical_fields.ingestion.carbo
-                property real fillHeight: (currentValue - minValue) / (maxValue - minValue) * height
+                            function updateFromX(mouseX) {
+                                var ratio = Math.max(0, Math.min(1, mouseX / width));
+                                macro_card.setMacroValue(ratio * modelData.max);
+                            }
 
-                Rectangle {
-                    width: parent.width
-                    height: parent.fillHeight
-                    anchors.bottom: parent.bottom
-                    color: "#4CAF50"
-                    radius: parent.radius
-                    
-                    Behavior on height {
-                        NumberAnimation { duration: 150; easing.type: Easing.OutQuad }
+                            onPressed: updateFromX(mouse.x)
+                            onPositionChanged: updateFromX(mouse.x)
+                        }
                     }
-                }
-
-                Label {
-                    anchors.centerIn: parent
-                    text: carboSlider.currentValue.toFixed(1) + " g"
-                    font.pixelSize: units.gu(2.5)
-                    font.weight: Font.DemiBold
-                    color: app_style.label.labelColor
-                    z: 2
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    preventStealing: true
-
-                    function updateValue(mouse) {
-                        var clickY = Math.max(0, Math.min(mouse.y, height));
-                        var percent = 1.0 - (clickY / height);
-                        var rawValue = carboSlider.minValue + (percent * (carboSlider.maxValue - carboSlider.minValue));
-                        logical_fields.ingestion.carbo = Number(rawValue.toFixed(1));
-                    }
-
-                    onPressed: updateValue(mouse)
-                    onPositionChanged: updateValue(mouse)
                 }
             }
         }
