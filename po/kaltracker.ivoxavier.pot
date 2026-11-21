@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 17:09+0000\n"
+"POT-Creation-Date: 2026-11-21 17:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -912,7 +912,7 @@ msgstr ""
 msgid "Enter %1 API Key"
 msgstr ""
 
-#: ../ui/screens/OnlineSourcesPage.qml:100 ../ui/screens/SetFoodPage.qml:33
+#: ../ui/screens/OnlineSourcesPage.qml:100 ../ui/screens/SetFoodPage.qml:39
 msgid "Save"
 msgstr ""
 
@@ -948,7 +948,7 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:39 ../ui/screens/SetFoodPage.qml:28
+#: ../ui/screens/QuickAdditionPage.qml:39 ../ui/screens/SetFoodPage.qml:34
 msgid "Product Details"
 msgstr ""
 
@@ -956,11 +956,11 @@ msgstr ""
 msgid "Product Macros"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:46 ../ui/screens/SetFoodPage.qml:157
+#: ../ui/screens/QuickAdditionPage.qml:46 ../ui/screens/SetFoodPage.qml:255
 msgid "Stored!"
 msgstr ""
 
-#: ../ui/screens/QuickAdditionPage.qml:51 ../ui/screens/SetFoodPage.qml:158
+#: ../ui/screens/QuickAdditionPage.qml:51 ../ui/screens/SetFoodPage.qml:256
 msgid "Something went wrong. Please, restart the app and try again."
 msgstr ""
 
@@ -1024,7 +1024,7 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:209 ../ui/screens/SetFoodPage.qml:106
+#: ../ui/screens/ScanPage.qml:209 ../ui/screens/SetFoodPage.qml:119
 msgid "Unknown Product Name"
 msgstr ""
 
@@ -1058,19 +1058,27 @@ msgstr ""
 msgid "Scan Again / Cancel"
 msgstr ""
 
-#: ../ui/screens/SetFoodPage.qml:28
+#: ../ui/screens/SetFoodPage.qml:33
 msgid "Set Your Ingestion"
 msgstr ""
 
-#: ../ui/screens/SetFoodPage.qml:140
+#: ../ui/screens/SetFoodPage.qml:196
+msgid "Ingestion"
+msgstr ""
+
+#: ../ui/screens/SetFoodPage.qml:216
+msgid "Details"
+msgstr ""
+
+#: ../ui/screens/SetFoodPage.qml:238
 msgid "Fat/100g"
 msgstr ""
 
-#: ../ui/screens/SetFoodPage.qml:146
+#: ../ui/screens/SetFoodPage.qml:244
 msgid "Protein/100g"
 msgstr ""
 
-#: ../ui/screens/SetFoodPage.qml:152
+#: ../ui/screens/SetFoodPage.qml:250
 msgid "Carbo/100g"
 msgstr ""
 
@@ -1423,28 +1431,32 @@ msgstr ""
 msgid "Updating Blood Pressure"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:52
-msgid "Calories: %1 "
+#: ../ui/screens/plugins/IngestionConfig.qml:33
+msgid "NUTRITIONAL BREAKDOWN"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:63
-msgid "Fat: %1gr"
+#: ../ui/screens/plugins/IngestionConfig.qml:76
+#: ../ui/screens/plugins/ProductMacros.qml:125
+#: ../ui/screens/plugins/ProductMacros.qml:154
+msgid "Fat"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:72
-msgid "Protein: %1gr"
+#: ../ui/screens/plugins/IngestionConfig.qml:112
+msgid "Carbs"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:82
-msgid "Carbohydrates: %1gr"
+#: ../ui/screens/plugins/IngestionConfig.qml:148
+#: ../ui/screens/plugins/ProductMacros.qml:132
+#: ../ui/screens/plugins/ProductMacros.qml:161
+msgid "Protein"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:92
-msgid "Size Portion"
+#: ../ui/screens/plugins/IngestionConfig.qml:161
+msgid "SIZE PORTION"
 msgstr ""
 
-#: ../ui/screens/plugins/IngestionConfig.qml:118
-msgid "Quantity"
+#: ../ui/screens/plugins/IngestionConfig.qml:194
+msgid "QUANTITY"
 msgstr ""
 
 #: ../ui/screens/plugins/ManualCodeSearch.qml:34
@@ -1490,16 +1502,6 @@ msgstr ""
 
 #: ../ui/screens/plugins/ProductMacros.qml:70
 msgid "Macro Distribution"
-msgstr ""
-
-#: ../ui/screens/plugins/ProductMacros.qml:125
-#: ../ui/screens/plugins/ProductMacros.qml:154
-msgid "Fat"
-msgstr ""
-
-#: ../ui/screens/plugins/ProductMacros.qml:132
-#: ../ui/screens/plugins/ProductMacros.qml:161
-msgid "Protein"
 msgstr ""
 
 #: ../ui/screens/plugins/ProductMacros.qml:139
