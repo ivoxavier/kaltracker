@@ -42,11 +42,21 @@ Page{
 
     ListModel{id: filtered_meal_model}
     
+
+
+    function getGradeColor(grade) {
+        var g = String(grade).toLowerCase();
+        if (g === 'a' || g === '1') return "green";
+        if (g === 'b' || g === '2') return "#09b227";
+        if (g === 'c' || g === '3') return "#cba000";
+        if (g === 'd' || g === '4') return "#e57a01";
+        if (g === 'e') return LomiriColors.red;
+        return "black"; // fallback
+    }
+
     //this component is need to initializate the db. It's linked to main view so it runs everytime the iniDB signal is emitted
     //without it the dashboard will not update untill a close and opening the app again
-    Connections {
-        target: root
-        function onInitDB() {
+    function updateDashboardData() {
             var currentDate = logical_fields.application.date_utils.long_date;
 
             logical_fields.user_profile.plan.cal_consumed = ingestionRepository.getTotalCalConsumed(currentDate)
@@ -59,22 +69,18 @@ Page{
             logical_fields.metrics.total_carbo_consumed = ingestionRepository.getMacroConsumed(currentDate, "carbo")
             logical_fields.metrics.total_fat_consumed = ingestionRepository.getMacroConsumed(currentDate, "fat")
             logical_fields.metrics.total_protein_consumed = ingestionRepository.getMacroConsumed(currentDate, "protein")
-            
             logical_fields.metrics.total_water_cups = dataAnalysisRepository.getCups(currentDate)
 
+            console.log("Dashboard atualizado -> Kcal:", logical_fields.user_profile.plan.cal_consumed,
+                        "Foods:", logical_fields.metrics.total_foods_consumed,
+                        "Water:", logical_fields.metrics.total_water_cups)
             home_page.updateTrigger += 1
         }
-    }
 
-    function getGradeColor(grade) {
-        var g = String(grade).toLowerCase();
-        if (g === 'a' || g === '1') return "green";
-        if (g === 'b' || g === '2') return "#09b227";
-        if (g === 'c' || g === '3') return "#cba000";
-        if (g === 'd' || g === '4') return "#e57a01";
-        if (g === 'e') return LomiriColors.red;
-        return "black"; // fallback
-    }
+        Connections {
+            target: root
+            onInitDB: updateDashboardData()
+        }
 
     //popus a datepicker
     Component{
@@ -329,13 +335,13 @@ Page{
 
             BlankSpace{}
 
-            SlotWaterTracker{
+            SlotWaterTracker {
                 id: slot_water
                 Layout.alignment: Qt.AlignCenter
                 Layout.preferredWidth: root.width - units.gu(9)
                 Layout.preferredHeight: units.gu(7)
-                img_path:"../../assets/glass-of-water-svgrepo-com.svg"
-                water_cups_drinked : (logical_fields.metrics.total_water_cups * 0.1) 
+                img_path: "../../assets/glass-of-water-svgrepo-com.svg"
+                water_cups_drinked: (home_page.updateTrigger * 0) + (logical_fields.metrics.total_water_cups * 0.1)
             }
         }  
     }
@@ -468,11 +474,17 @@ Page{
                                     ]
                                 }
 
-                            onClicked:{
-                                ingestionRepository.saveIngestion(name,
-                                nutriscore, cal,
-                                fat, carbo,
-                                protein, bottom_edge.meal_filter)
+                            onClicked: {
+                                ingestionRepository.saveIngestion({
+                                    "name": String(name),
+                                    "nutriscore": String(nutriscore),
+                                    "calories": Number(cal),
+                                    "fat": Number(fat),
+                                    "carbs": Number(carbo),
+                                    "protein": Number(protein),
+                                    "mealType": Number(bottom_edge.meal_filter),
+                                    "date": logical_fields.application.date_utils.long_date
+                                })
                                 PopupUtils.open(operation_sucess)
                                 root.initDB()
                             }
@@ -506,8 +518,11 @@ Page{
         }
     } 
     onVisibleChanged: {
-        if (visible && app_settings.is_chat_support_enabled) {
-            chat_auth.verifySession()
+            if (visible) {
+                updateDashboardData()
+                if (app_settings.is_chat_support_enabled) {
+                    chat_auth.verifySession()
+                }
+            }
         }
-    }       
 }

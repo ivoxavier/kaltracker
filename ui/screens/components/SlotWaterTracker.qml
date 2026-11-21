@@ -81,16 +81,13 @@ LomiriShape{
                     anchors.centerIn: parent
                     height : units.gu(2.5)
                 }
-                MouseArea{
+                MouseArea {
                     anchors.fill: parent
-                    onPressed:{
-                        bar.scale = 0.8
-                        dataAnalysisRepository.saveCup(logical_fields.application.date_utils.long_date) 
-                    }
-                    onReleased:{
-                        dataAnalysisRepository.getCups(logical_fields.application.date_utils.long_date)
-                        bar.scale = 1
-                        progression : true
+                    onPressed: bar.scale = 0.8
+                    onReleased: bar.scale = 1.0
+                    onCanceled: bar.scale = 1.0
+                    onClicked: {
+                        dataAnalysisRepository.saveCup(logical_fields.application.date_utils.long_date)
                         root.initDB()
                     }
                 }

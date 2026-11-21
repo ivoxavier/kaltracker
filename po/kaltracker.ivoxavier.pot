@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaltracker.ivoxavier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-19 19:29+0100\n"
+"POT-Creation-Date: 2026-11-21 12:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Hypertensive Crisis"
 msgstr ""
 
-#: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:152
+#: ../ui/screens/ChatRoomPage.qml:19 ../ui/screens/HomePage.qml:158
 #: ../ui/screens/ManageSubscriptionPage.qml:404
 #: ../ui/screens/ManageSubscriptionPage.qml:563
 #: ../ui/screens/OnlineSourcesPage.qml:197
@@ -374,7 +374,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: ../ui/screens/DataAnalysisPage.qml:65 ../ui/screens/ManageDataPage.qml:107
+#: ../ui/screens/DataAnalysisPage.qml:65 ../ui/screens/ManageDataPage.qml:77
 msgid "Ingestions"
 msgstr ""
 
@@ -424,140 +424,150 @@ msgstr ""
 msgid "Foods Distribution By Nutriscore"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:95
+#: ../ui/screens/HomePage.qml:101
 msgid "Ingestion Saved!"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:187
+#: ../ui/screens/HomePage.qml:193
 msgid "FOODS"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:206
+#: ../ui/screens/HomePage.qml:212
 msgid "CONSUMED"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:221
+#: ../ui/screens/HomePage.qml:227
 msgid "FAT"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:231
+#: ../ui/screens/HomePage.qml:237
 msgid "CARBO"
 msgstr ""
 
 #. TRANSLATORS Please Keep This Only One Word
-#: ../ui/screens/HomePage.qml:242
+#: ../ui/screens/HomePage.qml:248
 msgid "PROTEIN"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:290
+#: ../ui/screens/HomePage.qml:296
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Breakfast"
 msgstr ""
 
 #. TRANSLATORS %1 is a format parameter. When translating make sure you write %1
-#: ../ui/screens/HomePage.qml:293 ../ui/screens/HomePage.qml:304
-#: ../ui/screens/HomePage.qml:315 ../ui/screens/HomePage.qml:326
+#: ../ui/screens/HomePage.qml:299 ../ui/screens/HomePage.qml:310
+#: ../ui/screens/HomePage.qml:321 ../ui/screens/HomePage.qml:332
 #: ../ui/screens/ListFoodsIngestedMonthPage.qml:76
 msgid "%1 calories"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:301
+#: ../ui/screens/HomePage.qml:307
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Lunch"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:312
+#: ../ui/screens/HomePage.qml:318
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Dinner"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:323
+#: ../ui/screens/HomePage.qml:329
 #: ../ui/screens/components/MealFilterDialog.qml:67
 msgid "Snacks"
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:384
+#: ../ui/screens/HomePage.qml:390
 msgid "Empty List, Register Ingestions First Or Choose A Filter."
 msgstr ""
 
-#: ../ui/screens/HomePage.qml:393
+#: ../ui/screens/HomePage.qml:399
 msgid "Your Previous Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:36 ../ui/screens/MenuPage.qml:167
+#: ../ui/screens/ManageDataPage.qml:22 ../ui/screens/MenuPage.qml:167
 msgid "Manage Data"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:115
+#: ../ui/screens/ManageDataPage.qml:84
 msgid "Auto Delete Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:116
+#: ../ui/screens/ManageDataPage.qml:85
 msgid "Deletes All Previous Year Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:134
+#: ../ui/screens/ManageDataPage.qml:103
 msgid "From a Month & To Year"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:150
+#: ../ui/screens/ManageDataPage.qml:117
 msgid "Specific Today's Ingestion"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:169
+#: ../ui/screens/ManageDataPage.qml:133
 msgid "Only Today's Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:172 ../ui/screens/ManageDataPage.qml:188
-#: ../ui/screens/ManageDataPage.qml:231 ../ui/screens/ManageDataPage.qml:253
-#: ../ui/screens/ManageDataPage.qml:273
-#: ../ui/screens/components/DeleteAllNotesDialog.qml:47
-#: ../ui/screens/components/DeleteAllWaterDialog.qml:47
-#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:45
+#: ../ui/screens/ManageDataPage.qml:136 ../ui/screens/ManageDataPage.qml:152
+#: ../ui/screens/ManageDataPage.qml:192 ../ui/screens/ManageDataPage.qml:213
+#: ../ui/screens/ManageDataPage.qml:234
+#: ../ui/screens/components/ConfirmDeleteDialog.qml:57
 #: ../ui/screens/components/DeleteByMonthPop.qml:78
 #: ../ui/screens/components/RemoveRecordsDialog.qml:30
 #: ../ui/screens/components/RemoveRecordsDialog.qml:52
 msgid "Delete"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:185
+#: ../ui/screens/ManageDataPage.qml:149
 msgid "All Ingestions"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:200
+#: ../ui/screens/ManageDataPage.qml:163
 msgid "User Foods List"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:207
+#: ../ui/screens/ManageDataPage.qml:170
 msgid "User Created Foods List"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:220
+#: ../ui/screens/ManageDataPage.qml:182
 msgid "Water"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:228
+#: ../ui/screens/ManageDataPage.qml:189
 msgid "All Water Records"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:243
+#: ../ui/screens/ManageDataPage.qml:195
+msgid "Delete Water Records"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:203
 msgid "Notes"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:250
+#: ../ui/screens/ManageDataPage.qml:210
 msgid "Delete All Notes"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:263
+#: ../ui/screens/ManageDataPage.qml:216
+msgid "Delete Notes"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:224
 msgid "Weight Tracker"
 msgstr ""
 
-#: ../ui/screens/ManageDataPage.qml:270
+#: ../ui/screens/ManageDataPage.qml:231
 msgid "All Records"
+msgstr ""
+
+#: ../ui/screens/ManageDataPage.qml:237
+msgid "Delete Weight Tracker Records"
 msgstr ""
 
 #: ../ui/screens/ManageSubscriptionPage.qml:39
@@ -592,9 +602,7 @@ msgstr ""
 #: ../ui/screens/ManageSubscriptionPage.qml:174
 #: ../ui/screens/ManageSubscriptionPage.qml:247
 #: ../ui/screens/OnlineSourcesPage.qml:116
-#: ../ui/screens/components/DeleteAllNotesDialog.qml:63
-#: ../ui/screens/components/DeleteAllWaterDialog.qml:63
-#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:62
+#: ../ui/screens/components/ConfirmDeleteDialog.qml:72
 #: ../ui/screens/components/DeleteByMonthPop.qml:95
 #: ../ui/screens/components/RemoveRecordsDialog.qml:81
 msgid "Cancel"
@@ -869,65 +877,65 @@ msgstr ""
 msgid " calories"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:31
+#: ../ui/screens/ScanPage.qml:49
 msgid "No Internet"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:31
+#: ../ui/screens/ScanPage.qml:49
 msgid "Not Found"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:31
+#: ../ui/screens/ScanPage.qml:49
 msgid "Product Found"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:32
+#: ../ui/screens/ScanPage.qml:50
 msgid "Manual search"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:32
+#: ../ui/screens/ScanPage.qml:50
 msgid "Reading Bar Code..."
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:37
+#: ../ui/screens/ScanPage.qml:55
 msgid "Camera"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:37
+#: ../ui/screens/ScanPage.qml:55
 msgid "Manual"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:196 ../ui/screens/SetFoodPage.qml:106
+#: ../ui/screens/ScanPage.qml:209 ../ui/screens/SetFoodPage.qml:106
 msgid "Unknown Product Name"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:205
+#: ../ui/screens/ScanPage.qml:218
 msgid "N/A"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:222
+#: ../ui/screens/ScanPage.qml:235
 msgid "Code: %1"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:236
+#: ../ui/screens/ScanPage.qml:249
 msgid "Please check your internet connection and try again."
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:245
+#: ../ui/screens/ScanPage.qml:258
 msgid ""
 "Product not in OpenFoodFacts database.\n"
 "You can enter the details manually."
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:256
+#: ../ui/screens/ScanPage.qml:267
 msgid "Confirm & Next"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:268
+#: ../ui/screens/ScanPage.qml:279
 msgid "Enter Manually"
 msgstr ""
 
-#: ../ui/screens/ScanPage.qml:282
+#: ../ui/screens/ScanPage.qml:292
 msgid "Scan Again / Cancel"
 msgstr ""
 
@@ -1132,6 +1140,18 @@ msgstr ""
 msgid "REMAINING"
 msgstr ""
 
+#: ../ui/screens/components/ConfirmDeleteDialog.qml:38
+#: ../ui/screens/components/DeleteByMonthPop.qml:36
+#: ../ui/screens/components/RemoveRecordsDialog.qml:41
+msgid "Confirm Operation With: YES"
+msgstr ""
+
+#: ../ui/screens/components/ConfirmDeleteDialog.qml:66
+#: ../ui/screens/components/DeleteByMonthPop.qml:89
+#: ../ui/screens/components/RemoveRecordsDialog.qml:75
+msgid "Wrong Answer, Try Again"
+msgstr ""
+
 #: ../ui/screens/components/ConfirmPicker.qml:32
 msgid "NO"
 msgstr ""
@@ -1142,31 +1162,6 @@ msgstr ""
 
 #: ../ui/screens/components/ConfirmPicker.qml:32
 msgid "YES"
-msgstr ""
-
-#: ../ui/screens/components/DeleteAllNotesDialog.qml:32
-msgid "Delete Notes"
-msgstr ""
-
-#: ../ui/screens/components/DeleteAllNotesDialog.qml:37
-#: ../ui/screens/components/DeleteAllWaterDialog.qml:37
-#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:35
-#: ../ui/screens/components/DeleteByMonthPop.qml:36
-#: ../ui/screens/components/RemoveRecordsDialog.qml:41
-msgid "Confirm Operation With: YES"
-msgstr ""
-
-#: ../ui/screens/components/DeleteAllNotesDialog.qml:57
-#: ../ui/screens/components/DeleteAllWaterDialog.qml:57
-#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:56
-#: ../ui/screens/components/DeleteByMonthPop.qml:89
-#: ../ui/screens/components/RemoveRecordsDialog.qml:75
-msgid "Wrong Answer, Try Again"
-msgstr ""
-
-#: ../ui/screens/components/DeleteAllWaterDialog.qml:32
-#: ../ui/screens/components/DeleteAllWeightTrackerDialog.qml:30
-msgid "Delete Weight Tracker Records"
 msgstr ""
 
 #: ../ui/screens/components/DeleteByMonthPop.qml:31
