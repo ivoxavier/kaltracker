@@ -1,42 +1,69 @@
-# KalTracker
 
- <div align="center"><img img height="150px;" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/assets/logo.svg" /></div>
+# 🥗 KalTracker
 
-<br>
-<br>
+<div align="center">
+  <img height="150px" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/assets/logo.svg" />
 
-Is an app that counts you calories ingestion. It can scan barcodes. It uses the OpenFoodsFacts API.
+  <h3>Track your calories, simply.</h3>
 
-<br>
-<br>
+  <p>
+    KalTracker is an open-source calorie tracking app that helps
+    you monitor your food intake. It supports barcode scanning
+    and uses the OpenFoodFacts API.
+  </p>
+</div>
 
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+gh repo clone ivoxavier/kaltracker
+```
 
 ### Debug in Desktop Mode
 
-How to clone this project:
+```bash
+clickable desktop
+```
 
-     gh repo clone ivoxavier/kaltracker
+### Debug in Desktop Mode with Dark Mode
 
-Run debug build in Desktop Mode:
+```bash
+clickable desktop --dark-mode
+```
 
-    clickable desktop
+### Debug in a specific language
 
-Run debug build in Desktop Mode in Dark Mode:
+```bash
+clickable desktop --lang pt_PT
+```
 
-    clickable desktop --dark-mode
+---
 
-Run debug build in Desktop Mode in specific language:
+## 👥 Contributors
 
-    clickable desktop --lang pt_PT
+Thanks to everyone who has contributed to KalTracker!
 
-# License
- 
- 2022-2023 Ivo Xavier
- 
- This program is licensed with GNU GPL v3.
+<a href="https://github.com/ivoxavier/kaltracker/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ivoxavier/kaltracker" />
+</a>
 
- kaltracker/qzxing is Licensed under the Apache License 2.0
- 
- kaltracker/js/jsonpath.js is Licensed under the MIT license
- 
- kaltracker/qml/components/JSONListModel.qml is Licensed under the MIT license
+---
+
+## 📜 License
+
+Copyright © 2022–2026 Ivo Xavier
+
+This project is licensed under the GNU GPL v3.
+
+- `kaltracker/qzxing` is licensed under the Apache License 2.0.
+- `kaltracker/js/jsonpath.js` is licensed under the MIT License.
+
+---
+
+<div align="center">
+  Made with ❤️ by the KalTracker contributors.
+</div>
