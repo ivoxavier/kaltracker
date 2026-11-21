@@ -1,116 +1,185 @@
 /*
- * 2015 Johan Guerreros
- * 2022-2023 Ivo Xavier 
+ * 2022-2026 Ivo Xavier
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.
- *
- * kaltracker is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import QtQuick 2.9
 import Lomiri.Components 1.3
-import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import Lomiri.Components.ListItems 1.3 
-import Lomiri.Components.Popups 1.3
-import QtQuick.Controls.Suru 2.2
 import "../theme"
-  
+
 Canvas {
     id: canvas
-        
-    width: units.gu(20)
-    height: units.gu(20)
+
+    width: units.gu(22)
+    height: units.gu(22)
     antialiasing: true
-    
-    property color primaryColor: app_style.chart.circle.calories.inColor
-    property color secondaryColor: app_style.chart.circle.calories.outColor
+
+    property color trackColor: app_style.chart.circle.calories.inColor
+    property color progressColor: app_style.chart.circle.calories.outColor
 
     property real centerWidth: width / 2
     property real centerHeight: height / 2
-   
-    property real radius: units.gu(8)
+    property real radius: units.gu(8.8)
+    property real trackWidth: units.gu(1.3)
 
-    property real minimumValue: 0
-    property real maximumValue: 100
-    
-    property real targetValue: (logical_fields.user_profile.plan.cal_consumed / app_settings.rec_cal) * 100
+    // 0: Restantes | 1: Consumidas | 2: Percentagem
+    property int displayMode: 0
+
+    property bool isExceeded: logical_fields.user_profile.plan.cal_remaining < 0
+    property real rawPercentage: app_settings.rec_cal > 0
+                                 ? (logical_fields.user_profile.plan.cal_consumed / app_settings.rec_cal) * 100
+                                 : 0
+    property bool isWarning: !isExceeded && rawPercentage >= 85
+    property real targetValue: Math.max(0, Math.min(100, rawPercentage))
     property real currentValue: 0
 
-    property real angle: (currentValue - minimumValue) / (maximumValue - minimumValue) * 2 * Math.PI
+
+    property real targetDisplayValue: {
+        if (displayMode === 0) return Math.abs(logical_fields.user_profile.plan.cal_remaining)
+        if (displayMode === 1) return logical_fields.user_profile.plan.cal_consumed
+        return rawPercentage
+    }
+    property real animatedValue: 0
+
+    property real angle: (currentValue / 100) * 2 * Math.PI
     property real angleOffset: -Math.PI / 2
 
-    
     Behavior on currentValue {
-        enabled: app_settings.is_graphs_animation_enabled 
-        
+        enabled: app_settings.is_graphs_animation_enabled
         NumberAnimation {
-            duration: 1000 
-            easing.type: Easing.OutCubic 
+            duration: 900
+            easing.type: Easing.OutCubic
         }
     }
 
-    Component.onCompleted: currentValue = targetValue
-    onTargetValueChanged: currentValue = targetValue
+    Behavior on animatedValue {
+        enabled: app_settings.is_graphs_animation_enabled
+        NumberAnimation {
+            duration: 600
+            easing.type: Easing.OutCubic
+        }
+    }
 
-    onPrimaryColorChanged: requestPaint()
-    onSecondaryColorChanged: requestPaint()
-    onMinimumValueChanged: requestPaint()
-    onMaximumValueChanged: requestPaint()
+    Component.onCompleted: {
+        currentValue = targetValue
+        animatedValue = targetDisplayValue
+    }
+    onTargetValueChanged: currentValue = targetValue
+    onTargetDisplayValueChanged: animatedValue = targetDisplayValue
+
+    onTrackColorChanged: requestPaint()
+    onProgressColorChanged: requestPaint()
+    onIsExceededChanged: requestPaint()
+    onIsWarningChanged: requestPaint()
     onCurrentValueChanged: requestPaint()
 
     onPaint: {
         var ctx = getContext("2d");
         ctx.save();
-
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // First, thinner arc
+
         ctx.beginPath();
-        ctx.lineWidth = units.gu(0.5);
-        ctx.strokeStyle = primaryColor;
-        ctx.arc(canvas.centerWidth,
-        canvas.centerHeight,
-        canvas.radius,
-        angleOffset + canvas.angle,
-        angleOffset + 2*Math.PI);
+        ctx.lineWidth = trackWidth;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = trackColor;
+        ctx.globalAlpha = 0.25;
+        ctx.arc(centerWidth, centerHeight, radius, 0, 2 * Math.PI);
         ctx.stroke();
 
-        // Second, thicker arc
-        ctx.beginPath();
-        ctx.lineWidth = units.gu(1);
-        ctx.strokeStyle = canvas.secondaryColor;
-        ctx.arc(canvas.centerWidth,
-        canvas.centerHeight,
-        canvas.radius,
-        canvas.angleOffset,
-        canvas.angleOffset + canvas.angle);
-        ctx.stroke();
+
+        if (currentValue > 0.5) {
+            ctx.globalAlpha = 1.0;
+            ctx.beginPath();
+            ctx.lineWidth = trackWidth;
+            ctx.lineCap = "round";
+
+            var grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            if (isExceeded) {
+                grad.addColorStop(0.0, LomiriColors.orange);
+                grad.addColorStop(1.0, LomiriColors.red);
+            } else if (isWarning) {
+                grad.addColorStop(0.0, "#f5b041");
+                grad.addColorStop(1.0, LomiriColors.orange);
+            } else {
+                grad.addColorStop(0.0, Qt.lighter(progressColor, 1.25));
+                grad.addColorStop(1.0, progressColor);
+            }
+
+            var endAngle = angleOffset + angle;
+            ctx.strokeStyle = grad;
+            ctx.arc(centerWidth, centerHeight, radius, angleOffset, endAngle);
+            ctx.stroke();
+
+
+            var tipX = centerWidth + radius * Math.cos(endAngle);
+            var tipY = centerHeight + radius * Math.sin(endAngle);
+            ctx.beginPath();
+            ctx.fillStyle = "white";
+            ctx.globalAlpha = 0.9;
+            ctx.arc(tipX, tipY, trackWidth * 0.28, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
         ctx.restore();
     }
 
-    Column{
+
+    Column {
         anchors.centerIn: parent
-        width: parent.width / 2
-        Text{
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: logical_fields.user_profile.plan.cal_remaining
-            font.pointSize: units.gu(1.7)
-            color : app_style.label.labelColor
+        width: radius * 1.55
+        spacing: units.gu(0.3)
+
+        Label {
+            width: parent.width
+            horizontalAlignment: Text.AlignHCenter
+            text: canvas.displayMode === 2
+                  ? Math.round(canvas.animatedValue) + "%"
+                  : Math.round(canvas.animatedValue)
+            font.pixelSize: units.gu(4.2)
+            minimumPixelSize: units.gu(2.4)
+            fontSizeMode: Text.HorizontalFit
+            font.weight: Font.DemiBold
+            color: canvas.isExceeded
+                   ? LomiriColors.red
+                   : (canvas.isWarning ? LomiriColors.orange : app_style.label.labelColor)
         }
-        Text{
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: logical_fields.user_profile.plan.cal_remaining < 0 ? i18n.tr("EXCEED") : i18n.tr("REMAINING")
-            font.pointSize: units.gu(1.3)
-            color : app_style.label.labelColor
+
+        Label {
+            width: parent.width
+            horizontalAlignment: Text.AlignHCenter
+            text: {
+                if (canvas.displayMode === 0) {
+                    return canvas.isExceeded ? i18n.tr("EXCEEDED") : i18n.tr("REMAINING")
+                } else if (canvas.displayMode === 1) {
+                    return i18n.tr("CONSUMED")
+                }
+                return i18n.tr("OF GOAL")
+            }
+            font.pixelSize: units.gu(1.3)
+            font.weight: Font.DemiBold
+            font.letterSpacing: units.dp(1.2)
+            color: canvas.isExceeded
+                   ? LomiriColors.red
+                   : (canvas.isWarning ? LomiriColors.orange : LomiriColors.ash)
         }
+
+        Label {
+            width: parent.width
+            horizontalAlignment: Text.AlignHCenter
+            text: canvas.displayMode === 2 ? i18n.tr("daily") : i18n.tr("kcal")
+            font.pixelSize: units.gu(1.4)
+            color: LomiriColors.ash
+            opacity: 0.8
+        }
+    }
+
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: canvas.displayMode = (canvas.displayMode + 1) % 3
     }
 }
