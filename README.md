@@ -1,7 +1,7 @@
 # KalTracker
 
 <div align="center">
-  <img height="150px" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/assets/logo.svg" />
+  <img height="150px" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/ubuntu_touch/assets/logo.svg" />
 
   <h3>Track your calories, simply.</h3>
 
