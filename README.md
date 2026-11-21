@@ -1,5 +1,5 @@
 
-# 🥗 KalTracker
+# KalTracker
 
 <div align="center">
   <img height="150px" width="150px" src="https://github.com/ivoxavier/kaltracker/blob/master/assets/logo.svg" />
@@ -15,7 +15,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Clone the repository
 
@@ -43,7 +43,7 @@ clickable desktop --lang pt_PT
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 Thanks to everyone who has contributed to KalTracker!
 
@@ -53,7 +53,7 @@ Thanks to everyone who has contributed to KalTracker!
 
 ---
 
-## 📜 License
+## License
 
 Copyright © 2022–2026 Ivo Xavier
 
