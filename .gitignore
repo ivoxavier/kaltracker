@@ -6,5 +6,5 @@ build/
 
 # ===================
 # QtCreator IDE
-CMakeLists.txt*
+CMakeLists.txt.*
 # ===================
